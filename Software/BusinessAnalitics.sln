@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1585
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business_Analitics", "BusinessAnalitics\Business_Analitics.csproj", "{8FAEC1BA-69FE-4942-8655-EA3A15394890}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9F036E81-8BF5-4165-AD27-4678FEA3A466} = {9F036E81-8BF5-4165-AD27-4678FEA3A466}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDeDatos", "CapaDeDatos\CapaDeDatos.csproj", "{9F036E81-8BF5-4165-AD27-4678FEA3A466}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FAEC1BA-69FE-4942-8655-EA3A15394890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FAEC1BA-69FE-4942-8655-EA3A15394890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FAEC1BA-69FE-4942-8655-EA3A15394890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FAEC1BA-69FE-4942-8655-EA3A15394890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F036E81-8BF5-4165-AD27-4678FEA3A466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F036E81-8BF5-4165-AD27-4678FEA3A466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F036E81-8BF5-4165-AD27-4678FEA3A466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F036E81-8BF5-4165-AD27-4678FEA3A466}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E577080E-11BA-4DAB-93CC-84AA65C75DA9}
+	EndGlobalSection
+EndGlobal
