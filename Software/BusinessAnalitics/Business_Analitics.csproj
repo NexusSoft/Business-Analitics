@@ -142,6 +142,18 @@
     <EmbeddedResource Include="Conexion\Frm_InstanciaSQL.resx">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_EmpresaAcarreo.resx">
+      <DependentUpon>Frm_EmpresaAcarreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_EmpresaBascula.resx">
+      <DependentUpon>Frm_EmpresaBascula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_EmpresaComercializadora.resx">
+      <DependentUpon>Frm_EmpresaComercializadora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_EmpresaCorte.resx">
+      <DependentUpon>Frm_EmpresaCorte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
