@@ -95,6 +95,12 @@
     <Compile Include="Conexion\Frm_InstanciaSQL.designer.cs">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Catalogos\Frm_Ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Ciudad.Designer.cs">
+      <DependentUpon>Frm_Ciudad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Catalogos\Frm_EmpresaAcarreo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,18 @@
     <Compile Include="Form_Catalogos\Frm_EmpresaCorte.Designer.cs">
       <DependentUpon>Frm_EmpresaCorte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Catalogos\Frm_Estado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Estado.Designer.cs">
+      <DependentUpon>Frm_Estado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Pais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Pais.Designer.cs">
+      <DependentUpon>Frm_Pais.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +160,9 @@
     <EmbeddedResource Include="Conexion\Frm_InstanciaSQL.resx">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_Ciudad.resx">
+      <DependentUpon>Frm_Ciudad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Catalogos\Frm_EmpresaAcarreo.resx">
       <DependentUpon>Frm_EmpresaAcarreo.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +174,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Catalogos\Frm_EmpresaCorte.resx">
       <DependentUpon>Frm_EmpresaCorte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_Estado.resx">
+      <DependentUpon>Frm_Estado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_Pais.resx">
+      <DependentUpon>Frm_Pais.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
