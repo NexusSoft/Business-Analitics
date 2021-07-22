@@ -95,6 +95,30 @@
     <Compile Include="Conexion\Frm_InstanciaSQL.designer.cs">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Catalogos\Frm_EmpresaAcarreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_EmpresaAcarreo.Designer.cs">
+      <DependentUpon>Frm_EmpresaAcarreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_EmpresaBascula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_EmpresaBascula.Designer.cs">
+      <DependentUpon>Frm_EmpresaBascula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_EmpresaComercializadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_EmpresaComercializadora.Designer.cs">
+      <DependentUpon>Frm_EmpresaComercializadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_EmpresaCorte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_EmpresaCorte.Designer.cs">
+      <DependentUpon>Frm_EmpresaCorte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +167,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Form_Control\" />
+    <Folder Include="Form_Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

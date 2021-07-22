@@ -7,17 +7,15 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 
-namespace Business_Analitics
+namespace BusinessAnalitics.Form_Catalogos
 {
-    public partial class Frm_Principal : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Frm_EmpresaAcarreo : DevExpress.XtraEditors.XtraForm
     {
-        public Frm_Principal()
+        public Frm_EmpresaAcarreo()
         {
             InitializeComponent();
         }
-
-        public string c_codigo_usu { get; internal set; }
     }
 }

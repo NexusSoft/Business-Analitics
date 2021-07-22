@@ -44,7 +44,7 @@ namespace Business_Analitics
                         {
                             vIdUsuario = sLogin.Datos.Rows[0]["c_codigo_usu"].ToString();
                             vIdActivo = Convert.ToInt32(sLogin.Datos.Rows[0]["c_activo_usu"].ToString());
-                            Frm_Maquila frmP = new Frm_Maquila();
+                            Frm_Principal frmP = new Frm_Principal();
                             MSRegistro RegIn = new MSRegistro();
                             
                             if (vIdActivo == 1)
