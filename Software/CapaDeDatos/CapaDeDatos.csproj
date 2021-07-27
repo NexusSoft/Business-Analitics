@@ -50,11 +50,16 @@
     <Compile Include="Conexion\UtileriasCodigo.cs" />
     <Compile Include="Formularios\CLS_Ciudades.cs" />
     <Compile Include="Formularios\CLS_Domicilios.cs" />
+    <Compile Include="Formularios\CLS_EmpresasCorte.cs" />
+    <Compile Include="Formularios\CLS_EmpresasAcarreo.cs" />
+    <Compile Include="Formularios\CLS_EmpresasBascula.cs" />
+    <Compile Include="Formularios\CLS_EmpresasComercializadora.cs" />
     <Compile Include="Formularios\CLS_Estado.cs" />
     <Compile Include="Formularios\CLS_Pais.cs" />
     <Compile Include="Formularios\CLS_Pantallas.cs" />
     <Compile Include="Formularios\CLS_Perfiles.cs" />
     <Compile Include="Formularios\CLS_Perfiles_Pantallas.cs" />
+    <Compile Include="Formularios\CLS_Tipo_Domicilio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SEG_Login.cs" />
   </ItemGroup>

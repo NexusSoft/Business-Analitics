@@ -38,16 +38,18 @@
             this.txtPass = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cERecordarContrasenia = new DevExpress.XtraEditors.CheckEdit();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.skinBarSubItem1 = new DevExpress.XtraBars.SkinBarSubItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cERecordarContrasenia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureEdit1
@@ -55,7 +57,7 @@
             this.pictureEdit1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureEdit1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(10, 4);
+            this.pictureEdit1.Location = new System.Drawing.Point(25, 12);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
@@ -63,24 +65,23 @@
             this.pictureEdit1.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pictureEdit1.Properties.InitialImageOptions.Image")));
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Size = new System.Drawing.Size(140, 140);
+            this.pictureEdit1.Size = new System.Drawing.Size(120, 121);
             this.pictureEdit1.TabIndex = 6;
-            this.pictureEdit1.EditValueChanged += new System.EventHandler(this.pictureEdit1_DoubleClick);
             this.pictureEdit1.DoubleClick += new System.EventHandler(this.pictureEdit1_DoubleClick);
             // 
             // SkinForm
             // 
             this.SkinForm.EnableBonusSkins = true;
-            this.SkinForm.LookAndFeel.SkinName = "Sharp";
+            this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
             // btnAcceso
             // 
             this.btnAcceso.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcceso.Appearance.Options.UseFont = true;
             this.btnAcceso.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAcceso.ImageOptions.Image")));
-            this.btnAcceso.Location = new System.Drawing.Point(455, 20);
+            this.btnAcceso.Location = new System.Drawing.Point(455, 30);
             this.btnAcceso.Name = "btnAcceso";
-            this.btnAcceso.Size = new System.Drawing.Size(109, 51);
+            this.btnAcceso.Size = new System.Drawing.Size(93, 47);
             this.btnAcceso.TabIndex = 4;
             this.btnAcceso.Text = "Acceso";
             this.btnAcceso.Click += new System.EventHandler(this.btnAcceso_Click);
@@ -90,16 +91,16 @@
             this.btnSalir.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.Appearance.Options.UseFont = true;
             this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
-            this.btnSalir.Location = new System.Drawing.Point(455, 78);
+            this.btnSalir.Location = new System.Drawing.Point(455, 83);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(109, 51);
+            this.btnSalir.Size = new System.Drawing.Size(93, 42);
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(257, 51);
+            this.txtUser.Location = new System.Drawing.Point(257, 55);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(170, 20);
             this.txtUser.TabIndex = 0;
@@ -108,7 +109,7 @@
             // txtPass
             // 
             this.txtPass.EditValue = "";
-            this.txtPass.Location = new System.Drawing.Point(257, 78);
+            this.txtPass.Location = new System.Drawing.Point(257, 82);
             this.txtPass.Name = "txtPass";
             this.txtPass.Properties.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(170, 20);
@@ -119,7 +120,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(173, 54);
+            this.labelControl1.Location = new System.Drawing.Point(173, 58);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(46, 13);
             this.labelControl1.TabIndex = 5;
@@ -129,59 +130,93 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(173, 83);
+            this.labelControl2.Location = new System.Drawing.Point(173, 87);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(68, 13);
             this.labelControl2.TabIndex = 6;
             this.labelControl2.Text = "Contraseña:";
             // 
-            // labelControl3
+            // barManager1
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(173, 107);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(52, 13);
-            this.labelControl3.TabIndex = 7;
-            this.labelControl3.Text = "Empresa:";
-            this.labelControl3.Visible = false;
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar3});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.skinBarSubItem1,
+            this.barStaticItem1});
+            this.barManager1.MaxItemId = 2;
+            this.barManager1.StatusBar = this.bar3;
             // 
-            // gridLookUpEdit1
+            // bar3
             // 
-            this.gridLookUpEdit1.Location = new System.Drawing.Point(259, 104);
-            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
-            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(170, 20);
-            this.gridLookUpEdit1.TabIndex = 8;
-            this.gridLookUpEdit1.Visible = false;
+            this.bar3.BarName = "Barra de estado";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.skinBarSubItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1)});
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Barra de estado";
             // 
-            // gridLookUpEdit1View
+            // skinBarSubItem1
             // 
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.skinBarSubItem1.Caption = "Interfaz";
+            this.skinBarSubItem1.Id = 0;
+            this.skinBarSubItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("skinBarSubItem1.ImageOptions.Image")));
+            this.skinBarSubItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("skinBarSubItem1.ImageOptions.LargeImage")));
+            this.skinBarSubItem1.Name = "skinBarSubItem1";
             // 
-            // cERecordarContrasenia
+            // barStaticItem1
             // 
-            this.cERecordarContrasenia.Location = new System.Drawing.Point(257, 135);
-            this.cERecordarContrasenia.Name = "cERecordarContrasenia";
-            this.cERecordarContrasenia.Properties.Caption = "Recordar Usuario";
-            this.cERecordarContrasenia.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.cERecordarContrasenia.Size = new System.Drawing.Size(117, 19);
-            this.cERecordarContrasenia.TabIndex = 9;
-            this.cERecordarContrasenia.Visible = false;
+            this.barStaticItem1.Caption = "V20201117.01";
+            this.barStaticItem1.Id = 1;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(582, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 139);
+            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(582, 26);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 139);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(582, 0);
+            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 139);
             // 
             // Frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 151);
-            this.Controls.Add(this.cERecordarContrasenia);
-            this.Controls.Add(this.gridLookUpEdit1);
-            this.Controls.Add(this.labelControl3);
+            this.ClientSize = new System.Drawing.Size(582, 165);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtPass);
@@ -189,6 +224,10 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAcceso);
             this.Controls.Add(this.pictureEdit1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -196,14 +235,13 @@
             this.MinimizeBox = false;
             this.Name = "Frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Acceso Maquila";
+            this.Text = "Acceso Empresa de Corte";
             this.Load += new System.EventHandler(this.Frm_Login_Load);
+            this.Shown += new System.EventHandler(this.Frm_Login_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cERecordarContrasenia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,9 +257,13 @@
         private DevExpress.XtraEditors.TextEdit txtPass;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
-        private DevExpress.XtraEditors.CheckEdit cERecordarContrasenia;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.Bar bar3;
+        private DevExpress.XtraBars.SkinBarSubItem skinBarSubItem1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
+using DevExpress.XtraBars.Helpers;
 
 namespace Business_Analitics
 {
@@ -16,6 +17,7 @@ namespace Business_Analitics
     {
         string vIdUsuario = string.Empty;
         int vIdActivo = 0;
+        string IdPerfil = "";
         public Boolean habilitado = true;
         public Frm_Login()
         {
@@ -36,20 +38,30 @@ namespace Business_Analitics
             {
                 if (txtUser.Text != string.Empty && txtPass.Text != string.Empty)
                 {
-                    SEG_Login sLogin = new SEG_Login() { c_codigo_usu = txtUser.Text, v_passwo_usu = txtPass.Text };
+                    Crypto claseencripta = new Crypto();
+                    SEG_Login sLogin = new SEG_Login() { Id_Usuario = txtUser.Text, Contrasena =claseencripta.Encriptar(txtPass.Text) };
                     sLogin.MtdSeleccionarUsuarioLogin();
                     if (sLogin.Exito)
                     {
                         if (sLogin.Datos.Rows.Count > 0)
                         {
-                            vIdUsuario = sLogin.Datos.Rows[0]["c_codigo_usu"].ToString();
-                            vIdActivo = Convert.ToInt32(sLogin.Datos.Rows[0]["c_activo_usu"].ToString());
+                            vIdUsuario = sLogin.Datos.Rows[0]["Id_Usuario"].ToString();
+                            if (sLogin.Datos.Rows[0]["Activo"].ToString() == "True")
+                            {
+                                vIdActivo = 1;
+                            }
+                            else
+                            {
+                                vIdActivo = 0;
+                            }
+                            IdPerfil = sLogin.Datos.Rows[0]["Id_Perfil"].ToString();
                             Frm_Principal frmP = new Frm_Principal();
                             MSRegistro RegIn = new MSRegistro();
                             
                             if (vIdActivo == 1)
                             {
-                                frmP.c_codigo_usu = txtUser.Text;
+                                frmP.IdPerfil = IdPerfil;
+                                frmP.UsuariosLogin = txtUser.Text;
                                 frmP.Show();
                                 this.Hide();
                             }
@@ -96,12 +108,37 @@ namespace Business_Analitics
                 btnAcceso.Focus();
             }
         }
-        
+
         private void Frm_Login_Load(object sender, EventArgs e)
         {
             txtUser.Focus();
             MSRegistro RegOut = new MSRegistro();
-            //SkinForm.LookAndFeel.SetSkinStyle(RegOut.GetSetting("ConexionSQL", "Sking"));
+            SkinForm.LookAndFeel.SetSkinStyle(RegOut.GetSetting("ConexionSQL", "Sking"));
+
+            CLS_Version v = new CLS_Version();
+            v.MtdSeleccionarVersion();
+            if (v.Exito)
+            {
+                if (barStaticItem1.Caption.Trim().Equals(v.Datos.Rows[0][0].ToString())){
+
+                }else
+                {
+                    XtraMessageBox.Show("La version del programa no es la mas actual, se requiere la version "+ v.Datos.Rows[0][0].ToString() + Environment.NewLine+ "Favor de comunicarse con el administrador del sistema");
+                    btnAcceso.Enabled = false;
+                }
+               
+            }
+            else
+            {
+                XtraMessageBox.Show(v.Mensaje);
+            }
+        }
+
+        private void Frm_Login_Shown(object sender, EventArgs e)
+        {
+            txtUser.Focus();
+            MSRegistro RegOut = new MSRegistro();
+            SkinForm.LookAndFeel.SetSkinStyle(RegOut.GetSetting("ConexionSQL", "Sking"));
         }
     }
 }

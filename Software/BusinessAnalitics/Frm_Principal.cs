@@ -19,5 +19,6 @@ namespace Business_Analitics
         }
 
         public string c_codigo_usu { get; internal set; }
+        public string IdPerfil { get; internal set; }
     }
 }

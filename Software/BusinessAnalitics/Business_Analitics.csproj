@@ -95,35 +95,35 @@
     <Compile Include="Conexion\Frm_InstanciaSQL.designer.cs">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Catalogos\Empresas\Frm_EmpresaBasculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Empresas\Frm_EmpresaBasculas.Designer.cs">
+      <DependentUpon>Frm_EmpresaBasculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Empresas\Frm_EmpresaComercializadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Empresas\Frm_EmpresaComercializadora.Designer.cs">
+      <DependentUpon>Frm_EmpresaComercializadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Empresas\Frm_EmpresaAcarreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Empresas\Frm_EmpresaAcarreo.Designer.cs">
+      <DependentUpon>Frm_EmpresaAcarreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Empresas\Frm_EmpresaCorte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Empresas\Frm_EmpresaCorte.Designer.cs">
+      <DependentUpon>Frm_EmpresaCorte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Catalogos\Frm_Ciudad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Catalogos\Frm_Ciudad.Designer.cs">
       <DependentUpon>Frm_Ciudad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_Catalogos\Frm_EmpresaAcarreo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Catalogos\Frm_EmpresaAcarreo.Designer.cs">
-      <DependentUpon>Frm_EmpresaAcarreo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_Catalogos\Frm_EmpresaBascula.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Catalogos\Frm_EmpresaBascula.Designer.cs">
-      <DependentUpon>Frm_EmpresaBascula.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_Catalogos\Frm_EmpresaComercializadora.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Catalogos\Frm_EmpresaComercializadora.Designer.cs">
-      <DependentUpon>Frm_EmpresaComercializadora.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_Catalogos\Frm_EmpresaCorte.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Catalogos\Frm_EmpresaCorte.Designer.cs">
-      <DependentUpon>Frm_EmpresaCorte.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Catalogos\Frm_Estado.cs">
       <SubType>Form</SubType>
@@ -136,6 +136,12 @@
     </Compile>
     <Compile Include="Form_Catalogos\Frm_Pais.Designer.cs">
       <DependentUpon>Frm_Pais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Tipo_Domicilio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Tipo_Domicilio.Designer.cs">
+      <DependentUpon>Frm_Tipo_Domicilio.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
@@ -160,26 +166,29 @@
     <EmbeddedResource Include="Conexion\Frm_InstanciaSQL.resx">
       <DependentUpon>Frm_InstanciaSQL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Catalogos\Frm_Ciudad.resx">
-      <DependentUpon>Frm_Ciudad.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Catalogos\Empresas\Frm_EmpresaBasculas.resx">
+      <DependentUpon>Frm_EmpresaBasculas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Catalogos\Frm_EmpresaAcarreo.resx">
-      <DependentUpon>Frm_EmpresaAcarreo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_Catalogos\Frm_EmpresaBascula.resx">
-      <DependentUpon>Frm_EmpresaBascula.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_Catalogos\Frm_EmpresaComercializadora.resx">
+    <EmbeddedResource Include="Form_Catalogos\Empresas\Frm_EmpresaComercializadora.resx">
       <DependentUpon>Frm_EmpresaComercializadora.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Catalogos\Frm_EmpresaCorte.resx">
+    <EmbeddedResource Include="Form_Catalogos\Empresas\Frm_EmpresaAcarreo.resx">
+      <DependentUpon>Frm_EmpresaAcarreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Empresas\Frm_EmpresaCorte.resx">
       <DependentUpon>Frm_EmpresaCorte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_Ciudad.resx">
+      <DependentUpon>Frm_Ciudad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Catalogos\Frm_Estado.resx">
       <DependentUpon>Frm_Estado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Catalogos\Frm_Pais.resx">
       <DependentUpon>Frm_Pais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_Tipo_Domicilio.resx">
+      <DependentUpon>Frm_Tipo_Domicilio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
