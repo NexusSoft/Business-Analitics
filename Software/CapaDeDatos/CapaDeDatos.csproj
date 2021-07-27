@@ -56,12 +56,15 @@
     <Compile Include="Formularios\CLS_EmpresasComercializadora.cs" />
     <Compile Include="Formularios\CLS_Estado.cs" />
     <Compile Include="Formularios\CLS_Pais.cs" />
-    <Compile Include="Formularios\CLS_Pantallas.cs" />
-    <Compile Include="Formularios\CLS_Perfiles.cs" />
-    <Compile Include="Formularios\CLS_Perfiles_Pantallas.cs" />
+    <Compile Include="Seguridad\CLS_Pantallas.cs" />
+    <Compile Include="Seguridad\CLS_Perfiles.cs" />
+    <Compile Include="Seguridad\CLS_Perfiles_Pantallas.cs" />
     <Compile Include="Formularios\CLS_Tipo_Domicilio.cs" />
+    <Compile Include="Formularios\CLS_Version.cs" />
+    <Compile Include="Formularios\SEG_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SEG_Login.cs" />
+    <Compile Include="Seguridad\CLS_Usuarios.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -143,6 +143,36 @@
     <Compile Include="Form_Catalogos\Frm_Tipo_Domicilio.Designer.cs">
       <DependentUpon>Frm_Tipo_Domicilio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Seguridad\Frm_CargandoConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Seguridad\Frm_CargandoConsulta.designer.cs">
+      <DependentUpon>Frm_CargandoConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Seguridad\Frm_Pantallas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Seguridad\Frm_Pantallas.Designer.cs">
+      <DependentUpon>Frm_Pantallas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Seguridad\Frm_Perfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Seguridad\Frm_Perfiles.Designer.cs">
+      <DependentUpon>Frm_Perfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Seguridad\Frm_Permisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Seguridad\Frm_Permisos.Designer.cs">
+      <DependentUpon>Frm_Permisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Seguridad\Frm_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Seguridad\Frm_Usuarios.Designer.cs">
+      <DependentUpon>Frm_Usuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +219,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Catalogos\Frm_Tipo_Domicilio.resx">
       <DependentUpon>Frm_Tipo_Domicilio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Seguridad\Frm_CargandoConsulta.resx">
+      <DependentUpon>Frm_CargandoConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Seguridad\Frm_Pantallas.resx">
+      <DependentUpon>Frm_Pantallas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Seguridad\Frm_Perfiles.resx">
+      <DependentUpon>Frm_Perfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Seguridad\Frm_Permisos.resx">
+      <DependentUpon>Frm_Permisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Seguridad\Frm_Usuarios.resx">
+      <DependentUpon>Frm_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>

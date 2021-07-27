@@ -31,25 +31,39 @@
             this.components = new System.ComponentModel.Container();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_EmpCorte = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_EmpAcarreo = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Cosecha = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Cargas = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_EmpBascula = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_EmpComercializadora = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Pais = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Estado = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Ciudad = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btn_Usuario = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Perfil = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Permisos = new DevExpress.XtraBars.BarButtonItem();
+            this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btn_TipoDomicilio = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Maquila = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -58,24 +72,32 @@
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
-            this.barButtonItem5,
-            this.barButtonItem6,
-            this.barButtonItem7,
-            this.barButtonItem8,
-            this.barButtonItem9});
+            this.btn_EmpCorte,
+            this.btn_EmpAcarreo,
+            this.btn_Cosecha,
+            this.btn_Cargas,
+            this.btn_EmpBascula,
+            this.btn_EmpComercializadora,
+            this.btn_Pais,
+            this.btn_Estado,
+            this.btn_Ciudad,
+            this.btn_Usuario,
+            this.btn_Perfil,
+            this.btn_Permisos,
+            this.skinRibbonGalleryBarItem1,
+            this.btn_TipoDomicilio,
+            this.btn_Maquila});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 11;
+            this.ribbon.MaxItemId = 17;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2,
-            this.ribbonPage3});
+            this.ribbonPage4,
+            this.ribbonPage3,
+            this.ribbonPage5});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbon.Size = new System.Drawing.Size(875, 143);
+            this.ribbon.Size = new System.Drawing.Size(875, 147);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // applicationMenu1
@@ -83,41 +105,61 @@
             this.applicationMenu1.Name = "applicationMenu1";
             this.applicationMenu1.Ribbon = this.ribbon;
             // 
-            // barButtonItem1
+            // btn_EmpCorte
             // 
-            this.barButtonItem1.Caption = "Corte";
-            this.barButtonItem1.Id = 1;
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btn_EmpCorte.Caption = "Corte";
+            this.btn_EmpCorte.Id = 1;
+            this.btn_EmpCorte.Name = "btn_EmpCorte";
             // 
-            // barButtonItem2
+            // btn_EmpAcarreo
             // 
-            this.barButtonItem2.Caption = "Acarreo";
-            this.barButtonItem2.Id = 2;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btn_EmpAcarreo.Caption = "Acarreo";
+            this.btn_EmpAcarreo.Id = 2;
+            this.btn_EmpAcarreo.Name = "btn_EmpAcarreo";
             // 
-            // barButtonItem3
+            // btn_Cosecha
             // 
-            this.barButtonItem3.Caption = "Cosecha";
-            this.barButtonItem3.Id = 4;
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.btn_Cosecha.Caption = "Cosecha";
+            this.btn_Cosecha.Id = 4;
+            this.btn_Cosecha.Name = "btn_Cosecha";
             // 
-            // barButtonItem4
+            // btn_Cargas
             // 
-            this.barButtonItem4.Caption = "Cargas";
-            this.barButtonItem4.Id = 5;
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.btn_Cargas.Caption = "Cargas";
+            this.btn_Cargas.Id = 5;
+            this.btn_Cargas.Name = "btn_Cargas";
             // 
-            // barButtonItem5
+            // btn_EmpBascula
             // 
-            this.barButtonItem5.Caption = "Basculas";
-            this.barButtonItem5.Id = 6;
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.btn_EmpBascula.Caption = "Basculas";
+            this.btn_EmpBascula.Id = 6;
+            this.btn_EmpBascula.Name = "btn_EmpBascula";
             // 
-            // barButtonItem6
+            // btn_EmpComercializadora
             // 
-            this.barButtonItem6.Caption = "Comercializadora";
-            this.barButtonItem6.Id = 7;
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.btn_EmpComercializadora.Caption = "Comercializadora";
+            this.btn_EmpComercializadora.Id = 7;
+            this.btn_EmpComercializadora.Name = "btn_EmpComercializadora";
+            // 
+            // btn_Pais
+            // 
+            this.btn_Pais.Caption = "Pais";
+            this.btn_Pais.Id = 8;
+            this.btn_Pais.Name = "btn_Pais";
+            this.btn_Pais.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Pais_ItemClick);
+            // 
+            // btn_Estado
+            // 
+            this.btn_Estado.Caption = "Estado";
+            this.btn_Estado.Id = 9;
+            this.btn_Estado.Name = "btn_Estado";
+            this.btn_Estado.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Estado_ItemClick);
+            // 
+            // btn_Ciudad
+            // 
+            this.btn_Ciudad.Caption = "Ciudad";
+            this.btn_Ciudad.Id = 10;
+            this.btn_Ciudad.Name = "btn_Ciudad";
             // 
             // ribbonPage1
             // 
@@ -127,13 +169,24 @@
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Catalogos";
             // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.AllowTextClipping = false;
+            this.ribbonPageGroup4.ItemLinks.Add(this.btn_Pais);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btn_Estado);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btn_Ciudad);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btn_TipoDomicilio);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.ShowCaptionButton = false;
+            this.ribbonPageGroup4.Text = "Domicilio";
+            // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btn_EmpAcarreo);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btn_EmpCorte);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btn_EmpBascula);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btn_EmpComercializadora);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Empresas";
@@ -147,8 +200,9 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btn_Cosecha);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btn_Cargas);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btn_Maquila);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Captura y Consulta";
             // 
@@ -162,42 +216,100 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Reportes";
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 418);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 426);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(875, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(875, 23);
             // 
-            // ribbonPageGroup4
+            // ribbonPage4
             // 
-            this.ribbonPageGroup4.AllowTextClipping = false;
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem8);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem9);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.ShowCaptionButton = false;
-            this.ribbonPageGroup4.Text = "Domicilio";
+            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup5});
+            this.ribbonPage4.Name = "ribbonPage4";
+            this.ribbonPage4.Text = "Seguridad";
             // 
-            // barButtonItem7
+            // ribbonPageGroup5
             // 
-            this.barButtonItem7.Caption = "Pais";
-            this.barButtonItem7.Id = 8;
-            this.barButtonItem7.Name = "barButtonItem7";
+            this.ribbonPageGroup5.AllowTextClipping = false;
+            this.ribbonPageGroup5.ItemLinks.Add(this.btn_Usuario);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btn_Perfil);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btn_Permisos);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.ShowCaptionButton = false;
+            this.ribbonPageGroup5.Text = "Seguridad";
             // 
-            // barButtonItem8
+            // ribbonPageGroup6
             // 
-            this.barButtonItem8.Caption = "Estado";
-            this.barButtonItem8.Id = 9;
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Seguridad";
             // 
-            // barButtonItem9
+            // btn_Usuario
             // 
-            this.barButtonItem9.Caption = "Ciudad";
-            this.barButtonItem9.Id = 10;
-            this.barButtonItem9.Name = "barButtonItem9";
+            this.btn_Usuario.Caption = "Usuarios";
+            this.btn_Usuario.Id = 11;
+            this.btn_Usuario.Name = "btn_Usuario";
+            this.btn_Usuario.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Usuario_ItemClick);
+            // 
+            // btn_Perfil
+            // 
+            this.btn_Perfil.Caption = "Perfiles";
+            this.btn_Perfil.Id = 12;
+            this.btn_Perfil.Name = "btn_Perfil";
+            this.btn_Perfil.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Perfil_ItemClick);
+            // 
+            // btn_Permisos
+            // 
+            this.btn_Permisos.Caption = "Permisos";
+            this.btn_Permisos.Id = 13;
+            this.btn_Permisos.Name = "btn_Permisos";
+            this.btn_Permisos.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Permisos_ItemClick);
+            // 
+            // SkinForm
+            // 
+            this.SkinForm.EnableBonusSkins = true;
+            this.SkinForm.LookAndFeel.SkinName = "Office 2013 Light Gray";
+            // 
+            // ribbonPage5
+            // 
+            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup7});
+            this.ribbonPage5.Name = "ribbonPage5";
+            this.ribbonPage5.Text = "Interfaz";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.AllowTextClipping = false;
+            this.ribbonPageGroup7.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.ShowCaptionButton = false;
+            this.ribbonPageGroup7.Text = "Apariencia Aplicación";
+            // 
+            // skinRibbonGalleryBarItem1
+            // 
+            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
+            this.skinRibbonGalleryBarItem1.Id = 14;
+            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
+            // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
+            this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // btn_TipoDomicilio
+            // 
+            this.btn_TipoDomicilio.Caption = "Tipos de Domicilio";
+            this.btn_TipoDomicilio.Id = 15;
+            this.btn_TipoDomicilio.Name = "btn_TipoDomicilio";
+            // 
+            // btn_Maquila
+            // 
+            this.btn_Maquila.Caption = "Maquila";
+            this.btn_Maquila.Id = 16;
+            this.btn_Maquila.Name = "btn_Maquila";
             // 
             // Frm_Principal
             // 
@@ -206,12 +318,19 @@
             this.ClientSize = new System.Drawing.Size(875, 449);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.IsMdiContainer = true;
             this.Name = "Frm_Principal";
             this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Frm_Principal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Principal_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Principal_FormClosed);
+            this.Shown += new System.EventHandler(this.Frm_Principal_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,19 +343,32 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem btn_EmpCorte;
+        private DevExpress.XtraBars.BarButtonItem btn_EmpAcarreo;
+        private DevExpress.XtraBars.BarButtonItem btn_Cosecha;
+        private DevExpress.XtraBars.BarButtonItem btn_Cargas;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem btn_EmpBascula;
+        private DevExpress.XtraBars.BarButtonItem btn_EmpComercializadora;
+        private DevExpress.XtraBars.BarButtonItem btn_Pais;
+        private DevExpress.XtraBars.BarButtonItem btn_Estado;
+        private DevExpress.XtraBars.BarButtonItem btn_Ciudad;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.BarButtonItem btn_Usuario;
+        private DevExpress.XtraBars.BarButtonItem btn_Perfil;
+        private DevExpress.XtraBars.BarButtonItem btn_Permisos;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel SkinForm;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarButtonItem btn_TipoDomicilio;
+        private DevExpress.XtraBars.BarButtonItem btn_Maquila;
     }
 }

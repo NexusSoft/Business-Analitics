@@ -16,7 +16,7 @@ namespace Business_Analitics
              * debe ser utilizada para descifrar 
              * los datos que son cifrados con esta clave.
              * pueden ser los caracteres que uno desee*/
-            key = "Agro_IntelliTrace[2017]";
+            key = "Business_Analitics[2021]";
         }
         public string Encriptar(string texto)
         {

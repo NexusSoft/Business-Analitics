@@ -35,10 +35,10 @@ namespace CapaDeDatos
                 valPass = RegOut.GetSetting("ConexionSQL", "Password");
                 if (valServer != string.Empty && valLogin != string.Empty && valLogin != string.Empty && valPass != string.Empty)
                 {
-                    valServer = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "Server"));
-                    valDB = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "DBase"));
-                    valLogin = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "User"));
-                    valPass = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "Password"));
+                    valServer = DesencriptarTexto.Desencriptar(valServer);
+                    valDB = DesencriptarTexto.Desencriptar(valDB);
+                    valLogin = DesencriptarTexto.Desencriptar(valLogin);
+                    valPass = DesencriptarTexto.Desencriptar(valPass);
                 }
                 else
                 {
