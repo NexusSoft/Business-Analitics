@@ -71,8 +71,8 @@ namespace Business_Analitics
         private void InsertarProveedores()
         {
             CLS_EmpresasBascula Empresas = new CLS_EmpresasBascula();
-            Empresas.Id_Empresa = textId.Text.Trim();
-            Empresas.Nombre_Empresa = textProveedor.Text.Trim();
+            Empresas.Id_EmpresaBascula = textId.Text.Trim();
+            Empresas.Nombre_EmpresaBascula = textProveedor.Text.Trim();
             Empresas.Telefono1 = textTelefono.Text.Trim();
             Empresas.Telefono2 = textTelefono2.Text.Trim();
             Empresas.Email = textCorreo.Text.Trim();
@@ -130,7 +130,7 @@ namespace Business_Analitics
         private void EliminarEmpresas()
         {
             CLS_EmpresasBascula Empresas = new CLS_EmpresasBascula();
-            Empresas.Id_Empresa = textId.Text.Trim();
+            Empresas.Id_EmpresaBascula = textId.Text.Trim();
             Empresas.MtdEliminarEmpresas();
             if (Empresas.Exito)
             {

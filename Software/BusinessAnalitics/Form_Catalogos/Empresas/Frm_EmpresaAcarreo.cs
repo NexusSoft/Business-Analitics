@@ -68,11 +68,11 @@ namespace Business_Analitics
             }
         }
 
-        private void InsertarProveedores()
+        private void InsertarEmpresaAcarreo()
         {
             CLS_EmpresasAcarreo Empresas = new CLS_EmpresasAcarreo();
-            Empresas.Id_Empresa = textId.Text.Trim();
-            Empresas.Nombre_Empresa = textProveedor.Text.Trim();
+            Empresas.Id_EmpresaAcarreo = textId.Text.Trim();
+            Empresas.Nombre_EmpresaAcarreo = textProveedor.Text.Trim();
             Empresas.Telefono1 = textTelefono.Text.Trim();
             Empresas.Telefono2 = textTelefono2.Text.Trim();
             Empresas.Email = textCorreo.Text.Trim();
@@ -130,7 +130,7 @@ namespace Business_Analitics
         private void EliminarEmpresas()
         {
             CLS_EmpresasAcarreo Empresas = new CLS_EmpresasAcarreo();
-            Empresas.Id_Empresa = textId.Text.Trim();
+            Empresas.Id_EmpresaAcarreo = textId.Text.Trim();
             Empresas.MtdEliminarEmpresas();
             if (Empresas.Exito)
             {
@@ -237,7 +237,7 @@ namespace Business_Analitics
             {
                 if (textProveedor.Text.ToString().Trim().Length > 0)
                 {
-                    InsertarProveedores();
+                    InsertarEmpresaAcarreo();
                 }
                 else
                 {

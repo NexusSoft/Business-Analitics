@@ -71,8 +71,8 @@ namespace Business_Analitics
         private void InsertarProveedores()
         {
             CLS_EmpresasComercializadora Empresas = new CLS_EmpresasComercializadora();
-            Empresas.Id_Empresa = textId.Text.Trim();
-            Empresas.Nombre_Empresa = textProveedor.Text.Trim();
+            Empresas.Id_EmpresaComercializacion = textId.Text.Trim();
+            Empresas.Nombre_EmpresaComercializacion = textProveedor.Text.Trim();
             Empresas.Telefono1 = textTelefono.Text.Trim();
             Empresas.Telefono2 = textTelefono2.Text.Trim();
             Empresas.Email = textCorreo.Text.Trim();
@@ -130,7 +130,7 @@ namespace Business_Analitics
         private void EliminarEmpresas()
         {
             CLS_EmpresasComercializadora Empresas = new CLS_EmpresasComercializadora();
-            Empresas.Id_Empresa = textId.Text.Trim();
+            Empresas.Id_EmpresaComercializacion = textId.Text.Trim();
             Empresas.MtdEliminarEmpresas();
             if (Empresas.Exito)
             {

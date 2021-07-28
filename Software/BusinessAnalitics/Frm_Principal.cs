@@ -144,7 +144,35 @@ namespace Business_Analitics
             }
             else
             {
-                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [002]");
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [005]");
+            }
+        }
+
+        private void btn_Ciudad_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("006"))
+            {
+                Frm_Ciudad Ventana = new Frm_Ciudad();
+                Ventana.UsuariosLogin = UsuariosLogin;
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [006]");
+            }
+        }
+
+        private void btn_TipoDomicilio_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("007"))
+            {
+                Frm_Tipo_Domicilio Ventana = new Frm_Tipo_Domicilio();
+                Ventana.UsuariosLogin = UsuariosLogin;
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [007]");
             }
         }
     }

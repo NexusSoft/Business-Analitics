@@ -8,8 +8,8 @@ namespace CapaDeDatos
 {
     public class CLS_EmpresasBascula : ConexionBase
     {
-    public string Id_Empresa { get; set; }
-    public string Nombre_Empresa { get; set; }
+    public string Id_EmpresaBascula { get; set; }
+    public string Nombre_EmpresaBascula { get; set; }
     public string Telefono1 { get; set; }
     public string Telefono2 { get; set; }
     public string Email { get; set; }
@@ -25,7 +25,7 @@ namespace CapaDeDatos
         Exito = true;
         try
         {
-            _conexion.NombreProcedimiento = "SP_Empresa_Select";
+            _conexion.NombreProcedimiento = "SP_Empresa_Bascula_Select";
 
             _conexion.EjecutarDataset();
 
@@ -54,11 +54,11 @@ namespace CapaDeDatos
         Exito = true;
         try
         {
-            _conexion.NombreProcedimiento = "SP_Empresa_Insert";
-            _dato.CadenaTexto = Id_Empresa;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
-            _dato.CadenaTexto = Nombre_Empresa;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Empresa");
+            _conexion.NombreProcedimiento = "SP_Empresa_Bascula_Insert";
+            _dato.CadenaTexto = Id_EmpresaBascula;
+            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaBascula");
+            _dato.CadenaTexto = Nombre_EmpresaBascula;
+            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_EmpresaBascula");
             _dato.CadenaTexto = Telefono1;
             _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono1");
             _dato.CadenaTexto = Telefono2;
@@ -97,9 +97,9 @@ namespace CapaDeDatos
         Exito = true;
         try
         {
-            _conexion.NombreProcedimiento = "SP_Empresa_Delete";
-            _dato.CadenaTexto = Id_Empresa;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empresa");
+            _conexion.NombreProcedimiento = "SP_Empresa_Bascula_Delete";
+            _dato.CadenaTexto = Id_EmpresaBascula;
+            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaBascula");
             _conexion.EjecutarDataset();
 
             if (_conexion.Exito)
