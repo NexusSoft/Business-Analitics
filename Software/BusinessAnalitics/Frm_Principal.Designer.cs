@@ -114,6 +114,7 @@
             this.btn_EmpCorte.Id = 1;
             this.btn_EmpCorte.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EmpCorte.ImageOptions.LargeImage")));
             this.btn_EmpCorte.Name = "btn_EmpCorte";
+            this.btn_EmpCorte.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EmpCorte_ItemClick);
             // 
             // btn_EmpAcarreo
             // 
@@ -121,6 +122,7 @@
             this.btn_EmpAcarreo.Id = 2;
             this.btn_EmpAcarreo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EmpAcarreo.ImageOptions.LargeImage")));
             this.btn_EmpAcarreo.Name = "btn_EmpAcarreo";
+            this.btn_EmpAcarreo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EmpAcarreo_ItemClick);
             // 
             // btn_Cosecha
             // 
@@ -140,6 +142,7 @@
             this.btn_EmpBascula.Id = 6;
             this.btn_EmpBascula.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EmpBascula.ImageOptions.LargeImage")));
             this.btn_EmpBascula.Name = "btn_EmpBascula";
+            this.btn_EmpBascula.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EmpBascula_ItemClick);
             // 
             // btn_EmpComercializadora
             // 
@@ -147,6 +150,7 @@
             this.btn_EmpComercializadora.Id = 7;
             this.btn_EmpComercializadora.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EmpComercializadora.ImageOptions.LargeImage")));
             this.btn_EmpComercializadora.Name = "btn_EmpComercializadora";
+            this.btn_EmpComercializadora.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EmpComercializadora_ItemClick);
             // 
             // btn_Pais
             // 

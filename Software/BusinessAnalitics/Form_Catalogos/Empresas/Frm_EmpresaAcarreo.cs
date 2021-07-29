@@ -18,7 +18,7 @@ namespace Business_Analitics
         public Boolean PaSel { get; set; }
         public string IdProveedor { get; set; }
         public string Proveedor { get; set; }
-        const string idTipoPersona = "0002";
+        const string idTipoPersona = "0001";
         public string UsuariosLogin { get; set; }
 
         private static Frm_EmpresaAcarreo m_FormDefInstance;
@@ -45,26 +45,26 @@ namespace Business_Analitics
 
         private void CargarEmpresas()
         {
-            gridControl1.DataSource = null;
+            dtgEmpAcarreo.DataSource = null;
             CLS_EmpresasAcarreo Empresas = new CLS_EmpresasAcarreo();
 
             Empresas.MtdSeleccionarEmpresas();
             if (Empresas.Exito)
             {
-                gridControl1.DataSource = Empresas.Datos;
+                dtgEmpAcarreo.DataSource = Empresas.Datos;
             }
         }
 
         private void CargarDomicilio()
         {
-            gridControl2.DataSource = null;
+            dtgDomicilio.DataSource = null;
             CLS_Domicilios Domicilio = new CLS_Domicilios();
             Domicilio.Id_Empleado = textId.Text.Trim();
             Domicilio.id_TipoPersona = idTipoPersona;
             Domicilio.MtdSeleccionarDomicilio();
             if (Domicilio.Exito)
             {
-                gridControl2.DataSource = Domicilio.Datos;
+                dtgDomicilio.DataSource = Domicilio.Datos;
             }
         }
 
@@ -83,7 +83,6 @@ namespace Business_Analitics
             Empresas.MtdInsertarEmpresas();
             if (Empresas.Exito)
             {
-
                 CargarEmpresas();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
                 LimpiarCampos();
@@ -113,6 +112,7 @@ namespace Business_Analitics
             Domicilio.Id_TipoDomicilio = textTipoDomicilio.Tag.ToString().Trim();
             Domicilio.Id_Empleado = textId.Text.Trim();
             Domicilio.id_TipoPersona = idTipoPersona;
+            Domicilio.Usuario = UsuariosLogin;
             Domicilio.MtdInsertarDomicilio();
             if (Domicilio.Exito)
             {
@@ -211,11 +211,11 @@ namespace Business_Analitics
         {
             try
             {
-                foreach (int i in this.gridView1.GetSelectedRows())
+                foreach (int i in this.dtgValEmpAcarreo.GetSelectedRows())
                 {
-                    DataRow row = this.gridView1.GetDataRow(i);
-                    textId.Text = row["Id_Empresa"].ToString();
-                    textProveedor.Text = row["Nombre_Empresa"].ToString();
+                    DataRow row = this.dtgValEmpAcarreo.GetDataRow(i);
+                    textId.Text = row["Id_EmpresaAcarreo"].ToString();
+                    textProveedor.Text = row["Nombre_EmpresaAcarreo"].ToString();
                     textTelefono.Text = row["Telefono1"].ToString();
                     textTelefono2.Text = row["Telefono2"].ToString();
                     textCorreo.Text = row["Email"].ToString();
@@ -326,9 +326,9 @@ namespace Business_Analitics
         {
             try
             {
-                foreach (int i in this.gridView2.GetSelectedRows())
+                foreach (int i in this.dtgValDomicilio.GetSelectedRows())
                 {
-                    DataRow row = this.gridView2.GetDataRow(i);
+                    DataRow row = this.dtgValDomicilio.GetDataRow(i);
                     textIdDomicilio.Text = row["Id_Domicilio"].ToString();
                     textCalle.Text = row["Calle"].ToString();
                     textNoInterior.Text = row["NoInterior"].ToString();

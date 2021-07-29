@@ -20,9 +20,9 @@ namespace Business_Analitics
             InitializeComponent();
         }
 
-        public string c_codigo_usu { get; internal set; }
-        public string IdPerfil { get; internal set; }
-        public string UsuariosLogin { get; internal set; }
+        public string c_codigo_usu { get;  set; }
+        public string IdPerfil { get;  set; }
+        public string UsuariosLogin { get;  set; }
         List<string> Lista = new List<string>();
 
         private void CargarAccesos()
@@ -173,6 +173,66 @@ namespace Business_Analitics
             else
             {
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [007]");
+            }
+        }
+
+        private void btn_EmpAcarreo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("008"))
+            {
+                Frm_EmpresaAcarreo Ventana = new Frm_EmpresaAcarreo();
+                Frm_EmpresaAcarreo.DefInstance.MdiParent = this;
+                Frm_EmpresaAcarreo.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_EmpresaAcarreo.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [008]");
+            }
+        }
+
+        private void btn_EmpCorte_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("009"))
+            {
+                Frm_EmpresaCorte Ventana = new Frm_EmpresaCorte();
+                Frm_EmpresaCorte.DefInstance.MdiParent = this;
+                Frm_EmpresaCorte.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_EmpresaCorte.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [009]");
+            }
+        }
+
+        private void btn_EmpBascula_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("010"))
+            {
+                Frm_EmpresaBasculas Ventana = new Frm_EmpresaBasculas();
+                Frm_EmpresaBasculas.DefInstance.MdiParent = this;
+                Frm_EmpresaBasculas.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_EmpresaBasculas.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [010]");
+            }
+        }
+
+        private void btn_EmpComercializadora_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("011"))
+            {
+                Frm_EmpresaComercializadora Ventana= new Frm_EmpresaComercializadora();
+                Frm_EmpresaComercializadora.DefInstance.MdiParent = this;
+                Frm_EmpresaComercializadora.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_EmpresaComercializadora.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [011]");
             }
         }
     }
