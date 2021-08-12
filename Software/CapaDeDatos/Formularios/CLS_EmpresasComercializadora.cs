@@ -97,7 +97,7 @@ namespace CapaDeDatos
         Exito = true;
         try
         {
-            _conexion.NombreProcedimiento = "SP_Empresa_Delete";
+            _conexion.NombreProcedimiento = "SP_Empresa_Comercializacion_Delete";
             _dato.CadenaTexto = Id_EmpresaComercializacion;
             _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaComercializacion");
             _conexion.EjecutarDataset();

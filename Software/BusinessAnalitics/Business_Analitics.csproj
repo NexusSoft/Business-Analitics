@@ -143,6 +143,24 @@
     <Compile Include="Form_Catalogos\Frm_Tipo_Domicilio.Designer.cs">
       <DependentUpon>Frm_Tipo_Domicilio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Control\Frm_Cosecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Control\Frm_Cosecha.Designer.cs">
+      <DependentUpon>Frm_Cosecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Control\Frm_Cargas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Control\Frm_Cargas.Designer.cs">
+      <DependentUpon>Frm_Cargas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Control\Frm_Inventario_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Control\Frm_Inventario_Ventas.Designer.cs">
+      <DependentUpon>Frm_Inventario_Ventas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Seguridad\Frm_CargandoConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +238,15 @@
     <EmbeddedResource Include="Form_Catalogos\Frm_Tipo_Domicilio.resx">
       <DependentUpon>Frm_Tipo_Domicilio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Control\Frm_Cargas.resx">
+      <DependentUpon>Frm_Cargas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Control\Frm_Cosecha.resx">
+      <DependentUpon>Frm_Cosecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Control\Frm_Inventario_Ventas.resx">
+      <DependentUpon>Frm_Inventario_Ventas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Seguridad\Frm_CargandoConsulta.resx">
       <DependentUpon>Frm_CargandoConsulta.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,7 +289,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Form_Control\" />
     <Folder Include="Form_Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

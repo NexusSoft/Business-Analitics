@@ -9,12 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
+using DevExpress.XtraEditors.Mask;
+using System.Globalization;
 
 namespace Business_Analitics
 {
     
     public partial class Frm_EmpresaCorte : DevExpress.XtraEditors.XtraForm
     {
+        public NumberStyles style = NumberStyles.Number | NumberStyles.AllowCurrencySymbol;
+        public CultureInfo culture = CultureInfo.CreateSpecificCulture("es-MX");
         public Boolean PaSel { get; set; }
         public string IdProveedor { get; set; }
         public string Proveedor { get; set; }
@@ -67,7 +71,31 @@ namespace Business_Analitics
                 dtgDomicilio.DataSource = Domicilio.Datos;
             }
         }
-
+        private void CargarServicios()
+        {
+            CLS_EmpresasCorte sel = new CLS_EmpresasCorte();
+            sel.Id_EmpresaCorte = textId.Text.Trim();
+            sel.MtdSeleccionarEmpresasServicios();
+            if (sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    txtMenorakg.Text = sel.Datos.Rows[0]["Menor_a_kg"].ToString();
+                    txtPreciokg.Text = sel.Datos.Rows[0]["Precio_kilo"].ToString();
+                    txtPrecioDia.Text = sel.Datos.Rows[0]["Precio_Dia"].ToString();
+                    txtPrecioCuadrillaA.Text = sel.Datos.Rows[0]["Precio_Cuadrilla_Apoyo"].ToString();
+                    txtPrecioSalidaFalso.Text = sel.Datos.Rows[0]["Precio_Salida_Falso"].ToString();
+                }
+                else
+                {
+                    txtMenorakg.Text = "0";
+                    txtPreciokg.Text = "0";
+                    txtPrecioDia.Text = "0";
+                    txtPrecioCuadrillaA.Text = "0";
+                    txtPrecioSalidaFalso.Text = "0";
+                }
+            }
+        }
         private void InsertarEmpresas()
         {
             CLS_EmpresasCorte Empresas = new CLS_EmpresasCorte();
@@ -78,7 +106,6 @@ namespace Business_Analitics
             Empresas.Email = textCorreo.Text.Trim();
             Empresas.Contacto = textContacto.Text.Trim();
             Empresas.RFC = txtRFC.Text.Trim();
-
             Empresas.Usuario = UsuariosLogin.Trim();
             Empresas.MtdInsertarEmpresas();
             if (Empresas.Exito)
@@ -102,30 +129,68 @@ namespace Business_Analitics
 
         private void InsertarDomicilio()
         {
-            CLS_Domicilios Domicilio = new CLS_Domicilios();
-            Domicilio.Id_Domicilio = textIdDomicilio.Text.Trim();
-            Domicilio.Calle = textCalle.Text.Trim();
-            Domicilio.NoInterior = textNoInterior.Text.Trim();
-            Domicilio.NoExterior = textNoExterior.Text.Trim();
-            Domicilio.Colonia = textColonia.Text.Trim();
-            Domicilio.Codigo_Postal = textCodigoPostal.Text.Trim();
-            Domicilio.Id_Ciudad = txtCiudad.Tag.ToString().Trim();
-            Domicilio.Id_TipoDomicilio = textTipoDomicilio.Tag.ToString().Trim();
-            Domicilio.Id_Empleado = textId.Text.Trim();
-            Domicilio.id_TipoPersona = idTipoPersona;
-            Domicilio.Usuario = UsuariosLogin;
-            Domicilio.MtdInsertarDomicilio();
-            if (Domicilio.Exito)
+            if (txtCiudad.Text != string.Empty && textTipoDomicilio.Text != string.Empty)
             {
+                CLS_Domicilios Domicilio = new CLS_Domicilios();
+                Domicilio.Id_Domicilio = textIdDomicilio.Text.Trim();
+                Domicilio.Calle = textCalle.Text.Trim();
+                Domicilio.NoInterior = textNoInterior.Text.Trim();
+                Domicilio.NoExterior = textNoExterior.Text.Trim();
+                Domicilio.Colonia = textColonia.Text.Trim();
+                Domicilio.Codigo_Postal = textCodigoPostal.Text.Trim();
+                Domicilio.Id_Ciudad = txtCiudad.Tag.ToString().Trim();
+                Domicilio.Id_TipoDomicilio = textTipoDomicilio.Tag.ToString().Trim();
+                Domicilio.Id_Empleado = textId.Text.Trim();
+                Domicilio.id_TipoPersona = idTipoPersona;
+                Domicilio.Usuario = UsuariosLogin;
+                Domicilio.MtdInsertarDomicilio();
+                if (Domicilio.Exito)
+                {
 
-                CargarDomicilio();
-                XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                LimpiarCamposDomicilio();
+                    CargarDomicilio();
+                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                    LimpiarCamposDomicilio();
+                }
+                else
+                {
+                    XtraMessageBox.Show(Domicilio.Mensaje);
+                }
             }
             else
             {
-                XtraMessageBox.Show(Domicilio.Mensaje);
+                XtraMessageBox.Show("Faltan datos por completar Ciudad o Tipo de Domicilio");
             }
+        }
+        private void InsertarServicios()
+        {
+            CLS_EmpresasCorte ins = new CLS_EmpresasCorte();
+            ins.Id_EmpresaCorte = textId.Text.Trim();
+            decimal Menor_a_kg = 0;
+            decimal.TryParse(txtMenorakg.Text, style, culture, out Menor_a_kg);
+            ins.Menor_a_kg = Menor_a_kg;
+            decimal Precio_kilo = 0;
+            decimal.TryParse(txtPreciokg.Text, style, culture, out Precio_kilo);
+            ins.Precio_kilo = Precio_kilo;
+            decimal Precio_Dia = 0;
+            decimal.TryParse(txtPrecioDia.Text, style, culture, out Precio_Dia);
+            ins.Precio_Dia = Precio_Dia;
+            decimal Precio_Cuadrilla_Apoyo = 0;
+            decimal.TryParse(txtPrecioCuadrillaA.Text, style, culture, out Precio_Cuadrilla_Apoyo);
+            ins.Precio_Cuadrilla_Apoyo = Precio_Cuadrilla_Apoyo;
+            decimal Precio_Salida_Falso = 0;
+            decimal.TryParse(txtPrecioSalidaFalso.Text, style, culture, out Precio_Salida_Falso);
+            ins.Precio_Salida_Falso = Precio_Salida_Falso;
+            ins.Usuario = UsuariosLogin;
+            ins.MtdInsertarEmpresasServicios();
+            if (ins.Exito)
+            {
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+            }
+            else
+            {
+                XtraMessageBox.Show(ins.Mensaje);
+            }
+
         }
 
         private void EliminarEmpresas()
@@ -136,9 +201,12 @@ namespace Business_Analitics
             if (Empresas.Exito)
             {
                 EliminarDomicilioPersona();
+                EliminarServicios();
                 CargarEmpresas();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 LimpiarCampos();
+                LimpiarCamposDomicilio();
+                LimpiarCamposServicios();
             }
             else
             {
@@ -162,7 +230,22 @@ namespace Business_Analitics
                 XtraMessageBox.Show(Domicilio.Mensaje);
             }
         }
-
+        private void EliminarServicios()
+        {
+            CLS_EmpresasCorte del = new CLS_EmpresasCorte();
+            del.Id_EmpresaCorte = textId.Text.Trim();
+            del.MtdEliminarEmpresasServicios();
+            if (del.Exito)
+            {
+                CargarServicios();
+                
+                LimpiarCamposDomicilio();
+            }
+            else
+            {
+                XtraMessageBox.Show(del.Mensaje);
+            }
+        }
         private void EliminarDomicilioPersona()
         {
             CLS_Domicilios Domicilio = new CLS_Domicilios();
@@ -172,7 +255,6 @@ namespace Business_Analitics
             if (Domicilio.Exito)
             {
                 CargarDomicilio();
-
                 LimpiarCamposDomicilio();
             }
             else
@@ -207,7 +289,14 @@ namespace Business_Analitics
             textTipoDomicilio.Tag = "";
             textTipoDomicilio.Text = "";
         }
-
+        private void LimpiarCamposServicios()
+        {
+            txtMenorakg.Text = "0";
+            txtPreciokg.Text = "0";
+            txtPrecioDia.Text = "0";
+            txtPrecioCuadrillaA.Text = "0";
+            txtPrecioSalidaFalso.Tag = "0";
+        }
         private void gridControl1_Click(object sender, EventArgs e)
         {
             try
@@ -230,6 +319,7 @@ namespace Business_Analitics
             }
 
             CargarDomicilio();
+            CargarServicios();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -245,7 +335,7 @@ namespace Business_Analitics
                     XtraMessageBox.Show("Es necesario Agregar un nombre a la Empresa.");
                 }
             }
-            else
+            else if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
             {
                 if (textCalle.Text.ToString().Trim().Length > 0)
                 {
@@ -263,29 +353,44 @@ namespace Business_Analitics
                     XtraMessageBox.Show("Es necesario Agregar una calle.");
                 }
             }
+            else
+            {
+                InsertarServicios();
+            }
         }
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el dato seleccionado?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
             {
-                if (textId.Text.Trim().Length > 0)
+                if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
                 {
-                    EliminarEmpresas();
+                    if (textId.Text.Trim().Length > 0)
+                    {
+
+                        EliminarEmpresas();
+
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Es necesario seleccionar una Empresa.");
+                    }
+                }
+                else if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
+                {
+                    if (textIdDomicilio.Text.Trim().Length > 0)
+                    {
+                        EliminarDomicilio();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Es necesario seleccionar un Domicilio.");
+                    }
                 }
                 else
                 {
-                    XtraMessageBox.Show("Es necesario seleccionar una Empresa.");
-                }
-            }
-            else
-            {
-                if (textIdDomicilio.Text.Trim().Length > 0)
-                {
-                    EliminarDomicilio();
-                }
-                else
-                {
-                    XtraMessageBox.Show("Es necesario seleccionar un Domicilio.");
+                    EliminarServicios();
+                    XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                 }
             }
         }
@@ -295,10 +400,15 @@ namespace Business_Analitics
             {
                 LimpiarCampos();
                 LimpiarCamposDomicilio();
+                LimpiarCamposServicios();
+            }
+            else if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
+            {
+                LimpiarCamposDomicilio();
             }
             else
             {
-                LimpiarCamposDomicilio();
+                LimpiarCamposServicios();
             }
         }
 
@@ -319,6 +429,7 @@ namespace Business_Analitics
             }
             CargarEmpresas();
             CargarDomicilio();
+            CargarServicios();
             iniciarTags();
             LimpiarCampos();
         }
@@ -379,10 +490,12 @@ namespace Business_Analitics
             if (textId.Text == String.Empty)
             {
                 xtraTabPage2.PageEnabled = false;
+                xtraTabPage3.PageEnabled = false;
             }
             else
             {
                 xtraTabPage2.PageEnabled = true;
+                xtraTabPage3.PageEnabled = true;
             }
         }
 
@@ -391,6 +504,25 @@ namespace Business_Analitics
             IdProveedor = textId.Text.Trim();
             Proveedor = textProveedor.Text.Trim();
             this.Close();
+        }
+
+        private void Frm_EmpresaCorte_Shown(object sender, EventArgs e)
+        {
+            txtMenorakg.Properties.Mask.MaskType = MaskType.Numeric;
+            txtMenorakg.Properties.Mask.EditMask = "n2";
+            txtMenorakg.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtPreciokg.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPreciokg.Properties.Mask.EditMask = "c2";
+            txtPreciokg.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtPrecioDia.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPrecioDia.Properties.Mask.EditMask = "c2";
+            txtPrecioDia.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtPrecioCuadrillaA.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPrecioCuadrillaA.Properties.Mask.EditMask = "c2";
+            txtPrecioCuadrillaA.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtPrecioSalidaFalso.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPrecioSalidaFalso.Properties.Mask.EditMask = "c2";
+            txtPrecioSalidaFalso.Properties.Mask.UseMaskAsDisplayFormat = true;
         }
     }
 }

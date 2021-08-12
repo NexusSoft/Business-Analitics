@@ -122,13 +122,17 @@ namespace Business_Analitics
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textId.Text.Trim().Length > 0)
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el dato seleccionado?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
             {
-                EliminarDomicilio();
-            }
-            else
-            {
-                XtraMessageBox.Show("Es necesario seleccionar una licencia.");
+                if (textId.Text.Trim().Length > 0)
+                {
+                    EliminarDomicilio();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario seleccionar una licencia.");
+                }
             }
         }
 

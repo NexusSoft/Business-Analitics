@@ -130,13 +130,17 @@ namespace Business_Analitics
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textId.Text.Trim().Length > 0 && textNombre.Text.ToString().Trim().Length > 0)
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el dato seleccionado?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
             {
-                EliminarPais();
-            }
-            else
-            {
-                XtraMessageBox.Show("Es necesario seleccionar un pais.");
+                if (textId.Text.Trim().Length > 0 && textNombre.Text.ToString().Trim().Length > 0)
+                {
+                    EliminarPais();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario seleccionar un pais.");
+                }
             }
         }
 

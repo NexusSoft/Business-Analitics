@@ -101,29 +101,36 @@ namespace Business_Analitics
 
         private void InsertarDomicilio()
         {
-            CLS_Domicilios Domicilio = new CLS_Domicilios();
-            Domicilio.Id_Domicilio = textIdDomicilio.Text.Trim();
-            Domicilio.Calle = textCalle.Text.Trim();
-            Domicilio.NoInterior = textNoInterior.Text.Trim();
-            Domicilio.NoExterior = textNoExterior.Text.Trim();
-            Domicilio.Colonia = textColonia.Text.Trim();
-            Domicilio.Codigo_Postal = textCodigoPostal.Text.Trim();
-            Domicilio.Id_Ciudad = txtCiudad.Tag.ToString().Trim();
-            Domicilio.Id_TipoDomicilio = textTipoDomicilio.Tag.ToString().Trim();
-            Domicilio.Id_Empleado = textId.Text.Trim();
-            Domicilio.id_TipoPersona = idTipoPersona;
-            Domicilio.Usuario = UsuariosLogin;
-            Domicilio.MtdInsertarDomicilio();
-            if (Domicilio.Exito)
+            if (txtCiudad.Text != string.Empty && textTipoDomicilio.Text != string.Empty)
             {
+                CLS_Domicilios Domicilio = new CLS_Domicilios();
+                Domicilio.Id_Domicilio = textIdDomicilio.Text.Trim();
+                Domicilio.Calle = textCalle.Text.Trim();
+                Domicilio.NoInterior = textNoInterior.Text.Trim();
+                Domicilio.NoExterior = textNoExterior.Text.Trim();
+                Domicilio.Colonia = textColonia.Text.Trim();
+                Domicilio.Codigo_Postal = textCodigoPostal.Text.Trim();
+                Domicilio.Id_Ciudad = txtCiudad.Tag.ToString().Trim();
+                Domicilio.Id_TipoDomicilio = textTipoDomicilio.Tag.ToString().Trim();
+                Domicilio.Id_Empleado = textId.Text.Trim();
+                Domicilio.id_TipoPersona = idTipoPersona;
+                Domicilio.Usuario = UsuariosLogin;
+                Domicilio.MtdInsertarDomicilio();
+                if (Domicilio.Exito)
+                {
 
-                CargarDomicilio();
-                XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                LimpiarCamposDomicilio();
+                    CargarDomicilio();
+                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                    LimpiarCamposDomicilio();
+                }
+                else
+                {
+                    XtraMessageBox.Show(Domicilio.Mensaje);
+                }
             }
             else
             {
-                XtraMessageBox.Show(Domicilio.Mensaje);
+                XtraMessageBox.Show("Faltan datos por completar Ciudad o Tipo de Domicilio");
             }
         }
 
@@ -265,26 +272,30 @@ namespace Business_Analitics
         }
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el dato seleccionado?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
             {
-                if (textId.Text.Trim().Length > 0)
+                if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
                 {
-                    EliminarEmpresas();
+                    if (textId.Text.Trim().Length > 0)
+                    {
+                        EliminarEmpresas();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Es necesario seleccionar una Empresa.");
+                    }
                 }
                 else
                 {
-                    XtraMessageBox.Show("Es necesario seleccionar una Empresa.");
-                }
-            }
-            else
-            {
-                if (textIdDomicilio.Text.Trim().Length > 0)
-                {
-                    EliminarDomicilio();
-                }
-                else
-                {
-                    XtraMessageBox.Show("Es necesario seleccionar un Domicilio.");
+                    if (textIdDomicilio.Text.Trim().Length > 0)
+                    {
+                        EliminarDomicilio();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Es necesario seleccionar un Domicilio.");
+                    }
                 }
             }
         }

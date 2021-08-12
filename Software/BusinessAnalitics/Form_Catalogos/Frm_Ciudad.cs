@@ -142,13 +142,17 @@ namespace Business_Analitics
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textId.Text.Trim().Length > 0)
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el dato seleccionado?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
             {
-                EliminarCiudad();
-            }
-            else
-            {
-                XtraMessageBox.Show("Es necesario seleccionar una ciudad.");
+                if (textId.Text.Trim().Length > 0)
+                {
+                    EliminarCiudad();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario seleccionar una ciudad.");
+                }
             }
         }
 

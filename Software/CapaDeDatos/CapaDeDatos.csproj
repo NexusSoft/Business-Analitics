@@ -55,6 +55,10 @@
     <Compile Include="Formularios\CLS_EmpresasBascula.cs" />
     <Compile Include="Formularios\CLS_EmpresasComercializadora.cs" />
     <Compile Include="Formularios\CLS_Estado.cs" />
+    <Compile Include="Formularios\CLS_Categoria.cs" />
+    <Compile Include="Formularios\CLS_Inventario_Ventas.cs" />
+    <Compile Include="Formularios\CLS_Tamanio.cs" />
+    <Compile Include="Formularios\CLS_Tratamiento.cs" />
     <Compile Include="Formularios\CLS_Pais.cs" />
     <Compile Include="Seguridad\CLS_Pantallas.cs" />
     <Compile Include="Seguridad\CLS_Perfiles.cs" />
