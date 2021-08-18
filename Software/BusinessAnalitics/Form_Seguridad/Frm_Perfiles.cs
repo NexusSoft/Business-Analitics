@@ -117,8 +117,6 @@ namespace Business_Analitics
         {
             if (textNombre.Text.ToString().Trim().Length > 0)
             {
-
-
                 InsertarPerfiles();
             }
             else

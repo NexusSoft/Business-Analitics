@@ -46,6 +46,13 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.dtgPais_Inventario = new DevExpress.XtraGrid.GridControl();
+            this.dtgValPais_Inventario = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.dtgTamanio = new DevExpress.XtraGrid.GridControl();
             this.dtgValTamanio = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -81,17 +88,23 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmb_EditCategoria = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPais_Inventario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValPais_Inventario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTamanio)).BeginInit();
@@ -112,7 +125,8 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Inventario_Ventas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgVal_Inventario_Ventas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_EditCategoria)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -224,15 +238,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1022, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1159, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 425);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 474);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1022, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1159, 25);
             // 
             // barDockControlLeft
             // 
@@ -240,15 +254,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 425);
+            this.barDockControlLeft.Size = new System.Drawing.Size(56, 474);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1022, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1159, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 425);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 474);
             // 
             // btnSeleccionar
             // 
@@ -271,20 +285,97 @@
             this.panelControl1.Location = new System.Drawing.Point(56, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(966, 289);
+            this.panelControl1.Size = new System.Drawing.Size(1103, 289);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.panelControl5);
             this.groupControl1.Controls.Add(this.panelControl4);
             this.groupControl1.Controls.Add(this.panelControl3);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl1.Size = new System.Drawing.Size(942, 265);
+            this.groupControl1.Size = new System.Drawing.Size(1079, 265);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos";
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.Controls.Add(this.dtgPais_Inventario);
+            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl5.Location = new System.Drawing.Point(702, 25);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl5.Size = new System.Drawing.Size(382, 233);
+            this.panelControl5.TabIndex = 18;
+            // 
+            // dtgPais_Inventario
+            // 
+            this.dtgPais_Inventario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgPais_Inventario.Location = new System.Drawing.Point(7, 7);
+            this.dtgPais_Inventario.MainView = this.dtgValPais_Inventario;
+            this.dtgPais_Inventario.MenuManager = this.barManager1;
+            this.dtgPais_Inventario.Name = "dtgPais_Inventario";
+            this.dtgPais_Inventario.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTextEdit3});
+            this.dtgPais_Inventario.Size = new System.Drawing.Size(368, 219);
+            this.dtgPais_Inventario.TabIndex = 0;
+            this.dtgPais_Inventario.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValPais_Inventario});
+            // 
+            // dtgValPais_Inventario
+            // 
+            this.dtgValPais_Inventario.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn16,
+            this.gridColumn17,
+            this.gridColumn18});
+            this.dtgValPais_Inventario.GridControl = this.dtgPais_Inventario;
+            this.dtgValPais_Inventario.Name = "dtgValPais_Inventario";
+            this.dtgValPais_Inventario.OptionsView.ShowFooter = true;
+            this.dtgValPais_Inventario.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "Pais";
+            this.gridColumn16.FieldName = "Nombre_Pais";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.OptionsColumn.AllowEdit = false;
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 0;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "Inventario";
+            this.gridColumn17.DisplayFormat.FormatString = "n0";
+            this.gridColumn17.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn17.FieldName = "Inventario";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.OptionsColumn.AllowEdit = false;
+            this.gridColumn17.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Inventario", "SUMA={0:n0}")});
+            this.gridColumn17.Visible = true;
+            this.gridColumn17.VisibleIndex = 1;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Ventas";
+            this.gridColumn18.ColumnEdit = this.repositoryItemTextEdit3;
+            this.gridColumn18.DisplayFormat.FormatString = "c0";
+            this.gridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn18.FieldName = "Ventas";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.OptionsColumn.AllowEdit = false;
+            this.gridColumn18.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Ventas", "SUMA={0:c0}")});
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 2;
+            // 
+            // repositoryItemTextEdit3
+            // 
+            this.repositoryItemTextEdit3.AutoHeight = false;
+            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
             // 
             // panelControl4
             // 
@@ -309,6 +400,7 @@
             this.dtgTamanio.TabIndex = 0;
             this.dtgTamanio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValTamanio});
+            this.dtgTamanio.EditorKeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgTamanio_EditorKeyDown);
             // 
             // dtgValTamanio
             // 
@@ -328,8 +420,6 @@
             this.gridColumn12.FieldName = "Id_Tamanio";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.AllowEdit = false;
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 0;
             // 
             // gridColumn13
             // 
@@ -338,18 +428,20 @@
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 1;
+            this.gridColumn13.VisibleIndex = 0;
             // 
             // gridColumn14
             // 
             this.gridColumn14.Caption = "Inventario";
             this.gridColumn14.ColumnEdit = this.repositoryItemTextEdit2;
-            this.gridColumn14.DisplayFormat.FormatString = "n2";
+            this.gridColumn14.DisplayFormat.FormatString = "n0";
             this.gridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn14.FieldName = "Inventario";
             this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Inventario", "SUMA={0:n0}")});
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 2;
+            this.gridColumn14.VisibleIndex = 1;
             // 
             // repositoryItemTextEdit2
             // 
@@ -359,12 +451,14 @@
             // gridColumn15
             // 
             this.gridColumn15.Caption = "Ventas";
-            this.gridColumn15.DisplayFormat.FormatString = "{0:c2}";
+            this.gridColumn15.DisplayFormat.FormatString = "{0:c0}";
             this.gridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn15.FieldName = "Ventas";
             this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Ventas", "SUMA={0:c0}")});
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 3;
+            this.gridColumn15.VisibleIndex = 2;
             // 
             // panelControl3
             // 
@@ -397,7 +491,9 @@
             this.textId.Enabled = false;
             this.textId.Location = new System.Drawing.Point(93, 40);
             this.textId.Name = "textId";
-            this.textId.Size = new System.Drawing.Size(100, 20);
+            this.textId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textId.Properties.Appearance.Options.UseFont = true;
+            this.textId.Size = new System.Drawing.Size(100, 22);
             this.textId.TabIndex = 15;
             // 
             // labelControl1
@@ -437,10 +533,12 @@
             this.cmb_Pais.Location = new System.Drawing.Point(93, 92);
             this.cmb_Pais.MenuManager = this.barManager1;
             this.cmb_Pais.Name = "cmb_Pais";
+            this.cmb_Pais.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Pais.Properties.Appearance.Options.UseFont = true;
             this.cmb_Pais.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmb_Pais.Properties.PopupView = this.gridLookUpEdit1View;
-            this.cmb_Pais.Size = new System.Drawing.Size(181, 20);
+            this.cmb_Pais.Size = new System.Drawing.Size(181, 22);
             this.cmb_Pais.TabIndex = 5;
             // 
             // gridLookUpEdit1View
@@ -465,10 +563,12 @@
             this.cmb_Tratamiento.Location = new System.Drawing.Point(93, 118);
             this.cmb_Tratamiento.MenuManager = this.barManager1;
             this.cmb_Tratamiento.Name = "cmb_Tratamiento";
+            this.cmb_Tratamiento.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Tratamiento.Properties.Appearance.Options.UseFont = true;
             this.cmb_Tratamiento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmb_Tratamiento.Properties.PopupView = this.gridView2;
-            this.cmb_Tratamiento.Size = new System.Drawing.Size(181, 20);
+            this.cmb_Tratamiento.Size = new System.Drawing.Size(181, 22);
             this.cmb_Tratamiento.TabIndex = 6;
             // 
             // gridView2
@@ -494,11 +594,13 @@
             this.dtFecha.Location = new System.Drawing.Point(93, 66);
             this.dtFecha.MenuManager = this.barManager1;
             this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFecha.Properties.Appearance.Options.UseFont = true;
             this.dtFecha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtFecha.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtFecha.Size = new System.Drawing.Size(181, 20);
+            this.dtFecha.Size = new System.Drawing.Size(181, 22);
             this.dtFecha.TabIndex = 9;
             this.dtFecha.EditValueChanged += new System.EventHandler(this.dtFecha_EditValueChanged);
             // 
@@ -507,10 +609,12 @@
             this.cmb_Categoria.Location = new System.Drawing.Point(93, 144);
             this.cmb_Categoria.MenuManager = this.barManager1;
             this.cmb_Categoria.Name = "cmb_Categoria";
+            this.cmb_Categoria.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_Categoria.Properties.Appearance.Options.UseFont = true;
             this.cmb_Categoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmb_Categoria.Properties.PopupView = this.gridView3;
-            this.cmb_Categoria.Size = new System.Drawing.Size(181, 20);
+            this.cmb_Categoria.Size = new System.Drawing.Size(181, 22);
             this.cmb_Categoria.TabIndex = 7;
             // 
             // gridView3
@@ -537,7 +641,7 @@
             this.panelControl2.Location = new System.Drawing.Point(56, 289);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(966, 136);
+            this.panelControl2.Size = new System.Drawing.Size(1103, 185);
             this.panelControl2.TabIndex = 5;
             // 
             // dtg_Inventario_Ventas
@@ -547,7 +651,9 @@
             this.dtg_Inventario_Ventas.MainView = this.dtgVal_Inventario_Ventas;
             this.dtg_Inventario_Ventas.MenuManager = this.barManager1;
             this.dtg_Inventario_Ventas.Name = "dtg_Inventario_Ventas";
-            this.dtg_Inventario_Ventas.Size = new System.Drawing.Size(942, 112);
+            this.dtg_Inventario_Ventas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmb_EditCategoria});
+            this.dtg_Inventario_Ventas.Size = new System.Drawing.Size(1079, 161);
             this.dtg_Inventario_Ventas.TabIndex = 0;
             this.dtg_Inventario_Ventas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgVal_Inventario_Ventas});
@@ -569,6 +675,7 @@
             this.gridColumn11});
             this.dtgVal_Inventario_Ventas.GridControl = this.dtg_Inventario_Ventas;
             this.dtgVal_Inventario_Ventas.Name = "dtgVal_Inventario_Ventas";
+            this.dtgVal_Inventario_Ventas.OptionsFind.AlwaysVisible = true;
             this.dtgVal_Inventario_Ventas.OptionsView.ShowFooter = true;
             this.dtgVal_Inventario_Ventas.OptionsView.ShowGroupPanel = false;
             // 
@@ -625,9 +732,23 @@
             this.gridColumn7.Caption = "Categoria";
             this.gridColumn7.FieldName = "Nombre_Categoria";
             this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
+            // 
+            // cmb_EditCategoria
+            // 
+            this.cmb_EditCategoria.AutoHeight = false;
+            this.cmb_EditCategoria.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_EditCategoria.Name = "cmb_EditCategoria";
+            this.cmb_EditCategoria.PopupView = this.repositoryItemGridLookUpEdit1View;
+            // 
+            // repositoryItemGridLookUpEdit1View
+            // 
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn8
             // 
@@ -671,7 +792,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 450);
+            this.ClientSize = new System.Drawing.Size(1159, 499);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -687,6 +808,11 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPais_Inventario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValPais_Inventario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgTamanio)).EndInit();
@@ -708,7 +834,8 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Inventario_Ventas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgVal_Inventario_Ventas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_EditCategoria)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -770,7 +897,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
+        private DevExpress.XtraEditors.PanelControl panelControl5;
+        private DevExpress.XtraGrid.GridControl dtgPais_Inventario;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValPais_Inventario;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit cmb_EditCategoria;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
     }
 }

@@ -250,5 +250,20 @@ namespace Business_Analitics
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [012]");
             }
         }
+
+        private void btnReportInventario_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("013"))
+            {
+                Frm_ReportInventarios Ventana = new Frm_ReportInventarios();
+                Frm_ReportInventarios.DefInstance.MdiParent = this;
+                Frm_ReportInventarios.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_ReportInventarios.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [013]");
+            }
+        }
     }
 }

@@ -56,6 +56,7 @@
     <Compile Include="Formularios\CLS_EmpresasComercializadora.cs" />
     <Compile Include="Formularios\CLS_Estado.cs" />
     <Compile Include="Formularios\CLS_Categoria.cs" />
+    <Compile Include="Formularios\CLS_Reporte_Inventario_Ventas.cs" />
     <Compile Include="Formularios\CLS_Inventario_Ventas.cs" />
     <Compile Include="Formularios\CLS_Tamanio.cs" />
     <Compile Include="Formularios\CLS_Tratamiento.cs" />

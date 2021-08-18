@@ -48,6 +48,7 @@
             this.btn_TipoDomicilio = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Maquila = new DevExpress.XtraBars.BarButtonItem();
             this.btn_inventario_ventas = new DevExpress.XtraBars.BarButtonItem();
+            this.btnReportInventario = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -90,9 +91,10 @@
             this.skinRibbonGalleryBarItem1,
             this.btn_TipoDomicilio,
             this.btn_Maquila,
-            this.btn_inventario_ventas});
+            this.btn_inventario_ventas,
+            this.btnReportInventario});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 18;
+            this.ribbon.MaxItemId = 19;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -226,10 +228,19 @@
             // 
             this.btn_inventario_ventas.Caption = "Inventario / Ventas";
             this.btn_inventario_ventas.Id = 17;
-            this.btn_inventario_ventas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btn_inventario_ventas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btn_inventario_ventas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_inventario_ventas.ImageOptions.Image")));
+            this.btn_inventario_ventas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_inventario_ventas.ImageOptions.LargeImage")));
             this.btn_inventario_ventas.Name = "btn_inventario_ventas";
             this.btn_inventario_ventas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_inventario_ventas_ItemClick);
+            // 
+            // btnReportInventario
+            // 
+            this.btnReportInventario.Caption = "Inventarios";
+            this.btnReportInventario.Id = 18;
+            this.btnReportInventario.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReportInventario.ImageOptions.Image")));
+            this.btnReportInventario.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReportInventario.ImageOptions.LargeImage")));
+            this.btnReportInventario.Name = "btnReportInventario";
+            this.btnReportInventario.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReportInventario_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -306,6 +317,7 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.AllowTextClipping = false;
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnReportInventario);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.ShowCaptionButton = false;
             this.ribbonPageGroup3.Text = "Reportes";
@@ -407,5 +419,6 @@
         private DevExpress.XtraBars.BarButtonItem btn_TipoDomicilio;
         private DevExpress.XtraBars.BarButtonItem btn_Maquila;
         private DevExpress.XtraBars.BarButtonItem btn_inventario_ventas;
+        private DevExpress.XtraBars.BarButtonItem btnReportInventario;
     }
 }

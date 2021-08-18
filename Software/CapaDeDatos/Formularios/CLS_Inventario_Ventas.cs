@@ -103,7 +103,7 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Inventario_Ventas_Delete";
-                _dato.CadenaTexto = Id_Tamanio;
+                _dato.CadenaTexto = Id_Registro;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Registro");
                 _conexion.EjecutarDataset();
 

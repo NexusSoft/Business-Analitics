@@ -38,18 +38,21 @@
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v17.2" />
     <Reference Include="DevExpress.Data.v17.2" />
+    <Reference Include="DevExpress.Dialogs.v17.2.Core, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.2" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core" />
     <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.XtraBars.v17.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraDialogs.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.2" />
     <Reference Include="DevExpress.Printing.v17.2.Core" />
     <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DevExpress 17.2\Components\Bin\Framework\DevExpress.XtraGrid.v17.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.11.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="itextsharp, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\itextsharp.dll</HintPath>
@@ -161,6 +164,12 @@
     <Compile Include="Form_Control\Frm_Inventario_Ventas.Designer.cs">
       <DependentUpon>Frm_Inventario_Ventas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Reportes\Frm_ReportInventarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Reportes\Frm_ReportInventarios.Designer.cs">
+      <DependentUpon>Frm_ReportInventarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Seguridad\Frm_CargandoConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +256,9 @@
     <EmbeddedResource Include="Form_Control\Frm_Inventario_Ventas.resx">
       <DependentUpon>Frm_Inventario_Ventas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Reportes\Frm_ReportInventarios.resx">
+      <DependentUpon>Frm_ReportInventarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Seguridad\Frm_CargandoConsulta.resx">
       <DependentUpon>Frm_CargandoConsulta.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,9 +300,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Form_Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

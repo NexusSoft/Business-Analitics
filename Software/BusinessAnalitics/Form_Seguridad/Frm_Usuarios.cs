@@ -223,6 +223,7 @@ namespace Business_Analitics
         {
             Frm_Perfiles frm = new Frm_Perfiles();
             frm.PaSel = true;
+            frm.UsuariosLogin = UsuariosLogin;
             frm.ShowDialog();
             CargarPerfiles(null);
         }

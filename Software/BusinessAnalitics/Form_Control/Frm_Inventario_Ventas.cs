@@ -120,6 +120,15 @@ namespace Business_Analitics
                 cmb_Categoria.EditValue = Valor;
                 cmb_Categoria.Properties.DataSource = Clase.Datos;
             }
+            //CLS_Categoria Clase2 = new CLS_Categoria();
+            //Clase2.MtdSeleccionarCategoria();
+            //if (Clase2.Exito)
+            //{
+            //    cmb_EditCategoria.DisplayMember = "Nombre_Categoria";
+            //    cmb_EditCategoria.ValueMember = "Id_Categoria";
+            //    //repositoryItemGridLookUpEdit1.e = Valor;
+            //    cmb_EditCategoria.DataSource = Clase2.Datos;
+            //}
         }
         public void CargarInventario_Ventas()
         {
@@ -129,6 +138,16 @@ namespace Business_Analitics
             if (Clase.Exito)
             {
                 dtg_Inventario_Ventas.DataSource = Clase.Datos;
+            }
+        }
+        public void CargarTotalesPais()
+        {
+            CLS_Pais Clase = new CLS_Pais();
+            Clase.Fecha = dtFecha.DateTime.Year.ToString() + DosCeros(dtFecha.DateTime.Month.ToString()) + DosCeros(dtFecha.DateTime.Day.ToString());
+            Clase.MtdSeleccionarPaisInventario();
+            if (Clase.Exito)
+            {
+                dtgPais_Inventario.DataSource = Clase.Datos;
             }
         }
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -187,6 +206,11 @@ namespace Business_Analitics
             gridColumn14.DisplayFormat.FormatString = "n0";
             gridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             gridColumn15.DisplayFormat.FormatString = "c0";
+
+            gridColumn17.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            gridColumn17.DisplayFormat.FormatString = "n0";
+            gridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            gridColumn18.DisplayFormat.FormatString = "c0";
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -220,64 +244,18 @@ namespace Business_Analitics
                 {
                     XtraMessageBox.Show(Ins.Mensaje);
                     break;
-                    
                 }
             }
             if(Ins.Exito)
             {
                 CargarTamanio();
                 CargarInventario_Ventas();
+                CargarTotalesPais();
+                textId.Text = string.Empty;
                 XtraMessageBox.Show("Se ha insertado los registros con exito");
             }
         }
-        //private void GuardarNPrecios()
-        //{
-        //    Costeo artprecio = new Costeo();
-        //    artprecio.ArticuloCodigo = txtCodigo.Text.Trim();
-        //    artprecio.PreciosUltimoDetallesIde = dtgValPrecios.RowCount;
-        //    artprecio.MtdInsertarPrecios();
-        //    if (artprecio.Exito)
-        //    {
-        //        if (artprecio.Datos.Rows.Count > 0)
-        //        {
-        //            int vPreciosId = Convert.ToInt32(artprecio.Datos.Rows[0][0].ToString());
-        //            int x = 1;
-        //            for (int i = 0; i < dtgValPrecios.DataRowCount; i++)
-        //            {
-        //                Costeo artprecioUp = new Costeo();
-        //                artprecioUp.PreciosId = vPreciosId;
-        //                artprecioUp.PreciosDetallesIde = x;
-        //                artprecioUp.TarifaId = Convert.ToInt32(dtgValPrecios.GetRowCellValue(i, dtgValPrecios.Columns["TarifaId"]).ToString());
-        //                decimal vDetallesPreciosVentaImporte = 0;
-        //                Decimal.TryParse(dtgValPrecios.GetRowCellValue(i, dtgValPrecios.Columns["DetallesPreciosVentaImporte"]).ToString(), style, culture, out vDetallesPreciosVentaImporte);
-        //                artprecioUp.DetallesPreciosVentaImporte = vDetallesPreciosVentaImporte;
-        //                decimal vDetallesPreciosVenta = 0;
-        //                Decimal.TryParse(dtgValPrecios.GetRowCellValue(i, dtgValPrecios.Columns["DetallesPreciosVenta"]).ToString(), style, culture, out vDetallesPreciosVenta);
-        //                artprecioUp.DetallesPreciosVenta = vDetallesPreciosVenta;
-        //                decimal vDetallesPreciosUtilidad = 0;
-        //                Decimal.TryParse(dtgValPrecios.GetRowCellValue(i, dtgValPrecios.Columns["DetallesPreciosUtilidad"]).ToString(), style, culture, out vDetallesPreciosUtilidad);
-        //                artprecioUp.DetallesPreciosUtilidad = vDetallesPreciosUtilidad;
-        //                decimal vDetallesPreciosUMarginal = 0;
-        //                Decimal.TryParse(dtgValPrecios.GetRowCellValue(i, dtgValPrecios.Columns["DetallesPreciosUMarginal"]).ToString(), style, culture, out vDetallesPreciosUMarginal);
-        //                artprecioUp.DetallesPreciosUMarginal = vDetallesPreciosUMarginal;
-        //                decimal vDetallesPreciosMinimo = 0;
-        //                Decimal.TryParse(dtgValPrecios.GetRowCellValue(i, dtgValPrecios.Columns["DetallesPreciosMinimo"]).ToString(), style, culture, out vDetallesPreciosMinimo);
-        //                artprecioUp.DetallesPreciosMinimo = vDetallesPreciosMinimo;
-        //                x++;
-        //                artprecioUp.MtdInsertarPreciosDetalles();
-        //                if (!artprecioUp.Exito)
-        //                {
-        //                    XtraMessageBox.Show(artprecioUp.Mensaje);
-        //                }
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        XtraMessageBox.Show(artprecio.Mensaje);
-        //    }
-
-        //}
+      
         private Boolean CamposVacios()
         {
             Boolean valor = true;
@@ -316,6 +294,7 @@ namespace Business_Analitics
         private void dtFecha_EditValueChanged(object sender, EventArgs e)
         {
             CargarInventario_Ventas();
+            CargarTotalesPais();
         }
 
         private void dtg_Inventario_Ventas_DoubleClick(object sender, EventArgs e)
@@ -338,6 +317,17 @@ namespace Business_Analitics
             catch (Exception ex)
             {
                 XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtgTamanio_EditorKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!this.dtgValTamanio.IsLastVisibleRow)
+                    this.dtgValTamanio.MoveNext();
+                else
+                    this.dtgValTamanio.MoveFirst();
             }
         }
     }
