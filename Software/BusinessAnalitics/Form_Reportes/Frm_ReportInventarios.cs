@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
 using System.Diagnostics;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid;
 
 namespace Business_Analitics
 {
@@ -62,6 +64,8 @@ namespace Business_Analitics
                 if (sel.Datos.Rows.Count > 0)
                 {
                     dtgReporte.DataSource = sel.Datos;
+                    dtgValReporte.CollapseAllGroups();
+                    dtgValReporte.ExpandGroupRow(-1);
                 }
                 else
                 {
@@ -127,6 +131,8 @@ namespace Business_Analitics
             bandedGridColumn8.DisplayFormat.FormatString = "p1";
             bandedGridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             bandedGridColumn9.DisplayFormat.FormatString = "p1";
+            //dtgValReporte.GroupSummary.Clear();
+            //GridSummaryItem summaryItemMaxOrderSum = dtgValReporte.GroupSummary.Add(DevExpress.Data.SummaryItemType.Max, "f1Volumen", null, "(Max Order Sum = {MAX Order Sum = {0:n0}})");
         }
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -140,8 +146,26 @@ namespace Business_Analitics
             gridBand6.Caption = "Fecha1";
             gridBand7.Caption = "Fecha2";
         }
-
-        private void btnExportar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        void dtgValReporteT_CustomColumnSort(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnSortEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (view == null) return;
+            try
+            {
+                if (e.Column.FieldName == "Concepto")
+                {
+                    object val1 = view.GetListSourceRowCellValue(e.ListSourceRowIndex1, "Id");
+                    object val2 = view.GetListSourceRowCellValue(e.ListSourceRowIndex2, "Id");
+                    e.Handled = true;
+                    e.Result = System.Collections.Comparer.Default.Compare(val1, val2);
+                }
+            }
+            catch (Exception ee)
+            {
+                //...
+            }
+        }
+            private void btnExportar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (dtgValReporte.RowCount > 0)
             {
@@ -156,6 +180,12 @@ namespace Business_Analitics
             {
                 XtraMessageBox.Show("No existen registros para exportar");
             }
+        }
+
+        private void btnComparacion_Click(object sender, EventArgs e)
+        {
+            CargarResumen();
+            CargarTotales();
         }
     }
 }

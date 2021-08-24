@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ReportInventarios));
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule5 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression2 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule6 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleDataBar formatConditionRuleDataBar4 = new DevExpress.XtraEditors.FormatConditionRuleDataBar();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule7 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleDataBar formatConditionRuleDataBar5 = new DevExpress.XtraEditors.FormatConditionRuleDataBar();
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule8 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleDataBar formatConditionRuleDataBar6 = new DevExpress.XtraEditors.FormatConditionRuleDataBar();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule9 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression3 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule10 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleDataBar formatConditionRuleDataBar7 = new DevExpress.XtraEditors.FormatConditionRuleDataBar();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule11 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleDataBar formatConditionRuleDataBar8 = new DevExpress.XtraEditors.FormatConditionRuleDataBar();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule12 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleDataBar formatConditionRuleDataBar9 = new DevExpress.XtraEditors.FormatConditionRuleDataBar();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression1 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
@@ -46,10 +46,15 @@
             DevExpress.XtraEditors.FormatConditionRuleDataBar formatConditionRuleDataBar2 = new DevExpress.XtraEditors.FormatConditionRuleDataBar();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule4 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleDataBar formatConditionRuleDataBar3 = new DevExpress.XtraEditors.FormatConditionRuleDataBar();
+            this.bandedGridColumn9 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnComparar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnExportar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
             this.bEstado = new DevExpress.XtraBars.Bar();
@@ -58,15 +63,31 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btnComparar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btnComparacion = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.dtFecha2 = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dtFecha1 = new DevExpress.XtraEditors.DateEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.dtgReporteT = new DevExpress.XtraGrid.GridControl();
+            this.dtgValReporteT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
+            this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.bandedGridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand6 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand7 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.bandedGridColumn7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand8 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.dtgReporte = new DevExpress.XtraGrid.GridControl();
             this.dtgValReporte = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -76,30 +97,10 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridColumn7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridColumn9 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.xtraSaveFileDialog1 = new DevExpress.XtraEditors.XtraSaveFileDialog(this.components);
-            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.dtgValReporteT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
-            this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn9 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.dtgReporteT = new DevExpress.XtraGrid.GridControl();
-            this.bandedGridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand6 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand7 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand8 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -112,15 +113,87 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgReporte)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValReporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
-            this.xtraTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValReporteT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgReporteT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValReporteT)).BeginInit();
+            this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValReporte)).BeginInit();
             this.SuspendLayout();
+            // 
+            // bandedGridColumn9
+            // 
+            this.bandedGridColumn9.Caption = "Incremento";
+            this.bandedGridColumn9.DisplayFormat.FormatString = "p";
+            this.bandedGridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn9.FieldName = "porcen";
+            this.bandedGridColumn9.Name = "bandedGridColumn9";
+            this.bandedGridColumn9.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn9.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn9.OptionsColumn.AllowMove = false;
+            this.bandedGridColumn9.Visible = true;
+            // 
+            // bandedGridColumn8
+            // 
+            this.bandedGridColumn8.Caption = "Porcentaje";
+            this.bandedGridColumn8.DisplayFormat.FormatString = "p";
+            this.bandedGridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn8.FieldName = "p2Volumen";
+            this.bandedGridColumn8.Name = "bandedGridColumn8";
+            this.bandedGridColumn8.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn8.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn8.OptionsColumn.AllowMove = false;
+            this.bandedGridColumn8.Visible = true;
+            // 
+            // bandedGridColumn6
+            // 
+            this.bandedGridColumn6.Caption = "Porcentaje";
+            this.bandedGridColumn6.DisplayFormat.FormatString = "p";
+            this.bandedGridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn6.FieldName = "p1Volumen";
+            this.bandedGridColumn6.Name = "bandedGridColumn6";
+            this.bandedGridColumn6.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn6.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn6.OptionsColumn.AllowMove = false;
+            this.bandedGridColumn6.Visible = true;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Incremento";
+            this.gridColumn9.DisplayFormat.FormatString = "p";
+            this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn9.FieldName = "porcen";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
+            this.gridColumn9.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn9.OptionsColumn.AllowMove = false;
+            this.gridColumn9.Visible = true;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Porcentaje";
+            this.gridColumn8.DisplayFormat.FormatString = "p";
+            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn8.FieldName = "p2Volumen";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
+            this.gridColumn8.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn8.OptionsColumn.AllowMove = false;
+            this.gridColumn8.Visible = true;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Porcentaje";
+            this.gridColumn6.DisplayFormat.FormatString = "p";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn6.FieldName = "p1Volumen";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn6.OptionsColumn.AllowMove = false;
+            this.gridColumn6.Visible = true;
             // 
             // barManager1
             // 
@@ -155,7 +228,6 @@
             this.bIconos.FloatSize = new System.Drawing.Size(1106, 535);
             this.bIconos.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLimpiar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnComparar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnExportar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir)});
             this.bIconos.OptionsBar.AllowCollapse = true;
@@ -177,15 +249,6 @@
             this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLimpiar_ItemClick);
-            // 
-            // btnComparar
-            // 
-            this.btnComparar.Caption = "Comparar";
-            this.btnComparar.Id = 53;
-            this.btnComparar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnComparar.ImageOptions.Image")));
-            this.btnComparar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnComparar.ImageOptions.LargeImage")));
-            this.btnComparar.Name = "btnComparar";
-            this.btnComparar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnComparar_ItemClick);
             // 
             // btnExportar
             // 
@@ -236,9 +299,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 403);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 404);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(983, 26);
+            this.barDockControlBottom.Size = new System.Drawing.Size(983, 25);
             // 
             // barDockControlLeft
             // 
@@ -246,7 +309,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(64, 403);
+            this.barDockControlLeft.Size = new System.Drawing.Size(66, 404);
             // 
             // barDockControlRight
             // 
@@ -254,7 +317,16 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(983, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 403);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 404);
+            // 
+            // btnComparar
+            // 
+            this.btnComparar.Caption = "Comparar";
+            this.btnComparar.Id = 53;
+            this.btnComparar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnComparar.ImageOptions.Image")));
+            this.btnComparar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnComparar.ImageOptions.LargeImage")));
+            this.btnComparar.Name = "btnComparar";
+            this.btnComparar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnComparar_ItemClick);
             // 
             // btnSeleccionar
             // 
@@ -274,16 +346,17 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(64, 0);
+            this.panelControl1.Location = new System.Drawing.Point(66, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(919, 73);
+            this.panelControl1.Size = new System.Drawing.Size(917, 89);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.btnComparacion);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.dtFecha2);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -291,13 +364,23 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(905, 59);
+            this.groupControl1.Size = new System.Drawing.Size(903, 75);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Fechas a Comparar";
             // 
+            // btnComparacion
+            // 
+            this.btnComparacion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnComparacion.Location = new System.Drawing.Point(586, 25);
+            this.btnComparacion.Name = "btnComparacion";
+            this.btnComparacion.Size = new System.Drawing.Size(94, 37);
+            this.btnComparacion.TabIndex = 14;
+            this.btnComparacion.Text = "Comparar";
+            this.btnComparacion.Click += new System.EventHandler(this.btnComparacion_Click);
+            // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(328, 30);
+            this.labelControl2.Location = new System.Drawing.Point(328, 37);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(42, 13);
             this.labelControl2.TabIndex = 12;
@@ -306,7 +389,7 @@
             // dtFecha2
             // 
             this.dtFecha2.EditValue = null;
-            this.dtFecha2.Location = new System.Drawing.Point(378, 25);
+            this.dtFecha2.Location = new System.Drawing.Point(378, 32);
             this.dtFecha2.MenuManager = this.barManager1;
             this.dtFecha2.Name = "dtFecha2";
             this.dtFecha2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -320,7 +403,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(17, 30);
+            this.labelControl1.Location = new System.Drawing.Point(17, 37);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(42, 13);
             this.labelControl1.TabIndex = 10;
@@ -329,7 +412,7 @@
             // dtFecha1
             // 
             this.dtFecha1.EditValue = null;
-            this.dtFecha1.Location = new System.Drawing.Point(67, 25);
+            this.dtFecha1.Location = new System.Drawing.Point(67, 32);
             this.dtFecha1.MenuManager = this.barManager1;
             this.dtFecha1.Name = "dtFecha1";
             this.dtFecha1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -345,11 +428,216 @@
             // 
             this.panelControl2.Controls.Add(this.xtraTabControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(64, 73);
+            this.panelControl2.Location = new System.Drawing.Point(66, 89);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(919, 330);
+            this.panelControl2.Size = new System.Drawing.Size(917, 315);
             this.panelControl2.TabIndex = 5;
+            // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(893, 291);
+            this.xtraTabControl1.TabIndex = 1;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.xtraTabPage2});
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Controls.Add(this.dtgReporteT);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
+            this.xtraTabPage1.Size = new System.Drawing.Size(887, 263);
+            this.xtraTabPage1.Text = "Totales";
+            // 
+            // dtgReporteT
+            // 
+            this.dtgReporteT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgReporteT.Location = new System.Drawing.Point(5, 5);
+            this.dtgReporteT.MainView = this.dtgValReporteT;
+            this.dtgReporteT.MenuManager = this.barManager1;
+            this.dtgReporteT.Name = "dtgReporteT";
+            this.dtgReporteT.Size = new System.Drawing.Size(877, 253);
+            this.dtgReporteT.TabIndex = 1;
+            this.dtgReporteT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValReporteT});
+            // 
+            // dtgValReporteT
+            // 
+            this.dtgValReporteT.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
+            this.gridBand5,
+            this.gridBand6,
+            this.gridBand7,
+            this.gridBand8});
+            this.dtgValReporteT.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.bandedGridColumn1,
+            this.bandedGridColumn3,
+            this.bandedGridColumn5,
+            this.bandedGridColumn6,
+            this.bandedGridColumn7,
+            this.bandedGridColumn8,
+            this.bandedGridColumn9,
+            this.bandedGridColumn2});
+            gridFormatRule9.Column = this.bandedGridColumn9;
+            gridFormatRule9.Name = "Format0";
+            formatConditionRuleExpression3.Expression = "[porcen] < 0";
+            formatConditionRuleExpression3.PredefinedName = "Red Bold Text";
+            gridFormatRule9.Rule = formatConditionRuleExpression3;
+            gridFormatRule10.Column = this.bandedGridColumn9;
+            gridFormatRule10.Name = "Format1";
+            formatConditionRuleDataBar7.DrawAxisAtMiddle = true;
+            formatConditionRuleDataBar7.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            formatConditionRuleDataBar7.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Percent;
+            formatConditionRuleDataBar7.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Percent;
+            formatConditionRuleDataBar7.PredefinedName = "Green Gradient";
+            gridFormatRule10.Rule = formatConditionRuleDataBar7;
+            gridFormatRule11.Column = this.bandedGridColumn8;
+            gridFormatRule11.Name = "Format2";
+            formatConditionRuleDataBar8.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            formatConditionRuleDataBar8.PredefinedName = "Green Gradient";
+            gridFormatRule11.Rule = formatConditionRuleDataBar8;
+            gridFormatRule12.Column = this.bandedGridColumn6;
+            gridFormatRule12.Name = "Format3";
+            formatConditionRuleDataBar9.Maximum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            formatConditionRuleDataBar9.PredefinedName = "Green Gradient";
+            gridFormatRule12.Rule = formatConditionRuleDataBar9;
+            this.dtgValReporteT.FormatRules.Add(gridFormatRule9);
+            this.dtgValReporteT.FormatRules.Add(gridFormatRule10);
+            this.dtgValReporteT.FormatRules.Add(gridFormatRule11);
+            this.dtgValReporteT.FormatRules.Add(gridFormatRule12);
+            this.dtgValReporteT.GridControl = this.dtgReporteT;
+            this.dtgValReporteT.GroupCount = 1;
+            this.dtgValReporteT.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "f1Volumen", this.bandedGridColumn5, "(Volumen ={0:n0})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "p1Volumen", this.bandedGridColumn6, "(Porcentaje ={0:p})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "f2Volumen", this.bandedGridColumn7, "(Volumen ={0:n0})"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "p2Volumen", this.bandedGridColumn8, "(Porcentaje ={0:p})")});
+            this.dtgValReporteT.Name = "dtgValReporteT";
+            this.dtgValReporteT.OptionsBehavior.AutoExpandAllGroups = true;
+            this.dtgValReporteT.OptionsMenu.ShowConditionalFormattingItem = true;
+            this.dtgValReporteT.OptionsPrint.ExpandAllDetails = true;
+            this.dtgValReporteT.OptionsView.AllowCellMerge = true;
+            this.dtgValReporteT.OptionsView.ShowFooter = true;
+            this.dtgValReporteT.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn1, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn2, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.dtgValReporteT.CustomColumnSort += new DevExpress.XtraGrid.Views.Base.CustomColumnSortEventHandler(this.dtgValReporteT_CustomColumnSort);
+            // 
+            // gridBand5
+            // 
+            this.gridBand5.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand5.Caption = "Descripcion";
+            this.gridBand5.Columns.Add(this.bandedGridColumn2);
+            this.gridBand5.Columns.Add(this.bandedGridColumn1);
+            this.gridBand5.Columns.Add(this.bandedGridColumn3);
+            this.gridBand5.Name = "gridBand5";
+            this.gridBand5.VisibleIndex = 0;
+            this.gridBand5.Width = 150;
+            // 
+            // bandedGridColumn2
+            // 
+            this.bandedGridColumn2.Caption = "Id";
+            this.bandedGridColumn2.FieldName = "Id";
+            this.bandedGridColumn2.Name = "bandedGridColumn2";
+            this.bandedGridColumn2.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
+            // 
+            // bandedGridColumn1
+            // 
+            this.bandedGridColumn1.Caption = "Concepto";
+            this.bandedGridColumn1.FieldName = "Concepto";
+            this.bandedGridColumn1.Name = "bandedGridColumn1";
+            this.bandedGridColumn1.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.bandedGridColumn1.OptionsColumn.AllowMove = false;
+            this.bandedGridColumn1.Visible = true;
+            // 
+            // bandedGridColumn3
+            // 
+            this.bandedGridColumn3.Caption = "Descripcion";
+            this.bandedGridColumn3.FieldName = "Descripcion";
+            this.bandedGridColumn3.Name = "bandedGridColumn3";
+            this.bandedGridColumn3.Visible = true;
+            // 
+            // gridBand6
+            // 
+            this.gridBand6.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand6.Caption = "Fecha 1";
+            this.gridBand6.Columns.Add(this.bandedGridColumn5);
+            this.gridBand6.Columns.Add(this.bandedGridColumn6);
+            this.gridBand6.Name = "gridBand6";
+            this.gridBand6.VisibleIndex = 1;
+            this.gridBand6.Width = 150;
+            // 
+            // bandedGridColumn5
+            // 
+            this.bandedGridColumn5.Caption = "Volumen";
+            this.bandedGridColumn5.DisplayFormat.FormatString = "n0";
+            this.bandedGridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn5.FieldName = "f1Volumen";
+            this.bandedGridColumn5.Name = "bandedGridColumn5";
+            this.bandedGridColumn5.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn5.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn5.OptionsColumn.AllowMove = false;
+            this.bandedGridColumn5.Visible = true;
+            // 
+            // gridBand7
+            // 
+            this.gridBand7.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand7.Caption = "Fecha 2";
+            this.gridBand7.Columns.Add(this.bandedGridColumn7);
+            this.gridBand7.Columns.Add(this.bandedGridColumn8);
+            this.gridBand7.Name = "gridBand7";
+            this.gridBand7.VisibleIndex = 2;
+            this.gridBand7.Width = 150;
+            // 
+            // bandedGridColumn7
+            // 
+            this.bandedGridColumn7.Caption = "Volumen";
+            this.bandedGridColumn7.DisplayFormat.FormatString = "n0";
+            this.bandedGridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn7.FieldName = "f2Volumen";
+            this.bandedGridColumn7.Name = "bandedGridColumn7";
+            this.bandedGridColumn7.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn7.OptionsColumn.AllowMove = false;
+            this.bandedGridColumn7.Visible = true;
+            // 
+            // gridBand8
+            // 
+            this.gridBand8.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand8.Caption = "Diferencia";
+            this.gridBand8.Columns.Add(this.bandedGridColumn9);
+            this.gridBand8.Name = "gridBand8";
+            this.gridBand8.VisibleIndex = 3;
+            this.gridBand8.Width = 75;
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Controls.Add(this.dtgReporte);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
+            this.xtraTabPage2.Size = new System.Drawing.Size(887, 269);
+            this.xtraTabPage2.Text = "Resumen";
             // 
             // dtgReporte
             // 
@@ -358,7 +646,7 @@
             this.dtgReporte.MainView = this.dtgValReporte;
             this.dtgReporte.MenuManager = this.barManager1;
             this.dtgReporte.Name = "dtgReporte";
-            this.dtgReporte.Size = new System.Drawing.Size(883, 271);
+            this.dtgReporte.Size = new System.Drawing.Size(877, 259);
             this.dtgReporte.TabIndex = 0;
             this.dtgReporte.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValReporte});
@@ -380,45 +668,45 @@
             this.gridColumn7,
             this.gridColumn8,
             this.gridColumn9});
-            gridFormatRule5.Column = this.gridColumn9;
-            gridFormatRule5.Name = "Format0";
-            formatConditionRuleExpression2.Expression = "[porcen] < 0";
-            formatConditionRuleExpression2.PredefinedName = "Red Bold Text";
-            gridFormatRule5.Rule = formatConditionRuleExpression2;
-            gridFormatRule6.Column = this.gridColumn9;
-            gridFormatRule6.Name = "Format1";
-            formatConditionRuleDataBar4.DrawAxisAtMiddle = true;
-            formatConditionRuleDataBar4.Maximum = new decimal(new int[] {
+            gridFormatRule1.Column = this.gridColumn9;
+            gridFormatRule1.Name = "Format0";
+            formatConditionRuleExpression1.Expression = "[porcen] < 0";
+            formatConditionRuleExpression1.PredefinedName = "Red Bold Text";
+            gridFormatRule1.Rule = formatConditionRuleExpression1;
+            gridFormatRule2.Column = this.gridColumn9;
+            gridFormatRule2.Name = "Format1";
+            formatConditionRuleDataBar1.DrawAxisAtMiddle = true;
+            formatConditionRuleDataBar1.Maximum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            formatConditionRuleDataBar4.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Percent;
-            formatConditionRuleDataBar4.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Percent;
-            formatConditionRuleDataBar4.PredefinedName = "Green Gradient";
-            gridFormatRule6.Rule = formatConditionRuleDataBar4;
-            gridFormatRule7.Column = this.gridColumn8;
-            gridFormatRule7.Name = "Format2";
-            formatConditionRuleDataBar5.Maximum = new decimal(new int[] {
+            formatConditionRuleDataBar1.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Percent;
+            formatConditionRuleDataBar1.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Percent;
+            formatConditionRuleDataBar1.PredefinedName = "Green Gradient";
+            gridFormatRule2.Rule = formatConditionRuleDataBar1;
+            gridFormatRule3.Column = this.gridColumn8;
+            gridFormatRule3.Name = "Format2";
+            formatConditionRuleDataBar2.Maximum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            formatConditionRuleDataBar5.PredefinedName = "Green Gradient";
-            gridFormatRule7.Rule = formatConditionRuleDataBar5;
-            gridFormatRule8.Column = this.gridColumn6;
-            gridFormatRule8.Name = "Format3";
-            formatConditionRuleDataBar6.Maximum = new decimal(new int[] {
+            formatConditionRuleDataBar2.PredefinedName = "Green Gradient";
+            gridFormatRule3.Rule = formatConditionRuleDataBar2;
+            gridFormatRule4.Column = this.gridColumn6;
+            gridFormatRule4.Name = "Format3";
+            formatConditionRuleDataBar3.Maximum = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            formatConditionRuleDataBar6.PredefinedName = "Green Gradient";
-            gridFormatRule8.Rule = formatConditionRuleDataBar6;
-            this.dtgValReporte.FormatRules.Add(gridFormatRule5);
-            this.dtgValReporte.FormatRules.Add(gridFormatRule6);
-            this.dtgValReporte.FormatRules.Add(gridFormatRule7);
-            this.dtgValReporte.FormatRules.Add(gridFormatRule8);
+            formatConditionRuleDataBar3.PredefinedName = "Green Gradient";
+            gridFormatRule4.Rule = formatConditionRuleDataBar3;
+            this.dtgValReporte.FormatRules.Add(gridFormatRule1);
+            this.dtgValReporte.FormatRules.Add(gridFormatRule2);
+            this.dtgValReporte.FormatRules.Add(gridFormatRule3);
+            this.dtgValReporte.FormatRules.Add(gridFormatRule4);
             this.dtgValReporte.GridControl = this.dtgReporte;
             this.dtgValReporte.GroupCount = 1;
             this.dtgValReporte.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -511,18 +799,6 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "f1Volumen", "SUMA={0:n0}")});
             this.gridColumn5.Visible = true;
             // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Porcentaje";
-            this.gridColumn6.DisplayFormat.FormatString = "p";
-            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn6.FieldName = "p1Volumen";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowEdit = false;
-            this.gridColumn6.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn6.OptionsColumn.AllowMove = false;
-            this.gridColumn6.Visible = true;
-            // 
             // gridBand3
             // 
             this.gridBand3.AppearanceHeader.Options.UseTextOptions = true;
@@ -548,18 +824,6 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "f2Volumen", "SUMA={0:n0}")});
             this.gridColumn7.Visible = true;
             // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Porcentaje";
-            this.gridColumn8.DisplayFormat.FormatString = "p";
-            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn8.FieldName = "p2Volumen";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.OptionsColumn.AllowEdit = false;
-            this.gridColumn8.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn8.OptionsColumn.AllowMove = false;
-            this.gridColumn8.Visible = true;
-            // 
             // gridBand4
             // 
             this.gridBand4.AppearanceHeader.Options.UseTextOptions = true;
@@ -570,257 +834,9 @@
             this.gridBand4.VisibleIndex = 3;
             this.gridBand4.Width = 75;
             // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "Incremento";
-            this.gridColumn9.DisplayFormat.FormatString = "p";
-            this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn9.FieldName = "porcen";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.OptionsColumn.AllowEdit = false;
-            this.gridColumn9.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn9.OptionsColumn.AllowMove = false;
-            this.gridColumn9.Visible = true;
-            // 
             // xtraSaveFileDialog1
             // 
             this.xtraSaveFileDialog1.FileName = "xtraSaveFileDialog1";
-            // 
-            // xtraTabControl1
-            // 
-            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
-            this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(895, 306);
-            this.xtraTabControl1.TabIndex = 1;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
-            this.xtraTabPage2});
-            // 
-            // xtraTabPage1
-            // 
-            this.xtraTabPage1.Controls.Add(this.dtgReporteT);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(893, 281);
-            this.xtraTabPage1.Text = "Totales";
-            // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Controls.Add(this.dtgReporte);
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(893, 281);
-            this.xtraTabPage2.Text = "Resumen";
-            // 
-            // dtgValReporteT
-            // 
-            this.dtgValReporteT.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand5,
-            this.gridBand6,
-            this.gridBand7,
-            this.gridBand8});
-            this.dtgValReporteT.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
-            this.bandedGridColumn1,
-            this.bandedGridColumn3,
-            this.bandedGridColumn5,
-            this.bandedGridColumn6,
-            this.bandedGridColumn7,
-            this.bandedGridColumn8,
-            this.bandedGridColumn9,
-            this.bandedGridColumn2});
-            gridFormatRule1.Column = this.bandedGridColumn9;
-            gridFormatRule1.Name = "Format0";
-            formatConditionRuleExpression1.Expression = "[porcen] < 0";
-            formatConditionRuleExpression1.PredefinedName = "Red Bold Text";
-            gridFormatRule1.Rule = formatConditionRuleExpression1;
-            gridFormatRule2.Column = this.bandedGridColumn9;
-            gridFormatRule2.Name = "Format1";
-            formatConditionRuleDataBar1.DrawAxisAtMiddle = true;
-            formatConditionRuleDataBar1.Maximum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            formatConditionRuleDataBar1.MaximumType = DevExpress.XtraEditors.FormatConditionValueType.Percent;
-            formatConditionRuleDataBar1.MinimumType = DevExpress.XtraEditors.FormatConditionValueType.Percent;
-            formatConditionRuleDataBar1.PredefinedName = "Green Gradient";
-            gridFormatRule2.Rule = formatConditionRuleDataBar1;
-            gridFormatRule3.Column = this.bandedGridColumn8;
-            gridFormatRule3.Name = "Format2";
-            formatConditionRuleDataBar2.Maximum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            formatConditionRuleDataBar2.PredefinedName = "Green Gradient";
-            gridFormatRule3.Rule = formatConditionRuleDataBar2;
-            gridFormatRule4.Column = this.bandedGridColumn6;
-            gridFormatRule4.Name = "Format3";
-            formatConditionRuleDataBar3.Maximum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            formatConditionRuleDataBar3.PredefinedName = "Green Gradient";
-            gridFormatRule4.Rule = formatConditionRuleDataBar3;
-            this.dtgValReporteT.FormatRules.Add(gridFormatRule1);
-            this.dtgValReporteT.FormatRules.Add(gridFormatRule2);
-            this.dtgValReporteT.FormatRules.Add(gridFormatRule3);
-            this.dtgValReporteT.FormatRules.Add(gridFormatRule4);
-            this.dtgValReporteT.GridControl = this.dtgReporteT;
-            this.dtgValReporteT.GroupCount = 1;
-            this.dtgValReporteT.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "f1Volumen", this.bandedGridColumn5, "(Volumen ={0:n0})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "p1Volumen", this.bandedGridColumn6, "(Porcentaje ={0:p})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "f2Volumen", this.bandedGridColumn7, "(Volumen ={0:n0})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "p2Volumen", this.bandedGridColumn8, "(Porcentaje ={0:p})")});
-            this.dtgValReporteT.Name = "dtgValReporteT";
-            this.dtgValReporteT.OptionsMenu.ShowConditionalFormattingItem = true;
-            this.dtgValReporteT.OptionsView.AllowCellMerge = true;
-            this.dtgValReporteT.OptionsView.ShowFooter = true;
-            this.dtgValReporteT.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn1, DevExpress.Data.ColumnSortOrder.Ascending)});
-            // 
-            // bandedGridColumn1
-            // 
-            this.bandedGridColumn1.Caption = "Concepto";
-            this.bandedGridColumn1.FieldName = "Concepto";
-            this.bandedGridColumn1.Name = "bandedGridColumn1";
-            this.bandedGridColumn1.OptionsColumn.AllowEdit = false;
-            this.bandedGridColumn1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.bandedGridColumn1.OptionsColumn.AllowMove = false;
-            this.bandedGridColumn1.Visible = true;
-            // 
-            // bandedGridColumn5
-            // 
-            this.bandedGridColumn5.Caption = "Volumen";
-            this.bandedGridColumn5.DisplayFormat.FormatString = "n0";
-            this.bandedGridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn5.FieldName = "f1Volumen";
-            this.bandedGridColumn5.Name = "bandedGridColumn5";
-            this.bandedGridColumn5.OptionsColumn.AllowEdit = false;
-            this.bandedGridColumn5.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.bandedGridColumn5.OptionsColumn.AllowMove = false;
-            this.bandedGridColumn5.Visible = true;
-            // 
-            // bandedGridColumn6
-            // 
-            this.bandedGridColumn6.Caption = "Porcentaje";
-            this.bandedGridColumn6.DisplayFormat.FormatString = "p";
-            this.bandedGridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn6.FieldName = "p1Volumen";
-            this.bandedGridColumn6.Name = "bandedGridColumn6";
-            this.bandedGridColumn6.OptionsColumn.AllowEdit = false;
-            this.bandedGridColumn6.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.bandedGridColumn6.OptionsColumn.AllowMove = false;
-            this.bandedGridColumn6.Visible = true;
-            // 
-            // bandedGridColumn7
-            // 
-            this.bandedGridColumn7.Caption = "Volumen";
-            this.bandedGridColumn7.DisplayFormat.FormatString = "n0";
-            this.bandedGridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn7.FieldName = "f2Volumen";
-            this.bandedGridColumn7.Name = "bandedGridColumn7";
-            this.bandedGridColumn7.OptionsColumn.AllowEdit = false;
-            this.bandedGridColumn7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.bandedGridColumn7.OptionsColumn.AllowMove = false;
-            this.bandedGridColumn7.Visible = true;
-            // 
-            // bandedGridColumn8
-            // 
-            this.bandedGridColumn8.Caption = "Porcentaje";
-            this.bandedGridColumn8.DisplayFormat.FormatString = "p";
-            this.bandedGridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn8.FieldName = "p2Volumen";
-            this.bandedGridColumn8.Name = "bandedGridColumn8";
-            this.bandedGridColumn8.OptionsColumn.AllowEdit = false;
-            this.bandedGridColumn8.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.bandedGridColumn8.OptionsColumn.AllowMove = false;
-            this.bandedGridColumn8.Visible = true;
-            // 
-            // bandedGridColumn9
-            // 
-            this.bandedGridColumn9.Caption = "Incremento";
-            this.bandedGridColumn9.DisplayFormat.FormatString = "p";
-            this.bandedGridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn9.FieldName = "porcen";
-            this.bandedGridColumn9.Name = "bandedGridColumn9";
-            this.bandedGridColumn9.OptionsColumn.AllowEdit = false;
-            this.bandedGridColumn9.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.bandedGridColumn9.OptionsColumn.AllowMove = false;
-            this.bandedGridColumn9.Visible = true;
-            // 
-            // dtgReporteT
-            // 
-            this.dtgReporteT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgReporteT.Location = new System.Drawing.Point(5, 5);
-            this.dtgReporteT.MainView = this.dtgValReporteT;
-            this.dtgReporteT.MenuManager = this.barManager1;
-            this.dtgReporteT.Name = "dtgReporteT";
-            this.dtgReporteT.Size = new System.Drawing.Size(883, 271);
-            this.dtgReporteT.TabIndex = 1;
-            this.dtgReporteT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dtgValReporteT});
-            // 
-            // bandedGridColumn2
-            // 
-            this.bandedGridColumn2.Caption = "Id";
-            this.bandedGridColumn2.FieldName = "Id";
-            this.bandedGridColumn2.Name = "bandedGridColumn2";
-            // 
-            // bandedGridColumn3
-            // 
-            this.bandedGridColumn3.Caption = "Descripcion";
-            this.bandedGridColumn3.FieldName = "Descripcion";
-            this.bandedGridColumn3.Name = "bandedGridColumn3";
-            this.bandedGridColumn3.Visible = true;
-            // 
-            // gridBand5
-            // 
-            this.gridBand5.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand5.Caption = "Descripcion";
-            this.gridBand5.Columns.Add(this.bandedGridColumn2);
-            this.gridBand5.Columns.Add(this.bandedGridColumn1);
-            this.gridBand5.Columns.Add(this.bandedGridColumn3);
-            this.gridBand5.Name = "gridBand5";
-            this.gridBand5.VisibleIndex = 0;
-            this.gridBand5.Width = 150;
-            // 
-            // gridBand6
-            // 
-            this.gridBand6.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand6.Caption = "Fecha 1";
-            this.gridBand6.Columns.Add(this.bandedGridColumn5);
-            this.gridBand6.Columns.Add(this.bandedGridColumn6);
-            this.gridBand6.Name = "gridBand6";
-            this.gridBand6.VisibleIndex = 1;
-            this.gridBand6.Width = 150;
-            // 
-            // gridBand7
-            // 
-            this.gridBand7.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand7.Caption = "Fecha 2";
-            this.gridBand7.Columns.Add(this.bandedGridColumn7);
-            this.gridBand7.Columns.Add(this.bandedGridColumn8);
-            this.gridBand7.Name = "gridBand7";
-            this.gridBand7.VisibleIndex = 2;
-            this.gridBand7.Width = 150;
-            // 
-            // gridBand8
-            // 
-            this.gridBand8.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand8.Caption = "Diferencia";
-            this.gridBand8.Columns.Add(this.bandedGridColumn9);
-            this.gridBand8.Name = "gridBand8";
-            this.gridBand8.VisibleIndex = 3;
-            this.gridBand8.Width = 75;
             // 
             // Frm_ReportInventarios
             // 
@@ -849,14 +865,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgReporte)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValReporte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
-            this.xtraTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValReporteT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgReporteT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValReporteT)).EndInit();
+            this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValReporte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -918,5 +934,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand6;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand7;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand8;
+        private DevExpress.XtraEditors.SimpleButton btnComparacion;
     }
 }
