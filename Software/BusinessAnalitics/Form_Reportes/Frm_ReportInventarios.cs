@@ -12,6 +12,8 @@ using CapaDeDatos;
 using System.Diagnostics;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid;
+using DevExpress.XtraPrinting;
+using DevExpress.XtraPrintingLinks;
 
 namespace Business_Analitics
 {
@@ -95,8 +97,10 @@ namespace Business_Analitics
         }
         private void Frm_ReportInventarios_Shown(object sender, EventArgs e)
         {
-            dtFecha1.DateTime = DateTime.Now;
-            dtFecha2.DateTime = DateTime.Now;
+            DateTime vFecha = FechaMaxima();
+            dtFecha1.DateTime = vFecha.AddDays(-1);
+            dtFecha2.DateTime = FechaMaxima();
+            cmbComparar.SelectedIndex = 0;
             dtgValReporte.OptionsSelection.EnableAppearanceFocusedCell = false;
             dtgValReporte.OptionsSelection.EnableAppearanceHideSelection = false;
             dtgValReporte.OptionsSelection.MultiSelect = true;
@@ -135,12 +139,31 @@ namespace Business_Analitics
             //GridSummaryItem summaryItemMaxOrderSum = dtgValReporte.GroupSummary.Add(DevExpress.Data.SummaryItemType.Max, "f1Volumen", null, "(Max Order Sum = {MAX Order Sum = {0:n0}})");
         }
 
+        private DateTime FechaMaxima()
+        {
+            DateTime Fecha= DateTime.Now;
+            CLS_Reporte_Inventario_Ventas sel = new CLS_Reporte_Inventario_Ventas();
+            sel.MtdSeleccionarFechaMaxima();
+            if(sel.Exito)
+            {
+                if(sel.Datos.Rows.Count>0)
+                {
+                    Fecha = Convert.ToDateTime(sel.Datos.Rows[0]["Fecha"].ToString());
+                }
+            }
+
+
+            return Fecha;
+        }
+
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             dtgReporte.DataSource = null;
             dtgReporteT.DataSource = null;
-            dtFecha1.DateTime = DateTime.Now;
-            dtFecha2.DateTime = DateTime.Now;
+            DateTime vFecha = FechaMaxima();
+            dtFecha1.DateTime = vFecha.AddDays(-1);
+            dtFecha2.DateTime = FechaMaxima();
+            cmbComparar.SelectedIndex = 0;
             gridBand2.Caption = "Fecha1";
             gridBand3.Caption = "Fecha2";
             gridBand6.Caption = "Fecha1";
@@ -172,8 +195,9 @@ namespace Business_Analitics
                 xtraSaveFileDialog1.ShowDialog();
                 if (xtraSaveFileDialog1.FileName.Length > 0)
                 {
-                    dtgReporte.ExportToXlsx(xtraSaveFileDialog1.FileName + ".xlsx");
-                    Process.Start(xtraSaveFileDialog1.FileName + ".xlsx");
+                    //dtgReporte.ExportToXlsx(xtraSaveFileDialog1.FileName + ".xlsx");
+                    //Process.Start(xtraSaveFileDialog1.FileName + ".xlsx");
+                    ExportarAExcel(xtraSaveFileDialog1.FileName + ".xlsx");
                 }
             }
             else
@@ -182,10 +206,101 @@ namespace Business_Analitics
             }
         }
 
+        private void ExportarAExcel(string Ruta)
+        {
+            PrintingSystemBase printingSystem = new PrintingSystemBase();
+            CompositeLinkBase compositeLink = new CompositeLinkBase();
+            compositeLink.PrintingSystemBase = printingSystem;
+            PrintableComponentLinkBase link1 = new PrintableComponentLinkBase();
+            link1.Component = dtgReporteT;
+            PrintableComponentLinkBase link2 = new PrintableComponentLinkBase();
+            link2.Component = dtgReporte;
+            compositeLink.Links.Add(link1);
+            compositeLink.Links.Add(link2);
+            XlsxExportOptionsEx options = new XlsxExportOptionsEx();
+            options.RawDataMode= false;
+            options.ExportType = DevExpress.Export.ExportType.DataAware;
+            options.ShowColumnHeaders=DevExpress.Utils.DefaultBoolean.True;
+            options.AllowConditionalFormatting = DevExpress.Utils.DefaultBoolean.False;
+            options.TextExportMode = TextExportMode.Text;
+            options.ExportMode = XlsxExportMode.SingleFilePageByPage;
+            compositeLink.CreateDocument();
+            compositeLink.CreatePageForEachLink();
+            compositeLink.ExportToXlsx(Ruta, options);
+        }
+
         private void btnComparacion_Click(object sender, EventArgs e)
         {
             CargarResumen();
             CargarTotales();
+            VerificarDatos();
+        }
+
+        private void VerificarDatos()
+        {
+            CLS_Reporte_Inventario_Ventas sel = new CLS_Reporte_Inventario_Ventas();
+            sel.Fecha1 = dtFecha1.DateTime.Year.ToString() + DosCeros(dtFecha1.DateTime.Month.ToString()) + DosCeros(dtFecha1.DateTime.Day.ToString());
+            sel.Fecha2 = dtFecha2.DateTime.Year.ToString() + DosCeros(dtFecha2.DateTime.Month.ToString()) + DosCeros(dtFecha2.DateTime.Day.ToString());
+            sel.MtdSeleccionarFechaValidar();
+            if(sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    if (Convert.ToDecimal(sel.Datos.Rows[0][0].ToString()) == 0 && Convert.ToDecimal(sel.Datos.Rows[0][1].ToString()) == 0)
+                    {
+                        XtraMessageBox.Show("No existen datos para comparar");
+                    }
+                    else
+                    {
+                        if (Convert.ToDecimal(sel.Datos.Rows[0][0].ToString()) == 0)
+                        {
+                            XtraMessageBox.Show("No existen datos que comparar de la fecha " + dtFecha1.DateTime.ToShortDateString());
+                        }
+                        if (Convert.ToDecimal(sel.Datos.Rows[0][1].ToString()) == 0)
+                        {
+                            XtraMessageBox.Show("No existen datos que comparar de la fecha " + dtFecha2.DateTime.ToShortDateString());
+                        }
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("No existen datos para comparar");
+                }
+            }
+        }
+
+        private void cmbComparar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DateTime vFecha = dtFecha2.DateTime;
+            switch (cmbComparar.SelectedIndex)
+            {
+                case 0:
+                    dtFecha1.DateTime = vFecha.AddDays(-1);
+                    break;
+                case 1:
+                    dtFecha1.DateTime = vFecha.AddDays(-3);
+                    break;
+                case 2:
+                    dtFecha1.DateTime = vFecha.AddDays(-7);
+                    break;
+                case 3:
+                    dtFecha1.DateTime = vFecha.AddDays(-14);
+                    break;
+                case 4:
+                    dtFecha1.DateTime = vFecha.AddMonths(-1);
+                    break;
+                case 5:
+                    dtFecha1.DateTime = vFecha.AddYears(-1);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnDashboard_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Frm_Dashboard frm = new Frm_Dashboard();
+            frm.ShowDialog();
         }
     }
 }

@@ -75,5 +75,64 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
+
+        public void MtdSeleccionarFechaMaxima()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Inventario_Fechas_Max_Select";
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+        public void MtdSeleccionarFechaValidar()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Inventario_Fechas_Validar_Select";
+                _dato.CadenaTexto = Fecha1;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha1");
+                _dato.CadenaTexto = Fecha2;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha2");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
     }
 }
