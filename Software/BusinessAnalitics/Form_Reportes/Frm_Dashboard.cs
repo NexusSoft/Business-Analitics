@@ -33,6 +33,8 @@ namespace Business_Analitics
             }
             dashboardDesigner1.ConfigureDataConnection += dashboardDesigner1_ConfigureDataConnection;
             dashboardDesigner1.LoadDashboard("C:/Dashboard/Dashboard.xml");
+            editObjectDataSourceBarItem1.Enabled = false;
+            dataSourceBar1.Visible = false;
         }
 
         private void dashboardDesigner1_ConfigureDataConnection(object sender, DashboardConfigureDataConnectionEventArgs e)

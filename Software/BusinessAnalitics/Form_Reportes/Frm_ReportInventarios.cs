@@ -14,6 +14,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraPrintingLinks;
+using System.Xml;
 
 namespace Business_Analitics
 {
@@ -234,6 +235,29 @@ namespace Business_Analitics
             CargarResumen();
             CargarTotales();
             VerificarDatos();
+            ActualizarXML();
+        }
+
+        private void ActualizarXML()
+        {
+            string Fecha1 = dtFecha1.DateTime.Year.ToString() + DosCeros(dtFecha1.DateTime.Month.ToString()) + DosCeros(dtFecha1.DateTime.Day.ToString());
+            string Fecha2 = dtFecha2.DateTime.Year.ToString() + DosCeros(dtFecha2.DateTime.Month.ToString()) + DosCeros(dtFecha2.DateTime.Day.ToString());
+            XmlDocument doc = new XmlDocument();
+            doc.Load(@"C:\Dashboard/Dashboard.xml");
+            XmlNodeList itemNodes = doc.SelectNodes("Dashboard/DataSources/SqlDataSource/Query/Parameter");
+            foreach (XmlNode itemNode in itemNodes)
+            {
+                if(itemNode.Attributes["Name"].Value=="@Fecha1")
+                {
+                    itemNode.InnerText = Fecha1;
+                }
+                if (itemNode.Attributes["Name"].Value == "@Fecha2")
+                {
+                    itemNode.InnerText = Fecha2;
+                }
+            }
+            doc.Save(@"C:\Dashboard/Dashboard.xml");
+
         }
 
         private void VerificarDatos()
@@ -299,8 +323,15 @@ namespace Business_Analitics
 
         private void btnDashboard_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Frm_Dashboard frm = new Frm_Dashboard();
-            frm.ShowDialog();
+            if (dtgValReporte.RowCount > 0)
+            {
+                Frm_Dashboard frm = new Frm_Dashboard();
+                frm.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No se han cargado datos a comparar");
+            }
         }
     }
 }

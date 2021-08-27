@@ -93,6 +93,7 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
+        
 
         public void MtdEliminarInventario_Ventas()
         {

@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using CapaDeDatos;
 using DevExpress.XtraEditors.Mask;
 using System.Globalization;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace Business_Analitics
 {
@@ -38,6 +39,11 @@ namespace Business_Analitics
             }
         }
 
+        public string vIdRegistro { get; private set; }
+        public string vVolumen { get; private set; }
+        public string vVenta { get; private set; }
+        public bool PrimeraEdicion { get; private set; }
+
         public string DosCeros(string sVal)
         {
             string str = "";
@@ -61,7 +67,7 @@ namespace Business_Analitics
             CargarTratamiento(null);
             CargarTamanio();
             CargarCategoria(null);
-            
+
         }
 
         private void CargarPais(string Valor)
@@ -246,7 +252,7 @@ namespace Business_Analitics
                     break;
                 }
             }
-            if(Ins.Exito)
+            if (Ins.Exito)
             {
                 CargarTamanio();
                 CargarInventario_Ventas();
@@ -255,7 +261,7 @@ namespace Business_Analitics
                 XtraMessageBox.Show("Se ha insertado los registros con exito");
             }
         }
-      
+
         private Boolean CamposVacios()
         {
             Boolean valor = true;
@@ -328,6 +334,73 @@ namespace Business_Analitics
                     this.dtgValTamanio.MoveNext();
                 else
                     this.dtgValTamanio.MoveFirst();
+            }
+        }
+
+        private void dtgVal_Inventario_Ventas_ShownEditor(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgVal_Inventario_Ventas.GetSelectedRows())
+                {
+                    DataRow row = dtgVal_Inventario_Ventas.GetDataRow(i);
+                    vIdRegistro = row["Id_Registro"].ToString();
+                    vVolumen = row["Volumen"].ToString();
+                    vVenta = row["Venta"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtgVal_Inventario_Ventas_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (!PrimeraEdicion)
+            {
+                GridView gv = sender as GridView;
+                CLS_Inventario_Ventas Ins = new CLS_Inventario_Ventas();
+                Ins.Id_Registro = vIdRegistro;
+                Ins.Fecha = string.Empty;
+                Ins.Id_Pais = string.Empty;
+                Ins.Id_Tratamiento = string.Empty;
+                Ins.Id_Categoria = string.Empty;
+                Ins.Id_Tamanio = string.Empty;
+                Ins.Usuario = UsuariosLogin.Trim();
+
+                if (e.Column.FieldName == "Volumen")
+                {
+                    PrimeraEdicion = true;
+                    decimal v_Volumen = 0;
+                    Decimal.TryParse(gv.GetRowCellValue(e.RowHandle, gv.Columns["Volumen"]).ToString(), style, culture, out v_Volumen);
+                    Ins.Volumen = v_Volumen;
+                    decimal vVentas = 0;
+                    Decimal.TryParse(vVenta, style, culture, out vVentas);
+                    Ins.Venta = vVentas;
+                    Ins.MtdInsertarInventario_Ventas();
+                    if (!Ins.Exito)
+                    {
+                        XtraMessageBox.Show(Ins.Mensaje);
+                    }
+
+                }
+                if (e.Column.FieldName == "Venta")
+                {
+                    PrimeraEdicion = true;
+                    decimal v_Volumen = 0;
+                    Decimal.TryParse(vVolumen, style, culture, out v_Volumen);
+                    Ins.Volumen = v_Volumen;
+                    decimal vVentas = 0;
+                    Decimal.TryParse(gv.GetRowCellValue(e.RowHandle, gv.Columns["Venta"]).ToString(), style, culture, out vVentas);
+                    Ins.Venta = vVentas;
+                    Ins.MtdInsertarInventario_Ventas();
+                    if (!Ins.Exito)
+                    {
+                        XtraMessageBox.Show(Ins.Mensaje);
+                    }
+                }
+                PrimeraEdicion = false;
             }
         }
     }
