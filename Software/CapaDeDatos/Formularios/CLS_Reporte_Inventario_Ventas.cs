@@ -11,6 +11,8 @@ namespace CapaDeDatos
 
         public string Fecha1 { get; set; }
         public string Fecha2 { get; set; }
+        public string Fecha3 { get; set; }
+        public string Fecha4 { get; set; }
 
         public void MtdSeleccionarInventario()
         {
@@ -43,7 +45,6 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-
         public void MtdSeleccionarInventarioTotales()
         {
             TipoDato _dato = new TipoDato();
@@ -75,7 +76,76 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
+        public void MtdSeleccionarInventarioSerie()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
 
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Inventario_Fechas_Series_Select";
+                _dato.CadenaTexto = Fecha1;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha1");
+                _dato.CadenaTexto = Fecha2;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha2");
+                _dato.CadenaTexto = Fecha3;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha3");
+                _dato.CadenaTexto = Fecha4;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha4");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+        public void MtdSeleccionarInventarioTotalesSerie()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Inventario_Totales_Fechas_Series_Select";
+                _dato.CadenaTexto = Fecha1;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha1");
+                _dato.CadenaTexto = Fecha2;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha2");
+                _dato.CadenaTexto = Fecha3;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha3");
+                _dato.CadenaTexto = Fecha4;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha4");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
         public void MtdSeleccionarFechaMaxima()
         {
             TipoDato _dato = new TipoDato();

@@ -39,6 +39,12 @@ namespace Business_Analitics
                 m_FormDefInstance = value;
             }
         }
+
+        public DateTime fechaSerie4 { get; private set; }
+        public DateTime fechaSerie3 { get; private set; }
+        public DateTime fechaSerie2 { get; private set; }
+        public DateTime fechaSerie1 { get; private set; }
+
         public string DosCeros(string sVal)
         {
             string str = "";
@@ -52,6 +58,9 @@ namespace Business_Analitics
         {
             CargarResumen();
             CargarTotales();
+            CargarResumenSerie();
+            CargarTotalesSerie();
+
         }
 
         private void CargarResumen()
@@ -69,6 +78,32 @@ namespace Business_Analitics
                     dtgReporte.DataSource = sel.Datos;
                     dtgValReporte.CollapseAllGroups();
                     dtgValReporte.ExpandGroupRow(-1);
+                }
+                else
+                {
+                    XtraMessageBox.Show("¡No existen datos para mostrar!");
+                }
+            }
+        }
+        private void CargarResumenSerie()
+        {
+            CLS_Reporte_Inventario_Ventas sel = new CLS_Reporte_Inventario_Ventas();
+            sel.Fecha1 = fechaSerie1.Year.ToString() + DosCeros(fechaSerie1.Month.ToString()) + DosCeros(fechaSerie1.Day.ToString());
+            sel.Fecha2 = fechaSerie2.Year.ToString() + DosCeros(fechaSerie2.Month.ToString()) + DosCeros(fechaSerie2.Day.ToString());
+            sel.Fecha3 = fechaSerie3.Year.ToString() + DosCeros(fechaSerie3.Month.ToString()) + DosCeros(fechaSerie3.Day.ToString());
+            sel.Fecha4 = fechaSerie4.Year.ToString() + DosCeros(fechaSerie4.Month.ToString()) + DosCeros(fechaSerie4.Day.ToString());
+            gridBand14.Caption = DosCeros(fechaSerie1.Day.ToString()) + "/" + DosCeros(fechaSerie1.Month.ToString()) + "/" + fechaSerie1.Year.ToString();
+            gridBand15.Caption = DosCeros(fechaSerie2.Day.ToString()) + "/" + DosCeros(fechaSerie2.Month.ToString()) + "/" + fechaSerie2.Year.ToString();
+            gridBand19.Caption = DosCeros(fechaSerie3.Day.ToString()) + "/" + DosCeros(fechaSerie3.Month.ToString()) + "/" + fechaSerie3.Year.ToString();
+            gridBand20.Caption = DosCeros(fechaSerie4.Day.ToString()) + "/" + DosCeros(fechaSerie4.Month.ToString()) + "/" + fechaSerie4.Year.ToString();
+            sel.MtdSeleccionarInventarioSerie();
+            if (sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    dtgReporteSerie.DataSource = sel.Datos;
+                    dtgValReporteSerie.CollapseAllGroups();
+                    dtgValReporteSerie.ExpandGroupRow(-1);
                 }
                 else
                 {
@@ -96,12 +131,36 @@ namespace Business_Analitics
                 }
             }
         }
+        private void CargarTotalesSerie()
+        {
+            CLS_Reporte_Inventario_Ventas sel = new CLS_Reporte_Inventario_Ventas();
+            sel.Fecha1 =fechaSerie1.Year.ToString() + DosCeros(fechaSerie1.Month.ToString()) + DosCeros(fechaSerie1.Day.ToString());
+            sel.Fecha2 = fechaSerie2.Year.ToString() + DosCeros(fechaSerie2.Month.ToString()) + DosCeros(fechaSerie2.Day.ToString());
+            sel.Fecha3 = fechaSerie3.Year.ToString() + DosCeros(fechaSerie3.Month.ToString()) + DosCeros(fechaSerie3.Day.ToString());
+            sel.Fecha4 = fechaSerie4.Year.ToString() + DosCeros(fechaSerie4.Month.ToString()) + DosCeros(fechaSerie4.Day.ToString());
+            gridBand10.Caption = DosCeros(fechaSerie1.Day.ToString()) + "/" + DosCeros(fechaSerie1.Month.ToString()) + "/" + fechaSerie1.Year.ToString();
+            gridBand11.Caption = DosCeros(fechaSerie2.Day.ToString()) + "/" + DosCeros(fechaSerie2.Month.ToString()) + "/" + fechaSerie2.Year.ToString();
+            gridBand17.Caption = DosCeros(fechaSerie3.Day.ToString()) + "/" + DosCeros(fechaSerie3.Month.ToString()) + "/" + fechaSerie3.Year.ToString();
+            gridBand18.Caption = DosCeros(fechaSerie4.Day.ToString()) + "/" + DosCeros(fechaSerie4.Month.ToString()) + "/" + fechaSerie4.Year.ToString();
+            sel.MtdSeleccionarInventarioTotalesSerie();
+            if (sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    dtgReporteTSerie.DataSource = sel.Datos;
+                }
+                else
+                {
+                    XtraMessageBox.Show("¡No existen datos para mostrar!");
+                }
+            }
+        }
         private void Frm_ReportInventarios_Shown(object sender, EventArgs e)
         {
+            cmbComparar.SelectedIndex = 0;
             DateTime vFecha = FechaMaxima();
             dtFecha1.DateTime = vFecha.AddDays(-1);
             dtFecha2.DateTime = FechaMaxima();
-            cmbComparar.SelectedIndex = 0;
             dtgValReporte.OptionsSelection.EnableAppearanceFocusedCell = false;
             dtgValReporte.OptionsSelection.EnableAppearanceHideSelection = false;
             dtgValReporte.OptionsSelection.MultiSelect = true;
@@ -136,8 +195,25 @@ namespace Business_Analitics
             bandedGridColumn8.DisplayFormat.FormatString = "p1";
             bandedGridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             bandedGridColumn9.DisplayFormat.FormatString = "p1";
-            //dtgValReporte.GroupSummary.Clear();
-            //GridSummaryItem summaryItemMaxOrderSum = dtgValReporte.GroupSummary.Add(DevExpress.Data.SummaryItemType.Max, "f1Volumen", null, "(Max Order Sum = {MAX Order Sum = {0:n0}})");
+
+            bandedGridColumn26.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            bandedGridColumn26.DisplayFormat.FormatString = "n0";
+            bandedGridColumn27.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            bandedGridColumn27.DisplayFormat.FormatString = "p1";
+            bandedGridColumn28.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            bandedGridColumn28.DisplayFormat.FormatString = "n0";
+            bandedGridColumn29.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            bandedGridColumn29.DisplayFormat.FormatString = "p1";
+
+            bandedGridColumn30.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            bandedGridColumn30.DisplayFormat.FormatString = "n0";
+            bandedGridColumn31.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            bandedGridColumn31.DisplayFormat.FormatString = "p1";
+            bandedGridColumn32.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            bandedGridColumn32.DisplayFormat.FormatString = "n0";
+            bandedGridColumn33.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            bandedGridColumn33.DisplayFormat.FormatString = "p1";
+            CalcularFechas();
         }
 
         private DateTime FechaMaxima()
@@ -234,6 +310,8 @@ namespace Business_Analitics
         {
             CargarResumen();
             CargarTotales();
+            CargarResumenSerie();
+            CargarTotalesSerie();
             VerificarDatos();
             ActualizarXML();
         }
@@ -295,29 +373,66 @@ namespace Business_Analitics
 
         private void cmbComparar_SelectedIndexChanged(object sender, EventArgs e)
         {
+            CalcularFechas();
+        }
+
+        private void CalcularFechas()
+        {
             DateTime vFecha = dtFecha2.DateTime;
-            switch (cmbComparar.SelectedIndex)
+            try
             {
-                case 0:
-                    dtFecha1.DateTime = vFecha.AddDays(-1);
-                    break;
-                case 1:
-                    dtFecha1.DateTime = vFecha.AddDays(-3);
-                    break;
-                case 2:
-                    dtFecha1.DateTime = vFecha.AddDays(-7);
-                    break;
-                case 3:
-                    dtFecha1.DateTime = vFecha.AddDays(-14);
-                    break;
-                case 4:
-                    dtFecha1.DateTime = vFecha.AddMonths(-1);
-                    break;
-                case 5:
-                    dtFecha1.DateTime = vFecha.AddYears(-1);
-                    break;
-                default:
-                    break;
+
+
+                switch (cmbComparar.SelectedIndex)
+                {
+                    case 0:
+                        dtFecha1.DateTime = vFecha.AddDays(-1);
+                        fechaSerie4 = vFecha;
+                        fechaSerie3 = vFecha.AddDays(-1);
+                        fechaSerie2 = vFecha.AddDays(-2);
+                        fechaSerie1 = vFecha.AddDays(-3);
+                        break;
+                    case 1:
+                        dtFecha1.DateTime = vFecha.AddDays(-3);
+                        fechaSerie4 = vFecha;
+                        fechaSerie3 = vFecha.AddDays(-3);
+                        fechaSerie2 = vFecha.AddDays(-6);
+                        fechaSerie1 = vFecha.AddDays(-9);
+                        break;
+                    case 2:
+                        dtFecha1.DateTime = vFecha.AddDays(-7);
+                        fechaSerie4 = vFecha;
+                        fechaSerie3 = vFecha.AddDays(-7);
+                        fechaSerie2 = vFecha.AddDays(-14);
+                        fechaSerie1 = vFecha.AddDays(-21);
+                        break;
+                    case 3:
+                        dtFecha1.DateTime = vFecha.AddDays(-14);
+                        fechaSerie4 = vFecha;
+                        fechaSerie3 = vFecha.AddDays(-14);
+                        fechaSerie2 = vFecha.AddDays(-28);
+                        fechaSerie1 = vFecha.AddDays(-42);
+                        break;
+                    case 4:
+                        dtFecha1.DateTime = vFecha.AddMonths(-1);
+                        fechaSerie4 = vFecha;
+                        fechaSerie3 = vFecha.AddMonths(-1);
+                        fechaSerie2 = vFecha.AddMonths(-2);
+                        fechaSerie1 = vFecha.AddMonths(-3);
+                        break;
+                    case 5:
+                        dtFecha1.DateTime = vFecha.AddYears(-1);
+                        fechaSerie4 = vFecha;
+                        fechaSerie3 = vFecha.AddYears(-1);
+                        fechaSerie2 = vFecha.AddYears(-2);
+                        fechaSerie1 = vFecha.AddYears(-3);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception)
+            {
             }
         }
 
@@ -332,6 +447,11 @@ namespace Business_Analitics
             {
                 XtraMessageBox.Show("No se han cargado datos a comparar");
             }
+        }
+
+        private void dtFecha2_EditValueChanged(object sender, EventArgs e)
+        {
+            CalcularFechas();
         }
     }
 }
