@@ -148,11 +148,35 @@
     <Compile Include="Form_Catalogos\Empresas\Frm_EmpresaCorte.Designer.cs">
       <DependentUpon>Frm_EmpresaCorte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Catalogos\Frm_BuscarHuerta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_BuscarHuerta.Designer.cs">
+      <DependentUpon>Frm_BuscarHuerta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_BuscarProgramaCorte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_BuscarProgramaCorte.Designer.cs">
+      <DependentUpon>Frm_BuscarProgramaCorte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Calidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Calidad.designer.cs">
+      <DependentUpon>Frm_Calidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Catalogos\Frm_Ciudad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Catalogos\Frm_Ciudad.Designer.cs">
       <DependentUpon>Frm_Ciudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Cultivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Cultivo.designer.cs">
+      <DependentUpon>Frm_Cultivo.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Catalogos\Frm_Estado.cs">
       <SubType>Form</SubType>
@@ -166,11 +190,35 @@
     <Compile Include="Form_Catalogos\Frm_Pais.Designer.cs">
       <DependentUpon>Frm_Pais.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Catalogos\Frm_Productor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Productor.designer.cs">
+      <DependentUpon>Frm_Productor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Catalogos\Frm_Tipo_Domicilio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Catalogos\Frm_Tipo_Domicilio.Designer.cs">
       <DependentUpon>Frm_Tipo_Domicilio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Tratamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Tratamiento.designer.cs">
+      <DependentUpon>Frm_Tratamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Zona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_Zona.designer.cs">
+      <DependentUpon>Frm_Zona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Control\FrmHistorialInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Control\FrmHistorialInventario.Designer.cs">
+      <DependentUpon>FrmHistorialInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Control\Frm_Cosecha.cs">
       <SubType>Form</SubType>
@@ -189,6 +237,12 @@
     </Compile>
     <Compile Include="Form_Control\Frm_Inventario_Ventas.Designer.cs">
       <DependentUpon>Frm_Inventario_Ventas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Control\Frm_PreciosSemana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Control\Frm_PreciosSemana.Designer.cs">
+      <DependentUpon>Frm_PreciosSemana.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Reportes\Frm_Dashboard.cs">
       <SubType>Form</SubType>
@@ -267,8 +321,20 @@
     <EmbeddedResource Include="Form_Catalogos\Empresas\Frm_EmpresaCorte.resx">
       <DependentUpon>Frm_EmpresaCorte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_BuscarHuerta.resx">
+      <DependentUpon>Frm_BuscarHuerta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_BuscarProgramaCorte.resx">
+      <DependentUpon>Frm_BuscarProgramaCorte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_Calidad.resx">
+      <DependentUpon>Frm_Calidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Catalogos\Frm_Ciudad.resx">
       <DependentUpon>Frm_Ciudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_Cultivo.resx">
+      <DependentUpon>Frm_Cultivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Catalogos\Frm_Estado.resx">
       <DependentUpon>Frm_Estado.cs</DependentUpon>
@@ -276,8 +342,20 @@
     <EmbeddedResource Include="Form_Catalogos\Frm_Pais.resx">
       <DependentUpon>Frm_Pais.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_Productor.resx">
+      <DependentUpon>Frm_Productor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Catalogos\Frm_Tipo_Domicilio.resx">
       <DependentUpon>Frm_Tipo_Domicilio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_Tratamiento.resx">
+      <DependentUpon>Frm_Tratamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_Zona.resx">
+      <DependentUpon>Frm_Zona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Control\FrmHistorialInventario.resx">
+      <DependentUpon>FrmHistorialInventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Control\Frm_Cargas.resx">
       <DependentUpon>Frm_Cargas.cs</DependentUpon>
@@ -287,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Control\Frm_Inventario_Ventas.resx">
       <DependentUpon>Frm_Inventario_Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Control\Frm_PreciosSemana.resx">
+      <DependentUpon>Frm_PreciosSemana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Reportes\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
@@ -324,6 +405,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -334,6 +416,34 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mexico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estados-unidos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colombia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colombia1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\naciones-unidas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GodModeOn.gif" />
+    <None Include="Resources\GodModeOn.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

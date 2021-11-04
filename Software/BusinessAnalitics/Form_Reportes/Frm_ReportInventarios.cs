@@ -134,7 +134,7 @@ namespace Business_Analitics
         private void CargarTotalesSerie()
         {
             CLS_Reporte_Inventario_Ventas sel = new CLS_Reporte_Inventario_Ventas();
-            sel.Fecha1 =fechaSerie1.Year.ToString() + DosCeros(fechaSerie1.Month.ToString()) + DosCeros(fechaSerie1.Day.ToString());
+            sel.Fecha1 = fechaSerie1.Year.ToString() + DosCeros(fechaSerie1.Month.ToString()) + DosCeros(fechaSerie1.Day.ToString());
             sel.Fecha2 = fechaSerie2.Year.ToString() + DosCeros(fechaSerie2.Month.ToString()) + DosCeros(fechaSerie2.Day.ToString());
             sel.Fecha3 = fechaSerie3.Year.ToString() + DosCeros(fechaSerie3.Month.ToString()) + DosCeros(fechaSerie3.Day.ToString());
             sel.Fecha4 = fechaSerie4.Year.ToString() + DosCeros(fechaSerie4.Month.ToString()) + DosCeros(fechaSerie4.Day.ToString());
@@ -215,7 +215,33 @@ namespace Business_Analitics
             bandedGridColumn33.DisplayFormat.FormatString = "p1";
             CalcularFechas();
         }
+        private void SetBackground()
+        {
+            dtgReporteT.MainView.BeginUpdate();
+            try
+            {
+                dtgValReporteT.Appearance.EvenRow.BackColor = Color.Transparent;
+                dtgValReporteT.Appearance.OddRow.BackColor = Color.Transparent;
+                // Specify the grid's background image. 
+                dtgReporteT.BackgroundImage = Image.FromFile("c:\\Dashboard\\GodModeOn.gif");
+                // Modify the appearance settings used to paint an Empty space. 
+                dtgValReporteT.Appearance.Empty.BackColor = Color.Transparent;
+                // Modify the group panel's appearance settings. 
+                dtgValReporteT.Appearance.GroupPanel.BackColor = Color.FromArgb(100, 62, 109, 185);
+                dtgValReporteT.Appearance.EvenRow.BackColor = Color.FromArgb(100, Color.Yellow);
 
+            }
+            finally
+            {
+                // Unlocks the control and repaints it with respect to the changes made. 
+                dtgReporteT.MainView.EndUpdate();
+            }
+            gridView1.RowStyle += gridView1_RowStyle;
+        }
+        void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            e.Appearance.BackColor = Color.FromArgb(100, Color.Red);
+        }
         private DateTime FechaMaxima()
         {
             DateTime Fecha= DateTime.Now;
@@ -292,8 +318,15 @@ namespace Business_Analitics
             link1.Component = dtgReporteT;
             PrintableComponentLinkBase link2 = new PrintableComponentLinkBase();
             link2.Component = dtgReporte;
+            PrintableComponentLinkBase link3 = new PrintableComponentLinkBase();
+            link3.Component = dtgReporteTSerie;
+            PrintableComponentLinkBase link4 = new PrintableComponentLinkBase();
+            link4.Component = dtgReporteSerie;
+           
             compositeLink.Links.Add(link1);
             compositeLink.Links.Add(link2);
+            compositeLink.Links.Add(link3);
+            compositeLink.Links.Add(link4);
             XlsxExportOptionsEx options = new XlsxExportOptionsEx();
             options.RawDataMode= false;
             options.ExportType = DevExpress.Export.ExportType.DataAware;
@@ -314,12 +347,16 @@ namespace Business_Analitics
             CargarTotalesSerie();
             VerificarDatos();
             ActualizarXML();
+            dtgValReporteT.BestFitColumns();
+            //SetBackground();
         }
 
         private void ActualizarXML()
         {
-            string Fecha1 = dtFecha1.DateTime.Year.ToString() + DosCeros(dtFecha1.DateTime.Month.ToString()) + DosCeros(dtFecha1.DateTime.Day.ToString());
-            string Fecha2 = dtFecha2.DateTime.Year.ToString() + DosCeros(dtFecha2.DateTime.Month.ToString()) + DosCeros(dtFecha2.DateTime.Day.ToString());
+            string Fecha1 = fechaSerie1.Year.ToString() + DosCeros(fechaSerie1.Month.ToString()) + DosCeros(fechaSerie1.Day.ToString());
+            string Fecha2 = fechaSerie2.Year.ToString() + DosCeros(fechaSerie2.Month.ToString()) + DosCeros(fechaSerie2.Day.ToString());
+            string Fecha3 = fechaSerie3.Year.ToString() + DosCeros(fechaSerie3.Month.ToString()) + DosCeros(fechaSerie3.Day.ToString());
+            string Fecha4 = fechaSerie4.Year.ToString() + DosCeros(fechaSerie4.Month.ToString()) + DosCeros(fechaSerie4.Day.ToString());
             XmlDocument doc = new XmlDocument();
             doc.Load(@"C:\Dashboard/Dashboard.xml");
             XmlNodeList itemNodes = doc.SelectNodes("Dashboard/DataSources/SqlDataSource/Query/Parameter");
@@ -333,9 +370,16 @@ namespace Business_Analitics
                 {
                     itemNode.InnerText = Fecha2;
                 }
+                if (itemNode.Attributes["Name"].Value == "@Fecha3")
+                {
+                    itemNode.InnerText = Fecha3;
+                }
+                if (itemNode.Attributes["Name"].Value == "@Fecha4")
+                {
+                    itemNode.InnerText = Fecha4;
+                }
             }
             doc.Save(@"C:\Dashboard/Dashboard.xml");
-
         }
 
         private void VerificarDatos()
@@ -381,8 +425,6 @@ namespace Business_Analitics
             DateTime vFecha = dtFecha2.DateTime;
             try
             {
-
-
                 switch (cmbComparar.SelectedIndex)
                 {
                     case 0:

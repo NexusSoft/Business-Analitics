@@ -49,6 +49,8 @@
             this.btn_Maquila = new DevExpress.XtraBars.BarButtonItem();
             this.btn_inventario_ventas = new DevExpress.XtraBars.BarButtonItem();
             this.btnReportInventario = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPrecioSemana = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -92,9 +94,11 @@
             this.btn_TipoDomicilio,
             this.btn_Maquila,
             this.btn_inventario_ventas,
-            this.btnReportInventario});
+            this.btnReportInventario,
+            this.barButtonItem1,
+            this.btnPrecioSemana});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 19;
+            this.ribbon.MaxItemId = 22;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -103,6 +107,8 @@
             this.ribbonPage4,
             this.ribbonPage3,
             this.ribbonPage5});
+            this.ribbon.QuickToolbarItemLinks.Add(this.btn_inventario_ventas);
+            this.ribbon.QuickToolbarItemLinks.Add(this.btnReportInventario);
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbon.Size = new System.Drawing.Size(875, 147);
             this.ribbon.StatusBar = this.ribbonStatusBar;
@@ -132,12 +138,15 @@
             // 
             this.btn_Cosecha.Caption = "Cosecha";
             this.btn_Cosecha.Id = 4;
+            this.btn_Cosecha.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Cosecha.ImageOptions.LargeImage")));
             this.btn_Cosecha.Name = "btn_Cosecha";
+            this.btn_Cosecha.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Cosecha_ItemClick);
             // 
             // btn_Cargas
             // 
             this.btn_Cargas.Caption = "Cargas";
             this.btn_Cargas.Id = 5;
+            this.btn_Cargas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Cargas.ImageOptions.LargeImage")));
             this.btn_Cargas.Name = "btn_Cargas";
             // 
             // btn_EmpBascula
@@ -222,6 +231,7 @@
             // 
             this.btn_Maquila.Caption = "Maquila";
             this.btn_Maquila.Id = 16;
+            this.btn_Maquila.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Maquila.ImageOptions.LargeImage")));
             this.btn_Maquila.Name = "btn_Maquila";
             // 
             // btn_inventario_ventas
@@ -241,6 +251,19 @@
             this.btnReportInventario.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReportInventario.ImageOptions.LargeImage")));
             this.btnReportInventario.Name = "btnReportInventario";
             this.btnReportInventario.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReportInventario_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 19;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnPrecioSemana
+            // 
+            this.btnPrecioSemana.Caption = "Precios x Semana";
+            this.btnPrecioSemana.Id = 20;
+            this.btnPrecioSemana.ImageOptions.LargeImage = global::BusinessAnalitics.Properties.Resources.cash;
+            this.btnPrecioSemana.Name = "btnPrecioSemana";
             // 
             // ribbonPage1
             // 
@@ -286,6 +309,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_Cargas);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_Maquila);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_inventario_ventas);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnPrecioSemana);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
             this.ribbonPageGroup2.Text = "Captura y Consulta";
@@ -420,5 +444,7 @@
         private DevExpress.XtraBars.BarButtonItem btn_Maquila;
         private DevExpress.XtraBars.BarButtonItem btn_inventario_ventas;
         private DevExpress.XtraBars.BarButtonItem btnReportInventario;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnPrecioSemana;
     }
 }

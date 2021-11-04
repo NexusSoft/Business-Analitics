@@ -134,7 +134,36 @@ namespace Business_Analitics
                 XtraMessageBox.Show("Faltan datos por completar Ciudad o Tipo de Domicilio");
             }
         }
+        private void InsertarContacto()
+        {
+            if (txtNombreContacto.Text != string.Empty )
+            {
+                CLS_EmpresasComercializadora_Contacto Domicilio = new CLS_EmpresasComercializadora_Contacto();
+                Domicilio.Id_Contacto = txtIdContacto.Text.Trim();
+                Domicilio.Id_Huerta = txtIdHuerta.Text.Trim();
+                Domicilio.Id_EmpresaComercializacion = textId.Text.Trim();
+                Domicilio.Nombre_Contacto = txtNombreContacto.Text.Trim();
+                Domicilio.Email_Contacto = txtEmail.Text.Trim();
+                Domicilio.Telefono_Contacto = txtTelefono.Text.Trim();
+                Domicilio.Usuario = UsuariosLogin;
+                Domicilio.MtdInsertarContacto();
+                if (Domicilio.Exito)
+                {
 
+                    CargarDomicilio();
+                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                    LimpiarCamposDomicilio();
+                }
+                else
+                {
+                    XtraMessageBox.Show(Domicilio.Mensaje);
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("Faltan datos por completar Nombre de contacto");
+            }
+        }
         private void EliminarEmpresas()
         {
             CLS_EmpresasComercializadora Empresas = new CLS_EmpresasComercializadora();
@@ -187,7 +216,22 @@ namespace Business_Analitics
                 XtraMessageBox.Show(Domicilio.Mensaje);
             }
         }
-
+        private void EliminarContacto()
+        {
+            CLS_EmpresasComercializadora_Contacto Domicilio = new CLS_EmpresasComercializadora_Contacto();
+            Domicilio.Id_Contacto = txtIdContacto.Text.Trim();
+            Domicilio.MtdEliminarContacto();
+            if (Domicilio.Exito)
+            {
+                CargarDomicilio();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+                LimpiarCamposContacto();
+            }
+            else
+            {
+                XtraMessageBox.Show(Domicilio.Mensaje);
+            }
+        }
         private void LimpiarCampos()
         {
             textId.Text = "";
@@ -213,6 +257,15 @@ namespace Business_Analitics
             textColonia.Text = "";
             textTipoDomicilio.Tag = "";
             textTipoDomicilio.Text = "";
+        }
+        private void LimpiarCamposContacto()
+        {
+            txtIdContacto.Text = "";
+            txtIdHuerta.Text = "";
+            txtNombreContacto.Text = "";
+            txtNombreHuerta.Text = "";
+            txtEmail.Text = "";
+            txtTelefono.Text = "";
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -252,7 +305,7 @@ namespace Business_Analitics
                     XtraMessageBox.Show("Es necesario Agregar un nombre a la Empresa.");
                 }
             }
-            else
+            else if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
             {
                 if (textCalle.Text.ToString().Trim().Length > 0)
                 {
@@ -268,6 +321,24 @@ namespace Business_Analitics
                 else
                 {
                     XtraMessageBox.Show("Es necesario Agregar una calle.");
+                }
+            }
+            else if (xtraTabControl1.SelectedTabPage == xtraTabPage3)
+            {
+                if (txtIdHuerta.Text.ToString().Trim().Length > 0 && txtNombreHuerta.Text.Trim().Length > 0)
+                {
+                    if (txtNombreContacto.Text.Trim().Length > 0)
+                    {
+                        InsertarContacto();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Es necesario agregar un numero exterior o interior.");
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario Agregar una huerta.");
                 }
             }
         }
@@ -287,9 +358,20 @@ namespace Business_Analitics
                         XtraMessageBox.Show("Es necesario seleccionar una Empresa.");
                     }
                 }
-                else
+                else if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
                 {
                     if (textIdDomicilio.Text.Trim().Length > 0)
+                    {
+                        EliminarDomicilio();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Es necesario seleccionar un Domicilio.");
+                    }
+                }
+                else if (xtraTabControl1.SelectedTabPage == xtraTabPage3)
+                {
+                    if (txtIdContacto.Text.Trim().Length > 0)
                     {
                         EliminarDomicilio();
                     }
@@ -306,10 +388,15 @@ namespace Business_Analitics
             {
                 LimpiarCampos();
                 LimpiarCamposDomicilio();
+                LimpiarCamposContacto();
             }
-            else
+            else if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
             {
                 LimpiarCamposDomicilio();
+            }
+            else if (xtraTabControl1.SelectedTabPage == xtraTabPage3)
+            {
+                LimpiarCamposContacto();
             }
         }
 
@@ -390,11 +477,12 @@ namespace Business_Analitics
             if (textId.Text == String.Empty)
             {
                 xtraTabPage2.PageEnabled = false;
-
+                xtraTabPage3.PageEnabled = false;
             }
             else
             {
                 xtraTabPage2.PageEnabled = true;
+                xtraTabPage3.PageEnabled = true;
             }
         }
 
@@ -403,6 +491,16 @@ namespace Business_Analitics
             IdProveedor = textId.Text.Trim();
             Proveedor = textProveedor.Text.Trim();
             this.Close();
+        }
+
+        private void btnHuertas_Click(object sender, EventArgs e)
+        {
+            Frm_BuscarHuerta frm = new Frm_BuscarHuerta();
+            frm.IdHuerta = string.Empty;
+            frm.Huerta = string.Empty;
+            frm.ShowDialog();
+            txtIdHuerta.Text = frm.IdHuerta;
+            txtNombreHuerta.Text = frm.Huerta;
         }
     }
 }

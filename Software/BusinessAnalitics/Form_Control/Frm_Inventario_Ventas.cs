@@ -299,6 +299,7 @@ namespace Business_Analitics
 
         private void dtFecha_EditValueChanged(object sender, EventArgs e)
         {
+            textId.Text = string.Empty;
             CargarInventario_Ventas();
             CargarTotalesPais();
         }
@@ -402,6 +403,12 @@ namespace Business_Analitics
                 }
                 PrimeraEdicion = false;
             }
+        }
+
+        private void btnHistorial_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FrmHistorialInventario frm = new FrmHistorialInventario();
+            frm.ShowDialog();
         }
     }
 }

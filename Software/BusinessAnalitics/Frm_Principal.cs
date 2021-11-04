@@ -265,5 +265,19 @@ namespace Business_Analitics
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [013]");
             }
         }
+        private void btn_Cosecha_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("015"))
+            {
+                Frm_Cosecha Ventana = new Frm_Cosecha();
+                Frm_Cosecha.DefInstance.MdiParent = this;
+                Frm_Cosecha.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_Cosecha.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [015]");
+            }
+        }
     }
 }

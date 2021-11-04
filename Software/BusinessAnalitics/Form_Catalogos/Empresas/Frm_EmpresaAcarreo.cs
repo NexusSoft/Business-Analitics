@@ -36,8 +36,6 @@ namespace Business_Analitics
             }
         }
 
-        
-
         public Frm_EmpresaAcarreo()
         {
             InitializeComponent();
@@ -67,6 +65,28 @@ namespace Business_Analitics
                 dtgDomicilio.DataSource = Domicilio.Datos;
             }
         }
+        private void CargarCamiones()
+        {
+            dtgCamiones.DataSource = null;
+            CLS_Camiones camiones = new CLS_Camiones();
+            camiones.Id_EmpresaAcarreo = textId.Text.Trim();
+            camiones.MtdSeleccionarCamion();
+            if (camiones.Exito)
+            {
+                dtgCamiones.DataSource = camiones.Datos;
+            }
+        }
+        private void CargarChoferes()
+        {
+            dtgChoferes.DataSource = null;
+            CLS_Choferes Choferes = new CLS_Choferes();
+            Choferes.Id_EmpresaAcarreo = textId.Text.Trim();
+            Choferes.MtdSeleccionarChoferes();
+            if (Choferes.Exito)
+            {
+                dtgChoferes.DataSource = Choferes.Datos;
+            }
+        }
 
         private void InsertarEmpresaAcarreo()
         {
@@ -78,7 +98,8 @@ namespace Business_Analitics
             Empresas.Email = textCorreo.Text.Trim();
             Empresas.Contacto = textContacto.Text.Trim();
             Empresas.RFC = txtRFC.Text.Trim();
-
+            Empresas.PrecioA =Convert.ToDecimal(txtPrecioA.EditValue);
+            Empresas.PrecioB = Convert.ToDecimal(txtPrecioB.EditValue);
             Empresas.Usuario = UsuariosLogin.Trim();
             Empresas.MtdInsertarEmpresas();
             if (Empresas.Exito)
@@ -133,7 +154,61 @@ namespace Business_Analitics
                 XtraMessageBox.Show("Faltan datos por completar Ciudad o Tipo de Domicilio");
             }
         }
+        private void InsertarCamiones()
+        {
+            if (txtNombreCamion.Text != string.Empty )
+            {
+                CLS_Camiones Camion = new CLS_Camiones();
+                Camion.Id_Camion = txtIDCamion.Text.Trim();
+                Camion.Nombre_Camion = txtNombreCamion.Text.Trim();
+                Camion.Placas = txtPlacasCamion.Text.Trim();
+                Camion.Id_EmpresaAcarreo = textId.Text.Trim();
+                Camion.Usuario = UsuariosLogin;
+                Camion.MtdInsertarCamion();
+                if (Camion.Exito)
+                {
 
+                    CargarCamiones();
+                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                    LimpiarCamposCamiones();
+                }
+                else
+                {
+                    XtraMessageBox.Show(Camion.Mensaje);
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("Faltan datos por completar Ciudad o Tipo de Domicilio");
+            }
+        }
+        private void InsertarChoferes()
+        {
+            if (txtNombreChofer.Text != string.Empty )
+            {
+                CLS_Choferes Chofer = new CLS_Choferes();
+                Chofer.Id_Chofer = txtIDChofer.Text.Trim();
+                Chofer.Id_EmpresaAcarreo = textId.Text.Trim();
+                Chofer.Nombre_Chofer = txtNombreChofer.Text.Trim();
+                Chofer.Usuario = UsuariosLogin;
+                Chofer.MtdInsertarChoferes();
+                if (Chofer.Exito)
+                {
+
+                    CargarChoferes();
+                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                    LimpiarCamposChoferes();
+                }
+                else
+                {
+                    XtraMessageBox.Show(Chofer.Mensaje);
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("Faltan datos por completar Ciudad o Tipo de Domicilio");
+            }
+        }
         private void EliminarEmpresas()
         {
             CLS_EmpresasAcarreo Empresas = new CLS_EmpresasAcarreo();
@@ -196,6 +271,8 @@ namespace Business_Analitics
             textCorreo.Text = "";
             textContacto.Text = "";
             txtRFC.Text = "";
+            txtPrecioA.Text = "0";
+            txtPrecioB.Text = "0";
         }
 
         private void LimpiarCamposDomicilio()
@@ -213,6 +290,17 @@ namespace Business_Analitics
             textTipoDomicilio.Tag = "";
             textTipoDomicilio.Text = "";
         }
+        private void LimpiarCamposCamiones()
+        {
+            txtIDCamion.Text = string.Empty;
+            txtNombreCamion.Text = string.Empty;
+            txtPlacasCamion.Text = string.Empty;
+        }
+        private void LimpiarCamposChoferes()
+        {
+            txtIDChofer.Text = string.Empty;
+            txtNombreChofer.Text = string.Empty;
+        }
 
         private void gridControl1_Click(object sender, EventArgs e)
         {
@@ -228,6 +316,9 @@ namespace Business_Analitics
                     textCorreo.Text = row["Email"].ToString();
                     textContacto.Text = row["Contacto"].ToString();
                     txtRFC.Text = row["RFC"].ToString();
+                    groupControl2.Text = "Domicilio - " + textProveedor.Text;
+                    groupControl3.Text = "Camion - " + textProveedor.Text;
+                    groupControl4.Text = "Chofeer - " + textProveedor.Text;
                 }
             }
             catch (Exception ex)
@@ -236,6 +327,8 @@ namespace Business_Analitics
             }
 
             CargarDomicilio();
+            CargarCamiones();
+            CargarChoferes();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -251,7 +344,7 @@ namespace Business_Analitics
                     XtraMessageBox.Show("Es necesario Agregar un nombre a la Empresa.");
                 }
             }
-            else
+            else if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
             {
                 if (textCalle.Text.ToString().Trim().Length > 0)
                 {
@@ -267,6 +360,29 @@ namespace Business_Analitics
                 else
                 {
                     XtraMessageBox.Show("Es necesario Agregar una calle.");
+                }
+            }
+            else if (xtraTabControl1.SelectedTabPage == xtraTabPage3)
+            {
+                if (txtNombreCamion.Text.ToString().Trim().Length > 0)
+                {
+                    InsertarCamiones();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario agregar un nombre del camion.");
+                }
+            }
+            else if (xtraTabControl1.SelectedTabPage == xtraTabPage4)
+            {
+                if (txtNombreChofer.Text.ToString().Trim().Length > 0)
+                {
+
+                    InsertarChoferes();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Es necesario agregar un nombre del chofer.");
                 }
             }
         }
@@ -286,7 +402,7 @@ namespace Business_Analitics
                         XtraMessageBox.Show("Es necesario seleccionar una Empresa.");
                     }
                 }
-                else
+                else if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
                 {
                     if (textIdDomicilio.Text.Trim().Length > 0)
                     {
@@ -297,6 +413,14 @@ namespace Business_Analitics
                         XtraMessageBox.Show("Es necesario seleccionar un Domicilio.");
                     }
                 }
+                else if (xtraTabControl1.SelectedTabPage == xtraTabPage3)
+                {
+                    
+                }
+                else if (xtraTabControl1.SelectedTabPage == xtraTabPage4)
+                {
+                    
+                }
             }
         }
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -305,10 +429,20 @@ namespace Business_Analitics
             {
                 LimpiarCampos();
                 LimpiarCamposDomicilio();
+                LimpiarCamposCamiones();
+                LimpiarCamposChoferes();
             }
-            else
+            else if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
             {
                 LimpiarCamposDomicilio();
+            }
+            else if (xtraTabControl1.SelectedTabPage == xtraTabPage3)
+            {
+                LimpiarCamposCamiones();
+            }
+            else if (xtraTabControl1.SelectedTabPage == xtraTabPage4)
+            {
+                LimpiarCamposChoferes();
             }
         }
 
@@ -389,11 +523,17 @@ namespace Business_Analitics
             if (textId.Text == String.Empty)
             {
                 xtraTabPage2.PageEnabled = false;
-
+                xtraTabPage3.PageEnabled = false;
+                xtraTabPage4.PageEnabled = false;
+                groupControl2.Text = "Domicilio";
+                groupControl2.Text = "Camion";
+                groupControl2.Text = "Chofeer";
             }
             else
             {
                 xtraTabPage2.PageEnabled = true;
+                xtraTabPage3.PageEnabled = true;
+                xtraTabPage4.PageEnabled = true;
             }
         }
 
@@ -403,5 +543,41 @@ namespace Business_Analitics
             Proveedor = textProveedor.Text.Trim();
             this.Close();
         }
+
+        private void dtgCamiones_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValCamiones.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValCamiones.GetDataRow(i);
+                    txtIDCamion.Text = row["Id_Camion"].ToString();
+                    txtNombreCamion.Text = row["Nombre_Camion"].ToString();
+                    txtPlacasCamion.Text = row["Placas"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtgChoferes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValChoferes.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValChoferes.GetDataRow(i);
+                    txtIDChofer.Text = row["Id_Chofer"].ToString();
+                    txtNombreChofer.Text = row["Nombre_Chofer"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

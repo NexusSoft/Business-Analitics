@@ -84,6 +84,18 @@ namespace Business_Analitics
                     txtPreciokg.Text = sel.Datos.Rows[0]["Precio_kilo"].ToString();
                     txtPrecioDia.Text = sel.Datos.Rows[0]["Precio_Dia"].ToString();
                     txtPrecioCuadrillaA.Text = sel.Datos.Rows[0]["Precio_Cuadrilla_Apoyo"].ToString();
+                    if (sel.Datos.Rows[0]["EsRango"].ToString() == "True")
+                    {
+                        chk_Rango.Checked = true;
+                    }
+                    else
+                    {
+                        chk_Rango.Checked = false;
+                    }
+                    txtKilosMayorA.Text = sel.Datos.Rows[0]["Kilos_MayorA"].ToString();
+                    txtKilosMenorA.Text = sel.Datos.Rows[0]["Kilos_MenorA"].ToString();
+                    txtPrecioMayorA.Text = sel.Datos.Rows[0]["Precio_MayorA"].ToString();
+                    txtPrecioMenorA.Text = sel.Datos.Rows[0]["Precio_MenorA"].ToString();
                     txtPrecioSalidaFalso.Text = sel.Datos.Rows[0]["Precio_Salida_Falso"].ToString();
                 }
                 else
@@ -92,6 +104,11 @@ namespace Business_Analitics
                     txtPreciokg.Text = "0";
                     txtPrecioDia.Text = "0";
                     txtPrecioCuadrillaA.Text = "0";
+                    chk_Rango.Checked = false;
+                    txtKilosMayorA.Text = "0";
+                    txtKilosMenorA.Text = "0";
+                    txtPrecioMayorA.Text = "0";
+                    txtPrecioMenorA.Text = "0";
                     txtPrecioSalidaFalso.Text = "0";
                 }
             }
@@ -177,6 +194,28 @@ namespace Business_Analitics
             decimal Precio_Cuadrilla_Apoyo = 0;
             decimal.TryParse(txtPrecioCuadrillaA.Text, style, culture, out Precio_Cuadrilla_Apoyo);
             ins.Precio_Cuadrilla_Apoyo = Precio_Cuadrilla_Apoyo;
+
+            if(chk_Rango.Checked==true)
+            {
+                ins.EsRango = 1;
+            }
+            else
+            {
+                ins.EsRango = 0;
+            }
+
+            decimal Kilos_MenorA = 0;
+            decimal.TryParse(txtKilosMenorA.Text, style, culture, out Kilos_MenorA);
+            ins.Kilos_MenorA = Kilos_MenorA;
+            decimal Kilos_MayorA = 0;
+            decimal.TryParse(txtKilosMayorA.Text, style, culture, out Kilos_MayorA);
+            ins.Kilos_MayorA = Kilos_MayorA;
+            decimal Precio_MenorA = 0;
+            decimal.TryParse(txtPrecioMenorA.Text, style, culture, out Precio_MenorA);
+            ins.Precio_MenorA = Precio_MenorA;
+            decimal Precio_MayorA = 0;
+            decimal.TryParse(txtPrecioMayorA.Text, style, culture, out Precio_MayorA);
+            ins.Precio_MayorA = Precio_MayorA;
             decimal Precio_Salida_Falso = 0;
             decimal.TryParse(txtPrecioSalidaFalso.Text, style, culture, out Precio_Salida_Falso);
             ins.Precio_Salida_Falso = Precio_Salida_Falso;
@@ -296,6 +335,10 @@ namespace Business_Analitics
             txtPrecioDia.Text = "0";
             txtPrecioCuadrillaA.Text = "0";
             txtPrecioSalidaFalso.Tag = "0";
+            txtKilosMayorA.Text = "0";
+            txtKilosMenorA.Text = "0";
+            txtPrecioMayorA.Text = "0";
+            txtPrecioMenorA.Text = "0";
         }
         private void gridControl1_Click(object sender, EventArgs e)
         {
@@ -523,6 +566,48 @@ namespace Business_Analitics
             txtPrecioSalidaFalso.Properties.Mask.MaskType = MaskType.Numeric;
             txtPrecioSalidaFalso.Properties.Mask.EditMask = "c2";
             txtPrecioSalidaFalso.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtKilosMayorA.Properties.Mask.MaskType = MaskType.Numeric;
+            txtKilosMayorA.Properties.Mask.EditMask = "n0";
+            txtKilosMayorA.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtKilosMenorA.Properties.Mask.MaskType = MaskType.Numeric;
+            txtKilosMenorA.Properties.Mask.EditMask = "n0";
+            txtKilosMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtPrecioMayorA.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPrecioMayorA.Properties.Mask.EditMask = "c2";
+            txtPrecioMayorA.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtPrecioMenorA.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPrecioMenorA.Properties.Mask.EditMask = "c2";
+            txtPrecioMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
+        }
+
+        private void chk_Rango_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_Rango.Checked==false)
+            {
+                txtPrecioCuadrillaA.Enabled = true;
+                txtKilosMayorA.Enabled = false;
+                txtKilosMenorA.Enabled = false;
+                txtPrecioMayorA.Enabled = false;
+                txtPrecioMenorA.Enabled = false;
+            }
+            else
+            {
+                txtPrecioCuadrillaA.Enabled = false;
+                txtKilosMayorA.Enabled = true;
+                txtKilosMenorA.Enabled = true;
+                txtPrecioMayorA.Enabled = true;
+                txtPrecioMenorA.Enabled = true;
+            }
+            InicializaApoyo();
+        }
+
+        private void InicializaApoyo()
+        {
+            txtPrecioCuadrillaA.Text = "0";
+            txtKilosMayorA.Text = "0";
+            txtKilosMenorA.Text = "0";
+            txtPrecioMayorA.Text = "0";
+            txtPrecioMenorA.Text = "0";
         }
     }
 }

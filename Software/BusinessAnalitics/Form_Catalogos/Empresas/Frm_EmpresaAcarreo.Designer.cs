@@ -108,6 +108,35 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.dtgCamiones = new DevExpress.XtraGrid.GridControl();
+            this.dtgValCamiones = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.txtPlacasCamion = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.txtNombreCamion = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
+            this.txtIDCamion = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.dtgChoferes = new DevExpress.XtraGrid.GridControl();
+            this.dtgValChoferes = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.txtNombreChofer = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.txtIDChofer = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPrecioB = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPrecioA = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -142,6 +171,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).BeginInit();
+            this.xtraTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCamiones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValCamiones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPlacasCamion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombreCamion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIDCamion.Properties)).BeginInit();
+            this.xtraTabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgChoferes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValChoferes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombreChofer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIDChofer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioA.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -263,15 +313,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(842, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(971, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 410);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 409);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(842, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(971, 26);
             // 
             // barDockControlLeft
             // 
@@ -279,15 +329,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 410);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 409);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(842, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(971, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 410);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 409);
             // 
             // repositoryItemTextEdit1
             // 
@@ -296,14 +346,16 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(71, 0);
+            this.xtraTabControl1.Location = new System.Drawing.Point(69, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(771, 410);
+            this.xtraTabControl1.Size = new System.Drawing.Size(902, 409);
             this.xtraTabControl1.TabIndex = 6;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPage2,
+            this.xtraTabPage3,
+            this.xtraTabPage4});
             // 
             // xtraTabPage1
             // 
@@ -311,7 +363,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(765, 382);
+            this.xtraTabPage1.Size = new System.Drawing.Size(900, 384);
             this.xtraTabPage1.Text = "Datos";
             // 
             // panelControl1
@@ -321,7 +373,7 @@
             this.panelControl1.Location = new System.Drawing.Point(5, 151);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(755, 226);
+            this.panelControl1.Size = new System.Drawing.Size(890, 228);
             this.panelControl1.TabIndex = 2;
             // 
             // dtgEmpAcarreo
@@ -330,7 +382,7 @@
             this.dtgEmpAcarreo.Location = new System.Drawing.Point(7, 7);
             this.dtgEmpAcarreo.MainView = this.dtgValEmpAcarreo;
             this.dtgEmpAcarreo.Name = "dtgEmpAcarreo";
-            this.dtgEmpAcarreo.Size = new System.Drawing.Size(741, 212);
+            this.dtgEmpAcarreo.Size = new System.Drawing.Size(876, 214);
             this.dtgEmpAcarreo.TabIndex = 0;
             this.dtgEmpAcarreo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValEmpAcarreo});
@@ -414,6 +466,10 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.txtPrecioB);
+            this.groupControl1.Controls.Add(this.labelControl8);
+            this.groupControl1.Controls.Add(this.txtPrecioA);
+            this.groupControl1.Controls.Add(this.labelControl20);
             this.groupControl1.Controls.Add(this.txtRFC);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.textContacto);
@@ -431,7 +487,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(755, 146);
+            this.groupControl1.Size = new System.Drawing.Size(890, 146);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Empresa";
             // 
@@ -444,7 +500,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(10, 113);
+            this.labelControl6.Location = new System.Drawing.Point(10, 111);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(24, 13);
             this.labelControl6.TabIndex = 22;
@@ -466,7 +522,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(305, 87);
+            this.labelControl4.Location = new System.Drawing.Point(305, 85);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(48, 13);
             this.labelControl4.TabIndex = 19;
@@ -474,7 +530,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(10, 87);
+            this.labelControl3.Location = new System.Drawing.Point(10, 85);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(37, 13);
             this.labelControl3.TabIndex = 18;
@@ -489,7 +545,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(305, 61);
+            this.labelControl7.Location = new System.Drawing.Point(305, 59);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(55, 13);
             this.labelControl7.TabIndex = 11;
@@ -504,7 +560,7 @@
             // 
             // label
             // 
-            this.label.Location = new System.Drawing.Point(305, 35);
+            this.label.Location = new System.Drawing.Point(305, 33);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(55, 13);
             this.label.TabIndex = 4;
@@ -519,7 +575,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(10, 61);
+            this.labelControl2.Location = new System.Drawing.Point(10, 59);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(41, 13);
             this.labelControl2.TabIndex = 2;
@@ -536,7 +592,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(10, 35);
+            this.labelControl1.Location = new System.Drawing.Point(10, 33);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(61, 13);
             this.labelControl1.TabIndex = 0;
@@ -548,7 +604,7 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(765, 382);
+            this.xtraTabPage2.Size = new System.Drawing.Size(771, 384);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // panelControl2
@@ -558,7 +614,7 @@
             this.panelControl2.Location = new System.Drawing.Point(5, 172);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(755, 205);
+            this.panelControl2.Size = new System.Drawing.Size(761, 207);
             this.panelControl2.TabIndex = 16;
             // 
             // dtgDomicilio
@@ -568,7 +624,7 @@
             this.dtgDomicilio.MainView = this.dtgValDomicilio;
             this.dtgDomicilio.MenuManager = this.barManager1;
             this.dtgDomicilio.Name = "dtgDomicilio";
-            this.dtgDomicilio.Size = new System.Drawing.Size(741, 191);
+            this.dtgDomicilio.Size = new System.Drawing.Size(747, 193);
             this.dtgDomicilio.TabIndex = 0;
             this.dtgDomicilio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValDomicilio});
@@ -711,7 +767,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 5);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(755, 167);
+            this.groupControl2.Size = new System.Drawing.Size(761, 167);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -881,11 +937,281 @@
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
             // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.panelControl3);
+            this.xtraTabPage3.Controls.Add(this.groupControl3);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5);
+            this.xtraTabPage3.Size = new System.Drawing.Size(771, 384);
+            this.xtraTabPage3.Text = "Camiones";
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.dtgCamiones);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl3.Location = new System.Drawing.Point(5, 151);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl3.Size = new System.Drawing.Size(761, 228);
+            this.panelControl3.TabIndex = 3;
+            // 
+            // dtgCamiones
+            // 
+            this.dtgCamiones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgCamiones.Location = new System.Drawing.Point(7, 7);
+            this.dtgCamiones.MainView = this.dtgValCamiones;
+            this.dtgCamiones.Name = "dtgCamiones";
+            this.dtgCamiones.Size = new System.Drawing.Size(747, 214);
+            this.dtgCamiones.TabIndex = 0;
+            this.dtgCamiones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValCamiones});
+            this.dtgCamiones.Click += new System.EventHandler(this.dtgCamiones_Click);
+            // 
+            // dtgValCamiones
+            // 
+            this.dtgValCamiones.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.dtgValCamiones.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.dtgValCamiones.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5});
+            this.dtgValCamiones.GridControl = this.dtgCamiones;
+            this.dtgValCamiones.Name = "dtgValCamiones";
+            this.dtgValCamiones.OptionsBehavior.Editable = false;
+            this.dtgValCamiones.OptionsView.ShowFooter = true;
+            this.dtgValCamiones.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Id_Camion";
+            this.gridColumn3.FieldName = "Id_Camion";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Camion";
+            this.gridColumn4.FieldName = "Nombre_Camion";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Placas";
+            this.gridColumn5.FieldName = "Placas";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 2;
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.Controls.Add(this.txtPlacasCamion);
+            this.groupControl3.Controls.Add(this.labelControl10);
+            this.groupControl3.Controls.Add(this.txtNombreCamion);
+            this.groupControl3.Controls.Add(this.labelControl21);
+            this.groupControl3.Controls.Add(this.txtIDCamion);
+            this.groupControl3.Controls.Add(this.labelControl22);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl3.Location = new System.Drawing.Point(5, 5);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(761, 146);
+            this.groupControl3.TabIndex = 1;
+            this.groupControl3.Text = "Camion";
+            // 
+            // txtPlacasCamion
+            // 
+            this.txtPlacasCamion.Location = new System.Drawing.Point(103, 95);
+            this.txtPlacasCamion.Name = "txtPlacasCamion";
+            this.txtPlacasCamion.Size = new System.Drawing.Size(192, 20);
+            this.txtPlacasCamion.TabIndex = 3;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(17, 99);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(34, 13);
+            this.labelControl10.TabIndex = 18;
+            this.labelControl10.Text = "Placas:";
+            // 
+            // txtNombreCamion
+            // 
+            this.txtNombreCamion.Location = new System.Drawing.Point(103, 69);
+            this.txtNombreCamion.Name = "txtNombreCamion";
+            this.txtNombreCamion.Size = new System.Drawing.Size(192, 20);
+            this.txtNombreCamion.TabIndex = 2;
+            // 
+            // labelControl21
+            // 
+            this.labelControl21.Location = new System.Drawing.Point(17, 73);
+            this.labelControl21.Name = "labelControl21";
+            this.labelControl21.Size = new System.Drawing.Size(79, 13);
+            this.labelControl21.TabIndex = 2;
+            this.labelControl21.Text = "Nombre Camion:";
+            // 
+            // txtIDCamion
+            // 
+            this.txtIDCamion.Enabled = false;
+            this.txtIDCamion.Location = new System.Drawing.Point(103, 43);
+            this.txtIDCamion.Name = "txtIDCamion";
+            this.txtIDCamion.Size = new System.Drawing.Size(100, 20);
+            this.txtIDCamion.TabIndex = 1;
+            // 
+            // labelControl22
+            // 
+            this.labelControl22.Location = new System.Drawing.Point(17, 47);
+            this.labelControl22.Name = "labelControl22";
+            this.labelControl22.Size = new System.Drawing.Size(55, 13);
+            this.labelControl22.TabIndex = 0;
+            this.labelControl22.Text = "Id Camion: ";
+            // 
+            // xtraTabPage4
+            // 
+            this.xtraTabPage4.Controls.Add(this.panelControl4);
+            this.xtraTabPage4.Controls.Add(this.groupControl4);
+            this.xtraTabPage4.Name = "xtraTabPage4";
+            this.xtraTabPage4.Padding = new System.Windows.Forms.Padding(5);
+            this.xtraTabPage4.Size = new System.Drawing.Size(771, 384);
+            this.xtraTabPage4.Text = "Choferes";
+            // 
+            // panelControl4
+            // 
+            this.panelControl4.Controls.Add(this.dtgChoferes);
+            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl4.Location = new System.Drawing.Point(5, 151);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl4.Size = new System.Drawing.Size(761, 228);
+            this.panelControl4.TabIndex = 5;
+            // 
+            // dtgChoferes
+            // 
+            this.dtgChoferes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgChoferes.Location = new System.Drawing.Point(7, 7);
+            this.dtgChoferes.MainView = this.dtgValChoferes;
+            this.dtgChoferes.Name = "dtgChoferes";
+            this.dtgChoferes.Size = new System.Drawing.Size(747, 214);
+            this.dtgChoferes.TabIndex = 0;
+            this.dtgChoferes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValChoferes});
+            this.dtgChoferes.Click += new System.EventHandler(this.dtgChoferes_Click);
+            // 
+            // dtgValChoferes
+            // 
+            this.dtgValChoferes.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.dtgValChoferes.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.dtgValChoferes.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn8,
+            this.gridColumn9});
+            this.dtgValChoferes.GridControl = this.dtgChoferes;
+            this.dtgValChoferes.Name = "dtgValChoferes";
+            this.dtgValChoferes.OptionsBehavior.Editable = false;
+            this.dtgValChoferes.OptionsView.ShowFooter = true;
+            this.dtgValChoferes.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Id Chofer";
+            this.gridColumn8.FieldName = "Id_Chofer";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "Id_Proveedor", "Registros: {0}")});
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 0;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Nombre Chofer";
+            this.gridColumn9.FieldName = "Nombre_Chofer";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 1;
+            // 
+            // groupControl4
+            // 
+            this.groupControl4.Controls.Add(this.txtNombreChofer);
+            this.groupControl4.Controls.Add(this.labelControl9);
+            this.groupControl4.Controls.Add(this.txtIDChofer);
+            this.groupControl4.Controls.Add(this.labelControl19);
+            this.groupControl4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl4.Location = new System.Drawing.Point(5, 5);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(761, 146);
+            this.groupControl4.TabIndex = 4;
+            this.groupControl4.Text = "Chofer";
+            // 
+            // txtNombreChofer
+            // 
+            this.txtNombreChofer.Location = new System.Drawing.Point(103, 75);
+            this.txtNombreChofer.Name = "txtNombreChofer";
+            this.txtNombreChofer.Size = new System.Drawing.Size(215, 20);
+            this.txtNombreChofer.TabIndex = 0;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(17, 78);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(77, 13);
+            this.labelControl9.TabIndex = 2;
+            this.labelControl9.Text = "Nombre Chofer:";
+            // 
+            // txtIDChofer
+            // 
+            this.txtIDChofer.Enabled = false;
+            this.txtIDChofer.Location = new System.Drawing.Point(103, 48);
+            this.txtIDChofer.Name = "txtIDChofer";
+            this.txtIDChofer.Size = new System.Drawing.Size(100, 20);
+            this.txtIDChofer.TabIndex = 1;
+            // 
+            // labelControl19
+            // 
+            this.labelControl19.Location = new System.Drawing.Point(17, 52);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(53, 13);
+            this.labelControl19.TabIndex = 0;
+            this.labelControl19.Text = "Id Chofer: ";
+            // 
+            // txtPrecioB
+            // 
+            this.txtPrecioB.Location = new System.Drawing.Point(665, 55);
+            this.txtPrecioB.Name = "txtPrecioB";
+            this.txtPrecioB.Properties.Mask.EditMask = "c2";
+            this.txtPrecioB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioB.Size = new System.Drawing.Size(125, 20);
+            this.txtPrecioB.TabIndex = 25;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(575, 59);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(85, 13);
+            this.labelControl8.TabIndex = 26;
+            this.labelControl8.Text = "Costo por Caja B:";
+            // 
+            // txtPrecioA
+            // 
+            this.txtPrecioA.Location = new System.Drawing.Point(665, 29);
+            this.txtPrecioA.Name = "txtPrecioA";
+            this.txtPrecioA.Properties.Mask.EditMask = "c2";
+            this.txtPrecioA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioA.Size = new System.Drawing.Size(125, 20);
+            this.txtPrecioA.TabIndex = 24;
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Location = new System.Drawing.Point(575, 33);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(84, 13);
+            this.labelControl20.TabIndex = 23;
+            this.labelControl20.Text = "Costo por caja A:";
+            // 
             // Frm_EmpresaAcarreo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 435);
+            this.ClientSize = new System.Drawing.Size(971, 435);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -932,6 +1258,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.textNoInterior.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).EndInit();
+            this.xtraTabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCamiones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValCamiones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPlacasCamion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombreCamion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIDCamion.Properties)).EndInit();
+            this.xtraTabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgChoferes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValChoferes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
+            this.groupControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNombreChofer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIDChofer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioA.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1017,5 +1366,34 @@
         private DevExpress.XtraGrid.Columns.GridColumn Id_Ciudad;
         private DevExpress.XtraGrid.Columns.GridColumn Nombre_Ciudad;
         private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraGrid.GridControl dtgCamiones;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValCamiones;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraEditors.TextEdit txtPlacasCamion;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.TextEdit txtNombreCamion;
+        private DevExpress.XtraEditors.LabelControl labelControl21;
+        private DevExpress.XtraEditors.TextEdit txtIDCamion;
+        private DevExpress.XtraEditors.LabelControl labelControl22;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraGrid.GridControl dtgChoferes;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValChoferes;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private DevExpress.XtraEditors.TextEdit txtNombreChofer;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.TextEdit txtIDChofer;
+        private DevExpress.XtraEditors.LabelControl labelControl19;
+        private DevExpress.XtraEditors.TextEdit txtPrecioB;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit txtPrecioA;
+        private DevExpress.XtraEditors.LabelControl labelControl20;
     }
 }

@@ -36,6 +36,7 @@
             this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btnHistorial = new DevExpress.XtraBars.BarLargeButtonItem();
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -145,9 +146,10 @@
             this.btnGuardar,
             this.btnEliminar,
             this.btnSalir,
-            this.btnSeleccionar});
+            this.btnSeleccionar,
+            this.btnHistorial});
             this.barManager1.MainMenu = this.bIconos;
-            this.barManager1.MaxItemId = 67;
+            this.barManager1.MaxItemId = 68;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.barManager1.StatusBar = this.bEstado;
@@ -164,7 +166,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLimpiar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnGuardar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnEliminar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnHistorial)});
             this.bIconos.OptionsBar.AllowCollapse = true;
             this.bIconos.OptionsBar.AllowQuickCustomization = false;
             this.bIconos.OptionsBar.AutoPopupMode = DevExpress.XtraBars.BarAutoPopupMode.None;
@@ -212,6 +215,15 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSalir_ItemClick);
             // 
+            // btnHistorial
+            // 
+            this.btnHistorial.Caption = "Historial";
+            this.btnHistorial.Id = 67;
+            this.btnHistorial.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHistorial.ImageOptions.Image")));
+            this.btnHistorial.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHistorial.ImageOptions.LargeImage")));
+            this.btnHistorial.Name = "btnHistorial";
+            this.btnHistorial.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHistorial_ItemClick);
+            // 
             // bEstado
             // 
             this.bEstado.BarName = "Barra de estado";
@@ -244,7 +256,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 553);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 440);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1159, 25);
             // 
@@ -254,7 +266,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 553);
+            this.barDockControlLeft.Size = new System.Drawing.Size(56, 440);
             // 
             // barDockControlRight
             // 
@@ -262,7 +274,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1159, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 553);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 440);
             // 
             // btnSeleccionar
             // 
@@ -641,7 +653,7 @@
             this.panelControl2.Location = new System.Drawing.Point(56, 289);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(1103, 264);
+            this.panelControl2.Size = new System.Drawing.Size(1103, 151);
             this.panelControl2.TabIndex = 5;
             // 
             // dtg_Inventario_Ventas
@@ -653,7 +665,7 @@
             this.dtg_Inventario_Ventas.Name = "dtg_Inventario_Ventas";
             this.dtg_Inventario_Ventas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmb_EditCategoria});
-            this.dtg_Inventario_Ventas.Size = new System.Drawing.Size(1079, 240);
+            this.dtg_Inventario_Ventas.Size = new System.Drawing.Size(1079, 127);
             this.dtg_Inventario_Ventas.TabIndex = 0;
             this.dtg_Inventario_Ventas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgVal_Inventario_Ventas});
@@ -792,7 +804,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1159, 578);
+            this.ClientSize = new System.Drawing.Size(1159, 465);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -907,5 +919,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit cmb_EditCategoria;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private DevExpress.XtraBars.BarLargeButtonItem btnHistorial;
     }
 }

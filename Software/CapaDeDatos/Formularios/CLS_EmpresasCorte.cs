@@ -21,9 +21,13 @@ namespace CapaDeDatos
         public decimal Menor_a_kg { get; set; }
         public decimal Precio_kilo { get; set; }
         public decimal Precio_Dia { get; set; }
+        public int EsRango { get; set; }
         public decimal Precio_Cuadrilla_Apoyo { get; set; }
         public decimal Precio_Salida_Falso { get; set; }
-
+        public decimal Kilos_MenorA { get; set; }
+        public decimal Kilos_MayorA { get; set; }
+        public decimal Precio_MenorA { get; set; }
+        public decimal Precio_MayorA { get; set; }
         public void MtdSeleccionarEmpresas()
         {
             TipoDato _dato = new TipoDato();
@@ -174,8 +178,18 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_kilo");
                 _dato.DecimalValor = Precio_Dia;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_Dia");
+                _dato.Entero = EsRango;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "EsRango");
                 _dato.DecimalValor = Precio_Cuadrilla_Apoyo;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_Cuadrilla_Apoyo");
+                _dato.DecimalValor = Kilos_MenorA;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Kilos_MenorA");
+                _dato.DecimalValor = Kilos_MayorA;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Kilos_MayorA");
+                _dato.DecimalValor = Precio_MenorA;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_MenorA");
+                _dato.DecimalValor = Precio_MayorA;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_MayorA");
                 _dato.DecimalValor = Precio_Salida_Falso;
                 _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_Salida_Falso");
                 _dato.CadenaTexto = Usuario;

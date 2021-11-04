@@ -263,15 +263,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(842, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(836, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 410);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 402);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(842, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(836, 26);
             // 
             // barDockControlLeft
             // 
@@ -279,15 +279,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 410);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 402);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(842, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(836, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 410);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 402);
             // 
             // repositoryItemTextEdit1
             // 
@@ -296,10 +296,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(71, 0);
+            this.xtraTabControl1.Location = new System.Drawing.Point(69, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(771, 410);
+            this.xtraTabControl1.Size = new System.Drawing.Size(767, 402);
             this.xtraTabControl1.TabIndex = 6;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -311,7 +311,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(765, 382);
+            this.xtraTabPage1.Size = new System.Drawing.Size(765, 377);
             this.xtraTabPage1.Text = "Datos";
             // 
             // panelControl1
@@ -321,7 +321,7 @@
             this.panelControl1.Location = new System.Drawing.Point(5, 151);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(755, 226);
+            this.panelControl1.Size = new System.Drawing.Size(755, 221);
             this.panelControl1.TabIndex = 2;
             // 
             // dtgEmpBascula
@@ -330,7 +330,7 @@
             this.dtgEmpBascula.Location = new System.Drawing.Point(7, 7);
             this.dtgEmpBascula.MainView = this.dtgValEmpBascula;
             this.dtgEmpBascula.Name = "dtgEmpBascula";
-            this.dtgEmpBascula.Size = new System.Drawing.Size(741, 212);
+            this.dtgEmpBascula.Size = new System.Drawing.Size(741, 207);
             this.dtgEmpBascula.TabIndex = 0;
             this.dtgEmpBascula.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValEmpBascula});
@@ -444,7 +444,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(10, 113);
+            this.labelControl6.Location = new System.Drawing.Point(10, 114);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(24, 13);
             this.labelControl6.TabIndex = 22;
@@ -466,7 +466,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(305, 87);
+            this.labelControl4.Location = new System.Drawing.Point(305, 88);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(48, 13);
             this.labelControl4.TabIndex = 19;
@@ -474,7 +474,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(10, 87);
+            this.labelControl3.Location = new System.Drawing.Point(10, 88);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(37, 13);
             this.labelControl3.TabIndex = 18;
@@ -489,7 +489,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(305, 61);
+            this.labelControl7.Location = new System.Drawing.Point(305, 62);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(55, 13);
             this.labelControl7.TabIndex = 11;
@@ -504,7 +504,7 @@
             // 
             // label
             // 
-            this.label.Location = new System.Drawing.Point(305, 35);
+            this.label.Location = new System.Drawing.Point(305, 36);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(55, 13);
             this.label.TabIndex = 4;
@@ -519,7 +519,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(10, 61);
+            this.labelControl2.Location = new System.Drawing.Point(10, 62);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(41, 13);
             this.labelControl2.TabIndex = 2;
@@ -536,7 +536,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(10, 35);
+            this.labelControl1.Location = new System.Drawing.Point(10, 36);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(61, 13);
             this.labelControl1.TabIndex = 0;
@@ -885,7 +885,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 435);
+            this.ClientSize = new System.Drawing.Size(836, 428);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
