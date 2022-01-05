@@ -57,6 +57,10 @@
             this.Contacto = new DevExpress.XtraGrid.Columns.GridColumn();
             this.RFC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtPrecioB = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPrecioA = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.txtRFC = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.textContacto = new DevExpress.XtraEditors.TextEdit();
@@ -133,10 +137,15 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.txtIDChofer = new DevExpress.XtraEditors.TextEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.txtPrecioB = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txtPrecioA = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPrecioCaja = new DevExpress.XtraEditors.TextEdit();
+            this.txtPrecioSalidaForanea = new DevExpress.XtraEditors.TextEdit();
+            this.txtPrecioServicio = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -148,6 +157,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgValEmpAcarreo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRFC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textContacto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCorreo.Properties)).BeginInit();
@@ -190,8 +201,14 @@
             this.groupControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreChofer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDChofer.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioA.Properties)).BeginInit();
+            this.xtraTabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
+            this.groupControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioCaja.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioSalidaForanea.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioServicio.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -319,9 +336,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 409);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 438);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(971, 26);
+            this.barDockControlBottom.Size = new System.Drawing.Size(971, 25);
             // 
             // barDockControlLeft
             // 
@@ -329,7 +346,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(69, 409);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 438);
             // 
             // barDockControlRight
             // 
@@ -337,7 +354,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(971, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 409);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 438);
             // 
             // repositoryItemTextEdit1
             // 
@@ -346,16 +363,17 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(69, 0);
+            this.xtraTabControl1.Location = new System.Drawing.Point(71, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(902, 409);
+            this.xtraTabControl1.Size = new System.Drawing.Size(900, 438);
             this.xtraTabControl1.TabIndex = 6;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
             this.xtraTabPage2,
             this.xtraTabPage3,
-            this.xtraTabPage4});
+            this.xtraTabPage4,
+            this.xtraTabPage5});
             // 
             // xtraTabPage1
             // 
@@ -363,7 +381,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(900, 384);
+            this.xtraTabPage1.Size = new System.Drawing.Size(894, 410);
             this.xtraTabPage1.Text = "Datos";
             // 
             // panelControl1
@@ -373,7 +391,7 @@
             this.panelControl1.Location = new System.Drawing.Point(5, 151);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(890, 228);
+            this.panelControl1.Size = new System.Drawing.Size(884, 254);
             this.panelControl1.TabIndex = 2;
             // 
             // dtgEmpAcarreo
@@ -382,7 +400,7 @@
             this.dtgEmpAcarreo.Location = new System.Drawing.Point(7, 7);
             this.dtgEmpAcarreo.MainView = this.dtgValEmpAcarreo;
             this.dtgEmpAcarreo.Name = "dtgEmpAcarreo";
-            this.dtgEmpAcarreo.Size = new System.Drawing.Size(876, 214);
+            this.dtgEmpAcarreo.Size = new System.Drawing.Size(870, 240);
             this.dtgEmpAcarreo.TabIndex = 0;
             this.dtgEmpAcarreo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValEmpAcarreo});
@@ -487,9 +505,47 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(890, 146);
+            this.groupControl1.Size = new System.Drawing.Size(884, 146);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Empresa";
+            // 
+            // txtPrecioB
+            // 
+            this.txtPrecioB.Location = new System.Drawing.Point(665, 55);
+            this.txtPrecioB.Name = "txtPrecioB";
+            this.txtPrecioB.Properties.Mask.EditMask = "c2";
+            this.txtPrecioB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioB.Size = new System.Drawing.Size(125, 20);
+            this.txtPrecioB.TabIndex = 25;
+            this.txtPrecioB.Visible = false;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(575, 59);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(85, 13);
+            this.labelControl8.TabIndex = 26;
+            this.labelControl8.Text = "Costo por Caja B:";
+            this.labelControl8.Visible = false;
+            // 
+            // txtPrecioA
+            // 
+            this.txtPrecioA.Location = new System.Drawing.Point(665, 29);
+            this.txtPrecioA.Name = "txtPrecioA";
+            this.txtPrecioA.Properties.Mask.EditMask = "c2";
+            this.txtPrecioA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioA.Size = new System.Drawing.Size(125, 20);
+            this.txtPrecioA.TabIndex = 24;
+            this.txtPrecioA.Visible = false;
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Location = new System.Drawing.Point(575, 33);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(84, 13);
+            this.labelControl20.TabIndex = 23;
+            this.labelControl20.Text = "Costo por caja A:";
+            this.labelControl20.Visible = false;
             // 
             // txtRFC
             // 
@@ -604,7 +660,7 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(771, 384);
+            this.xtraTabPage2.Size = new System.Drawing.Size(894, 410);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // panelControl2
@@ -614,7 +670,7 @@
             this.panelControl2.Location = new System.Drawing.Point(5, 172);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(761, 207);
+            this.panelControl2.Size = new System.Drawing.Size(884, 233);
             this.panelControl2.TabIndex = 16;
             // 
             // dtgDomicilio
@@ -624,7 +680,7 @@
             this.dtgDomicilio.MainView = this.dtgValDomicilio;
             this.dtgDomicilio.MenuManager = this.barManager1;
             this.dtgDomicilio.Name = "dtgDomicilio";
-            this.dtgDomicilio.Size = new System.Drawing.Size(747, 193);
+            this.dtgDomicilio.Size = new System.Drawing.Size(870, 219);
             this.dtgDomicilio.TabIndex = 0;
             this.dtgDomicilio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValDomicilio});
@@ -767,7 +823,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 5);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(761, 167);
+            this.groupControl2.Size = new System.Drawing.Size(884, 167);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -943,7 +999,7 @@
             this.xtraTabPage3.Controls.Add(this.groupControl3);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage3.Size = new System.Drawing.Size(771, 384);
+            this.xtraTabPage3.Size = new System.Drawing.Size(894, 410);
             this.xtraTabPage3.Text = "Camiones";
             // 
             // panelControl3
@@ -953,7 +1009,7 @@
             this.panelControl3.Location = new System.Drawing.Point(5, 151);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl3.Size = new System.Drawing.Size(761, 228);
+            this.panelControl3.Size = new System.Drawing.Size(884, 254);
             this.panelControl3.TabIndex = 3;
             // 
             // dtgCamiones
@@ -962,7 +1018,7 @@
             this.dtgCamiones.Location = new System.Drawing.Point(7, 7);
             this.dtgCamiones.MainView = this.dtgValCamiones;
             this.dtgCamiones.Name = "dtgCamiones";
-            this.dtgCamiones.Size = new System.Drawing.Size(747, 214);
+            this.dtgCamiones.Size = new System.Drawing.Size(870, 240);
             this.dtgCamiones.TabIndex = 0;
             this.dtgCamiones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValCamiones});
@@ -1017,7 +1073,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl3.Location = new System.Drawing.Point(5, 5);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(761, 146);
+            this.groupControl3.Size = new System.Drawing.Size(884, 146);
             this.groupControl3.TabIndex = 1;
             this.groupControl3.Text = "Camion";
             // 
@@ -1073,7 +1129,7 @@
             this.xtraTabPage4.Controls.Add(this.groupControl4);
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage4.Size = new System.Drawing.Size(771, 384);
+            this.xtraTabPage4.Size = new System.Drawing.Size(894, 410);
             this.xtraTabPage4.Text = "Choferes";
             // 
             // panelControl4
@@ -1083,7 +1139,7 @@
             this.panelControl4.Location = new System.Drawing.Point(5, 151);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl4.Size = new System.Drawing.Size(761, 228);
+            this.panelControl4.Size = new System.Drawing.Size(884, 254);
             this.panelControl4.TabIndex = 5;
             // 
             // dtgChoferes
@@ -1092,7 +1148,7 @@
             this.dtgChoferes.Location = new System.Drawing.Point(7, 7);
             this.dtgChoferes.MainView = this.dtgValChoferes;
             this.dtgChoferes.Name = "dtgChoferes";
-            this.dtgChoferes.Size = new System.Drawing.Size(747, 214);
+            this.dtgChoferes.Size = new System.Drawing.Size(870, 240);
             this.dtgChoferes.TabIndex = 0;
             this.dtgChoferes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValChoferes});
@@ -1138,7 +1194,7 @@
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl4.Location = new System.Drawing.Point(5, 5);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(761, 146);
+            this.groupControl4.Size = new System.Drawing.Size(884, 146);
             this.groupControl4.TabIndex = 4;
             this.groupControl4.Text = "Chofer";
             // 
@@ -1173,45 +1229,103 @@
             this.labelControl19.TabIndex = 0;
             this.labelControl19.Text = "Id Chofer: ";
             // 
-            // txtPrecioB
+            // xtraTabPage5
             // 
-            this.txtPrecioB.Location = new System.Drawing.Point(665, 55);
-            this.txtPrecioB.Name = "txtPrecioB";
-            this.txtPrecioB.Properties.Mask.EditMask = "c2";
-            this.txtPrecioB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPrecioB.Size = new System.Drawing.Size(125, 20);
-            this.txtPrecioB.TabIndex = 25;
+            this.xtraTabPage5.Controls.Add(this.groupControl5);
+            this.xtraTabPage5.Name = "xtraTabPage5";
+            this.xtraTabPage5.Padding = new System.Windows.Forms.Padding(5);
+            this.xtraTabPage5.Size = new System.Drawing.Size(894, 410);
+            this.xtraTabPage5.Text = "Servicios";
             // 
-            // labelControl8
+            // groupControl5
             // 
-            this.labelControl8.Location = new System.Drawing.Point(575, 59);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(85, 13);
-            this.labelControl8.TabIndex = 26;
-            this.labelControl8.Text = "Costo por Caja B:";
+            this.groupControl5.Controls.Add(this.groupControl6);
+            this.groupControl5.Controls.Add(this.txtPrecioSalidaForanea);
+            this.groupControl5.Controls.Add(this.txtPrecioServicio);
+            this.groupControl5.Controls.Add(this.labelControl33);
+            this.groupControl5.Controls.Add(this.labelControl34);
+            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl5.Location = new System.Drawing.Point(5, 5);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(884, 400);
+            this.groupControl5.TabIndex = 3;
+            this.groupControl5.Text = "Cobro por Servicios";
             // 
-            // txtPrecioA
+            // groupControl6
             // 
-            this.txtPrecioA.Location = new System.Drawing.Point(665, 29);
-            this.txtPrecioA.Name = "txtPrecioA";
-            this.txtPrecioA.Properties.Mask.EditMask = "c2";
-            this.txtPrecioA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPrecioA.Size = new System.Drawing.Size(125, 20);
-            this.txtPrecioA.TabIndex = 24;
+            this.groupControl6.Controls.Add(this.labelControl25);
+            this.groupControl6.Controls.Add(this.txtPrecioCaja);
+            this.groupControl6.Location = new System.Drawing.Point(5, 56);
+            this.groupControl6.Name = "groupControl6";
+            this.groupControl6.Size = new System.Drawing.Size(267, 66);
+            this.groupControl6.TabIndex = 35;
+            this.groupControl6.Text = "Cajas Adicionales";
             // 
-            // labelControl20
+            // labelControl25
             // 
-            this.labelControl20.Location = new System.Drawing.Point(575, 33);
-            this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(84, 13);
-            this.labelControl20.TabIndex = 23;
-            this.labelControl20.Text = "Costo por caja A:";
+            this.labelControl25.Location = new System.Drawing.Point(12, 35);
+            this.labelControl25.Name = "labelControl25";
+            this.labelControl25.Size = new System.Drawing.Size(75, 13);
+            this.labelControl25.TabIndex = 24;
+            this.labelControl25.Text = "Precio por caja:";
+            // 
+            // txtPrecioCaja
+            // 
+            this.txtPrecioCaja.Location = new System.Drawing.Point(135, 30);
+            this.txtPrecioCaja.MenuManager = this.barManager1;
+            this.txtPrecioCaja.Name = "txtPrecioCaja";
+            this.txtPrecioCaja.Properties.Mask.EditMask = "c4";
+            this.txtPrecioCaja.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioCaja.Properties.NullText = "0";
+            this.txtPrecioCaja.Properties.NullValuePrompt = "0";
+            this.txtPrecioCaja.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioCaja.TabIndex = 2;
+            // 
+            // txtPrecioSalidaForanea
+            // 
+            this.txtPrecioSalidaForanea.Location = new System.Drawing.Point(140, 134);
+            this.txtPrecioSalidaForanea.MenuManager = this.barManager1;
+            this.txtPrecioSalidaForanea.Name = "txtPrecioSalidaForanea";
+            this.txtPrecioSalidaForanea.Properties.Mask.EditMask = "c4";
+            this.txtPrecioSalidaForanea.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioSalidaForanea.Properties.NullText = "0";
+            this.txtPrecioSalidaForanea.Properties.NullValuePrompt = "0";
+            this.txtPrecioSalidaForanea.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioSalidaForanea.TabIndex = 6;
+            // 
+            // txtPrecioServicio
+            // 
+            this.txtPrecioServicio.Location = new System.Drawing.Point(140, 26);
+            this.txtPrecioServicio.MenuManager = this.barManager1;
+            this.txtPrecioServicio.Name = "txtPrecioServicio";
+            this.txtPrecioServicio.Properties.Mask.EditMask = "c4";
+            this.txtPrecioServicio.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioServicio.Properties.NullText = "0";
+            this.txtPrecioServicio.Properties.NullValuePrompt = "0";
+            this.txtPrecioServicio.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioServicio.TabIndex = 3;
+            // 
+            // labelControl33
+            // 
+            this.labelControl33.Location = new System.Drawing.Point(17, 139);
+            this.labelControl33.Name = "labelControl33";
+            this.labelControl33.Size = new System.Drawing.Size(102, 13);
+            this.labelControl33.TabIndex = 8;
+            this.labelControl33.Text = "Pago Salida Foranea:";
+            // 
+            // labelControl34
+            // 
+            this.labelControl34.Location = new System.Drawing.Point(17, 29);
+            this.labelControl34.Name = "labelControl34";
+            this.labelControl34.Size = new System.Drawing.Size(87, 13);
+            this.labelControl34.TabIndex = 5;
+            this.labelControl34.Text = "Pago por Servicio:";
             // 
             // Frm_EmpresaAcarreo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 435);
+            this.ClientSize = new System.Drawing.Size(971, 463);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -1222,6 +1336,7 @@
             this.Text = "Empresas Acarreo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_Empresa_Load);
+            this.Shown += new System.EventHandler(this.Frm_EmpresaAcarreo_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
@@ -1234,6 +1349,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRFC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textContacto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCorreo.Properties)).EndInit();
@@ -1279,8 +1396,16 @@
             this.groupControl4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreChofer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDChofer.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioA.Properties)).EndInit();
+            this.xtraTabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
+            this.groupControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
+            this.groupControl6.ResumeLayout(false);
+            this.groupControl6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioCaja.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioSalidaForanea.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioServicio.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1395,5 +1520,14 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.TextEdit txtPrecioA;
         private DevExpress.XtraEditors.LabelControl labelControl20;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
+        private DevExpress.XtraEditors.GroupControl groupControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl25;
+        private DevExpress.XtraEditors.TextEdit txtPrecioCaja;
+        private DevExpress.XtraEditors.TextEdit txtPrecioSalidaForanea;
+        private DevExpress.XtraEditors.TextEdit txtPrecioServicio;
+        private DevExpress.XtraEditors.LabelControl labelControl33;
+        private DevExpress.XtraEditors.LabelControl labelControl34;
     }
 }

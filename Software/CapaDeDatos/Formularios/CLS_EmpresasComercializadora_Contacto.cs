@@ -8,113 +8,145 @@ namespace CapaDeDatos
 {
     public class CLS_EmpresasComercializadora_Contacto : ConexionBase
     {
-    public string Id_Contacto { get; set; }
-    public string Nombre_Contacto { get; set; }
-    public string Telefono_Contacto { get; set; }
-    public string Email_Contacto { get; set; }
-    public string Id_EmpresaComercializacion { get; set; }
-    public string Id_Huerta { get; set; }
-    public string Usuario { get; set; }
+        public string Id_Contacto { get; set; }
+        public string Nombre_Contacto { get; set; }
+        public string Telefono_Contacto { get; set; }
+        public string Email_Contacto { get; set; }
+        public string Id_EmpresaComercializacion { get; set; }
+        public string c_codigo_hue { get; set; }
+        public string Usuario { get; set; }
 
-    public void MtdSeleccionarContacto()
-    {
-        TipoDato _dato = new TipoDato();
-        Conexion _conexion = new Conexion(cadenaConexion);
-
-        Exito = true;
-        try
+        public void MtdSeleccionarContacto()
         {
-            _conexion.NombreProcedimiento = "SP_Empresa_Comercializacion_Select";
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
 
-            _conexion.EjecutarDataset();
-
-            if (_conexion.Exito)
+            Exito = true;
+            try
             {
-                Datos = _conexion.Datos;
+                _conexion.NombreProcedimiento = "SP_Empresa_Comercializacion_Contacto_Select";
+                _dato.CadenaTexto = Id_EmpresaComercializacion;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaComercializacion");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
             }
-            else
+            catch (Exception e)
             {
-                Mensaje = _conexion.Mensaje;
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdInsertarContacto()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Empresa_Comercializacion_Contacto_Insert";
+                _dato.CadenaTexto = Id_Contacto;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Contacto");
+                _dato.CadenaTexto = Nombre_Contacto;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Contacto");
+                _dato.CadenaTexto = Telefono_Contacto;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono_Contacto");
+                _dato.CadenaTexto = Email_Contacto;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Email_Contacto");
+                _dato.CadenaTexto = Id_EmpresaComercializacion;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaComercializacion");
+                _dato.CadenaTexto = c_codigo_hue;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_hue");
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
                 Exito = false;
             }
         }
-        catch (Exception e)
+        public void MtdEliminarContacto()
         {
-            Mensaje = e.Message;
-            Exito = false;
-        }
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
 
-    }
-    public void MtdInsertarContacto()
-    {
-        TipoDato _dato = new TipoDato();
-        Conexion _conexion = new Conexion(cadenaConexion);
-
-        Exito = true;
-        try
-        {
-            _conexion.NombreProcedimiento = "SP_Empresa_Comercializacion_Contacto_Insert";
-            _dato.CadenaTexto = Id_Contacto;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Contacto");
-            _dato.CadenaTexto = Nombre_Contacto;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Contacto");
-            _dato.CadenaTexto = Telefono_Contacto;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono_Contacto");
-            _dato.CadenaTexto = Email_Contacto;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Email_Contacto");
-            _dato.CadenaTexto = Id_EmpresaComercializacion;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaComercializacion");
-            _dato.CadenaTexto = Id_Huerta;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Huerta");
-            _dato.CadenaTexto = Usuario;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
-            _conexion.EjecutarDataset();
-
-            if (_conexion.Exito)
+            Exito = true;
+            try
             {
-                Datos = _conexion.Datos;
+                _conexion.NombreProcedimiento = "SP_Empresa_Comercializacion_Contacto_Delete";
+                _dato.CadenaTexto = Id_Contacto;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Contacto");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
             }
-            else
+            catch (Exception e)
             {
-                Mensaje = _conexion.Mensaje;
+                Mensaje = e.Message;
                 Exito = false;
             }
         }
-        catch (Exception e)
+        public void MtdSeleccionarContactoEmpresa()
         {
-            Mensaje = e.Message;
-            Exito = false;
-        }
-    }
-    public void MtdEliminarContacto()
-    {
-        TipoDato _dato = new TipoDato();
-        Conexion _conexion = new Conexion(cadenaConexion);
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
 
-        Exito = true;
-        try
-        {
-            _conexion.NombreProcedimiento = "SP_Empresa_Comercializacion_Contacto_Delete";
-            _dato.CadenaTexto = Id_Contacto;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Contacto");
-            _conexion.EjecutarDataset();
-
-            if (_conexion.Exito)
+            Exito = true;
+            try
             {
-                Datos = _conexion.Datos;
+                _conexion.NombreProcedimiento = "SP_Empresa_Comercializacion_Contacto_Empresa_Select";
+                _dato.CadenaTexto = Id_EmpresaComercializacion;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaComercializacion");
+                _dato.CadenaTexto = c_codigo_hue;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_hue");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
             }
-            else
+            catch (Exception e)
             {
-                Mensaje = _conexion.Mensaje;
+                Mensaje = e.Message;
                 Exito = false;
             }
-        }
-        catch (Exception e)
-        {
-            Mensaje = e.Message;
-            Exito = false;
+
         }
     }
-
-}
 }

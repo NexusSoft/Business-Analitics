@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CapaDeDatos;
+using System.Globalization;
 
 namespace Business_Analitics
 {
@@ -20,6 +21,8 @@ namespace Business_Analitics
         public string Proveedor { get; set; }
         const string idTipoPersona = "0001";
         public string UsuariosLogin { get; set; }
+        public NumberStyles style = NumberStyles.Number | NumberStyles.AllowCurrencySymbol;
+        public CultureInfo culture = CultureInfo.CreateSpecificCulture("es-MX");
 
         private static Frm_EmpresaAcarreo m_FormDefInstance;
         public static Frm_EmpresaAcarreo DefInstance
@@ -167,7 +170,6 @@ namespace Business_Analitics
                 Camion.MtdInsertarCamion();
                 if (Camion.Exito)
                 {
-
                     CargarCamiones();
                     XtraMessageBox.Show("Se ha Insertado el registro con exito");
                     LimpiarCamposCamiones();
@@ -194,7 +196,6 @@ namespace Business_Analitics
                 Chofer.MtdInsertarChoferes();
                 if (Chofer.Exito)
                 {
-
                     CargarChoferes();
                     XtraMessageBox.Show("Se ha Insertado el registro con exito");
                     LimpiarCamposChoferes();
@@ -243,7 +244,38 @@ namespace Business_Analitics
                 XtraMessageBox.Show(Domicilio.Mensaje);
             }
         }
-
+        private void EliminarCamion()
+        {
+            CLS_Camiones Camion = new CLS_Camiones();
+            Camion.Id_Camion = txtIDCamion.Text.Trim();
+            Camion.MtdEliminarCamion();
+            if (Camion.Exito)
+            {
+                CargarDomicilio();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+                LimpiarCamposDomicilio();
+            }
+            else
+            {
+                XtraMessageBox.Show(Camion.Mensaje);
+            }
+        }
+        private void EliminarChofer()
+        {
+            CLS_Choferes Chofer = new CLS_Choferes();
+            Chofer.Id_Chofer = txtIDChofer.Text.Trim();
+            Chofer.MtdEliminarChoferes();
+            if (Chofer.Exito)
+            {
+                CargarDomicilio();
+                XtraMessageBox.Show("Se ha Eliminado el registro con exito");
+                LimpiarCamposDomicilio();
+            }
+            else
+            {
+                XtraMessageBox.Show(Chofer.Mensaje);
+            }
+        }
         private void EliminarDomicilioPersona()
         {
             CLS_Domicilios Domicilio = new CLS_Domicilios();
@@ -273,6 +305,9 @@ namespace Business_Analitics
             txtRFC.Text = "";
             txtPrecioA.Text = "0";
             txtPrecioB.Text = "0";
+            txtPrecioServicio.Text = "0";
+            txtPrecioCaja.Text = "0";
+            txtPrecioSalidaForanea.Text = "0";
         }
 
         private void LimpiarCamposDomicilio()
@@ -329,8 +364,27 @@ namespace Business_Analitics
             CargarDomicilio();
             CargarCamiones();
             CargarChoferes();
+            CargarServicios();
         }
-
+        private void CargarServicios()
+        {
+            CLS_EmpresasAcarreo sel = new CLS_EmpresasAcarreo();
+            sel.Id_EmpresaAcarreo = textId.Text.Trim();
+            sel.MtdSeleccionarEmpresasServicios();
+            if (sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    txtPrecioServicio.Text = sel.Datos.Rows[0]["Precio_Acarreo"].ToString();
+                    txtPrecioCaja.Text = sel.Datos.Rows[0]["Precio_Caja"].ToString();
+                    txtPrecioSalidaForanea.Text = sel.Datos.Rows[0]["Precio_SalidaForanea"].ToString();
+                }   
+            }
+            else
+            {
+                XtraMessageBox.Show(sel.Mensaje);
+            }
+        }
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
@@ -385,6 +439,35 @@ namespace Business_Analitics
                     XtraMessageBox.Show("Es necesario agregar un nombre del chofer.");
                 }
             }
+            else
+            {
+                InsertarServicios();
+            }
+        }
+        private void InsertarServicios()
+        {
+            CLS_EmpresasAcarreo ins = new CLS_EmpresasAcarreo();
+            ins.Id_EmpresaAcarreo = textId.Text.Trim();
+            decimal Precio_Acarreo = 0;
+            decimal.TryParse(txtPrecioServicio.Text, style, culture, out Precio_Acarreo);
+            ins.Precio_Acarreo = Precio_Acarreo;
+            decimal Precio_Caja = 0;
+            decimal.TryParse(txtPrecioCaja.Text, style, culture, out Precio_Caja);
+            ins.Precio_Caja = Precio_Caja;
+            decimal Precio_SalidaForanea = 0;
+            decimal.TryParse(txtPrecioSalidaForanea.Text, style, culture, out Precio_SalidaForanea);
+            ins.Precio_SalidaForanea = Precio_SalidaForanea;
+            ins.Usuario = UsuariosLogin;
+            ins.MtdInsertarEmpresasServicios();
+            if (ins.Exito)
+            {
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+            }
+            else
+            {
+                XtraMessageBox.Show(ins.Mensaje);
+            }
+
         }
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -415,11 +498,29 @@ namespace Business_Analitics
                 }
                 else if (xtraTabControl1.SelectedTabPage == xtraTabPage3)
                 {
-                    
+                    if (txtIDCamion.Text.Trim().Length > 0)
+                    {
+                        EliminarCamion();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Es necesario seleccionar un Camion.");
+                    }
                 }
                 else if (xtraTabControl1.SelectedTabPage == xtraTabPage4)
                 {
-                    
+                    if (txtIDChofer.Text.Trim().Length > 0)
+                    {
+                        EliminarChofer();
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Es necesario seleccionar un chofer.");
+                    }
+                }
+                else if (xtraTabControl1.SelectedTabPage == xtraTabPage5)
+                {
+
                 }
             }
         }
@@ -525,15 +626,17 @@ namespace Business_Analitics
                 xtraTabPage2.PageEnabled = false;
                 xtraTabPage3.PageEnabled = false;
                 xtraTabPage4.PageEnabled = false;
+                xtraTabPage5.PageEnabled = false;
                 groupControl2.Text = "Domicilio";
-                groupControl2.Text = "Camion";
-                groupControl2.Text = "Chofeer";
+                groupControl3.Text = "Camion";
+                groupControl4.Text = "Chofeer";
             }
             else
             {
                 xtraTabPage2.PageEnabled = true;
                 xtraTabPage3.PageEnabled = true;
                 xtraTabPage4.PageEnabled = true;
+                xtraTabPage5.PageEnabled = true;
             }
         }
 
@@ -579,5 +682,11 @@ namespace Business_Analitics
             }
         }
 
+        private void Frm_EmpresaAcarreo_Shown(object sender, EventArgs e)
+        {
+            txtPrecioCaja.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtPrecioServicio.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtPrecioSalidaForanea.Properties.Mask.UseMaskAsDisplayFormat = true;
+        }
     }
 }

@@ -279,5 +279,19 @@ namespace Business_Analitics
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [015]");
             }
         }
+
+        private void btn_TipoCorteTamaño_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("016"))
+            {
+                Frm_ConfigCalibres Ventana = new Frm_ConfigCalibres();
+                Ventana.UsuariosLogin = UsuariosLogin;
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [016]");
+            }
+        }
     }
 }

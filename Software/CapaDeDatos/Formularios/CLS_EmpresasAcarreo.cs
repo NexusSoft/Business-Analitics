@@ -8,52 +8,55 @@ namespace CapaDeDatos
 {
     public class CLS_EmpresasAcarreo : ConexionBase
     {
-    public string Id_EmpresaAcarreo { get; set; }
-    public string Nombre_EmpresaAcarreo { get; set; }
-    public string Telefono1 { get; set; }
-    public string Telefono2 { get; set; }
-    public string Email { get; set; }
-    public string Contacto { get; set; }
-    public string RFC { get; set; }
-    public string Usuario { get; set; }
+        public string Id_EmpresaAcarreo { get; set; }
+        public string Nombre_EmpresaAcarreo { get; set; }
+        public string Telefono1 { get; set; }
+        public string Telefono2 { get; set; }
+        public string Email { get; set; }
+        public string Contacto { get; set; }
+        public string RFC { get; set; }
+        public string Usuario { get; set; }
         public decimal PrecioA { get; set; }
         public decimal PrecioB { get; set; }
+        public decimal Precio_Acarreo { get; set; }
+        public decimal Precio_Caja { get; set; }
+        public decimal Precio_SalidaForanea { get; set; }
 
         public void MtdSeleccionarEmpresas()
-    {
-        TipoDato _dato = new TipoDato();
-        Conexion _conexion = new Conexion(cadenaConexion);
-
-        Exito = true;
-        try
         {
-            _conexion.NombreProcedimiento = "SP_Empresa_Acarreo_Select";
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
 
-            _conexion.EjecutarDataset();
-
-            if (_conexion.Exito)
+            Exito = true;
+            try
             {
-                Datos = _conexion.Datos;
+                _conexion.NombreProcedimiento = "SP_Empresa_Acarreo_Select";
+
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
             }
-            else
+            catch (Exception e)
             {
-                Mensaje = _conexion.Mensaje;
+                Mensaje = e.Message;
                 Exito = false;
             }
+
         }
-        catch (Exception e)
+        public void MtdInsertarEmpresas()
         {
-            Mensaje = e.Message;
-            Exito = false;
-        }
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
 
-    }
-    public void MtdInsertarEmpresas()
-    {
-        TipoDato _dato = new TipoDato();
-        Conexion _conexion = new Conexion(cadenaConexion);
-
-        Exito = true;
+            Exito = true;
             try
             {
                 _conexion.NombreProcedimiento = "SP_Empresa_Acarreo_Insert";
@@ -94,36 +97,133 @@ namespace CapaDeDatos
                 Mensaje = e.Message;
                 Exito = false;
             }
-    }
-    public void MtdEliminarEmpresas()
-    {
-        TipoDato _dato = new TipoDato();
-        Conexion _conexion = new Conexion(cadenaConexion);
-
-        Exito = true;
-        try
+        }
+        public void MtdEliminarEmpresas()
         {
-            _conexion.NombreProcedimiento = "SP_Empresa_Acarreo_Delete";
-            _dato.CadenaTexto = Id_EmpresaAcarreo;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaAcarreo");
-            _conexion.EjecutarDataset();
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
 
-            if (_conexion.Exito)
+            Exito = true;
+            try
             {
-                Datos = _conexion.Datos;
+                _conexion.NombreProcedimiento = "SP_Empresa_Acarreo_Delete";
+                _dato.CadenaTexto = Id_EmpresaAcarreo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaAcarreo");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
             }
-            else
+            catch (Exception e)
             {
-                Mensaje = _conexion.Mensaje;
+                Mensaje = e.Message;
                 Exito = false;
             }
         }
-        catch (Exception e)
+        // Servicios
+        public void MtdSeleccionarEmpresasServicios()
         {
-            Mensaje = e.Message;
-            Exito = false;
-        }
-    }
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
 
-}
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Empresa_Acarreo_Servicios_Select";
+                _dato.CadenaTexto = Id_EmpresaAcarreo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaAcarreo");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdInsertarEmpresasServicios()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Empresa_Acarreo_Servicios_Insert";
+                _dato.CadenaTexto = Id_EmpresaAcarreo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaAcarreo");
+                _dato.DecimalValor = Precio_Acarreo;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_Acarreo");
+                _dato.DecimalValor = Precio_Caja;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_Caja");
+                _dato.DecimalValor = Precio_SalidaForanea;
+                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_SalidaForanea");
+                _dato.CadenaTexto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+        public void MtdEliminarEmpresasServicios()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Empresa_Acarreo_Servicios_Delete";
+                _dato.CadenaTexto = Id_EmpresaAcarreo;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaAcarreo");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
+
+    }
 }

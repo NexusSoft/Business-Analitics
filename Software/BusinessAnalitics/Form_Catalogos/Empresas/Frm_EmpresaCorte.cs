@@ -96,6 +96,20 @@ namespace Business_Analitics
                     txtKilosMenorA.Text = sel.Datos.Rows[0]["Kilos_MenorA"].ToString();
                     txtPrecioMayorA.Text = sel.Datos.Rows[0]["Precio_MayorA"].ToString();
                     txtPrecioMenorA.Text = sel.Datos.Rows[0]["Precio_MenorA"].ToString();
+
+                    if (sel.Datos.Rows[0]["EsRangoCaja"].ToString() == "True")
+                    {
+                        chk_RangoCajas.Checked = true;
+                    }
+                    else
+                    {
+                        chk_RangoCajas.Checked = false;
+                    }
+                    txtCajasMayorA.Text = sel.Datos.Rows[0]["Cajas_MayorA"].ToString();
+                    txtCajasMenorA.Text = sel.Datos.Rows[0]["Cajas_MenorA"].ToString();
+                    txtPrecioCajaMayorA.Text = sel.Datos.Rows[0]["PrecioCaja_MayorA"].ToString();
+                    txtPrecioCajaMenorA.Text = sel.Datos.Rows[0]["PrecioCaja_MenorA"].ToString();
+
                     txtPrecioSalidaFalso.Text = sel.Datos.Rows[0]["Precio_Salida_Falso"].ToString();
                 }
                 else
@@ -104,6 +118,13 @@ namespace Business_Analitics
                     txtPreciokg.Text = "0";
                     txtPrecioDia.Text = "0";
                     txtPrecioCuadrillaA.Text = "0";
+
+                    chk_RangoCajas.Checked = false;
+                    txtCajasMayorA.Text = "0";
+                    txtCajasMenorA.Text = "0";
+                    txtPrecioCajaMayorA.Text = "0";
+                    txtPrecioCajaMenorA.Text = "0";
+
                     chk_Rango.Checked = false;
                     txtKilosMayorA.Text = "0";
                     txtKilosMenorA.Text = "0";
@@ -195,7 +216,32 @@ namespace Business_Analitics
             decimal.TryParse(txtPrecioCuadrillaA.Text, style, culture, out Precio_Cuadrilla_Apoyo);
             ins.Precio_Cuadrilla_Apoyo = Precio_Cuadrilla_Apoyo;
 
-            if(chk_Rango.Checked==true)
+            if (chk_RangoCajas.Checked == true)
+            {
+                ins.EsRangoCaja = 1;
+            }
+            else
+            {
+                ins.EsRangoCaja = 0;
+            }
+
+            decimal Cajas_MenorA = 0;
+            decimal.TryParse(txtCajasMenorA.Text, style, culture, out Cajas_MenorA);
+            ins.Cajas_MenorA = Cajas_MenorA;
+
+            decimal Cajas_MayorA = 0;
+            decimal.TryParse(txtCajasMayorA.Text, style, culture, out Cajas_MayorA);
+            ins.Cajas_MayorA = Cajas_MayorA;
+
+            decimal PrecioCajas_MenorA = 0;
+            decimal.TryParse(txtPrecioCajaMenorA.Text, style, culture, out PrecioCajas_MenorA);
+            ins.PrecioCaja_MenorA = PrecioCajas_MenorA;
+
+            decimal PrecioCajas_MayorA = 0;
+            decimal.TryParse(txtPrecioCajaMayorA.Text, style, culture, out PrecioCajas_MayorA);
+            ins.PrecioCaja_MayorA = PrecioCajas_MayorA;
+
+            if (chk_Rango.Checked==true)
             {
                 ins.EsRango = 1;
             }
@@ -205,17 +251,21 @@ namespace Business_Analitics
             }
 
             decimal Kilos_MenorA = 0;
-            decimal.TryParse(txtKilosMenorA.Text, style, culture, out Kilos_MenorA);
-            ins.Kilos_MenorA = Kilos_MenorA;
+            decimal.TryParse(txtKilosMenorA.Text, style, culture, out Cajas_MenorA);
+            ins.Kilos_MenorA = Cajas_MenorA;
+
             decimal Kilos_MayorA = 0;
-            decimal.TryParse(txtKilosMayorA.Text, style, culture, out Kilos_MayorA);
-            ins.Kilos_MayorA = Kilos_MayorA;
+            decimal.TryParse(txtKilosMayorA.Text, style, culture, out Cajas_MayorA);
+            ins.Kilos_MayorA = Cajas_MayorA;
+
             decimal Precio_MenorA = 0;
-            decimal.TryParse(txtPrecioMenorA.Text, style, culture, out Precio_MenorA);
-            ins.Precio_MenorA = Precio_MenorA;
+            decimal.TryParse(txtPrecioMenorA.Text, style, culture, out PrecioCajas_MenorA);
+            ins.Precio_MenorA = PrecioCajas_MenorA;
+
             decimal Precio_MayorA = 0;
-            decimal.TryParse(txtPrecioMayorA.Text, style, culture, out Precio_MayorA);
-            ins.Precio_MayorA = Precio_MayorA;
+            decimal.TryParse(txtPrecioMayorA.Text, style, culture, out PrecioCajas_MayorA);
+            ins.Precio_MayorA = PrecioCajas_MayorA;
+
             decimal Precio_Salida_Falso = 0;
             decimal.TryParse(txtPrecioSalidaFalso.Text, style, culture, out Precio_Salida_Falso);
             ins.Precio_Salida_Falso = Precio_Salida_Falso;
@@ -578,6 +628,19 @@ namespace Business_Analitics
             txtPrecioMenorA.Properties.Mask.MaskType = MaskType.Numeric;
             txtPrecioMenorA.Properties.Mask.EditMask = "c2";
             txtPrecioMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
+
+            txtCajasMayorA.Properties.Mask.MaskType = MaskType.Numeric;
+            txtCajasMayorA.Properties.Mask.EditMask = "n0";
+            txtCajasMayorA.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtCajasMenorA.Properties.Mask.MaskType = MaskType.Numeric;
+            txtCajasMenorA.Properties.Mask.EditMask = "n0";
+            txtCajasMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtPrecioCajaMayorA.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPrecioCajaMayorA.Properties.Mask.EditMask = "c2";
+            txtPrecioCajaMayorA.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtPrecioCajaMenorA.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPrecioCajaMenorA.Properties.Mask.EditMask = "c2";
+            txtPrecioCajaMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
         }
 
         private void chk_Rango_CheckedChanged(object sender, EventArgs e)
@@ -608,6 +671,35 @@ namespace Business_Analitics
             txtKilosMenorA.Text = "0";
             txtPrecioMayorA.Text = "0";
             txtPrecioMenorA.Text = "0";
+        }
+
+        private void chk_RangoCajas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_Rango.Checked == false)
+            {
+                txtPreciokg.Enabled = true;
+                txtCajasMayorA.Enabled = false;
+                txtCajasMenorA.Enabled = false;
+                txtPrecioCajaMayorA.Enabled = false;
+                txtPrecioCajaMenorA.Enabled = false;
+            }
+            else
+            {
+                txtPreciokg.Enabled = false;
+                txtCajasMayorA.Enabled = true;
+                txtPrecioCajaMayorA.Enabled = true;
+                txtCajasMenorA.Enabled = true;
+                txtPrecioCajaMenorA.Enabled = true;
+            }
+            InicializaCajas();
+        }
+        private void InicializaCajas()
+        {
+            txtPreciokg.Text = "0";
+            txtCajasMenorA.Text = "0";
+            txtPrecioCajaMenorA.Text = "0";
+            txtCajasMayorA.Text = "0";
+            txtPrecioCajaMayorA.Text = "0";
         }
     }
 }

@@ -81,7 +81,7 @@ namespace CapaDeDatos
             }
         }
 
-        public void MtdEliminarCalidad()
+        public void MtdEliminarChoferes()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);

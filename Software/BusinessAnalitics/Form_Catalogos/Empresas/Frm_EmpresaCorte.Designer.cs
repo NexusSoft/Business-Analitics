@@ -128,9 +128,20 @@
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.txtPreciokg = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.txtMenorakg = new DevExpress.XtraEditors.TextEdit();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPrecioCajaMayorA = new DevExpress.XtraEditors.TextEdit();
+            this.chk_RangoCajas = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPrecioCajaMenorA = new DevExpress.XtraEditors.TextEdit();
+            this.txtCajasMenorA = new DevExpress.XtraEditors.TextEdit();
+            this.txtCajasMayorA = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
+            this.separatorControl2 = new DevExpress.XtraEditors.SeparatorControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -181,6 +192,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPreciokg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMenorakg.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioCajaMayorA.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RangoCajas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioCajaMenorA.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCajasMenorA.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCajasMayorA.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -308,7 +327,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 403);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 479);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(870, 25);
             // 
@@ -318,7 +337,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 403);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 479);
             // 
             // barDockControlRight
             // 
@@ -326,7 +345,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(870, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 403);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 479);
             // 
             // repositoryItemTextEdit1
             // 
@@ -338,7 +357,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(71, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(799, 403);
+            this.xtraTabControl1.Size = new System.Drawing.Size(799, 479);
             this.xtraTabControl1.TabIndex = 6;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -351,7 +370,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(793, 375);
+            this.xtraTabPage1.Size = new System.Drawing.Size(793, 451);
             this.xtraTabPage1.Text = "Datos";
             // 
             // panelControl1
@@ -361,7 +380,7 @@
             this.panelControl1.Location = new System.Drawing.Point(5, 151);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(783, 219);
+            this.panelControl1.Size = new System.Drawing.Size(783, 295);
             this.panelControl1.TabIndex = 2;
             // 
             // dtgEmpCorte
@@ -370,7 +389,7 @@
             this.dtgEmpCorte.Location = new System.Drawing.Point(7, 7);
             this.dtgEmpCorte.MainView = this.dtgValEmpCorte;
             this.dtgEmpCorte.Name = "dtgEmpCorte";
-            this.dtgEmpCorte.Size = new System.Drawing.Size(769, 205);
+            this.dtgEmpCorte.Size = new System.Drawing.Size(769, 281);
             this.dtgEmpCorte.TabIndex = 0;
             this.dtgEmpCorte.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValEmpCorte});
@@ -926,24 +945,23 @@
             this.xtraTabPage3.Controls.Add(this.groupControl3);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage3.Size = new System.Drawing.Size(793, 375);
+            this.xtraTabPage3.Size = new System.Drawing.Size(793, 451);
             this.xtraTabPage3.Text = "Servicios";
             // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.groupControl5);
             this.groupControl3.Controls.Add(this.groupControl4);
             this.groupControl3.Controls.Add(this.txtPrecioSalidaFalso);
             this.groupControl3.Controls.Add(this.txtPrecioDia);
             this.groupControl3.Controls.Add(this.labelControl10);
             this.groupControl3.Controls.Add(this.labelControl21);
-            this.groupControl3.Controls.Add(this.txtPreciokg);
-            this.groupControl3.Controls.Add(this.labelControl23);
             this.groupControl3.Controls.Add(this.txtMenorakg);
             this.groupControl3.Controls.Add(this.labelControl24);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(5, 5);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(783, 365);
+            this.groupControl3.Size = new System.Drawing.Size(783, 441);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "Cobro por Servicios";
             // 
@@ -961,7 +979,7 @@
             this.groupControl4.Controls.Add(this.txtKilosMayorA);
             this.groupControl4.Controls.Add(this.labelControl19);
             this.groupControl4.Controls.Add(this.separatorControl1);
-            this.groupControl4.Location = new System.Drawing.Point(5, 82);
+            this.groupControl4.Location = new System.Drawing.Point(5, 207);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(443, 145);
             this.groupControl4.TabIndex = 34;
@@ -997,6 +1015,7 @@
             // 
             // txtPrecioMayorA
             // 
+            this.txtPrecioMayorA.Enabled = false;
             this.txtPrecioMayorA.Location = new System.Drawing.Point(317, 114);
             this.txtPrecioMayorA.MenuManager = this.barManager1;
             this.txtPrecioMayorA.Name = "txtPrecioMayorA";
@@ -1035,6 +1054,7 @@
             // 
             // txtPrecioMenorA
             // 
+            this.txtPrecioMenorA.Enabled = false;
             this.txtPrecioMenorA.Location = new System.Drawing.Point(317, 88);
             this.txtPrecioMenorA.MenuManager = this.barManager1;
             this.txtPrecioMenorA.Name = "txtPrecioMenorA";
@@ -1047,6 +1067,7 @@
             // 
             // txtKilosMenorA
             // 
+            this.txtKilosMenorA.Enabled = false;
             this.txtKilosMenorA.Location = new System.Drawing.Point(135, 86);
             this.txtKilosMenorA.MenuManager = this.barManager1;
             this.txtKilosMenorA.Name = "txtKilosMenorA";
@@ -1059,6 +1080,7 @@
             // 
             // txtKilosMayorA
             // 
+            this.txtKilosMayorA.Enabled = false;
             this.txtKilosMayorA.Location = new System.Drawing.Point(135, 112);
             this.txtKilosMayorA.MenuManager = this.barManager1;
             this.txtKilosMayorA.Name = "txtKilosMayorA";
@@ -1086,7 +1108,7 @@
             // 
             // txtPrecioSalidaFalso
             // 
-            this.txtPrecioSalidaFalso.Location = new System.Drawing.Point(140, 235);
+            this.txtPrecioSalidaFalso.Location = new System.Drawing.Point(140, 358);
             this.txtPrecioSalidaFalso.MenuManager = this.barManager1;
             this.txtPrecioSalidaFalso.Name = "txtPrecioSalidaFalso";
             this.txtPrecioSalidaFalso.Properties.Mask.EditMask = "c2";
@@ -1110,7 +1132,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(17, 240);
+            this.labelControl10.Location = new System.Drawing.Point(17, 363);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(102, 13);
             this.labelControl10.TabIndex = 8;
@@ -1126,7 +1148,7 @@
             // 
             // txtPreciokg
             // 
-            this.txtPreciokg.Location = new System.Drawing.Point(140, 56);
+            this.txtPreciokg.Location = new System.Drawing.Point(135, 48);
             this.txtPreciokg.MenuManager = this.barManager1;
             this.txtPreciokg.Name = "txtPreciokg";
             this.txtPreciokg.Properties.Mask.EditMask = "c2";
@@ -1135,14 +1157,6 @@
             this.txtPreciokg.Properties.NullValuePrompt = "0";
             this.txtPreciokg.Size = new System.Drawing.Size(100, 20);
             this.txtPreciokg.TabIndex = 2;
-            // 
-            // labelControl23
-            // 
-            this.labelControl23.Location = new System.Drawing.Point(17, 61);
-            this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(66, 13);
-            this.labelControl23.TabIndex = 2;
-            this.labelControl23.Text = "Precio por kg:";
             // 
             // txtMenorakg
             // 
@@ -1164,11 +1178,140 @@
             this.labelControl24.TabIndex = 0;
             this.labelControl24.Text = "Menor a kg: ";
             // 
+            // groupControl5
+            // 
+            this.groupControl5.Controls.Add(this.labelControl25);
+            this.groupControl5.Controls.Add(this.labelControl26);
+            this.groupControl5.Controls.Add(this.txtPrecioCajaMayorA);
+            this.groupControl5.Controls.Add(this.chk_RangoCajas);
+            this.groupControl5.Controls.Add(this.labelControl27);
+            this.groupControl5.Controls.Add(this.labelControl28);
+            this.groupControl5.Controls.Add(this.txtPreciokg);
+            this.groupControl5.Controls.Add(this.txtPrecioCajaMenorA);
+            this.groupControl5.Controls.Add(this.txtCajasMenorA);
+            this.groupControl5.Controls.Add(this.txtCajasMayorA);
+            this.groupControl5.Controls.Add(this.labelControl29);
+            this.groupControl5.Controls.Add(this.separatorControl2);
+            this.groupControl5.Location = new System.Drawing.Point(5, 56);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(443, 145);
+            this.groupControl5.TabIndex = 35;
+            this.groupControl5.Text = "Cajas Cortadas";
+            // 
+            // labelControl25
+            // 
+            this.labelControl25.Location = new System.Drawing.Point(12, 53);
+            this.labelControl25.Name = "labelControl25";
+            this.labelControl25.Size = new System.Drawing.Size(66, 13);
+            this.labelControl25.TabIndex = 24;
+            this.labelControl25.Text = "Precio por kg:";
+            // 
+            // labelControl26
+            // 
+            this.labelControl26.Location = new System.Drawing.Point(241, 117);
+            this.labelControl26.Name = "labelControl26";
+            this.labelControl26.Size = new System.Drawing.Size(29, 13);
+            this.labelControl26.TabIndex = 33;
+            this.labelControl26.Text = "Precio";
+            // 
+            // txtPrecioCajaMayorA
+            // 
+            this.txtPrecioCajaMayorA.Enabled = false;
+            this.txtPrecioCajaMayorA.Location = new System.Drawing.Point(317, 114);
+            this.txtPrecioCajaMayorA.MenuManager = this.barManager1;
+            this.txtPrecioCajaMayorA.Name = "txtPrecioCajaMayorA";
+            this.txtPrecioCajaMayorA.Properties.Mask.EditMask = "c2";
+            this.txtPrecioCajaMayorA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioCajaMayorA.Properties.NullText = "0";
+            this.txtPrecioCajaMayorA.Properties.NullValuePrompt = "0";
+            this.txtPrecioCajaMayorA.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioCajaMayorA.TabIndex = 32;
+            // 
+            // chk_RangoCajas
+            // 
+            this.chk_RangoCajas.Location = new System.Drawing.Point(135, 23);
+            this.chk_RangoCajas.MenuManager = this.barManager1;
+            this.chk_RangoCajas.Name = "chk_RangoCajas";
+            this.chk_RangoCajas.Properties.Caption = "Por rango";
+            this.chk_RangoCajas.Size = new System.Drawing.Size(75, 19);
+            this.chk_RangoCajas.TabIndex = 25;
+            this.chk_RangoCajas.CheckedChanged += new System.EventHandler(this.chk_RangoCajas_CheckedChanged);
+            // 
+            // labelControl27
+            // 
+            this.labelControl27.Location = new System.Drawing.Point(241, 92);
+            this.labelControl27.Name = "labelControl27";
+            this.labelControl27.Size = new System.Drawing.Size(29, 13);
+            this.labelControl27.TabIndex = 31;
+            this.labelControl27.Text = "Precio";
+            // 
+            // labelControl28
+            // 
+            this.labelControl28.Location = new System.Drawing.Point(12, 91);
+            this.labelControl28.Name = "labelControl28";
+            this.labelControl28.Size = new System.Drawing.Size(73, 13);
+            this.labelControl28.TabIndex = 27;
+            this.labelControl28.Text = "Cajas Menor a:";
+            // 
+            // txtPrecioCajaMenorA
+            // 
+            this.txtPrecioCajaMenorA.Enabled = false;
+            this.txtPrecioCajaMenorA.Location = new System.Drawing.Point(317, 88);
+            this.txtPrecioCajaMenorA.MenuManager = this.barManager1;
+            this.txtPrecioCajaMenorA.Name = "txtPrecioCajaMenorA";
+            this.txtPrecioCajaMenorA.Properties.Mask.EditMask = "c2";
+            this.txtPrecioCajaMenorA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioCajaMenorA.Properties.NullText = "0";
+            this.txtPrecioCajaMenorA.Properties.NullValuePrompt = "0";
+            this.txtPrecioCajaMenorA.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioCajaMenorA.TabIndex = 30;
+            // 
+            // txtCajasMenorA
+            // 
+            this.txtCajasMenorA.Enabled = false;
+            this.txtCajasMenorA.Location = new System.Drawing.Point(135, 86);
+            this.txtCajasMenorA.MenuManager = this.barManager1;
+            this.txtCajasMenorA.Name = "txtCajasMenorA";
+            this.txtCajasMenorA.Properties.Mask.EditMask = "n0";
+            this.txtCajasMenorA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtCajasMenorA.Properties.NullText = "0";
+            this.txtCajasMenorA.Properties.NullValuePrompt = "0";
+            this.txtCajasMenorA.Size = new System.Drawing.Size(100, 20);
+            this.txtCajasMenorA.TabIndex = 26;
+            // 
+            // txtCajasMayorA
+            // 
+            this.txtCajasMayorA.Enabled = false;
+            this.txtCajasMayorA.Location = new System.Drawing.Point(135, 112);
+            this.txtCajasMayorA.MenuManager = this.barManager1;
+            this.txtCajasMayorA.Name = "txtCajasMayorA";
+            this.txtCajasMayorA.Properties.Mask.EditMask = "n0";
+            this.txtCajasMayorA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtCajasMayorA.Properties.NullText = "0";
+            this.txtCajasMayorA.Properties.NullValuePrompt = "0";
+            this.txtCajasMayorA.Size = new System.Drawing.Size(100, 20);
+            this.txtCajasMayorA.TabIndex = 28;
+            // 
+            // labelControl29
+            // 
+            this.labelControl29.Location = new System.Drawing.Point(12, 117);
+            this.labelControl29.Name = "labelControl29";
+            this.labelControl29.Size = new System.Drawing.Size(73, 13);
+            this.labelControl29.TabIndex = 29;
+            this.labelControl29.Text = "Cajas Mayor a:";
+            // 
+            // separatorControl2
+            // 
+            this.separatorControl2.Location = new System.Drawing.Point(5, 66);
+            this.separatorControl2.Name = "separatorControl2";
+            this.separatorControl2.Size = new System.Drawing.Size(433, 20);
+            this.separatorControl2.TabIndex = 34;
+            // 
             // Frm_EmpresaCorte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(870, 428);
+            this.ClientSize = new System.Drawing.Size(870, 504);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -1234,6 +1377,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPreciokg.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMenorakg.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
+            this.groupControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioCajaMayorA.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RangoCajas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPrecioCajaMenorA.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCajasMenorA.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCajasMayorA.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1328,7 +1480,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl21;
         private DevExpress.XtraEditors.TextEdit txtPreciokg;
-        private DevExpress.XtraEditors.LabelControl labelControl23;
         private DevExpress.XtraEditors.TextEdit txtMenorakg;
         private DevExpress.XtraEditors.LabelControl labelControl24;
         private DevExpress.XtraEditors.GroupControl groupControl4;
@@ -1342,5 +1493,17 @@
         private DevExpress.XtraEditors.TextEdit txtKilosMayorA;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl25;
+        private DevExpress.XtraEditors.LabelControl labelControl26;
+        private DevExpress.XtraEditors.TextEdit txtPrecioCajaMayorA;
+        private DevExpress.XtraEditors.CheckEdit chk_RangoCajas;
+        private DevExpress.XtraEditors.LabelControl labelControl27;
+        private DevExpress.XtraEditors.LabelControl labelControl28;
+        private DevExpress.XtraEditors.TextEdit txtPrecioCajaMenorA;
+        private DevExpress.XtraEditors.TextEdit txtCajasMenorA;
+        private DevExpress.XtraEditors.TextEdit txtCajasMayorA;
+        private DevExpress.XtraEditors.LabelControl labelControl29;
+        private DevExpress.XtraEditors.SeparatorControl separatorControl2;
     }
 }

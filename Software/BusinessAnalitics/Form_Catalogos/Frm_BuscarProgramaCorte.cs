@@ -18,6 +18,7 @@ namespace Business_Analitics
         public string Id_ProgramaCorte { get;  set; }
         public string v_temporada { get;  set; }
         public string v_secuencia { get;  set; }
+        public string v_ordencorte { get; set; }
 
         public Frm_BuscarProgramaCorte()
         {
@@ -91,6 +92,7 @@ namespace Business_Analitics
                     Id_ProgramaCorte = row["c_codigo_pco"].ToString();
                     v_temporada = row["c_codigo_tem"].ToString();
                     v_secuencia = row["c_secuencia_ocd"].ToString();
+                    v_ordencorte= row["c_codigo_oct"].ToString();
                 }
             }
             catch (Exception ex)

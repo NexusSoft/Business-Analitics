@@ -36,6 +36,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_tem");
                 _dato.CadenaTexto = c_codigo_pco;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_pco");
+                _dato.CadenaTexto = c_codigo_oct;
+                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_oct");
                 _dato.CadenaTexto = c_secuencia_ocd;
                 _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_secuencia_ocd");
                 _conexion.EjecutarDataset();

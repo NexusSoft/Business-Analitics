@@ -67,7 +67,21 @@ namespace Business_Analitics
                 dtgDomicilio.DataSource = Domicilio.Datos;
             }
         }
-
+        private void CargarContacto()
+        {
+            dtgContacto.DataSource = null;
+            CLS_EmpresasComercializadora_Contacto Contacto = new CLS_EmpresasComercializadora_Contacto();
+            Contacto.Id_EmpresaComercializacion = textId.Text.Trim();
+            Contacto.MtdSeleccionarContacto();
+            if (Contacto.Exito)
+            {
+                dtgContacto.DataSource = Contacto.Datos;
+            }
+            else
+            {
+                XtraMessageBox.Show(Contacto.Mensaje);
+            }
+        }
         private void InsertarProveedores()
         {
             CLS_EmpresasComercializadora Empresas = new CLS_EmpresasComercializadora();
@@ -138,25 +152,25 @@ namespace Business_Analitics
         {
             if (txtNombreContacto.Text != string.Empty )
             {
-                CLS_EmpresasComercializadora_Contacto Domicilio = new CLS_EmpresasComercializadora_Contacto();
-                Domicilio.Id_Contacto = txtIdContacto.Text.Trim();
-                Domicilio.Id_Huerta = txtIdHuerta.Text.Trim();
-                Domicilio.Id_EmpresaComercializacion = textId.Text.Trim();
-                Domicilio.Nombre_Contacto = txtNombreContacto.Text.Trim();
-                Domicilio.Email_Contacto = txtEmail.Text.Trim();
-                Domicilio.Telefono_Contacto = txtTelefono.Text.Trim();
-                Domicilio.Usuario = UsuariosLogin;
-                Domicilio.MtdInsertarContacto();
-                if (Domicilio.Exito)
+                CLS_EmpresasComercializadora_Contacto Contacto = new CLS_EmpresasComercializadora_Contacto();
+                Contacto.Id_Contacto = txtIdContacto.Text.Trim();
+                Contacto.c_codigo_hue = txtIdHuerta.Text.Trim();
+                Contacto.Id_EmpresaComercializacion = textId.Text.Trim();
+                Contacto.Nombre_Contacto = txtNombreContacto.Text.Trim();
+                Contacto.Email_Contacto = txtEmail.Text.Trim();
+                Contacto.Telefono_Contacto = txtTelefono.Text.Trim();
+                Contacto.Usuario = UsuariosLogin;
+                Contacto.MtdInsertarContacto();
+                if (Contacto.Exito)
                 {
 
-                    CargarDomicilio();
+                    CargarContacto();
                     XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                    LimpiarCamposDomicilio();
+                    LimpiarCamposContacto();
                 }
                 else
                 {
-                    XtraMessageBox.Show(Domicilio.Mensaje);
+                    XtraMessageBox.Show(Contacto.Mensaje);
                 }
             }
             else
@@ -290,6 +304,7 @@ namespace Business_Analitics
             }
 
             CargarDomicilio();
+            CargarContacto();
         }
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -501,6 +516,28 @@ namespace Business_Analitics
             frm.ShowDialog();
             txtIdHuerta.Text = frm.IdHuerta;
             txtNombreHuerta.Text = frm.Huerta;
+        }
+
+        private void dtgContacto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValContacto.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValContacto.GetDataRow(i);
+                    txtIdContacto.Text = row["Id_Contacto"].ToString();
+                    txtNombreContacto.Text = row["Nombre_contacto"].ToString();
+                    txtIdHuerta.Text = row["c_codigo_hue"].ToString();
+                    txtNombreHuerta.Text = row["v_nombre_hue"].ToString();
+                    txtEmail.Text = row["EMail_Contacto"].ToString();
+                    txtTelefono.Text = row["Telefono_Contacto"].ToString();
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
         }
     }
 }

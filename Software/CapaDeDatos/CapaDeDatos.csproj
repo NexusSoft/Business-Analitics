@@ -48,6 +48,7 @@
     <Compile Include="Conexion\MSRegistro.cs" />
     <Compile Include="Conexion\TipoDato.cs" />
     <Compile Include="Conexion\UtileriasCodigo.cs" />
+    <Compile Include="Formularios\CLS_ConfigTipoC_Tamanio.cs" />
     <Compile Include="Formularios\CLS_Choferes.cs" />
     <Compile Include="Formularios\CLS_Camiones.cs" />
     <Compile Include="Formularios\CLS_Calidades.cs" />
