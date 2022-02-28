@@ -25,8 +25,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Empresa_Comercializacion_Contacto_Select";
-                _dato.CadenaTexto = Id_EmpresaComercializacion;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaComercializacion");
+                _dato.Texto = Id_EmpresaComercializacion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaComercializacion");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -55,20 +55,20 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Empresa_Comercializacion_Contacto_Insert";
-                _dato.CadenaTexto = Id_Contacto;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Contacto");
-                _dato.CadenaTexto = Nombre_Contacto;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Contacto");
-                _dato.CadenaTexto = Telefono_Contacto;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono_Contacto");
-                _dato.CadenaTexto = Email_Contacto;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Email_Contacto");
-                _dato.CadenaTexto = Id_EmpresaComercializacion;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaComercializacion");
-                _dato.CadenaTexto = c_codigo_hue;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_hue");
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Texto = Id_Contacto;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Contacto");
+                _dato.Texto = Nombre_Contacto;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Contacto");
+                _dato.Texto = Telefono_Contacto;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Telefono_Contacto");
+                _dato.Texto = Email_Contacto;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Email_Contacto");
+                _dato.Texto = Id_EmpresaComercializacion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaComercializacion");
+                _dato.Texto = c_codigo_hue;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_hue");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -96,8 +96,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Empresa_Comercializacion_Contacto_Delete";
-                _dato.CadenaTexto = Id_Contacto;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Contacto");
+                _dato.Texto = Id_Contacto;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Contacto");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -125,10 +125,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Empresa_Comercializacion_Contacto_Empresa_Select";
-                _dato.CadenaTexto = Id_EmpresaComercializacion;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaComercializacion");
-                _dato.CadenaTexto = c_codigo_hue;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_hue");
+                _dato.Texto = Id_EmpresaComercializacion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaComercializacion");
+                _dato.Texto = c_codigo_hue;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_hue");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

@@ -20,8 +20,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_ProgramaCorte_Select";
-                _dato.CadenaTexto = c_codigo_tem;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_tem");
+                _dato.Texto = c_codigo_tem;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_tem");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

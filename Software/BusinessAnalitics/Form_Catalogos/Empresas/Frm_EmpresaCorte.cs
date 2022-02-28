@@ -249,20 +249,12 @@ namespace Business_Analitics
             {
                 ins.EsRango = 0;
             }
-
-            decimal Kilos_MenorA = 0;
             decimal.TryParse(txtKilosMenorA.Text, style, culture, out Cajas_MenorA);
             ins.Kilos_MenorA = Cajas_MenorA;
-
-            decimal Kilos_MayorA = 0;
             decimal.TryParse(txtKilosMayorA.Text, style, culture, out Cajas_MayorA);
             ins.Kilos_MayorA = Cajas_MayorA;
-
-            decimal Precio_MenorA = 0;
             decimal.TryParse(txtPrecioMenorA.Text, style, culture, out PrecioCajas_MenorA);
             ins.Precio_MenorA = PrecioCajas_MenorA;
-
-            decimal Precio_MayorA = 0;
             decimal.TryParse(txtPrecioMayorA.Text, style, culture, out PrecioCajas_MayorA);
             ins.Precio_MayorA = PrecioCajas_MayorA;
 
@@ -383,12 +375,16 @@ namespace Business_Analitics
             txtMenorakg.Text = "0";
             txtPreciokg.Text = "0";
             txtPrecioDia.Text = "0";
+            txtCajasMenorA.Text = "0";
+            txtPrecioCajaMenorA.Text = "0";
+            txtCajasMayorA.Text = "0";
+            txtPrecioCajaMayorA.Text = "0";
             txtPrecioCuadrillaA.Text = "0";
-            txtPrecioSalidaFalso.Tag = "0";
             txtKilosMayorA.Text = "0";
             txtKilosMenorA.Text = "0";
             txtPrecioMayorA.Text = "0";
             txtPrecioMenorA.Text = "0";
+            txtPrecioSalidaFalso.Tag = "0";
         }
         private void gridControl1_Click(object sender, EventArgs e)
         {

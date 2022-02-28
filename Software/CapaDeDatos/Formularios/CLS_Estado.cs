@@ -53,15 +53,15 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Estado_Insert";
-                _dato.CadenaTexto = Id_Estado;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Estado");
-                _dato.CadenaTexto = Nombre_Estado;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Estado");
-                _dato.CadenaTexto = Id_Pais;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Pais");
+                _dato.Texto = Id_Estado;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Estado");
+                _dato.Texto = Nombre_Estado;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Estado");
+                _dato.Texto = Id_Pais;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Pais");
 
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -89,8 +89,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Estado_Delete";
-                _dato.CadenaTexto = Id_Estado;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Estado");
+                _dato.Texto = Id_Estado;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Estado");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

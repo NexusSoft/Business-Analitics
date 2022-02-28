@@ -76,38 +76,43 @@ namespace CapaDeDatos
 
         private void TipoDato(EnumTipoDato tipo, ref SqlParameter parametro, TipoDato valor)
         {
-            if (tipo == EnumTipoDato.Tipodecimal)
+            if (tipo == EnumTipoDato.Decimal)
             {
 		        parametro.SqlDbType = SqlDbType.Decimal;
-		        parametro.Value = valor.DecimalValor;
+		        parametro.Value = valor.Decimal;
 	        }
 
-            if (tipo == EnumTipoDato.CadenaTexto)
+            if (tipo == EnumTipoDato.Texto)
             {
 		        parametro.SqlDbType = SqlDbType.NVarChar;
-		        parametro.Value = valor.CadenaTexto;
+		        parametro.Value = valor.Texto;
 	        }
             if (tipo == EnumTipoDato.Entero)
             {
 		        parametro.SqlDbType = SqlDbType.Int;
 		        parametro.Value = valor.Entero;
 	        }
-            if (tipo == EnumTipoDato.Fecha)
+            if (tipo == EnumTipoDato.FechaYHora)
             {
 		        parametro.SqlDbType = SqlDbType.DateTime;
 		        parametro.Value = valor.FechaYHora;
 	        }
-
             if (tipo == EnumTipoDato.Boleano )
             {
                 parametro.SqlDbType = SqlDbType.Bit ;
-                parametro.Value = valor.BoleanoValor ;
+                parametro.Value = valor.Boleano ;
             }
-
-
-
-
-       }
+			if (tipo == EnumTipoDato.Imagen)
+			{
+				parametro.SqlDbType = SqlDbType.Image;
+				parametro.Value = valor.Imagen;
+			}
+			if (tipo == EnumTipoDato.Archivo)
+			{
+				parametro.SqlDbType = SqlDbType.VarBinary;
+				parametro.Value = valor.Archivo;
+			}
+		}
 
 
        public void eliminarTodosParametros(ref SqlCommand x)
@@ -158,7 +163,7 @@ namespace CapaDeDatos
 
         public void EjecutarDataset(bool Tabla)
         {
-	        DataTable dtMyTable = new DataTable("TABLANORMEX");
+	        DataTable dtMyTable = new DataTable("TABLA");
 	        DataSet dtMyDataSet = new DataSet();
 
 

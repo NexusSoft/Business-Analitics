@@ -233,6 +233,7 @@
             this.Name = "Frm_BuscarProgramaCorte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccionar Programa";
+            this.Load += new System.EventHandler(this.Frm_BuscarProgramaCorte_Load);
             this.Shown += new System.EventHandler(this.Frm_BuscarProgramaCorte_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

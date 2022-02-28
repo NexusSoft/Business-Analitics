@@ -53,8 +53,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Calibres_Select";
-                _dato.CadenaTexto = c_codigo_tipocorte;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_tipocorte");
+                _dato.Texto = c_codigo_tipocorte;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_tipocorte");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -111,10 +111,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_TipoCorte_Tamaño_Delete";
-                _dato.CadenaTexto = c_codigo_tipocorte;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_tipocorte");
-                _dato.CadenaTexto = c_codigo_tam;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_tam");
+                _dato.Texto = c_codigo_tipocorte;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_tipocorte");
+                _dato.Texto = c_codigo_tam;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_tam");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -142,16 +142,16 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_TipoCorte_Tamaño_Insert";
-                _dato.CadenaTexto = c_codigo_tipocorte;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_tipocorte");
-                _dato.CadenaTexto = v_nombre_tipocorte;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_nombre_tipocorte");
-                _dato.CadenaTexto = c_codigo_tam;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_tam");
-                _dato.CadenaTexto = v_nombre_tam;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_nombre_tam");
-                _dato.CadenaTexto = Id_Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.Texto = c_codigo_tipocorte;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_tipocorte");
+                _dato.Texto = v_nombre_tipocorte;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "v_nombre_tipocorte");
+                _dato.Texto = c_codigo_tam;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_tam");
+                _dato.Texto = v_nombre_tam;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "v_nombre_tam");
+                _dato.Texto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

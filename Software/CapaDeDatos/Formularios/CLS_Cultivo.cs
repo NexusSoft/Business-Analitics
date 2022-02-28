@@ -23,8 +23,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Cultivo_Select";
-                _dato.CadenaTexto = Activo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
+                _dato.Texto = Activo;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Activo");
                 _conexion.EjecutarDataset();
                 if (_conexion.Exito)
                 {
@@ -52,12 +52,12 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Cultivo_Insert";
-                _dato.CadenaTexto = Id_Cultivo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cultivo");
-                _dato.CadenaTexto = Nombre_Cultivo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Cultivo");
-                _dato.CadenaTexto = Id_Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.Texto = Id_Cultivo;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cultivo");
+                _dato.Texto = Nombre_Cultivo;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Cultivo");
+                _dato.Texto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -85,12 +85,12 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Cultivo_Delete";
-                _dato.CadenaTexto = Id_Cultivo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Cultivo");
-                _dato.CadenaTexto = Id_Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
-                _dato.CadenaTexto = Activo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
+                _dato.Texto = Id_Cultivo;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cultivo");
+                _dato.Texto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
+                _dato.Texto = Activo;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Activo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

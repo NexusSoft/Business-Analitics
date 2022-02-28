@@ -23,10 +23,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Inventario_Fechas_Select";
-                _dato.CadenaTexto = Fecha1;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha1");
-                _dato.CadenaTexto = Fecha2;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha2");
+                _dato.Texto = Fecha1;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha1");
+                _dato.Texto = Fecha2;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha2");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -54,10 +54,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Inventario_Totales_Fechas_Select";
-                _dato.CadenaTexto = Fecha1;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha1");
-                _dato.CadenaTexto = Fecha2;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha2");
+                _dato.Texto = Fecha1;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha1");
+                _dato.Texto = Fecha2;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha2");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -85,14 +85,14 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Inventario_Fechas_Series_Select";
-                _dato.CadenaTexto = Fecha1;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha1");
-                _dato.CadenaTexto = Fecha2;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha2");
-                _dato.CadenaTexto = Fecha3;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha3");
-                _dato.CadenaTexto = Fecha4;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha4");
+                _dato.Texto = Fecha1;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha1");
+                _dato.Texto = Fecha2;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha2");
+                _dato.Texto = Fecha3;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha3");
+                _dato.Texto = Fecha4;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha4");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -120,14 +120,14 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Inventario_Totales_Fechas_Series_Select";
-                _dato.CadenaTexto = Fecha1;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha1");
-                _dato.CadenaTexto = Fecha2;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha2");
-                _dato.CadenaTexto = Fecha3;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha3");
-                _dato.CadenaTexto = Fecha4;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha4");
+                _dato.Texto = Fecha1;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha1");
+                _dato.Texto = Fecha2;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha2");
+                _dato.Texto = Fecha3;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha3");
+                _dato.Texto = Fecha4;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha4");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -182,10 +182,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Inventario_Fechas_Validar_Select";
-                _dato.CadenaTexto = Fecha1;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha1");
-                _dato.CadenaTexto = Fecha2;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha2");
+                _dato.Texto = Fecha1;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha1");
+                _dato.Texto = Fecha2;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha2");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

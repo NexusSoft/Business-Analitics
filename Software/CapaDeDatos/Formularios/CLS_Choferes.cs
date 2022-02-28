@@ -23,8 +23,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Chofer_Select";
-                _dato.CadenaTexto = Id_EmpresaAcarreo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaAcarreo");
+                _dato.Texto = Id_EmpresaAcarreo;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaAcarreo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -54,14 +54,14 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Chofer_Insert";
-                _dato.CadenaTexto = Id_Chofer;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Chofer");
-                _dato.CadenaTexto = Nombre_Chofer;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Chofer");
-                _dato.CadenaTexto = Id_EmpresaAcarreo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaAcarreo");
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Texto = Id_Chofer;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Chofer");
+                _dato.Texto = Nombre_Chofer;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Chofer");
+                _dato.Texto = Id_EmpresaAcarreo;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaAcarreo");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -90,8 +90,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Chofer_Delete";
-                _dato.CadenaTexto = Id_Chofer;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Chofer");
+                _dato.Texto = Id_Chofer;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Chofer");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

@@ -22,8 +22,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "Perfil_Pantallas_Disponibles_Select";
-                _dato.CadenaTexto = Id_Perfil;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
+                _dato.Texto = Id_Perfil;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Perfil");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -52,8 +52,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "Perfil_Pantallas_Asignadas_Select";
-                _dato.CadenaTexto = Id_Perfil;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
+                _dato.Texto = Id_Perfil;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Perfil");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -112,8 +112,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_AccesosPermisos_Select";
-                _dato.CadenaTexto = Id_Perfil;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
+                _dato.Texto = Id_Perfil;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Perfil");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -143,13 +143,13 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Perfiles_Pantallas_Insert";
-                _dato.CadenaTexto = Id_Pantalla;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Pantalla");
-                _dato.CadenaTexto = Id_Perfil;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
+                _dato.Texto = Id_Pantalla;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Pantalla");
+                _dato.Texto = Id_Perfil;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Perfil");
 
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -177,10 +177,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Perfiles_Pantallas_Delete";
-                _dato.CadenaTexto = Id_Pantalla;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Pantalla");
-                _dato.CadenaTexto = Id_Perfil;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
+                _dato.Texto = Id_Pantalla;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Pantalla");
+                _dato.Texto = Id_Perfil;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Perfil");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

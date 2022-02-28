@@ -27,8 +27,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Usuarios_Select";
-                _dato.CadenaTexto = Activo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Activo");
+                _dato.Texto = Activo;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Activo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -60,16 +60,16 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Usuarios_Insert";
-                _dato.CadenaTexto = Id_Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
-                _dato.CadenaTexto = Nombre_Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Usuario");
-                _dato.CadenaTexto = Contrasena;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Contrasena");
-                _dato.CadenaTexto = Id_Perfil;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Texto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Usuario");
+                _dato.Texto = Nombre_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Usuario");
+                _dato.Texto = Contrasena;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Contrasena");
+                _dato.Texto = Id_Perfil;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Perfil");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -98,8 +98,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Usuarios_Delete";
-                _dato.CadenaTexto = Id_Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.Texto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

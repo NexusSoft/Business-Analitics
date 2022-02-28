@@ -51,8 +51,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Pais_InventarioT_Select";
-                _dato.CadenaTexto = Fecha;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
+                _dato.Texto = Fecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -81,13 +81,13 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Pais_Insert";
-                _dato.CadenaTexto = Id_Pais;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Pais");
-                _dato.CadenaTexto = Nombre_Pais;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Pais");
+                _dato.Texto = Id_Pais;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Pais");
+                _dato.Texto = Nombre_Pais;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Pais");
 
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -116,8 +116,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Pais_Delete";
-                _dato.CadenaTexto = Id_Pais;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Pais");
+                _dato.Texto = Id_Pais;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Pais");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

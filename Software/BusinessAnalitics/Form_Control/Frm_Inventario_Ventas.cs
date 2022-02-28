@@ -235,7 +235,7 @@ namespace Business_Analitics
             Ins.Id_Tratamiento = cmb_Tratamiento.EditValue.ToString();
             Ins.Id_Categoria = cmb_Categoria.EditValue.ToString();
             Ins.Usuario = UsuariosLogin.Trim();
-            int x = 1;
+            
             for (int i = 0; i < dtgValTamanio.DataRowCount; i++)
             {
                 Ins.Id_Tamanio = dtgValTamanio.GetRowCellValue(i, dtgValTamanio.Columns["Id_Tamanio"]).ToString();

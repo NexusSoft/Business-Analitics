@@ -24,10 +24,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_UsuariosAcceso_Select";
-                _dato.CadenaTexto = Id_Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
-                _dato.CadenaTexto = Contrasena;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Contrasena");
+                _dato.Texto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Usuario");
+                _dato.Texto = Contrasena;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Contrasena");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

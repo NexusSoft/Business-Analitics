@@ -22,10 +22,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_CorridaRecepcion_Select";
-                _dato.CadenaTexto = c_codigo_sel;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_sel");
-                _dato.CadenaTexto = c_codigo_tem;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_Codigo_tem");
+                _dato.Texto = c_codigo_sel;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_sel");
+                _dato.Texto = c_codigo_tem;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_Codigo_tem");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -53,10 +53,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_CorridaExportacion_Select";
-                _dato.CadenaTexto = c_codigo_sel;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_sel");
-                _dato.CadenaTexto = c_codigo_tem;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_Codigo_tem");
+                _dato.Texto = c_codigo_sel;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_sel");
+                _dato.Texto = c_codigo_tem;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_Codigo_tem");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -84,10 +84,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_CorridaNacional_Select";
-                _dato.CadenaTexto = c_codigo_sel;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_sel");
-                _dato.CadenaTexto = c_codigo_tem;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_Codigo_tem");
+                _dato.Texto = c_codigo_sel;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_sel");
+                _dato.Texto = c_codigo_tem;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_Codigo_tem");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -115,10 +115,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_CorridaMerma_Select";
-                _dato.CadenaTexto = c_codigo_sel;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_sel");
-                _dato.CadenaTexto = c_codigo_tem;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_Codigo_tem");
+                _dato.Texto = c_codigo_sel;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_sel");
+                _dato.Texto = c_codigo_tem;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_Codigo_tem");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -147,12 +147,12 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_CorridaRecepcion_Corte_Select";
-                _dato.CadenaTexto = c_codigo_sel;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_sel");
-                _dato.CadenaTexto = c_codigo_tem;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_Codigo_tem");
-                _dato.CadenaTexto = c_codigo_rec;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_rec");
+                _dato.Texto = c_codigo_sel;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_sel");
+                _dato.Texto = c_codigo_tem;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_Codigo_tem");
+                _dato.Texto = c_codigo_rec;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_rec");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -180,12 +180,12 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_CorridaExportacion_Corte_Select";
-                _dato.CadenaTexto = c_codigo_sel;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_sel");
-                _dato.CadenaTexto = c_codigo_tem;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_Codigo_tem");
-                _dato.CadenaTexto = v_nombre_tipocorte;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_nombre_tipocorte");
+                _dato.Texto = c_codigo_sel;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_sel");
+                _dato.Texto = c_codigo_tem;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_Codigo_tem");
+                _dato.Texto = v_nombre_tipocorte;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "v_nombre_tipocorte");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -213,12 +213,12 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_CorridaNacional_Corte_Select";
-                _dato.CadenaTexto = c_codigo_sel;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_sel");
-                _dato.CadenaTexto = c_codigo_tem;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_Codigo_tem");
-                _dato.CadenaTexto = v_nombre_tipocorte;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_nombre_tipocorte");
+                _dato.Texto = c_codigo_sel;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_sel");
+                _dato.Texto = c_codigo_tem;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_Codigo_tem");
+                _dato.Texto = v_nombre_tipocorte;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "v_nombre_tipocorte");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -247,12 +247,12 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_CorridaRecepcion_CorteND_Select";
-                _dato.CadenaTexto = c_codigo_sel;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_sel");
-                _dato.CadenaTexto = c_codigo_tem;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_Codigo_tem");
-                _dato.CadenaTexto = c_codigo_rec;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_rec");
+                _dato.Texto = c_codigo_sel;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_sel");
+                _dato.Texto = c_codigo_tem;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_Codigo_tem");
+                _dato.Texto = c_codigo_rec;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_rec");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -280,12 +280,12 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_CorridaExportacion_CorteND_Select";
-                _dato.CadenaTexto = c_codigo_sel;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_sel");
-                _dato.CadenaTexto = c_codigo_tem;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_Codigo_tem");
-                _dato.CadenaTexto = v_nombre_tipocorte;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "v_nombre_tipocorte");
+                _dato.Texto = c_codigo_sel;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_sel");
+                _dato.Texto = c_codigo_tem;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_Codigo_tem");
+                _dato.Texto = v_nombre_tipocorte;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "v_nombre_tipocorte");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

@@ -101,6 +101,11 @@ namespace Business_Analitics
             }
             this.Close();
         }
+
+        private void Frm_BuscarProgramaCorte_Load(object sender, EventArgs e)
+        {
+
+        }
     }
    
 }

@@ -7,11 +7,13 @@ namespace CapaDeDatos
 {
     public enum EnumTipoDato
     {
-        CadenaTexto,
+        Texto,
         Entero,
-        Fecha,
-        Tipodecimal,
+        FechaYHora,
+        Decimal,
         Boleano,
-        Caracter
+        Caracter,
+        Imagen,
+        Archivo
     }
 }

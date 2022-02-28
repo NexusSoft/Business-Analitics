@@ -51,12 +51,12 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Productor_Insert";
-                _dato.CadenaTexto = Id_Productor;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Productor");
-                _dato.CadenaTexto = Nombre_Productor;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Productor");
-                _dato.CadenaTexto = Id_Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.Texto = Id_Productor;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Productor");
+                _dato.Texto = Nombre_Productor;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Productor");
+                _dato.Texto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -84,8 +84,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Productor_Delete";
-                _dato.CadenaTexto = Id_Productor;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Productor");
+                _dato.Texto = Id_Productor;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Productor");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

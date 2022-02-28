@@ -55,13 +55,13 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Perfiles_Insert";
-                _dato.CadenaTexto = Id_Perfil;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
-                _dato.CadenaTexto = Nombre_Perfil;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Perfil");
+                _dato.Texto = Id_Perfil;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Perfil");
+                _dato.Texto = Nombre_Perfil;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Perfil");
 
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -90,8 +90,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Perfiles_Delete";
-                _dato.CadenaTexto = Id_Perfil;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Perfil");
+                _dato.Texto = Id_Perfil;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Perfil");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

@@ -55,22 +55,22 @@ namespace CapaDeDatos
         try
         {
             _conexion.NombreProcedimiento = "SP_Empresa_Bascula_Insert";
-            _dato.CadenaTexto = Id_EmpresaBascula;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaBascula");
-            _dato.CadenaTexto = Nombre_EmpresaBascula;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_EmpresaBascula");
-            _dato.CadenaTexto = Telefono1;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono1");
-            _dato.CadenaTexto = Telefono2;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono2");
-            _dato.CadenaTexto = Email;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Email");
-            _dato.CadenaTexto = Contacto;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Contacto");
-            _dato.CadenaTexto = RFC;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "RFC");
-            _dato.CadenaTexto = Usuario;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+            _dato.Texto = Id_EmpresaBascula;
+            _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaBascula");
+            _dato.Texto = Nombre_EmpresaBascula;
+            _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_EmpresaBascula");
+            _dato.Texto = Telefono1;
+            _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Telefono1");
+            _dato.Texto = Telefono2;
+            _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Telefono2");
+            _dato.Texto = Email;
+            _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Email");
+            _dato.Texto = Contacto;
+            _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Contacto");
+            _dato.Texto = RFC;
+            _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "RFC");
+            _dato.Texto = Usuario;
+            _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
             _conexion.EjecutarDataset();
 
             if (_conexion.Exito)
@@ -98,8 +98,8 @@ namespace CapaDeDatos
         try
         {
             _conexion.NombreProcedimiento = "SP_Empresa_Bascula_Delete";
-            _dato.CadenaTexto = Id_EmpresaBascula;
-            _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaBascula");
+            _dato.Texto = Id_EmpresaBascula;
+            _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaBascula");
             _conexion.EjecutarDataset();
 
             if (_conexion.Exito)

@@ -29,10 +29,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Domicilio_Select";
-                _dato.CadenaTexto = Id_Empleado;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empleado");
-                _dato.CadenaTexto = id_TipoPersona;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "id_TipoPersona");
+                _dato.Texto = Id_Empleado;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Empleado");
+                _dato.Texto = id_TipoPersona;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "id_TipoPersona");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -61,28 +61,28 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Domicilio_Insert";
-                _dato.CadenaTexto = Id_Domicilio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Domicilio");
-                _dato.CadenaTexto = Calle;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Calle");
-                _dato.CadenaTexto = NoInterior;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "NoInterior");
-                _dato.CadenaTexto = NoExterior;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "NoExterior");
-                _dato.CadenaTexto = Colonia;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Colonia");
-                _dato.CadenaTexto = Codigo_Postal;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Codigo_Postal");
-                _dato.CadenaTexto = Id_Ciudad;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Ciudad");
-                _dato.CadenaTexto = Id_TipoDomicilio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_TipoDomicilio");
-                _dato.CadenaTexto = Id_Empleado;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Persona");
-                _dato.CadenaTexto = id_TipoPersona;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "id_TipoPersona");
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Texto = Id_Domicilio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Domicilio");
+                _dato.Texto = Calle;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Calle");
+                _dato.Texto = NoInterior;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "NoInterior");
+                _dato.Texto = NoExterior;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "NoExterior");
+                _dato.Texto = Colonia;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Colonia");
+                _dato.Texto = Codigo_Postal;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Codigo_Postal");
+                _dato.Texto = Id_Ciudad;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Ciudad");
+                _dato.Texto = Id_TipoDomicilio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_TipoDomicilio");
+                _dato.Texto = Id_Empleado;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Persona");
+                _dato.Texto = id_TipoPersona;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "id_TipoPersona");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -110,8 +110,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Domicilio_Delete";
-                _dato.CadenaTexto = Id_Domicilio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Domicilio");
+                _dato.Texto = Id_Domicilio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Domicilio");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -139,10 +139,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_DomicilioPersona_Delete";
-                _dato.CadenaTexto = Id_Empleado;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Empleado");
-                _dato.CadenaTexto = id_TipoPersona;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "id_TipoPersona");
+                _dato.Texto = Id_Empleado;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Empleado");
+                _dato.Texto = id_TipoPersona;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "id_TipoPersona");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

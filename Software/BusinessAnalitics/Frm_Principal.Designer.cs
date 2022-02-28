@@ -51,23 +51,27 @@
             this.btnReportInventario = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrecioSemana = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_TipoCorteTamaño = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_RelacionFruta = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btn_TipoCorteTamaño = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_RelacionECorte = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_RelacionEAcarreo = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -76,10 +80,11 @@
             // ribbon
             // 
             this.ribbon.ApplicationButtonDropDownControl = this.applicationMenu1;
-            this.ribbon.ApplicationIcon = ((System.Drawing.Bitmap)(resources.GetObject("ribbon.ApplicationIcon")));
+            this.ribbon.ApplicationButtonImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbon.ApplicationButtonImageOptions.Image")));
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
+            this.ribbon.SearchEditItem,
             this.btn_EmpCorte,
             this.btn_EmpAcarreo,
             this.btn_Cosecha,
@@ -99,9 +104,12 @@
             this.btnReportInventario,
             this.barButtonItem1,
             this.btnPrecioSemana,
-            this.btn_TipoCorteTamaño});
+            this.btn_TipoCorteTamaño,
+            this.btn_RelacionFruta,
+            this.btn_RelacionECorte,
+            this.btn_RelacionEAcarreo});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 23;
+            this.ribbon.MaxItemId = 26;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -268,6 +276,24 @@
             this.btnPrecioSemana.ImageOptions.LargeImage = global::BusinessAnalitics.Properties.Resources.cash;
             this.btnPrecioSemana.Name = "btnPrecioSemana";
             // 
+            // btn_TipoCorteTamaño
+            // 
+            this.btn_TipoCorteTamaño.Caption = "Tipo Corte - Tamaño";
+            this.btn_TipoCorteTamaño.Id = 22;
+            this.btn_TipoCorteTamaño.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_TipoCorteTamaño.ImageOptions.Image")));
+            this.btn_TipoCorteTamaño.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_TipoCorteTamaño.ImageOptions.LargeImage")));
+            this.btn_TipoCorteTamaño.Name = "btn_TipoCorteTamaño";
+            this.btn_TipoCorteTamaño.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_TipoCorteTamaño_ItemClick);
+            // 
+            // btn_RelacionFruta
+            // 
+            this.btn_RelacionFruta.Caption = "Relacion de Fruta Cortada";
+            this.btn_RelacionFruta.Id = 23;
+            this.btn_RelacionFruta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_RelacionFruta.ImageOptions.Image")));
+            this.btn_RelacionFruta.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_RelacionFruta.ImageOptions.LargeImage")));
+            this.btn_RelacionFruta.Name = "btn_RelacionFruta";
+            this.btn_RelacionFruta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_RelacionFruta_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -280,24 +306,30 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.AllowTextClipping = false;
+            this.ribbonPageGroup4.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup4.ItemLinks.Add(this.btn_Pais);
             this.ribbonPageGroup4.ItemLinks.Add(this.btn_Estado);
             this.ribbonPageGroup4.ItemLinks.Add(this.btn_Ciudad);
             this.ribbonPageGroup4.ItemLinks.Add(this.btn_TipoDomicilio);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.ShowCaptionButton = false;
             this.ribbonPageGroup4.Text = "Domicilio";
             // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
+            this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_EmpAcarreo);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_EmpCorte);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_EmpBascula);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_EmpComercializadora);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Empresas";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btn_TipoCorteTamaño);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "Configuracion";
             // 
             // ribbonPage2
             // 
@@ -309,13 +341,13 @@
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
+            this.ribbonPageGroup2.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_Cosecha);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_Cargas);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_Maquila);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_inventario_ventas);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnPrecioSemana);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.ShowCaptionButton = false;
             this.ribbonPageGroup2.Text = "Captura y Consulta";
             // 
             // ribbonPage4
@@ -328,27 +360,36 @@
             // ribbonPageGroup5
             // 
             this.ribbonPageGroup5.AllowTextClipping = false;
+            this.ribbonPageGroup5.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup5.ItemLinks.Add(this.btn_Usuario);
             this.ribbonPageGroup5.ItemLinks.Add(this.btn_Perfil);
             this.ribbonPageGroup5.ItemLinks.Add(this.btn_Permisos);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.ShowCaptionButton = false;
             this.ribbonPageGroup5.Text = "Seguridad";
             // 
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
+            this.ribbonPageGroup3,
+            this.ribbonPageGroup9});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Reportes";
             // 
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.AllowTextClipping = false;
+            this.ribbonPageGroup3.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup3.ItemLinks.Add(this.btnReportInventario);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.ShowCaptionButton = false;
             this.ribbonPageGroup3.Text = "Reportes";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.btn_RelacionFruta);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btn_RelacionECorte);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btn_RelacionEAcarreo);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "Cosecha";
             // 
             // ribbonPage5
             // 
@@ -360,9 +401,9 @@
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.AllowTextClipping = false;
+            this.ribbonPageGroup7.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup7.ItemLinks.Add(this.skinRibbonGalleryBarItem1);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            this.ribbonPageGroup7.ShowCaptionButton = false;
             this.ribbonPageGroup7.Text = "Apariencia Aplicación";
             // 
             // ribbonStatusBar
@@ -387,20 +428,22 @@
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // ribbonPageGroup8
+            // btn_RelacionECorte
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.btn_TipoCorteTamaño);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "Configuracion";
+            this.btn_RelacionECorte.Caption = "Relacion Empresa de Corte";
+            this.btn_RelacionECorte.Id = 24;
+            this.btn_RelacionECorte.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btn_RelacionECorte.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btn_RelacionECorte.Name = "btn_RelacionECorte";
+            this.btn_RelacionECorte.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_RelacionECorte_ItemClick);
             // 
-            // btn_TipoCorteTamaño
+            // btn_RelacionEAcarreo
             // 
-            this.btn_TipoCorteTamaño.Caption = "Tipo Corte - Tamaño";
-            this.btn_TipoCorteTamaño.Id = 22;
-            this.btn_TipoCorteTamaño.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btn_TipoCorteTamaño.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.btn_TipoCorteTamaño.Name = "btn_TipoCorteTamaño";
-            this.btn_TipoCorteTamaño.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_TipoCorteTamaño_ItemClick);
+            this.btn_RelacionEAcarreo.Caption = "Relacion Empresa de Acarreo";
+            this.btn_RelacionEAcarreo.Id = 25;
+            this.btn_RelacionEAcarreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btn_RelacionEAcarreo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btn_RelacionEAcarreo.Name = "btn_RelacionEAcarreo";
             // 
             // Frm_Principal
             // 
@@ -467,5 +510,9 @@
         private DevExpress.XtraBars.BarButtonItem btnPrecioSemana;
         private DevExpress.XtraBars.BarButtonItem btn_TipoCorteTamaño;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.BarButtonItem btn_RelacionFruta;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.BarButtonItem btn_RelacionECorte;
+        private DevExpress.XtraBars.BarButtonItem btn_RelacionEAcarreo;
     }
 }

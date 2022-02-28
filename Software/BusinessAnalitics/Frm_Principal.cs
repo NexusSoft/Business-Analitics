@@ -293,5 +293,37 @@ namespace Business_Analitics
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [016]");
             }
         }
+
+        private void btn_RelacionFruta_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("017"))
+            {
+                Frm_Relacion_de_Fruta Ventana = new Frm_Relacion_de_Fruta();
+                Frm_Relacion_de_Fruta.DefInstance.MdiParent = this;
+                Frm_Relacion_de_Fruta.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_Relacion_de_Fruta.DefInstance.IdPerfil = IdPerfil;
+                Frm_Relacion_de_Fruta.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [017]");
+            }
+        }
+
+        private void btn_RelacionECorte_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("018"))
+            {
+                Frm_Relacion_Empresa_Corte Ventana = new Frm_Relacion_Empresa_Corte();
+                Frm_Relacion_Empresa_Corte.DefInstance.MdiParent = this;
+                Frm_Relacion_Empresa_Corte.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_Relacion_Empresa_Corte.DefInstance.IdPerfil = IdPerfil;
+                Frm_Relacion_Empresa_Corte.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [018]");
+            }
+        }
     }
 }

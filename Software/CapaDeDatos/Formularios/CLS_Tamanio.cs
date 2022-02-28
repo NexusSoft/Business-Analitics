@@ -52,10 +52,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Tamanio_Id_Select";
-                _dato.CadenaTexto = Id_Registro;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Registro");
-                _dato.CadenaTexto = Id_Tamanio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tamanio");
+                _dato.Texto = Id_Registro;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Registro");
+                _dato.Texto = Id_Tamanio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Tamanio");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -83,12 +83,12 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Tamanio_Insert";
-                _dato.CadenaTexto = Id_Tamanio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tamanio");
-                _dato.CadenaTexto = Nombre_Tamanio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Tamanio");
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Texto = Id_Tamanio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Tamanio");
+                _dato.Texto = Nombre_Tamanio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Tamanio");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -117,8 +117,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Tamanio_Delete";
-                _dato.CadenaTexto = Id_Tamanio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tamanio");
+                _dato.Texto = Id_Tamanio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Tamanio");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

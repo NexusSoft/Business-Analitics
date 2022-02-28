@@ -24,8 +24,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Camion_Select";
-                _dato.CadenaTexto = Id_EmpresaAcarreo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaAcarreo");
+                _dato.Texto = Id_EmpresaAcarreo;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaAcarreo");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -54,10 +54,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Camion_Placas_Select";
-                _dato.CadenaTexto = Id_EmpresaAcarreo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaAcarreo");
-                _dato.CadenaTexto = Id_Camion;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Camion");
+                _dato.Texto = Id_EmpresaAcarreo;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaAcarreo");
+                _dato.Texto = Id_Camion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Camion");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -87,16 +87,16 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Camion_Insert";
-                _dato.CadenaTexto = Id_Camion;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Camion");
-                _dato.CadenaTexto = Nombre_Camion;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Camion");
-                _dato.CadenaTexto = Placas;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Placas");
-                _dato.CadenaTexto = Id_EmpresaAcarreo;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaAcarreo");
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Texto = Id_Camion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Camion");
+                _dato.Texto = Nombre_Camion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Camion");
+                _dato.Texto = Placas;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Placas");
+                _dato.Texto = Id_EmpresaAcarreo;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaAcarreo");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -125,8 +125,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Camion_Delete";
-                _dato.CadenaTexto = Id_Camion;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Camion");
+                _dato.Texto = Id_Camion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Camion");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

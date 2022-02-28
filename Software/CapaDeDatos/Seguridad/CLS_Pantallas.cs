@@ -53,10 +53,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Pantallas_Insert";
-                _dato.CadenaTexto = Id_Pantalla;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Pantalla");
-                _dato.CadenaTexto = Nombre_Pantalla;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Pantalla");
+                _dato.Texto = Id_Pantalla;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Pantalla");
+                _dato.Texto = Nombre_Pantalla;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Pantalla");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -85,8 +85,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Pantallas_Delete";
-                _dato.CadenaTexto = Id_Pantalla;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Pantalla");
+                _dato.Texto = Id_Pantalla;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Pantalla");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

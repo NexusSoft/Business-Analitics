@@ -39,26 +39,34 @@
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.barLargeButtonItem2 = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.barLargeButtonItem3 = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.barLargeButtonItem4 = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.barLargeButtonItem5 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btn_limpiarOrden = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btn_GuardarOrden = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btn_EliminarOrden = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btn_CerrarOrden = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btn_AbrirOrden = new DevExpress.XtraBars.BarLargeButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnGuardar = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnEliminar = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnSalir = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cmb_Temporada = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl126 = new DevExpress.XtraEditors.LabelControl();
+            this.dtgCosecha = new DevExpress.XtraGrid.GridControl();
+            this.dtgValCosecha = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.txt_IdCosecha = new DevExpress.XtraEditors.TextEdit();
@@ -90,6 +98,7 @@
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.txt_Secuencia = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.chk_kgProductor = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.txt_KilosProductor = new DevExpress.XtraEditors.TextEdit();
             this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
@@ -169,6 +178,8 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.xtraScrollableControl2 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.xtraScrollableControl3 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
@@ -204,6 +215,9 @@
             this.txtMenorakg = new DevExpress.XtraEditors.TextEdit();
             this.labelControl63 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl150 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_ObservacionesCorte = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl147 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl64 = new DevExpress.XtraEditors.LabelControl();
             this.txt_CajasCortadasCorte = new DevExpress.XtraEditors.TextEdit();
             this.txt_PrecioCuadrillaCorte = new DevExpress.XtraEditors.TextEdit();
@@ -234,18 +248,159 @@
             this.labelControl42 = new DevExpress.XtraEditors.LabelControl();
             this.txtTipoCorteEC = new DevExpress.XtraEditors.TextEdit();
             this.txt_PrecioKiloCorte = new DevExpress.XtraEditors.TextEdit();
+            this.txt_NoCuadrillas = new DevExpress.XtraEditors.SpinEdit();
+            this.tp_FacturaCorte = new DevExpress.XtraTab.XtraTabPage();
+            this.groupControl12 = new DevExpress.XtraEditors.GroupControl();
+            this.xtraScrollableControl4 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.groupControl18 = new DevExpress.XtraEditors.GroupControl();
+            this.panelControl17 = new DevExpress.XtraEditors.PanelControl();
+            this.txt_IVAFacturaCorteSalida = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl143 = new DevExpress.XtraEditors.LabelControl();
+            this.chk_IVACorteSalida = new DevExpress.XtraEditors.CheckEdit();
+            this.chk_RetencionCorteSalida = new DevExpress.XtraEditors.CheckEdit();
+            this.txt_TotalFacturaCorteSalida = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl135 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_RetencionFacturaCorteSalida = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl136 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl118 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_FolioFacturaCorteSalida = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl119 = new DevExpress.XtraEditors.LabelControl();
+            this.txtRazonSCorteSalida = new DevExpress.XtraEditors.TextEdit();
+            this.opt_TipoFacturaCorteSalida = new DevExpress.XtraEditors.RadioGroup();
+            this.chk_PagadaCorteSalida = new DevExpress.XtraEditors.CheckEdit();
+            this.dt_FechaPagoCorteSalida = new DevExpress.XtraEditors.DateEdit();
+            this.dt_FechaFacturaCorteSalida = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl120 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl121 = new DevExpress.XtraEditors.LabelControl();
+            this.cmb_MonedaCorteSalida = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl122 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl123 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_ImporteFacturaCorteSalida = new DevExpress.XtraEditors.TextEdit();
+            this.btn_ViewXMLCorteSalida = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpXMLCorteSalida = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_RutaXMLCorteSalida = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl124 = new DevExpress.XtraEditors.LabelControl();
+            this.btn_ViewPDFCorteSalida = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpPDFCorteSalida = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_RutaPDFCorteSalida = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl125 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl17 = new DevExpress.XtraEditors.GroupControl();
+            this.panelControl16 = new DevExpress.XtraEditors.PanelControl();
+            this.txt_IVAFacturaCorteApoyo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl142 = new DevExpress.XtraEditors.LabelControl();
+            this.chk_IVACorteApoyo = new DevExpress.XtraEditors.CheckEdit();
+            this.chk_RetencionCorteApoyo = new DevExpress.XtraEditors.CheckEdit();
+            this.txt_TotalFacturaCorteApoyo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl133 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_RetencionFacturaCorteApoyo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl134 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl110 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_FolioFacturaCorteApoyo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl111 = new DevExpress.XtraEditors.LabelControl();
+            this.txtRazonSCorteApoyo = new DevExpress.XtraEditors.TextEdit();
+            this.opt_TipoFacturaCorteApoyo = new DevExpress.XtraEditors.RadioGroup();
+            this.chk_PagadaCorteApoyo = new DevExpress.XtraEditors.CheckEdit();
+            this.dt_FechaPagoCorteApoyo = new DevExpress.XtraEditors.DateEdit();
+            this.dt_FechaFacturaCorteApoyo = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl112 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl113 = new DevExpress.XtraEditors.LabelControl();
+            this.cmb_MonedaCorteApoyo = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl114 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl115 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_ImporteFacturaCorteApoyo = new DevExpress.XtraEditors.TextEdit();
+            this.btn_ViewXMLCorteApoyo = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpXMLCorteApoyo = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_RutaXMLCorteApoyo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl116 = new DevExpress.XtraEditors.LabelControl();
+            this.btn_ViewPDFCorteApoyo = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpPDFCorteApoyo = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_RutaPDFCorteApoyo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl117 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl16 = new DevExpress.XtraEditors.GroupControl();
+            this.panelControl15 = new DevExpress.XtraEditors.PanelControl();
+            this.txt_IVAFacturaCorteDia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl141 = new DevExpress.XtraEditors.LabelControl();
+            this.chk_IVACorteDia = new DevExpress.XtraEditors.CheckEdit();
+            this.chk_RetencionCorteDia = new DevExpress.XtraEditors.CheckEdit();
+            this.txt_TotalFacturaCorteDia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl131 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_RetencionFacturaCorteDia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl132 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl102 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_FolioFacturaCorteDia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl103 = new DevExpress.XtraEditors.LabelControl();
+            this.txtRazonSCorteDia = new DevExpress.XtraEditors.TextEdit();
+            this.opt_TipoFacturaCorteDia = new DevExpress.XtraEditors.RadioGroup();
+            this.chk_PagadaCorteDia = new DevExpress.XtraEditors.CheckEdit();
+            this.dt_FechaPagoCorteDia = new DevExpress.XtraEditors.DateEdit();
+            this.dt_FechaFacturaCorteDia = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl104 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl105 = new DevExpress.XtraEditors.LabelControl();
+            this.cmb_MonedaCorteDia = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl106 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl107 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_ImporteFacturaCorteDia = new DevExpress.XtraEditors.TextEdit();
+            this.btn_ViewXMLCorteDia = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpXMLCorteDia = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_RutaXMLCorteDia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl108 = new DevExpress.XtraEditors.LabelControl();
+            this.btn_ViewPDFCorteDia = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpPDFCorteDia = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_RutaPDFCorteDia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl109 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl15 = new DevExpress.XtraEditors.GroupControl();
+            this.panelControl12 = new DevExpress.XtraEditors.PanelControl();
+            this.txt_IVAFacturaCorteKilos = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl140 = new DevExpress.XtraEditors.LabelControl();
+            this.chk_IVACorteKilos = new DevExpress.XtraEditors.CheckEdit();
+            this.chk_RetencionCorteKilos = new DevExpress.XtraEditors.CheckEdit();
+            this.txt_TotalFacturaCorteKilos = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl129 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_RetencionFacturaCorteKilos = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl130 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl94 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_FolioFacturaCorteKilos = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl95 = new DevExpress.XtraEditors.LabelControl();
+            this.txtRazonSCorteKilos = new DevExpress.XtraEditors.TextEdit();
+            this.opt_TipoFacturaCorteKilos = new DevExpress.XtraEditors.RadioGroup();
+            this.chk_PagadaCorteKilos = new DevExpress.XtraEditors.CheckEdit();
+            this.dt_FechaPagoCorteKilos = new DevExpress.XtraEditors.DateEdit();
+            this.dt_FechaFacturaCorteKilos = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl96 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl97 = new DevExpress.XtraEditors.LabelControl();
+            this.cmb_MonedaCorteKilos = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl98 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl99 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_ImporteFacturaCorteKilos = new DevExpress.XtraEditors.TextEdit();
+            this.btn_ViewXMLCorteKilos = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpXMLCorteKilos = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_RutaXMLCorteKilos = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl100 = new DevExpress.XtraEditors.LabelControl();
+            this.btn_ViewPDFCorteKilos = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpPDFCorteKilos = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_RutaPDFCorteKilos = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl101 = new DevExpress.XtraEditors.LabelControl();
             this.navigationPage5 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
-            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
+            this.xtraTabControl3 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraScrollableControl5 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
+            this.panelControl19 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl74 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl10 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl72 = new DevExpress.XtraEditors.LabelControl();
             this.txtPrecioCaja = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl73 = new DevExpress.XtraEditors.LabelControl();
             this.txtPrecioSalidaForanea = new DevExpress.XtraEditors.TextEdit();
             this.txtPrecioServicio = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl73 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl74 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
+            this.panelControl13 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
+            this.txt_CargosExtra = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl149 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_ObservacionesAcarreo = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl148 = new DevExpress.XtraEditors.LabelControl();
             this.txt_CostoxCajaExtra = new DevExpress.XtraEditors.TextEdit();
             this.labelControl77 = new DevExpress.XtraEditors.LabelControl();
             this.txt_Cajas_CortadasA = new DevExpress.XtraEditors.TextEdit();
@@ -266,30 +421,106 @@
             this.txt_CostoServicio = new DevExpress.XtraEditors.TextEdit();
             this.cmb_Camiones = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl69 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl68 = new DevExpress.XtraEditors.LabelControl();
             this.cmb_Choferes = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.navigationPage6 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.labelControl35 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_kilos_Totales = new DevExpress.XtraEditors.TextEdit();
-            this.chk_Mercado = new DevExpress.XtraEditors.CheckEdit();
-            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_KilosMuestra = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_Productor = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_TotalaPagar = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_KiloPrecio = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_KilosAjustados = new DevExpress.XtraEditors.TextEdit();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.chk_kgProductor = new DevExpress.XtraEditors.CheckEdit();
+            this.tp_FacturaAcarreo = new DevExpress.XtraTab.XtraTabPage();
+            this.groupControl14 = new DevExpress.XtraEditors.GroupControl();
+            this.panelControl14 = new DevExpress.XtraEditors.PanelControl();
+            this.chk_RetencionFleteAcarreo = new DevExpress.XtraEditors.CheckEdit();
+            this.txt_RetencionFleteFacturaAcarreo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl145 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_IVAFacturaAcarreo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl144 = new DevExpress.XtraEditors.LabelControl();
+            this.chk_IVAAcarreo = new DevExpress.XtraEditors.CheckEdit();
+            this.chk_RetencionAcarreo = new DevExpress.XtraEditors.CheckEdit();
+            this.txt_TotalFacturaAcarreo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl137 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_RetencionFacturaAcarreo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl138 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl91 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_FolioFacturaAcarreo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl90 = new DevExpress.XtraEditors.LabelControl();
+            this.txtRazonSAcarreo = new DevExpress.XtraEditors.TextEdit();
+            this.opt_TipoFacturaAcarreo = new DevExpress.XtraEditors.RadioGroup();
+            this.chk_PagadaAcarreo = new DevExpress.XtraEditors.CheckEdit();
+            this.dt_FechaPagoAcarreo = new DevExpress.XtraEditors.DateEdit();
+            this.dt_FechaFacturaAcarreo = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl78 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl80 = new DevExpress.XtraEditors.LabelControl();
+            this.cmb_MonedaAcarreo = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl86 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl87 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_ImporteFacturaAcarreo = new DevExpress.XtraEditors.TextEdit();
+            this.btn_ViewXMLAcarreo = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpXMLAcarreo = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_RutaXMLAcarreo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl88 = new DevExpress.XtraEditors.LabelControl();
+            this.btn_ViewPDFAcarreo = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpPDFAcarreo = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_RutaPDFAcarreo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl89 = new DevExpress.XtraEditors.LabelControl();
+            this.navigationPage6 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.panelControl18 = new DevExpress.XtraEditors.PanelControl();
+            this.xtraTabControl2 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.groupControl11 = new DevExpress.XtraEditors.GroupControl();
+            this.txt_ObservacionesProductor = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl146 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_KilosAjustados = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl35 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_kilos_Totales = new DevExpress.XtraEditors.TextEdit();
+            this.txt_KiloPrecio = new DevExpress.XtraEditors.TextEdit();
+            this.chk_Mercado = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_TotalaPagar = new DevExpress.XtraEditors.TextEdit();
+            this.txt_KilosMuestra = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl32 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Productor = new DevExpress.XtraEditors.TextEdit();
+            this.tp_FacturaProductor = new DevExpress.XtraTab.XtraTabPage();
+            this.groupControl13 = new DevExpress.XtraEditors.GroupControl();
+            this.btn_CalcularFechaPago = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_IVAFacturaProductor = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl139 = new DevExpress.XtraEditors.LabelControl();
+            this.chk_IVAProductor = new DevExpress.XtraEditors.CheckEdit();
+            this.chk_RetencionProductor = new DevExpress.XtraEditors.CheckEdit();
+            this.txt_TotalFacturaProductor = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl128 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_RetencionFacturaProductor = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl127 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl79 = new DevExpress.XtraEditors.LabelControl();
+            this.txtRazonSProductor = new DevExpress.XtraEditors.TextEdit();
+            this.btn_ViewPDFProductor = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_FolioFacturaProductor = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl92 = new DevExpress.XtraEditors.LabelControl();
+            this.btn_UpPDFProductor = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl81 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_RutaXMLProductor = new DevExpress.XtraEditors.TextEdit();
+            this.txt_RutaPDFProductor = new DevExpress.XtraEditors.TextEdit();
+            this.btn_UpXMLProductor = new DevExpress.XtraEditors.SimpleButton();
+            this.opt_TipoFacturaProductor = new DevExpress.XtraEditors.RadioGroup();
+            this.labelControl93 = new DevExpress.XtraEditors.LabelControl();
+            this.btn_ViewXMLProductor = new DevExpress.XtraEditors.SimpleButton();
+            this.chk_PagadaProductor = new DevExpress.XtraEditors.CheckEdit();
+            this.txt_ImporteFacturaProductor = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl85 = new DevExpress.XtraEditors.LabelControl();
+            this.dt_FechaPagoProductor = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl84 = new DevExpress.XtraEditors.LabelControl();
+            this.cmb_MonedaProductor = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.dt_FechaFacturaProductor = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl83 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl82 = new DevExpress.XtraEditors.LabelControl();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
+            this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
@@ -297,8 +528,10 @@
             this.navigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_Temporada.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCosecha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValCosecha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IdCosecha.Properties)).BeginInit();
@@ -321,6 +554,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Secuencia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_kgProductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_KilosProductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_kilosST.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_EmpresaBascula.Properties)).BeginInit();
@@ -365,6 +599,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             this.xtraScrollableControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
             this.xtraScrollableControl3.SuspendLayout();
@@ -391,6 +628,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMenorakg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ObservacionesCorte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CajasCortadasCorte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PrecioCuadrillaCorte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_CuadrillaApoyo.Properties)).BeginInit();
@@ -407,20 +645,119 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_PagoTotalCorte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoCorteEC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PrecioKiloCorte.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_NoCuadrillas.Properties)).BeginInit();
+            this.tp_FacturaCorte.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl12)).BeginInit();
+            this.groupControl12.SuspendLayout();
+            this.xtraScrollableControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl18)).BeginInit();
+            this.groupControl18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl17)).BeginInit();
+            this.panelControl17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_IVACorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalFacturaCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFacturaCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_FolioFacturaCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRazonSCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opt_TipoFacturaCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_PagadaCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteSalida.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteSalida.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ImporteFacturaCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFCorteSalida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl17)).BeginInit();
+            this.groupControl17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl16)).BeginInit();
+            this.panelControl16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_IVACorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalFacturaCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFacturaCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_FolioFacturaCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRazonSCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opt_TipoFacturaCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_PagadaCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteApoyo.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteApoyo.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ImporteFacturaCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFCorteApoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl16)).BeginInit();
+            this.groupControl16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl15)).BeginInit();
+            this.panelControl15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_IVACorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalFacturaCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFacturaCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_FolioFacturaCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRazonSCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opt_TipoFacturaCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_PagadaCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteDia.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteDia.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ImporteFacturaCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFCorteDia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl15)).BeginInit();
+            this.groupControl15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).BeginInit();
+            this.panelControl12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_IVACorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionCorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalFacturaCorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFacturaCorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_FolioFacturaCorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRazonSCorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opt_TipoFacturaCorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_PagadaCorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteKilos.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteKilos.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaCorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ImporteFacturaCorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLCorteKilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFCorteKilos.Properties)).BeginInit();
             this.navigationPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
             this.panelControl10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
-            this.groupControl8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl3)).BeginInit();
+            this.xtraTabControl3.SuspendLayout();
+            this.xtraTabPage5.SuspendLayout();
+            this.xtraScrollableControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
             this.groupControl9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl19)).BeginInit();
+            this.panelControl19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).BeginInit();
             this.groupControl10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioCaja.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioSalidaForanea.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioServicio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
+            this.groupControl8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl13)).BeginInit();
+            this.panelControl13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
             this.panelControl11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_CargosExtra.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ObservacionesAcarreo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CostoxCajaExtra.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Cajas_CortadasA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CajasProgramadasA.Properties)).BeginInit();
@@ -434,16 +771,67 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Choferes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.tp_FacturaAcarreo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl14)).BeginInit();
+            this.groupControl14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).BeginInit();
+            this.panelControl14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFleteFacturaAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_IVAAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalFacturaAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFacturaAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_FolioFacturaAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRazonSAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opt_TipoFacturaAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_PagadaAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoAcarreo.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaAcarreo.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ImporteFacturaAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLAcarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFAcarreo.Properties)).BeginInit();
             this.navigationPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl18)).BeginInit();
+            this.panelControl18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl2)).BeginInit();
+            this.xtraTabControl2.SuspendLayout();
+            this.xtraTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).BeginInit();
+            this.groupControl11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ObservacionesProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_KilosAjustados.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_kilos_Totales.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_KiloPrecio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_Mercado.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalaPagar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_KilosMuestra.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Productor.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalaPagar.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_KiloPrecio.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_KilosAjustados.Properties)).BeginInit();
+            this.tp_FacturaProductor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl13)).BeginInit();
+            this.groupControl13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_IVAProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalFacturaProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFacturaProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRazonSProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_FolioFacturaProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opt_TipoFacturaProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_PagadaProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ImporteFacturaProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoProductor.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaProductor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaProductor.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaProductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_kgProductor.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -458,17 +846,12 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.lblProveedor,
-            this.btnLimpiar,
-            this.btnGuardar,
-            this.btnEliminar,
-            this.btnSalir,
-            this.btnSeleccionar,
-            this.barLargeButtonItem1,
-            this.barLargeButtonItem2,
-            this.barLargeButtonItem3,
-            this.barLargeButtonItem4,
-            this.barLargeButtonItem5});
-            this.barManager1.MaxItemId = 72;
+            this.btn_limpiarOrden,
+            this.btn_GuardarOrden,
+            this.btn_EliminarOrden,
+            this.btn_CerrarOrden,
+            this.btn_AbrirOrden});
+            this.barManager1.MaxItemId = 73;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.barManager1.StatusBar = this.bEstado;
@@ -495,57 +878,47 @@
             // 
             // bar1
             // 
-            this.bar1.BarName = "Personalizada 4";
+            this.bar1.BarName = "Personalizada";
             this.bar1.DockCol = 0;
             this.bar1.DockRow = 0;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem1),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem3),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barLargeButtonItem5)});
-            this.bar1.Text = "Personalizada 4";
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_limpiarOrden),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_GuardarOrden),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_EliminarOrden),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_CerrarOrden),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_AbrirOrden)});
+            this.bar1.Text = "Personalizada";
             // 
-            // barLargeButtonItem1
+            // btn_limpiarOrden
             // 
-            this.barLargeButtonItem1.Caption = "Limpiar";
-            this.barLargeButtonItem1.Id = 67;
-            this.barLargeButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.ImageOptions.Image")));
-            this.barLargeButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem1.ImageOptions.LargeImage")));
-            this.barLargeButtonItem1.Name = "barLargeButtonItem1";
+            this.btn_limpiarOrden.Caption = "Limpiar";
+            this.btn_limpiarOrden.Id = 67;
+            this.btn_limpiarOrden.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_limpiarOrden.ImageOptions.SvgImage")));
+            this.btn_limpiarOrden.Name = "btn_limpiarOrden";
+            this.btn_limpiarOrden.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_limpiarOrden_ItemClick);
             // 
-            // barLargeButtonItem2
+            // btn_GuardarOrden
             // 
-            this.barLargeButtonItem2.Caption = "Guardar";
-            this.barLargeButtonItem2.Id = 68;
-            this.barLargeButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem2.ImageOptions.Image")));
-            this.barLargeButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem2.ImageOptions.LargeImage")));
-            this.barLargeButtonItem2.Name = "barLargeButtonItem2";
+            this.btn_GuardarOrden.Caption = "Guardar";
+            this.btn_GuardarOrden.Id = 68;
+            this.btn_GuardarOrden.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_GuardarOrden.ImageOptions.SvgImage")));
+            this.btn_GuardarOrden.Name = "btn_GuardarOrden";
+            this.btn_GuardarOrden.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_GuardarOrden_ItemClick);
             // 
-            // barLargeButtonItem3
+            // btn_EliminarOrden
             // 
-            this.barLargeButtonItem3.Caption = "Eliminar";
-            this.barLargeButtonItem3.Id = 69;
-            this.barLargeButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem3.ImageOptions.Image")));
-            this.barLargeButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem3.ImageOptions.LargeImage")));
-            this.barLargeButtonItem3.Name = "barLargeButtonItem3";
+            this.btn_EliminarOrden.Caption = "Eliminar";
+            this.btn_EliminarOrden.Id = 69;
+            this.btn_EliminarOrden.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_EliminarOrden.ImageOptions.SvgImage")));
+            this.btn_EliminarOrden.Name = "btn_EliminarOrden";
             // 
-            // barLargeButtonItem4
+            // btn_CerrarOrden
             // 
-            this.barLargeButtonItem4.Caption = "Salir";
-            this.barLargeButtonItem4.Id = 70;
-            this.barLargeButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem4.ImageOptions.Image")));
-            this.barLargeButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem4.ImageOptions.LargeImage")));
-            this.barLargeButtonItem4.Name = "barLargeButtonItem4";
-            // 
-            // barLargeButtonItem5
-            // 
-            this.barLargeButtonItem5.Caption = "Actualizar";
-            this.barLargeButtonItem5.Id = 71;
-            this.barLargeButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem5.ImageOptions.Image")));
-            this.barLargeButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem5.ImageOptions.LargeImage")));
-            this.barLargeButtonItem5.Name = "barLargeButtonItem5";
+            this.btn_CerrarOrden.Caption = "Cerrar Orden";
+            this.btn_CerrarOrden.Id = 71;
+            this.btn_CerrarOrden.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CerrarOrden.ImageOptions.SvgImage")));
+            this.btn_CerrarOrden.Name = "btn_CerrarOrden";
             toolTipTitleItem1.Text = "Importar datos";
             toolTipItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             toolTipItem1.LeftIndent = 6;
@@ -557,7 +930,14 @@
             superToolTip1.Items.Add(toolTipItem1);
             superToolTip1.Items.Add(toolTipSeparatorItem1);
             superToolTip1.Items.Add(toolTipTitleItem2);
-            this.barLargeButtonItem5.SuperTip = superToolTip1;
+            this.btn_CerrarOrden.SuperTip = superToolTip1;
+            // 
+            // btn_AbrirOrden
+            // 
+            this.btn_AbrirOrden.Caption = "Abrir Orden";
+            this.btn_AbrirOrden.Id = 72;
+            this.btn_AbrirOrden.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_AbrirOrden.ImageOptions.SvgImage")));
+            this.btn_AbrirOrden.Name = "btn_AbrirOrden";
             // 
             // barDockControlTop
             // 
@@ -565,71 +945,31 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(5, 5);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1349, 49);
+            this.barDockControlTop.Size = new System.Drawing.Size(1293, 56);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(5, 826);
+            this.barDockControlBottom.Location = new System.Drawing.Point(5, 801);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1349, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1293, 22);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(5, 54);
+            this.barDockControlLeft.Location = new System.Drawing.Point(5, 61);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 772);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 740);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1354, 54);
+            this.barDockControlRight.Location = new System.Drawing.Point(1298, 61);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 772);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Caption = "Limpiar";
-            this.btnLimpiar.Id = 50;
-            this.btnLimpiar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.Image")));
-            this.btnLimpiar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.ImageOptions.LargeImage")));
-            this.btnLimpiar.Name = "btnLimpiar";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Caption = "Guardar";
-            this.btnGuardar.Id = 53;
-            this.btnGuardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
-            this.btnGuardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.LargeImage")));
-            this.btnGuardar.Name = "btnGuardar";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Caption = "Eliminar";
-            this.btnEliminar.Id = 57;
-            this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
-            this.btnEliminar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.LargeImage")));
-            this.btnEliminar.Name = "btnEliminar";
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Caption = "Salir";
-            this.btnSalir.Id = 63;
-            this.btnSalir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.Image")));
-            this.btnSalir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSalir.ImageOptions.LargeImage")));
-            this.btnSalir.Name = "btnSalir";
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.Caption = "Seleccionar";
-            this.btnSeleccionar.Id = 66;
-            this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
-            this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
-            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 740);
             // 
             // repositoryItemTextEdit1
             // 
@@ -644,7 +984,7 @@
             this.navigationPane1.Controls.Add(this.navigationPage5);
             this.navigationPane1.Controls.Add(this.navigationPage6);
             this.navigationPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navigationPane1.Location = new System.Drawing.Point(5, 54);
+            this.navigationPane1.Location = new System.Drawing.Point(5, 61);
             this.navigationPane1.Name = "navigationPane1";
             this.navigationPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.navigationPage1,
@@ -653,9 +993,9 @@
             this.navigationPage6,
             this.navigationPage4,
             this.navigationPage5});
-            this.navigationPane1.RegularSize = new System.Drawing.Size(1349, 772);
+            this.navigationPane1.RegularSize = new System.Drawing.Size(1293, 740);
             this.navigationPane1.SelectedPage = this.navigationPage2;
-            this.navigationPane1.Size = new System.Drawing.Size(1349, 772);
+            this.navigationPane1.Size = new System.Drawing.Size(1293, 740);
             this.navigationPane1.TabIndex = 9;
             this.navigationPane1.Text = "navigationPane1";
             // 
@@ -669,35 +1009,166 @@
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.PageText = "Orden de Corte";
             this.navigationPage1.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage1.Size = new System.Drawing.Size(1200, 712);
+            this.navigationPage1.Size = new System.Drawing.Size(1139, 674);
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.gridControl1);
+            this.panelControl2.Controls.Add(this.cmb_Temporada);
+            this.panelControl2.Controls.Add(this.labelControl126);
+            this.panelControl2.Controls.Add(this.dtgCosecha);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 151);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1200, 561);
+            this.panelControl2.Size = new System.Drawing.Size(1139, 523);
             this.panelControl2.TabIndex = 1;
             // 
-            // gridControl1
+            // cmb_Temporada
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(7, 7);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.barManager1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1186, 547);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.cmb_Temporada.Location = new System.Drawing.Point(582, 19);
+            this.cmb_Temporada.Name = "cmb_Temporada";
+            this.cmb_Temporada.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_Temporada.Properties.PopupView = this.gridView3;
+            this.cmb_Temporada.Size = new System.Drawing.Size(125, 20);
+            this.cmb_Temporada.TabIndex = 22;
             // 
-            // gridView1
+            // gridView3
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl126
+            // 
+            this.labelControl126.Location = new System.Drawing.Point(509, 23);
+            this.labelControl126.Name = "labelControl126";
+            this.labelControl126.Size = new System.Drawing.Size(54, 13);
+            this.labelControl126.TabIndex = 23;
+            this.labelControl126.Text = "Temporada";
+            // 
+            // dtgCosecha
+            // 
+            this.dtgCosecha.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgCosecha.Location = new System.Drawing.Point(7, 7);
+            this.dtgCosecha.MainView = this.dtgValCosecha;
+            this.dtgCosecha.MenuManager = this.barManager1;
+            this.dtgCosecha.Name = "dtgCosecha";
+            this.dtgCosecha.Size = new System.Drawing.Size(1125, 509);
+            this.dtgCosecha.TabIndex = 0;
+            this.dtgCosecha.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValCosecha});
+            this.dtgCosecha.Click += new System.EventHandler(this.dtgCosecha_Click);
+            // 
+            // dtgValCosecha
+            // 
+            this.dtgValCosecha.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn26,
+            this.gridColumn27,
+            this.gridColumn28,
+            this.gridColumn29,
+            this.gridColumn30,
+            this.gridColumn31,
+            this.gridColumn32,
+            this.gridColumn33,
+            this.gridColumn34,
+            this.gridColumn35});
+            this.dtgValCosecha.GridControl = this.dtgCosecha;
+            this.dtgValCosecha.Name = "dtgValCosecha";
+            this.dtgValCosecha.OptionsFind.AlwaysVisible = true;
+            this.dtgValCosecha.OptionsView.ShowFooter = true;
+            this.dtgValCosecha.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn26
+            // 
+            this.gridColumn26.Caption = "Id Cosecha";
+            this.gridColumn26.FieldName = "Id_Cosecha";
+            this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.OptionsColumn.AllowEdit = false;
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 0;
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "Fecha Programa";
+            this.gridColumn27.FieldName = "ProgramaFecha";
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.OptionsColumn.AllowEdit = false;
+            this.gridColumn27.Visible = true;
+            this.gridColumn27.VisibleIndex = 1;
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Caption = "Temporada";
+            this.gridColumn28.FieldName = "Temporada";
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.OptionsColumn.AllowEdit = false;
+            this.gridColumn28.Visible = true;
+            this.gridColumn28.VisibleIndex = 2;
+            // 
+            // gridColumn29
+            // 
+            this.gridColumn29.Caption = "Tipo de Corte";
+            this.gridColumn29.FieldName = "TipoCorte";
+            this.gridColumn29.Name = "gridColumn29";
+            this.gridColumn29.OptionsColumn.AllowEdit = false;
+            this.gridColumn29.Visible = true;
+            this.gridColumn29.VisibleIndex = 3;
+            // 
+            // gridColumn30
+            // 
+            this.gridColumn30.Caption = "Orden de Corte";
+            this.gridColumn30.FieldName = "OrdendeCorte";
+            this.gridColumn30.Name = "gridColumn30";
+            this.gridColumn30.OptionsColumn.AllowEdit = false;
+            this.gridColumn30.Visible = true;
+            this.gridColumn30.VisibleIndex = 4;
+            // 
+            // gridColumn31
+            // 
+            this.gridColumn31.Caption = "Recepcion";
+            this.gridColumn31.FieldName = "RecepcionCodigo";
+            this.gridColumn31.Name = "gridColumn31";
+            this.gridColumn31.OptionsColumn.AllowEdit = false;
+            this.gridColumn31.Visible = true;
+            this.gridColumn31.VisibleIndex = 5;
+            // 
+            // gridColumn32
+            // 
+            this.gridColumn32.Caption = "Estiba";
+            this.gridColumn32.FieldName = "EstibadeSeleccion";
+            this.gridColumn32.Name = "gridColumn32";
+            this.gridColumn32.OptionsColumn.AllowEdit = false;
+            this.gridColumn32.Visible = true;
+            this.gridColumn32.VisibleIndex = 6;
+            // 
+            // gridColumn33
+            // 
+            this.gridColumn33.Caption = "Cajas Cortadas";
+            this.gridColumn33.FieldName = "CajasCortadas";
+            this.gridColumn33.Name = "gridColumn33";
+            this.gridColumn33.OptionsColumn.AllowEdit = false;
+            this.gridColumn33.Visible = true;
+            this.gridColumn33.VisibleIndex = 7;
+            // 
+            // gridColumn34
+            // 
+            this.gridColumn34.Caption = "Kilos Cortados";
+            this.gridColumn34.FieldName = "KilosCortados";
+            this.gridColumn34.Name = "gridColumn34";
+            this.gridColumn34.OptionsColumn.AllowEdit = false;
+            this.gridColumn34.Visible = true;
+            this.gridColumn34.VisibleIndex = 8;
+            // 
+            // gridColumn35
+            // 
+            this.gridColumn35.Caption = "Huerta";
+            this.gridColumn35.FieldName = "Huerta";
+            this.gridColumn35.Name = "gridColumn35";
+            this.gridColumn35.OptionsColumn.AllowEdit = false;
+            this.gridColumn35.Visible = true;
+            this.gridColumn35.VisibleIndex = 9;
             // 
             // panelControl1
             // 
@@ -724,7 +1195,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(1200, 151);
+            this.panelControl1.Size = new System.Drawing.Size(1139, 151);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl18
@@ -788,10 +1259,20 @@
             // 
             // txt_Cajas_Programa
             // 
+            this.txt_Cajas_Programa.EditValue = "0";
             this.txt_Cajas_Programa.Enabled = false;
             this.txt_Cajas_Programa.Location = new System.Drawing.Point(428, 89);
             this.txt_Cajas_Programa.MenuManager = this.barManager1;
             this.txt_Cajas_Programa.Name = "txt_Cajas_Programa";
+            this.txt_Cajas_Programa.Properties.BeepOnError = true;
+            this.txt_Cajas_Programa.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Cajas_Programa.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txt_Cajas_Programa.Properties.MaskSettings.Set("mask", "d");
+            this.txt_Cajas_Programa.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_Cajas_Programa.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_Cajas_Programa.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.txt_Cajas_Programa.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.txt_Cajas_Programa.Properties.UseMaskAsDisplayFormat = true;
             this.txt_Cajas_Programa.Size = new System.Drawing.Size(79, 20);
             this.txt_Cajas_Programa.TabIndex = 14;
             // 
@@ -902,7 +1383,7 @@
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.PageText = "Recepcion";
             this.navigationPage2.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage2.Size = new System.Drawing.Size(1200, 712);
+            this.navigationPage2.Size = new System.Drawing.Size(1123, 667);
             // 
             // panelControl3
             // 
@@ -930,7 +1411,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl3.Location = new System.Drawing.Point(0, 0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1200, 712);
+            this.panelControl3.Size = new System.Drawing.Size(1123, 667);
             this.panelControl3.TabIndex = 0;
             // 
             // labelControl27
@@ -948,8 +1429,13 @@
             this.txt_KilosPromedio.Location = new System.Drawing.Point(123, 199);
             this.txt_KilosPromedio.MenuManager = this.barManager1;
             this.txt_KilosPromedio.Name = "txt_KilosPromedio";
-            this.txt_KilosPromedio.Properties.Mask.EditMask = "n0";
-            this.txt_KilosPromedio.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_KilosPromedio.Properties.BeepOnError = true;
+            this.txt_KilosPromedio.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_KilosPromedio.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_KilosPromedio.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_KilosPromedio.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_KilosPromedio.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_KilosPromedio.Properties.UseMaskAsDisplayFormat = true;
             this.txt_KilosPromedio.Size = new System.Drawing.Size(100, 20);
             this.txt_KilosPromedio.TabIndex = 31;
             // 
@@ -972,7 +1458,7 @@
             // 
             // labelControl25
             // 
-            this.labelControl25.Location = new System.Drawing.Point(358, 20);
+            this.labelControl25.Location = new System.Drawing.Point(358, 21);
             this.labelControl25.Name = "labelControl25";
             this.labelControl25.Size = new System.Drawing.Size(81, 13);
             this.labelControl25.TabIndex = 28;
@@ -985,10 +1471,14 @@
             this.dt_FechaRecepcion.Location = new System.Drawing.Point(443, 17);
             this.dt_FechaRecepcion.MenuManager = this.barManager1;
             this.dt_FechaRecepcion.Name = "dt_FechaRecepcion";
+            this.dt_FechaRecepcion.Properties.BeepOnError = true;
             this.dt_FechaRecepcion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dt_FechaRecepcion.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaRecepcion.Properties.MaskSettings.Set("mask", "d");
+            this.dt_FechaRecepcion.Properties.MaskSettings.Set("culture", "es-MX");
+            this.dt_FechaRecepcion.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaRecepcion.Size = new System.Drawing.Size(134, 20);
             this.dt_FechaRecepcion.TabIndex = 27;
             // 
@@ -1025,11 +1515,21 @@
             this.groupControl1.Controls.Add(this.labelControl21);
             this.groupControl1.Controls.Add(this.txt_KilosBasculaE);
             this.groupControl1.Controls.Add(this.labelControl15);
-            this.groupControl1.Location = new System.Drawing.Point(336, 46);
+            this.groupControl1.Location = new System.Drawing.Point(336, 60);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(369, 199);
             this.groupControl1.TabIndex = 24;
             this.groupControl1.Text = "Bascula Externa";
+            // 
+            // chk_kgProductor
+            // 
+            this.chk_kgProductor.Location = new System.Drawing.Point(213, 61);
+            this.chk_kgProductor.MenuManager = this.barManager1;
+            this.chk_kgProductor.Name = "chk_kgProductor";
+            this.chk_kgProductor.Properties.Caption = "Tomar kg Productor";
+            this.chk_kgProductor.Size = new System.Drawing.Size(129, 20);
+            this.chk_kgProductor.TabIndex = 36;
+            this.chk_kgProductor.CheckedChanged += new System.EventHandler(this.chk_kgProductor_CheckedChanged);
             // 
             // labelControl30
             // 
@@ -1046,8 +1546,13 @@
             this.txt_KilosProductor.Location = new System.Drawing.Point(107, 164);
             this.txt_KilosProductor.MenuManager = this.barManager1;
             this.txt_KilosProductor.Name = "txt_KilosProductor";
-            this.txt_KilosProductor.Properties.Mask.EditMask = "n0";
-            this.txt_KilosProductor.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_KilosProductor.Properties.BeepOnError = true;
+            this.txt_KilosProductor.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_KilosProductor.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_KilosProductor.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_KilosProductor.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_KilosProductor.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_KilosProductor.Properties.UseMaskAsDisplayFormat = true;
             this.txt_KilosProductor.Size = new System.Drawing.Size(100, 20);
             this.txt_KilosProductor.TabIndex = 34;
             // 
@@ -1066,8 +1571,13 @@
             this.txt_kilosST.Location = new System.Drawing.Point(107, 138);
             this.txt_kilosST.MenuManager = this.barManager1;
             this.txt_kilosST.Name = "txt_kilosST";
-            this.txt_kilosST.Properties.Mask.EditMask = "n0";
-            this.txt_kilosST.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_kilosST.Properties.BeepOnError = true;
+            this.txt_kilosST.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_kilosST.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_kilosST.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_kilosST.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_kilosST.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_kilosST.Properties.UseMaskAsDisplayFormat = true;
             this.txt_kilosST.Size = new System.Drawing.Size(100, 20);
             this.txt_kilosST.TabIndex = 32;
             // 
@@ -1104,8 +1614,13 @@
             this.txt_KilosAjuste.Location = new System.Drawing.Point(107, 112);
             this.txt_KilosAjuste.MenuManager = this.barManager1;
             this.txt_KilosAjuste.Name = "txt_KilosAjuste";
-            this.txt_KilosAjuste.Properties.Mask.EditMask = "n0";
-            this.txt_KilosAjuste.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_KilosAjuste.Properties.BeepOnError = true;
+            this.txt_KilosAjuste.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_KilosAjuste.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_KilosAjuste.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_KilosAjuste.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_KilosAjuste.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_KilosAjuste.Properties.UseMaskAsDisplayFormat = true;
             this.txt_KilosAjuste.Size = new System.Drawing.Size(100, 20);
             this.txt_KilosAjuste.TabIndex = 28;
             // 
@@ -1124,8 +1639,13 @@
             this.txt_KilosDiferencia.Location = new System.Drawing.Point(107, 86);
             this.txt_KilosDiferencia.MenuManager = this.barManager1;
             this.txt_KilosDiferencia.Name = "txt_KilosDiferencia";
-            this.txt_KilosDiferencia.Properties.Mask.EditMask = "n0";
-            this.txt_KilosDiferencia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_KilosDiferencia.Properties.BeepOnError = true;
+            this.txt_KilosDiferencia.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_KilosDiferencia.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_KilosDiferencia.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_KilosDiferencia.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_KilosDiferencia.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_KilosDiferencia.Properties.UseMaskAsDisplayFormat = true;
             this.txt_KilosDiferencia.Size = new System.Drawing.Size(100, 20);
             this.txt_KilosDiferencia.TabIndex = 26;
             // 
@@ -1143,8 +1663,13 @@
             this.txt_KilosBasculaE.Location = new System.Drawing.Point(107, 60);
             this.txt_KilosBasculaE.MenuManager = this.barManager1;
             this.txt_KilosBasculaE.Name = "txt_KilosBasculaE";
-            this.txt_KilosBasculaE.Properties.Mask.EditMask = "n0";
-            this.txt_KilosBasculaE.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_KilosBasculaE.Properties.BeepOnError = true;
+            this.txt_KilosBasculaE.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_KilosBasculaE.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_KilosBasculaE.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_KilosBasculaE.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_KilosBasculaE.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_KilosBasculaE.Properties.UseMaskAsDisplayFormat = true;
             this.txt_KilosBasculaE.Size = new System.Drawing.Size(100, 20);
             this.txt_KilosBasculaE.TabIndex = 24;
             this.txt_KilosBasculaE.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KilosProductor_KeyDown);
@@ -1172,8 +1697,15 @@
             this.txt_KilosCortados.Location = new System.Drawing.Point(123, 173);
             this.txt_KilosCortados.MenuManager = this.barManager1;
             this.txt_KilosCortados.Name = "txt_KilosCortados";
-            this.txt_KilosCortados.Properties.Mask.EditMask = "n0";
-            this.txt_KilosCortados.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_KilosCortados.Properties.BeepOnError = true;
+            this.txt_KilosCortados.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_KilosCortados.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_KilosCortados.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_KilosCortados.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.txt_KilosCortados.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_KilosCortados.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_KilosCortados.Properties.MaskSettings.Set("hideInsignificantZeros", false);
+            this.txt_KilosCortados.Properties.UseMaskAsDisplayFormat = true;
             this.txt_KilosCortados.Size = new System.Drawing.Size(100, 20);
             this.txt_KilosCortados.TabIndex = 22;
             // 
@@ -1192,8 +1724,14 @@
             this.txt_CajasCortadas.Location = new System.Drawing.Point(123, 147);
             this.txt_CajasCortadas.MenuManager = this.barManager1;
             this.txt_CajasCortadas.Name = "txt_CajasCortadas";
-            this.txt_CajasCortadas.Properties.Mask.EditMask = "n0";
-            this.txt_CajasCortadas.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_CajasCortadas.Properties.BeepOnError = true;
+            this.txt_CajasCortadas.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_CajasCortadas.Properties.MaskSettings.Set("mask", "n0");
+            this.txt_CajasCortadas.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_CajasCortadas.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_CajasCortadas.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_CajasCortadas.Properties.MaskSettings.Set("hideInsignificantZeros", null);
+            this.txt_CajasCortadas.Properties.UseMaskAsDisplayFormat = true;
             this.txt_CajasCortadas.Size = new System.Drawing.Size(100, 20);
             this.txt_CajasCortadas.TabIndex = 20;
             // 
@@ -1275,7 +1813,7 @@
             this.navigationPage3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage3.ImageOptions.Image")));
             this.navigationPage3.Name = "navigationPage3";
             this.navigationPage3.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage3.Size = new System.Drawing.Size(1200, 712);
+            this.navigationPage3.Size = new System.Drawing.Size(1139, 674);
             // 
             // btn_EmpresaComercializacion
             // 
@@ -1377,7 +1915,7 @@
             this.navigationPage4.Name = "navigationPage4";
             this.navigationPage4.PageText = "Corte";
             this.navigationPage4.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage4.Size = new System.Drawing.Size(1200, 712);
+            this.navigationPage4.Size = new System.Drawing.Size(1123, 667);
             // 
             // panelControl5
             // 
@@ -1386,7 +1924,7 @@
             this.panelControl5.Location = new System.Drawing.Point(615, 0);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl5.Size = new System.Drawing.Size(585, 712);
+            this.panelControl5.Size = new System.Drawing.Size(508, 667);
             this.panelControl5.TabIndex = 53;
             // 
             // groupControl3
@@ -1395,7 +1933,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(12, 12);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(561, 688);
+            this.groupControl3.Size = new System.Drawing.Size(484, 643);
             this.groupControl3.TabIndex = 49;
             this.groupControl3.Text = "Corrida de Fruta";
             // 
@@ -1406,9 +1944,9 @@
             this.xtraScrollableControl1.Controls.Add(this.panelControl7);
             this.xtraScrollableControl1.Controls.Add(this.panelControl6);
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(2, 20);
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(2, 23);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(557, 666);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(480, 618);
             this.xtraScrollableControl1.TabIndex = 1;
             // 
             // panelControl9
@@ -1419,7 +1957,7 @@
             this.panelControl9.Location = new System.Drawing.Point(0, 925);
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Padding = new System.Windows.Forms.Padding(5, 25, 5, 5);
-            this.panelControl9.Size = new System.Drawing.Size(540, 242);
+            this.panelControl9.Size = new System.Drawing.Size(463, 242);
             this.panelControl9.TabIndex = 4;
             // 
             // labelControl48
@@ -1439,7 +1977,7 @@
             this.dtgMerma.MainView = this.dtgValMerma;
             this.dtgMerma.MenuManager = this.barManager1;
             this.dtgMerma.Name = "dtgMerma";
-            this.dtgMerma.Size = new System.Drawing.Size(526, 208);
+            this.dtgMerma.Size = new System.Drawing.Size(449, 208);
             this.dtgMerma.TabIndex = 0;
             this.dtgMerma.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValMerma});
@@ -1506,7 +2044,7 @@
             this.panelControl8.Location = new System.Drawing.Point(0, 609);
             this.panelControl8.Name = "panelControl8";
             this.panelControl8.Padding = new System.Windows.Forms.Padding(5, 25, 5, 5);
-            this.panelControl8.Size = new System.Drawing.Size(540, 316);
+            this.panelControl8.Size = new System.Drawing.Size(463, 316);
             this.panelControl8.TabIndex = 3;
             // 
             // labelControl47
@@ -1526,7 +2064,7 @@
             this.dtgNacional.MainView = this.dtgValNacional;
             this.dtgNacional.MenuManager = this.barManager1;
             this.dtgNacional.Name = "dtgNacional";
-            this.dtgNacional.Size = new System.Drawing.Size(526, 282);
+            this.dtgNacional.Size = new System.Drawing.Size(449, 282);
             this.dtgNacional.TabIndex = 0;
             this.dtgNacional.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValNacional});
@@ -1619,7 +2157,7 @@
             this.panelControl7.Location = new System.Drawing.Point(0, 182);
             this.panelControl7.Name = "panelControl7";
             this.panelControl7.Padding = new System.Windows.Forms.Padding(5, 25, 5, 5);
-            this.panelControl7.Size = new System.Drawing.Size(540, 427);
+            this.panelControl7.Size = new System.Drawing.Size(463, 427);
             this.panelControl7.TabIndex = 2;
             // 
             // labelControl46
@@ -1639,7 +2177,7 @@
             this.dtgExportacion.MainView = this.dtgValExportacion;
             this.dtgExportacion.MenuManager = this.barManager1;
             this.dtgExportacion.Name = "dtgExportacion";
-            this.dtgExportacion.Size = new System.Drawing.Size(526, 393);
+            this.dtgExportacion.Size = new System.Drawing.Size(449, 393);
             this.dtgExportacion.TabIndex = 0;
             this.dtgExportacion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValExportacion});
@@ -1748,7 +2286,7 @@
             this.panelControl6.Location = new System.Drawing.Point(0, 0);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Padding = new System.Windows.Forms.Padding(5, 25, 5, 5);
-            this.panelControl6.Size = new System.Drawing.Size(540, 182);
+            this.panelControl6.Size = new System.Drawing.Size(463, 182);
             this.panelControl6.TabIndex = 1;
             // 
             // labelControl45
@@ -1768,7 +2306,7 @@
             this.dtgRecepcion.MainView = this.dtgValRecepcion;
             this.dtgRecepcion.MenuManager = this.barManager1;
             this.dtgRecepcion.Name = "dtgRecepcion";
-            this.dtgRecepcion.Size = new System.Drawing.Size(526, 148);
+            this.dtgRecepcion.Size = new System.Drawing.Size(449, 148);
             this.dtgRecepcion.TabIndex = 0;
             this.dtgRecepcion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValRecepcion});
@@ -1880,27 +2418,47 @@
             this.panelControl4.Location = new System.Drawing.Point(0, 0);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl4.Size = new System.Drawing.Size(615, 712);
+            this.panelControl4.Size = new System.Drawing.Size(615, 667);
             this.panelControl4.TabIndex = 52;
             // 
             // xtraScrollableControl2
             // 
-            this.xtraScrollableControl2.Controls.Add(this.groupControl4);
-            this.xtraScrollableControl2.Controls.Add(this.groupControl6);
+            this.xtraScrollableControl2.Controls.Add(this.xtraTabControl1);
             this.xtraScrollableControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl2.Location = new System.Drawing.Point(7, 7);
             this.xtraScrollableControl2.Name = "xtraScrollableControl2";
-            this.xtraScrollableControl2.Size = new System.Drawing.Size(601, 698);
+            this.xtraScrollableControl2.Size = new System.Drawing.Size(601, 653);
             this.xtraScrollableControl2.TabIndex = 0;
+            // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(601, 653);
+            this.xtraTabControl1.TabIndex = 61;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.tp_FacturaCorte});
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Controls.Add(this.groupControl4);
+            this.xtraTabPage1.Controls.Add(this.groupControl6);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
+            this.xtraTabPage1.Size = new System.Drawing.Size(599, 628);
+            this.xtraTabPage1.Text = "Calculo Corte";
             // 
             // groupControl4
             // 
             this.groupControl4.Controls.Add(this.xtraScrollableControl3);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl4.Location = new System.Drawing.Point(0, 300);
+            this.groupControl4.Location = new System.Drawing.Point(5, 305);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(601, 398);
-            this.groupControl4.TabIndex = 60;
+            this.groupControl4.Size = new System.Drawing.Size(589, 318);
+            this.groupControl4.TabIndex = 61;
             this.groupControl4.Text = "Cobro por Servicios";
             // 
             // xtraScrollableControl3
@@ -1914,9 +2472,9 @@
             this.xtraScrollableControl3.Controls.Add(this.txtMenorakg);
             this.xtraScrollableControl3.Controls.Add(this.labelControl63);
             this.xtraScrollableControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraScrollableControl3.Location = new System.Drawing.Point(2, 20);
+            this.xtraScrollableControl3.Location = new System.Drawing.Point(2, 23);
             this.xtraScrollableControl3.Name = "xtraScrollableControl3";
-            this.xtraScrollableControl3.Size = new System.Drawing.Size(597, 376);
+            this.xtraScrollableControl3.Size = new System.Drawing.Size(585, 293);
             this.xtraScrollableControl3.TabIndex = 0;
             // 
             // groupControl5
@@ -1957,14 +2515,19 @@
             // 
             // txtPrecioCajaMayorA
             // 
+            this.txtPrecioCajaMayorA.EditValue = "0";
             this.txtPrecioCajaMayorA.Enabled = false;
             this.txtPrecioCajaMayorA.Location = new System.Drawing.Point(317, 114);
             this.txtPrecioCajaMayorA.MenuManager = this.barManager1;
             this.txtPrecioCajaMayorA.Name = "txtPrecioCajaMayorA";
-            this.txtPrecioCajaMayorA.Properties.Mask.EditMask = "c4";
-            this.txtPrecioCajaMayorA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioCajaMayorA.Properties.BeepOnError = true;
+            this.txtPrecioCajaMayorA.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPrecioCajaMayorA.Properties.MaskSettings.Set("mask", "c4");
+            this.txtPrecioCajaMayorA.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txtPrecioCajaMayorA.Properties.MaskSettings.Set("valueType", typeof(decimal));
             this.txtPrecioCajaMayorA.Properties.NullText = "0";
             this.txtPrecioCajaMayorA.Properties.NullValuePrompt = "0";
+            this.txtPrecioCajaMayorA.Properties.UseMaskAsDisplayFormat = true;
             this.txtPrecioCajaMayorA.Size = new System.Drawing.Size(100, 20);
             this.txtPrecioCajaMayorA.TabIndex = 32;
             // 
@@ -1975,7 +2538,7 @@
             this.chk_RangoCajas.MenuManager = this.barManager1;
             this.chk_RangoCajas.Name = "chk_RangoCajas";
             this.chk_RangoCajas.Properties.Caption = "Por rango";
-            this.chk_RangoCajas.Size = new System.Drawing.Size(75, 19);
+            this.chk_RangoCajas.Size = new System.Drawing.Size(75, 20);
             this.chk_RangoCajas.TabIndex = 25;
             // 
             // labelControl50
@@ -2009,14 +2572,19 @@
             // 
             // txtPrecioCajaMenorA
             // 
+            this.txtPrecioCajaMenorA.EditValue = "0";
             this.txtPrecioCajaMenorA.Enabled = false;
-            this.txtPrecioCajaMenorA.Location = new System.Drawing.Point(317, 88);
+            this.txtPrecioCajaMenorA.Location = new System.Drawing.Point(316, 88);
             this.txtPrecioCajaMenorA.MenuManager = this.barManager1;
             this.txtPrecioCajaMenorA.Name = "txtPrecioCajaMenorA";
-            this.txtPrecioCajaMenorA.Properties.Mask.EditMask = "c4";
-            this.txtPrecioCajaMenorA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioCajaMenorA.Properties.BeepOnError = true;
+            this.txtPrecioCajaMenorA.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPrecioCajaMenorA.Properties.MaskSettings.Set("mask", "c4");
+            this.txtPrecioCajaMenorA.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txtPrecioCajaMenorA.Properties.MaskSettings.Set("valueType", typeof(decimal));
             this.txtPrecioCajaMenorA.Properties.NullText = "0";
             this.txtPrecioCajaMenorA.Properties.NullValuePrompt = "0";
+            this.txtPrecioCajaMenorA.Properties.UseMaskAsDisplayFormat = true;
             this.txtPrecioCajaMenorA.Size = new System.Drawing.Size(100, 20);
             this.txtPrecioCajaMenorA.TabIndex = 30;
             // 
@@ -2112,14 +2680,19 @@
             // 
             // txtPrecioMayorA
             // 
+            this.txtPrecioMayorA.EditValue = "0";
             this.txtPrecioMayorA.Enabled = false;
             this.txtPrecioMayorA.Location = new System.Drawing.Point(317, 114);
             this.txtPrecioMayorA.MenuManager = this.barManager1;
             this.txtPrecioMayorA.Name = "txtPrecioMayorA";
-            this.txtPrecioMayorA.Properties.Mask.EditMask = "c4";
-            this.txtPrecioMayorA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioMayorA.Properties.BeepOnError = true;
+            this.txtPrecioMayorA.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPrecioMayorA.Properties.MaskSettings.Set("mask", "c4");
+            this.txtPrecioMayorA.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txtPrecioMayorA.Properties.MaskSettings.Set("valueType", typeof(decimal));
             this.txtPrecioMayorA.Properties.NullText = "0";
             this.txtPrecioMayorA.Properties.NullValuePrompt = "0";
+            this.txtPrecioMayorA.Properties.UseMaskAsDisplayFormat = true;
             this.txtPrecioMayorA.Size = new System.Drawing.Size(100, 20);
             this.txtPrecioMayorA.TabIndex = 32;
             // 
@@ -2130,7 +2703,7 @@
             this.chk_Rango.MenuManager = this.barManager1;
             this.chk_Rango.Name = "chk_Rango";
             this.chk_Rango.Properties.Caption = "Por rango";
-            this.chk_Rango.Size = new System.Drawing.Size(75, 19);
+            this.chk_Rango.Size = new System.Drawing.Size(75, 20);
             this.chk_Rango.TabIndex = 25;
             // 
             // labelControl55
@@ -2151,14 +2724,19 @@
             // 
             // txtPrecioMenorA
             // 
+            this.txtPrecioMenorA.EditValue = "0";
             this.txtPrecioMenorA.Enabled = false;
             this.txtPrecioMenorA.Location = new System.Drawing.Point(317, 88);
             this.txtPrecioMenorA.MenuManager = this.barManager1;
             this.txtPrecioMenorA.Name = "txtPrecioMenorA";
-            this.txtPrecioMenorA.Properties.Mask.EditMask = "c4";
-            this.txtPrecioMenorA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioMenorA.Properties.BeepOnError = true;
+            this.txtPrecioMenorA.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPrecioMenorA.Properties.MaskSettings.Set("mask", "c4");
+            this.txtPrecioMenorA.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txtPrecioMenorA.Properties.MaskSettings.Set("culture", "es-MX");
             this.txtPrecioMenorA.Properties.NullText = "0";
             this.txtPrecioMenorA.Properties.NullValuePrompt = "0";
+            this.txtPrecioMenorA.Properties.UseMaskAsDisplayFormat = true;
             this.txtPrecioMenorA.Size = new System.Drawing.Size(100, 20);
             this.txtPrecioMenorA.TabIndex = 30;
             // 
@@ -2247,14 +2825,19 @@
             // 
             // txtMenorakg
             // 
+            this.txtMenorakg.EditValue = "0";
             this.txtMenorakg.Enabled = false;
             this.txtMenorakg.Location = new System.Drawing.Point(141, 9);
             this.txtMenorakg.MenuManager = this.barManager1;
             this.txtMenorakg.Name = "txtMenorakg";
-            this.txtMenorakg.Properties.Mask.EditMask = "n0";
-            this.txtMenorakg.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtMenorakg.Properties.BeepOnError = true;
+            this.txtMenorakg.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtMenorakg.Properties.MaskSettings.Set("mask", "n4");
+            this.txtMenorakg.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txtMenorakg.Properties.MaskSettings.Set("culture", "es-MX");
             this.txtMenorakg.Properties.NullText = "0";
             this.txtMenorakg.Properties.NullValuePrompt = "0";
+            this.txtMenorakg.Properties.UseMaskAsDisplayFormat = true;
             this.txtMenorakg.Size = new System.Drawing.Size(100, 20);
             this.txtMenorakg.TabIndex = 37;
             // 
@@ -2268,6 +2851,9 @@
             // 
             // groupControl6
             // 
+            this.groupControl6.Controls.Add(this.labelControl150);
+            this.groupControl6.Controls.Add(this.txt_ObservacionesCorte);
+            this.groupControl6.Controls.Add(this.labelControl147);
             this.groupControl6.Controls.Add(this.labelControl64);
             this.groupControl6.Controls.Add(this.txt_CajasCortadasCorte);
             this.groupControl6.Controls.Add(this.txt_PrecioCuadrillaCorte);
@@ -2298,16 +2884,41 @@
             this.groupControl6.Controls.Add(this.labelControl42);
             this.groupControl6.Controls.Add(this.txtTipoCorteEC);
             this.groupControl6.Controls.Add(this.txt_PrecioKiloCorte);
+            this.groupControl6.Controls.Add(this.txt_NoCuadrillas);
             this.groupControl6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl6.Location = new System.Drawing.Point(0, 0);
+            this.groupControl6.Location = new System.Drawing.Point(5, 5);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(601, 300);
+            this.groupControl6.Size = new System.Drawing.Size(589, 300);
             this.groupControl6.TabIndex = 57;
-            this.groupControl6.Text = "Calculo Corte";
+            // 
+            // labelControl150
+            // 
+            this.labelControl150.Location = new System.Drawing.Point(230, 242);
+            this.labelControl150.Name = "labelControl150";
+            this.labelControl150.Size = new System.Drawing.Size(77, 13);
+            this.labelControl150.TabIndex = 66;
+            this.labelControl150.Text = "No de Cuadrillas";
+            // 
+            // txt_ObservacionesCorte
+            // 
+            this.txt_ObservacionesCorte.AllowDrop = true;
+            this.txt_ObservacionesCorte.Location = new System.Drawing.Point(336, 136);
+            this.txt_ObservacionesCorte.MenuManager = this.barManager1;
+            this.txt_ObservacionesCorte.Name = "txt_ObservacionesCorte";
+            this.txt_ObservacionesCorte.Size = new System.Drawing.Size(234, 82);
+            this.txt_ObservacionesCorte.TabIndex = 64;
+            // 
+            // labelControl147
+            // 
+            this.labelControl147.Location = new System.Drawing.Point(230, 141);
+            this.labelControl147.Name = "labelControl147";
+            this.labelControl147.Size = new System.Drawing.Size(71, 13);
+            this.labelControl147.TabIndex = 63;
+            this.labelControl147.Text = "Observaciones";
             // 
             // labelControl64
             // 
-            this.labelControl64.Location = new System.Drawing.Point(243, 112);
+            this.labelControl64.Location = new System.Drawing.Point(230, 112);
             this.labelControl64.Name = "labelControl64";
             this.labelControl64.Size = new System.Drawing.Size(74, 13);
             this.labelControl64.TabIndex = 62;
@@ -2315,12 +2926,19 @@
             // 
             // txt_CajasCortadasCorte
             // 
+            this.txt_CajasCortadasCorte.EditValue = "0";
             this.txt_CajasCortadasCorte.Enabled = false;
             this.txt_CajasCortadasCorte.Location = new System.Drawing.Point(336, 108);
             this.txt_CajasCortadasCorte.MenuManager = this.barManager1;
             this.txt_CajasCortadasCorte.Name = "txt_CajasCortadasCorte";
-            this.txt_CajasCortadasCorte.Properties.Mask.EditMask = "n0";
-            this.txt_CajasCortadasCorte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_CajasCortadasCorte.Properties.BeepOnError = true;
+            this.txt_CajasCortadasCorte.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_CajasCortadasCorte.Properties.MaskSettings.Set("mask", "n0");
+            this.txt_CajasCortadasCorte.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_CajasCortadasCorte.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_CajasCortadasCorte.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_CajasCortadasCorte.Properties.NullText = "0";
+            this.txt_CajasCortadasCorte.Properties.UseMaskAsDisplayFormat = true;
             this.txt_CajasCortadasCorte.Size = new System.Drawing.Size(100, 20);
             this.txt_CajasCortadasCorte.TabIndex = 61;
             // 
@@ -2331,8 +2949,15 @@
             this.txt_PrecioCuadrillaCorte.Location = new System.Drawing.Point(128, 238);
             this.txt_PrecioCuadrillaCorte.MenuManager = this.barManager1;
             this.txt_PrecioCuadrillaCorte.Name = "txt_PrecioCuadrillaCorte";
-            this.txt_PrecioCuadrillaCorte.Properties.Mask.EditMask = "c4";
-            this.txt_PrecioCuadrillaCorte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_PrecioCuadrillaCorte.Properties.BeepOnError = true;
+            this.txt_PrecioCuadrillaCorte.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_PrecioCuadrillaCorte.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_PrecioCuadrillaCorte.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_PrecioCuadrillaCorte.Properties.MaskSettings.Set("valueAfterDelete", DevExpress.Data.Mask.NumericMaskManager.ValueAfterDelete.ZeroThenNull);
+            this.txt_PrecioCuadrillaCorte.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_PrecioCuadrillaCorte.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
+            this.txt_PrecioCuadrillaCorte.Properties.NullText = "0";
+            this.txt_PrecioCuadrillaCorte.Properties.UseMaskAsDisplayFormat = true;
             this.txt_PrecioCuadrillaCorte.Size = new System.Drawing.Size(75, 20);
             this.txt_PrecioCuadrillaCorte.TabIndex = 59;
             this.txt_PrecioCuadrillaCorte.EditValueChanged += new System.EventHandler(this.txt_PrecioCuadrillaCorte_EditValueChanged);
@@ -2344,7 +2969,7 @@
             this.chk_CuadrillaApoyo.Name = "chk_CuadrillaApoyo";
             this.chk_CuadrillaApoyo.Properties.Caption = "Cuadrilla Apoyo";
             this.chk_CuadrillaApoyo.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.chk_CuadrillaApoyo.Size = new System.Drawing.Size(114, 19);
+            this.chk_CuadrillaApoyo.Size = new System.Drawing.Size(114, 20);
             this.chk_CuadrillaApoyo.TabIndex = 60;
             this.chk_CuadrillaApoyo.CheckedChanged += new System.EventHandler(this.chk_CuadrillaApoyo_CheckedChanged);
             // 
@@ -2373,9 +2998,15 @@
             this.txt_KilosARestar.Name = "txt_KilosARestar";
             this.txt_KilosARestar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_KilosARestar.Properties.Appearance.Options.UseFont = true;
-            this.txt_KilosARestar.Properties.Mask.EditMask = "n4";
-            this.txt_KilosARestar.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_KilosARestar.Properties.BeepOnError = true;
+            this.txt_KilosARestar.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_KilosARestar.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_KilosARestar.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_KilosARestar.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_KilosARestar.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_KilosARestar.Properties.NullText = "0";
             this.txt_KilosARestar.Properties.ReadOnly = true;
+            this.txt_KilosARestar.Properties.UseMaskAsDisplayFormat = true;
             this.txt_KilosARestar.Size = new System.Drawing.Size(100, 20);
             this.txt_KilosARestar.TabIndex = 56;
             this.txt_KilosARestar.EditValueChanged += new System.EventHandler(this.txt_KilosARestar_EditValueChanged);
@@ -2390,12 +3021,19 @@
             // 
             // txt_kgNoSolicitados
             // 
+            this.txt_kgNoSolicitados.EditValue = "0";
             this.txt_kgNoSolicitados.Enabled = false;
             this.txt_kgNoSolicitados.Location = new System.Drawing.Point(336, 82);
             this.txt_kgNoSolicitados.MenuManager = this.barManager1;
             this.txt_kgNoSolicitados.Name = "txt_kgNoSolicitados";
-            this.txt_kgNoSolicitados.Properties.Mask.EditMask = "n4";
-            this.txt_kgNoSolicitados.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_kgNoSolicitados.Properties.BeepOnError = true;
+            this.txt_kgNoSolicitados.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_kgNoSolicitados.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_kgNoSolicitados.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_kgNoSolicitados.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_kgNoSolicitados.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_kgNoSolicitados.Properties.NullText = "0";
+            this.txt_kgNoSolicitados.Properties.UseMaskAsDisplayFormat = true;
             this.txt_kgNoSolicitados.Size = new System.Drawing.Size(100, 20);
             this.txt_kgNoSolicitados.TabIndex = 54;
             // 
@@ -2409,12 +3047,19 @@
             // 
             // txt_Margen5
             // 
+            this.txt_Margen5.EditValue = "0";
             this.txt_Margen5.Enabled = false;
             this.txt_Margen5.Location = new System.Drawing.Point(230, 82);
             this.txt_Margen5.MenuManager = this.barManager1;
             this.txt_Margen5.Name = "txt_Margen5";
-            this.txt_Margen5.Properties.Mask.EditMask = "n4";
-            this.txt_Margen5.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_Margen5.Properties.BeepOnError = true;
+            this.txt_Margen5.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Margen5.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_Margen5.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_Margen5.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_Margen5.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_Margen5.Properties.NullText = "0";
+            this.txt_Margen5.Properties.UseMaskAsDisplayFormat = true;
             this.txt_Margen5.Size = new System.Drawing.Size(100, 20);
             this.txt_Margen5.TabIndex = 52;
             // 
@@ -2441,10 +3086,17 @@
             this.txt_PrecioSalidaFCorte.Location = new System.Drawing.Point(128, 212);
             this.txt_PrecioSalidaFCorte.MenuManager = this.barManager1;
             this.txt_PrecioSalidaFCorte.Name = "txt_PrecioSalidaFCorte";
-            this.txt_PrecioSalidaFCorte.Properties.Mask.EditMask = "c4";
-            this.txt_PrecioSalidaFCorte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_PrecioSalidaFCorte.Properties.BeepOnError = true;
+            this.txt_PrecioSalidaFCorte.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_PrecioSalidaFCorte.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_PrecioSalidaFCorte.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_PrecioSalidaFCorte.Properties.MaskSettings.Set("valueAfterDelete", DevExpress.Data.Mask.NumericMaskManager.ValueAfterDelete.ZeroThenNull);
+            this.txt_PrecioSalidaFCorte.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_PrecioSalidaFCorte.Properties.NullText = "0";
+            this.txt_PrecioSalidaFCorte.Properties.UseMaskAsDisplayFormat = true;
             this.txt_PrecioSalidaFCorte.Size = new System.Drawing.Size(75, 20);
             this.txt_PrecioSalidaFCorte.TabIndex = 42;
+            this.txt_PrecioSalidaFCorte.EditValueChanged += new System.EventHandler(this.txt_PrecioSalidaFCorte_EditValueChanged);
             // 
             // labelControl44
             // 
@@ -2461,8 +3113,14 @@
             this.txt_PrecioDiaCorte.Location = new System.Drawing.Point(104, 186);
             this.txt_PrecioDiaCorte.MenuManager = this.barManager1;
             this.txt_PrecioDiaCorte.Name = "txt_PrecioDiaCorte";
-            this.txt_PrecioDiaCorte.Properties.Mask.EditMask = "c4";
-            this.txt_PrecioDiaCorte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_PrecioDiaCorte.Properties.BeepOnError = true;
+            this.txt_PrecioDiaCorte.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_PrecioDiaCorte.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_PrecioDiaCorte.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_PrecioDiaCorte.Properties.MaskSettings.Set("valueAfterDelete", DevExpress.Data.Mask.NumericMaskManager.ValueAfterDelete.ZeroThenNull);
+            this.txt_PrecioDiaCorte.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_PrecioDiaCorte.Properties.NullText = "0";
+            this.txt_PrecioDiaCorte.Properties.UseMaskAsDisplayFormat = true;
             this.txt_PrecioDiaCorte.Size = new System.Drawing.Size(100, 20);
             this.txt_PrecioDiaCorte.TabIndex = 40;
             this.txt_PrecioDiaCorte.EditValueChanged += new System.EventHandler(this.txt_PrecioDiaCorte_EditValueChanged);
@@ -2474,8 +3132,13 @@
             this.txt_kilosCortadosCorte.Location = new System.Drawing.Point(104, 82);
             this.txt_kilosCortadosCorte.MenuManager = this.barManager1;
             this.txt_kilosCortadosCorte.Name = "txt_kilosCortadosCorte";
-            this.txt_kilosCortadosCorte.Properties.Mask.EditMask = "n4";
-            this.txt_kilosCortadosCorte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_kilosCortadosCorte.Properties.BeepOnError = true;
+            this.txt_kilosCortadosCorte.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_kilosCortadosCorte.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_kilosCortadosCorte.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_kilosCortadosCorte.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_kilosCortadosCorte.Properties.NullText = "0";
+            this.txt_kilosCortadosCorte.Properties.UseMaskAsDisplayFormat = true;
             this.txt_kilosCortadosCorte.Size = new System.Drawing.Size(100, 20);
             this.txt_kilosCortadosCorte.TabIndex = 26;
             // 
@@ -2494,8 +3157,13 @@
             this.txt_KilosAjustadosCorte.Location = new System.Drawing.Point(104, 108);
             this.txt_KilosAjustadosCorte.MenuManager = this.barManager1;
             this.txt_KilosAjustadosCorte.Name = "txt_KilosAjustadosCorte";
-            this.txt_KilosAjustadosCorte.Properties.Mask.EditMask = "n4";
-            this.txt_KilosAjustadosCorte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_KilosAjustadosCorte.Properties.BeepOnError = true;
+            this.txt_KilosAjustadosCorte.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_KilosAjustadosCorte.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_KilosAjustadosCorte.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_KilosAjustadosCorte.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_KilosAjustadosCorte.Properties.NullText = "0";
+            this.txt_KilosAjustadosCorte.Properties.UseMaskAsDisplayFormat = true;
             this.txt_KilosAjustadosCorte.Size = new System.Drawing.Size(100, 20);
             this.txt_KilosAjustadosCorte.TabIndex = 50;
             // 
@@ -2506,7 +3174,7 @@
             this.chk_SalidaFalso.Name = "chk_SalidaFalso";
             this.chk_SalidaFalso.Properties.Caption = "Salida en Falso";
             this.chk_SalidaFalso.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.chk_SalidaFalso.Size = new System.Drawing.Size(114, 19);
+            this.chk_SalidaFalso.Size = new System.Drawing.Size(114, 20);
             this.chk_SalidaFalso.TabIndex = 44;
             this.chk_SalidaFalso.CheckedChanged += new System.EventHandler(this.chk_SalidaFalso_CheckedChanged);
             // 
@@ -2525,10 +3193,18 @@
             this.txt_PrecioTCorte.Location = new System.Drawing.Point(104, 160);
             this.txt_PrecioTCorte.MenuManager = this.barManager1;
             this.txt_PrecioTCorte.Name = "txt_PrecioTCorte";
-            this.txt_PrecioTCorte.Properties.Mask.EditMask = "c4";
-            this.txt_PrecioTCorte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_PrecioTCorte.Properties.BeepOnError = true;
+            this.txt_PrecioTCorte.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_PrecioTCorte.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_PrecioTCorte.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_PrecioTCorte.Properties.MaskSettings.Set("valueAfterDelete", DevExpress.Data.Mask.NumericMaskManager.ValueAfterDelete.ZeroThenNull);
+            this.txt_PrecioTCorte.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_PrecioTCorte.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
+            this.txt_PrecioTCorte.Properties.NullText = "0";
+            this.txt_PrecioTCorte.Properties.UseMaskAsDisplayFormat = true;
             this.txt_PrecioTCorte.Size = new System.Drawing.Size(100, 20);
             this.txt_PrecioTCorte.TabIndex = 38;
+            this.txt_PrecioTCorte.EditValueChanged += new System.EventHandler(this.txt_PrecioTCorte_EditValueChanged);
             // 
             // txt_NombreEmpresaCorte
             // 
@@ -2547,9 +3223,15 @@
             this.txt_PagoTotalCorte.Name = "txt_PagoTotalCorte";
             this.txt_PagoTotalCorte.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_PagoTotalCorte.Properties.Appearance.Options.UseFont = true;
-            this.txt_PagoTotalCorte.Properties.Mask.EditMask = "c4";
-            this.txt_PagoTotalCorte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_PagoTotalCorte.Properties.BeepOnError = true;
+            this.txt_PagoTotalCorte.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_PagoTotalCorte.Properties.MaskSettings.Set("mask", "c");
+            this.txt_PagoTotalCorte.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_PagoTotalCorte.Properties.MaskSettings.Set("valueAfterDelete", DevExpress.Data.Mask.NumericMaskManager.ValueAfterDelete.ZeroThenNull);
+            this.txt_PagoTotalCorte.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_PagoTotalCorte.Properties.NullText = "0";
             this.txt_PagoTotalCorte.Properties.ReadOnly = true;
+            this.txt_PagoTotalCorte.Properties.UseMaskAsDisplayFormat = true;
             this.txt_PagoTotalCorte.Size = new System.Drawing.Size(100, 20);
             this.txt_PagoTotalCorte.TabIndex = 45;
             // 
@@ -2602,10 +3284,1541 @@
             this.txt_PrecioKiloCorte.Location = new System.Drawing.Point(104, 134);
             this.txt_PrecioKiloCorte.MenuManager = this.barManager1;
             this.txt_PrecioKiloCorte.Name = "txt_PrecioKiloCorte";
-            this.txt_PrecioKiloCorte.Properties.Mask.EditMask = "c4";
-            this.txt_PrecioKiloCorte.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_PrecioKiloCorte.Properties.BeepOnError = true;
+            this.txt_PrecioKiloCorte.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_PrecioKiloCorte.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_PrecioKiloCorte.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_PrecioKiloCorte.Properties.MaskSettings.Set("valueAfterDelete", DevExpress.Data.Mask.NumericMaskManager.ValueAfterDelete.ZeroThenNull);
+            this.txt_PrecioKiloCorte.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_PrecioKiloCorte.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
+            this.txt_PrecioKiloCorte.Properties.NullText = "0";
+            this.txt_PrecioKiloCorte.Properties.UseMaskAsDisplayFormat = true;
             this.txt_PrecioKiloCorte.Size = new System.Drawing.Size(100, 20);
             this.txt_PrecioKiloCorte.TabIndex = 36;
+            // 
+            // txt_NoCuadrillas
+            // 
+            this.txt_NoCuadrillas.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txt_NoCuadrillas.Location = new System.Drawing.Point(313, 239);
+            this.txt_NoCuadrillas.MenuManager = this.barManager1;
+            this.txt_NoCuadrillas.Name = "txt_NoCuadrillas";
+            this.txt_NoCuadrillas.Properties.BeepOnError = true;
+            this.txt_NoCuadrillas.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txt_NoCuadrillas.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txt_NoCuadrillas.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_NoCuadrillas.Properties.MaskSettings.Set("mask", "d");
+            this.txt_NoCuadrillas.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_NoCuadrillas.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_NoCuadrillas.Properties.MaxValue = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.txt_NoCuadrillas.Properties.NullText = "0";
+            this.txt_NoCuadrillas.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_NoCuadrillas.Size = new System.Drawing.Size(40, 20);
+            this.txt_NoCuadrillas.TabIndex = 65;
+            this.txt_NoCuadrillas.EditValueChanged += new System.EventHandler(this.txt_NoCuadrillas_EditValueChanged);
+            // 
+            // tp_FacturaCorte
+            // 
+            this.tp_FacturaCorte.Controls.Add(this.groupControl12);
+            this.tp_FacturaCorte.Name = "tp_FacturaCorte";
+            this.tp_FacturaCorte.Padding = new System.Windows.Forms.Padding(5);
+            this.tp_FacturaCorte.Size = new System.Drawing.Size(599, 628);
+            this.tp_FacturaCorte.Text = "Facturas";
+            // 
+            // groupControl12
+            // 
+            this.groupControl12.Controls.Add(this.xtraScrollableControl4);
+            this.groupControl12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl12.Location = new System.Drawing.Point(5, 5);
+            this.groupControl12.Name = "groupControl12";
+            this.groupControl12.Size = new System.Drawing.Size(589, 618);
+            this.groupControl12.TabIndex = 0;
+            // 
+            // xtraScrollableControl4
+            // 
+            this.xtraScrollableControl4.Controls.Add(this.groupControl18);
+            this.xtraScrollableControl4.Controls.Add(this.groupControl17);
+            this.xtraScrollableControl4.Controls.Add(this.groupControl16);
+            this.xtraScrollableControl4.Controls.Add(this.groupControl15);
+            this.xtraScrollableControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraScrollableControl4.Location = new System.Drawing.Point(2, 23);
+            this.xtraScrollableControl4.Name = "xtraScrollableControl4";
+            this.xtraScrollableControl4.Size = new System.Drawing.Size(585, 593);
+            this.xtraScrollableControl4.TabIndex = 0;
+            // 
+            // groupControl18
+            // 
+            this.groupControl18.Controls.Add(this.panelControl17);
+            this.groupControl18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl18.Location = new System.Drawing.Point(0, 855);
+            this.groupControl18.Name = "groupControl18";
+            this.groupControl18.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl18.Size = new System.Drawing.Size(585, 297);
+            this.groupControl18.TabIndex = 5;
+            this.groupControl18.Text = "Factura Salida en Falso";
+            // 
+            // panelControl17
+            // 
+            this.panelControl17.Controls.Add(this.txt_IVAFacturaCorteSalida);
+            this.panelControl17.Controls.Add(this.labelControl143);
+            this.panelControl17.Controls.Add(this.chk_IVACorteSalida);
+            this.panelControl17.Controls.Add(this.chk_RetencionCorteSalida);
+            this.panelControl17.Controls.Add(this.txt_TotalFacturaCorteSalida);
+            this.panelControl17.Controls.Add(this.labelControl135);
+            this.panelControl17.Controls.Add(this.txt_RetencionFacturaCorteSalida);
+            this.panelControl17.Controls.Add(this.labelControl136);
+            this.panelControl17.Controls.Add(this.labelControl118);
+            this.panelControl17.Controls.Add(this.txt_FolioFacturaCorteSalida);
+            this.panelControl17.Controls.Add(this.labelControl119);
+            this.panelControl17.Controls.Add(this.txtRazonSCorteSalida);
+            this.panelControl17.Controls.Add(this.opt_TipoFacturaCorteSalida);
+            this.panelControl17.Controls.Add(this.chk_PagadaCorteSalida);
+            this.panelControl17.Controls.Add(this.dt_FechaPagoCorteSalida);
+            this.panelControl17.Controls.Add(this.dt_FechaFacturaCorteSalida);
+            this.panelControl17.Controls.Add(this.labelControl120);
+            this.panelControl17.Controls.Add(this.labelControl121);
+            this.panelControl17.Controls.Add(this.cmb_MonedaCorteSalida);
+            this.panelControl17.Controls.Add(this.labelControl122);
+            this.panelControl17.Controls.Add(this.labelControl123);
+            this.panelControl17.Controls.Add(this.txt_ImporteFacturaCorteSalida);
+            this.panelControl17.Controls.Add(this.btn_ViewXMLCorteSalida);
+            this.panelControl17.Controls.Add(this.btn_UpXMLCorteSalida);
+            this.panelControl17.Controls.Add(this.txt_RutaXMLCorteSalida);
+            this.panelControl17.Controls.Add(this.labelControl124);
+            this.panelControl17.Controls.Add(this.btn_ViewPDFCorteSalida);
+            this.panelControl17.Controls.Add(this.btn_UpPDFCorteSalida);
+            this.panelControl17.Controls.Add(this.txt_RutaPDFCorteSalida);
+            this.panelControl17.Controls.Add(this.labelControl125);
+            this.panelControl17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl17.Location = new System.Drawing.Point(7, 28);
+            this.panelControl17.Name = "panelControl17";
+            this.panelControl17.Size = new System.Drawing.Size(571, 262);
+            this.panelControl17.TabIndex = 56;
+            // 
+            // txt_IVAFacturaCorteSalida
+            // 
+            this.txt_IVAFacturaCorteSalida.EditValue = "0";
+            this.txt_IVAFacturaCorteSalida.Location = new System.Drawing.Point(104, 167);
+            this.txt_IVAFacturaCorteSalida.MenuManager = this.barManager1;
+            this.txt_IVAFacturaCorteSalida.Name = "txt_IVAFacturaCorteSalida";
+            this.txt_IVAFacturaCorteSalida.Properties.BeepOnError = true;
+            this.txt_IVAFacturaCorteSalida.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_IVAFacturaCorteSalida.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_IVAFacturaCorteSalida.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_IVAFacturaCorteSalida.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_IVAFacturaCorteSalida.Properties.NullText = "0";
+            this.txt_IVAFacturaCorteSalida.Properties.ReadOnly = true;
+            this.txt_IVAFacturaCorteSalida.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_IVAFacturaCorteSalida.Size = new System.Drawing.Size(94, 20);
+            this.txt_IVAFacturaCorteSalida.TabIndex = 145;
+            // 
+            // labelControl143
+            // 
+            this.labelControl143.Location = new System.Drawing.Point(16, 171);
+            this.labelControl143.Name = "labelControl143";
+            this.labelControl143.Size = new System.Drawing.Size(21, 13);
+            this.labelControl143.TabIndex = 146;
+            this.labelControl143.Text = "IVA:";
+            // 
+            // chk_IVACorteSalida
+            // 
+            this.chk_IVACorteSalida.EditValue = true;
+            this.chk_IVACorteSalida.Location = new System.Drawing.Point(252, 167);
+            this.chk_IVACorteSalida.MenuManager = this.barManager1;
+            this.chk_IVACorteSalida.Name = "chk_IVACorteSalida";
+            this.chk_IVACorteSalida.Properties.Caption = "IVA";
+            this.chk_IVACorteSalida.Size = new System.Drawing.Size(76, 20);
+            this.chk_IVACorteSalida.TabIndex = 144;
+            this.chk_IVACorteSalida.CheckedChanged += new System.EventHandler(this.chk_IVACorteSalida_CheckedChanged);
+            // 
+            // chk_RetencionCorteSalida
+            // 
+            this.chk_RetencionCorteSalida.EditValue = true;
+            this.chk_RetencionCorteSalida.Location = new System.Drawing.Point(252, 141);
+            this.chk_RetencionCorteSalida.MenuManager = this.barManager1;
+            this.chk_RetencionCorteSalida.Name = "chk_RetencionCorteSalida";
+            this.chk_RetencionCorteSalida.Properties.Caption = "Retencion";
+            this.chk_RetencionCorteSalida.Size = new System.Drawing.Size(87, 20);
+            this.chk_RetencionCorteSalida.TabIndex = 137;
+            this.chk_RetencionCorteSalida.CheckedChanged += new System.EventHandler(this.chk_RetencionCorteSalida_CheckedChanged);
+            // 
+            // txt_TotalFacturaCorteSalida
+            // 
+            this.txt_TotalFacturaCorteSalida.EditValue = "0";
+            this.txt_TotalFacturaCorteSalida.Location = new System.Drawing.Point(104, 193);
+            this.txt_TotalFacturaCorteSalida.MenuManager = this.barManager1;
+            this.txt_TotalFacturaCorteSalida.Name = "txt_TotalFacturaCorteSalida";
+            this.txt_TotalFacturaCorteSalida.Properties.BeepOnError = true;
+            this.txt_TotalFacturaCorteSalida.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_TotalFacturaCorteSalida.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_TotalFacturaCorteSalida.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_TotalFacturaCorteSalida.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_TotalFacturaCorteSalida.Properties.NullText = "0";
+            this.txt_TotalFacturaCorteSalida.Properties.ReadOnly = true;
+            this.txt_TotalFacturaCorteSalida.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_TotalFacturaCorteSalida.Size = new System.Drawing.Size(94, 20);
+            this.txt_TotalFacturaCorteSalida.TabIndex = 132;
+            // 
+            // labelControl135
+            // 
+            this.labelControl135.Location = new System.Drawing.Point(16, 197);
+            this.labelControl135.Name = "labelControl135";
+            this.labelControl135.Size = new System.Drawing.Size(28, 13);
+            this.labelControl135.TabIndex = 133;
+            this.labelControl135.Text = "Total:";
+            // 
+            // txt_RetencionFacturaCorteSalida
+            // 
+            this.txt_RetencionFacturaCorteSalida.EditValue = "0";
+            this.txt_RetencionFacturaCorteSalida.Location = new System.Drawing.Point(104, 141);
+            this.txt_RetencionFacturaCorteSalida.MenuManager = this.barManager1;
+            this.txt_RetencionFacturaCorteSalida.Name = "txt_RetencionFacturaCorteSalida";
+            this.txt_RetencionFacturaCorteSalida.Properties.BeepOnError = true;
+            this.txt_RetencionFacturaCorteSalida.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_RetencionFacturaCorteSalida.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_RetencionFacturaCorteSalida.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_RetencionFacturaCorteSalida.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_RetencionFacturaCorteSalida.Properties.NullText = "0";
+            this.txt_RetencionFacturaCorteSalida.Properties.ReadOnly = true;
+            this.txt_RetencionFacturaCorteSalida.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_RetencionFacturaCorteSalida.Size = new System.Drawing.Size(94, 20);
+            this.txt_RetencionFacturaCorteSalida.TabIndex = 130;
+            // 
+            // labelControl136
+            // 
+            this.labelControl136.Location = new System.Drawing.Point(16, 145);
+            this.labelControl136.Name = "labelControl136";
+            this.labelControl136.Size = new System.Drawing.Size(52, 13);
+            this.labelControl136.TabIndex = 131;
+            this.labelControl136.Text = "Retension:";
+            // 
+            // labelControl118
+            // 
+            this.labelControl118.Location = new System.Drawing.Point(16, 94);
+            this.labelControl118.Name = "labelControl118";
+            this.labelControl118.Size = new System.Drawing.Size(64, 13);
+            this.labelControl118.TabIndex = 103;
+            this.labelControl118.Text = "Folio factura:";
+            // 
+            // txt_FolioFacturaCorteSalida
+            // 
+            this.txt_FolioFacturaCorteSalida.Location = new System.Drawing.Point(104, 90);
+            this.txt_FolioFacturaCorteSalida.MenuManager = this.barManager1;
+            this.txt_FolioFacturaCorteSalida.Name = "txt_FolioFacturaCorteSalida";
+            this.txt_FolioFacturaCorteSalida.Size = new System.Drawing.Size(94, 20);
+            this.txt_FolioFacturaCorteSalida.TabIndex = 102;
+            // 
+            // labelControl119
+            // 
+            this.labelControl119.Location = new System.Drawing.Point(18, 15);
+            this.labelControl119.Name = "labelControl119";
+            this.labelControl119.Size = new System.Drawing.Size(43, 13);
+            this.labelControl119.TabIndex = 101;
+            this.labelControl119.Text = "Razon S.";
+            // 
+            // txtRazonSCorteSalida
+            // 
+            this.txtRazonSCorteSalida.Location = new System.Drawing.Point(66, 12);
+            this.txtRazonSCorteSalida.Name = "txtRazonSCorteSalida";
+            this.txtRazonSCorteSalida.Size = new System.Drawing.Size(262, 20);
+            this.txtRazonSCorteSalida.TabIndex = 100;
+            // 
+            // opt_TipoFacturaCorteSalida
+            // 
+            this.opt_TipoFacturaCorteSalida.Location = new System.Drawing.Point(402, 38);
+            this.opt_TipoFacturaCorteSalida.MenuManager = this.barManager1;
+            this.opt_TipoFacturaCorteSalida.Name = "opt_TipoFacturaCorteSalida";
+            this.opt_TipoFacturaCorteSalida.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.opt_TipoFacturaCorteSalida.Properties.Appearance.Options.UseBackColor = true;
+            this.opt_TipoFacturaCorteSalida.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.opt_TipoFacturaCorteSalida.Properties.Columns = 1;
+            this.opt_TipoFacturaCorteSalida.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Diferido"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Total")});
+            this.opt_TipoFacturaCorteSalida.Size = new System.Drawing.Size(100, 50);
+            this.opt_TipoFacturaCorteSalida.TabIndex = 99;
+            // 
+            // chk_PagadaCorteSalida
+            // 
+            this.chk_PagadaCorteSalida.EditValue = true;
+            this.chk_PagadaCorteSalida.Location = new System.Drawing.Point(252, 115);
+            this.chk_PagadaCorteSalida.MenuManager = this.barManager1;
+            this.chk_PagadaCorteSalida.Name = "chk_PagadaCorteSalida";
+            this.chk_PagadaCorteSalida.Properties.Caption = "Pagada";
+            this.chk_PagadaCorteSalida.Size = new System.Drawing.Size(59, 20);
+            this.chk_PagadaCorteSalida.TabIndex = 98;
+            // 
+            // dt_FechaPagoCorteSalida
+            // 
+            this.dt_FechaPagoCorteSalida.EditValue = null;
+            this.dt_FechaPagoCorteSalida.Location = new System.Drawing.Point(265, 219);
+            this.dt_FechaPagoCorteSalida.MenuManager = this.barManager1;
+            this.dt_FechaPagoCorteSalida.Name = "dt_FechaPagoCorteSalida";
+            this.dt_FechaPagoCorteSalida.Properties.BeepOnError = true;
+            this.dt_FechaPagoCorteSalida.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaPagoCorteSalida.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaPagoCorteSalida.Properties.MaskSettings.Set("mask", "d");
+            this.dt_FechaPagoCorteSalida.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaPagoCorteSalida.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaPagoCorteSalida.TabIndex = 97;
+            // 
+            // dt_FechaFacturaCorteSalida
+            // 
+            this.dt_FechaFacturaCorteSalida.EditValue = null;
+            this.dt_FechaFacturaCorteSalida.Location = new System.Drawing.Point(104, 219);
+            this.dt_FechaFacturaCorteSalida.MenuManager = this.barManager1;
+            this.dt_FechaFacturaCorteSalida.Name = "dt_FechaFacturaCorteSalida";
+            this.dt_FechaFacturaCorteSalida.Properties.BeepOnError = true;
+            this.dt_FechaFacturaCorteSalida.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaFacturaCorteSalida.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaFacturaCorteSalida.Properties.MaskSettings.Set("mask", "d");
+            this.dt_FechaFacturaCorteSalida.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaFacturaCorteSalida.Size = new System.Drawing.Size(94, 20);
+            this.dt_FechaFacturaCorteSalida.TabIndex = 96;
+            // 
+            // labelControl120
+            // 
+            this.labelControl120.Location = new System.Drawing.Point(218, 223);
+            this.labelControl120.Name = "labelControl120";
+            this.labelControl120.Size = new System.Drawing.Size(41, 13);
+            this.labelControl120.TabIndex = 94;
+            this.labelControl120.Text = "F. Pago:";
+            // 
+            // labelControl121
+            // 
+            this.labelControl121.Location = new System.Drawing.Point(16, 223);
+            this.labelControl121.Name = "labelControl121";
+            this.labelControl121.Size = new System.Drawing.Size(54, 13);
+            this.labelControl121.TabIndex = 92;
+            this.labelControl121.Text = "F. Factura:";
+            // 
+            // cmb_MonedaCorteSalida
+            // 
+            this.cmb_MonedaCorteSalida.Location = new System.Drawing.Point(265, 90);
+            this.cmb_MonedaCorteSalida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_MonedaCorteSalida.MenuManager = this.barManager1;
+            this.cmb_MonedaCorteSalida.Name = "cmb_MonedaCorteSalida";
+            this.cmb_MonedaCorteSalida.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_MonedaCorteSalida.Properties.Items.AddRange(new object[] {
+            "Pesos",
+            "Dólares"});
+            this.cmb_MonedaCorteSalida.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmb_MonedaCorteSalida.Size = new System.Drawing.Size(99, 20);
+            this.cmb_MonedaCorteSalida.TabIndex = 71;
+            // 
+            // labelControl122
+            // 
+            this.labelControl122.Location = new System.Drawing.Point(213, 94);
+            this.labelControl122.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl122.Name = "labelControl122";
+            this.labelControl122.Size = new System.Drawing.Size(42, 13);
+            this.labelControl122.TabIndex = 70;
+            this.labelControl122.Text = "Moneda:";
+            // 
+            // labelControl123
+            // 
+            this.labelControl123.Location = new System.Drawing.Point(16, 119);
+            this.labelControl123.Name = "labelControl123";
+            this.labelControl123.Size = new System.Drawing.Size(80, 13);
+            this.labelControl123.TabIndex = 68;
+            this.labelControl123.Text = "Importe factura:";
+            // 
+            // txt_ImporteFacturaCorteSalida
+            // 
+            this.txt_ImporteFacturaCorteSalida.EditValue = "0";
+            this.txt_ImporteFacturaCorteSalida.Location = new System.Drawing.Point(104, 115);
+            this.txt_ImporteFacturaCorteSalida.MenuManager = this.barManager1;
+            this.txt_ImporteFacturaCorteSalida.Name = "txt_ImporteFacturaCorteSalida";
+            this.txt_ImporteFacturaCorteSalida.Properties.BeepOnError = true;
+            this.txt_ImporteFacturaCorteSalida.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_ImporteFacturaCorteSalida.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_ImporteFacturaCorteSalida.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_ImporteFacturaCorteSalida.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_ImporteFacturaCorteSalida.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_ImporteFacturaCorteSalida.Size = new System.Drawing.Size(94, 20);
+            this.txt_ImporteFacturaCorteSalida.TabIndex = 67;
+            this.txt_ImporteFacturaCorteSalida.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ImporteFacturaCorteSalida_KeyDown);
+            // 
+            // btn_ViewXMLCorteSalida
+            // 
+            this.btn_ViewXMLCorteSalida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewXMLCorteSalida.ImageOptions.Image")));
+            this.btn_ViewXMLCorteSalida.Location = new System.Drawing.Point(369, 63);
+            this.btn_ViewXMLCorteSalida.Name = "btn_ViewXMLCorteSalida";
+            this.btn_ViewXMLCorteSalida.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewXMLCorteSalida.TabIndex = 17;
+            this.btn_ViewXMLCorteSalida.Click += new System.EventHandler(this.btn_ViewXMLCorteSalida_Click);
+            // 
+            // btn_UpXMLCorteSalida
+            // 
+            this.btn_UpXMLCorteSalida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpXMLCorteSalida.ImageOptions.Image")));
+            this.btn_UpXMLCorteSalida.Location = new System.Drawing.Point(339, 63);
+            this.btn_UpXMLCorteSalida.Name = "btn_UpXMLCorteSalida";
+            this.btn_UpXMLCorteSalida.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpXMLCorteSalida.TabIndex = 16;
+            this.btn_UpXMLCorteSalida.Click += new System.EventHandler(this.btn_UpXMLCorteSalida_Click);
+            // 
+            // txt_RutaXMLCorteSalida
+            // 
+            this.txt_RutaXMLCorteSalida.Enabled = false;
+            this.txt_RutaXMLCorteSalida.Location = new System.Drawing.Point(66, 64);
+            this.txt_RutaXMLCorteSalida.Name = "txt_RutaXMLCorteSalida";
+            this.txt_RutaXMLCorteSalida.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaXMLCorteSalida.TabIndex = 15;
+            // 
+            // labelControl124
+            // 
+            this.labelControl124.Location = new System.Drawing.Point(19, 70);
+            this.labelControl124.Name = "labelControl124";
+            this.labelControl124.Size = new System.Drawing.Size(19, 13);
+            this.labelControl124.TabIndex = 14;
+            this.labelControl124.Text = "XML";
+            // 
+            // btn_ViewPDFCorteSalida
+            // 
+            this.btn_ViewPDFCorteSalida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFCorteSalida.ImageOptions.Image")));
+            this.btn_ViewPDFCorteSalida.Location = new System.Drawing.Point(369, 37);
+            this.btn_ViewPDFCorteSalida.Name = "btn_ViewPDFCorteSalida";
+            this.btn_ViewPDFCorteSalida.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFCorteSalida.TabIndex = 13;
+            this.btn_ViewPDFCorteSalida.Click += new System.EventHandler(this.btn_ViewPDFCorteSalida_Click);
+            // 
+            // btn_UpPDFCorteSalida
+            // 
+            this.btn_UpPDFCorteSalida.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFCorteSalida.ImageOptions.Image")));
+            this.btn_UpPDFCorteSalida.Location = new System.Drawing.Point(339, 37);
+            this.btn_UpPDFCorteSalida.Name = "btn_UpPDFCorteSalida";
+            this.btn_UpPDFCorteSalida.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFCorteSalida.TabIndex = 12;
+            this.btn_UpPDFCorteSalida.Click += new System.EventHandler(this.btn_UpPDFCorteSalida_Click);
+            // 
+            // txt_RutaPDFCorteSalida
+            // 
+            this.txt_RutaPDFCorteSalida.Enabled = false;
+            this.txt_RutaPDFCorteSalida.Location = new System.Drawing.Point(66, 38);
+            this.txt_RutaPDFCorteSalida.Name = "txt_RutaPDFCorteSalida";
+            this.txt_RutaPDFCorteSalida.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaPDFCorteSalida.TabIndex = 11;
+            // 
+            // labelControl125
+            // 
+            this.labelControl125.Location = new System.Drawing.Point(19, 43);
+            this.labelControl125.Name = "labelControl125";
+            this.labelControl125.Size = new System.Drawing.Size(19, 13);
+            this.labelControl125.TabIndex = 10;
+            this.labelControl125.Text = "PDF";
+            // 
+            // groupControl17
+            // 
+            this.groupControl17.Controls.Add(this.panelControl16);
+            this.groupControl17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl17.Location = new System.Drawing.Point(0, 567);
+            this.groupControl17.Name = "groupControl17";
+            this.groupControl17.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl17.Size = new System.Drawing.Size(585, 288);
+            this.groupControl17.TabIndex = 4;
+            this.groupControl17.Text = "Factura de Apoyo";
+            // 
+            // panelControl16
+            // 
+            this.panelControl16.Controls.Add(this.txt_IVAFacturaCorteApoyo);
+            this.panelControl16.Controls.Add(this.labelControl142);
+            this.panelControl16.Controls.Add(this.chk_IVACorteApoyo);
+            this.panelControl16.Controls.Add(this.chk_RetencionCorteApoyo);
+            this.panelControl16.Controls.Add(this.txt_TotalFacturaCorteApoyo);
+            this.panelControl16.Controls.Add(this.labelControl133);
+            this.panelControl16.Controls.Add(this.txt_RetencionFacturaCorteApoyo);
+            this.panelControl16.Controls.Add(this.labelControl134);
+            this.panelControl16.Controls.Add(this.labelControl110);
+            this.panelControl16.Controls.Add(this.txt_FolioFacturaCorteApoyo);
+            this.panelControl16.Controls.Add(this.labelControl111);
+            this.panelControl16.Controls.Add(this.txtRazonSCorteApoyo);
+            this.panelControl16.Controls.Add(this.opt_TipoFacturaCorteApoyo);
+            this.panelControl16.Controls.Add(this.chk_PagadaCorteApoyo);
+            this.panelControl16.Controls.Add(this.dt_FechaPagoCorteApoyo);
+            this.panelControl16.Controls.Add(this.dt_FechaFacturaCorteApoyo);
+            this.panelControl16.Controls.Add(this.labelControl112);
+            this.panelControl16.Controls.Add(this.labelControl113);
+            this.panelControl16.Controls.Add(this.cmb_MonedaCorteApoyo);
+            this.panelControl16.Controls.Add(this.labelControl114);
+            this.panelControl16.Controls.Add(this.labelControl115);
+            this.panelControl16.Controls.Add(this.txt_ImporteFacturaCorteApoyo);
+            this.panelControl16.Controls.Add(this.btn_ViewXMLCorteApoyo);
+            this.panelControl16.Controls.Add(this.btn_UpXMLCorteApoyo);
+            this.panelControl16.Controls.Add(this.txt_RutaXMLCorteApoyo);
+            this.panelControl16.Controls.Add(this.labelControl116);
+            this.panelControl16.Controls.Add(this.btn_ViewPDFCorteApoyo);
+            this.panelControl16.Controls.Add(this.btn_UpPDFCorteApoyo);
+            this.panelControl16.Controls.Add(this.txt_RutaPDFCorteApoyo);
+            this.panelControl16.Controls.Add(this.labelControl117);
+            this.panelControl16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl16.Location = new System.Drawing.Point(7, 28);
+            this.panelControl16.Name = "panelControl16";
+            this.panelControl16.Size = new System.Drawing.Size(571, 253);
+            this.panelControl16.TabIndex = 56;
+            // 
+            // txt_IVAFacturaCorteApoyo
+            // 
+            this.txt_IVAFacturaCorteApoyo.EditValue = "0";
+            this.txt_IVAFacturaCorteApoyo.Location = new System.Drawing.Point(104, 167);
+            this.txt_IVAFacturaCorteApoyo.MenuManager = this.barManager1;
+            this.txt_IVAFacturaCorteApoyo.Name = "txt_IVAFacturaCorteApoyo";
+            this.txt_IVAFacturaCorteApoyo.Properties.BeepOnError = true;
+            this.txt_IVAFacturaCorteApoyo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_IVAFacturaCorteApoyo.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_IVAFacturaCorteApoyo.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_IVAFacturaCorteApoyo.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_IVAFacturaCorteApoyo.Properties.NullText = "0";
+            this.txt_IVAFacturaCorteApoyo.Properties.ReadOnly = true;
+            this.txt_IVAFacturaCorteApoyo.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_IVAFacturaCorteApoyo.Size = new System.Drawing.Size(94, 20);
+            this.txt_IVAFacturaCorteApoyo.TabIndex = 142;
+            // 
+            // labelControl142
+            // 
+            this.labelControl142.Location = new System.Drawing.Point(16, 171);
+            this.labelControl142.Name = "labelControl142";
+            this.labelControl142.Size = new System.Drawing.Size(21, 13);
+            this.labelControl142.TabIndex = 143;
+            this.labelControl142.Text = "IVA:";
+            // 
+            // chk_IVACorteApoyo
+            // 
+            this.chk_IVACorteApoyo.EditValue = true;
+            this.chk_IVACorteApoyo.Location = new System.Drawing.Point(252, 167);
+            this.chk_IVACorteApoyo.MenuManager = this.barManager1;
+            this.chk_IVACorteApoyo.Name = "chk_IVACorteApoyo";
+            this.chk_IVACorteApoyo.Properties.Caption = "IVA";
+            this.chk_IVACorteApoyo.Size = new System.Drawing.Size(76, 20);
+            this.chk_IVACorteApoyo.TabIndex = 141;
+            this.chk_IVACorteApoyo.CheckedChanged += new System.EventHandler(this.chk_IVACorteApoyo_CheckedChanged);
+            // 
+            // chk_RetencionCorteApoyo
+            // 
+            this.chk_RetencionCorteApoyo.EditValue = true;
+            this.chk_RetencionCorteApoyo.Location = new System.Drawing.Point(252, 141);
+            this.chk_RetencionCorteApoyo.MenuManager = this.barManager1;
+            this.chk_RetencionCorteApoyo.Name = "chk_RetencionCorteApoyo";
+            this.chk_RetencionCorteApoyo.Properties.Caption = "Retencion";
+            this.chk_RetencionCorteApoyo.Size = new System.Drawing.Size(87, 20);
+            this.chk_RetencionCorteApoyo.TabIndex = 136;
+            this.chk_RetencionCorteApoyo.CheckedChanged += new System.EventHandler(this.chk_RetencionCorteApoyo_CheckedChanged);
+            // 
+            // txt_TotalFacturaCorteApoyo
+            // 
+            this.txt_TotalFacturaCorteApoyo.EditValue = "0";
+            this.txt_TotalFacturaCorteApoyo.Location = new System.Drawing.Point(104, 193);
+            this.txt_TotalFacturaCorteApoyo.MenuManager = this.barManager1;
+            this.txt_TotalFacturaCorteApoyo.Name = "txt_TotalFacturaCorteApoyo";
+            this.txt_TotalFacturaCorteApoyo.Properties.BeepOnError = true;
+            this.txt_TotalFacturaCorteApoyo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_TotalFacturaCorteApoyo.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_TotalFacturaCorteApoyo.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_TotalFacturaCorteApoyo.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_TotalFacturaCorteApoyo.Properties.NullText = "0";
+            this.txt_TotalFacturaCorteApoyo.Properties.ReadOnly = true;
+            this.txt_TotalFacturaCorteApoyo.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_TotalFacturaCorteApoyo.Size = new System.Drawing.Size(94, 20);
+            this.txt_TotalFacturaCorteApoyo.TabIndex = 132;
+            // 
+            // labelControl133
+            // 
+            this.labelControl133.Location = new System.Drawing.Point(16, 197);
+            this.labelControl133.Name = "labelControl133";
+            this.labelControl133.Size = new System.Drawing.Size(28, 13);
+            this.labelControl133.TabIndex = 133;
+            this.labelControl133.Text = "Total:";
+            // 
+            // txt_RetencionFacturaCorteApoyo
+            // 
+            this.txt_RetencionFacturaCorteApoyo.EditValue = "0";
+            this.txt_RetencionFacturaCorteApoyo.Location = new System.Drawing.Point(104, 141);
+            this.txt_RetencionFacturaCorteApoyo.MenuManager = this.barManager1;
+            this.txt_RetencionFacturaCorteApoyo.Name = "txt_RetencionFacturaCorteApoyo";
+            this.txt_RetencionFacturaCorteApoyo.Properties.BeepOnError = true;
+            this.txt_RetencionFacturaCorteApoyo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_RetencionFacturaCorteApoyo.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_RetencionFacturaCorteApoyo.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_RetencionFacturaCorteApoyo.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_RetencionFacturaCorteApoyo.Properties.NullText = "0";
+            this.txt_RetencionFacturaCorteApoyo.Properties.ReadOnly = true;
+            this.txt_RetencionFacturaCorteApoyo.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_RetencionFacturaCorteApoyo.Size = new System.Drawing.Size(94, 20);
+            this.txt_RetencionFacturaCorteApoyo.TabIndex = 130;
+            // 
+            // labelControl134
+            // 
+            this.labelControl134.Location = new System.Drawing.Point(16, 145);
+            this.labelControl134.Name = "labelControl134";
+            this.labelControl134.Size = new System.Drawing.Size(52, 13);
+            this.labelControl134.TabIndex = 131;
+            this.labelControl134.Text = "Retension:";
+            // 
+            // labelControl110
+            // 
+            this.labelControl110.Location = new System.Drawing.Point(16, 94);
+            this.labelControl110.Name = "labelControl110";
+            this.labelControl110.Size = new System.Drawing.Size(64, 13);
+            this.labelControl110.TabIndex = 103;
+            this.labelControl110.Text = "Folio factura:";
+            // 
+            // txt_FolioFacturaCorteApoyo
+            // 
+            this.txt_FolioFacturaCorteApoyo.Location = new System.Drawing.Point(104, 90);
+            this.txt_FolioFacturaCorteApoyo.MenuManager = this.barManager1;
+            this.txt_FolioFacturaCorteApoyo.Name = "txt_FolioFacturaCorteApoyo";
+            this.txt_FolioFacturaCorteApoyo.Size = new System.Drawing.Size(94, 20);
+            this.txt_FolioFacturaCorteApoyo.TabIndex = 102;
+            // 
+            // labelControl111
+            // 
+            this.labelControl111.Location = new System.Drawing.Point(18, 15);
+            this.labelControl111.Name = "labelControl111";
+            this.labelControl111.Size = new System.Drawing.Size(43, 13);
+            this.labelControl111.TabIndex = 101;
+            this.labelControl111.Text = "Razon S.";
+            // 
+            // txtRazonSCorteApoyo
+            // 
+            this.txtRazonSCorteApoyo.Location = new System.Drawing.Point(66, 12);
+            this.txtRazonSCorteApoyo.Name = "txtRazonSCorteApoyo";
+            this.txtRazonSCorteApoyo.Size = new System.Drawing.Size(262, 20);
+            this.txtRazonSCorteApoyo.TabIndex = 100;
+            // 
+            // opt_TipoFacturaCorteApoyo
+            // 
+            this.opt_TipoFacturaCorteApoyo.Location = new System.Drawing.Point(402, 38);
+            this.opt_TipoFacturaCorteApoyo.MenuManager = this.barManager1;
+            this.opt_TipoFacturaCorteApoyo.Name = "opt_TipoFacturaCorteApoyo";
+            this.opt_TipoFacturaCorteApoyo.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.opt_TipoFacturaCorteApoyo.Properties.Appearance.Options.UseBackColor = true;
+            this.opt_TipoFacturaCorteApoyo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.opt_TipoFacturaCorteApoyo.Properties.Columns = 1;
+            this.opt_TipoFacturaCorteApoyo.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Diferido"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Total")});
+            this.opt_TipoFacturaCorteApoyo.Size = new System.Drawing.Size(100, 50);
+            this.opt_TipoFacturaCorteApoyo.TabIndex = 99;
+            // 
+            // chk_PagadaCorteApoyo
+            // 
+            this.chk_PagadaCorteApoyo.EditValue = true;
+            this.chk_PagadaCorteApoyo.Location = new System.Drawing.Point(252, 116);
+            this.chk_PagadaCorteApoyo.MenuManager = this.barManager1;
+            this.chk_PagadaCorteApoyo.Name = "chk_PagadaCorteApoyo";
+            this.chk_PagadaCorteApoyo.Properties.Caption = "Pagada";
+            this.chk_PagadaCorteApoyo.Size = new System.Drawing.Size(59, 20);
+            this.chk_PagadaCorteApoyo.TabIndex = 98;
+            // 
+            // dt_FechaPagoCorteApoyo
+            // 
+            this.dt_FechaPagoCorteApoyo.EditValue = null;
+            this.dt_FechaPagoCorteApoyo.Location = new System.Drawing.Point(265, 219);
+            this.dt_FechaPagoCorteApoyo.MenuManager = this.barManager1;
+            this.dt_FechaPagoCorteApoyo.Name = "dt_FechaPagoCorteApoyo";
+            this.dt_FechaPagoCorteApoyo.Properties.BeepOnError = true;
+            this.dt_FechaPagoCorteApoyo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaPagoCorteApoyo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaPagoCorteApoyo.Properties.MaskSettings.Set("mask", "d");
+            this.dt_FechaPagoCorteApoyo.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaPagoCorteApoyo.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaPagoCorteApoyo.TabIndex = 97;
+            // 
+            // dt_FechaFacturaCorteApoyo
+            // 
+            this.dt_FechaFacturaCorteApoyo.EditValue = null;
+            this.dt_FechaFacturaCorteApoyo.Location = new System.Drawing.Point(104, 219);
+            this.dt_FechaFacturaCorteApoyo.MenuManager = this.barManager1;
+            this.dt_FechaFacturaCorteApoyo.Name = "dt_FechaFacturaCorteApoyo";
+            this.dt_FechaFacturaCorteApoyo.Properties.BeepOnError = true;
+            this.dt_FechaFacturaCorteApoyo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaFacturaCorteApoyo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaFacturaCorteApoyo.Properties.MaskSettings.Set("mask", "d");
+            this.dt_FechaFacturaCorteApoyo.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaFacturaCorteApoyo.Size = new System.Drawing.Size(94, 20);
+            this.dt_FechaFacturaCorteApoyo.TabIndex = 96;
+            // 
+            // labelControl112
+            // 
+            this.labelControl112.Location = new System.Drawing.Point(218, 223);
+            this.labelControl112.Name = "labelControl112";
+            this.labelControl112.Size = new System.Drawing.Size(41, 13);
+            this.labelControl112.TabIndex = 94;
+            this.labelControl112.Text = "F. Pago:";
+            // 
+            // labelControl113
+            // 
+            this.labelControl113.Location = new System.Drawing.Point(16, 223);
+            this.labelControl113.Name = "labelControl113";
+            this.labelControl113.Size = new System.Drawing.Size(54, 13);
+            this.labelControl113.TabIndex = 92;
+            this.labelControl113.Text = "F. Factura:";
+            // 
+            // cmb_MonedaCorteApoyo
+            // 
+            this.cmb_MonedaCorteApoyo.Location = new System.Drawing.Point(265, 90);
+            this.cmb_MonedaCorteApoyo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_MonedaCorteApoyo.MenuManager = this.barManager1;
+            this.cmb_MonedaCorteApoyo.Name = "cmb_MonedaCorteApoyo";
+            this.cmb_MonedaCorteApoyo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_MonedaCorteApoyo.Properties.Items.AddRange(new object[] {
+            "Pesos",
+            "Dólares"});
+            this.cmb_MonedaCorteApoyo.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmb_MonedaCorteApoyo.Size = new System.Drawing.Size(99, 20);
+            this.cmb_MonedaCorteApoyo.TabIndex = 71;
+            // 
+            // labelControl114
+            // 
+            this.labelControl114.Location = new System.Drawing.Point(213, 94);
+            this.labelControl114.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl114.Name = "labelControl114";
+            this.labelControl114.Size = new System.Drawing.Size(42, 13);
+            this.labelControl114.TabIndex = 70;
+            this.labelControl114.Text = "Moneda:";
+            // 
+            // labelControl115
+            // 
+            this.labelControl115.Location = new System.Drawing.Point(16, 119);
+            this.labelControl115.Name = "labelControl115";
+            this.labelControl115.Size = new System.Drawing.Size(80, 13);
+            this.labelControl115.TabIndex = 68;
+            this.labelControl115.Text = "Importe factura:";
+            // 
+            // txt_ImporteFacturaCorteApoyo
+            // 
+            this.txt_ImporteFacturaCorteApoyo.EditValue = "0";
+            this.txt_ImporteFacturaCorteApoyo.Location = new System.Drawing.Point(104, 115);
+            this.txt_ImporteFacturaCorteApoyo.MenuManager = this.barManager1;
+            this.txt_ImporteFacturaCorteApoyo.Name = "txt_ImporteFacturaCorteApoyo";
+            this.txt_ImporteFacturaCorteApoyo.Properties.BeepOnError = true;
+            this.txt_ImporteFacturaCorteApoyo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_ImporteFacturaCorteApoyo.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_ImporteFacturaCorteApoyo.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_ImporteFacturaCorteApoyo.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_ImporteFacturaCorteApoyo.Properties.NullText = "0";
+            this.txt_ImporteFacturaCorteApoyo.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_ImporteFacturaCorteApoyo.Size = new System.Drawing.Size(94, 20);
+            this.txt_ImporteFacturaCorteApoyo.TabIndex = 67;
+            this.txt_ImporteFacturaCorteApoyo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ImporteFacturaCorteApoyo_KeyDown);
+            // 
+            // btn_ViewXMLCorteApoyo
+            // 
+            this.btn_ViewXMLCorteApoyo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewXMLCorteApoyo.ImageOptions.Image")));
+            this.btn_ViewXMLCorteApoyo.Location = new System.Drawing.Point(369, 63);
+            this.btn_ViewXMLCorteApoyo.Name = "btn_ViewXMLCorteApoyo";
+            this.btn_ViewXMLCorteApoyo.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewXMLCorteApoyo.TabIndex = 17;
+            this.btn_ViewXMLCorteApoyo.Click += new System.EventHandler(this.btn_ViewXMLCorteApoyo_Click);
+            // 
+            // btn_UpXMLCorteApoyo
+            // 
+            this.btn_UpXMLCorteApoyo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpXMLCorteApoyo.ImageOptions.Image")));
+            this.btn_UpXMLCorteApoyo.Location = new System.Drawing.Point(339, 63);
+            this.btn_UpXMLCorteApoyo.Name = "btn_UpXMLCorteApoyo";
+            this.btn_UpXMLCorteApoyo.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpXMLCorteApoyo.TabIndex = 16;
+            this.btn_UpXMLCorteApoyo.Click += new System.EventHandler(this.btn_UpXMLCorteApoyo_Click);
+            // 
+            // txt_RutaXMLCorteApoyo
+            // 
+            this.txt_RutaXMLCorteApoyo.Enabled = false;
+            this.txt_RutaXMLCorteApoyo.Location = new System.Drawing.Point(66, 64);
+            this.txt_RutaXMLCorteApoyo.Name = "txt_RutaXMLCorteApoyo";
+            this.txt_RutaXMLCorteApoyo.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaXMLCorteApoyo.TabIndex = 15;
+            // 
+            // labelControl116
+            // 
+            this.labelControl116.Location = new System.Drawing.Point(19, 70);
+            this.labelControl116.Name = "labelControl116";
+            this.labelControl116.Size = new System.Drawing.Size(19, 13);
+            this.labelControl116.TabIndex = 14;
+            this.labelControl116.Text = "XML";
+            // 
+            // btn_ViewPDFCorteApoyo
+            // 
+            this.btn_ViewPDFCorteApoyo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFCorteApoyo.ImageOptions.Image")));
+            this.btn_ViewPDFCorteApoyo.Location = new System.Drawing.Point(369, 37);
+            this.btn_ViewPDFCorteApoyo.Name = "btn_ViewPDFCorteApoyo";
+            this.btn_ViewPDFCorteApoyo.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFCorteApoyo.TabIndex = 13;
+            this.btn_ViewPDFCorteApoyo.Click += new System.EventHandler(this.btn_ViewPDFCorteApoyo_Click);
+            // 
+            // btn_UpPDFCorteApoyo
+            // 
+            this.btn_UpPDFCorteApoyo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFCorteApoyo.ImageOptions.Image")));
+            this.btn_UpPDFCorteApoyo.Location = new System.Drawing.Point(339, 37);
+            this.btn_UpPDFCorteApoyo.Name = "btn_UpPDFCorteApoyo";
+            this.btn_UpPDFCorteApoyo.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFCorteApoyo.TabIndex = 12;
+            this.btn_UpPDFCorteApoyo.Click += new System.EventHandler(this.btn_UpPDFCorteApoyo_Click);
+            // 
+            // txt_RutaPDFCorteApoyo
+            // 
+            this.txt_RutaPDFCorteApoyo.Enabled = false;
+            this.txt_RutaPDFCorteApoyo.Location = new System.Drawing.Point(66, 38);
+            this.txt_RutaPDFCorteApoyo.Name = "txt_RutaPDFCorteApoyo";
+            this.txt_RutaPDFCorteApoyo.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaPDFCorteApoyo.TabIndex = 11;
+            // 
+            // labelControl117
+            // 
+            this.labelControl117.Location = new System.Drawing.Point(19, 43);
+            this.labelControl117.Name = "labelControl117";
+            this.labelControl117.Size = new System.Drawing.Size(19, 13);
+            this.labelControl117.TabIndex = 10;
+            this.labelControl117.Text = "PDF";
+            // 
+            // groupControl16
+            // 
+            this.groupControl16.Controls.Add(this.panelControl15);
+            this.groupControl16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl16.Location = new System.Drawing.Point(0, 285);
+            this.groupControl16.Name = "groupControl16";
+            this.groupControl16.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl16.Size = new System.Drawing.Size(585, 282);
+            this.groupControl16.TabIndex = 3;
+            this.groupControl16.Text = "Factura pago x Dia";
+            // 
+            // panelControl15
+            // 
+            this.panelControl15.Controls.Add(this.txt_IVAFacturaCorteDia);
+            this.panelControl15.Controls.Add(this.labelControl141);
+            this.panelControl15.Controls.Add(this.chk_IVACorteDia);
+            this.panelControl15.Controls.Add(this.chk_RetencionCorteDia);
+            this.panelControl15.Controls.Add(this.txt_TotalFacturaCorteDia);
+            this.panelControl15.Controls.Add(this.labelControl131);
+            this.panelControl15.Controls.Add(this.txt_RetencionFacturaCorteDia);
+            this.panelControl15.Controls.Add(this.labelControl132);
+            this.panelControl15.Controls.Add(this.labelControl102);
+            this.panelControl15.Controls.Add(this.txt_FolioFacturaCorteDia);
+            this.panelControl15.Controls.Add(this.labelControl103);
+            this.panelControl15.Controls.Add(this.txtRazonSCorteDia);
+            this.panelControl15.Controls.Add(this.opt_TipoFacturaCorteDia);
+            this.panelControl15.Controls.Add(this.chk_PagadaCorteDia);
+            this.panelControl15.Controls.Add(this.dt_FechaPagoCorteDia);
+            this.panelControl15.Controls.Add(this.dt_FechaFacturaCorteDia);
+            this.panelControl15.Controls.Add(this.labelControl104);
+            this.panelControl15.Controls.Add(this.labelControl105);
+            this.panelControl15.Controls.Add(this.cmb_MonedaCorteDia);
+            this.panelControl15.Controls.Add(this.labelControl106);
+            this.panelControl15.Controls.Add(this.labelControl107);
+            this.panelControl15.Controls.Add(this.txt_ImporteFacturaCorteDia);
+            this.panelControl15.Controls.Add(this.btn_ViewXMLCorteDia);
+            this.panelControl15.Controls.Add(this.btn_UpXMLCorteDia);
+            this.panelControl15.Controls.Add(this.txt_RutaXMLCorteDia);
+            this.panelControl15.Controls.Add(this.labelControl108);
+            this.panelControl15.Controls.Add(this.btn_ViewPDFCorteDia);
+            this.panelControl15.Controls.Add(this.btn_UpPDFCorteDia);
+            this.panelControl15.Controls.Add(this.txt_RutaPDFCorteDia);
+            this.panelControl15.Controls.Add(this.labelControl109);
+            this.panelControl15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl15.Location = new System.Drawing.Point(7, 28);
+            this.panelControl15.Name = "panelControl15";
+            this.panelControl15.Size = new System.Drawing.Size(571, 247);
+            this.panelControl15.TabIndex = 56;
+            // 
+            // txt_IVAFacturaCorteDia
+            // 
+            this.txt_IVAFacturaCorteDia.EditValue = "0";
+            this.txt_IVAFacturaCorteDia.Location = new System.Drawing.Point(104, 167);
+            this.txt_IVAFacturaCorteDia.MenuManager = this.barManager1;
+            this.txt_IVAFacturaCorteDia.Name = "txt_IVAFacturaCorteDia";
+            this.txt_IVAFacturaCorteDia.Properties.BeepOnError = true;
+            this.txt_IVAFacturaCorteDia.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_IVAFacturaCorteDia.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_IVAFacturaCorteDia.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_IVAFacturaCorteDia.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_IVAFacturaCorteDia.Properties.NullText = "0";
+            this.txt_IVAFacturaCorteDia.Properties.ReadOnly = true;
+            this.txt_IVAFacturaCorteDia.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_IVAFacturaCorteDia.Size = new System.Drawing.Size(94, 20);
+            this.txt_IVAFacturaCorteDia.TabIndex = 139;
+            // 
+            // labelControl141
+            // 
+            this.labelControl141.Location = new System.Drawing.Point(16, 171);
+            this.labelControl141.Name = "labelControl141";
+            this.labelControl141.Size = new System.Drawing.Size(21, 13);
+            this.labelControl141.TabIndex = 140;
+            this.labelControl141.Text = "IVA:";
+            // 
+            // chk_IVACorteDia
+            // 
+            this.chk_IVACorteDia.EditValue = true;
+            this.chk_IVACorteDia.Location = new System.Drawing.Point(252, 167);
+            this.chk_IVACorteDia.MenuManager = this.barManager1;
+            this.chk_IVACorteDia.Name = "chk_IVACorteDia";
+            this.chk_IVACorteDia.Properties.Caption = "IVA";
+            this.chk_IVACorteDia.Size = new System.Drawing.Size(76, 20);
+            this.chk_IVACorteDia.TabIndex = 138;
+            this.chk_IVACorteDia.CheckedChanged += new System.EventHandler(this.chk_IVACorteDia_CheckedChanged);
+            // 
+            // chk_RetencionCorteDia
+            // 
+            this.chk_RetencionCorteDia.EditValue = true;
+            this.chk_RetencionCorteDia.Location = new System.Drawing.Point(252, 141);
+            this.chk_RetencionCorteDia.MenuManager = this.barManager1;
+            this.chk_RetencionCorteDia.Name = "chk_RetencionCorteDia";
+            this.chk_RetencionCorteDia.Properties.Caption = "Retencion";
+            this.chk_RetencionCorteDia.Size = new System.Drawing.Size(87, 20);
+            this.chk_RetencionCorteDia.TabIndex = 135;
+            this.chk_RetencionCorteDia.CheckedChanged += new System.EventHandler(this.chk_RetencionCorteDia_CheckedChanged);
+            // 
+            // txt_TotalFacturaCorteDia
+            // 
+            this.txt_TotalFacturaCorteDia.EditValue = "0";
+            this.txt_TotalFacturaCorteDia.Location = new System.Drawing.Point(104, 193);
+            this.txt_TotalFacturaCorteDia.MenuManager = this.barManager1;
+            this.txt_TotalFacturaCorteDia.Name = "txt_TotalFacturaCorteDia";
+            this.txt_TotalFacturaCorteDia.Properties.BeepOnError = true;
+            this.txt_TotalFacturaCorteDia.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_TotalFacturaCorteDia.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_TotalFacturaCorteDia.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_TotalFacturaCorteDia.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_TotalFacturaCorteDia.Properties.NullText = "0";
+            this.txt_TotalFacturaCorteDia.Properties.ReadOnly = true;
+            this.txt_TotalFacturaCorteDia.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_TotalFacturaCorteDia.Size = new System.Drawing.Size(94, 20);
+            this.txt_TotalFacturaCorteDia.TabIndex = 132;
+            // 
+            // labelControl131
+            // 
+            this.labelControl131.Location = new System.Drawing.Point(16, 197);
+            this.labelControl131.Name = "labelControl131";
+            this.labelControl131.Size = new System.Drawing.Size(28, 13);
+            this.labelControl131.TabIndex = 133;
+            this.labelControl131.Text = "Total:";
+            // 
+            // txt_RetencionFacturaCorteDia
+            // 
+            this.txt_RetencionFacturaCorteDia.EditValue = "0";
+            this.txt_RetencionFacturaCorteDia.Location = new System.Drawing.Point(104, 141);
+            this.txt_RetencionFacturaCorteDia.MenuManager = this.barManager1;
+            this.txt_RetencionFacturaCorteDia.Name = "txt_RetencionFacturaCorteDia";
+            this.txt_RetencionFacturaCorteDia.Properties.BeepOnError = true;
+            this.txt_RetencionFacturaCorteDia.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_RetencionFacturaCorteDia.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_RetencionFacturaCorteDia.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_RetencionFacturaCorteDia.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_RetencionFacturaCorteDia.Properties.NullText = "0";
+            this.txt_RetencionFacturaCorteDia.Properties.ReadOnly = true;
+            this.txt_RetencionFacturaCorteDia.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_RetencionFacturaCorteDia.Size = new System.Drawing.Size(94, 20);
+            this.txt_RetencionFacturaCorteDia.TabIndex = 130;
+            // 
+            // labelControl132
+            // 
+            this.labelControl132.Location = new System.Drawing.Point(16, 145);
+            this.labelControl132.Name = "labelControl132";
+            this.labelControl132.Size = new System.Drawing.Size(52, 13);
+            this.labelControl132.TabIndex = 131;
+            this.labelControl132.Text = "Retension:";
+            // 
+            // labelControl102
+            // 
+            this.labelControl102.Location = new System.Drawing.Point(16, 94);
+            this.labelControl102.Name = "labelControl102";
+            this.labelControl102.Size = new System.Drawing.Size(64, 13);
+            this.labelControl102.TabIndex = 103;
+            this.labelControl102.Text = "Folio factura:";
+            // 
+            // txt_FolioFacturaCorteDia
+            // 
+            this.txt_FolioFacturaCorteDia.Location = new System.Drawing.Point(104, 90);
+            this.txt_FolioFacturaCorteDia.MenuManager = this.barManager1;
+            this.txt_FolioFacturaCorteDia.Name = "txt_FolioFacturaCorteDia";
+            this.txt_FolioFacturaCorteDia.Size = new System.Drawing.Size(94, 20);
+            this.txt_FolioFacturaCorteDia.TabIndex = 102;
+            // 
+            // labelControl103
+            // 
+            this.labelControl103.Location = new System.Drawing.Point(18, 15);
+            this.labelControl103.Name = "labelControl103";
+            this.labelControl103.Size = new System.Drawing.Size(43, 13);
+            this.labelControl103.TabIndex = 101;
+            this.labelControl103.Text = "Razon S.";
+            // 
+            // txtRazonSCorteDia
+            // 
+            this.txtRazonSCorteDia.Location = new System.Drawing.Point(66, 12);
+            this.txtRazonSCorteDia.Name = "txtRazonSCorteDia";
+            this.txtRazonSCorteDia.Size = new System.Drawing.Size(262, 20);
+            this.txtRazonSCorteDia.TabIndex = 100;
+            // 
+            // opt_TipoFacturaCorteDia
+            // 
+            this.opt_TipoFacturaCorteDia.Location = new System.Drawing.Point(402, 38);
+            this.opt_TipoFacturaCorteDia.MenuManager = this.barManager1;
+            this.opt_TipoFacturaCorteDia.Name = "opt_TipoFacturaCorteDia";
+            this.opt_TipoFacturaCorteDia.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.opt_TipoFacturaCorteDia.Properties.Appearance.Options.UseBackColor = true;
+            this.opt_TipoFacturaCorteDia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.opt_TipoFacturaCorteDia.Properties.Columns = 1;
+            this.opt_TipoFacturaCorteDia.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Diferido"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Total")});
+            this.opt_TipoFacturaCorteDia.Size = new System.Drawing.Size(100, 50);
+            this.opt_TipoFacturaCorteDia.TabIndex = 99;
+            // 
+            // chk_PagadaCorteDia
+            // 
+            this.chk_PagadaCorteDia.EditValue = true;
+            this.chk_PagadaCorteDia.Location = new System.Drawing.Point(252, 115);
+            this.chk_PagadaCorteDia.MenuManager = this.barManager1;
+            this.chk_PagadaCorteDia.Name = "chk_PagadaCorteDia";
+            this.chk_PagadaCorteDia.Properties.Caption = "Pagada";
+            this.chk_PagadaCorteDia.Size = new System.Drawing.Size(59, 20);
+            this.chk_PagadaCorteDia.TabIndex = 98;
+            // 
+            // dt_FechaPagoCorteDia
+            // 
+            this.dt_FechaPagoCorteDia.EditValue = null;
+            this.dt_FechaPagoCorteDia.Location = new System.Drawing.Point(265, 219);
+            this.dt_FechaPagoCorteDia.MenuManager = this.barManager1;
+            this.dt_FechaPagoCorteDia.Name = "dt_FechaPagoCorteDia";
+            this.dt_FechaPagoCorteDia.Properties.BeepOnError = true;
+            this.dt_FechaPagoCorteDia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaPagoCorteDia.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaPagoCorteDia.Properties.MaskSettings.Set("mask", "d");
+            this.dt_FechaPagoCorteDia.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaPagoCorteDia.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaPagoCorteDia.TabIndex = 97;
+            // 
+            // dt_FechaFacturaCorteDia
+            // 
+            this.dt_FechaFacturaCorteDia.EditValue = null;
+            this.dt_FechaFacturaCorteDia.Location = new System.Drawing.Point(104, 219);
+            this.dt_FechaFacturaCorteDia.MenuManager = this.barManager1;
+            this.dt_FechaFacturaCorteDia.Name = "dt_FechaFacturaCorteDia";
+            this.dt_FechaFacturaCorteDia.Properties.BeepOnError = true;
+            this.dt_FechaFacturaCorteDia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaFacturaCorteDia.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaFacturaCorteDia.Properties.MaskSettings.Set("mask", "d");
+            this.dt_FechaFacturaCorteDia.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaFacturaCorteDia.Size = new System.Drawing.Size(94, 20);
+            this.dt_FechaFacturaCorteDia.TabIndex = 96;
+            // 
+            // labelControl104
+            // 
+            this.labelControl104.Location = new System.Drawing.Point(218, 223);
+            this.labelControl104.Name = "labelControl104";
+            this.labelControl104.Size = new System.Drawing.Size(41, 13);
+            this.labelControl104.TabIndex = 94;
+            this.labelControl104.Text = "F. Pago:";
+            // 
+            // labelControl105
+            // 
+            this.labelControl105.Location = new System.Drawing.Point(16, 223);
+            this.labelControl105.Name = "labelControl105";
+            this.labelControl105.Size = new System.Drawing.Size(54, 13);
+            this.labelControl105.TabIndex = 92;
+            this.labelControl105.Text = "F. Factura:";
+            // 
+            // cmb_MonedaCorteDia
+            // 
+            this.cmb_MonedaCorteDia.Location = new System.Drawing.Point(265, 90);
+            this.cmb_MonedaCorteDia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_MonedaCorteDia.MenuManager = this.barManager1;
+            this.cmb_MonedaCorteDia.Name = "cmb_MonedaCorteDia";
+            this.cmb_MonedaCorteDia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_MonedaCorteDia.Properties.Items.AddRange(new object[] {
+            "Pesos",
+            "Dólares"});
+            this.cmb_MonedaCorteDia.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmb_MonedaCorteDia.Size = new System.Drawing.Size(99, 20);
+            this.cmb_MonedaCorteDia.TabIndex = 71;
+            // 
+            // labelControl106
+            // 
+            this.labelControl106.Location = new System.Drawing.Point(213, 94);
+            this.labelControl106.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl106.Name = "labelControl106";
+            this.labelControl106.Size = new System.Drawing.Size(42, 13);
+            this.labelControl106.TabIndex = 70;
+            this.labelControl106.Text = "Moneda:";
+            // 
+            // labelControl107
+            // 
+            this.labelControl107.Location = new System.Drawing.Point(16, 119);
+            this.labelControl107.Name = "labelControl107";
+            this.labelControl107.Size = new System.Drawing.Size(80, 13);
+            this.labelControl107.TabIndex = 68;
+            this.labelControl107.Text = "Importe factura:";
+            // 
+            // txt_ImporteFacturaCorteDia
+            // 
+            this.txt_ImporteFacturaCorteDia.EditValue = "0";
+            this.txt_ImporteFacturaCorteDia.Location = new System.Drawing.Point(104, 115);
+            this.txt_ImporteFacturaCorteDia.MenuManager = this.barManager1;
+            this.txt_ImporteFacturaCorteDia.Name = "txt_ImporteFacturaCorteDia";
+            this.txt_ImporteFacturaCorteDia.Properties.BeepOnError = true;
+            this.txt_ImporteFacturaCorteDia.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_ImporteFacturaCorteDia.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_ImporteFacturaCorteDia.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_ImporteFacturaCorteDia.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_ImporteFacturaCorteDia.Properties.NullText = "0";
+            this.txt_ImporteFacturaCorteDia.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_ImporteFacturaCorteDia.Size = new System.Drawing.Size(94, 20);
+            this.txt_ImporteFacturaCorteDia.TabIndex = 67;
+            this.txt_ImporteFacturaCorteDia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ImporteFacturaCorteDia_KeyDown);
+            // 
+            // btn_ViewXMLCorteDia
+            // 
+            this.btn_ViewXMLCorteDia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewXMLCorteDia.ImageOptions.Image")));
+            this.btn_ViewXMLCorteDia.Location = new System.Drawing.Point(369, 63);
+            this.btn_ViewXMLCorteDia.Name = "btn_ViewXMLCorteDia";
+            this.btn_ViewXMLCorteDia.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewXMLCorteDia.TabIndex = 17;
+            this.btn_ViewXMLCorteDia.Click += new System.EventHandler(this.btn_ViewXMLCorteDia_Click);
+            // 
+            // btn_UpXMLCorteDia
+            // 
+            this.btn_UpXMLCorteDia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpXMLCorteDia.ImageOptions.Image")));
+            this.btn_UpXMLCorteDia.Location = new System.Drawing.Point(339, 63);
+            this.btn_UpXMLCorteDia.Name = "btn_UpXMLCorteDia";
+            this.btn_UpXMLCorteDia.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpXMLCorteDia.TabIndex = 16;
+            this.btn_UpXMLCorteDia.Click += new System.EventHandler(this.btn_UpXMLCorteDia_Click);
+            // 
+            // txt_RutaXMLCorteDia
+            // 
+            this.txt_RutaXMLCorteDia.Enabled = false;
+            this.txt_RutaXMLCorteDia.Location = new System.Drawing.Point(66, 64);
+            this.txt_RutaXMLCorteDia.Name = "txt_RutaXMLCorteDia";
+            this.txt_RutaXMLCorteDia.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaXMLCorteDia.TabIndex = 15;
+            // 
+            // labelControl108
+            // 
+            this.labelControl108.Location = new System.Drawing.Point(19, 70);
+            this.labelControl108.Name = "labelControl108";
+            this.labelControl108.Size = new System.Drawing.Size(19, 13);
+            this.labelControl108.TabIndex = 14;
+            this.labelControl108.Text = "XML";
+            // 
+            // btn_ViewPDFCorteDia
+            // 
+            this.btn_ViewPDFCorteDia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFCorteDia.ImageOptions.Image")));
+            this.btn_ViewPDFCorteDia.Location = new System.Drawing.Point(369, 37);
+            this.btn_ViewPDFCorteDia.Name = "btn_ViewPDFCorteDia";
+            this.btn_ViewPDFCorteDia.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFCorteDia.TabIndex = 13;
+            this.btn_ViewPDFCorteDia.Click += new System.EventHandler(this.btn_ViewPDFCorteDia_Click);
+            // 
+            // btn_UpPDFCorteDia
+            // 
+            this.btn_UpPDFCorteDia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFCorteDia.ImageOptions.Image")));
+            this.btn_UpPDFCorteDia.Location = new System.Drawing.Point(339, 37);
+            this.btn_UpPDFCorteDia.Name = "btn_UpPDFCorteDia";
+            this.btn_UpPDFCorteDia.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFCorteDia.TabIndex = 12;
+            this.btn_UpPDFCorteDia.Click += new System.EventHandler(this.btn_UpPDFCorteDia_Click);
+            // 
+            // txt_RutaPDFCorteDia
+            // 
+            this.txt_RutaPDFCorteDia.Enabled = false;
+            this.txt_RutaPDFCorteDia.Location = new System.Drawing.Point(66, 38);
+            this.txt_RutaPDFCorteDia.Name = "txt_RutaPDFCorteDia";
+            this.txt_RutaPDFCorteDia.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaPDFCorteDia.TabIndex = 11;
+            // 
+            // labelControl109
+            // 
+            this.labelControl109.Location = new System.Drawing.Point(19, 43);
+            this.labelControl109.Name = "labelControl109";
+            this.labelControl109.Size = new System.Drawing.Size(19, 13);
+            this.labelControl109.TabIndex = 10;
+            this.labelControl109.Text = "PDF";
+            // 
+            // groupControl15
+            // 
+            this.groupControl15.Controls.Add(this.panelControl12);
+            this.groupControl15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl15.Location = new System.Drawing.Point(0, 0);
+            this.groupControl15.Name = "groupControl15";
+            this.groupControl15.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl15.Size = new System.Drawing.Size(585, 285);
+            this.groupControl15.TabIndex = 2;
+            this.groupControl15.Text = "Factura Kilos";
+            // 
+            // panelControl12
+            // 
+            this.panelControl12.Controls.Add(this.txt_IVAFacturaCorteKilos);
+            this.panelControl12.Controls.Add(this.labelControl140);
+            this.panelControl12.Controls.Add(this.chk_IVACorteKilos);
+            this.panelControl12.Controls.Add(this.chk_RetencionCorteKilos);
+            this.panelControl12.Controls.Add(this.txt_TotalFacturaCorteKilos);
+            this.panelControl12.Controls.Add(this.labelControl129);
+            this.panelControl12.Controls.Add(this.txt_RetencionFacturaCorteKilos);
+            this.panelControl12.Controls.Add(this.labelControl130);
+            this.panelControl12.Controls.Add(this.labelControl94);
+            this.panelControl12.Controls.Add(this.txt_FolioFacturaCorteKilos);
+            this.panelControl12.Controls.Add(this.labelControl95);
+            this.panelControl12.Controls.Add(this.txtRazonSCorteKilos);
+            this.panelControl12.Controls.Add(this.opt_TipoFacturaCorteKilos);
+            this.panelControl12.Controls.Add(this.chk_PagadaCorteKilos);
+            this.panelControl12.Controls.Add(this.dt_FechaPagoCorteKilos);
+            this.panelControl12.Controls.Add(this.dt_FechaFacturaCorteKilos);
+            this.panelControl12.Controls.Add(this.labelControl96);
+            this.panelControl12.Controls.Add(this.labelControl97);
+            this.panelControl12.Controls.Add(this.cmb_MonedaCorteKilos);
+            this.panelControl12.Controls.Add(this.labelControl98);
+            this.panelControl12.Controls.Add(this.labelControl99);
+            this.panelControl12.Controls.Add(this.txt_ImporteFacturaCorteKilos);
+            this.panelControl12.Controls.Add(this.btn_ViewXMLCorteKilos);
+            this.panelControl12.Controls.Add(this.btn_UpXMLCorteKilos);
+            this.panelControl12.Controls.Add(this.txt_RutaXMLCorteKilos);
+            this.panelControl12.Controls.Add(this.labelControl100);
+            this.panelControl12.Controls.Add(this.btn_ViewPDFCorteKilos);
+            this.panelControl12.Controls.Add(this.btn_UpPDFCorteKilos);
+            this.panelControl12.Controls.Add(this.txt_RutaPDFCorteKilos);
+            this.panelControl12.Controls.Add(this.labelControl101);
+            this.panelControl12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl12.Location = new System.Drawing.Point(7, 28);
+            this.panelControl12.Name = "panelControl12";
+            this.panelControl12.Size = new System.Drawing.Size(571, 250);
+            this.panelControl12.TabIndex = 56;
+            // 
+            // txt_IVAFacturaCorteKilos
+            // 
+            this.txt_IVAFacturaCorteKilos.EditValue = "0";
+            this.txt_IVAFacturaCorteKilos.Location = new System.Drawing.Point(104, 167);
+            this.txt_IVAFacturaCorteKilos.MenuManager = this.barManager1;
+            this.txt_IVAFacturaCorteKilos.Name = "txt_IVAFacturaCorteKilos";
+            this.txt_IVAFacturaCorteKilos.Properties.BeepOnError = true;
+            this.txt_IVAFacturaCorteKilos.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_IVAFacturaCorteKilos.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_IVAFacturaCorteKilos.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_IVAFacturaCorteKilos.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_IVAFacturaCorteKilos.Properties.NullText = "0";
+            this.txt_IVAFacturaCorteKilos.Properties.ReadOnly = true;
+            this.txt_IVAFacturaCorteKilos.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_IVAFacturaCorteKilos.Size = new System.Drawing.Size(94, 20);
+            this.txt_IVAFacturaCorteKilos.TabIndex = 136;
+            // 
+            // labelControl140
+            // 
+            this.labelControl140.Location = new System.Drawing.Point(16, 171);
+            this.labelControl140.Name = "labelControl140";
+            this.labelControl140.Size = new System.Drawing.Size(21, 13);
+            this.labelControl140.TabIndex = 137;
+            this.labelControl140.Text = "IVA:";
+            // 
+            // chk_IVACorteKilos
+            // 
+            this.chk_IVACorteKilos.EditValue = true;
+            this.chk_IVACorteKilos.Location = new System.Drawing.Point(252, 167);
+            this.chk_IVACorteKilos.MenuManager = this.barManager1;
+            this.chk_IVACorteKilos.Name = "chk_IVACorteKilos";
+            this.chk_IVACorteKilos.Properties.Caption = "IVA";
+            this.chk_IVACorteKilos.Size = new System.Drawing.Size(76, 20);
+            this.chk_IVACorteKilos.TabIndex = 135;
+            this.chk_IVACorteKilos.CheckedChanged += new System.EventHandler(this.chk_IVACorteKilos_CheckedChanged);
+            // 
+            // chk_RetencionCorteKilos
+            // 
+            this.chk_RetencionCorteKilos.EditValue = true;
+            this.chk_RetencionCorteKilos.Location = new System.Drawing.Point(252, 141);
+            this.chk_RetencionCorteKilos.MenuManager = this.barManager1;
+            this.chk_RetencionCorteKilos.Name = "chk_RetencionCorteKilos";
+            this.chk_RetencionCorteKilos.Properties.Caption = "Retencion";
+            this.chk_RetencionCorteKilos.Size = new System.Drawing.Size(87, 20);
+            this.chk_RetencionCorteKilos.TabIndex = 134;
+            this.chk_RetencionCorteKilos.CheckedChanged += new System.EventHandler(this.chk_RetencionCorteKilos_CheckedChanged);
+            // 
+            // txt_TotalFacturaCorteKilos
+            // 
+            this.txt_TotalFacturaCorteKilos.EditValue = "0";
+            this.txt_TotalFacturaCorteKilos.Location = new System.Drawing.Point(104, 193);
+            this.txt_TotalFacturaCorteKilos.MenuManager = this.barManager1;
+            this.txt_TotalFacturaCorteKilos.Name = "txt_TotalFacturaCorteKilos";
+            this.txt_TotalFacturaCorteKilos.Properties.BeepOnError = true;
+            this.txt_TotalFacturaCorteKilos.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_TotalFacturaCorteKilos.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_TotalFacturaCorteKilos.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_TotalFacturaCorteKilos.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_TotalFacturaCorteKilos.Properties.NullText = "0";
+            this.txt_TotalFacturaCorteKilos.Properties.ReadOnly = true;
+            this.txt_TotalFacturaCorteKilos.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_TotalFacturaCorteKilos.Size = new System.Drawing.Size(94, 20);
+            this.txt_TotalFacturaCorteKilos.TabIndex = 132;
+            // 
+            // labelControl129
+            // 
+            this.labelControl129.Location = new System.Drawing.Point(16, 197);
+            this.labelControl129.Name = "labelControl129";
+            this.labelControl129.Size = new System.Drawing.Size(68, 13);
+            this.labelControl129.TabIndex = 133;
+            this.labelControl129.Text = "Total Factura:";
+            // 
+            // txt_RetencionFacturaCorteKilos
+            // 
+            this.txt_RetencionFacturaCorteKilos.EditValue = "0";
+            this.txt_RetencionFacturaCorteKilos.Location = new System.Drawing.Point(104, 141);
+            this.txt_RetencionFacturaCorteKilos.MenuManager = this.barManager1;
+            this.txt_RetencionFacturaCorteKilos.Name = "txt_RetencionFacturaCorteKilos";
+            this.txt_RetencionFacturaCorteKilos.Properties.BeepOnError = true;
+            this.txt_RetencionFacturaCorteKilos.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_RetencionFacturaCorteKilos.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_RetencionFacturaCorteKilos.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_RetencionFacturaCorteKilos.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_RetencionFacturaCorteKilos.Properties.NullText = "0";
+            this.txt_RetencionFacturaCorteKilos.Properties.ReadOnly = true;
+            this.txt_RetencionFacturaCorteKilos.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_RetencionFacturaCorteKilos.Size = new System.Drawing.Size(94, 20);
+            this.txt_RetencionFacturaCorteKilos.TabIndex = 130;
+            // 
+            // labelControl130
+            // 
+            this.labelControl130.Location = new System.Drawing.Point(16, 145);
+            this.labelControl130.Name = "labelControl130";
+            this.labelControl130.Size = new System.Drawing.Size(52, 13);
+            this.labelControl130.TabIndex = 131;
+            this.labelControl130.Text = "Retension:";
+            // 
+            // labelControl94
+            // 
+            this.labelControl94.Location = new System.Drawing.Point(16, 94);
+            this.labelControl94.Name = "labelControl94";
+            this.labelControl94.Size = new System.Drawing.Size(64, 13);
+            this.labelControl94.TabIndex = 103;
+            this.labelControl94.Text = "Folio factura:";
+            // 
+            // txt_FolioFacturaCorteKilos
+            // 
+            this.txt_FolioFacturaCorteKilos.Location = new System.Drawing.Point(104, 90);
+            this.txt_FolioFacturaCorteKilos.MenuManager = this.barManager1;
+            this.txt_FolioFacturaCorteKilos.Name = "txt_FolioFacturaCorteKilos";
+            this.txt_FolioFacturaCorteKilos.Size = new System.Drawing.Size(94, 20);
+            this.txt_FolioFacturaCorteKilos.TabIndex = 102;
+            // 
+            // labelControl95
+            // 
+            this.labelControl95.Location = new System.Drawing.Point(18, 15);
+            this.labelControl95.Name = "labelControl95";
+            this.labelControl95.Size = new System.Drawing.Size(43, 13);
+            this.labelControl95.TabIndex = 101;
+            this.labelControl95.Text = "Razon S.";
+            // 
+            // txtRazonSCorteKilos
+            // 
+            this.txtRazonSCorteKilos.Location = new System.Drawing.Point(66, 12);
+            this.txtRazonSCorteKilos.Name = "txtRazonSCorteKilos";
+            this.txtRazonSCorteKilos.Size = new System.Drawing.Size(262, 20);
+            this.txtRazonSCorteKilos.TabIndex = 100;
+            // 
+            // opt_TipoFacturaCorteKilos
+            // 
+            this.opt_TipoFacturaCorteKilos.Location = new System.Drawing.Point(402, 38);
+            this.opt_TipoFacturaCorteKilos.MenuManager = this.barManager1;
+            this.opt_TipoFacturaCorteKilos.Name = "opt_TipoFacturaCorteKilos";
+            this.opt_TipoFacturaCorteKilos.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.opt_TipoFacturaCorteKilos.Properties.Appearance.Options.UseBackColor = true;
+            this.opt_TipoFacturaCorteKilos.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.opt_TipoFacturaCorteKilos.Properties.Columns = 1;
+            this.opt_TipoFacturaCorteKilos.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Diferido"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Total")});
+            this.opt_TipoFacturaCorteKilos.Size = new System.Drawing.Size(100, 50);
+            this.opt_TipoFacturaCorteKilos.TabIndex = 99;
+            // 
+            // chk_PagadaCorteKilos
+            // 
+            this.chk_PagadaCorteKilos.EditValue = true;
+            this.chk_PagadaCorteKilos.Location = new System.Drawing.Point(252, 115);
+            this.chk_PagadaCorteKilos.MenuManager = this.barManager1;
+            this.chk_PagadaCorteKilos.Name = "chk_PagadaCorteKilos";
+            this.chk_PagadaCorteKilos.Properties.Caption = "Pagada";
+            this.chk_PagadaCorteKilos.Size = new System.Drawing.Size(59, 20);
+            this.chk_PagadaCorteKilos.TabIndex = 98;
+            // 
+            // dt_FechaPagoCorteKilos
+            // 
+            this.dt_FechaPagoCorteKilos.EditValue = null;
+            this.dt_FechaPagoCorteKilos.Location = new System.Drawing.Point(265, 219);
+            this.dt_FechaPagoCorteKilos.MenuManager = this.barManager1;
+            this.dt_FechaPagoCorteKilos.Name = "dt_FechaPagoCorteKilos";
+            this.dt_FechaPagoCorteKilos.Properties.BeepOnError = true;
+            this.dt_FechaPagoCorteKilos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaPagoCorteKilos.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaPagoCorteKilos.Properties.MaskSettings.Set("mask", "d");
+            this.dt_FechaPagoCorteKilos.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaPagoCorteKilos.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaPagoCorteKilos.TabIndex = 97;
+            // 
+            // dt_FechaFacturaCorteKilos
+            // 
+            this.dt_FechaFacturaCorteKilos.EditValue = null;
+            this.dt_FechaFacturaCorteKilos.Location = new System.Drawing.Point(104, 219);
+            this.dt_FechaFacturaCorteKilos.MenuManager = this.barManager1;
+            this.dt_FechaFacturaCorteKilos.Name = "dt_FechaFacturaCorteKilos";
+            this.dt_FechaFacturaCorteKilos.Properties.BeepOnError = true;
+            this.dt_FechaFacturaCorteKilos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaFacturaCorteKilos.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaFacturaCorteKilos.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaFacturaCorteKilos.Size = new System.Drawing.Size(94, 20);
+            this.dt_FechaFacturaCorteKilos.TabIndex = 96;
+            // 
+            // labelControl96
+            // 
+            this.labelControl96.Location = new System.Drawing.Point(218, 223);
+            this.labelControl96.Name = "labelControl96";
+            this.labelControl96.Size = new System.Drawing.Size(41, 13);
+            this.labelControl96.TabIndex = 94;
+            this.labelControl96.Text = "F. Pago:";
+            // 
+            // labelControl97
+            // 
+            this.labelControl97.Location = new System.Drawing.Point(16, 223);
+            this.labelControl97.Name = "labelControl97";
+            this.labelControl97.Size = new System.Drawing.Size(54, 13);
+            this.labelControl97.TabIndex = 92;
+            this.labelControl97.Text = "F. Factura:";
+            // 
+            // cmb_MonedaCorteKilos
+            // 
+            this.cmb_MonedaCorteKilos.Location = new System.Drawing.Point(265, 90);
+            this.cmb_MonedaCorteKilos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_MonedaCorteKilos.MenuManager = this.barManager1;
+            this.cmb_MonedaCorteKilos.Name = "cmb_MonedaCorteKilos";
+            this.cmb_MonedaCorteKilos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_MonedaCorteKilos.Properties.Items.AddRange(new object[] {
+            "Pesos",
+            "Dólares"});
+            this.cmb_MonedaCorteKilos.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmb_MonedaCorteKilos.Size = new System.Drawing.Size(99, 20);
+            this.cmb_MonedaCorteKilos.TabIndex = 71;
+            // 
+            // labelControl98
+            // 
+            this.labelControl98.Location = new System.Drawing.Point(213, 94);
+            this.labelControl98.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl98.Name = "labelControl98";
+            this.labelControl98.Size = new System.Drawing.Size(42, 13);
+            this.labelControl98.TabIndex = 70;
+            this.labelControl98.Text = "Moneda:";
+            // 
+            // labelControl99
+            // 
+            this.labelControl99.Location = new System.Drawing.Point(16, 119);
+            this.labelControl99.Name = "labelControl99";
+            this.labelControl99.Size = new System.Drawing.Size(82, 13);
+            this.labelControl99.TabIndex = 68;
+            this.labelControl99.Text = "Importe Factura:";
+            // 
+            // txt_ImporteFacturaCorteKilos
+            // 
+            this.txt_ImporteFacturaCorteKilos.EditValue = "0";
+            this.txt_ImporteFacturaCorteKilos.Location = new System.Drawing.Point(104, 115);
+            this.txt_ImporteFacturaCorteKilos.MenuManager = this.barManager1;
+            this.txt_ImporteFacturaCorteKilos.Name = "txt_ImporteFacturaCorteKilos";
+            this.txt_ImporteFacturaCorteKilos.Properties.BeepOnError = true;
+            this.txt_ImporteFacturaCorteKilos.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_ImporteFacturaCorteKilos.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_ImporteFacturaCorteKilos.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_ImporteFacturaCorteKilos.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_ImporteFacturaCorteKilos.Properties.NullText = "0";
+            this.txt_ImporteFacturaCorteKilos.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_ImporteFacturaCorteKilos.Size = new System.Drawing.Size(94, 20);
+            this.txt_ImporteFacturaCorteKilos.TabIndex = 67;
+            this.txt_ImporteFacturaCorteKilos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ImporteFacturaCorteKilos_KeyDown);
+            // 
+            // btn_ViewXMLCorteKilos
+            // 
+            this.btn_ViewXMLCorteKilos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewXMLCorteKilos.ImageOptions.Image")));
+            this.btn_ViewXMLCorteKilos.Location = new System.Drawing.Point(369, 63);
+            this.btn_ViewXMLCorteKilos.Name = "btn_ViewXMLCorteKilos";
+            this.btn_ViewXMLCorteKilos.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewXMLCorteKilos.TabIndex = 17;
+            this.btn_ViewXMLCorteKilos.Click += new System.EventHandler(this.btn_ViewXMLCorteKilos_Click);
+            // 
+            // btn_UpXMLCorteKilos
+            // 
+            this.btn_UpXMLCorteKilos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpXMLCorteKilos.ImageOptions.Image")));
+            this.btn_UpXMLCorteKilos.Location = new System.Drawing.Point(339, 63);
+            this.btn_UpXMLCorteKilos.Name = "btn_UpXMLCorteKilos";
+            this.btn_UpXMLCorteKilos.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpXMLCorteKilos.TabIndex = 16;
+            this.btn_UpXMLCorteKilos.Click += new System.EventHandler(this.btn_UpXMLCorteKilos_Click);
+            // 
+            // txt_RutaXMLCorteKilos
+            // 
+            this.txt_RutaXMLCorteKilos.Enabled = false;
+            this.txt_RutaXMLCorteKilos.Location = new System.Drawing.Point(66, 64);
+            this.txt_RutaXMLCorteKilos.Name = "txt_RutaXMLCorteKilos";
+            this.txt_RutaXMLCorteKilos.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaXMLCorteKilos.TabIndex = 15;
+            // 
+            // labelControl100
+            // 
+            this.labelControl100.Location = new System.Drawing.Point(19, 70);
+            this.labelControl100.Name = "labelControl100";
+            this.labelControl100.Size = new System.Drawing.Size(19, 13);
+            this.labelControl100.TabIndex = 14;
+            this.labelControl100.Text = "XML";
+            // 
+            // btn_ViewPDFCorteKilos
+            // 
+            this.btn_ViewPDFCorteKilos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFCorteKilos.ImageOptions.Image")));
+            this.btn_ViewPDFCorteKilos.Location = new System.Drawing.Point(369, 37);
+            this.btn_ViewPDFCorteKilos.Name = "btn_ViewPDFCorteKilos";
+            this.btn_ViewPDFCorteKilos.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFCorteKilos.TabIndex = 13;
+            this.btn_ViewPDFCorteKilos.Click += new System.EventHandler(this.btn_ViewPDFCorteKilos_Click);
+            // 
+            // btn_UpPDFCorteKilos
+            // 
+            this.btn_UpPDFCorteKilos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFCorteKilos.ImageOptions.Image")));
+            this.btn_UpPDFCorteKilos.Location = new System.Drawing.Point(339, 37);
+            this.btn_UpPDFCorteKilos.Name = "btn_UpPDFCorteKilos";
+            this.btn_UpPDFCorteKilos.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFCorteKilos.TabIndex = 12;
+            this.btn_UpPDFCorteKilos.Click += new System.EventHandler(this.btn_UpPDFCorteKilos_Click);
+            // 
+            // txt_RutaPDFCorteKilos
+            // 
+            this.txt_RutaPDFCorteKilos.Enabled = false;
+            this.txt_RutaPDFCorteKilos.Location = new System.Drawing.Point(66, 38);
+            this.txt_RutaPDFCorteKilos.Name = "txt_RutaPDFCorteKilos";
+            this.txt_RutaPDFCorteKilos.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaPDFCorteKilos.TabIndex = 11;
+            // 
+            // labelControl101
+            // 
+            this.labelControl101.Location = new System.Drawing.Point(19, 43);
+            this.labelControl101.Name = "labelControl101";
+            this.labelControl101.Size = new System.Drawing.Size(19, 13);
+            this.labelControl101.TabIndex = 10;
+            this.labelControl101.Text = "PDF";
             // 
             // navigationPage5
             // 
@@ -2615,49 +4828,85 @@
             this.navigationPage5.Name = "navigationPage5";
             this.navigationPage5.PageText = "Acarreo";
             this.navigationPage5.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage5.Size = new System.Drawing.Size(1200, 712);
+            this.navigationPage5.Size = new System.Drawing.Size(1139, 674);
             // 
             // panelControl10
             // 
-            this.panelControl10.Controls.Add(this.groupControl8);
+            this.panelControl10.Controls.Add(this.xtraTabControl3);
             this.panelControl10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl10.Location = new System.Drawing.Point(0, 0);
             this.panelControl10.Name = "panelControl10";
             this.panelControl10.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl10.Size = new System.Drawing.Size(1200, 712);
+            this.panelControl10.Size = new System.Drawing.Size(1139, 674);
             this.panelControl10.TabIndex = 0;
             // 
-            // groupControl8
+            // xtraTabControl3
             // 
-            this.groupControl8.Controls.Add(this.groupControl9);
-            this.groupControl8.Controls.Add(this.panelControl11);
-            this.groupControl8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl8.Location = new System.Drawing.Point(7, 7);
-            this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl8.Size = new System.Drawing.Size(1186, 698);
-            this.groupControl8.TabIndex = 0;
-            this.groupControl8.Text = "Calculo de Acarreo";
+            this.xtraTabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl3.Location = new System.Drawing.Point(7, 7);
+            this.xtraTabControl3.Name = "xtraTabControl3";
+            this.xtraTabControl3.SelectedTabPage = this.xtraTabPage5;
+            this.xtraTabControl3.Size = new System.Drawing.Size(1125, 660);
+            this.xtraTabControl3.TabIndex = 58;
+            this.xtraTabControl3.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage5,
+            this.tp_FacturaAcarreo});
+            // 
+            // xtraTabPage5
+            // 
+            this.xtraTabPage5.Controls.Add(this.xtraScrollableControl5);
+            this.xtraTabPage5.Name = "xtraTabPage5";
+            this.xtraTabPage5.Padding = new System.Windows.Forms.Padding(5);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1123, 635);
+            this.xtraTabPage5.Text = "Calculo Acarreo";
+            // 
+            // xtraScrollableControl5
+            // 
+            this.xtraScrollableControl5.Controls.Add(this.groupControl9);
+            this.xtraScrollableControl5.Controls.Add(this.groupControl8);
+            this.xtraScrollableControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraScrollableControl5.Location = new System.Drawing.Point(5, 5);
+            this.xtraScrollableControl5.Name = "xtraScrollableControl5";
+            this.xtraScrollableControl5.Size = new System.Drawing.Size(1113, 625);
+            this.xtraScrollableControl5.TabIndex = 0;
             // 
             // groupControl9
             // 
-            this.groupControl9.Controls.Add(this.groupControl10);
-            this.groupControl9.Controls.Add(this.txtPrecioSalidaForanea);
-            this.groupControl9.Controls.Add(this.txtPrecioServicio);
-            this.groupControl9.Controls.Add(this.labelControl73);
-            this.groupControl9.Controls.Add(this.labelControl74);
+            this.groupControl9.Controls.Add(this.panelControl19);
             this.groupControl9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl9.Location = new System.Drawing.Point(7, 304);
+            this.groupControl9.Location = new System.Drawing.Point(0, 340);
             this.groupControl9.Name = "groupControl9";
-            this.groupControl9.Size = new System.Drawing.Size(1172, 387);
-            this.groupControl9.TabIndex = 55;
+            this.groupControl9.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl9.Size = new System.Drawing.Size(1113, 285);
+            this.groupControl9.TabIndex = 58;
             this.groupControl9.Text = "Cobro por Servicios";
+            // 
+            // panelControl19
+            // 
+            this.panelControl19.Controls.Add(this.labelControl74);
+            this.panelControl19.Controls.Add(this.groupControl10);
+            this.panelControl19.Controls.Add(this.labelControl73);
+            this.panelControl19.Controls.Add(this.txtPrecioSalidaForanea);
+            this.panelControl19.Controls.Add(this.txtPrecioServicio);
+            this.panelControl19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl19.Location = new System.Drawing.Point(7, 28);
+            this.panelControl19.Name = "panelControl19";
+            this.panelControl19.Size = new System.Drawing.Size(1099, 250);
+            this.panelControl19.TabIndex = 36;
+            // 
+            // labelControl74
+            // 
+            this.labelControl74.Location = new System.Drawing.Point(27, 16);
+            this.labelControl74.Name = "labelControl74";
+            this.labelControl74.Size = new System.Drawing.Size(87, 13);
+            this.labelControl74.TabIndex = 5;
+            this.labelControl74.Text = "Pago por Servicio:";
             // 
             // groupControl10
             // 
             this.groupControl10.Controls.Add(this.labelControl72);
             this.groupControl10.Controls.Add(this.txtPrecioCaja);
-            this.groupControl10.Location = new System.Drawing.Point(5, 58);
+            this.groupControl10.Location = new System.Drawing.Point(9, 41);
             this.groupControl10.Name = "groupControl10";
             this.groupControl10.Size = new System.Drawing.Size(267, 66);
             this.groupControl10.TabIndex = 35;
@@ -2665,7 +4914,7 @@
             // 
             // labelControl72
             // 
-            this.labelControl72.Location = new System.Drawing.Point(12, 35);
+            this.labelControl72.Location = new System.Drawing.Point(18, 35);
             this.labelControl72.Name = "labelControl72";
             this.labelControl72.Size = new System.Drawing.Size(75, 13);
             this.labelControl72.TabIndex = 24;
@@ -2674,60 +4923,88 @@
             // txtPrecioCaja
             // 
             this.txtPrecioCaja.Enabled = false;
-            this.txtPrecioCaja.Location = new System.Drawing.Point(118, 31);
+            this.txtPrecioCaja.Location = new System.Drawing.Point(130, 32);
             this.txtPrecioCaja.MenuManager = this.barManager1;
             this.txtPrecioCaja.Name = "txtPrecioCaja";
-            this.txtPrecioCaja.Properties.Mask.EditMask = "c4";
-            this.txtPrecioCaja.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioCaja.Properties.BeepOnError = true;
+            this.txtPrecioCaja.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPrecioCaja.Properties.MaskSettings.Set("mask", "c4");
+            this.txtPrecioCaja.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txtPrecioCaja.Properties.MaskSettings.Set("valueType", typeof(decimal));
             this.txtPrecioCaja.Properties.NullText = "0";
             this.txtPrecioCaja.Properties.NullValuePrompt = "0";
+            this.txtPrecioCaja.Properties.UseMaskAsDisplayFormat = true;
             this.txtPrecioCaja.Size = new System.Drawing.Size(100, 20);
             this.txtPrecioCaja.TabIndex = 2;
+            // 
+            // labelControl73
+            // 
+            this.labelControl73.Location = new System.Drawing.Point(260, 16);
+            this.labelControl73.Name = "labelControl73";
+            this.labelControl73.Size = new System.Drawing.Size(102, 13);
+            this.labelControl73.TabIndex = 8;
+            this.labelControl73.Text = "Pago Salida Foranea:";
             // 
             // txtPrecioSalidaForanea
             // 
             this.txtPrecioSalidaForanea.Enabled = false;
-            this.txtPrecioSalidaForanea.Location = new System.Drawing.Point(123, 138);
+            this.txtPrecioSalidaForanea.Location = new System.Drawing.Point(372, 12);
             this.txtPrecioSalidaForanea.MenuManager = this.barManager1;
             this.txtPrecioSalidaForanea.Name = "txtPrecioSalidaForanea";
-            this.txtPrecioSalidaForanea.Properties.Mask.EditMask = "c4";
-            this.txtPrecioSalidaForanea.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioSalidaForanea.Properties.BeepOnError = true;
+            this.txtPrecioSalidaForanea.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPrecioSalidaForanea.Properties.MaskSettings.Set("mask", "c4");
+            this.txtPrecioSalidaForanea.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txtPrecioSalidaForanea.Properties.MaskSettings.Set("valueType", typeof(decimal));
             this.txtPrecioSalidaForanea.Properties.NullText = "0";
             this.txtPrecioSalidaForanea.Properties.NullValuePrompt = "0";
+            this.txtPrecioSalidaForanea.Properties.UseMaskAsDisplayFormat = true;
             this.txtPrecioSalidaForanea.Size = new System.Drawing.Size(100, 20);
             this.txtPrecioSalidaForanea.TabIndex = 6;
             // 
             // txtPrecioServicio
             // 
             this.txtPrecioServicio.Enabled = false;
-            this.txtPrecioServicio.Location = new System.Drawing.Point(123, 28);
+            this.txtPrecioServicio.Location = new System.Drawing.Point(139, 12);
             this.txtPrecioServicio.MenuManager = this.barManager1;
             this.txtPrecioServicio.Name = "txtPrecioServicio";
-            this.txtPrecioServicio.Properties.Mask.EditMask = "c4";
-            this.txtPrecioServicio.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioServicio.Properties.BeepOnError = true;
+            this.txtPrecioServicio.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPrecioServicio.Properties.MaskSettings.Set("mask", "c4");
+            this.txtPrecioServicio.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txtPrecioServicio.Properties.MaskSettings.Set("valueType", typeof(decimal));
             this.txtPrecioServicio.Properties.NullText = "0";
             this.txtPrecioServicio.Properties.NullValuePrompt = "0";
+            this.txtPrecioServicio.Properties.UseMaskAsDisplayFormat = true;
             this.txtPrecioServicio.Size = new System.Drawing.Size(100, 20);
             this.txtPrecioServicio.TabIndex = 3;
             // 
-            // labelControl73
+            // groupControl8
             // 
-            this.labelControl73.Location = new System.Drawing.Point(17, 141);
-            this.labelControl73.Name = "labelControl73";
-            this.labelControl73.Size = new System.Drawing.Size(102, 13);
-            this.labelControl73.TabIndex = 8;
-            this.labelControl73.Text = "Pago Salida Foranea:";
+            this.groupControl8.Controls.Add(this.panelControl13);
+            this.groupControl8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl8.Location = new System.Drawing.Point(0, 0);
+            this.groupControl8.Name = "groupControl8";
+            this.groupControl8.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl8.Size = new System.Drawing.Size(1113, 340);
+            this.groupControl8.TabIndex = 0;
+            this.groupControl8.Text = "Calculo de Acarreo";
             // 
-            // labelControl74
+            // panelControl13
             // 
-            this.labelControl74.Location = new System.Drawing.Point(17, 31);
-            this.labelControl74.Name = "labelControl74";
-            this.labelControl74.Size = new System.Drawing.Size(87, 13);
-            this.labelControl74.TabIndex = 5;
-            this.labelControl74.Text = "Pago por Servicio:";
+            this.panelControl13.Controls.Add(this.panelControl11);
+            this.panelControl13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl13.Location = new System.Drawing.Point(7, 28);
+            this.panelControl13.Name = "panelControl13";
+            this.panelControl13.Size = new System.Drawing.Size(1099, 305);
+            this.panelControl13.TabIndex = 56;
             // 
             // panelControl11
             // 
+            this.panelControl11.Controls.Add(this.txt_CargosExtra);
+            this.panelControl11.Controls.Add(this.labelControl149);
+            this.panelControl11.Controls.Add(this.txt_ObservacionesAcarreo);
+            this.panelControl11.Controls.Add(this.labelControl148);
             this.panelControl11.Controls.Add(this.txt_CostoxCajaExtra);
             this.panelControl11.Controls.Add(this.labelControl77);
             this.panelControl11.Controls.Add(this.txt_Cajas_CortadasA);
@@ -2750,26 +5027,71 @@
             this.panelControl11.Controls.Add(this.labelControl69);
             this.panelControl11.Controls.Add(this.labelControl68);
             this.panelControl11.Controls.Add(this.cmb_Choferes);
-            this.panelControl11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl11.Location = new System.Drawing.Point(7, 25);
+            this.panelControl11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl11.Location = new System.Drawing.Point(2, 2);
             this.panelControl11.Name = "panelControl11";
-            this.panelControl11.Size = new System.Drawing.Size(1172, 279);
-            this.panelControl11.TabIndex = 54;
+            this.panelControl11.Size = new System.Drawing.Size(1095, 301);
+            this.panelControl11.TabIndex = 55;
+            // 
+            // txt_CargosExtra
+            // 
+            this.txt_CargosExtra.EditValue = "0";
+            this.txt_CargosExtra.Location = new System.Drawing.Point(123, 193);
+            this.txt_CargosExtra.Name = "txt_CargosExtra";
+            this.txt_CargosExtra.Properties.BeepOnError = true;
+            this.txt_CargosExtra.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_CargosExtra.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_CargosExtra.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_CargosExtra.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_CargosExtra.Properties.NullText = "0";
+            this.txt_CargosExtra.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_CargosExtra.Size = new System.Drawing.Size(96, 20);
+            this.txt_CargosExtra.TabIndex = 62;
+            this.txt_CargosExtra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_CargosExtra_KeyDown);
+            // 
+            // labelControl149
+            // 
+            this.labelControl149.Location = new System.Drawing.Point(15, 197);
+            this.labelControl149.Name = "labelControl149";
+            this.labelControl149.Size = new System.Drawing.Size(72, 13);
+            this.labelControl149.TabIndex = 63;
+            this.labelControl149.Text = "Cargos Extras:";
+            // 
+            // txt_ObservacionesAcarreo
+            // 
+            this.txt_ObservacionesAcarreo.Location = new System.Drawing.Point(457, 38);
+            this.txt_ObservacionesAcarreo.MenuManager = this.barManager1;
+            this.txt_ObservacionesAcarreo.Name = "txt_ObservacionesAcarreo";
+            this.txt_ObservacionesAcarreo.Size = new System.Drawing.Size(260, 82);
+            this.txt_ObservacionesAcarreo.TabIndex = 61;
+            // 
+            // labelControl148
+            // 
+            this.labelControl148.Location = new System.Drawing.Point(369, 42);
+            this.labelControl148.Name = "labelControl148";
+            this.labelControl148.Size = new System.Drawing.Size(71, 13);
+            this.labelControl148.TabIndex = 60;
+            this.labelControl148.Text = "Observaciones";
             // 
             // txt_CostoxCajaExtra
             // 
             this.txt_CostoxCajaExtra.EditValue = "0";
             this.txt_CostoxCajaExtra.Enabled = false;
-            this.txt_CostoxCajaExtra.Location = new System.Drawing.Point(123, 219);
+            this.txt_CostoxCajaExtra.Location = new System.Drawing.Point(123, 245);
             this.txt_CostoxCajaExtra.Name = "txt_CostoxCajaExtra";
-            this.txt_CostoxCajaExtra.Properties.Mask.EditMask = "c4";
-            this.txt_CostoxCajaExtra.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_CostoxCajaExtra.Properties.BeepOnError = true;
+            this.txt_CostoxCajaExtra.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_CostoxCajaExtra.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_CostoxCajaExtra.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_CostoxCajaExtra.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_CostoxCajaExtra.Properties.NullText = "0";
+            this.txt_CostoxCajaExtra.Properties.UseMaskAsDisplayFormat = true;
             this.txt_CostoxCajaExtra.Size = new System.Drawing.Size(96, 20);
             this.txt_CostoxCajaExtra.TabIndex = 58;
             // 
             // labelControl77
             // 
-            this.labelControl77.Location = new System.Drawing.Point(15, 223);
+            this.labelControl77.Location = new System.Drawing.Point(15, 249);
             this.labelControl77.Name = "labelControl77";
             this.labelControl77.Size = new System.Drawing.Size(96, 13);
             this.labelControl77.TabIndex = 59;
@@ -2781,6 +5103,7 @@
             this.txt_Cajas_CortadasA.Enabled = false;
             this.txt_Cajas_CortadasA.Location = new System.Drawing.Point(123, 141);
             this.txt_Cajas_CortadasA.Name = "txt_Cajas_CortadasA";
+            this.txt_Cajas_CortadasA.Properties.NullText = "0";
             this.txt_Cajas_CortadasA.Size = new System.Drawing.Size(96, 20);
             this.txt_Cajas_CortadasA.TabIndex = 56;
             // 
@@ -2798,6 +5121,7 @@
             this.txt_CajasProgramadasA.Enabled = false;
             this.txt_CajasProgramadasA.Location = new System.Drawing.Point(123, 115);
             this.txt_CajasProgramadasA.Name = "txt_CajasProgramadasA";
+            this.txt_CajasProgramadasA.Properties.NullText = "0";
             this.txt_CajasProgramadasA.Size = new System.Drawing.Size(96, 20);
             this.txt_CajasProgramadasA.TabIndex = 54;
             // 
@@ -2820,15 +5144,21 @@
             // txt_TotalAcarreo
             // 
             this.txt_TotalAcarreo.EditValue = "0";
-            this.txt_TotalAcarreo.Location = new System.Drawing.Point(123, 245);
+            this.txt_TotalAcarreo.Location = new System.Drawing.Point(123, 271);
             this.txt_TotalAcarreo.Name = "txt_TotalAcarreo";
             this.txt_TotalAcarreo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TotalAcarreo.Properties.Appearance.Options.UseFont = true;
-            this.txt_TotalAcarreo.Properties.Mask.EditMask = "c4";
-            this.txt_TotalAcarreo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_TotalAcarreo.Properties.BeepOnError = true;
+            this.txt_TotalAcarreo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_TotalAcarreo.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_TotalAcarreo.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_TotalAcarreo.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_TotalAcarreo.Properties.NullText = "0";
             this.txt_TotalAcarreo.Properties.ReadOnly = true;
+            this.txt_TotalAcarreo.Properties.UseMaskAsDisplayFormat = true;
             this.txt_TotalAcarreo.Size = new System.Drawing.Size(96, 20);
             this.txt_TotalAcarreo.TabIndex = 52;
+            this.txt_TotalAcarreo.EditValueChanged += new System.EventHandler(this.txt_TotalAcarreo_EditValueChanged);
             // 
             // btn_EmpresaAcarreo
             // 
@@ -2841,7 +5171,7 @@
             // 
             // labelControl71
             // 
-            this.labelControl71.Location = new System.Drawing.Point(15, 249);
+            this.labelControl71.Location = new System.Drawing.Point(15, 275);
             this.labelControl71.Name = "labelControl71";
             this.labelControl71.Size = new System.Drawing.Size(69, 13);
             this.labelControl71.TabIndex = 53;
@@ -2859,10 +5189,11 @@
             // txt_CajasExtras
             // 
             this.txt_CajasExtras.EditValue = "0";
-            this.txt_CajasExtras.Location = new System.Drawing.Point(123, 193);
+            this.txt_CajasExtras.Location = new System.Drawing.Point(123, 219);
             this.txt_CajasExtras.Name = "txt_CajasExtras";
-            this.txt_CajasExtras.Properties.Mask.EditMask = "n0";
-            this.txt_CajasExtras.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_CajasExtras.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_CajasExtras.Properties.MaskSettings.Set("mask", "n0");
+            this.txt_CajasExtras.Properties.NullText = "0";
             this.txt_CajasExtras.Size = new System.Drawing.Size(96, 20);
             this.txt_CajasExtras.TabIndex = 50;
             this.txt_CajasExtras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_CajasExtras_KeyDown);
@@ -2877,7 +5208,7 @@
             // 
             // labelControl70
             // 
-            this.labelControl70.Location = new System.Drawing.Point(15, 197);
+            this.labelControl70.Location = new System.Drawing.Point(15, 223);
             this.labelControl70.Name = "labelControl70";
             this.labelControl70.Size = new System.Drawing.Size(65, 13);
             this.labelControl70.TabIndex = 51;
@@ -2897,7 +5228,7 @@
             this.chk_ServicioForaneo.MenuManager = this.barManager1;
             this.chk_ServicioForaneo.Name = "chk_ServicioForaneo";
             this.chk_ServicioForaneo.Properties.Caption = "Foraneo";
-            this.chk_ServicioForaneo.Size = new System.Drawing.Size(75, 19);
+            this.chk_ServicioForaneo.Size = new System.Drawing.Size(75, 20);
             this.chk_ServicioForaneo.TabIndex = 49;
             this.chk_ServicioForaneo.CheckedChanged += new System.EventHandler(this.chk_ServicioForaneo_CheckedChanged);
             // 
@@ -2906,7 +5237,7 @@
             this.txtPlacasCamion.Enabled = false;
             this.txtPlacasCamion.Location = new System.Drawing.Point(123, 63);
             this.txtPlacasCamion.Name = "txtPlacasCamion";
-            this.txtPlacasCamion.Size = new System.Drawing.Size(192, 20);
+            this.txtPlacasCamion.Size = new System.Drawing.Size(96, 20);
             this.txtPlacasCamion.TabIndex = 41;
             // 
             // txt_CostoServicio
@@ -2915,8 +5246,13 @@
             this.txt_CostoServicio.Enabled = false;
             this.txt_CostoServicio.Location = new System.Drawing.Point(123, 167);
             this.txt_CostoServicio.Name = "txt_CostoServicio";
-            this.txt_CostoServicio.Properties.Mask.EditMask = "c4";
-            this.txt_CostoServicio.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_CostoServicio.Properties.BeepOnError = true;
+            this.txt_CostoServicio.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_CostoServicio.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_CostoServicio.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_CostoServicio.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_CostoServicio.Properties.NullText = "0";
+            this.txt_CostoServicio.Properties.UseMaskAsDisplayFormat = true;
             this.txt_CostoServicio.Size = new System.Drawing.Size(96, 20);
             this.txt_CostoServicio.TabIndex = 47;
             // 
@@ -2941,6 +5277,22 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn24
+            // 
+            this.gridColumn24.Caption = "Codigo";
+            this.gridColumn24.FieldName = "Id_Camion";
+            this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.Visible = true;
+            this.gridColumn24.VisibleIndex = 0;
+            // 
+            // gridColumn25
+            // 
+            this.gridColumn25.Caption = "Camion";
+            this.gridColumn25.FieldName = "Nombre_Camion";
+            this.gridColumn25.Name = "gridColumn25";
+            this.gridColumn25.Visible = true;
+            this.gridColumn25.VisibleIndex = 1;
             // 
             // labelControl69
             // 
@@ -2979,157 +5331,6 @@
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // navigationPage6
-            // 
-            this.navigationPage6.Caption = "Productor";
-            this.navigationPage6.Controls.Add(this.labelControl35);
-            this.navigationPage6.Controls.Add(this.txt_kilos_Totales);
-            this.navigationPage6.Controls.Add(this.chk_Mercado);
-            this.navigationPage6.Controls.Add(this.labelControl34);
-            this.navigationPage6.Controls.Add(this.txt_KilosMuestra);
-            this.navigationPage6.Controls.Add(this.labelControl33);
-            this.navigationPage6.Controls.Add(this.txt_Productor);
-            this.navigationPage6.Controls.Add(this.labelControl32);
-            this.navigationPage6.Controls.Add(this.txt_TotalaPagar);
-            this.navigationPage6.Controls.Add(this.labelControl31);
-            this.navigationPage6.Controls.Add(this.txt_KiloPrecio);
-            this.navigationPage6.Controls.Add(this.labelControl28);
-            this.navigationPage6.Controls.Add(this.txt_KilosAjustados);
-            this.navigationPage6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage6.ImageOptions.Image")));
-            this.navigationPage6.Name = "navigationPage6";
-            this.navigationPage6.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage6.Size = new System.Drawing.Size(1200, 712);
-            // 
-            // labelControl35
-            // 
-            this.labelControl35.Location = new System.Drawing.Point(23, 103);
-            this.labelControl35.Name = "labelControl35";
-            this.labelControl35.Size = new System.Drawing.Size(61, 13);
-            this.labelControl35.TabIndex = 36;
-            this.labelControl35.Text = "Kilos a Pagar";
-            // 
-            // txt_kilos_Totales
-            // 
-            this.txt_kilos_Totales.EditValue = "0";
-            this.txt_kilos_Totales.Enabled = false;
-            this.txt_kilos_Totales.Location = new System.Drawing.Point(127, 100);
-            this.txt_kilos_Totales.MenuManager = this.barManager1;
-            this.txt_kilos_Totales.Name = "txt_kilos_Totales";
-            this.txt_kilos_Totales.Properties.Mask.EditMask = "n4";
-            this.txt_kilos_Totales.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt_kilos_Totales.Size = new System.Drawing.Size(100, 20);
-            this.txt_kilos_Totales.TabIndex = 35;
-            // 
-            // chk_Mercado
-            // 
-            this.chk_Mercado.EditValue = true;
-            this.chk_Mercado.Location = new System.Drawing.Point(243, 75);
-            this.chk_Mercado.MenuManager = this.barManager1;
-            this.chk_Mercado.Name = "chk_Mercado";
-            this.chk_Mercado.Properties.Caption = "Exportación";
-            this.chk_Mercado.Size = new System.Drawing.Size(83, 19);
-            this.chk_Mercado.TabIndex = 34;
-            this.chk_Mercado.CheckedChanged += new System.EventHandler(this.chk_Mercado_CheckedChanged);
-            // 
-            // labelControl34
-            // 
-            this.labelControl34.Location = new System.Drawing.Point(23, 77);
-            this.labelControl34.Name = "labelControl34";
-            this.labelControl34.Size = new System.Drawing.Size(63, 13);
-            this.labelControl34.TabIndex = 33;
-            this.labelControl34.Text = "Kilos Muestra";
-            // 
-            // txt_KilosMuestra
-            // 
-            this.txt_KilosMuestra.EditValue = "0";
-            this.txt_KilosMuestra.Enabled = false;
-            this.txt_KilosMuestra.Location = new System.Drawing.Point(127, 74);
-            this.txt_KilosMuestra.MenuManager = this.barManager1;
-            this.txt_KilosMuestra.Name = "txt_KilosMuestra";
-            this.txt_KilosMuestra.Properties.Mask.EditMask = "n4";
-            this.txt_KilosMuestra.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt_KilosMuestra.Size = new System.Drawing.Size(100, 20);
-            this.txt_KilosMuestra.TabIndex = 32;
-            // 
-            // labelControl33
-            // 
-            this.labelControl33.Location = new System.Drawing.Point(23, 25);
-            this.labelControl33.Name = "labelControl33";
-            this.labelControl33.Size = new System.Drawing.Size(47, 13);
-            this.labelControl33.TabIndex = 31;
-            this.labelControl33.Text = "Productor";
-            // 
-            // txt_Productor
-            // 
-            this.txt_Productor.Enabled = false;
-            this.txt_Productor.Location = new System.Drawing.Point(127, 22);
-            this.txt_Productor.MenuManager = this.barManager1;
-            this.txt_Productor.Name = "txt_Productor";
-            this.txt_Productor.Size = new System.Drawing.Size(260, 20);
-            this.txt_Productor.TabIndex = 30;
-            // 
-            // labelControl32
-            // 
-            this.labelControl32.Location = new System.Drawing.Point(23, 155);
-            this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(64, 13);
-            this.labelControl32.TabIndex = 29;
-            this.labelControl32.Text = "Total a Pagar";
-            // 
-            // txt_TotalaPagar
-            // 
-            this.txt_TotalaPagar.EditValue = "0";
-            this.txt_TotalaPagar.Location = new System.Drawing.Point(127, 152);
-            this.txt_TotalaPagar.MenuManager = this.barManager1;
-            this.txt_TotalaPagar.Name = "txt_TotalaPagar";
-            this.txt_TotalaPagar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_TotalaPagar.Properties.Appearance.Options.UseFont = true;
-            this.txt_TotalaPagar.Properties.Mask.EditMask = "c2";
-            this.txt_TotalaPagar.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt_TotalaPagar.Properties.ReadOnly = true;
-            this.txt_TotalaPagar.Size = new System.Drawing.Size(100, 20);
-            this.txt_TotalaPagar.TabIndex = 28;
-            // 
-            // labelControl31
-            // 
-            this.labelControl31.Location = new System.Drawing.Point(23, 129);
-            this.labelControl31.Name = "labelControl31";
-            this.labelControl31.Size = new System.Drawing.Size(67, 13);
-            this.labelControl31.TabIndex = 27;
-            this.labelControl31.Text = "Precio por Kilo";
-            // 
-            // txt_KiloPrecio
-            // 
-            this.txt_KiloPrecio.EditValue = "0";
-            this.txt_KiloPrecio.Location = new System.Drawing.Point(127, 126);
-            this.txt_KiloPrecio.MenuManager = this.barManager1;
-            this.txt_KiloPrecio.Name = "txt_KiloPrecio";
-            this.txt_KiloPrecio.Properties.Mask.EditMask = "c4";
-            this.txt_KiloPrecio.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt_KiloPrecio.Size = new System.Drawing.Size(54, 20);
-            this.txt_KiloPrecio.TabIndex = 26;
-            this.txt_KiloPrecio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KiloPrecio_KeyDown);
-            // 
-            // labelControl28
-            // 
-            this.labelControl28.Location = new System.Drawing.Point(23, 51);
-            this.labelControl28.Name = "labelControl28";
-            this.labelControl28.Size = new System.Drawing.Size(72, 13);
-            this.labelControl28.TabIndex = 25;
-            this.labelControl28.Text = "Kilos Ajustados";
-            // 
-            // txt_KilosAjustados
-            // 
-            this.txt_KilosAjustados.EditValue = "0";
-            this.txt_KilosAjustados.Enabled = false;
-            this.txt_KilosAjustados.Location = new System.Drawing.Point(127, 48);
-            this.txt_KilosAjustados.MenuManager = this.barManager1;
-            this.txt_KilosAjustados.Name = "txt_KilosAjustados";
-            this.txt_KilosAjustados.Properties.Mask.EditMask = "n4";
-            this.txt_KilosAjustados.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt_KilosAjustados.Size = new System.Drawing.Size(100, 20);
-            this.txt_KilosAjustados.TabIndex = 24;
-            // 
             // gridColumn20
             // 
             this.gridColumn20.Caption = "Codigo";
@@ -3146,37 +5347,1041 @@
             this.gridColumn23.Visible = true;
             this.gridColumn23.VisibleIndex = 1;
             // 
-            // gridColumn24
+            // tp_FacturaAcarreo
             // 
-            this.gridColumn24.Caption = "Codigo";
-            this.gridColumn24.FieldName = "Id_Camion";
-            this.gridColumn24.Name = "gridColumn24";
-            this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 0;
+            this.tp_FacturaAcarreo.Controls.Add(this.groupControl14);
+            this.tp_FacturaAcarreo.Name = "tp_FacturaAcarreo";
+            this.tp_FacturaAcarreo.Padding = new System.Windows.Forms.Padding(5);
+            this.tp_FacturaAcarreo.Size = new System.Drawing.Size(1123, 635);
+            this.tp_FacturaAcarreo.Text = "Factura";
             // 
-            // gridColumn25
+            // groupControl14
             // 
-            this.gridColumn25.Caption = "Camion";
-            this.gridColumn25.FieldName = "Nombre_Camion";
-            this.gridColumn25.Name = "gridColumn25";
-            this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 1;
+            this.groupControl14.Controls.Add(this.panelControl14);
+            this.groupControl14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl14.Location = new System.Drawing.Point(5, 5);
+            this.groupControl14.Name = "groupControl14";
+            this.groupControl14.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl14.Size = new System.Drawing.Size(1113, 625);
+            this.groupControl14.TabIndex = 1;
+            this.groupControl14.Text = "Factura";
             // 
-            // chk_kgProductor
+            // panelControl14
             // 
-            this.chk_kgProductor.Location = new System.Drawing.Point(213, 61);
-            this.chk_kgProductor.MenuManager = this.barManager1;
-            this.chk_kgProductor.Name = "chk_kgProductor";
-            this.chk_kgProductor.Properties.Caption = "Tomar kg Productor";
-            this.chk_kgProductor.Size = new System.Drawing.Size(129, 19);
-            this.chk_kgProductor.TabIndex = 36;
-            this.chk_kgProductor.CheckedChanged += new System.EventHandler(this.chk_kgProductor_CheckedChanged);
+            this.panelControl14.Controls.Add(this.chk_RetencionFleteAcarreo);
+            this.panelControl14.Controls.Add(this.txt_RetencionFleteFacturaAcarreo);
+            this.panelControl14.Controls.Add(this.labelControl145);
+            this.panelControl14.Controls.Add(this.txt_IVAFacturaAcarreo);
+            this.panelControl14.Controls.Add(this.labelControl144);
+            this.panelControl14.Controls.Add(this.chk_IVAAcarreo);
+            this.panelControl14.Controls.Add(this.chk_RetencionAcarreo);
+            this.panelControl14.Controls.Add(this.txt_TotalFacturaAcarreo);
+            this.panelControl14.Controls.Add(this.labelControl137);
+            this.panelControl14.Controls.Add(this.txt_RetencionFacturaAcarreo);
+            this.panelControl14.Controls.Add(this.labelControl138);
+            this.panelControl14.Controls.Add(this.labelControl91);
+            this.panelControl14.Controls.Add(this.txt_FolioFacturaAcarreo);
+            this.panelControl14.Controls.Add(this.labelControl90);
+            this.panelControl14.Controls.Add(this.txtRazonSAcarreo);
+            this.panelControl14.Controls.Add(this.opt_TipoFacturaAcarreo);
+            this.panelControl14.Controls.Add(this.chk_PagadaAcarreo);
+            this.panelControl14.Controls.Add(this.dt_FechaPagoAcarreo);
+            this.panelControl14.Controls.Add(this.dt_FechaFacturaAcarreo);
+            this.panelControl14.Controls.Add(this.labelControl78);
+            this.panelControl14.Controls.Add(this.labelControl80);
+            this.panelControl14.Controls.Add(this.cmb_MonedaAcarreo);
+            this.panelControl14.Controls.Add(this.labelControl86);
+            this.panelControl14.Controls.Add(this.labelControl87);
+            this.panelControl14.Controls.Add(this.txt_ImporteFacturaAcarreo);
+            this.panelControl14.Controls.Add(this.btn_ViewXMLAcarreo);
+            this.panelControl14.Controls.Add(this.btn_UpXMLAcarreo);
+            this.panelControl14.Controls.Add(this.txt_RutaXMLAcarreo);
+            this.panelControl14.Controls.Add(this.labelControl88);
+            this.panelControl14.Controls.Add(this.btn_ViewPDFAcarreo);
+            this.panelControl14.Controls.Add(this.btn_UpPDFAcarreo);
+            this.panelControl14.Controls.Add(this.txt_RutaPDFAcarreo);
+            this.panelControl14.Controls.Add(this.labelControl89);
+            this.panelControl14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl14.Location = new System.Drawing.Point(7, 28);
+            this.panelControl14.Name = "panelControl14";
+            this.panelControl14.Size = new System.Drawing.Size(1099, 590);
+            this.panelControl14.TabIndex = 56;
+            // 
+            // chk_RetencionFleteAcarreo
+            // 
+            this.chk_RetencionFleteAcarreo.EditValue = true;
+            this.chk_RetencionFleteAcarreo.Location = new System.Drawing.Point(262, 167);
+            this.chk_RetencionFleteAcarreo.MenuManager = this.barManager1;
+            this.chk_RetencionFleteAcarreo.Name = "chk_RetencionFleteAcarreo";
+            this.chk_RetencionFleteAcarreo.Properties.Caption = "Retencion Flete";
+            this.chk_RetencionFleteAcarreo.Size = new System.Drawing.Size(96, 20);
+            this.chk_RetencionFleteAcarreo.TabIndex = 152;
+            this.chk_RetencionFleteAcarreo.CheckedChanged += new System.EventHandler(this.chk_RetencionFleteAcarreo_CheckedChanged);
+            // 
+            // txt_RetencionFleteFacturaAcarreo
+            // 
+            this.txt_RetencionFleteFacturaAcarreo.EditValue = "0";
+            this.txt_RetencionFleteFacturaAcarreo.Location = new System.Drawing.Point(114, 167);
+            this.txt_RetencionFleteFacturaAcarreo.MenuManager = this.barManager1;
+            this.txt_RetencionFleteFacturaAcarreo.Name = "txt_RetencionFleteFacturaAcarreo";
+            this.txt_RetencionFleteFacturaAcarreo.Properties.BeepOnError = true;
+            this.txt_RetencionFleteFacturaAcarreo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_RetencionFleteFacturaAcarreo.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_RetencionFleteFacturaAcarreo.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_RetencionFleteFacturaAcarreo.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_RetencionFleteFacturaAcarreo.Properties.ReadOnly = true;
+            this.txt_RetencionFleteFacturaAcarreo.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_RetencionFleteFacturaAcarreo.Size = new System.Drawing.Size(94, 20);
+            this.txt_RetencionFleteFacturaAcarreo.TabIndex = 150;
+            // 
+            // labelControl145
+            // 
+            this.labelControl145.Location = new System.Drawing.Point(16, 171);
+            this.labelControl145.Name = "labelControl145";
+            this.labelControl145.Size = new System.Drawing.Size(72, 13);
+            this.labelControl145.TabIndex = 151;
+            this.labelControl145.Text = "Retension 4%:";
+            // 
+            // txt_IVAFacturaAcarreo
+            // 
+            this.txt_IVAFacturaAcarreo.EditValue = "0";
+            this.txt_IVAFacturaAcarreo.Location = new System.Drawing.Point(114, 193);
+            this.txt_IVAFacturaAcarreo.MenuManager = this.barManager1;
+            this.txt_IVAFacturaAcarreo.Name = "txt_IVAFacturaAcarreo";
+            this.txt_IVAFacturaAcarreo.Properties.BeepOnError = true;
+            this.txt_IVAFacturaAcarreo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_IVAFacturaAcarreo.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_IVAFacturaAcarreo.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_IVAFacturaAcarreo.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_IVAFacturaAcarreo.Properties.ReadOnly = true;
+            this.txt_IVAFacturaAcarreo.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_IVAFacturaAcarreo.Size = new System.Drawing.Size(94, 20);
+            this.txt_IVAFacturaAcarreo.TabIndex = 148;
+            // 
+            // labelControl144
+            // 
+            this.labelControl144.Location = new System.Drawing.Point(16, 197);
+            this.labelControl144.Name = "labelControl144";
+            this.labelControl144.Size = new System.Drawing.Size(21, 13);
+            this.labelControl144.TabIndex = 149;
+            this.labelControl144.Text = "IVA:";
+            // 
+            // chk_IVAAcarreo
+            // 
+            this.chk_IVAAcarreo.EditValue = true;
+            this.chk_IVAAcarreo.Location = new System.Drawing.Point(262, 193);
+            this.chk_IVAAcarreo.MenuManager = this.barManager1;
+            this.chk_IVAAcarreo.Name = "chk_IVAAcarreo";
+            this.chk_IVAAcarreo.Properties.Caption = "IVA";
+            this.chk_IVAAcarreo.Size = new System.Drawing.Size(76, 20);
+            this.chk_IVAAcarreo.TabIndex = 147;
+            this.chk_IVAAcarreo.CheckedChanged += new System.EventHandler(this.chk_IVAAcarreo_CheckedChanged);
+            // 
+            // chk_RetencionAcarreo
+            // 
+            this.chk_RetencionAcarreo.EditValue = true;
+            this.chk_RetencionAcarreo.Location = new System.Drawing.Point(262, 141);
+            this.chk_RetencionAcarreo.MenuManager = this.barManager1;
+            this.chk_RetencionAcarreo.Name = "chk_RetencionAcarreo";
+            this.chk_RetencionAcarreo.Properties.Caption = "Retencion RESICO";
+            this.chk_RetencionAcarreo.Size = new System.Drawing.Size(121, 20);
+            this.chk_RetencionAcarreo.TabIndex = 135;
+            this.chk_RetencionAcarreo.CheckedChanged += new System.EventHandler(this.chk_RetencionAcarreo_CheckedChanged);
+            // 
+            // txt_TotalFacturaAcarreo
+            // 
+            this.txt_TotalFacturaAcarreo.EditValue = "0";
+            this.txt_TotalFacturaAcarreo.Location = new System.Drawing.Point(114, 219);
+            this.txt_TotalFacturaAcarreo.MenuManager = this.barManager1;
+            this.txt_TotalFacturaAcarreo.Name = "txt_TotalFacturaAcarreo";
+            this.txt_TotalFacturaAcarreo.Properties.BeepOnError = true;
+            this.txt_TotalFacturaAcarreo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_TotalFacturaAcarreo.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_TotalFacturaAcarreo.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_TotalFacturaAcarreo.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_TotalFacturaAcarreo.Properties.ReadOnly = true;
+            this.txt_TotalFacturaAcarreo.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_TotalFacturaAcarreo.Size = new System.Drawing.Size(94, 20);
+            this.txt_TotalFacturaAcarreo.TabIndex = 132;
+            // 
+            // labelControl137
+            // 
+            this.labelControl137.Location = new System.Drawing.Point(16, 223);
+            this.labelControl137.Name = "labelControl137";
+            this.labelControl137.Size = new System.Drawing.Size(68, 13);
+            this.labelControl137.TabIndex = 133;
+            this.labelControl137.Text = "Total Factura:";
+            // 
+            // txt_RetencionFacturaAcarreo
+            // 
+            this.txt_RetencionFacturaAcarreo.EditValue = "0";
+            this.txt_RetencionFacturaAcarreo.Location = new System.Drawing.Point(114, 141);
+            this.txt_RetencionFacturaAcarreo.MenuManager = this.barManager1;
+            this.txt_RetencionFacturaAcarreo.Name = "txt_RetencionFacturaAcarreo";
+            this.txt_RetencionFacturaAcarreo.Properties.BeepOnError = true;
+            this.txt_RetencionFacturaAcarreo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_RetencionFacturaAcarreo.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_RetencionFacturaAcarreo.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_RetencionFacturaAcarreo.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_RetencionFacturaAcarreo.Properties.ReadOnly = true;
+            this.txt_RetencionFacturaAcarreo.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_RetencionFacturaAcarreo.Size = new System.Drawing.Size(94, 20);
+            this.txt_RetencionFacturaAcarreo.TabIndex = 130;
+            // 
+            // labelControl138
+            // 
+            this.labelControl138.Location = new System.Drawing.Point(16, 145);
+            this.labelControl138.Name = "labelControl138";
+            this.labelControl138.Size = new System.Drawing.Size(91, 13);
+            this.labelControl138.TabIndex = 131;
+            this.labelControl138.Text = "Retension 1.25% :";
+            // 
+            // labelControl91
+            // 
+            this.labelControl91.Location = new System.Drawing.Point(16, 94);
+            this.labelControl91.Name = "labelControl91";
+            this.labelControl91.Size = new System.Drawing.Size(64, 13);
+            this.labelControl91.TabIndex = 103;
+            this.labelControl91.Text = "Folio factura:";
+            // 
+            // txt_FolioFacturaAcarreo
+            // 
+            this.txt_FolioFacturaAcarreo.Location = new System.Drawing.Point(114, 90);
+            this.txt_FolioFacturaAcarreo.MenuManager = this.barManager1;
+            this.txt_FolioFacturaAcarreo.Name = "txt_FolioFacturaAcarreo";
+            this.txt_FolioFacturaAcarreo.Size = new System.Drawing.Size(94, 20);
+            this.txt_FolioFacturaAcarreo.TabIndex = 102;
+            // 
+            // labelControl90
+            // 
+            this.labelControl90.Location = new System.Drawing.Point(18, 15);
+            this.labelControl90.Name = "labelControl90";
+            this.labelControl90.Size = new System.Drawing.Size(43, 13);
+            this.labelControl90.TabIndex = 101;
+            this.labelControl90.Text = "Razon S.";
+            // 
+            // txtRazonSAcarreo
+            // 
+            this.txtRazonSAcarreo.Location = new System.Drawing.Point(66, 12);
+            this.txtRazonSAcarreo.Name = "txtRazonSAcarreo";
+            this.txtRazonSAcarreo.Size = new System.Drawing.Size(262, 20);
+            this.txtRazonSAcarreo.TabIndex = 100;
+            // 
+            // opt_TipoFacturaAcarreo
+            // 
+            this.opt_TipoFacturaAcarreo.Location = new System.Drawing.Point(402, 38);
+            this.opt_TipoFacturaAcarreo.MenuManager = this.barManager1;
+            this.opt_TipoFacturaAcarreo.Name = "opt_TipoFacturaAcarreo";
+            this.opt_TipoFacturaAcarreo.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.opt_TipoFacturaAcarreo.Properties.Appearance.Options.UseBackColor = true;
+            this.opt_TipoFacturaAcarreo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.opt_TipoFacturaAcarreo.Properties.Columns = 1;
+            this.opt_TipoFacturaAcarreo.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Diferido"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Total")});
+            this.opt_TipoFacturaAcarreo.Size = new System.Drawing.Size(100, 50);
+            this.opt_TipoFacturaAcarreo.TabIndex = 99;
+            // 
+            // chk_PagadaAcarreo
+            // 
+            this.chk_PagadaAcarreo.EditValue = true;
+            this.chk_PagadaAcarreo.Location = new System.Drawing.Point(262, 115);
+            this.chk_PagadaAcarreo.MenuManager = this.barManager1;
+            this.chk_PagadaAcarreo.Name = "chk_PagadaAcarreo";
+            this.chk_PagadaAcarreo.Properties.Caption = "Pagada";
+            this.chk_PagadaAcarreo.Size = new System.Drawing.Size(59, 20);
+            this.chk_PagadaAcarreo.TabIndex = 98;
+            // 
+            // dt_FechaPagoAcarreo
+            // 
+            this.dt_FechaPagoAcarreo.EditValue = null;
+            this.dt_FechaPagoAcarreo.Location = new System.Drawing.Point(275, 245);
+            this.dt_FechaPagoAcarreo.MenuManager = this.barManager1;
+            this.dt_FechaPagoAcarreo.Name = "dt_FechaPagoAcarreo";
+            this.dt_FechaPagoAcarreo.Properties.BeepOnError = true;
+            this.dt_FechaPagoAcarreo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaPagoAcarreo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaPagoAcarreo.Properties.MaskSettings.Set("mask", "d");
+            this.dt_FechaPagoAcarreo.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaPagoAcarreo.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaPagoAcarreo.TabIndex = 97;
+            // 
+            // dt_FechaFacturaAcarreo
+            // 
+            this.dt_FechaFacturaAcarreo.EditValue = null;
+            this.dt_FechaFacturaAcarreo.Location = new System.Drawing.Point(114, 245);
+            this.dt_FechaFacturaAcarreo.MenuManager = this.barManager1;
+            this.dt_FechaFacturaAcarreo.Name = "dt_FechaFacturaAcarreo";
+            this.dt_FechaFacturaAcarreo.Properties.BeepOnError = true;
+            this.dt_FechaFacturaAcarreo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaFacturaAcarreo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaFacturaAcarreo.Properties.MaskSettings.Set("mask", "d");
+            this.dt_FechaFacturaAcarreo.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaFacturaAcarreo.Size = new System.Drawing.Size(94, 20);
+            this.dt_FechaFacturaAcarreo.TabIndex = 96;
+            // 
+            // labelControl78
+            // 
+            this.labelControl78.Location = new System.Drawing.Point(228, 249);
+            this.labelControl78.Name = "labelControl78";
+            this.labelControl78.Size = new System.Drawing.Size(41, 13);
+            this.labelControl78.TabIndex = 94;
+            this.labelControl78.Text = "F. Pago:";
+            // 
+            // labelControl80
+            // 
+            this.labelControl80.Location = new System.Drawing.Point(16, 249);
+            this.labelControl80.Name = "labelControl80";
+            this.labelControl80.Size = new System.Drawing.Size(54, 13);
+            this.labelControl80.TabIndex = 92;
+            this.labelControl80.Text = "F. Factura:";
+            // 
+            // cmb_MonedaAcarreo
+            // 
+            this.cmb_MonedaAcarreo.Location = new System.Drawing.Point(275, 90);
+            this.cmb_MonedaAcarreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_MonedaAcarreo.MenuManager = this.barManager1;
+            this.cmb_MonedaAcarreo.Name = "cmb_MonedaAcarreo";
+            this.cmb_MonedaAcarreo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_MonedaAcarreo.Properties.Items.AddRange(new object[] {
+            "Pesos",
+            "Dólares"});
+            this.cmb_MonedaAcarreo.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmb_MonedaAcarreo.Size = new System.Drawing.Size(99, 20);
+            this.cmb_MonedaAcarreo.TabIndex = 71;
+            // 
+            // labelControl86
+            // 
+            this.labelControl86.Location = new System.Drawing.Point(223, 94);
+            this.labelControl86.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl86.Name = "labelControl86";
+            this.labelControl86.Size = new System.Drawing.Size(42, 13);
+            this.labelControl86.TabIndex = 70;
+            this.labelControl86.Text = "Moneda:";
+            // 
+            // labelControl87
+            // 
+            this.labelControl87.Location = new System.Drawing.Point(16, 119);
+            this.labelControl87.Name = "labelControl87";
+            this.labelControl87.Size = new System.Drawing.Size(80, 13);
+            this.labelControl87.TabIndex = 68;
+            this.labelControl87.Text = "Importe factura:";
+            // 
+            // txt_ImporteFacturaAcarreo
+            // 
+            this.txt_ImporteFacturaAcarreo.EditValue = "0";
+            this.txt_ImporteFacturaAcarreo.Location = new System.Drawing.Point(114, 115);
+            this.txt_ImporteFacturaAcarreo.MenuManager = this.barManager1;
+            this.txt_ImporteFacturaAcarreo.Name = "txt_ImporteFacturaAcarreo";
+            this.txt_ImporteFacturaAcarreo.Properties.BeepOnError = true;
+            this.txt_ImporteFacturaAcarreo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_ImporteFacturaAcarreo.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_ImporteFacturaAcarreo.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_ImporteFacturaAcarreo.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_ImporteFacturaAcarreo.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_ImporteFacturaAcarreo.Size = new System.Drawing.Size(94, 20);
+            this.txt_ImporteFacturaAcarreo.TabIndex = 67;
+            this.txt_ImporteFacturaAcarreo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ImporteFacturaAcarreo_KeyDown);
+            // 
+            // btn_ViewXMLAcarreo
+            // 
+            this.btn_ViewXMLAcarreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewXMLAcarreo.ImageOptions.Image")));
+            this.btn_ViewXMLAcarreo.Location = new System.Drawing.Point(369, 63);
+            this.btn_ViewXMLAcarreo.Name = "btn_ViewXMLAcarreo";
+            this.btn_ViewXMLAcarreo.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewXMLAcarreo.TabIndex = 17;
+            this.btn_ViewXMLAcarreo.Click += new System.EventHandler(this.btn_ViewXMLAcarreo_Click);
+            // 
+            // btn_UpXMLAcarreo
+            // 
+            this.btn_UpXMLAcarreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpXMLAcarreo.ImageOptions.Image")));
+            this.btn_UpXMLAcarreo.Location = new System.Drawing.Point(339, 63);
+            this.btn_UpXMLAcarreo.Name = "btn_UpXMLAcarreo";
+            this.btn_UpXMLAcarreo.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpXMLAcarreo.TabIndex = 16;
+            // 
+            // txt_RutaXMLAcarreo
+            // 
+            this.txt_RutaXMLAcarreo.Enabled = false;
+            this.txt_RutaXMLAcarreo.Location = new System.Drawing.Point(66, 64);
+            this.txt_RutaXMLAcarreo.Name = "txt_RutaXMLAcarreo";
+            this.txt_RutaXMLAcarreo.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaXMLAcarreo.TabIndex = 15;
+            // 
+            // labelControl88
+            // 
+            this.labelControl88.Location = new System.Drawing.Point(19, 70);
+            this.labelControl88.Name = "labelControl88";
+            this.labelControl88.Size = new System.Drawing.Size(19, 13);
+            this.labelControl88.TabIndex = 14;
+            this.labelControl88.Text = "XML";
+            // 
+            // btn_ViewPDFAcarreo
+            // 
+            this.btn_ViewPDFAcarreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFAcarreo.ImageOptions.Image")));
+            this.btn_ViewPDFAcarreo.Location = new System.Drawing.Point(369, 37);
+            this.btn_ViewPDFAcarreo.Name = "btn_ViewPDFAcarreo";
+            this.btn_ViewPDFAcarreo.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFAcarreo.TabIndex = 13;
+            this.btn_ViewPDFAcarreo.Click += new System.EventHandler(this.btn_ViewPDFAcarreo_Click);
+            // 
+            // btn_UpPDFAcarreo
+            // 
+            this.btn_UpPDFAcarreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFAcarreo.ImageOptions.Image")));
+            this.btn_UpPDFAcarreo.Location = new System.Drawing.Point(339, 37);
+            this.btn_UpPDFAcarreo.Name = "btn_UpPDFAcarreo";
+            this.btn_UpPDFAcarreo.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFAcarreo.TabIndex = 12;
+            this.btn_UpPDFAcarreo.Click += new System.EventHandler(this.btn_UpPDFAcarreo_Click);
+            // 
+            // txt_RutaPDFAcarreo
+            // 
+            this.txt_RutaPDFAcarreo.Enabled = false;
+            this.txt_RutaPDFAcarreo.Location = new System.Drawing.Point(66, 38);
+            this.txt_RutaPDFAcarreo.Name = "txt_RutaPDFAcarreo";
+            this.txt_RutaPDFAcarreo.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaPDFAcarreo.TabIndex = 11;
+            // 
+            // labelControl89
+            // 
+            this.labelControl89.Location = new System.Drawing.Point(19, 43);
+            this.labelControl89.Name = "labelControl89";
+            this.labelControl89.Size = new System.Drawing.Size(19, 13);
+            this.labelControl89.TabIndex = 10;
+            this.labelControl89.Text = "PDF";
+            // 
+            // navigationPage6
+            // 
+            this.navigationPage6.Caption = "Productor";
+            this.navigationPage6.Controls.Add(this.panelControl18);
+            this.navigationPage6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage6.ImageOptions.Image")));
+            this.navigationPage6.Name = "navigationPage6";
+            this.navigationPage6.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
+            this.navigationPage6.Size = new System.Drawing.Size(1123, 667);
+            // 
+            // panelControl18
+            // 
+            this.panelControl18.Controls.Add(this.xtraTabControl2);
+            this.panelControl18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl18.Location = new System.Drawing.Point(0, 0);
+            this.panelControl18.Name = "panelControl18";
+            this.panelControl18.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl18.Size = new System.Drawing.Size(1123, 667);
+            this.panelControl18.TabIndex = 41;
+            // 
+            // xtraTabControl2
+            // 
+            this.xtraTabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl2.Location = new System.Drawing.Point(7, 7);
+            this.xtraTabControl2.Name = "xtraTabControl2";
+            this.xtraTabControl2.SelectedTabPage = this.xtraTabPage3;
+            this.xtraTabControl2.Size = new System.Drawing.Size(1109, 653);
+            this.xtraTabControl2.TabIndex = 40;
+            this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage3,
+            this.tp_FacturaProductor});
+            // 
+            // xtraTabPage3
+            // 
+            this.xtraTabPage3.Controls.Add(this.groupControl11);
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1107, 628);
+            this.xtraTabPage3.Text = "Pago Productor";
+            // 
+            // groupControl11
+            // 
+            this.groupControl11.Controls.Add(this.txt_ObservacionesProductor);
+            this.groupControl11.Controls.Add(this.labelControl146);
+            this.groupControl11.Controls.Add(this.labelControl33);
+            this.groupControl11.Controls.Add(this.txt_KilosAjustados);
+            this.groupControl11.Controls.Add(this.labelControl35);
+            this.groupControl11.Controls.Add(this.labelControl28);
+            this.groupControl11.Controls.Add(this.txt_kilos_Totales);
+            this.groupControl11.Controls.Add(this.txt_KiloPrecio);
+            this.groupControl11.Controls.Add(this.chk_Mercado);
+            this.groupControl11.Controls.Add(this.labelControl31);
+            this.groupControl11.Controls.Add(this.labelControl34);
+            this.groupControl11.Controls.Add(this.txt_TotalaPagar);
+            this.groupControl11.Controls.Add(this.txt_KilosMuestra);
+            this.groupControl11.Controls.Add(this.labelControl32);
+            this.groupControl11.Controls.Add(this.txt_Productor);
+            this.groupControl11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl11.Location = new System.Drawing.Point(5, 5);
+            this.groupControl11.Name = "groupControl11";
+            this.groupControl11.Size = new System.Drawing.Size(1097, 618);
+            this.groupControl11.TabIndex = 38;
+            // 
+            // txt_ObservacionesProductor
+            // 
+            this.txt_ObservacionesProductor.Location = new System.Drawing.Point(120, 187);
+            this.txt_ObservacionesProductor.MenuManager = this.barManager1;
+            this.txt_ObservacionesProductor.Name = "txt_ObservacionesProductor";
+            this.txt_ObservacionesProductor.Size = new System.Drawing.Size(260, 82);
+            this.txt_ObservacionesProductor.TabIndex = 38;
+            // 
+            // labelControl146
+            // 
+            this.labelControl146.Location = new System.Drawing.Point(16, 191);
+            this.labelControl146.Name = "labelControl146";
+            this.labelControl146.Size = new System.Drawing.Size(71, 13);
+            this.labelControl146.TabIndex = 37;
+            this.labelControl146.Text = "Observaciones";
+            // 
+            // labelControl33
+            // 
+            this.labelControl33.Location = new System.Drawing.Point(16, 33);
+            this.labelControl33.Name = "labelControl33";
+            this.labelControl33.Size = new System.Drawing.Size(47, 13);
+            this.labelControl33.TabIndex = 31;
+            this.labelControl33.Text = "Productor";
+            // 
+            // txt_KilosAjustados
+            // 
+            this.txt_KilosAjustados.EditValue = "0";
+            this.txt_KilosAjustados.Enabled = false;
+            this.txt_KilosAjustados.Location = new System.Drawing.Point(120, 56);
+            this.txt_KilosAjustados.MenuManager = this.barManager1;
+            this.txt_KilosAjustados.Name = "txt_KilosAjustados";
+            this.txt_KilosAjustados.Properties.BeepOnError = true;
+            this.txt_KilosAjustados.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_KilosAjustados.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_KilosAjustados.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_KilosAjustados.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_KilosAjustados.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_KilosAjustados.Properties.NullText = "0";
+            this.txt_KilosAjustados.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_KilosAjustados.Size = new System.Drawing.Size(100, 20);
+            this.txt_KilosAjustados.TabIndex = 24;
+            // 
+            // labelControl35
+            // 
+            this.labelControl35.Location = new System.Drawing.Point(16, 111);
+            this.labelControl35.Name = "labelControl35";
+            this.labelControl35.Size = new System.Drawing.Size(61, 13);
+            this.labelControl35.TabIndex = 36;
+            this.labelControl35.Text = "Kilos a Pagar";
+            // 
+            // labelControl28
+            // 
+            this.labelControl28.Location = new System.Drawing.Point(16, 59);
+            this.labelControl28.Name = "labelControl28";
+            this.labelControl28.Size = new System.Drawing.Size(72, 13);
+            this.labelControl28.TabIndex = 25;
+            this.labelControl28.Text = "Kilos Ajustados";
+            // 
+            // txt_kilos_Totales
+            // 
+            this.txt_kilos_Totales.EditValue = "0";
+            this.txt_kilos_Totales.Enabled = false;
+            this.txt_kilos_Totales.Location = new System.Drawing.Point(120, 108);
+            this.txt_kilos_Totales.MenuManager = this.barManager1;
+            this.txt_kilos_Totales.Name = "txt_kilos_Totales";
+            this.txt_kilos_Totales.Properties.BeepOnError = true;
+            this.txt_kilos_Totales.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_kilos_Totales.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_kilos_Totales.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_kilos_Totales.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_kilos_Totales.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_kilos_Totales.Properties.NullText = "0";
+            this.txt_kilos_Totales.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_kilos_Totales.Size = new System.Drawing.Size(100, 20);
+            this.txt_kilos_Totales.TabIndex = 35;
+            // 
+            // txt_KiloPrecio
+            // 
+            this.txt_KiloPrecio.EditValue = "0";
+            this.txt_KiloPrecio.Location = new System.Drawing.Point(120, 134);
+            this.txt_KiloPrecio.MenuManager = this.barManager1;
+            this.txt_KiloPrecio.Name = "txt_KiloPrecio";
+            this.txt_KiloPrecio.Properties.BeepOnError = true;
+            this.txt_KiloPrecio.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_KiloPrecio.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_KiloPrecio.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_KiloPrecio.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_KiloPrecio.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_KiloPrecio.Properties.NullText = "0";
+            this.txt_KiloPrecio.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_KiloPrecio.Size = new System.Drawing.Size(54, 20);
+            this.txt_KiloPrecio.TabIndex = 26;
+            this.txt_KiloPrecio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KiloPrecio_KeyDown);
+            // 
+            // chk_Mercado
+            // 
+            this.chk_Mercado.EditValue = true;
+            this.chk_Mercado.Location = new System.Drawing.Point(236, 83);
+            this.chk_Mercado.MenuManager = this.barManager1;
+            this.chk_Mercado.Name = "chk_Mercado";
+            this.chk_Mercado.Properties.Caption = "Exportación";
+            this.chk_Mercado.Size = new System.Drawing.Size(83, 20);
+            this.chk_Mercado.TabIndex = 34;
+            this.chk_Mercado.CheckedChanged += new System.EventHandler(this.chk_Mercado_CheckedChanged);
+            // 
+            // labelControl31
+            // 
+            this.labelControl31.Location = new System.Drawing.Point(16, 137);
+            this.labelControl31.Name = "labelControl31";
+            this.labelControl31.Size = new System.Drawing.Size(67, 13);
+            this.labelControl31.TabIndex = 27;
+            this.labelControl31.Text = "Precio por Kilo";
+            // 
+            // labelControl34
+            // 
+            this.labelControl34.Location = new System.Drawing.Point(16, 85);
+            this.labelControl34.Name = "labelControl34";
+            this.labelControl34.Size = new System.Drawing.Size(63, 13);
+            this.labelControl34.TabIndex = 33;
+            this.labelControl34.Text = "Kilos Muestra";
+            // 
+            // txt_TotalaPagar
+            // 
+            this.txt_TotalaPagar.EditValue = "0";
+            this.txt_TotalaPagar.Location = new System.Drawing.Point(120, 160);
+            this.txt_TotalaPagar.MenuManager = this.barManager1;
+            this.txt_TotalaPagar.Name = "txt_TotalaPagar";
+            this.txt_TotalaPagar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TotalaPagar.Properties.Appearance.Options.UseFont = true;
+            this.txt_TotalaPagar.Properties.BeepOnError = true;
+            this.txt_TotalaPagar.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_TotalaPagar.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_TotalaPagar.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_TotalaPagar.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_TotalaPagar.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_TotalaPagar.Properties.NullText = "0";
+            this.txt_TotalaPagar.Properties.ReadOnly = true;
+            this.txt_TotalaPagar.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_TotalaPagar.Size = new System.Drawing.Size(100, 20);
+            this.txt_TotalaPagar.TabIndex = 28;
+            this.txt_TotalaPagar.EditValueChanged += new System.EventHandler(this.txt_TotalaPagar_EditValueChanged);
+            // 
+            // txt_KilosMuestra
+            // 
+            this.txt_KilosMuestra.EditValue = "0";
+            this.txt_KilosMuestra.Enabled = false;
+            this.txt_KilosMuestra.Location = new System.Drawing.Point(120, 82);
+            this.txt_KilosMuestra.MenuManager = this.barManager1;
+            this.txt_KilosMuestra.Name = "txt_KilosMuestra";
+            this.txt_KilosMuestra.Properties.BeepOnError = true;
+            this.txt_KilosMuestra.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_KilosMuestra.Properties.MaskSettings.Set("mask", "n4");
+            this.txt_KilosMuestra.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_KilosMuestra.Properties.MaskSettings.Set("valueAfterDelete", null);
+            this.txt_KilosMuestra.Properties.MaskSettings.Set("valueType", typeof(long));
+            this.txt_KilosMuestra.Properties.NullText = "0";
+            this.txt_KilosMuestra.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_KilosMuestra.Size = new System.Drawing.Size(100, 20);
+            this.txt_KilosMuestra.TabIndex = 32;
+            // 
+            // labelControl32
+            // 
+            this.labelControl32.Location = new System.Drawing.Point(16, 163);
+            this.labelControl32.Name = "labelControl32";
+            this.labelControl32.Size = new System.Drawing.Size(64, 13);
+            this.labelControl32.TabIndex = 29;
+            this.labelControl32.Text = "Total a Pagar";
+            // 
+            // txt_Productor
+            // 
+            this.txt_Productor.Enabled = false;
+            this.txt_Productor.Location = new System.Drawing.Point(120, 30);
+            this.txt_Productor.MenuManager = this.barManager1;
+            this.txt_Productor.Name = "txt_Productor";
+            this.txt_Productor.Size = new System.Drawing.Size(260, 20);
+            this.txt_Productor.TabIndex = 30;
+            // 
+            // tp_FacturaProductor
+            // 
+            this.tp_FacturaProductor.Controls.Add(this.groupControl13);
+            this.tp_FacturaProductor.Name = "tp_FacturaProductor";
+            this.tp_FacturaProductor.Padding = new System.Windows.Forms.Padding(5);
+            this.tp_FacturaProductor.Size = new System.Drawing.Size(1107, 628);
+            this.tp_FacturaProductor.Text = "Factura";
+            // 
+            // groupControl13
+            // 
+            this.groupControl13.Controls.Add(this.btn_CalcularFechaPago);
+            this.groupControl13.Controls.Add(this.txt_IVAFacturaProductor);
+            this.groupControl13.Controls.Add(this.labelControl139);
+            this.groupControl13.Controls.Add(this.chk_IVAProductor);
+            this.groupControl13.Controls.Add(this.chk_RetencionProductor);
+            this.groupControl13.Controls.Add(this.txt_TotalFacturaProductor);
+            this.groupControl13.Controls.Add(this.labelControl128);
+            this.groupControl13.Controls.Add(this.txt_RetencionFacturaProductor);
+            this.groupControl13.Controls.Add(this.labelControl127);
+            this.groupControl13.Controls.Add(this.labelControl79);
+            this.groupControl13.Controls.Add(this.txtRazonSProductor);
+            this.groupControl13.Controls.Add(this.btn_ViewPDFProductor);
+            this.groupControl13.Controls.Add(this.txt_FolioFacturaProductor);
+            this.groupControl13.Controls.Add(this.labelControl92);
+            this.groupControl13.Controls.Add(this.btn_UpPDFProductor);
+            this.groupControl13.Controls.Add(this.labelControl81);
+            this.groupControl13.Controls.Add(this.txt_RutaXMLProductor);
+            this.groupControl13.Controls.Add(this.txt_RutaPDFProductor);
+            this.groupControl13.Controls.Add(this.btn_UpXMLProductor);
+            this.groupControl13.Controls.Add(this.opt_TipoFacturaProductor);
+            this.groupControl13.Controls.Add(this.labelControl93);
+            this.groupControl13.Controls.Add(this.btn_ViewXMLProductor);
+            this.groupControl13.Controls.Add(this.chk_PagadaProductor);
+            this.groupControl13.Controls.Add(this.txt_ImporteFacturaProductor);
+            this.groupControl13.Controls.Add(this.labelControl85);
+            this.groupControl13.Controls.Add(this.dt_FechaPagoProductor);
+            this.groupControl13.Controls.Add(this.labelControl84);
+            this.groupControl13.Controls.Add(this.cmb_MonedaProductor);
+            this.groupControl13.Controls.Add(this.dt_FechaFacturaProductor);
+            this.groupControl13.Controls.Add(this.labelControl83);
+            this.groupControl13.Controls.Add(this.labelControl82);
+            this.groupControl13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl13.Location = new System.Drawing.Point(5, 5);
+            this.groupControl13.Name = "groupControl13";
+            this.groupControl13.Size = new System.Drawing.Size(1097, 618);
+            this.groupControl13.TabIndex = 39;
+            // 
+            // btn_CalcularFechaPago
+            // 
+            this.btn_CalcularFechaPago.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_CalcularFechaPago.ImageOptions.Image")));
+            this.btn_CalcularFechaPago.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btn_CalcularFechaPago.Location = new System.Drawing.Point(370, 233);
+            this.btn_CalcularFechaPago.Name = "btn_CalcularFechaPago";
+            this.btn_CalcularFechaPago.Size = new System.Drawing.Size(25, 25);
+            this.btn_CalcularFechaPago.TabIndex = 134;
+            this.btn_CalcularFechaPago.Click += new System.EventHandler(this.btn_CalcularFechaPago_Click);
+            // 
+            // txt_IVAFacturaProductor
+            // 
+            this.txt_IVAFacturaProductor.EditValue = "0";
+            this.txt_IVAFacturaProductor.Location = new System.Drawing.Point(104, 183);
+            this.txt_IVAFacturaProductor.MenuManager = this.barManager1;
+            this.txt_IVAFacturaProductor.Name = "txt_IVAFacturaProductor";
+            this.txt_IVAFacturaProductor.Properties.BeepOnError = true;
+            this.txt_IVAFacturaProductor.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_IVAFacturaProductor.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_IVAFacturaProductor.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_IVAFacturaProductor.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_IVAFacturaProductor.Properties.NullText = "0";
+            this.txt_IVAFacturaProductor.Properties.ReadOnly = true;
+            this.txt_IVAFacturaProductor.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_IVAFacturaProductor.Size = new System.Drawing.Size(94, 20);
+            this.txt_IVAFacturaProductor.TabIndex = 132;
+            // 
+            // labelControl139
+            // 
+            this.labelControl139.Location = new System.Drawing.Point(16, 187);
+            this.labelControl139.Name = "labelControl139";
+            this.labelControl139.Size = new System.Drawing.Size(21, 13);
+            this.labelControl139.TabIndex = 133;
+            this.labelControl139.Text = "IVA:";
+            // 
+            // chk_IVAProductor
+            // 
+            this.chk_IVAProductor.EditValue = true;
+            this.chk_IVAProductor.Location = new System.Drawing.Point(252, 183);
+            this.chk_IVAProductor.MenuManager = this.barManager1;
+            this.chk_IVAProductor.Name = "chk_IVAProductor";
+            this.chk_IVAProductor.Properties.Caption = "IVA";
+            this.chk_IVAProductor.Size = new System.Drawing.Size(76, 20);
+            this.chk_IVAProductor.TabIndex = 131;
+            this.chk_IVAProductor.CheckedChanged += new System.EventHandler(this.chk_IVAProductor_CheckedChanged);
+            // 
+            // chk_RetencionProductor
+            // 
+            this.chk_RetencionProductor.EditValue = true;
+            this.chk_RetencionProductor.Location = new System.Drawing.Point(252, 157);
+            this.chk_RetencionProductor.MenuManager = this.barManager1;
+            this.chk_RetencionProductor.Name = "chk_RetencionProductor";
+            this.chk_RetencionProductor.Properties.Caption = "Retencion";
+            this.chk_RetencionProductor.Size = new System.Drawing.Size(76, 20);
+            this.chk_RetencionProductor.TabIndex = 130;
+            this.chk_RetencionProductor.EditValueChanged += new System.EventHandler(this.chk_RetencionProductor_CheckedChanged);
+            // 
+            // txt_TotalFacturaProductor
+            // 
+            this.txt_TotalFacturaProductor.EditValue = "0";
+            this.txt_TotalFacturaProductor.Location = new System.Drawing.Point(104, 209);
+            this.txt_TotalFacturaProductor.MenuManager = this.barManager1;
+            this.txt_TotalFacturaProductor.Name = "txt_TotalFacturaProductor";
+            this.txt_TotalFacturaProductor.Properties.BeepOnError = true;
+            this.txt_TotalFacturaProductor.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_TotalFacturaProductor.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_TotalFacturaProductor.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_TotalFacturaProductor.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_TotalFacturaProductor.Properties.NullText = "0";
+            this.txt_TotalFacturaProductor.Properties.ReadOnly = true;
+            this.txt_TotalFacturaProductor.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_TotalFacturaProductor.Size = new System.Drawing.Size(94, 20);
+            this.txt_TotalFacturaProductor.TabIndex = 128;
+            // 
+            // labelControl128
+            // 
+            this.labelControl128.Location = new System.Drawing.Point(16, 213);
+            this.labelControl128.Name = "labelControl128";
+            this.labelControl128.Size = new System.Drawing.Size(68, 13);
+            this.labelControl128.TabIndex = 129;
+            this.labelControl128.Text = "Total Factura:";
+            // 
+            // txt_RetencionFacturaProductor
+            // 
+            this.txt_RetencionFacturaProductor.EditValue = "0";
+            this.txt_RetencionFacturaProductor.Location = new System.Drawing.Point(104, 157);
+            this.txt_RetencionFacturaProductor.MenuManager = this.barManager1;
+            this.txt_RetencionFacturaProductor.Name = "txt_RetencionFacturaProductor";
+            this.txt_RetencionFacturaProductor.Properties.BeepOnError = true;
+            this.txt_RetencionFacturaProductor.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_RetencionFacturaProductor.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_RetencionFacturaProductor.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_RetencionFacturaProductor.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_RetencionFacturaProductor.Properties.NullText = "0";
+            this.txt_RetencionFacturaProductor.Properties.ReadOnly = true;
+            this.txt_RetencionFacturaProductor.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_RetencionFacturaProductor.Size = new System.Drawing.Size(94, 20);
+            this.txt_RetencionFacturaProductor.TabIndex = 126;
+            // 
+            // labelControl127
+            // 
+            this.labelControl127.Location = new System.Drawing.Point(16, 161);
+            this.labelControl127.Name = "labelControl127";
+            this.labelControl127.Size = new System.Drawing.Size(52, 13);
+            this.labelControl127.TabIndex = 127;
+            this.labelControl127.Text = "Retension:";
+            // 
+            // labelControl79
+            // 
+            this.labelControl79.Location = new System.Drawing.Point(16, 110);
+            this.labelControl79.Name = "labelControl79";
+            this.labelControl79.Size = new System.Drawing.Size(64, 13);
+            this.labelControl79.TabIndex = 125;
+            this.labelControl79.Text = "Folio factura:";
+            // 
+            // txtRazonSProductor
+            // 
+            this.txtRazonSProductor.Location = new System.Drawing.Point(66, 28);
+            this.txtRazonSProductor.Name = "txtRazonSProductor";
+            this.txtRazonSProductor.Size = new System.Drawing.Size(262, 20);
+            this.txtRazonSProductor.TabIndex = 122;
+            // 
+            // btn_ViewPDFProductor
+            // 
+            this.btn_ViewPDFProductor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFProductor.ImageOptions.Image")));
+            this.btn_ViewPDFProductor.Location = new System.Drawing.Point(369, 53);
+            this.btn_ViewPDFProductor.Name = "btn_ViewPDFProductor";
+            this.btn_ViewPDFProductor.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFProductor.TabIndex = 107;
+            this.btn_ViewPDFProductor.Click += new System.EventHandler(this.btn_ViewPDFProductor_Click);
+            // 
+            // txt_FolioFacturaProductor
+            // 
+            this.txt_FolioFacturaProductor.Location = new System.Drawing.Point(104, 106);
+            this.txt_FolioFacturaProductor.MenuManager = this.barManager1;
+            this.txt_FolioFacturaProductor.Name = "txt_FolioFacturaProductor";
+            this.txt_FolioFacturaProductor.Size = new System.Drawing.Size(94, 20);
+            this.txt_FolioFacturaProductor.TabIndex = 124;
+            // 
+            // labelControl92
+            // 
+            this.labelControl92.Location = new System.Drawing.Point(19, 86);
+            this.labelControl92.Name = "labelControl92";
+            this.labelControl92.Size = new System.Drawing.Size(19, 13);
+            this.labelControl92.TabIndex = 108;
+            this.labelControl92.Text = "XML";
+            // 
+            // btn_UpPDFProductor
+            // 
+            this.btn_UpPDFProductor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFProductor.ImageOptions.Image")));
+            this.btn_UpPDFProductor.Location = new System.Drawing.Point(339, 53);
+            this.btn_UpPDFProductor.Name = "btn_UpPDFProductor";
+            this.btn_UpPDFProductor.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFProductor.TabIndex = 106;
+            this.btn_UpPDFProductor.Click += new System.EventHandler(this.btn_UpPDFProductor_Click);
+            // 
+            // labelControl81
+            // 
+            this.labelControl81.Location = new System.Drawing.Point(18, 31);
+            this.labelControl81.Name = "labelControl81";
+            this.labelControl81.Size = new System.Drawing.Size(43, 13);
+            this.labelControl81.TabIndex = 123;
+            this.labelControl81.Text = "Razon S.";
+            // 
+            // txt_RutaXMLProductor
+            // 
+            this.txt_RutaXMLProductor.Location = new System.Drawing.Point(66, 80);
+            this.txt_RutaXMLProductor.Name = "txt_RutaXMLProductor";
+            this.txt_RutaXMLProductor.Properties.ReadOnly = true;
+            this.txt_RutaXMLProductor.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaXMLProductor.TabIndex = 109;
+            // 
+            // txt_RutaPDFProductor
+            // 
+            this.txt_RutaPDFProductor.Location = new System.Drawing.Point(66, 54);
+            this.txt_RutaPDFProductor.Name = "txt_RutaPDFProductor";
+            this.txt_RutaPDFProductor.Properties.ReadOnly = true;
+            this.txt_RutaPDFProductor.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaPDFProductor.TabIndex = 105;
+            // 
+            // btn_UpXMLProductor
+            // 
+            this.btn_UpXMLProductor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpXMLProductor.ImageOptions.Image")));
+            this.btn_UpXMLProductor.Location = new System.Drawing.Point(339, 79);
+            this.btn_UpXMLProductor.Name = "btn_UpXMLProductor";
+            this.btn_UpXMLProductor.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpXMLProductor.TabIndex = 110;
+            this.btn_UpXMLProductor.Click += new System.EventHandler(this.btn_UpXMLProductor_Click);
+            // 
+            // opt_TipoFacturaProductor
+            // 
+            this.opt_TipoFacturaProductor.Location = new System.Drawing.Point(402, 54);
+            this.opt_TipoFacturaProductor.MenuManager = this.barManager1;
+            this.opt_TipoFacturaProductor.Name = "opt_TipoFacturaProductor";
+            this.opt_TipoFacturaProductor.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.opt_TipoFacturaProductor.Properties.Appearance.Options.UseBackColor = true;
+            this.opt_TipoFacturaProductor.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.opt_TipoFacturaProductor.Properties.Columns = 1;
+            this.opt_TipoFacturaProductor.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Diferido"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Total")});
+            this.opt_TipoFacturaProductor.Size = new System.Drawing.Size(100, 50);
+            this.opt_TipoFacturaProductor.TabIndex = 121;
+            // 
+            // labelControl93
+            // 
+            this.labelControl93.Location = new System.Drawing.Point(19, 59);
+            this.labelControl93.Name = "labelControl93";
+            this.labelControl93.Size = new System.Drawing.Size(19, 13);
+            this.labelControl93.TabIndex = 104;
+            this.labelControl93.Text = "PDF";
+            // 
+            // btn_ViewXMLProductor
+            // 
+            this.btn_ViewXMLProductor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewXMLProductor.ImageOptions.Image")));
+            this.btn_ViewXMLProductor.Location = new System.Drawing.Point(369, 79);
+            this.btn_ViewXMLProductor.Name = "btn_ViewXMLProductor";
+            this.btn_ViewXMLProductor.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewXMLProductor.TabIndex = 111;
+            this.btn_ViewXMLProductor.Click += new System.EventHandler(this.btn_ViewXMLProductor_Click);
+            // 
+            // chk_PagadaProductor
+            // 
+            this.chk_PagadaProductor.EditValue = true;
+            this.chk_PagadaProductor.Location = new System.Drawing.Point(252, 131);
+            this.chk_PagadaProductor.MenuManager = this.barManager1;
+            this.chk_PagadaProductor.Name = "chk_PagadaProductor";
+            this.chk_PagadaProductor.Properties.Caption = "Pagada";
+            this.chk_PagadaProductor.Size = new System.Drawing.Size(59, 20);
+            this.chk_PagadaProductor.TabIndex = 120;
+            // 
+            // txt_ImporteFacturaProductor
+            // 
+            this.txt_ImporteFacturaProductor.EditValue = "0";
+            this.txt_ImporteFacturaProductor.Location = new System.Drawing.Point(104, 131);
+            this.txt_ImporteFacturaProductor.MenuManager = this.barManager1;
+            this.txt_ImporteFacturaProductor.Name = "txt_ImporteFacturaProductor";
+            this.txt_ImporteFacturaProductor.Properties.BeepOnError = true;
+            this.txt_ImporteFacturaProductor.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_ImporteFacturaProductor.Properties.MaskSettings.Set("mask", "c4");
+            this.txt_ImporteFacturaProductor.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_ImporteFacturaProductor.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_ImporteFacturaProductor.Properties.NullText = "0";
+            this.txt_ImporteFacturaProductor.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_ImporteFacturaProductor.Size = new System.Drawing.Size(94, 20);
+            this.txt_ImporteFacturaProductor.TabIndex = 112;
+            this.txt_ImporteFacturaProductor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_ImporteFacturaProductor_KeyDown);
+            // 
+            // labelControl85
+            // 
+            this.labelControl85.Location = new System.Drawing.Point(16, 135);
+            this.labelControl85.Name = "labelControl85";
+            this.labelControl85.Size = new System.Drawing.Size(82, 13);
+            this.labelControl85.TabIndex = 113;
+            this.labelControl85.Text = "Importe Factura:";
+            // 
+            // dt_FechaPagoProductor
+            // 
+            this.dt_FechaPagoProductor.EditValue = null;
+            this.dt_FechaPagoProductor.Location = new System.Drawing.Point(265, 235);
+            this.dt_FechaPagoProductor.MenuManager = this.barManager1;
+            this.dt_FechaPagoProductor.Name = "dt_FechaPagoProductor";
+            this.dt_FechaPagoProductor.Properties.BeepOnError = true;
+            this.dt_FechaPagoProductor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaPagoProductor.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaPagoProductor.Properties.MaskSettings.Set("mask", "d");
+            this.dt_FechaPagoProductor.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaPagoProductor.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaPagoProductor.TabIndex = 119;
+            // 
+            // labelControl84
+            // 
+            this.labelControl84.Location = new System.Drawing.Point(213, 110);
+            this.labelControl84.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.labelControl84.Name = "labelControl84";
+            this.labelControl84.Size = new System.Drawing.Size(42, 13);
+            this.labelControl84.TabIndex = 114;
+            this.labelControl84.Text = "Moneda:";
+            // 
+            // cmb_MonedaProductor
+            // 
+            this.cmb_MonedaProductor.Location = new System.Drawing.Point(265, 106);
+            this.cmb_MonedaProductor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmb_MonedaProductor.MenuManager = this.barManager1;
+            this.cmb_MonedaProductor.Name = "cmb_MonedaProductor";
+            this.cmb_MonedaProductor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_MonedaProductor.Properties.Items.AddRange(new object[] {
+            "Pesos",
+            "Dólares"});
+            this.cmb_MonedaProductor.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmb_MonedaProductor.Size = new System.Drawing.Size(99, 20);
+            this.cmb_MonedaProductor.TabIndex = 115;
+            // 
+            // dt_FechaFacturaProductor
+            // 
+            this.dt_FechaFacturaProductor.EditValue = null;
+            this.dt_FechaFacturaProductor.Location = new System.Drawing.Point(104, 235);
+            this.dt_FechaFacturaProductor.MenuManager = this.barManager1;
+            this.dt_FechaFacturaProductor.Name = "dt_FechaFacturaProductor";
+            this.dt_FechaFacturaProductor.Properties.BeepOnError = true;
+            this.dt_FechaFacturaProductor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaFacturaProductor.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaFacturaProductor.Properties.MaskSettings.Set("mask", "d");
+            this.dt_FechaFacturaProductor.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaFacturaProductor.Size = new System.Drawing.Size(94, 20);
+            this.dt_FechaFacturaProductor.TabIndex = 118;
+            // 
+            // labelControl83
+            // 
+            this.labelControl83.Location = new System.Drawing.Point(16, 239);
+            this.labelControl83.Name = "labelControl83";
+            this.labelControl83.Size = new System.Drawing.Size(54, 13);
+            this.labelControl83.TabIndex = 116;
+            this.labelControl83.Text = "F. Factura:";
+            // 
+            // labelControl82
+            // 
+            this.labelControl82.Location = new System.Drawing.Point(218, 239);
+            this.labelControl82.Name = "labelControl82";
+            this.labelControl82.Size = new System.Drawing.Size(41, 13);
+            this.labelControl82.TabIndex = 117;
+            this.labelControl82.Text = "F. Pago:";
+            // 
+            // OpenDialog
+            // 
+            this.OpenDialog.FileName = "xtraOpenFileDialog1";
+            // 
+            // xtraOpenFileDialog1
+            // 
+            this.xtraOpenFileDialog1.FileName = "xtraOpenFileDialog1";
             // 
             // Frm_Cosecha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1359, 856);
+            this.ClientSize = new System.Drawing.Size(1303, 828);
             this.Controls.Add(this.navigationPane1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -3184,7 +6389,9 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Cosecha";
             this.Padding = new System.Windows.Forms.Padding(5);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cosecha";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Shown += new System.EventHandler(this.Frm_Cosecha_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -3193,8 +6400,11 @@
             this.navigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_Temporada.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCosecha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValCosecha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -3220,6 +6430,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_kgProductor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_KilosProductor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_kilosST.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_EmpresaBascula.Properties)).EndInit();
@@ -3270,6 +6481,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             this.xtraScrollableControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
             this.xtraScrollableControl3.ResumeLayout(false);
@@ -3300,6 +6514,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.groupControl6.ResumeLayout(false);
             this.groupControl6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ObservacionesCorte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CajasCortadasCorte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PrecioCuadrillaCorte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_CuadrillaApoyo.Properties)).EndInit();
@@ -3316,23 +6531,126 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_PagoTotalCorte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTipoCorteEC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PrecioKiloCorte.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_NoCuadrillas.Properties)).EndInit();
+            this.tp_FacturaCorte.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl12)).EndInit();
+            this.groupControl12.ResumeLayout(false);
+            this.xtraScrollableControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl18)).EndInit();
+            this.groupControl18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl17)).EndInit();
+            this.panelControl17.ResumeLayout(false);
+            this.panelControl17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_IVACorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalFacturaCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFacturaCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_FolioFacturaCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRazonSCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opt_TipoFacturaCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_PagadaCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteSalida.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteSalida.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ImporteFacturaCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFCorteSalida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl17)).EndInit();
+            this.groupControl17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl16)).EndInit();
+            this.panelControl16.ResumeLayout(false);
+            this.panelControl16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_IVACorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalFacturaCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFacturaCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_FolioFacturaCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRazonSCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opt_TipoFacturaCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_PagadaCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteApoyo.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteApoyo.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ImporteFacturaCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFCorteApoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl16)).EndInit();
+            this.groupControl16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl15)).EndInit();
+            this.panelControl15.ResumeLayout(false);
+            this.panelControl15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_IVACorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalFacturaCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFacturaCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_FolioFacturaCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRazonSCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opt_TipoFacturaCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_PagadaCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteDia.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteDia.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ImporteFacturaCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFCorteDia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl15)).EndInit();
+            this.groupControl15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).EndInit();
+            this.panelControl12.ResumeLayout(false);
+            this.panelControl12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_IVACorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionCorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalFacturaCorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFacturaCorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_FolioFacturaCorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRazonSCorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opt_TipoFacturaCorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_PagadaCorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteKilos.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoCorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteKilos.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaCorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaCorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ImporteFacturaCorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLCorteKilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFCorteKilos.Properties)).EndInit();
             this.navigationPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
             this.panelControl10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
-            this.groupControl8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl3)).EndInit();
+            this.xtraTabControl3.ResumeLayout(false);
+            this.xtraTabPage5.ResumeLayout(false);
+            this.xtraScrollableControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).EndInit();
             this.groupControl9.ResumeLayout(false);
-            this.groupControl9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl19)).EndInit();
+            this.panelControl19.ResumeLayout(false);
+            this.panelControl19.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).EndInit();
             this.groupControl10.ResumeLayout(false);
             this.groupControl10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioCaja.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioSalidaForanea.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioServicio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
+            this.groupControl8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl13)).EndInit();
+            this.panelControl13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
             this.panelControl11.ResumeLayout(false);
             this.panelControl11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_CargosExtra.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ObservacionesAcarreo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CostoxCajaExtra.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Cajas_CortadasA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CajasProgramadasA.Properties)).EndInit();
@@ -3346,17 +6664,70 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Choferes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.tp_FacturaAcarreo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl14)).EndInit();
+            this.groupControl14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).EndInit();
+            this.panelControl14.ResumeLayout(false);
+            this.panelControl14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFleteFacturaAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_IVAAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalFacturaAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFacturaAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_FolioFacturaAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRazonSAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opt_TipoFacturaAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_PagadaAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoAcarreo.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaAcarreo.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ImporteFacturaAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLAcarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFAcarreo.Properties)).EndInit();
             this.navigationPage6.ResumeLayout(false);
-            this.navigationPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl18)).EndInit();
+            this.panelControl18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl2)).EndInit();
+            this.xtraTabControl2.ResumeLayout(false);
+            this.xtraTabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).EndInit();
+            this.groupControl11.ResumeLayout(false);
+            this.groupControl11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ObservacionesProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_KilosAjustados.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_kilos_Totales.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_KiloPrecio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_Mercado.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalaPagar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_KilosMuestra.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Productor.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalaPagar.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_KiloPrecio.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_KilosAjustados.Properties)).EndInit();
+            this.tp_FacturaProductor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl13)).EndInit();
+            this.groupControl13.ResumeLayout(false);
+            this.groupControl13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_IVAProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TotalFacturaProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFacturaProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtRazonSProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_FolioFacturaProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.opt_TipoFacturaProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_PagadaProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ImporteFacturaProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoProductor.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaPagoProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaProductor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaProductor.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaProductor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chk_kgProductor.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3365,11 +6736,6 @@
         #endregion
 
         public DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.BarLargeButtonItem btnLimpiar;
-        private DevExpress.XtraBars.BarLargeButtonItem btnGuardar;
-        private DevExpress.XtraBars.BarLargeButtonItem btnEliminar;
-        private DevExpress.XtraBars.BarLargeButtonItem btnSalir;
-        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
         private DevExpress.XtraBars.Bar bEstado;
         private DevExpress.XtraBars.BarStaticItem lblProveedor;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
@@ -3382,11 +6748,10 @@
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage3;
         private DevExpress.XtraBars.Bar bar1;
-        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem1;
-        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem2;
-        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem3;
-        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem4;
-        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem5;
+        private DevExpress.XtraBars.BarLargeButtonItem btn_limpiarOrden;
+        private DevExpress.XtraBars.BarLargeButtonItem btn_GuardarOrden;
+        private DevExpress.XtraBars.BarLargeButtonItem btn_EliminarOrden;
+        private DevExpress.XtraBars.BarLargeButtonItem btn_CerrarOrden;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage4;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage5;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage6;
@@ -3410,8 +6775,8 @@
         private DevExpress.XtraEditors.TextEdit txt_TicketPesada;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txt_Recepcion;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl dtgCosecha;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValCosecha;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit txt_TipoCorte;
         private DevExpress.XtraEditors.LabelControl labelControl10;
@@ -3514,6 +6879,99 @@
         private DevExpress.XtraEditors.LabelControl labelControl45;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl2;
+        private DevExpress.XtraEditors.GroupControl groupControl6;
+        private DevExpress.XtraEditors.TextEdit txt_PrecioCuadrillaCorte;
+        private DevExpress.XtraEditors.CheckEdit chk_CuadrillaApoyo;
+        private DevExpress.XtraEditors.SimpleButton btn_kilosND;
+        private DevExpress.XtraEditors.LabelControl labelControl59;
+        private DevExpress.XtraEditors.TextEdit txt_KilosARestar;
+        private DevExpress.XtraEditors.LabelControl labelControl58;
+        private DevExpress.XtraEditors.TextEdit txt_kgNoSolicitados;
+        private DevExpress.XtraEditors.LabelControl labelControl57;
+        private DevExpress.XtraEditors.TextEdit txt_Margen5;
+        private DevExpress.XtraEditors.LabelControl labelControl37;
+        private DevExpress.XtraEditors.LabelControl labelControl40;
+        private DevExpress.XtraEditors.TextEdit txt_PrecioSalidaFCorte;
+        private DevExpress.XtraEditors.LabelControl labelControl44;
+        private DevExpress.XtraEditors.TextEdit txt_PrecioDiaCorte;
+        private DevExpress.XtraEditors.TextEdit txt_kilosCortadosCorte;
+        private DevExpress.XtraEditors.LabelControl labelControl39;
+        private DevExpress.XtraEditors.TextEdit txt_KilosAjustadosCorte;
+        private DevExpress.XtraEditors.CheckEdit chk_SalidaFalso;
+        private DevExpress.XtraEditors.LabelControl labelControl36;
+        private DevExpress.XtraEditors.TextEdit txt_PrecioTCorte;
+        private DevExpress.XtraEditors.TextEdit txt_NombreEmpresaCorte;
+        private DevExpress.XtraEditors.TextEdit txt_PagoTotalCorte;
+        private DevExpress.XtraEditors.LabelControl labelControl43;
+        private DevExpress.XtraEditors.LabelControl labelControl38;
+        private DevExpress.XtraEditors.SimpleButton btn_EmpresaCorte;
+        private DevExpress.XtraEditors.LabelControl labelControl42;
+        private DevExpress.XtraEditors.TextEdit txtTipoCorteEC;
+        private DevExpress.XtraEditors.TextEdit txt_PrecioKiloCorte;
+        private DevExpress.XtraEditors.LabelControl labelControl64;
+        private DevExpress.XtraEditors.TextEdit txt_CajasCortadasCorte;
+        private DevExpress.XtraEditors.PanelControl panelControl10;
+        private DevExpress.XtraEditors.GroupControl groupControl8;
+        private DevExpress.XtraEditors.CheckEdit chk_kgProductor;
+        private DevExpress.XtraEditors.GroupControl groupControl11;
+        private DevExpress.XtraEditors.PanelControl panelControl13;
+        private DevExpress.XtraEditors.PanelControl panelControl14;
+        private DevExpress.XtraEditors.RadioGroup opt_TipoFacturaAcarreo;
+        private DevExpress.XtraEditors.CheckEdit chk_PagadaAcarreo;
+        private DevExpress.XtraEditors.DateEdit dt_FechaPagoAcarreo;
+        private DevExpress.XtraEditors.DateEdit dt_FechaFacturaAcarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl78;
+        private DevExpress.XtraEditors.LabelControl labelControl80;
+        private DevExpress.XtraEditors.ComboBoxEdit cmb_MonedaAcarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl86;
+        private DevExpress.XtraEditors.LabelControl labelControl87;
+        private DevExpress.XtraEditors.TextEdit txt_ImporteFacturaAcarreo;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewXMLAcarreo;
+        private DevExpress.XtraEditors.SimpleButton btn_UpXMLAcarreo;
+        private DevExpress.XtraEditors.TextEdit txt_RutaXMLAcarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl88;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFAcarreo;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFAcarreo;
+        private DevExpress.XtraEditors.TextEdit txt_RutaPDFAcarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl89;
+        private DevExpress.XtraEditors.PanelControl panelControl11;
+        private DevExpress.XtraEditors.TextEdit txt_CostoxCajaExtra;
+        private DevExpress.XtraEditors.LabelControl labelControl77;
+        private DevExpress.XtraEditors.TextEdit txt_Cajas_CortadasA;
+        private DevExpress.XtraEditors.LabelControl labelControl76;
+        private DevExpress.XtraEditors.TextEdit txt_CajasProgramadasA;
+        private DevExpress.XtraEditors.LabelControl labelControl75;
+        private DevExpress.XtraEditors.LabelControl labelControl65;
+        private DevExpress.XtraEditors.TextEdit txt_TotalAcarreo;
+        private DevExpress.XtraEditors.SimpleButton btn_EmpresaAcarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl71;
+        private DevExpress.XtraEditors.TextEdit txt_EmpresaAcarreo;
+        private DevExpress.XtraEditors.TextEdit txt_CajasExtras;
+        private DevExpress.XtraEditors.LabelControl labelControl67;
+        private DevExpress.XtraEditors.LabelControl labelControl70;
+        private DevExpress.XtraEditors.LabelControl labelControl66;
+        private DevExpress.XtraEditors.CheckEdit chk_ServicioForaneo;
+        private DevExpress.XtraEditors.TextEdit txtPlacasCamion;
+        private DevExpress.XtraEditors.TextEdit txt_CostoServicio;
+        private DevExpress.XtraEditors.GridLookUpEdit cmb_Camiones;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
+        private DevExpress.XtraEditors.LabelControl labelControl69;
+        private DevExpress.XtraEditors.LabelControl labelControl68;
+        private DevExpress.XtraEditors.GridLookUpEdit cmb_Choferes;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn32;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn33;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl3;
         private DevExpress.XtraEditors.GroupControl groupControl5;
@@ -3548,76 +7006,220 @@
         private DevExpress.XtraEditors.LabelControl labelControl62;
         private DevExpress.XtraEditors.TextEdit txtMenorakg;
         private DevExpress.XtraEditors.LabelControl labelControl63;
-        private DevExpress.XtraEditors.GroupControl groupControl6;
-        private DevExpress.XtraEditors.TextEdit txt_PrecioCuadrillaCorte;
-        private DevExpress.XtraEditors.CheckEdit chk_CuadrillaApoyo;
-        private DevExpress.XtraEditors.SimpleButton btn_kilosND;
-        private DevExpress.XtraEditors.LabelControl labelControl59;
-        private DevExpress.XtraEditors.TextEdit txt_KilosARestar;
-        private DevExpress.XtraEditors.LabelControl labelControl58;
-        private DevExpress.XtraEditors.TextEdit txt_kgNoSolicitados;
-        private DevExpress.XtraEditors.LabelControl labelControl57;
-        private DevExpress.XtraEditors.TextEdit txt_Margen5;
-        private DevExpress.XtraEditors.LabelControl labelControl37;
-        private DevExpress.XtraEditors.LabelControl labelControl40;
-        private DevExpress.XtraEditors.TextEdit txt_PrecioSalidaFCorte;
-        private DevExpress.XtraEditors.LabelControl labelControl44;
-        private DevExpress.XtraEditors.TextEdit txt_PrecioDiaCorte;
-        private DevExpress.XtraEditors.TextEdit txt_kilosCortadosCorte;
-        private DevExpress.XtraEditors.LabelControl labelControl39;
-        private DevExpress.XtraEditors.TextEdit txt_KilosAjustadosCorte;
-        private DevExpress.XtraEditors.CheckEdit chk_SalidaFalso;
-        private DevExpress.XtraEditors.LabelControl labelControl36;
-        private DevExpress.XtraEditors.TextEdit txt_PrecioTCorte;
-        private DevExpress.XtraEditors.TextEdit txt_NombreEmpresaCorte;
-        private DevExpress.XtraEditors.TextEdit txt_PagoTotalCorte;
-        private DevExpress.XtraEditors.LabelControl labelControl43;
-        private DevExpress.XtraEditors.LabelControl labelControl38;
-        private DevExpress.XtraEditors.SimpleButton btn_EmpresaCorte;
-        private DevExpress.XtraEditors.LabelControl labelControl42;
-        private DevExpress.XtraEditors.TextEdit txtTipoCorteEC;
-        private DevExpress.XtraEditors.TextEdit txt_PrecioKiloCorte;
-        private DevExpress.XtraEditors.LabelControl labelControl64;
-        private DevExpress.XtraEditors.TextEdit txt_CajasCortadasCorte;
-        private DevExpress.XtraEditors.PanelControl panelControl10;
-        private DevExpress.XtraEditors.GroupControl groupControl8;
-        private DevExpress.XtraEditors.LabelControl labelControl65;
-        private DevExpress.XtraEditors.TextEdit txt_EmpresaAcarreo;
-        private DevExpress.XtraEditors.SimpleButton btn_EmpresaAcarreo;
-        private DevExpress.XtraEditors.GridLookUpEdit cmb_Camiones;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
-        private DevExpress.XtraEditors.TextEdit txtPlacasCamion;
-        private DevExpress.XtraEditors.LabelControl labelControl66;
-        private DevExpress.XtraEditors.LabelControl labelControl67;
-        private DevExpress.XtraEditors.GridLookUpEdit cmb_Choferes;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraEditors.LabelControl labelControl68;
-        private DevExpress.XtraEditors.TextEdit txt_TotalAcarreo;
-        private DevExpress.XtraEditors.LabelControl labelControl71;
-        private DevExpress.XtraEditors.TextEdit txt_CajasExtras;
-        private DevExpress.XtraEditors.LabelControl labelControl70;
-        private DevExpress.XtraEditors.CheckEdit chk_ServicioForaneo;
-        private DevExpress.XtraEditors.TextEdit txt_CostoServicio;
-        private DevExpress.XtraEditors.LabelControl labelControl69;
-        private DevExpress.XtraEditors.PanelControl panelControl11;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage tp_FacturaCorte;
+        private DevExpress.XtraEditors.GroupControl groupControl12;
+        private DevExpress.XtraEditors.LabelControl labelControl91;
+        private DevExpress.XtraEditors.TextEdit txt_FolioFacturaAcarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl90;
+        private DevExpress.XtraEditors.TextEdit txtRazonSAcarreo;
+        private DevExpress.XtraEditors.GroupControl groupControl13;
+        private DevExpress.XtraEditors.LabelControl labelControl79;
+        private DevExpress.XtraEditors.TextEdit txtRazonSProductor;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFProductor;
+        private DevExpress.XtraEditors.TextEdit txt_FolioFacturaProductor;
+        private DevExpress.XtraEditors.LabelControl labelControl92;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFProductor;
+        private DevExpress.XtraEditors.LabelControl labelControl81;
+        private DevExpress.XtraEditors.TextEdit txt_RutaXMLProductor;
+        private DevExpress.XtraEditors.TextEdit txt_RutaPDFProductor;
+        private DevExpress.XtraEditors.SimpleButton btn_UpXMLProductor;
+        private DevExpress.XtraEditors.RadioGroup opt_TipoFacturaProductor;
+        private DevExpress.XtraEditors.LabelControl labelControl93;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewXMLProductor;
+        private DevExpress.XtraEditors.CheckEdit chk_PagadaProductor;
+        private DevExpress.XtraEditors.TextEdit txt_ImporteFacturaProductor;
+        private DevExpress.XtraEditors.LabelControl labelControl85;
+        private DevExpress.XtraEditors.DateEdit dt_FechaPagoProductor;
+        private DevExpress.XtraEditors.LabelControl labelControl84;
+        private DevExpress.XtraEditors.ComboBoxEdit cmb_MonedaProductor;
+        private DevExpress.XtraEditors.DateEdit dt_FechaFacturaProductor;
+        private DevExpress.XtraEditors.LabelControl labelControl83;
+        private DevExpress.XtraEditors.LabelControl labelControl82;
+        private DevExpress.XtraEditors.GroupControl groupControl14;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl4;
+        private DevExpress.XtraEditors.GroupControl groupControl18;
+        private DevExpress.XtraEditors.PanelControl panelControl17;
+        private DevExpress.XtraEditors.LabelControl labelControl118;
+        private DevExpress.XtraEditors.TextEdit txt_FolioFacturaCorteSalida;
+        private DevExpress.XtraEditors.LabelControl labelControl119;
+        private DevExpress.XtraEditors.TextEdit txtRazonSCorteSalida;
+        private DevExpress.XtraEditors.RadioGroup opt_TipoFacturaCorteSalida;
+        private DevExpress.XtraEditors.CheckEdit chk_PagadaCorteSalida;
+        private DevExpress.XtraEditors.DateEdit dt_FechaPagoCorteSalida;
+        private DevExpress.XtraEditors.DateEdit dt_FechaFacturaCorteSalida;
+        private DevExpress.XtraEditors.LabelControl labelControl120;
+        private DevExpress.XtraEditors.LabelControl labelControl121;
+        private DevExpress.XtraEditors.ComboBoxEdit cmb_MonedaCorteSalida;
+        private DevExpress.XtraEditors.LabelControl labelControl122;
+        private DevExpress.XtraEditors.LabelControl labelControl123;
+        private DevExpress.XtraEditors.TextEdit txt_ImporteFacturaCorteSalida;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewXMLCorteSalida;
+        private DevExpress.XtraEditors.SimpleButton btn_UpXMLCorteSalida;
+        private DevExpress.XtraEditors.TextEdit txt_RutaXMLCorteSalida;
+        private DevExpress.XtraEditors.LabelControl labelControl124;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFCorteSalida;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFCorteSalida;
+        private DevExpress.XtraEditors.TextEdit txt_RutaPDFCorteSalida;
+        private DevExpress.XtraEditors.LabelControl labelControl125;
+        private DevExpress.XtraEditors.GroupControl groupControl17;
+        private DevExpress.XtraEditors.PanelControl panelControl16;
+        private DevExpress.XtraEditors.LabelControl labelControl110;
+        private DevExpress.XtraEditors.TextEdit txt_FolioFacturaCorteApoyo;
+        private DevExpress.XtraEditors.LabelControl labelControl111;
+        private DevExpress.XtraEditors.TextEdit txtRazonSCorteApoyo;
+        private DevExpress.XtraEditors.RadioGroup opt_TipoFacturaCorteApoyo;
+        private DevExpress.XtraEditors.CheckEdit chk_PagadaCorteApoyo;
+        private DevExpress.XtraEditors.DateEdit dt_FechaPagoCorteApoyo;
+        private DevExpress.XtraEditors.DateEdit dt_FechaFacturaCorteApoyo;
+        private DevExpress.XtraEditors.LabelControl labelControl112;
+        private DevExpress.XtraEditors.LabelControl labelControl113;
+        private DevExpress.XtraEditors.ComboBoxEdit cmb_MonedaCorteApoyo;
+        private DevExpress.XtraEditors.LabelControl labelControl114;
+        private DevExpress.XtraEditors.LabelControl labelControl115;
+        private DevExpress.XtraEditors.TextEdit txt_ImporteFacturaCorteApoyo;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewXMLCorteApoyo;
+        private DevExpress.XtraEditors.SimpleButton btn_UpXMLCorteApoyo;
+        private DevExpress.XtraEditors.TextEdit txt_RutaXMLCorteApoyo;
+        private DevExpress.XtraEditors.LabelControl labelControl116;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFCorteApoyo;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFCorteApoyo;
+        private DevExpress.XtraEditors.TextEdit txt_RutaPDFCorteApoyo;
+        private DevExpress.XtraEditors.LabelControl labelControl117;
+        private DevExpress.XtraEditors.GroupControl groupControl16;
+        private DevExpress.XtraEditors.PanelControl panelControl15;
+        private DevExpress.XtraEditors.LabelControl labelControl102;
+        private DevExpress.XtraEditors.TextEdit txt_FolioFacturaCorteDia;
+        private DevExpress.XtraEditors.LabelControl labelControl103;
+        private DevExpress.XtraEditors.TextEdit txtRazonSCorteDia;
+        private DevExpress.XtraEditors.RadioGroup opt_TipoFacturaCorteDia;
+        private DevExpress.XtraEditors.CheckEdit chk_PagadaCorteDia;
+        private DevExpress.XtraEditors.DateEdit dt_FechaPagoCorteDia;
+        private DevExpress.XtraEditors.DateEdit dt_FechaFacturaCorteDia;
+        private DevExpress.XtraEditors.LabelControl labelControl104;
+        private DevExpress.XtraEditors.LabelControl labelControl105;
+        private DevExpress.XtraEditors.ComboBoxEdit cmb_MonedaCorteDia;
+        private DevExpress.XtraEditors.LabelControl labelControl106;
+        private DevExpress.XtraEditors.LabelControl labelControl107;
+        private DevExpress.XtraEditors.TextEdit txt_ImporteFacturaCorteDia;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewXMLCorteDia;
+        private DevExpress.XtraEditors.SimpleButton btn_UpXMLCorteDia;
+        private DevExpress.XtraEditors.TextEdit txt_RutaXMLCorteDia;
+        private DevExpress.XtraEditors.LabelControl labelControl108;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFCorteDia;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFCorteDia;
+        private DevExpress.XtraEditors.TextEdit txt_RutaPDFCorteDia;
+        private DevExpress.XtraEditors.LabelControl labelControl109;
+        private DevExpress.XtraEditors.GroupControl groupControl15;
+        private DevExpress.XtraEditors.PanelControl panelControl12;
+        private DevExpress.XtraEditors.LabelControl labelControl94;
+        private DevExpress.XtraEditors.TextEdit txt_FolioFacturaCorteKilos;
+        private DevExpress.XtraEditors.LabelControl labelControl95;
+        private DevExpress.XtraEditors.TextEdit txtRazonSCorteKilos;
+        private DevExpress.XtraEditors.RadioGroup opt_TipoFacturaCorteKilos;
+        private DevExpress.XtraEditors.CheckEdit chk_PagadaCorteKilos;
+        private DevExpress.XtraEditors.DateEdit dt_FechaPagoCorteKilos;
+        private DevExpress.XtraEditors.DateEdit dt_FechaFacturaCorteKilos;
+        private DevExpress.XtraEditors.LabelControl labelControl96;
+        private DevExpress.XtraEditors.LabelControl labelControl97;
+        private DevExpress.XtraEditors.ComboBoxEdit cmb_MonedaCorteKilos;
+        private DevExpress.XtraEditors.LabelControl labelControl98;
+        private DevExpress.XtraEditors.LabelControl labelControl99;
+        private DevExpress.XtraEditors.TextEdit txt_ImporteFacturaCorteKilos;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewXMLCorteKilos;
+        private DevExpress.XtraEditors.SimpleButton btn_UpXMLCorteKilos;
+        private DevExpress.XtraEditors.TextEdit txt_RutaXMLCorteKilos;
+        private DevExpress.XtraEditors.LabelControl labelControl100;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFCorteKilos;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFCorteKilos;
+        private DevExpress.XtraEditors.TextEdit txt_RutaPDFCorteKilos;
+        private DevExpress.XtraEditors.LabelControl labelControl101;
+        private DevExpress.XtraEditors.PanelControl panelControl18;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl2;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraTab.XtraTabPage tp_FacturaProductor;
+        private DevExpress.XtraEditors.XtraOpenFileDialog OpenDialog;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl3;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl5;
         private DevExpress.XtraEditors.GroupControl groupControl9;
+        private DevExpress.XtraEditors.PanelControl panelControl19;
+        private DevExpress.XtraEditors.LabelControl labelControl74;
         private DevExpress.XtraEditors.GroupControl groupControl10;
         private DevExpress.XtraEditors.LabelControl labelControl72;
         private DevExpress.XtraEditors.TextEdit txtPrecioCaja;
+        private DevExpress.XtraEditors.LabelControl labelControl73;
         private DevExpress.XtraEditors.TextEdit txtPrecioSalidaForanea;
         private DevExpress.XtraEditors.TextEdit txtPrecioServicio;
-        private DevExpress.XtraEditors.LabelControl labelControl73;
-        private DevExpress.XtraEditors.LabelControl labelControl74;
-        private DevExpress.XtraEditors.TextEdit txt_CajasProgramadasA;
-        private DevExpress.XtraEditors.LabelControl labelControl75;
-        private DevExpress.XtraEditors.TextEdit txt_Cajas_CortadasA;
-        private DevExpress.XtraEditors.LabelControl labelControl76;
-        private DevExpress.XtraEditors.TextEdit txt_CostoxCajaExtra;
-        private DevExpress.XtraEditors.LabelControl labelControl77;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
-        private DevExpress.XtraEditors.CheckEdit chk_kgProductor;
+        private DevExpress.XtraTab.XtraTabPage tp_FacturaAcarreo;
+        private DevExpress.XtraEditors.XtraOpenFileDialog xtraOpenFileDialog1;
+        private DevExpress.XtraBars.BarLargeButtonItem btn_AbrirOrden;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn35;
+        private DevExpress.XtraEditors.GridLookUpEdit cmb_Temporada;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraEditors.LabelControl labelControl126;
+        private DevExpress.XtraEditors.TextEdit txt_TotalFacturaCorteSalida;
+        private DevExpress.XtraEditors.LabelControl labelControl135;
+        private DevExpress.XtraEditors.TextEdit txt_RetencionFacturaCorteSalida;
+        private DevExpress.XtraEditors.LabelControl labelControl136;
+        private DevExpress.XtraEditors.TextEdit txt_TotalFacturaCorteApoyo;
+        private DevExpress.XtraEditors.LabelControl labelControl133;
+        private DevExpress.XtraEditors.TextEdit txt_RetencionFacturaCorteApoyo;
+        private DevExpress.XtraEditors.LabelControl labelControl134;
+        private DevExpress.XtraEditors.TextEdit txt_TotalFacturaCorteDia;
+        private DevExpress.XtraEditors.LabelControl labelControl131;
+        private DevExpress.XtraEditors.TextEdit txt_RetencionFacturaCorteDia;
+        private DevExpress.XtraEditors.LabelControl labelControl132;
+        private DevExpress.XtraEditors.TextEdit txt_TotalFacturaCorteKilos;
+        private DevExpress.XtraEditors.LabelControl labelControl129;
+        private DevExpress.XtraEditors.TextEdit txt_RetencionFacturaCorteKilos;
+        private DevExpress.XtraEditors.LabelControl labelControl130;
+        private DevExpress.XtraEditors.TextEdit txt_TotalFacturaAcarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl137;
+        private DevExpress.XtraEditors.TextEdit txt_RetencionFacturaAcarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl138;
+        private DevExpress.XtraEditors.TextEdit txt_TotalFacturaProductor;
+        private DevExpress.XtraEditors.LabelControl labelControl128;
+        private DevExpress.XtraEditors.TextEdit txt_RetencionFacturaProductor;
+        private DevExpress.XtraEditors.LabelControl labelControl127;
+        private DevExpress.XtraEditors.CheckEdit chk_RetencionProductor;
+        private DevExpress.XtraEditors.CheckEdit chk_RetencionCorteDia;
+        private DevExpress.XtraEditors.CheckEdit chk_RetencionCorteKilos;
+        private DevExpress.XtraEditors.CheckEdit chk_RetencionCorteApoyo;
+        private DevExpress.XtraEditors.CheckEdit chk_RetencionCorteSalida;
+        private DevExpress.XtraEditors.CheckEdit chk_RetencionAcarreo;
+        private DevExpress.XtraEditors.TextEdit txt_IVAFacturaCorteSalida;
+        private DevExpress.XtraEditors.LabelControl labelControl143;
+        private DevExpress.XtraEditors.CheckEdit chk_IVACorteSalida;
+        private DevExpress.XtraEditors.TextEdit txt_IVAFacturaCorteApoyo;
+        private DevExpress.XtraEditors.LabelControl labelControl142;
+        private DevExpress.XtraEditors.CheckEdit chk_IVACorteApoyo;
+        private DevExpress.XtraEditors.TextEdit txt_IVAFacturaCorteDia;
+        private DevExpress.XtraEditors.LabelControl labelControl141;
+        private DevExpress.XtraEditors.CheckEdit chk_IVACorteDia;
+        private DevExpress.XtraEditors.TextEdit txt_IVAFacturaCorteKilos;
+        private DevExpress.XtraEditors.LabelControl labelControl140;
+        private DevExpress.XtraEditors.CheckEdit chk_IVACorteKilos;
+        private DevExpress.XtraEditors.TextEdit txt_IVAFacturaAcarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl144;
+        private DevExpress.XtraEditors.CheckEdit chk_IVAAcarreo;
+        private DevExpress.XtraEditors.TextEdit txt_IVAFacturaProductor;
+        private DevExpress.XtraEditors.LabelControl labelControl139;
+        private DevExpress.XtraEditors.CheckEdit chk_IVAProductor;
+        private DevExpress.XtraEditors.CheckEdit chk_RetencionFleteAcarreo;
+        private DevExpress.XtraEditors.TextEdit txt_RetencionFleteFacturaAcarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl145;
+        private DevExpress.XtraEditors.MemoEdit txt_ObservacionesProductor;
+        private DevExpress.XtraEditors.LabelControl labelControl146;
+        private DevExpress.XtraEditors.MemoEdit txt_ObservacionesCorte;
+        private DevExpress.XtraEditors.LabelControl labelControl147;
+        private DevExpress.XtraEditors.MemoEdit txt_ObservacionesAcarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl148;
+        private DevExpress.XtraEditors.TextEdit txt_CargosExtra;
+        private DevExpress.XtraEditors.LabelControl labelControl149;
+        private DevExpress.XtraEditors.SimpleButton btn_CalcularFechaPago;
+        private DevExpress.XtraEditors.LabelControl labelControl150;
+        private DevExpress.XtraEditors.SpinEdit txt_NoCuadrillas;
     }
 }

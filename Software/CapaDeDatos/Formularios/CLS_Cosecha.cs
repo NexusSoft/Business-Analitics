@@ -32,14 +32,14 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Cosecha_ProgramaCorte_Select";
-                _dato.CadenaTexto = c_codigo_tem;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_tem");
-                _dato.CadenaTexto = c_codigo_pco;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_pco");
-                _dato.CadenaTexto = c_codigo_oct;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_oct");
-                _dato.CadenaTexto = c_secuencia_ocd;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_secuencia_ocd");
+                _dato.Texto = c_codigo_tem;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_tem");
+                _dato.Texto = c_codigo_pco;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_pco");
+                _dato.Texto = c_codigo_oct;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_oct");
+                _dato.Texto = c_secuencia_ocd;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_secuencia_ocd");
                 _conexion.EjecutarDataset();
                 if (_conexion.Exito)
                 {
@@ -67,12 +67,12 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Cosecha_Recepcion_Select";
-                _dato.CadenaTexto = c_codigo_tem;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_tem");
-                _dato.CadenaTexto = c_codigo_oct;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_codigo_oct");
-                _dato.CadenaTexto = c_secuencia_ocd;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "c_secuencia_ocd");
+                _dato.Texto = c_codigo_tem;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_tem");
+                _dato.Texto = c_codigo_oct;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_oct");
+                _dato.Texto = c_secuencia_ocd;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_secuencia_ocd");
                 _conexion.EjecutarDataset();
                 if (_conexion.Exito)
                 {

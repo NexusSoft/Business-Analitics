@@ -72,22 +72,22 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Empresa_Corte_Insert";
-                _dato.CadenaTexto = Id_EmpresaCorte;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaCorte");
-                _dato.CadenaTexto = Nombre_EmpresaCorte;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_EmpresaCorte");
-                _dato.CadenaTexto = Telefono1;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono1");
-                _dato.CadenaTexto = Telefono2;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Telefono2");
-                _dato.CadenaTexto = Email;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Email");
-                _dato.CadenaTexto = Contacto;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Contacto");
-                _dato.CadenaTexto = RFC;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "RFC");
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Texto = Id_EmpresaCorte;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaCorte");
+                _dato.Texto = Nombre_EmpresaCorte;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_EmpresaCorte");
+                _dato.Texto = Telefono1;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Telefono1");
+                _dato.Texto = Telefono2;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Telefono2");
+                _dato.Texto = Email;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Email");
+                _dato.Texto = Contacto;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Contacto");
+                _dato.Texto = RFC;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "RFC");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -115,8 +115,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Empresa_Corte_Delete";
-                _dato.CadenaTexto = Id_EmpresaCorte;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaCorte");
+                _dato.Texto = Id_EmpresaCorte;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaCorte");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -146,8 +146,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Empresa_Corte_Servicios_Select";
-                _dato.CadenaTexto = Id_EmpresaCorte;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaCorte");
+                _dato.Texto = Id_EmpresaCorte;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaCorte");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -176,40 +176,40 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Empresa_Corte_Servicios_Insert";
-                _dato.CadenaTexto = Id_EmpresaCorte;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaCorte");
-                _dato.DecimalValor = Menor_a_kg;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Menor_a_kg");
-                _dato.DecimalValor = Precio_Dia;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_Dia");
+                _dato.Texto = Id_EmpresaCorte;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaCorte");
+                _dato.Decimal = Menor_a_kg;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Menor_a_kg");
+                _dato.Decimal = Precio_Dia;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_Dia");
                 _dato.Entero = EsRango;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "EsRango");
-                _dato.DecimalValor = Precio_Cuadrilla_Apoyo;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_Cuadrilla_Apoyo");
-                _dato.DecimalValor = Kilos_MenorA;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Kilos_MenorA");
-                _dato.DecimalValor = Kilos_MayorA;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Kilos_MayorA");
-                _dato.DecimalValor = Precio_MenorA;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_MenorA");
-                _dato.DecimalValor = Precio_MayorA;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_MayorA");
+                _dato.Decimal = Precio_Cuadrilla_Apoyo;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_Cuadrilla_Apoyo");
+                _dato.Decimal = Kilos_MenorA;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Kilos_MenorA");
+                _dato.Decimal = Kilos_MayorA;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Kilos_MayorA");
+                _dato.Decimal = Precio_MenorA;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_MenorA");
+                _dato.Decimal = Precio_MayorA;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_MayorA");
                 _dato.Entero = EsRangoCaja;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "EsRangoCaja");
-                _dato.DecimalValor = Precio_kilo;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_kilo");
-                _dato.DecimalValor = Cajas_MenorA;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Cajas_MenorA");
-                _dato.DecimalValor = Cajas_MayorA;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Cajas_MayorA");
-                _dato.DecimalValor = PrecioCaja_MenorA;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "PrecioCaja_MenorA");
-                _dato.DecimalValor = PrecioCaja_MayorA;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "PrecioCaja_MayorA");
-                _dato.DecimalValor = Precio_Salida_Falso;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Precio_Salida_Falso");
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Decimal = Precio_kilo;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_kilo");
+                _dato.Decimal = Cajas_MenorA;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cajas_MenorA");
+                _dato.Decimal = Cajas_MayorA;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cajas_MayorA");
+                _dato.Decimal = PrecioCaja_MenorA;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "PrecioCaja_MenorA");
+                _dato.Decimal = PrecioCaja_MayorA;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "PrecioCaja_MayorA");
+                _dato.Decimal = Precio_Salida_Falso;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_Salida_Falso");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -237,8 +237,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Empresa_Corte_Servicios_Delete";
-                _dato.CadenaTexto = Id_EmpresaCorte;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_EmpresaCorte");
+                _dato.Texto = Id_EmpresaCorte;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaCorte");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

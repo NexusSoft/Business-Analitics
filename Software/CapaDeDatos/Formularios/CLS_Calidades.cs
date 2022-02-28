@@ -54,12 +54,12 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Calidad_Insert";
-                _dato.CadenaTexto = Id_Calidad;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Calidad");
-                _dato.CadenaTexto = Nombre_Calidad;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_Calidad");
-                _dato.CadenaTexto = Id_Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.Texto = Id_Calidad;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Calidad");
+                _dato.Texto = Nombre_Calidad;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Calidad");
+                _dato.Texto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -88,8 +88,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Calidad_Delete";
-                _dato.CadenaTexto = Id_Calidad;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Calidad");
+                _dato.Texto = Id_Calidad;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Calidad");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

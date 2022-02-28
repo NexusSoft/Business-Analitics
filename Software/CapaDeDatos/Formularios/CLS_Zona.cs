@@ -52,12 +52,12 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Zona_Insert";
-                _dato.CadenaTexto = Id_zona;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_zona");
-                _dato.CadenaTexto = Nombre_zona;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Nombre_zona");
-                _dato.CadenaTexto = Id_Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Usuario");
+                _dato.Texto = Id_zona;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_zona");
+                _dato.Texto = Nombre_zona;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_zona");
+                _dato.Texto = Id_Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -86,8 +86,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Zona_Delete";
-                _dato.CadenaTexto = Id_zona;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_zona");
+                _dato.Texto = Id_zona;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_zona");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

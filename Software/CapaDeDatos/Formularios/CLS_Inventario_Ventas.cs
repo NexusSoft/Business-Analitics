@@ -29,8 +29,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Inventario_Ventas_Select";
-                _dato.CadenaTexto = Fecha;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
+                _dato.Texto = Fecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -59,24 +59,24 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Inventario_Ventas_Insert";
-                _dato.CadenaTexto = Id_Registro;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Registro");
-                _dato.CadenaTexto = Fecha;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Fecha");
-                _dato.CadenaTexto = Id_Pais;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Pais");
-                _dato.CadenaTexto = Id_Tratamiento;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tratamiento");
-                _dato.CadenaTexto = Id_Categoria;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Categoria");
-                _dato.CadenaTexto = Id_Tamanio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Tamanio");
-                _dato.DecimalValor = Volumen;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Volumen");
-                _dato.DecimalValor = Venta;
-                _conexion.agregarParametro(EnumTipoDato.Tipodecimal, _dato, "Venta");
-                _dato.CadenaTexto = Usuario;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Usuario");
+                _dato.Texto = Id_Registro;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Registro");
+                _dato.Texto = Fecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha");
+                _dato.Texto = Id_Pais;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Pais");
+                _dato.Texto = Id_Tratamiento;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Tratamiento");
+                _dato.Texto = Id_Categoria;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Categoria");
+                _dato.Texto = Id_Tamanio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Tamanio");
+                _dato.Decimal = Volumen;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Volumen");
+                _dato.Decimal = Venta;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Venta");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -105,8 +105,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Inventario_Ventas_Delete";
-                _dato.CadenaTexto = Id_Registro;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "Id_Registro");
+                _dato.Texto = Id_Registro;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Registro");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -134,10 +134,10 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Inventario_Historico_select";
-                _dato.CadenaTexto = FechaInicio;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "FechaInicio");
-                _dato.CadenaTexto = FechaFin;
-                _conexion.agregarParametro(EnumTipoDato.CadenaTexto, _dato, "FechaFin");
+                _dato.Texto = FechaInicio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "FechaInicio");
+                _dato.Texto = FechaFin;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "FechaFin");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
