@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 
 namespace CapaDeDatos
 {
-    class Crypto
+    public class Crypto
     {
         private string key;
         //constructor

@@ -10,7 +10,7 @@ using Microsoft.Win32;
 
 namespace Business_Analitics
 {
-    class MSRegistro
+    public class MSRegistro
     {
         const string NombreProyecto = "Business_Analitics";
         public string GetSetting(string section, string key, string sDefault)

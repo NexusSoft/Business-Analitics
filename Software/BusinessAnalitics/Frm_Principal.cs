@@ -325,5 +325,21 @@ namespace Business_Analitics
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [018]");
             }
         }
+
+        private void btn_Maquila_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("020"))
+            {
+                Frm_Maquila Ventana = new Frm_Maquila();
+                Frm_Maquila.DefInstance.MdiParent = this;
+                Frm_Maquila.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_Maquila.DefInstance.IdPerfil = IdPerfil;
+                Frm_Maquila.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [018]");
+            }
+        }
     }
 }

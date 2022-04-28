@@ -53,6 +53,8 @@
             this.btnPrecioSemana = new DevExpress.XtraBars.BarButtonItem();
             this.btn_TipoCorteTamaño = new DevExpress.XtraBars.BarButtonItem();
             this.btn_RelacionFruta = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_RelacionECorte = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_RelacionEAcarreo = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -70,8 +72,6 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.btn_RelacionECorte = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_RelacionEAcarreo = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -244,6 +244,7 @@
             this.btn_Maquila.Id = 16;
             this.btn_Maquila.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Maquila.ImageOptions.LargeImage")));
             this.btn_Maquila.Name = "btn_Maquila";
+            this.btn_Maquila.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Maquila_ItemClick);
             // 
             // btn_inventario_ventas
             // 
@@ -293,6 +294,23 @@
             this.btn_RelacionFruta.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_RelacionFruta.ImageOptions.LargeImage")));
             this.btn_RelacionFruta.Name = "btn_RelacionFruta";
             this.btn_RelacionFruta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_RelacionFruta_ItemClick);
+            // 
+            // btn_RelacionECorte
+            // 
+            this.btn_RelacionECorte.Caption = "Relacion Empresa de Corte";
+            this.btn_RelacionECorte.Id = 24;
+            this.btn_RelacionECorte.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_RelacionECorte.ImageOptions.Image")));
+            this.btn_RelacionECorte.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_RelacionECorte.ImageOptions.LargeImage")));
+            this.btn_RelacionECorte.Name = "btn_RelacionECorte";
+            this.btn_RelacionECorte.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_RelacionECorte_ItemClick);
+            // 
+            // btn_RelacionEAcarreo
+            // 
+            this.btn_RelacionEAcarreo.Caption = "Relacion Empresa de Acarreo";
+            this.btn_RelacionEAcarreo.Id = 25;
+            this.btn_RelacionEAcarreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_RelacionEAcarreo.ImageOptions.Image")));
+            this.btn_RelacionEAcarreo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_RelacionEAcarreo.ImageOptions.LargeImage")));
+            this.btn_RelacionEAcarreo.Name = "btn_RelacionEAcarreo";
             // 
             // ribbonPage1
             // 
@@ -408,10 +426,10 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 426);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 424);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(875, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(875, 25);
             // 
             // ribbonPageGroup6
             // 
@@ -427,23 +445,6 @@
             // 
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // btn_RelacionECorte
-            // 
-            this.btn_RelacionECorte.Caption = "Relacion Empresa de Corte";
-            this.btn_RelacionECorte.Id = 24;
-            this.btn_RelacionECorte.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btn_RelacionECorte.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.btn_RelacionECorte.Name = "btn_RelacionECorte";
-            this.btn_RelacionECorte.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_RelacionECorte_ItemClick);
-            // 
-            // btn_RelacionEAcarreo
-            // 
-            this.btn_RelacionEAcarreo.Caption = "Relacion Empresa de Acarreo";
-            this.btn_RelacionEAcarreo.Id = 25;
-            this.btn_RelacionEAcarreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btn_RelacionEAcarreo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.btn_RelacionEAcarreo.Name = "btn_RelacionEAcarreo";
             // 
             // Frm_Principal
             // 

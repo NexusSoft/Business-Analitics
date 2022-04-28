@@ -251,9 +251,9 @@ namespace Business_Analitics
             Camion.MtdEliminarCamion();
             if (Camion.Exito)
             {
-                CargarDomicilio();
+                CargarCamiones();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
-                LimpiarCamposDomicilio();
+                LimpiarCamposCamiones();
             }
             else
             {
@@ -267,9 +267,9 @@ namespace Business_Analitics
             Chofer.MtdEliminarChoferes();
             if (Chofer.Exito)
             {
-                CargarDomicilio();
+                CargarChoferes();
                 XtraMessageBox.Show("Se ha Eliminado el registro con exito");
-                LimpiarCamposDomicilio();
+                LimpiarCamposChoferes();
             }
             else
             {

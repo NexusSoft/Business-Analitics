@@ -46,6 +46,38 @@ namespace CapaDeDatos
             }
 
         }
+        public void MtdSeleccionarContactoCosecha()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Empresa_Comercializacion_Contacto_cosecha_Select";
+                _dato.Texto = Id_EmpresaComercializacion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaComercializacion");
+                _dato.Texto = c_codigo_hue;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_hue");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
         public void MtdInsertarContacto()
         {
             TipoDato _dato = new TipoDato();

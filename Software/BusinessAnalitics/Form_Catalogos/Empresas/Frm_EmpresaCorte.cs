@@ -671,7 +671,7 @@ namespace Business_Analitics
 
         private void chk_RangoCajas_CheckedChanged(object sender, EventArgs e)
         {
-            if (chk_Rango.Checked == false)
+            if (chk_RangoCajas.Checked == false)
             {
                 txtPreciokg.Enabled = true;
                 txtCajasMayorA.Enabled = false;
