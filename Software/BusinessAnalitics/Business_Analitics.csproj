@@ -213,6 +213,12 @@
     <Compile Include="Form_Catalogos\Frm_Productor.designer.cs">
       <DependentUpon>Frm_Productor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Catalogos\Frm_TipoCambio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Frm_TipoCambio.designer.cs">
+      <DependentUpon>Frm_TipoCambio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Catalogos\Frm_Tipo_Domicilio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +308,12 @@
     </Compile>
     <Compile Include="Form_Control\Maquila\Frm_Productos.designer.cs">
       <DependentUpon>Frm_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Reportes\Cosecha\Frm_Relacion_Acumulada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Reportes\Cosecha\Frm_Relacion_Acumulada.Designer.cs">
+      <DependentUpon>Frm_Relacion_Acumulada.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Reportes\Cosecha\Frm_Relacion_Empresa_Acarreo.cs">
       <SubType>Form</SubType>
@@ -443,6 +455,9 @@
     <EmbeddedResource Include="Form_Catalogos\Frm_Productor.resx">
       <DependentUpon>Frm_Productor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Frm_TipoCambio.resx">
+      <DependentUpon>Frm_TipoCambio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Catalogos\Frm_Tipo_Domicilio.resx">
       <DependentUpon>Frm_Tipo_Domicilio.cs</DependentUpon>
     </EmbeddedResource>
@@ -487,6 +502,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Control\Maquila\Frm_Productos.resx">
       <DependentUpon>Frm_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Reportes\Cosecha\Frm_Relacion_Acumulada.resx">
+      <DependentUpon>Frm_Relacion_Acumulada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Reportes\Cosecha\Frm_Relacion_Empresa_Acarreo.resx">
       <DependentUpon>Frm_Relacion_Empresa_Acarreo.cs</DependentUpon>

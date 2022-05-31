@@ -55,6 +55,8 @@
             this.btn_RelacionFruta = new DevExpress.XtraBars.BarButtonItem();
             this.btn_RelacionECorte = new DevExpress.XtraBars.BarButtonItem();
             this.btn_RelacionEAcarreo = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_TipoCambio = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -107,9 +109,11 @@
             this.btn_TipoCorteTamaño,
             this.btn_RelacionFruta,
             this.btn_RelacionECorte,
-            this.btn_RelacionEAcarreo});
+            this.btn_RelacionEAcarreo,
+            this.barButtonItem2,
+            this.btn_TipoCambio});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 26;
+            this.ribbon.MaxItemId = 28;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -311,6 +315,25 @@
             this.btn_RelacionEAcarreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_RelacionEAcarreo.ImageOptions.Image")));
             this.btn_RelacionEAcarreo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_RelacionEAcarreo.ImageOptions.LargeImage")));
             this.btn_RelacionEAcarreo.Name = "btn_RelacionEAcarreo";
+            this.btn_RelacionEAcarreo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_RelacionEAcarreo_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Relacion Acumulada ";
+            this.barButtonItem2.Id = 26;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // btn_TipoCambio
+            // 
+            this.btn_TipoCambio.Caption = "Tipo de Cambio";
+            this.btn_TipoCambio.Id = 27;
+            this.btn_TipoCambio.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_TipoCambio.ImageOptions.Image")));
+            this.btn_TipoCambio.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_TipoCambio.ImageOptions.LargeImage")));
+            this.btn_TipoCambio.Name = "btn_TipoCambio";
+            this.btn_TipoCambio.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_TipoCambio_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -346,6 +369,7 @@
             // ribbonPageGroup8
             // 
             this.ribbonPageGroup8.ItemLinks.Add(this.btn_TipoCorteTamaño);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btn_TipoCambio);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Configuracion";
             // 
@@ -406,6 +430,7 @@
             this.ribbonPageGroup9.ItemLinks.Add(this.btn_RelacionFruta);
             this.ribbonPageGroup9.ItemLinks.Add(this.btn_RelacionECorte);
             this.ribbonPageGroup9.ItemLinks.Add(this.btn_RelacionEAcarreo);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Cosecha";
             // 
@@ -426,10 +451,10 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 424);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 426);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(875, 25);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(875, 23);
             // 
             // ribbonPageGroup6
             // 
@@ -458,7 +483,7 @@
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "Principal";
+            this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_Principal_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Principal_FormClosed);
@@ -515,5 +540,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.BarButtonItem btn_RelacionECorte;
         private DevExpress.XtraBars.BarButtonItem btn_RelacionEAcarreo;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btn_TipoCambio;
     }
 }

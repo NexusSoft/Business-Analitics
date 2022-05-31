@@ -255,6 +255,8 @@ namespace Business_Analitics
             textCorreo.Text = "";
             textContacto.Text = "";
             txtRFC.Text = "";
+            labelControl20.Text = string.Empty;
+            labelControl21.Text = string.Empty;
         }
 
         private void LimpiarCamposDomicilio()
@@ -296,6 +298,8 @@ namespace Business_Analitics
                     textCorreo.Text = row["Email"].ToString();
                     textContacto.Text = row["Contacto"].ToString();
                     txtRFC.Text = row["RFC"].ToString();
+                    labelControl20.Text = row["Nombre_EmpresaComercializacion"].ToString();
+                    labelControl21.Text = row["Nombre_EmpresaComercializacion"].ToString();
                 }
             }
             catch (Exception ex)

@@ -88,6 +88,7 @@ namespace CapaDeDatos
         public decimal TotalAcarreo { get; set; }
         public string c_codigo_hue { get; set; }
         public decimal CargosExtras { get; set; }
+        public decimal PreciokgInicial { get; set; }
 
         public void MtdInsertarOrdencorte()
         {
@@ -267,6 +268,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Exportacion");
                 _dato.Decimal = KilosaPagar;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "KilosaPagar");
+                _dato.Decimal = PreciokgInicial;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "PreciokgInicial");
                 _dato.Decimal = Preciokg;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Preciokg");
                 _dato.Decimal = TotalaPagar;

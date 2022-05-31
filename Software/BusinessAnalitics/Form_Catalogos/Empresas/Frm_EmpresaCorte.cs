@@ -346,13 +346,15 @@ namespace Business_Analitics
 
         private void LimpiarCampos()
         {
-            textId.Text = "";
-            textProveedor.Text = "";
-            textTelefono.Text = "";
-            textTelefono2.Text = "";
-            textCorreo.Text = "";
-            textContacto.Text = "";
-            txtRFC.Text = "";
+            textId.Text = string.Empty;
+            textProveedor.Text = string.Empty;
+            textTelefono.Text = string.Empty;
+            textTelefono2.Text = string.Empty;
+            textCorreo.Text = string.Empty;
+            textContacto.Text = string.Empty;
+            txtRFC.Text = string.Empty;
+            labelControl23.Text = string.Empty;
+            labelControl30.Text = string.Empty;
         }
 
         private void LimpiarCamposDomicilio()
@@ -400,6 +402,8 @@ namespace Business_Analitics
                     textCorreo.Text = row["Email"].ToString();
                     textContacto.Text = row["Contacto"].ToString();
                     txtRFC.Text = row["RFC"].ToString();
+                    labelControl23.Text= row["Nombre_EmpresaCorte"].ToString();
+                    labelControl30.Text = row["Nombre_EmpresaCorte"].ToString();
                 }
             }
             catch (Exception ex)

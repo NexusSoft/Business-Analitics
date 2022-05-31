@@ -308,6 +308,10 @@ namespace Business_Analitics
             txtPrecioServicio.Text = "0";
             txtPrecioCaja.Text = "0";
             txtPrecioSalidaForanea.Text = "0";
+            labelControl23.Text = string.Empty;
+            labelControl24.Text = string.Empty;
+            labelControl26.Text = string.Empty;
+            labelControl27.Text = string.Empty;
         }
 
         private void LimpiarCamposDomicilio()
@@ -354,6 +358,10 @@ namespace Business_Analitics
                     groupControl2.Text = "Domicilio - " + textProveedor.Text;
                     groupControl3.Text = "Camion - " + textProveedor.Text;
                     groupControl4.Text = "Chofeer - " + textProveedor.Text;
+                    labelControl23.Text = row["Nombre_EmpresaAcarreo"].ToString();
+                    labelControl24.Text = row["Nombre_EmpresaAcarreo"].ToString();
+                    labelControl26.Text = row["Nombre_EmpresaAcarreo"].ToString();
+                    labelControl27.Text = row["Nombre_EmpresaAcarreo"].ToString();
                 }
             }
             catch (Exception ex)

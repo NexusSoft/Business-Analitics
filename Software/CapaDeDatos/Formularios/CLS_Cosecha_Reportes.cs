@@ -77,5 +77,69 @@ namespace CapaDeDatos
 
         }
 
+        public void MtdSelecccionarRelacionEmpresaAcarreo()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_ReporteEmpresa_Acarreo_Select";
+                _dato.Texto = Fecha_Inicio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha_Inicio");
+                _dato.Texto = Fecha_Fin;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha_Fin");
+                _conexion.EjecutarDataset();
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
+        public void MtdSelecccionarRelacionAcumulada()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_ReporteAcumulado_Select";
+                _dato.Texto = Fecha_Inicio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "FechaInicio");
+                _dato.Texto = Fecha_Fin;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "FechaFin");
+                _conexion.EjecutarDataset();
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+
     }
 }

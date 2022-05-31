@@ -338,7 +338,53 @@ namespace Business_Analitics
             }
             else
             {
-                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [018]");
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [020]");
+            }
+        }
+
+        private void btn_RelacionEAcarreo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("019"))
+            {
+                Frm_Relacion_Empresa_Acarreo Ventana = new Frm_Relacion_Empresa_Acarreo();
+                Frm_Relacion_Empresa_Acarreo.DefInstance.MdiParent = this;
+                Frm_Relacion_Empresa_Acarreo.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_Relacion_Empresa_Acarreo.DefInstance.IdPerfil = IdPerfil;
+                Frm_Relacion_Empresa_Acarreo.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [019]");
+            }
+        }
+
+        private void btn_TipoCambio_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("021"))
+            {
+                Frm_TipoCambio Ventana = new Frm_TipoCambio();
+                Ventana.UsuariosLogin = UsuariosLogin;
+                Ventana.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [016]");
+            }
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("022"))
+            {
+                Frm_Relacion_Acumulada Ventana = new Frm_Relacion_Acumulada();
+                Frm_Relacion_Acumulada.DefInstance.MdiParent = this;
+                Frm_Relacion_Acumulada.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_Relacion_Acumulada.DefInstance.IdPerfil = IdPerfil;
+                Frm_Relacion_Acumulada.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [019]");
             }
         }
     }

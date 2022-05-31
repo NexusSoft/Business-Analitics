@@ -90,6 +90,24 @@ namespace Business_Analitics
             gridColumn13.DisplayFormat.FormatString = "$ ###,###0.00";
             gridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             gridColumn14.DisplayFormat.FormatString = "$ ###,###0.00";
+            bandedGridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            bandedGridColumn15.DisplayFormat.FormatString = "$ ###,###0.00";
+            bandedGridColumn19.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            bandedGridColumn19.DisplayFormat.FormatString = "$ ###,###0.00";
+            bandedGridColumn23.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            bandedGridColumn23.DisplayFormat.FormatString = "$ ###,###0.00";
+            bandedGridColumn27.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            bandedGridColumn27.DisplayFormat.FormatString = "$ ###,###0.00";
+            bandedGridColumn33.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            bandedGridColumn33.DisplayFormat.FormatString = "$ ###,###0.00";
+            bandedGridColumn34.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            bandedGridColumn34.DisplayFormat.FormatString = "$ ###,###0.00";
+            bandedGridColumn35.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            bandedGridColumn35.DisplayFormat.FormatString = "$ ###,###0.00";
+            bandedGridColumn36.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            bandedGridColumn36.DisplayFormat.FormatString = "$ ###,###0.00";
+            bandedGridColumn37.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            bandedGridColumn37.DisplayFormat.FormatString = "$ ###,###0.00";
 
             chk_Empresa.Checked= true;
             chk_Huerta.Checked= true;
@@ -98,6 +116,7 @@ namespace Business_Analitics
             chk_FDia.Checked= true;
             chk_FApoyo.Checked = true;
             chk_FSalida.Checked= true;
+            chkTotales.Checked = true;
         }
 
         string TemporadaReport(string str)
@@ -355,6 +374,18 @@ namespace Business_Analitics
             chk_FDia.Checked = true;
             chk_FApoyo.Checked = true;
             chk_FSalida.Checked = true;
+        }
+
+        private void chkTotales_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkTotales.Checked == true)
+            {
+                ban_Totales.Visible = true;
+            }
+            else
+            {
+                ban_Totales.Visible = false;
+            }
         }
     }
 }

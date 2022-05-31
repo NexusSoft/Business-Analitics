@@ -78,6 +78,7 @@
     <Compile Include="Formularios\CLS_Inventario_Ventas.cs" />
     <Compile Include="Formularios\CLS_Tamanio.cs" />
     <Compile Include="Formularios\CLS_Temporada.cs" />
+    <Compile Include="Formularios\CLS_TipoCambio.cs" />
     <Compile Include="Formularios\CLS_Tratamiento.cs" />
     <Compile Include="Formularios\CLS_Pais.cs" />
     <Compile Include="Formularios\CLS_Zona.cs" />

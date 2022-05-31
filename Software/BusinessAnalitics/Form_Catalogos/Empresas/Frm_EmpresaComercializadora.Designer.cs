@@ -135,6 +135,8 @@
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.txtIdHuerta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -309,9 +311,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 484);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 487);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(921, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(921, 22);
             // 
             // barDockControlLeft
             // 
@@ -319,7 +321,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 484);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 487);
             // 
             // barDockControlRight
             // 
@@ -327,7 +329,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(921, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 484);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 487);
             // 
             // repositoryItemTextEdit1
             // 
@@ -339,7 +341,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(71, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(850, 484);
+            this.xtraTabControl1.Size = new System.Drawing.Size(850, 487);
             this.xtraTabControl1.TabIndex = 6;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -352,7 +354,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(844, 456);
+            this.xtraTabPage1.Size = new System.Drawing.Size(848, 462);
             this.xtraTabPage1.Text = "Datos";
             // 
             // panelControl1
@@ -362,7 +364,7 @@
             this.panelControl1.Location = new System.Drawing.Point(5, 151);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(834, 300);
+            this.panelControl1.Size = new System.Drawing.Size(838, 306);
             this.panelControl1.TabIndex = 2;
             // 
             // dtgEmpComercializadora
@@ -371,7 +373,7 @@
             this.dtgEmpComercializadora.Location = new System.Drawing.Point(7, 7);
             this.dtgEmpComercializadora.MainView = this.dtgValEmpComercializadora;
             this.dtgEmpComercializadora.Name = "dtgEmpComercializadora";
-            this.dtgEmpComercializadora.Size = new System.Drawing.Size(820, 286);
+            this.dtgEmpComercializadora.Size = new System.Drawing.Size(824, 292);
             this.dtgEmpComercializadora.TabIndex = 0;
             this.dtgEmpComercializadora.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValEmpComercializadora});
@@ -472,7 +474,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(834, 146);
+            this.groupControl1.Size = new System.Drawing.Size(838, 146);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Empresa";
             // 
@@ -585,21 +587,22 @@
             // 
             // xtraTabPage2
             // 
+            this.xtraTabPage2.Controls.Add(this.labelControl21);
             this.xtraTabPage2.Controls.Add(this.panelControl2);
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(844, 456);
+            this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
+            this.xtraTabPage2.Size = new System.Drawing.Size(848, 462);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.dtgDomicilio);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(5, 172);
+            this.panelControl2.Location = new System.Drawing.Point(5, 197);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(834, 279);
+            this.panelControl2.Size = new System.Drawing.Size(838, 260);
             this.panelControl2.TabIndex = 16;
             // 
             // dtgDomicilio
@@ -609,7 +612,7 @@
             this.dtgDomicilio.MainView = this.dtgValDomicilio;
             this.dtgDomicilio.MenuManager = this.barManager1;
             this.dtgDomicilio.Name = "dtgDomicilio";
-            this.dtgDomicilio.Size = new System.Drawing.Size(820, 265);
+            this.dtgDomicilio.Size = new System.Drawing.Size(824, 246);
             this.dtgDomicilio.TabIndex = 0;
             this.dtgDomicilio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValDomicilio});
@@ -750,9 +753,9 @@
             this.groupControl2.Controls.Add(this.textIdDomicilio);
             this.groupControl2.Controls.Add(this.labelControl18);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl2.Location = new System.Drawing.Point(5, 5);
+            this.groupControl2.Location = new System.Drawing.Point(5, 30);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(834, 167);
+            this.groupControl2.Size = new System.Drawing.Size(838, 167);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -924,21 +927,22 @@
             // 
             // xtraTabPage3
             // 
+            this.xtraTabPage3.Controls.Add(this.labelControl20);
             this.xtraTabPage3.Controls.Add(this.panelControl3);
             this.xtraTabPage3.Controls.Add(this.groupControl3);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage3.Size = new System.Drawing.Size(844, 456);
+            this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
+            this.xtraTabPage3.Size = new System.Drawing.Size(848, 462);
             this.xtraTabPage3.Text = "Contacto de Pago";
             // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.dtgContacto);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(5, 196);
+            this.panelControl3.Location = new System.Drawing.Point(5, 221);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl3.Size = new System.Drawing.Size(834, 255);
+            this.panelControl3.Size = new System.Drawing.Size(838, 236);
             this.panelControl3.TabIndex = 17;
             // 
             // dtgContacto
@@ -948,7 +952,7 @@
             this.dtgContacto.MainView = this.dtgValContacto;
             this.dtgContacto.MenuManager = this.barManager1;
             this.dtgContacto.Name = "dtgContacto";
-            this.dtgContacto.Size = new System.Drawing.Size(820, 241);
+            this.dtgContacto.Size = new System.Drawing.Size(824, 222);
             this.dtgContacto.TabIndex = 0;
             this.dtgContacto.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValContacto});
@@ -1055,9 +1059,9 @@
             this.groupControl3.Controls.Add(this.txtIdHuerta);
             this.groupControl3.Controls.Add(this.labelControl24);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl3.Location = new System.Drawing.Point(5, 5);
+            this.groupControl3.Location = new System.Drawing.Point(5, 30);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(834, 191);
+            this.groupControl3.Size = new System.Drawing.Size(838, 191);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "Domicilio";
             // 
@@ -1169,6 +1173,24 @@
             this.labelControl24.TabIndex = 0;
             this.labelControl24.Text = "Id Huerta: ";
             // 
+            // labelControl20
+            // 
+            this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl20.Appearance.Options.UseFont = true;
+            this.labelControl20.Location = new System.Drawing.Point(8, 10);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(0, 13);
+            this.labelControl20.TabIndex = 18;
+            // 
+            // labelControl21
+            // 
+            this.labelControl21.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl21.Appearance.Options.UseFont = true;
+            this.labelControl21.Location = new System.Drawing.Point(8, 10);
+            this.labelControl21.Name = "labelControl21";
+            this.labelControl21.Size = new System.Drawing.Size(0, 13);
+            this.labelControl21.TabIndex = 19;
+            // 
             // Frm_EmpresaComercializadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1204,6 +1226,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textProveedor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
+            this.xtraTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDomicilio)).EndInit();
@@ -1221,6 +1244,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textCalle.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textIdDomicilio.Properties)).EndInit();
             this.xtraTabPage3.ResumeLayout(false);
+            this.xtraTabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgContacto)).EndInit();
@@ -1346,5 +1370,7 @@
         private DevExpress.XtraEditors.SimpleButton btnHuertas;
         private DevExpress.XtraEditors.TextEdit txtIdContacto;
         private DevExpress.XtraEditors.LabelControl labelControl19;
+        private DevExpress.XtraEditors.LabelControl labelControl21;
+        private DevExpress.XtraEditors.LabelControl labelControl20;
     }
 }

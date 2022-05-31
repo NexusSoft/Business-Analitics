@@ -129,6 +129,7 @@ namespace Business_Analitics
 
 
             txt_KiloPrecio.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txt_KiloPrecioInicial.Properties.Mask.UseMaskAsDisplayFormat = true;
             txt_PagoTotalCorte.Properties.Mask.UseMaskAsDisplayFormat = true;
             txt_PrecioCuadrillaCorte.Properties.Mask.UseMaskAsDisplayFormat = true;
             txt_PrecioDiaCorte.Properties.Mask.UseMaskAsDisplayFormat = true;
@@ -157,6 +158,7 @@ namespace Business_Analitics
             CargarTemporadaActiva();
             CargarTemporada(TemActiva);
             CargarCosechas();
+
         }
         private void CargarTemporadaActiva()
         {
@@ -229,6 +231,7 @@ namespace Business_Analitics
                         chk_Mercado.Checked = false;
                     }
                     txt_Huerta.Text = sel.Datos.Rows[0]["v_nombre_hue"].ToString();
+                    BarHuerta.Caption="Huerta: "+ sel.Datos.Rows[0]["v_nombre_hue"].ToString();
                     txt_Huerta.Tag = sel.Datos.Rows[0]["c_codigo_hue"].ToString();
                     txt_Acopiador.Text = sel.Datos.Rows[0]["v_nombre_zon"].ToString();
                     txt_Acopiador.Tag = sel.Datos.Rows[0]["c_codigo_zon"].ToString();
@@ -240,6 +243,7 @@ namespace Business_Analitics
                     txt_Secuencia.Text = sel.Datos.Rows[0]["c_secuencia_ocd"].ToString();
                     txt_Temporada.Text = sel.Datos.Rows[0]["c_codigo_tem"].ToString();
                     txt_Productor.Text = sel.Datos.Rows[0]["v_nombre_dno"].ToString();
+                    BarProductor.Caption= "Productor: " + sel.Datos.Rows[0]["v_nombre_dno"].ToString();
                     if (txt_Temporada.Text != string.Empty && txt_OrdenCorte.Text != string.Empty && txt_Secuencia.Text != string.Empty)
                     {
                         CargarRecepcion();
@@ -302,6 +306,7 @@ namespace Business_Analitics
                     CalcularFechaPago(dt_FechaRecepcion.DateTime);
                     txt_Recepcion.Text = sel.Datos.Rows[0]["c_codigo_rec"].ToString();
                     txt_EstibaSel.Text = sel.Datos.Rows[0]["c_codigo_sel"].ToString();
+                    BarEstiba.Caption="Estiba: "+ sel.Datos.Rows[0]["c_codigo_sel"].ToString();
                     txt_CajasCortadas.Text = sel.Datos.Rows[0]["n_cajascorte_red"].ToString();
                     txt_Cajas_CortadasA.Text = sel.Datos.Rows[0]["n_cajascorte_red"].ToString();
                     txt_CajasCortadasCorte.Text = sel.Datos.Rows[0]["n_cajascorte_red"].ToString();
@@ -643,7 +648,14 @@ namespace Business_Analitics
                 else
                 {
                     txt_PrecioKiloCorte.Text = txtPreciokg.Text;
-                    txt_PrecioTCorte.Text =Convert.ToString(Decimal.Parse(txt_PrecioKiloCorte.Text, style, provider)* Decimal.Parse(txt_KilosARestar.Text, style, provider));
+                    if (Decimal.Parse(txt_KilosARestar.Text, style, provider) < 0)
+                    {
+                        txt_PrecioTCorte.Text = Convert.ToString(Decimal.Parse(txt_PrecioKiloCorte.Text, style, provider) * Decimal.Parse(txt_KilosARestar.Text, style, provider));
+                    }
+                    else
+                    {
+                        txt_PrecioTCorte.Text = "0";
+                    }
                     txt_PrecioDiaCorte.Text = txtPrecioDia.Text;
                 }
                 txt_PrecioSalidaFCorte.Text = "0";
@@ -1005,13 +1017,49 @@ namespace Business_Analitics
             CalcularCostosCorte();
 
         }
+        void GuardarRuta(string fileName)
+        {
+            string ruta = string.Empty;
+            string[] carpetas = fileName.ToString().Split('\\');
+            for (int i = 0; i < carpetas.Length - 1; i++)
+            {
+                if (carpetas[i].ToString() == string.Empty)
+                {
+                    ruta = ruta + "\\";
+                }
+                else
+                {
+                    ruta = ruta + carpetas[i].ToString() + "\\";
+                }
+            }
+            MSRegistro RegIn = new MSRegistro();
+            RegIn.SaveSetting("ConexionSQL", "Ultima_Ruta", ruta);
+        }
+        string ObtenerRuta()
+        {
+            string ruta = string.Empty;
+            try
+            {
+                MSRegistro RegOut = new MSRegistro();
+                ruta = RegOut.GetSetting("ConexionSQL", "Ultima_Ruta");
+            }
+            catch (Exception)
+            {
+                MSRegistro RegIn = new MSRegistro();
+                RegIn.SaveSetting("ConexionSQL", "Ultima_Ruta", string.Empty);
+                ruta = string.Empty;
+            }
+            return ruta;
+        }
         private void btn_UpPDFProductor_Click(object sender, EventArgs e)
         {
             DialogResult result = FileDialogPDF();
             if (result == DialogResult.OK)
             {
                 txt_RutaPDFProductor.Text = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
             }
+            OpenDialog.Dispose();
         }
         private void btn_UpXMLProductor_Click(object sender, EventArgs e)
         {
@@ -1019,14 +1067,24 @@ namespace Business_Analitics
             if (result == DialogResult.OK)
             {
                 txt_RutaXMLProductor.Text = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
             }
+            OpenDialog.Dispose();
         }
         private DialogResult FileDialogPDF()
         {
             OpenDialog.FileName = string.Empty;
             OpenDialog.Filter = "Portable Document Format (*.PDF)|*.PDF";
             OpenDialog.FilterIndex = 1;
-            OpenDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string ruta = ObtenerRuta();
+            if (string.IsNullOrEmpty(ruta))
+            {
+                OpenDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            }
+            else
+            {
+                OpenDialog.InitialDirectory = ruta;
+            }
             OpenDialog.Title = "Cargar Documento PDF";
             OpenDialog.CheckFileExists = false;
             OpenDialog.Multiselect = false;
@@ -1039,7 +1097,15 @@ namespace Business_Analitics
             OpenDialog.FileName = string.Empty;
             OpenDialog.Filter = "eXtensible Markup Language (*.XML)|*.XML";
             OpenDialog.FilterIndex = 1;
-            OpenDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string ruta = ObtenerRuta();
+            if (ruta == string.Empty)
+            {
+                OpenDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            }
+            else
+            {
+                OpenDialog.InitialDirectory = ruta;
+            }
             OpenDialog.Title = "Cargar Documento XML";
             OpenDialog.CheckFileExists = false;
             OpenDialog.Multiselect = false;
@@ -1062,6 +1128,7 @@ namespace Business_Analitics
         }
         void LimpiarRecepcion()
         {
+            chk_kgProductor.Checked = false;
             txt_OrdenCorte.Text = string.Empty;
             txt_Secuencia.Text = string.Empty;
             txt_Recepcion.Text = string.Empty;
@@ -1075,7 +1142,6 @@ namespace Business_Analitics
             txt_EmpresaBascula.Text = string.Empty;
             txt_EmpresaBascula.Tag = string.Empty;
             txt_KilosBasculaE.EditValue = "0";
-            chk_kgProductor.Checked = false;
             txt_KilosDiferencia.EditValue = "0";
             txt_KilosAjuste.EditValue = "0";
             txt_kilosST.EditValue = "0";
@@ -1096,6 +1162,7 @@ namespace Business_Analitics
             txt_KilosMuestra.EditValue = "0";
             txt_kilos_Totales.EditValue = "0";
             txt_KiloPrecio.EditValue = "0";
+            txt_KiloPrecioInicial.EditValue = "0";
             txt_TotalaPagar.EditValue = "0";
             txt_ObservacionesProductor.Text = string.Empty;
             chk_Mercado.Checked = false;
@@ -1168,6 +1235,7 @@ namespace Business_Analitics
             txt_IVAFacturaProductor.EditValue = "0";
             txt_TotalFacturaProductor.EditValue = "0";
             chk_RetencionProductor.Checked = false;
+            //chk_RetencionFleteProductor.Checked = false;
             chk_IVAProductor.Checked = false;
             chk_PagadaProductor.Checked = false;
             dt_FechaFacturaProductor.DateTime = DateTime.Now;
@@ -1175,6 +1243,10 @@ namespace Business_Analitics
             opt_TipoFacturaProductor.SelectedIndex = 0;
             btn_ViewPDFProductor.Enabled = false;
             btn_ViewXMLProductor.Enabled = false;
+            this.dt_FechaPagoProductor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.dt_FechaPagoProductor.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.dt_FechaPagoProductor.Properties.Appearance.Options.UseFont = true;
+            this.dt_FechaPagoProductor.Properties.Appearance.Options.UseForeColor = true;
         }
         void LimpiarFacturasKilos()
         {
@@ -1188,6 +1260,7 @@ namespace Business_Analitics
             txt_RetencionFacturaCorteKilos.EditValue = "0";
             txt_TotalFacturaCorteKilos.EditValue = "0";
             chk_RetencionCorteKilos.Checked = false;
+            chk_RetencionFleteCorteKilos.Checked = false;
             chk_IVACorteKilos.Checked = false;
             chk_PagadaCorteKilos.Checked = false;
             dt_FechaFacturaCorteKilos.DateTime = DateTime.Now;
@@ -1195,6 +1268,10 @@ namespace Business_Analitics
             opt_TipoFacturaCorteKilos.SelectedIndex = 0;
             btn_ViewPDFCorteKilos.Enabled = false;
             btn_ViewXMLCorteKilos.Enabled = false;
+            this.dt_FechaPagoCorteKilos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.dt_FechaPagoCorteKilos.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.dt_FechaPagoCorteKilos.Properties.Appearance.Options.UseFont = true;
+            this.dt_FechaPagoCorteKilos.Properties.Appearance.Options.UseForeColor = true;
         }
         void LimpiarFacturasDia()
         {
@@ -1208,6 +1285,7 @@ namespace Business_Analitics
             txt_IVAFacturaCorteDia.EditValue = "0";
             txt_TotalFacturaCorteDia.EditValue = "0";
             chk_RetencionCorteDia.Checked = false;
+            chk_RetencionFleteCorteDia.Checked = false;
             chk_IVACorteDia.Checked = false;
             chk_PagadaCorteDia.Checked = false;
             dt_FechaFacturaCorteDia.DateTime = DateTime.Now;
@@ -1215,6 +1293,10 @@ namespace Business_Analitics
             opt_TipoFacturaCorteDia.SelectedIndex = 0;
             btn_ViewPDFCorteDia.Enabled = false;
             btn_ViewXMLCorteDia.Enabled = false;
+            this.dt_FechaPagoCorteDia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.dt_FechaPagoCorteDia.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.dt_FechaPagoCorteDia.Properties.Appearance.Options.UseFont = true;
+            this.dt_FechaPagoCorteDia.Properties.Appearance.Options.UseForeColor = true;
         }
         void LimpiarFacturasApoyo()
         {
@@ -1228,6 +1310,7 @@ namespace Business_Analitics
             txt_IVAFacturaCorteApoyo.EditValue = "0";
             txt_TotalFacturaCorteApoyo.EditValue = "0";
             chk_RetencionCorteApoyo.Checked = false;
+            chk_RetencionFleteCorteApoyo.Checked = false;
             chk_IVACorteApoyo.Checked = false;
             chk_PagadaCorteApoyo.Checked = false;
             dt_FechaFacturaCorteApoyo.DateTime = DateTime.Now;
@@ -1235,6 +1318,10 @@ namespace Business_Analitics
             opt_TipoFacturaCorteApoyo.SelectedIndex = 0;
             btn_ViewPDFCorteApoyo.Enabled = false;
             btn_ViewXMLCorteApoyo.Enabled = false;
+            this.dt_FechaPagoCorteApoyo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.dt_FechaPagoCorteApoyo.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.dt_FechaPagoCorteApoyo.Properties.Appearance.Options.UseFont = true;
+            this.dt_FechaPagoCorteApoyo.Properties.Appearance.Options.UseForeColor = true;
         }
         void LimpiarFacturasSalida()
         {
@@ -1248,6 +1335,7 @@ namespace Business_Analitics
             txt_IVAFacturaCorteSalida.EditValue = "0";
             txt_TotalFacturaCorteSalida.EditValue = "0";
             chk_RetencionCorteSalida.Checked = false;
+            chk_RetencionFleteCorteSalida.Checked = false;
             chk_IVACorteSalida.Checked = false;
             chk_PagadaCorteSalida.Checked = false;
             dt_FechaFacturaCorteSalida.DateTime = DateTime.Now;
@@ -1255,6 +1343,10 @@ namespace Business_Analitics
             opt_TipoFacturaCorteSalida.SelectedIndex = 0;
             btn_ViewPDFCorteSalida.Enabled = false;
             btn_ViewXMLCorteSalida.Enabled = false;
+            this.dt_FechaPagoCorteSalida.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.dt_FechaPagoCorteSalida.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.dt_FechaPagoCorteSalida.Properties.Appearance.Options.UseFont = true;
+            this.dt_FechaPagoCorteSalida.Properties.Appearance.Options.UseForeColor = true;
         }
         void LimpiarFacturasAcarreo()
         {
@@ -1277,6 +1369,10 @@ namespace Business_Analitics
             opt_TipoFacturaAcarreo.SelectedIndex = 0;
             btn_ViewPDFAcarreo.Enabled = false;
             btn_ViewXMLAcarreo.Enabled = false;
+            this.dt_FechaPagoAcarreo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.dt_FechaPagoAcarreo.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.dt_FechaPagoAcarreo.Properties.Appearance.Options.UseFont = true;
+            this.dt_FechaPagoAcarreo.Properties.Appearance.Options.UseForeColor = true;
         }
         private void btn_limpiarOrden_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -1294,6 +1390,9 @@ namespace Business_Analitics
             LimpiarFacturasAcarreo();
             InicializaVariables();
             navigationPane1.SelectedPageIndex = 0;
+            BarProductor.Caption =string.Empty;
+            BarHuerta.Caption =string.Empty;
+            BarEstiba.Caption =string.Empty;
         }
 
         private void InicializaVariables()
@@ -1590,8 +1689,28 @@ namespace Business_Analitics
             }
 
             Clase.Importe_Retencion = Decimal.Parse(txt_RetencionFacturaCorteKilos.Text, style, provider);
-            Clase.Retencion_Flete = 0;
-            Clase.Importe_Retencion_Flete = 0;
+            if (chk_IVACorteKilos.Checked)
+            {
+                Clase.IVA = 1;
+            }
+            else
+            {
+                Clase.IVA = 0;
+            }
+
+            Clase.Importe_IVA = Decimal.Parse(txt_IVAFacturaCorteKilos.Text, style, provider);
+
+            if (chk_RetencionFleteCorteKilos.Checked)
+            {
+                Clase.Retencion_Flete = 1;
+            }
+            else
+            {
+                Clase.Retencion_Flete = 0;
+            }
+
+            Clase.Importe_Retencion_Flete = Decimal.Parse(txt_RetencionFleteFacturaCorteKilos.Text, style, provider);
+            
             Clase.Total_Factura = Decimal.Parse(txt_TotalFacturaCorteKilos.Text, style, provider);
             DateTime Fecha;
 
@@ -1730,8 +1849,27 @@ namespace Business_Analitics
             }
 
             Clase.Importe_Retencion = Decimal.Parse(txt_RetencionFacturaCorteDia.Text, style, provider);
-            Clase.Retencion_Flete = 0;
-            Clase.Importe_Retencion_Flete = 0;
+            if (chk_IVACorteDia.Checked)
+            {
+                Clase.IVA = 1;
+            }
+            else
+            {
+                Clase.IVA = 0;
+            }
+
+            Clase.Importe_IVA = Decimal.Parse(txt_IVAFacturaCorteDia.Text, style, provider);
+            if (chk_RetencionFleteCorteDia.Checked)
+            {
+                Clase.Retencion_Flete = 1;
+            }
+            else
+            {
+                Clase.Retencion_Flete = 0;
+            }
+
+            Clase.Importe_Retencion_Flete = Decimal.Parse(txt_RetencionFleteFacturaCorteDia.Text, style, provider);
+            
             Clase.Total_Factura = Decimal.Parse(txt_TotalFacturaCorteDia.Text, style, provider);
             DateTime Fecha;
 
@@ -1870,6 +2008,26 @@ namespace Business_Analitics
             }
 
             Clase.Importe_Retencion = Decimal.Parse(txt_RetencionFacturaCorteApoyo.Text, style, provider);
+            if (chk_IVACorteApoyo.Checked)
+            {
+                Clase.IVA = 1;
+            }
+            else
+            {
+                Clase.IVA = 0;
+            }
+
+            Clase.Importe_IVA = Decimal.Parse(txt_IVAFacturaCorteApoyo.Text, style, provider);
+            if (chk_RetencionFleteCorteApoyo.Checked)
+            {
+                Clase.Retencion_Flete = 1;
+            }
+            else
+            {
+                Clase.Retencion_Flete = 0;
+            }
+
+            Clase.Importe_Retencion_Flete = Decimal.Parse(txt_RetencionFleteFacturaCorteApoyo.Text, style, provider);
             Clase.Retencion_Flete = 0;
             Clase.Importe_Retencion_Flete = 0;
             Clase.Total_Factura = Decimal.Parse(txt_TotalFacturaCorteApoyo.Text, style, provider);
@@ -2010,8 +2168,27 @@ namespace Business_Analitics
             }
 
             Clase.Importe_Retencion = Decimal.Parse(txt_RetencionFacturaCorteSalida.Text, style, provider);
-            Clase.Retencion_Flete = 0;
-            Clase.Importe_Retencion_Flete = 0;
+            if (chk_IVACorteSalida.Checked)
+            {
+                Clase.IVA = 1;
+            }
+            else
+            {
+                Clase.IVA = 0;
+            }
+
+            Clase.Importe_IVA = Decimal.Parse(txt_IVAFacturaCorteSalida.Text, style, provider);
+            if (chk_RetencionFleteCorteSalida.Checked)
+            {
+                Clase.Retencion_Flete = 1;
+            }
+            else
+            {
+                Clase.Retencion_Flete = 0;
+            }
+
+            Clase.Importe_Retencion_Flete = Decimal.Parse(txt_RetencionFleteFacturaCorteSalida.Text, style, provider);
+            
             Clase.Total_Factura = Decimal.Parse(txt_TotalFacturaCorteSalida.Text, style, provider);
             DateTime Fecha;
 
@@ -2160,6 +2337,17 @@ namespace Business_Analitics
             }
 
             Clase.Importe_Retencion_Flete = Decimal.Parse(txt_RetencionFleteFacturaAcarreo.Text, style, provider);
+
+            if (chk_IVAAcarreo.Checked)
+            {
+                Clase.IVA = 1;
+            }
+            else
+            {
+                Clase.IVA = 0;
+            }
+
+            Clase.Importe_IVA = Decimal.Parse(txt_IVAFacturaAcarreo.Text, style, provider);
             Clase.Total_Factura = Decimal.Parse(txt_TotalFacturaAcarreo.Text, style, provider);
             DateTime Fecha;
 
@@ -2318,6 +2506,7 @@ namespace Business_Analitics
             ins.KilosAjustados = Convert.ToDecimal(txt_KilosAjustados.EditValue);
             ins.KilosMuestra = Convert.ToDecimal(txt_KilosMuestra.EditValue);
             ins.KilosaPagar = Convert.ToDecimal(txt_kilos_Totales.EditValue);
+            ins.PreciokgInicial = Decimal.Parse(txt_KiloPrecioInicial.Text, style, provider);
             ins.Preciokg = Decimal.Parse(txt_KiloPrecio.Text, style, provider);
             ins.TotalaPagar = Decimal.Parse(txt_TotalaPagar.Text, style, provider);
             ins.Observaciones = txt_ObservacionesProductor.Text;
@@ -2467,6 +2656,7 @@ namespace Business_Analitics
             if (result == DialogResult.OK)
             {
                 txt_RutaPDFCorteKilos.Text = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
             }
             OpenDialog.Dispose();
         }
@@ -2478,6 +2668,7 @@ namespace Business_Analitics
             if (result == DialogResult.OK)
             {
                 txt_RutaPDFCorteDia.Text = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
             }
             OpenDialog.Dispose();
         }
@@ -2489,6 +2680,7 @@ namespace Business_Analitics
             if (result == DialogResult.OK)
             {
                 txt_RutaPDFCorteApoyo.Text = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
             }
             OpenDialog.Dispose();
         }
@@ -2500,6 +2692,7 @@ namespace Business_Analitics
             if (result == DialogResult.OK)
             {
                 txt_RutaPDFCorteSalida.Text = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
             }
             OpenDialog.Dispose();
         }
@@ -2511,6 +2704,7 @@ namespace Business_Analitics
             if (result == DialogResult.OK)
             {
                 txt_RutaPDFAcarreo.Text = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
             }
             OpenDialog.Dispose();
         }
@@ -2522,6 +2716,7 @@ namespace Business_Analitics
             if (result == DialogResult.OK)
             {
                 txt_RutaXMLCorteKilos.Text = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
             }
             OpenDialog?.Dispose();
         }
@@ -2533,6 +2728,7 @@ namespace Business_Analitics
             if (result == DialogResult.OK)
             {
                 txt_RutaXMLCorteDia.Text = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
             }
             OpenDialog.Dispose();
         }
@@ -2544,6 +2740,7 @@ namespace Business_Analitics
             if (result == DialogResult.OK)
             {
                 txt_RutaXMLCorteApoyo.Text = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
             }
             OpenDialog?.Dispose();
         }
@@ -2555,6 +2752,7 @@ namespace Business_Analitics
             if (result == DialogResult.OK)
             {
                 txt_RutaXMLCorteSalida.Text = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
             }
             OpenDialog?.Dispose();
         }
@@ -2694,6 +2892,7 @@ namespace Business_Analitics
                     txt_Mercado.Text = ins.Datos.Rows[0]["Mercado"].ToString();
                     txt_Huerta.Tag = ins.Datos.Rows[0]["c_codigo_hue"].ToString();
                     txt_Huerta.Text = ins.Datos.Rows[0]["Huerta"].ToString();
+                    BarHuerta.Caption="Huerta: "+ ins.Datos.Rows[0]["Huerta"].ToString();
                     txt_Acopiador.Text = ins.Datos.Rows[0]["Acopiador"].ToString();
                     txt_Cajas_Programa.EditValue = ins.Datos.Rows[0]["ProgramaCajas"].ToString();
                     txt_TipoCorte.Text = ins.Datos.Rows[0]["TipoCorte"].ToString();
@@ -2727,7 +2926,12 @@ namespace Business_Analitics
                     txt_EmpresaBascula.Tag = ins.Datos.Rows[0]["Id_EmpresaBascula"].ToString();
                     txt_EmpresaBascula.Text = ins.Datos.Rows[0]["Nombre_EmpresaBascula"].ToString();
                     txt_KilosBasculaE.EditValue = ins.Datos.Rows[0]["KilosBasculaExterna"].ToString();
-                    if (ins.Datos.Rows[0]["TomarkgProductor"].ToString() == "1")
+                    
+                    txt_KilosDiferencia.EditValue = ins.Datos.Rows[0]["KilosDiferencia"].ToString();
+                    txt_KilosAjuste.EditValue = ins.Datos.Rows[0]["Ajuste"].ToString();
+                    txt_kilosST.EditValue = ins.Datos.Rows[0]["KilosST"].ToString();
+                    txt_KilosProductor.EditValue = ins.Datos.Rows[0]["KilosProductor"].ToString();
+                    if (ins.Datos.Rows[0]["TomarkgProductor"].ToString() == "True")
                     {
                         chk_kgProductor.Checked = true;
 
@@ -2736,10 +2940,6 @@ namespace Business_Analitics
                     {
                         chk_kgProductor.Checked = false;
                     }
-                    txt_KilosDiferencia.EditValue = ins.Datos.Rows[0]["KilosDiferencia"].ToString();
-                    txt_KilosAjuste.EditValue = ins.Datos.Rows[0]["Ajuste"].ToString();
-                    txt_kilosST.EditValue = ins.Datos.Rows[0]["KilosST"].ToString();
-                    txt_KilosProductor.EditValue = ins.Datos.Rows[0]["KilosProductor"].ToString();
                 }
             }
             else
@@ -2786,9 +2986,11 @@ namespace Business_Analitics
                 if (ins.Datos.Rows.Count > 0)
                 {
                     txt_Productor.Text = ins.Datos.Rows[0]["Productor"].ToString();
+                    BarProductor.Caption="Productor: "+ ins.Datos.Rows[0]["Productor"].ToString();
                     txt_KilosAjustados.EditValue = ins.Datos.Rows[0]["KilosAjustados"].ToString();
                     txt_KilosMuestra.EditValue = ins.Datos.Rows[0]["KilosMuestra"].ToString();
                     txt_kilos_Totales.EditValue = ins.Datos.Rows[0]["KilosaPagar"].ToString();
+                    txt_KiloPrecioInicial.EditValue = ins.Datos.Rows[0]["PreciokgInicial"].ToString();
                     txt_KiloPrecio.EditValue = ins.Datos.Rows[0]["Preciokg"].ToString();
                     txt_TotalaPagar.EditValue = ins.Datos.Rows[0]["TotalaPagar"].ToString();
                     txt_ObservacionesProductor.Text= ins.Datos.Rows[0]["Observaciones"].ToString();
@@ -3432,6 +3634,7 @@ namespace Business_Analitics
                 {
                     DataRow row = this.dtgValCosecha.GetDataRow(i);
                     txt_IdCosecha.Text = row["Id_Cosecha"].ToString();
+                    BarEstiba.Caption = "Estiba: " + row["EstibadeSeleccion"].ToString();
                     CargarCosecha();
                 }
             }
@@ -3763,7 +3966,7 @@ namespace Business_Analitics
             {
                 txt_IVAFacturaAcarreo.EditValue = "0";
             }
-            txt_TotalFacturaAcarreo.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaAcarreo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaAcarreo.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaAcarreo.Text, style, provider)));
+            txt_TotalFacturaAcarreo.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaAcarreo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaAcarreo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFleteFacturaAcarreo.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaAcarreo.Text, style, provider)));
         }
 
         private void txt_TotalAcarreo_EditValueChanged(object sender, EventArgs e)
@@ -3896,13 +4099,234 @@ namespace Business_Analitics
             if (result == DialogResult.OK)
             {
                 txt_RutaXMLAcarreo.Text = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
             }
-            OpenDialog?.Dispose();
+            OpenDialog.Dispose();
         }
 
         private void btn_Manifiesto_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void chk_RetencionFleteCorteSalida_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_RetencionFleteCorteSalida.Checked == true)
+            {
+                txt_RetencionFleteFacturaCorteSalida.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteSalida.Text, style, provider)) * Decimal.Parse("0.04", style, provider));
+            }
+            else
+            {
+                txt_RetencionFleteFacturaCorteSalida.EditValue = "0";
+            }
+            txt_TotalFacturaCorteSalida.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteSalida.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaCorteSalida.Text, style, provider)) - (Decimal.Parse(txt_RetencionFleteFacturaCorteSalida.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaCorteSalida.Text, style, provider)));
+        }
+
+        private void chk_RetencionFleteCorteApoyo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_RetencionFleteCorteApoyo.Checked == true)
+            {
+                txt_RetencionFleteFacturaCorteApoyo.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteApoyo.Text, style, provider)) * Decimal.Parse("0.04", style, provider));
+            }
+            else
+            {
+                txt_RetencionFleteFacturaCorteApoyo.EditValue = "0";
+            }
+            txt_TotalFacturaCorteApoyo.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteApoyo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaCorteApoyo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFleteFacturaCorteApoyo.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaCorteApoyo.Text, style, provider)));
+        }
+
+        private void chk_RetencionFleteCorteDia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_RetencionFleteCorteDia.Checked == true)
+            {
+                txt_RetencionFleteFacturaCorteDia.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteDia.Text, style, provider)) * Decimal.Parse("0.04", style, provider));
+            }
+            else
+            {
+                txt_RetencionFleteFacturaCorteDia.EditValue = "0";
+            }
+            txt_TotalFacturaCorteDia.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteDia.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaCorteDia.Text, style, provider)) - (Decimal.Parse(txt_RetencionFleteFacturaCorteDia.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaCorteDia.Text, style, provider)));
+        }
+
+        private void chk_RetencionFleteCorteKilos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_RetencionFleteCorteKilos.Checked == true)
+            {
+                txt_RetencionFleteFacturaCorteKilos.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteKilos.Text, style, provider)) * Decimal.Parse("0.04", style, provider));
+            }
+            else
+            {
+                txt_RetencionFleteFacturaCorteKilos.EditValue = "0";
+            }
+            txt_TotalFacturaCorteKilos.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteKilos.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaCorteKilos.Text, style, provider)) - (Decimal.Parse(txt_RetencionFleteFacturaCorteKilos.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaCorteKilos.Text, style, provider)));
+        }
+
+        private void chk_PagadaProductor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_PagadaProductor.Checked == false)
+            {
+                this.dt_FechaPagoProductor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+                this.dt_FechaPagoProductor.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+                this.dt_FechaPagoProductor.Properties.Appearance.Options.UseFont = true;
+                this.dt_FechaPagoProductor.Properties.Appearance.Options.UseForeColor = true;
+            }
+            else
+            {
+                this.dt_FechaPagoProductor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                this.dt_FechaPagoProductor.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+                this.dt_FechaPagoProductor.Properties.Appearance.Options.UseFont = false;
+                this.dt_FechaPagoProductor.Properties.Appearance.Options.UseForeColor = false;
+            }
+        }
+
+        private void chk_PagadaCorteKilos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_PagadaCorteKilos.Checked == false)
+            {
+                this.dt_FechaPagoCorteKilos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+                this.dt_FechaPagoCorteKilos.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+                this.dt_FechaPagoCorteKilos.Properties.Appearance.Options.UseFont = true;
+                this.dt_FechaPagoCorteKilos.Properties.Appearance.Options.UseForeColor = true;
+            }
+            else
+            {
+                this.dt_FechaPagoCorteKilos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                this.dt_FechaPagoCorteKilos.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+                this.dt_FechaPagoCorteKilos.Properties.Appearance.Options.UseFont = false;
+                this.dt_FechaPagoCorteKilos.Properties.Appearance.Options.UseForeColor = false;
+            }
+        }
+
+        private void chk_PagadaCorteDia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_PagadaCorteDia.Checked == false)
+            {
+                this.dt_FechaPagoCorteDia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+                this.dt_FechaPagoCorteDia.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+                this.dt_FechaPagoCorteDia.Properties.Appearance.Options.UseFont = true;
+                this.dt_FechaPagoCorteDia.Properties.Appearance.Options.UseForeColor = true;
+            }
+            else
+            {
+                this.dt_FechaPagoCorteDia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                this.dt_FechaPagoCorteDia.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+                this.dt_FechaPagoCorteDia.Properties.Appearance.Options.UseFont = false;
+                this.dt_FechaPagoCorteDia.Properties.Appearance.Options.UseForeColor = false;
+            }
+        }
+
+        private void chk_PagadaCorteApoyo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_PagadaCorteApoyo.Checked == false)
+            {
+                this.dt_FechaPagoCorteApoyo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+                this.dt_FechaPagoCorteApoyo.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+                this.dt_FechaPagoCorteApoyo.Properties.Appearance.Options.UseFont = true;
+                this.dt_FechaPagoCorteApoyo.Properties.Appearance.Options.UseForeColor = true;
+            }
+            else
+            {
+                this.dt_FechaPagoCorteApoyo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                this.dt_FechaPagoCorteApoyo.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+                this.dt_FechaPagoCorteApoyo.Properties.Appearance.Options.UseFont = false;
+                this.dt_FechaPagoCorteApoyo.Properties.Appearance.Options.UseForeColor = false;
+            }
+        }
+
+        private void chk_PagadaCorteSalida_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_PagadaCorteSalida.Checked == false)
+            {
+                this.dt_FechaPagoCorteSalida.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+                this.dt_FechaPagoCorteSalida.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+                this.dt_FechaPagoCorteSalida.Properties.Appearance.Options.UseFont = true;
+                this.dt_FechaPagoCorteSalida.Properties.Appearance.Options.UseForeColor = true;
+            }
+            else
+            {
+                this.dt_FechaPagoCorteSalida.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                this.dt_FechaPagoCorteSalida.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+                this.dt_FechaPagoCorteSalida.Properties.Appearance.Options.UseFont = false;
+                this.dt_FechaPagoCorteSalida.Properties.Appearance.Options.UseForeColor = false;
+            }
+        }
+
+        private void chk_PagadaAcarreo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_PagadaAcarreo.Checked == false)
+            {
+                this.dt_FechaPagoAcarreo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+                this.dt_FechaPagoAcarreo.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
+                this.dt_FechaPagoAcarreo.Properties.Appearance.Options.UseFont = true;
+                this.dt_FechaPagoAcarreo.Properties.Appearance.Options.UseForeColor = true;
+            }
+            else
+            {
+                this.dt_FechaPagoAcarreo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular);
+                this.dt_FechaPagoAcarreo.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+                this.dt_FechaPagoAcarreo.Properties.Appearance.Options.UseFont = false;
+                this.dt_FechaPagoAcarreo.Properties.Appearance.Options.UseForeColor = false;
+            }
+        }
+
+        private void dt_FechaPagoProductor_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void dt_FechaFacturaProductor_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void dt_FechaFacturaCorteKilos_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void dt_FechaPagoCorteKilos_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void dt_FechaFacturaCorteDia_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void dt_FechaPagoCorteDia_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void dt_FechaFacturaCorteApoyo_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void dt_FechaPagoCorteApoyo_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void dt_FechaFacturaCorteSalida_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void dt_FechaPagoCorteSalida_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void dt_FechaFacturaAcarreo_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void dt_FechaPagoAcarreo_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
         }
     }
 }

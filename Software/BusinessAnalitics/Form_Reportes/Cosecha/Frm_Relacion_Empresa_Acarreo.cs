@@ -25,13 +25,13 @@ namespace Business_Analitics
         Excel._Worksheet oSheet;
         Excel.Range oRng;
 
-        private static Frm_Relacion_de_Fruta m_FormDefInstance;
-        public static Frm_Relacion_de_Fruta DefInstance
+        private static Frm_Relacion_Empresa_Acarreo m_FormDefInstance;
+        public static Frm_Relacion_Empresa_Acarreo DefInstance
         {
             get
             {
                 if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
-                    m_FormDefInstance = new Frm_Relacion_de_Fruta();
+                    m_FormDefInstance = new Frm_Relacion_Empresa_Acarreo();
                 return m_FormDefInstance;
             }
             set
@@ -64,32 +64,19 @@ namespace Business_Analitics
             CargarAccesos();
             dt_FechaDesde.DateTime = DateTime.Now;
             dt_FechaHasta.DateTime = DateTime.Now;
-            dtgValFrutaCortada.OptionsSelection.EnableAppearanceFocusedCell = false;
-            dtgValFrutaCortada.OptionsSelection.EnableAppearanceHideSelection = false;
-            dtgValFrutaCortada.OptionsSelection.MultiSelect = true;
-            dtgValFrutaCortada.OptionsView.ShowGroupPanel = false;
-            dtgValFrutaCortada.OptionsBehavior.AutoPopulateColumns = true;
-            dtgValFrutaCortada.OptionsView.ColumnAutoWidth = true;
-            dtgValFrutaCortada.BestFitColumns();
+            dtgValFrutaAcarreo.OptionsSelection.EnableAppearanceFocusedCell = false;
+            dtgValFrutaAcarreo.OptionsSelection.EnableAppearanceHideSelection = false;
+            dtgValFrutaAcarreo.OptionsSelection.MultiSelect = true;
+            dtgValFrutaAcarreo.OptionsView.ShowGroupPanel = false;
+            dtgValFrutaAcarreo.OptionsBehavior.AutoPopulateColumns = true;
+            dtgValFrutaAcarreo.OptionsView.ColumnAutoWidth = true;
+            dtgValFrutaAcarreo.BestFitColumns();
 
             gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             gridColumn6.DisplayFormat.FormatString = "$ ###,###0.00";
-            gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gridColumn7.DisplayFormat.FormatString = "###,###0";
-            gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gridColumn8.DisplayFormat.FormatString = "###,###0";
-            gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gridColumn9.DisplayFormat.FormatString = "###,###0";
-            gridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gridColumn10.DisplayFormat.FormatString = "###,###0";
-            gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gridColumn11.DisplayFormat.FormatString = "###,###0";
-            gridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            gridColumn12.DisplayFormat.FormatString = "$ ###,###0.00";
-            gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            gridColumn13.DisplayFormat.FormatString = "$ ###,###0.00";
-            gridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            gridColumn14.DisplayFormat.FormatString = "$ ###,###0.00";
+            gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            gridColumn8.DisplayFormat.FormatString = "$ ###,###0.00";
+
         }
 
         string TemporadaReport(string str)
@@ -112,18 +99,10 @@ namespace Business_Analitics
             CLS_Cosecha_Reportes sel = new CLS_Cosecha_Reportes();
             sel.Fecha_Inicio = dt_FechaDesde.DateTime.Year.ToString() + DosCero(dt_FechaDesde.DateTime.Month.ToString()) + DosCero(dt_FechaDesde.DateTime.Day.ToString());
             sel.Fecha_Fin = dt_FechaHasta.DateTime.Year.ToString() + DosCero(dt_FechaHasta.DateTime.Month.ToString()) + DosCero(dt_FechaHasta.DateTime.Day.ToString());
-            sel.MtdSelecccionarRelacionFrutaCortada();
+            sel.MtdSelecccionarRelacionEmpresaAcarreo();
             if (sel.Exito)
             {
-                dtgFrutaCortada.DataSource = sel.Datos;
-                if (sel.Datos.Rows.Count > 0)
-                {
-                    vSemanaCorte = sel.Datos.Rows[0]["semana"].ToString();
-                    vFechaLiquidacion = Convert.ToDateTime(sel.Datos.Rows[0]["Fecha_Pago"].ToString()).ToString("dd MMMM yyyy");
-                    DateTimeFormatInfo dtinfo = new CultureInfo("es-MX", false).DateTimeFormat;
-                    vRangoFechas = "Del " + DosCero(dt_FechaDesde.DateTime.Day.ToString()) + " de " + dtinfo.GetMonthName(dt_FechaDesde.DateTime.Month) + " al " + DosCero(dt_FechaHasta.DateTime.Day.ToString()) + " de " + dtinfo.GetMonthName(dt_FechaHasta.DateTime.Month) + " del " + dt_FechaHasta.DateTime.Year.ToString();
-                    vNombreTemporada = TemporadaReport(sel.Datos.Rows[0]["Temporada"].ToString());
-                }
+                dtgFrutaAcarreo.DataSource = sel.Datos;
             }
         }
         private void CargarAccesos()
@@ -133,7 +112,6 @@ namespace Business_Analitics
             Clase.MtdSeleccionarAccesosPermisos();
             if (Clase.Exito)
             {
-
                 for (int x = 0; x < Clase.Datos.Rows.Count; x++)
                 {
                     Lista.Add(Clase.Datos.Rows[x][0].ToString());
@@ -162,9 +140,9 @@ namespace Business_Analitics
             {
                 try
                 {
-                    foreach (int i in this.dtgValFrutaCortada.GetSelectedRows())
+                    foreach (int i in this.dtgValFrutaAcarreo.GetSelectedRows())
                     {
-                        DataRow row = this.dtgValFrutaCortada.GetDataRow(i);
+                        DataRow row = this.dtgValFrutaAcarreo.GetDataRow(i);
                         vId_Cosecha = row["Id_Cosecha"].ToString();
                     }
 
@@ -172,7 +150,6 @@ namespace Business_Analitics
                     Frm_Cosecha Ventana = new Frm_Cosecha();
                     Frm_Cosecha.DefInstance.MdiParent = Frm_Cosecha.DefInstance.MdiParent;
                     Frm_Cosecha.DefInstance.UsuariosLogin = UsuariosLogin;
-
                     Frm_Cosecha.DefInstance.CargarCosecha();
                     Frm_Cosecha.DefInstance.ShowDialog();
                 }
@@ -189,9 +166,60 @@ namespace Business_Analitics
 
         private void btnExportar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (dtgValFrutaCortada.RowCount > 0)
+            if (dtgValFrutaAcarreo.RowCount > 0)
             {
-                Formato_A();
+                using (SaveFileDialog saveDialog = new SaveFileDialog())
+                {
+                    saveDialog.Filter = "Excel (2003)(.xls)|*.xls|Excel (2010) (.xlsx)|*.xlsx |RichText File (.rtf)|*.rtf |Pdf File (.pdf)|*.pdf |Html File (.html)|*.html";
+                    if (saveDialog.ShowDialog() != DialogResult.Cancel)
+                    {
+                        string exportFilePath = saveDialog.FileName;
+                        string fileExtenstion = new System.IO.FileInfo(exportFilePath).Extension;
+
+                        switch (fileExtenstion)
+                        {
+                            case ".xls":
+                                dtgValFrutaAcarreo.ExportToXls(exportFilePath);
+                                break;
+                            case ".xlsx":
+                                dtgValFrutaAcarreo.ExportToXlsx(exportFilePath);
+                                break;
+                            case ".rtf":
+                                dtgValFrutaAcarreo.ExportToRtf(exportFilePath);
+                                break;
+                            case ".pdf":
+                                dtgValFrutaAcarreo.ExportToPdf(exportFilePath);
+                                break;
+                            case ".html":
+                                dtgValFrutaAcarreo.ExportToHtml(exportFilePath);
+                                break;
+                            case ".mht":
+                                dtgValFrutaAcarreo.ExportToMht(exportFilePath);
+                                break;
+                            default:
+                                break;
+                        }
+
+                        if (System.IO.File.Exists(exportFilePath))
+                        {
+                            try
+                            {
+                                //Try to open the file and let windows decide how to open it.
+                                System.Diagnostics.Process.Start(exportFilePath);
+                            }
+                            catch
+                            {
+                                String msg = "The file could not be opened." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                                MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            String msg = "The file could not be saved." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                            MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
             }
             else
             {
@@ -872,6 +900,13 @@ namespace Business_Analitics
             oRng = oSheet.get_Range("A:A");
             oRng.EntireColumn.Hidden=true;
 
+        }
+
+        private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            dt_FechaDesde.DateTime = DateTime.Now;
+            dt_FechaHasta.DateTime = DateTime.Now;
+            dtgFrutaAcarreo.DataSource = null;
         }
     }
 }

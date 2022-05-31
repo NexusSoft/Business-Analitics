@@ -90,6 +90,8 @@ namespace Business_Analitics
             gridColumn13.DisplayFormat.FormatString = "$ ###,###0.00";
             gridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             gridColumn14.DisplayFormat.FormatString = "$ ###,###0.00";
+            gridColumn21.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            gridColumn21.DisplayFormat.FormatString = "$ ###,###0.00";
         }
 
         string TemporadaReport(string str)
@@ -119,7 +121,14 @@ namespace Business_Analitics
                 if (sel.Datos.Rows.Count > 0)
                 {
                     vSemanaCorte = sel.Datos.Rows[0]["semana"].ToString();
-                    vFechaLiquidacion = Convert.ToDateTime(sel.Datos.Rows[0]["Fecha_Pago"].ToString()).ToString("dd MMMM yyyy");
+                    try
+                    {
+                        vFechaLiquidacion = Convert.ToDateTime(sel.Datos.Rows[0]["Fecha_Pago"].ToString()).ToString("dd MMMM yyyy");
+                        
+                    }
+                    catch 
+                    {
+                    }
                     DateTimeFormatInfo dtinfo = new CultureInfo("es-MX", false).DateTimeFormat;
                     vRangoFechas = "Del " + DosCero(dt_FechaDesde.DateTime.Day.ToString()) + " de " + dtinfo.GetMonthName(dt_FechaDesde.DateTime.Month) + " al " + DosCero(dt_FechaHasta.DateTime.Day.ToString()) + " de " + dtinfo.GetMonthName(dt_FechaHasta.DateTime.Month) + " del " + dt_FechaHasta.DateTime.Year.ToString();
                     vNombreTemporada = TemporadaReport(sel.Datos.Rows[0]["Temporada"].ToString());
@@ -204,12 +213,6 @@ namespace Business_Analitics
             oSheet = CreaHoja("Semana " + vSemanaCorte);
             Colocar_encabezado(oSheet);
             Colocar_Cortes(oSheet);
-            //Colocar_Dias(oSheet);
-            //Colocar_Ordenes(oSheet, cuadrilla);
-            //Colocar_Empleados(oSheet, cuadrilla);
-            //Colocar_Encabezados_Sub(oSheet);
-            //Colocar_Subtotales(oSheet, cuadrilla);
-
         }
         private Excel._Worksheet CreaHoja(string NombreHoja)
         {
@@ -369,7 +372,23 @@ namespace Business_Analitics
 
             oRng = oSheet.get_Range("G5");
             oRng.Merge();
-            oRng.Value2 = "PRECIO";
+            oRng.Value2 = "ESTIBA";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            oRng.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            oRng.Font.Bold = true;
+            oRng.WrapText = true;
+            oRng.EntireColumn.ColumnWidth = 20.14;
+            oRng.Interior.Pattern = Excel.XlPattern.xlPatternSolid;
+            oRng.Interior.PatternColorIndex = Excel.XlPattern.xlPatternAutomatic;
+            oRng.Interior.ThemeColor = Excel.XlThemeColor.xlThemeColorAccent6;
+            oRng.Interior.TintAndShade = 0.399975585192419;
+            oRng.Interior.PatternTintAndShade = 0;
+
+            oRng = oSheet.get_Range("H5");
+            oRng.Merge();
+            oRng.Value2 = "PRECIO INICIAL";
             oRng.Font.FontStyle = "Calibri";
             oRng.Font.Size = 11;
             oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
@@ -383,7 +402,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("H5");
+            oRng = oSheet.get_Range("I5");
             oRng.Merge();
             oRng.Value2 = "PRECIO FINAL";
             oRng.Font.FontStyle = "Calibri";
@@ -399,7 +418,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("I5");
+            oRng = oSheet.get_Range("J5");
             oRng.Merge();
             oRng.Value2 = "KILOS RECIBIDOS";
             oRng.Font.FontStyle = "Calibri";
@@ -415,7 +434,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("J5");
+            oRng = oSheet.get_Range("K5");
             oRng.Merge();
             oRng.Value2 = "BASCULA PRODUCTOR";
             oRng.Font.FontStyle = "Calibri";
@@ -431,7 +450,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("K5");
+            oRng = oSheet.get_Range("L5");
             oRng.Merge();
             oRng.Value2 = "DIF. EN BASCULA.";
             oRng.Font.FontStyle = "Calibri";
@@ -447,7 +466,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("L5");
+            oRng = oSheet.get_Range("M5");
             oRng.Merge();
             oRng.Value2 = "M";
             oRng.Font.FontStyle = "Calibri";
@@ -463,7 +482,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("M5");
+            oRng = oSheet.get_Range("N5");
             oRng.Merge();
             oRng.Value2 = "KGS. A FACTURAR";
             oRng.Font.FontStyle = "Calibri";
@@ -479,7 +498,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("N5");
+            oRng = oSheet.get_Range("O5");
             oRng.Merge();
             oRng.Value2 = "IMPORTE A FACTURAR";
             oRng.Font.FontStyle = "Calibri";
@@ -495,7 +514,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("O5");
+            oRng = oSheet.get_Range("P5");
             oRng.Merge();
             oRng.Value2 = "RETENSION 1.25% (RESICO)";
             oRng.Font.FontStyle = "Calibri";
@@ -511,7 +530,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("P5");
+            oRng = oSheet.get_Range("Q5");
             oRng.Merge();
             oRng.Value2 = "IMPORTE";
             oRng.Font.FontStyle = "Calibri";
@@ -527,7 +546,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("Q5");
+            oRng = oSheet.get_Range("R5");
             oRng.Merge();
             oRng.Value2 = "OBSERV.";
             oRng.Font.FontStyle = "Calibri";
@@ -536,14 +555,14 @@ namespace Business_Analitics
             oRng.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
             oRng.Font.Bold = true;
             oRng.WrapText = true;
-            oRng.EntireColumn.ColumnWidth = 11.71;
+            oRng.EntireColumn.ColumnWidth = 30.71;
             oRng.Interior.Pattern = Excel.XlPattern.xlPatternSolid;
             oRng.Interior.PatternColorIndex = Excel.XlPattern.xlPatternAutomatic;
             oRng.Interior.ThemeColor = Excel.XlThemeColor.xlThemeColorAccent6;
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("R5");
+            oRng = oSheet.get_Range("S5");
             oRng.Merge();
             oRng.Value2 = "FOLIO FACTURA";
             oRng.Font.FontStyle = "Calibri";
@@ -559,7 +578,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("S5");
+            oRng = oSheet.get_Range("T5");
             oRng.Merge();
             oRng.Value2 = "FECHA FACTURA";
             oRng.Font.FontStyle = "Calibri";
@@ -575,7 +594,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("T5");
+            oRng = oSheet.get_Range("U5");
             oRng.Merge();
             oRng.Value2 = "RAZON SOCIAL QUE FACTURA";
             oRng.Font.FontStyle = "Calibri";
@@ -591,7 +610,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("U5");
+            oRng = oSheet.get_Range("V5");
             oRng.Merge();
             oRng.Value2 = "IMPORTE";
             oRng.Font.FontStyle = "Calibri";
@@ -607,7 +626,7 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("V5");
+            oRng = oSheet.get_Range("W5");
             oRng.Merge();
             oRng.Value2 = "FECHA DE PAGO";
             oRng.Font.FontStyle = "Calibri";
@@ -623,7 +642,39 @@ namespace Business_Analitics
             oRng.Interior.TintAndShade = 0.399975585192419;
             oRng.Interior.PatternTintAndShade = 0;
 
-            oRng = oSheet.get_Range("B5", "V5");
+            oRng = oSheet.get_Range("X5");
+            oRng.Merge();
+            oRng.Value2 = "ACOPIADOR";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            oRng.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            oRng.Font.Bold = true;
+            oRng.WrapText = true;
+            oRng.EntireColumn.ColumnWidth = 12.57;
+            oRng.Interior.Pattern = Excel.XlPattern.xlPatternSolid;
+            oRng.Interior.PatternColorIndex = Excel.XlPattern.xlPatternAutomatic;
+            oRng.Interior.ThemeColor = Excel.XlThemeColor.xlThemeColorAccent6;
+            oRng.Interior.TintAndShade = 0.399975585192419;
+            oRng.Interior.PatternTintAndShade = 0;
+
+            oRng = oSheet.get_Range("Y5");
+            oRng.Merge();
+            oRng.Value2 = "MUNICIPIO";
+            oRng.Font.FontStyle = "Calibri";
+            oRng.Font.Size = 11;
+            oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            oRng.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+            oRng.Font.Bold = true;
+            oRng.WrapText = true;
+            oRng.EntireColumn.ColumnWidth = 12.57;
+            oRng.Interior.Pattern = Excel.XlPattern.xlPatternSolid;
+            oRng.Interior.PatternColorIndex = Excel.XlPattern.xlPatternAutomatic;
+            oRng.Interior.ThemeColor = Excel.XlThemeColor.xlThemeColorAccent6;
+            oRng.Interior.TintAndShade = 0.399975585192419;
+            oRng.Interior.PatternTintAndShade = 0;
+
+            oRng = oSheet.get_Range("B5", "Y5");
             oRng.Borders.Weight = Excel.XlBorderWeight.xlThin;
         }
 
@@ -655,7 +706,14 @@ namespace Business_Analitics
 
                 oRng = oSheet.get_Range("C" + Fila.ToString());
                 oRng.Merge();
-                oRng.Value2 = Convert.ToDateTime(sel.Datos.Rows[x]["Fecha_Pago"].ToString());
+                try
+                {
+                    oRng.Value2 = Convert.ToDateTime(sel.Datos.Rows[x]["Fecha_Pago"].ToString());
+                }
+                catch
+                {
+                    oRng.Value2 = "";
+                }
                 oRng.Font.FontStyle = "Calibri";
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
@@ -690,7 +748,16 @@ namespace Business_Analitics
                 oRng.EntireColumn.AutoFit();
 
                 oRng = oSheet.get_Range("G" + Fila.ToString());
-                oRng.Value2 = Convert.ToDecimal(sel.Datos.Rows[x]["Preciokg"].ToString());
+                oRng.NumberFormat = "@";
+                oRng.Value2 ="'"+ sel.Datos.Rows[x]["EstibadeSeleccion"].ToString();
+                oRng.Font.FontStyle = "Calibri";
+                oRng.Font.Size = 11;
+                oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+                oRng.Font.Bold = false;
+                oRng.EntireColumn.AutoFit();
+
+                oRng = oSheet.get_Range("H" + Fila.ToString());
+                oRng.Value2 = Convert.ToDecimal(sel.Datos.Rows[x]["PreciokgInicial"].ToString());
                 oRng.Font.FontStyle = "Calibri";
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignRight;
@@ -699,6 +766,15 @@ namespace Business_Analitics
                 oRng.EntireColumn.AutoFit();
 
                 oRng = oSheet.get_Range("I" + Fila.ToString());
+                oRng.Value2 = Convert.ToDecimal(sel.Datos.Rows[x]["Preciokg"].ToString());
+                oRng.Font.FontStyle = "Calibri";
+                oRng.Font.Size = 11;
+                oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignRight;
+                oRng.Font.Bold = false;
+                oRng.NumberFormat = @"_($* #,##0.00_);_($* (#,##0.00);_($* ""-""??_);_(@_)";
+                oRng.EntireColumn.AutoFit();
+
+                oRng = oSheet.get_Range("J" + Fila.ToString());
                 oRng.Merge();
                 oRng.Value2 = sel.Datos.Rows[x]["KilosCortados"].ToString();
                 oRng.Font.FontStyle = "Calibri";
@@ -708,7 +784,7 @@ namespace Business_Analitics
                 oRng.NumberFormat = "#,##0";
                 oRng.EntireColumn.AutoFit();
 
-                oRng = oSheet.get_Range("J" + Fila.ToString());
+                oRng = oSheet.get_Range("K" + Fila.ToString());
                 oRng.Merge();
                 oRng.Value2 = sel.Datos.Rows[x]["KilosProductor"].ToString();
                 oRng.Font.FontStyle = "Calibri";
@@ -718,7 +794,7 @@ namespace Business_Analitics
                 oRng.NumberFormat = "#,##0";
                 oRng.EntireColumn.AutoFit();
 
-                oRng = oSheet.get_Range("K" + Fila.ToString());
+                oRng = oSheet.get_Range("L" + Fila.ToString());
                 oRng.Merge();
                 oRng.Value2 = sel.Datos.Rows[x]["KilosDiferencia"].ToString();
                 oRng.Font.FontStyle = "Calibri";
@@ -728,7 +804,7 @@ namespace Business_Analitics
                 oRng.NumberFormat = "#,##0";
                 oRng.EntireColumn.AutoFit();
 
-                oRng = oSheet.get_Range("L" + Fila.ToString());
+                oRng = oSheet.get_Range("M" + Fila.ToString());
                 oRng.Merge();
                 oRng.Value2 = sel.Datos.Rows[x]["KilosMuestra"].ToString();
                 oRng.Font.FontStyle = "Calibri";
@@ -738,7 +814,7 @@ namespace Business_Analitics
                 oRng.NumberFormat = "#,##0";
                 oRng.EntireColumn.AutoFit();
 
-                oRng = oSheet.get_Range("M" + Fila.ToString());
+                oRng = oSheet.get_Range("N" + Fila.ToString());
                 oRng.Merge();
                 oRng.Value2 = sel.Datos.Rows[x]["KilosaPagar"].ToString();
                 oRng.Font.FontStyle = "Calibri";
@@ -748,8 +824,15 @@ namespace Business_Analitics
                 oRng.NumberFormat = "#,##0";
                 oRng.EntireColumn.AutoFit();
 
-                oRng = oSheet.get_Range("N" + Fila.ToString());
-                oRng.Value2 = Convert.ToDecimal(sel.Datos.Rows[x]["Importe_Factura"].ToString());
+                oRng = oSheet.get_Range("O" + Fila.ToString());
+                try
+                {
+                    oRng.Value2 = Convert.ToDecimal(sel.Datos.Rows[x]["Importe_Factura"].ToString());
+                }
+                catch
+                {
+                    oRng.Value2 = "0";
+                }
                 oRng.Font.FontStyle = "Calibri";
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignRight;
@@ -757,8 +840,15 @@ namespace Business_Analitics
                 oRng.NumberFormat = @"_($* #,##0.00_);_($* (#,##0.00);_($* ""-""??_);_(@_)";
                 oRng.EntireColumn.AutoFit();
 
-                oRng = oSheet.get_Range("O" + Fila.ToString());
-                oRng.Value2 = Convert.ToDecimal(sel.Datos.Rows[x]["Importe_Retencion"].ToString());
+                oRng = oSheet.get_Range("P" + Fila.ToString());
+                try
+                {
+                    oRng.Value2 = Convert.ToDecimal(sel.Datos.Rows[x]["Importe_Retencion"].ToString());
+                }
+                catch
+                {
+                    oRng.Value2 = "0";
+                }
                 oRng.Font.FontStyle = "Calibri";
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignRight;
@@ -769,8 +859,8 @@ namespace Business_Analitics
                 if (vfoliofactura != sel.Datos.Rows[x]["FolioFactura"].ToString() && Fila != 6)
                 {
                     filaanterior = Fila - 1;
-                    oRng = oSheet.get_Range("U" + Filainicial.ToString(), "U" + filaanterior.ToString());
-                    oRng.Merge();
+                    oRng = oSheet.get_Range("V" + Filainicial.ToString(), "V" + filaanterior.ToString());
+                    //oRng.Merge();
                     oRng.Value2 = vtotalfacturas;
                     oRng.Font.FontStyle = "Calibri";
                     oRng.Font.Size = 11;
@@ -783,9 +873,23 @@ namespace Business_Analitics
                     vtotalfacturas = 0;
                 }
 
-                oRng = oSheet.get_Range("P" + Fila.ToString());
-                oRng.Value2 = Convert.ToDecimal(sel.Datos.Rows[x]["Total_Factura"].ToString());
-                vtotalfacturas += Convert.ToDecimal(sel.Datos.Rows[x]["Total_Factura"].ToString());
+                oRng = oSheet.get_Range("Q" + Fila.ToString());
+                try
+                {
+                    oRng.Value2 = Convert.ToDecimal(sel.Datos.Rows[x]["Total_Factura"].ToString());
+                }
+                catch
+                {
+                    oRng.Value2 = "0";
+                }
+                try
+                {
+                    vtotalfacturas += Convert.ToDecimal(sel.Datos.Rows[x]["Total_Factura"].ToString());
+                }
+                catch
+                {
+                    vtotalfacturas += 0;
+                }
                 oRng.Font.FontStyle = "Calibri";
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignRight;
@@ -793,16 +897,17 @@ namespace Business_Analitics
                 oRng.NumberFormat = @"_($* #,##0.00_);_($* (#,##0.00);_($* ""-""??_);_(@_)";
                 oRng.EntireColumn.AutoFit();
 
-                oRng = oSheet.get_Range("Q" + Fila.ToString());
+                oRng = oSheet.get_Range("R" + Fila.ToString());
                 oRng.Value2 = sel.Datos.Rows[x]["Observaciones"].ToString();
                 oRng.Font.FontStyle = "Calibri";
                 oRng.Font.Size = 7;
                 oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
                 oRng.Font.Bold = false;
+                oRng.WrapText = true;
 
 
 
-                oRng = oSheet.get_Range("R" + Fila.ToString());
+                oRng = oSheet.get_Range("S" + Fila.ToString());
                 oRng.Value2 = sel.Datos.Rows[x]["FolioFactura"].ToString();
                 vfoliofactura = sel.Datos.Rows[x]["FolioFactura"].ToString();
                 oRng.Font.FontStyle = "Calibri";
@@ -811,9 +916,16 @@ namespace Business_Analitics
                 oRng.Font.Bold = false;
                 oRng.EntireColumn.AutoFit();
 
-                oRng = oSheet.get_Range("S" + Fila.ToString());
+                oRng = oSheet.get_Range("T" + Fila.ToString());
                 oRng.Merge();
-                oRng.Value2 = Convert.ToDateTime(sel.Datos.Rows[x]["Fecha_Factura"].ToString());
+                try
+                {
+                    oRng.Value2 = Convert.ToDateTime(sel.Datos.Rows[x]["Fecha_Factura"].ToString());
+                }
+                catch
+                {
+                    oRng.Value2 = string.Empty;
+                }
                 oRng.Font.FontStyle = "Calibri";
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
@@ -821,8 +933,24 @@ namespace Business_Analitics
                 oRng.NumberFormat = "dd/mm/yyyy";
                 oRng.EntireColumn.AutoFit();
 
-                oRng = oSheet.get_Range("T" + Fila.ToString());
+                oRng = oSheet.get_Range("U" + Fila.ToString());
                 oRng.Value2 = sel.Datos.Rows[x]["RazonSocial"].ToString();
+                oRng.Font.FontStyle = "Calibri";
+                oRng.Font.Size = 11;
+                oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+                oRng.Font.Bold = false;
+                oRng.EntireColumn.AutoFit();
+
+                oRng = oSheet.get_Range("X" + Fila.ToString());
+                oRng.Value2 = sel.Datos.Rows[x]["Acopiador"].ToString();
+                oRng.Font.FontStyle = "Calibri";
+                oRng.Font.Size = 11;
+                oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+                oRng.Font.Bold = false;
+                oRng.EntireColumn.AutoFit();
+
+                oRng = oSheet.get_Range("Y" + Fila.ToString());
+                oRng.Value2 = sel.Datos.Rows[x]["Municipio"].ToString();
                 oRng.Font.FontStyle = "Calibri";
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
@@ -834,7 +962,7 @@ namespace Business_Analitics
             if (vtotalfacturas > 0 && Fila != 6)
             {
                 filaanterior = Fila - 1;
-                oRng = oSheet.get_Range("U" + Filainicial.ToString(), "U" + filaanterior.ToString());
+                oRng = oSheet.get_Range("V" + Filainicial.ToString(), "V" + filaanterior.ToString());
                 oRng.Merge();
                 oRng.Value2 = vtotalfacturas;
                 oRng.Font.FontStyle = "Calibri";
@@ -848,7 +976,7 @@ namespace Business_Analitics
                 vtotalfacturas = 0;
             }
 
-            oRng = oSheet.get_Range("B"+ Fila.ToString(),"V"+Fila.ToString());
+            oRng = oSheet.get_Range("B"+ Fila.ToString(),"Y"+Fila.ToString());
             oRng.Interior.Pattern = Excel.XlPattern.xlPatternSolid;
             oRng.Interior.PatternColorIndex = Excel.XlPattern.xlPatternAutomatic;
             oRng.Interior.ThemeColor = Excel.XlThemeColor.xlThemeColorAccent6;
@@ -857,16 +985,17 @@ namespace Business_Analitics
             oRng.Font.ThemeColor = Excel.XlThemeColor.xlThemeColorDark1;
             oRng.Font.TintAndShade = 0;
 
-            oRng = oSheet.get_Range("M"+ Fila.ToString());
-            oRng.Formula = "=SUM(M6:" + "M" + filaanterior.ToString() + ")";
-            oRng.EntireColumn.AutoFit();
-
-            oRng = oSheet.get_Range("N" + Fila.ToString());
+            filaanterior = Fila - 1;
+            oRng = oSheet.get_Range("N"+ Fila.ToString());
             oRng.Formula = "=SUM(N6:" + "N" + filaanterior.ToString() + ")";
             oRng.EntireColumn.AutoFit();
 
-            oRng = oSheet.get_Range("U" + Fila.ToString());
-            oRng.Formula = "=SUM(U6:" + "U" + filaanterior.ToString() + ")";
+            oRng = oSheet.get_Range("O" + Fila.ToString());
+            oRng.Formula = "=SUM(O6:" + "O" + filaanterior.ToString() + ")";
+            oRng.EntireColumn.AutoFit();
+
+            oRng = oSheet.get_Range("V" + Fila.ToString());
+            oRng.Formula = "=SUM(V6:" + "V" + filaanterior.ToString() + ")";
             oRng.EntireColumn.AutoFit();
 
             oRng = oSheet.get_Range("A:A");
