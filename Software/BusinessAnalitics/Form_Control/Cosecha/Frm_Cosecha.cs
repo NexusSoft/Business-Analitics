@@ -519,7 +519,14 @@ namespace Business_Analitics
                     txt_KilosProductor.Text = Convert.ToString(KP);
                     txt_KilosAjustados.Text = txt_kilosST.Text;
                 }
-                txt_kilosCortadosCorte.Text = txt_kilosST.Text;
+                if (chk_kgCorte.Checked == false)
+                {
+                    txt_kilosCortadosCorte.Text = txt_kilosST.Text;
+                }
+                else
+                {
+                    txt_kilosCortadosCorte.Text = txt_KilosBasculaE.Text;
+                }
                 txt_kilos_Totales.Text = Convert.ToString(Convert.ToInt32(Decimal.Parse(txt_KilosAjustados.Text, style, provider)) - Convert.ToInt32(Decimal.Parse(txt_KilosMuestra.Text, style, provider)));
             }
             else
@@ -623,7 +630,7 @@ namespace Business_Analitics
                 {
                     txt_KilosAjustadosCorte.Text = txt_kilosCortadosCorte.Text;
                 }
-                if (Decimal.Parse(txt_kilosCortadosCorte.Text, style, provider) > Decimal.Parse(txtMenorakg.Text, style, provider))
+                if (Decimal.Parse(txt_kilosCortadosCorte.Text, style, provider) > Decimal.Parse(txtMenorakg.Text, style, provider) || chk_PrecioPorkg.Checked==true)
                 {
                     txt_PrecioKiloCorte.Text = txtPreciokg.Text;
                     if (chk_RangoCajas.Checked == false)
@@ -959,7 +966,7 @@ namespace Business_Analitics
                 {
                     txt_CostoServicio.Text = txtPrecioServicio.Text;
                 }
-                txt_TotalAcarreo.Text = (Decimal.Parse(txt_CostoServicio.Text, style, provider) + Decimal.Parse(txt_CostoxCajaExtra.Text, style, provider)+ Decimal.Parse(txt_CargosExtra.Text, style, provider)).ToString();
+                txt_TotalAcarreo.Text = (Decimal.Parse(txt_CostoServicio.Text, style, provider) + Decimal.Parse(txt_CostoxCajaExtra.Text, style, provider)+ Decimal.Parse(txt_CargosExtra.Text, style, provider) - Decimal.Parse(txt_Descuentos.Text, style, provider)).ToString();
             }
         }
 
@@ -970,7 +977,7 @@ namespace Business_Analitics
                 if (!string.IsNullOrEmpty(txt_CajasExtras.Text))
                 {
                     txt_CostoxCajaExtra.Text = (Decimal.Parse(txt_CajasExtras.Text, style, provider) * Decimal.Parse(txtPrecioCaja.Text, style, provider)).ToString();
-                    txt_TotalAcarreo.Text = (Decimal.Parse(txt_CostoServicio.Text, style, provider) + Decimal.Parse(txt_CostoxCajaExtra.Text, style, provider) + Decimal.Parse(txt_CargosExtra.Text, style, provider)).ToString();
+                    txt_TotalAcarreo.Text = (Decimal.Parse(txt_CostoServicio.Text, style, provider) + Decimal.Parse(txt_CostoxCajaExtra.Text, style, provider) + Decimal.Parse(txt_CargosExtra.Text, style, provider) - Decimal.Parse(txt_Descuentos.Text, style, provider)).ToString();
                 }
             }
         }
@@ -1005,13 +1012,16 @@ namespace Business_Analitics
             if (chk_kgProductor.Checked == true)
             {
                 txt_kilosST.Text = txt_KilosBasculaE.Text;
-                txt_kilosCortadosCorte.Text = txt_kilosST.Text;
                 txt_KilosAjustados.Text = txt_kilosST.Text;
                 txt_kilos_Totales.Text = Convert.ToString(Convert.ToInt32(Decimal.Parse(txt_KilosAjustados.Text, style, provider)) - Convert.ToInt32(Decimal.Parse(txt_KilosMuestra.Text, style, provider)));
             }
             else
             {
                 CalcularTotalRecepcion();
+            }
+            if(chk_kgCorte.Checked == true)
+            {
+                txt_kilosCortadosCorte.Text = txt_KilosBasculaE.Text;
             }
             CalcularkilosTipoMercado();
             CalcularCostosCorte();
@@ -1235,7 +1245,7 @@ namespace Business_Analitics
             txt_IVAFacturaProductor.EditValue = "0";
             txt_TotalFacturaProductor.EditValue = "0";
             chk_RetencionProductor.Checked = false;
-            //chk_RetencionFleteProductor.Checked = false;
+            chk_RetencionFleteProductor.Checked = false;
             chk_IVAProductor.Checked = false;
             chk_PagadaProductor.Checked = false;
             dt_FechaFacturaProductor.DateTime = DateTime.Now;
@@ -2463,6 +2473,14 @@ namespace Business_Analitics
             {
                 ins.TomarkgProductor = 0;
             }
+            if (chk_kgCorte.Checked == true)
+            {
+                ins.TomarkgenCorte = 1;
+            }
+            else
+            {
+                ins.TomarkgenCorte = 0;
+            }
             ins.KilosDiferencia = Convert.ToDecimal(txt_KilosDiferencia.EditValue);
             ins.Ajuste = Convert.ToDecimal(txt_KilosAjuste.EditValue);
             ins.KilosST = Convert.ToDecimal(txt_kilosST.EditValue);
@@ -2543,6 +2561,14 @@ namespace Business_Analitics
             ins.KilosCortadosC = Convert.ToDecimal(txt_kilosCortadosCorte.EditValue);
             ins.KilosAjustadosC = Convert.ToDecimal(txt_KilosAjustadosCorte.EditValue);
             ins.PrecioporKilo = Decimal.Parse(txt_PrecioKiloCorte.Text, style, provider);
+            if (chk_PrecioPorkg.Checked == true)
+            {
+                ins.PrecioporKiloB = 1;
+            }
+            else
+            {
+                ins.PrecioporKiloB = 0;
+            }
             ins.Preciodecosecha = Decimal.Parse(txt_PrecioTCorte.Text, style, provider);
             ins.PrecioporDia = Decimal.Parse(txt_PrecioDiaCorte.Text, style, provider);
             ins.SalidaenFalso = Decimal.Parse(txt_PrecioSalidaFCorte.Text, style, provider);
@@ -2639,6 +2665,7 @@ namespace Business_Analitics
             ins.CajasExtras = Convert.ToDecimal(txt_CajasExtras.EditValue);
             ins.CostoCajasExtras = Decimal.Parse(txt_CostoxCajaExtra.Text, style, provider);
             ins.CargosExtras = Decimal.Parse(txt_CargosExtra.Text, style, provider);
+            ins.Descuentos = Decimal.Parse(txt_Descuentos.Text, style, provider);
             ins.TotalAcarreo = Decimal.Parse(txt_TotalAcarreo.Text, style, provider);
             ins.Observaciones = txt_ObservacionesAcarreo.Text;
             ins.Usuario = UsuariosLogin;
@@ -2940,6 +2967,15 @@ namespace Business_Analitics
                     {
                         chk_kgProductor.Checked = false;
                     }
+                    if (ins.Datos.Rows[0]["TomarkgenCorte"].ToString() == "True")
+                    {
+                        chk_kgCorte.Checked = true;
+
+                    }
+                    else
+                    {
+                        chk_kgCorte.Checked = false;
+                    }
                 }
             }
             else
@@ -3027,6 +3063,14 @@ namespace Business_Analitics
                     txt_kilosCortadosCorte.EditValue = ins.Datos.Rows[0]["KilosCortados"].ToString();
                     txt_KilosAjustadosCorte.EditValue = ins.Datos.Rows[0]["KilosAjustados"].ToString();
                     txt_PrecioKiloCorte.EditValue = ins.Datos.Rows[0]["PrecioporKilo"].ToString();
+                    if (ins.Datos.Rows[0]["PrecioporKiloB"].ToString() == "True")
+                    {
+                        chk_PrecioPorkg.Checked = true;
+                    }
+                    else
+                    {
+                        chk_PrecioPorkg.Checked = false;
+                    }
                     txt_PrecioTCorte.EditValue = ins.Datos.Rows[0]["Preciodecosecha"].ToString();
                     txt_PrecioDiaCorte.EditValue = ins.Datos.Rows[0]["PrecioporDia"].ToString();
                     txt_PrecioSalidaFCorte.EditValue = ins.Datos.Rows[0]["SalidaenFalso"].ToString();
@@ -3091,6 +3135,7 @@ namespace Business_Analitics
                     txt_CajasExtras.EditValue = ins.Datos.Rows[0]["CajasExtras"].ToString();
                     txt_CostoxCajaExtra.EditValue = ins.Datos.Rows[0]["CostoCajasExtras"].ToString();
                     txt_CargosExtra.EditValue = ins.Datos.Rows[0]["CargosExtras"].ToString();
+                    txt_Descuentos.EditValue = ins.Datos.Rows[0]["Descuentos"].ToString();
                     txt_TotalAcarreo.EditValue = ins.Datos.Rows[0]["TotalAcarreo"].ToString();
                     txt_ObservacionesAcarreo.Text = ins.Datos.Rows[0]["Observaciones"].ToString();
                 }
@@ -3127,6 +3172,14 @@ namespace Business_Analitics
                     else
                     {
                         btn_ViewXMLProductor.Enabled = false;
+                    }
+                    if (ArchivoPDFGlobalProductor.Length > 0 || ArchivoXMLGlobalProductor.Length > 0)
+                    {
+                        btn_DelFacturaProductor.Enabled = true;
+                    }
+                    else
+                    {
+                        btn_DelFacturaProductor.Enabled = false;
                     }
                     txtRazonSProductor.Text = ins.Datos.Rows[0]["RazonSocial"].ToString();
                     txt_FolioFacturaProductor.Text = ins.Datos.Rows[0]["FolioFactura"].ToString();
@@ -3214,6 +3267,14 @@ namespace Business_Analitics
                     {
                         btn_ViewXMLCorteKilos.Enabled = false;
                     }
+                    if (ArchivoPDFGlobalCorteKilos.Length > 0 || ArchivoXMLGlobalCorteKilos.Length > 0)
+                    {
+                        btn_DelFacturaKilos.Enabled = true;
+                    }
+                    else
+                    {
+                        btn_DelFacturaKilos.Enabled = false;
+                    }
                     txtRazonSCorteKilos.Text = ins.Datos.Rows[0]["RazonSocial"].ToString();
                     txt_FolioFacturaCorteKilos.Text = ins.Datos.Rows[0]["FolioFactura"].ToString();
                     if (ins.Datos.Rows[0]["Moneda"].ToString() == "P")
@@ -3299,6 +3360,14 @@ namespace Business_Analitics
                     else
                     {
                         btn_ViewXMLCorteDia.Enabled = false;
+                    }
+                    if (ArchivoPDFGlobalCorteDia.Length > 0 || ArchivoXMLGlobalCorteDia.Length > 0)
+                    {
+                        btn_DelFacturaDia.Enabled = true;
+                    }
+                    else
+                    {
+                        btn_DelFacturaDia.Enabled = false;
                     }
                     txtRazonSCorteDia.Text = ins.Datos.Rows[0]["RazonSocial"].ToString();
                     txt_FolioFacturaCorteDia.Text = ins.Datos.Rows[0]["FolioFactura"].ToString();
@@ -3386,6 +3455,14 @@ namespace Business_Analitics
                     {
                         btn_ViewXMLCorteApoyo.Enabled = false;
                     }
+                    if (ArchivoPDFGlobalCorteApoyo.Length > 0 || ArchivoXMLGlobalCorteApoyo.Length > 0)
+                    {
+                        btn_DelFacturaApoyo.Enabled = true;
+                    }
+                    else
+                    {
+                        btn_DelFacturaApoyo.Enabled = false;
+                    }
                     txtRazonSCorteApoyo.Text = ins.Datos.Rows[0]["RazonSocial"].ToString();
                     txt_FolioFacturaCorteApoyo.Text = ins.Datos.Rows[0]["FolioFactura"].ToString();
                     if (ins.Datos.Rows[0]["Moneda"].ToString() == "P")
@@ -3472,6 +3549,14 @@ namespace Business_Analitics
                     {
                         btn_ViewXMLCorteSalida.Enabled = false;
                     }
+                    if (ArchivoPDFGlobalCorteSalida.Length > 0 || ArchivoXMLGlobalCorteSalida.Length > 0)
+                    {
+                        btn_DelFacturaSalida.Enabled = true;
+                    }
+                    else
+                    {
+                        btn_DelFacturaSalida.Enabled = false;
+                    }
                     txtRazonSCorteSalida.Text = ins.Datos.Rows[0]["RazonSocial"].ToString();
                     txt_FolioFacturaCorteSalida.Text = ins.Datos.Rows[0]["FolioFactura"].ToString();
                     if (ins.Datos.Rows[0]["Moneda"].ToString() == "P")
@@ -3557,6 +3642,14 @@ namespace Business_Analitics
                     else
                     {
                         btn_ViewXMLAcarreo.Enabled = false;
+                    }
+                    if (ArchivoPDFGlobalAcarreo.Length > 0 || ArchivoXMLGlobalAcarreo.Length > 0)
+                    {
+                        btn_DelFacturaAcarreo.Enabled = true;
+                    }
+                    else
+                    {
+                        btn_DelFacturaAcarreo.Enabled = false;
                     }
                     txtRazonSAcarreo.Text = ins.Datos.Rows[0]["RazonSocial"].ToString();
                     txt_FolioFacturaAcarreo.Text = ins.Datos.Rows[0]["FolioFactura"].ToString();
@@ -3992,7 +4085,7 @@ namespace Business_Analitics
                 if (!string.IsNullOrEmpty(txt_CajasExtras.Text))
                 {
                     txt_CostoxCajaExtra.Text = (Decimal.Parse(txt_CajasExtras.Text, style, provider) * Decimal.Parse(txtPrecioCaja.Text, style, provider)).ToString();
-                    txt_TotalAcarreo.Text = (Decimal.Parse(txt_CostoServicio.Text, style, provider) + Decimal.Parse(txt_CostoxCajaExtra.Text, style, provider) + Decimal.Parse(txt_CargosExtra.Text, style, provider)).ToString();
+                    txt_TotalAcarreo.Text = (Decimal.Parse(txt_CostoServicio.Text, style, provider) + Decimal.Parse(txt_CostoxCajaExtra.Text, style, provider) + Decimal.Parse(txt_CargosExtra.Text, style, provider) - Decimal.Parse(txt_Descuentos.Text, style, provider)).ToString();
                 }
             }
         }
@@ -4090,6 +4183,11 @@ namespace Business_Analitics
         private void btn_RefrescarPeso_Click(object sender, EventArgs e)
         {
             CalcularTotalRecepcion();
+            if (!string.IsNullOrEmpty(txt_NombreEmpresaCorte.Text) && txt_EmpresaAcarreo.Tag != string.Empty)
+            {
+                CargarServicios();
+                CalcularCostosCorte();
+            }
         }
 
         private void btn_UpXMLAcarreo_Click(object sender, EventArgs e)
@@ -4327,6 +4425,417 @@ namespace Business_Analitics
         private void dt_FechaPagoAcarreo_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
+        }
+        private void txt_Descuentos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                if (!string.IsNullOrEmpty(txt_CajasExtras.Text))
+                {
+                    txt_CostoxCajaExtra.Text = (Decimal.Parse(txt_CajasExtras.Text, style, provider) * Decimal.Parse(txtPrecioCaja.Text, style, provider)).ToString();
+                    txt_TotalAcarreo.Text = (Decimal.Parse(txt_CostoServicio.Text, style, provider) + Decimal.Parse(txt_CostoxCajaExtra.Text, style, provider) + Decimal.Parse(txt_CargosExtra.Text, style, provider) - Decimal.Parse(txt_Descuentos.Text, style, provider)).ToString();
+                }
+            }
+        }
+
+        private void chk_PrecioPorkg_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_NombreEmpresaCorte.Text) && txt_EmpresaAcarreo.Tag != string.Empty)
+            {
+                CargarServicios();
+                CalcularCostosCorte();
+            }
+        }
+
+        private void chk_kgCorte_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToDecimal(txt_KilosBasculaE.Text) > 0)
+            {
+                txt_kilosCortadosCorte.Text = txt_KilosBasculaE.Text;
+            }
+        }
+        private void EliminaFacturaXMLPDF(int Id_Factura)
+        {
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar la factura?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
+            {
+                if (txt_IdCosecha.Text.Trim() != String.Empty)
+                {
+                    CLS_Cosecha_Facturas Clase = new CLS_Cosecha_Facturas();
+                    Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+                    Clase.Id_Archivo = Id_Factura;
+                    Clase.FacturaPDF = Encoding.UTF8.GetBytes("");
+                    Clase.FacturaXML = Encoding.UTF8.GetBytes("");
+                    Clase.Usuario = UsuariosLogin;
+                    Clase.MtdDeleteCosechaArchivoPDFXML();
+                    if (!Clase.Exito)
+                    {
+                        XtraMessageBox.Show(Clase.Mensaje);
+                    }
+                }
+            }
+        }
+        private void btn_DelFacturaProductor_Click(object sender, EventArgs e)
+        {
+            EliminaFacturaXMLPDF(1);
+            SelectFacturas();
+        }
+        private void btn_DelFacturaKilos_Click(object sender, EventArgs e)
+        {
+            EliminaFacturaXMLPDF(2);
+            SelectFacturas();
+        }
+
+        private void btn_DelFacturaDia_Click(object sender, EventArgs e)
+        {
+            EliminaFacturaXMLPDF(3);
+            SelectFacturas();
+        }
+
+        private void btn_DelFacturaApoyo_Click(object sender, EventArgs e)
+        {
+            EliminaFacturaXMLPDF(4);
+            SelectFacturas();
+        }
+
+        private void btn_DelFacturaSalida_Click(object sender, EventArgs e)
+        {
+            EliminaFacturaXMLPDF(5);
+            SelectFacturas();
+        }
+
+        private void btn_DelFacturaAcarreo_Click(object sender, EventArgs e)
+        {
+            EliminaFacturaXMLPDF(6);
+            SelectFacturas();
+        }
+
+        private void Bloquear_Recepcion(Boolean valor)
+        {
+            txt_KilosBasculaE.Enabled = valor;
+            chk_kgProductor.Enabled = valor;
+            chk_kgCorte.Enabled = valor;
+            btn_EmpresaBascula.Enabled = valor;
+        }
+        private void Bloquear_Comercializacion(Boolean valor)
+        {
+            btn_EmpresaComercializacion.Enabled = valor;
+        }
+        private void Bloquear_Productor(Boolean valor)
+        {
+            txt_KiloPrecioInicial.Enabled = valor;
+            txt_KiloPrecio.Enabled = valor;
+            chk_Mercado.Enabled = valor;
+            txt_ObservacionesProductor.Enabled = valor;
+            //Facturas
+            txtRazonSProductor.Enabled = valor;
+            opt_TipoFacturaProductor.Enabled = valor;
+            txt_FolioFacturaProductor.Enabled = valor;
+            cmb_MonedaProductor.Enabled = valor;
+            txt_ImporteFacturaProductor.Enabled = valor;
+            chk_PagadaProductor.Enabled = valor;
+            chk_RetencionProductor.Enabled = valor;
+            chk_RetencionFleteProductor.Enabled = valor;
+            chk_IVAProductor.Enabled = valor;
+            dt_FechaFacturaProductor.Enabled = valor;
+            dt_FechaPagoProductor.Enabled = valor;
+            btn_CalcularFechaPago.Enabled = valor;
+            if(!valor)
+            {
+                btn_UpPDFProductor.Enabled= valor;
+                btn_UpXMLProductor.Enabled = valor;
+                btn_ViewPDFProductor.Enabled = valor;
+                btn_ViewXMLProductor.Enabled = valor;
+                btn_DelFacturaProductor.Enabled = valor;
+            }
+            else
+            {
+                btn_UpPDFProductor.Enabled = valor;
+                btn_UpXMLProductor.Enabled = valor;
+                SelectFacturaProductor();
+            }
+        }
+        private void Bloquear_Acarreo(Boolean valor)
+        {
+            btn_EmpresaAcarreo.Enabled = valor;
+            cmb_Camiones.Enabled = valor;
+            cmb_Choferes.Enabled = valor;
+            txt_ObservacionesAcarreo.Enabled = valor;
+            chk_ServicioForaneo.Enabled = valor;
+            txt_CargosExtra.Enabled = valor;
+            txt_CajasExtras.Enabled = valor;
+            txt_Descuentos.Enabled = valor;
+            //Facturas
+            txtRazonSAcarreo.Enabled = valor;
+            opt_TipoFacturaAcarreo.Enabled = valor;
+            txt_FolioFacturaAcarreo.Enabled = valor;
+            cmb_MonedaAcarreo.Enabled = valor;
+            txt_ImporteFacturaAcarreo.Enabled = valor;
+            chk_PagadaAcarreo.Enabled = valor;
+            chk_RetencionAcarreo.Enabled = valor;
+            chk_RetencionFleteAcarreo.Enabled = valor;
+            chk_IVAAcarreo.Enabled = valor;
+            dt_FechaFacturaAcarreo.Enabled = valor;
+            dt_FechaPagoAcarreo.Enabled = valor;
+            btn_CalcularFechaPago.Enabled = valor;
+            if (!valor)
+            {
+                btn_UpPDFAcarreo.Enabled = valor;
+                btn_UpXMLAcarreo.Enabled = valor;
+                btn_ViewPDFAcarreo.Enabled = valor;
+                btn_ViewXMLAcarreo.Enabled = valor;
+                btn_DelFacturaAcarreo.Enabled = valor;
+            }
+            else
+            {
+                btn_UpPDFAcarreo.Enabled = valor;
+                btn_UpXMLAcarreo.Enabled = valor;
+                SelectFacturaAcarreo();
+            }
+        }
+        private void Bloquear_Corte(Boolean valor)
+        {
+            btn_EmpresaAcarreo.Enabled = valor;
+            cmb_Camiones.Enabled = valor;
+            cmb_Choferes.Enabled = valor;
+            txt_ObservacionesAcarreo.Enabled = valor;
+            chk_ServicioForaneo.Enabled = valor;
+            txt_CargosExtra.Enabled = valor;
+            txt_CajasExtras.Enabled = valor;
+            txt_Descuentos.Enabled = valor;
+            //Facturas
+            txtRazonSCorteKilos.Enabled = valor;
+            opt_TipoFacturaCorteKilos.Enabled = valor;
+            txt_FolioFacturaCorteKilos.Enabled = valor;
+            cmb_MonedaCorteKilos.Enabled = valor;
+            txt_ImporteFacturaCorteKilos.Enabled = valor;
+            chk_PagadaCorteKilos.Enabled = valor;
+            chk_RetencionCorteKilos.Enabled = valor;
+            chk_RetencionFleteCorteKilos.Enabled = valor;
+            chk_IVACorteKilos.Enabled = valor;
+            dt_FechaFacturaCorteKilos.Enabled = valor;
+            dt_FechaPagoCorteKilos.Enabled = valor;
+            if (!valor)
+            {
+                btn_UpPDFCorteKilos.Enabled = valor;
+                btn_UpXMLCorteKilos.Enabled = valor;
+                btn_ViewPDFCorteKilos.Enabled = valor;
+                btn_ViewXMLCorteKilos.Enabled = valor;
+                btn_DelFacturaKilos.Enabled = valor;
+            }
+            else
+            {
+                btn_UpPDFCorteKilos.Enabled = valor;
+                btn_UpXMLCorteKilos.Enabled = valor;
+                SelectFacturaKilos();
+            }
+
+            txtRazonSCorteDia.Enabled = valor;
+            opt_TipoFacturaCorteDia.Enabled = valor;
+            txt_FolioFacturaCorteDia.Enabled = valor;
+            cmb_MonedaCorteDia.Enabled = valor;
+            txt_ImporteFacturaCorteDia.Enabled = valor;
+            chk_PagadaCorteDia.Enabled = valor;
+            chk_RetencionCorteDia.Enabled = valor;
+            chk_RetencionFleteCorteDia.Enabled = valor;
+            chk_IVACorteDia.Enabled = valor;
+            dt_FechaFacturaCorteDia.Enabled = valor;
+            dt_FechaPagoCorteDia.Enabled = valor;
+            if (!valor)
+            {
+                btn_UpPDFCorteDia.Enabled = valor;
+                btn_UpXMLCorteDia.Enabled = valor;
+                btn_ViewPDFCorteDia.Enabled = valor;
+                btn_ViewXMLCorteDia.Enabled = valor;
+                btn_DelFacturaDia.Enabled = valor;
+            }
+            else
+            {
+                btn_UpPDFCorteDia.Enabled = valor;
+                btn_UpXMLCorteDia.Enabled = valor;
+                SelectFacturaDia();
+            }
+
+            txtRazonSCorteApoyo.Enabled = valor;
+            opt_TipoFacturaCorteApoyo.Enabled = valor;
+            txt_FolioFacturaCorteApoyo.Enabled = valor;
+            cmb_MonedaCorteApoyo.Enabled = valor;
+            txt_ImporteFacturaCorteApoyo.Enabled = valor;
+            chk_PagadaCorteApoyo.Enabled = valor;
+            chk_RetencionCorteApoyo.Enabled = valor;
+            chk_RetencionFleteCorteApoyo.Enabled = valor;
+            chk_IVACorteApoyo.Enabled = valor;
+            dt_FechaFacturaCorteApoyo.Enabled = valor;
+            dt_FechaPagoCorteApoyo.Enabled = valor;
+            if (!valor)
+            {
+                btn_UpPDFCorteApoyo.Enabled = valor;
+                btn_UpXMLCorteApoyo.Enabled = valor;
+                btn_ViewPDFCorteApoyo.Enabled = valor;
+                btn_ViewXMLCorteApoyo.Enabled = valor;
+                btn_DelFacturaApoyo.Enabled = valor;
+            }
+            else
+            {
+                btn_UpPDFCorteApoyo.Enabled = valor;
+                btn_UpXMLCorteApoyo.Enabled = valor;
+                SelectFacturaApoyo();
+            }
+
+            txtRazonSCorteSalida.Enabled = valor;
+            opt_TipoFacturaCorteSalida.Enabled = valor;
+            txt_FolioFacturaCorteSalida.Enabled = valor;
+            cmb_MonedaCorteSalida.Enabled = valor;
+            txt_ImporteFacturaCorteSalida.Enabled = valor;
+            chk_PagadaCorteSalida.Enabled = valor;
+            chk_RetencionCorteSalida.Enabled = valor;
+            chk_RetencionFleteCorteSalida.Enabled = valor;
+            chk_IVACorteSalida.Enabled = valor;
+            dt_FechaFacturaCorteSalida.Enabled = valor;
+            dt_FechaPagoCorteSalida.Enabled = valor;
+            if (!valor)
+            {
+                btn_UpPDFCorteSalida.Enabled = valor;
+                btn_UpXMLCorteSalida.Enabled = valor;
+                btn_ViewPDFCorteSalida.Enabled = valor;
+                btn_ViewXMLCorteSalida.Enabled = valor;
+                btn_DelFacturaSalida.Enabled = valor;
+            }
+            else
+            {
+                btn_UpPDFCorteSalida.Enabled = valor;
+                btn_UpXMLCorteSalida.Enabled = valor;
+                SelectFacturaSalida();
+            }
+        }
+        private void btn_CerrarRecepcion_Click(object sender, EventArgs e)
+        {
+            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            Clase.Usuario = UsuariosLogin;
+            Clase.Cerrado = 1;
+            Clase.MtdModificarCerradoRecepcion();
+            if(Clase.Exito)
+            {
+                Bloquear_Recepcion(false);
+            }
+        }
+
+        private void btn_AbrirRecepcion_Click(object sender, EventArgs e)
+        {
+            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            Clase.Usuario = UsuariosLogin;
+            Clase.Cerrado = 0;
+            Clase.MtdModificarCerradoRecepcion();
+            if (Clase.Exito)
+            {
+                Bloquear_Recepcion(true);
+            }
+        }
+
+        private void btn_CerrarComer_Click(object sender, EventArgs e)
+        {
+            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            Clase.Usuario = UsuariosLogin;
+            Clase.Cerrado = 1;
+            Clase.MtdModificarCerradoComercializadora();
+            if (Clase.Exito)
+            {
+                Bloquear_Comercializacion(false);
+            }
+        }
+
+        private void btn_AbrirComer_Click(object sender, EventArgs e)
+        {
+            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            Clase.Usuario = UsuariosLogin;
+            Clase.Cerrado = 0;
+            Clase.MtdModificarCerradoComercializadora();
+            if (Clase.Exito)
+            {
+                Bloquear_Comercializacion(true);
+            }
+        }
+
+        private void btn_CerrarProductor_Click(object sender, EventArgs e)
+        {
+            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            Clase.Usuario = UsuariosLogin;
+            Clase.Cerrado = 1;
+            Clase.MtdModificarCerradoProductor();
+            if (Clase.Exito)
+            {
+                Bloquear_Productor(false);
+            }
+        }
+
+        private void btn_AbrirProductor_Click(object sender, EventArgs e)
+        {
+            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            Clase.Usuario = UsuariosLogin;
+            Clase.Cerrado = 0;
+            Clase.MtdModificarCerradoProductor();
+            if (Clase.Exito)
+            {
+                Bloquear_Productor(true);
+            }
+        }
+
+        private void btn_CerrarAcarreo_Click(object sender, EventArgs e)
+        {
+            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            Clase.Usuario = UsuariosLogin;
+            Clase.Cerrado = 1;
+            Clase.MtdModificarCerradoAcarreo();
+            if (Clase.Exito)
+            {
+                Bloquear_Acarreo(false);
+            }
+        }
+
+        private void btn_AbrirAcarreo_Click(object sender, EventArgs e)
+        {
+            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            Clase.Usuario = UsuariosLogin;
+            Clase.Cerrado = 0;
+            Clase.MtdModificarCerradoAcarreo();
+            if (Clase.Exito)
+            {
+                Bloquear_Acarreo(true);
+            }
+        }
+
+        private void btn_CerrarCorte_Click(object sender, EventArgs e)
+        {
+            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            Clase.Usuario = UsuariosLogin;
+            Clase.Cerrado = 1;
+            Clase.MtdModificarCerradoCorte();
+            if (Clase.Exito)
+            {
+                Bloquear_Corte(false);
+            }
+        }
+
+        private void btn_AbrirCorte_Click(object sender, EventArgs e)
+        {
+            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            Clase.Usuario = UsuariosLogin;
+            Clase.Cerrado = 0;
+            Clase.MtdModificarCerradoCorte();
+            if (Clase.Exito)
+            {
+                Bloquear_Corte(true);
+            }
         }
     }
 }

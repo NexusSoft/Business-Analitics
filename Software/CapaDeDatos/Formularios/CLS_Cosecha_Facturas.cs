@@ -168,8 +168,14 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_Cosecha_Facturas_PDFXML_Delete";
                 _dato.Texto = Id_Cosecha;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _dato.Archivo = FacturaPDF;
+                _conexion.agregarParametro(EnumTipoDato.Archivo, _dato, "FacturaPDF");
+                _dato.Archivo = FacturaXML;
+                _conexion.agregarParametro(EnumTipoDato.Archivo, _dato, "FacturaXML");
                 _dato.Entero = Id_Archivo;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Id_Archivo");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

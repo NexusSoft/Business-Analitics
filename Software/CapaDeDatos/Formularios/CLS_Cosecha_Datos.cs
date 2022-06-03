@@ -89,6 +89,10 @@ namespace CapaDeDatos
         public string c_codigo_hue { get; set; }
         public decimal CargosExtras { get; set; }
         public decimal PreciokgInicial { get; set; }
+        public decimal Descuentos { get; set; }
+        public int PrecioporKiloB { get; set; }
+        public int TomarkgenCorte { get; set; }
+        public int Cerrado { get;  set; }
 
         public void MtdInsertarOrdencorte()
         {
@@ -178,6 +182,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "KilosBasculaExterna");
                 _dato.Entero = TomarkgProductor;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "TomarkgProductor");
+                _dato.Entero = TomarkgenCorte;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "TomarkgenCorte");
                 _dato.Decimal = KilosDiferencia;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "KilosDiferencia");
                 _dato.Decimal = Ajuste;
@@ -186,6 +192,39 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "KilosST");
                 _dato.Decimal = KilosProductor;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "KilosProductor");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
+                _conexion.EjecutarDataset();
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdModificarCerradoRecepcion()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_CerrarRecepcion_Update";
+                _dato.Texto = Id_Cosecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _dato.Entero = Cerrado;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cerrado");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
@@ -227,6 +266,39 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Telefono_Contacto");
                 _dato.Texto = Email_Contacto;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Email_Contacto");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
+                _conexion.EjecutarDataset();
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdModificarCerradoComercializadora()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_CerrarComercializadora_Update";
+                _dato.Texto = Id_Cosecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _dato.Entero = Cerrado;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cerrado");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
@@ -296,6 +368,39 @@ namespace CapaDeDatos
             }
 
         }
+        public void MtdModificarCerradoProductor()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_CerrarProductor_Update";
+                _dato.Texto = Id_Cosecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _dato.Entero = Cerrado;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cerrado");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
+                _conexion.EjecutarDataset();
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
         public void MtdInsertarCorte()
         {
             TipoDato _dato = new TipoDato();
@@ -319,6 +424,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "KilosAjustados");
                 _dato.Decimal = PrecioporKilo;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "PrecioporKilo");
+                _dato.Decimal = PrecioporKiloB;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "PrecioporKiloB");
                 _dato.Decimal = Preciodecosecha;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Preciodecosecha");
                 _dato.Decimal = PrecioporDia;
@@ -343,6 +450,39 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "TotalaPagar");
                 _dato.Texto = Observaciones;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Observaciones");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
+                _conexion.EjecutarDataset();
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdModificarCerradoCorte()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_CerrarCorte_Update";
+                _dato.Texto = Id_Cosecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _dato.Entero = Cerrado;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cerrado");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
@@ -402,10 +542,45 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "CostoCajasExtras");
                 _dato.Decimal = CargosExtras;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "CargosExtras");
+                _dato.Decimal = Descuentos;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Descuentos");
                 _dato.Decimal = TotalAcarreo;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "TotalAcarreo");
                 _dato.Texto = Observaciones;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Observaciones");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
+                _conexion.EjecutarDataset();
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdModificarCerradoAcarreo()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_CerrarAcarreo_Update";
+                _dato.Texto = Id_Cosecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _dato.Entero = Cerrado;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cerrado");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
