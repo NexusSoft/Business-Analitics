@@ -200,12 +200,71 @@ namespace Business_Analitics
         {
             if (dtgValFrutaCortada.RowCount > 0)
             {
-                Formato_A();
+                using (SaveFileDialog saveDialog = new SaveFileDialog())
+                {
+                    saveDialog.Filter = "Excel (2003)(.xls)|*.xls|Excel (2010) (.xlsx)|*.xlsx |RichText File (.rtf)|*.rtf |Pdf File (.pdf)|*.pdf |Html File (.html)|*.html";
+                    if (saveDialog.ShowDialog() != DialogResult.Cancel)
+                    {
+                        string exportFilePath = saveDialog.FileName;
+                        string fileExtenstion = new System.IO.FileInfo(exportFilePath).Extension;
+
+                        switch (fileExtenstion)
+                        {
+                            case ".xls":
+                                dtgValFrutaCortada.ExportToXls(exportFilePath);
+                                break;
+                            case ".xlsx":
+                                dtgValFrutaCortada.ExportToXlsx(exportFilePath);
+                                break;
+                            case ".rtf":
+                                dtgValFrutaCortada.ExportToRtf(exportFilePath);
+                                break;
+                            case ".pdf":
+                                dtgValFrutaCortada.ExportToPdf(exportFilePath);
+                                break;
+                            case ".html":
+                                dtgValFrutaCortada.ExportToHtml(exportFilePath);
+                                break;
+                            case ".mht":
+                                dtgValFrutaCortada.ExportToMht(exportFilePath);
+                                break;
+                            default:
+                                break;
+                        }
+
+                        if (System.IO.File.Exists(exportFilePath))
+                        {
+                            try
+                            {
+                                //Try to open the file and let windows decide how to open it.
+                                System.Diagnostics.Process.Start(exportFilePath);
+                            }
+                            catch
+                            {
+                                String msg = "The file could not be opened." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                                XtraMessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            String msg = "The file could not be saved." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                            XtraMessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
             }
             else
             {
                 XtraMessageBox.Show("No se ha consultado cortes");
             }
+            //if (dtgValFrutaCortada.RowCount > 0)
+            //{
+            //    Formato_A();
+            //}
+            //else
+            //{
+            //    XtraMessageBox.Show("No se ha consultado cortes");
+            //}
         }
         private void Formato_A()
         {
@@ -1001,6 +1060,16 @@ namespace Business_Analitics
             oRng = oSheet.get_Range("A:A");
             oRng.EntireColumn.Hidden=true;
 
+        }
+
+        private void dt_FechaDesde_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void dt_FechaHasta_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
         }
     }
 }

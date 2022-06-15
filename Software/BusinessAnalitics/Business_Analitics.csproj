@@ -309,6 +309,24 @@
     <Compile Include="Form_Control\Maquila\Frm_Productos.designer.cs">
       <DependentUpon>Frm_Productos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Reportes\Contabilidad\Frm_RelacionContabilidad_de_Fruta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Reportes\Contabilidad\Frm_RelacionContabilidad_de_Fruta.Designer.cs">
+      <DependentUpon>Frm_RelacionContabilidad_de_Fruta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Reportes\Contabilidad\Frm_RelacionContabilidad_Empresa_Corte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Reportes\Contabilidad\Frm_RelacionContabilidad_Empresa_Corte.Designer.cs">
+      <DependentUpon>Frm_RelacionContabilidad_Empresa_Corte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Reportes\Contabilidad\Frm_RelacionContabilidad_Empresa_Acarreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Reportes\Contabilidad\Frm_RelacionContabilidad_Empresa_Acarreo.Designer.cs">
+      <DependentUpon>Frm_RelacionContabilidad_Empresa_Acarreo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Reportes\Cosecha\Frm_Relacion_Acumulada.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -502,6 +520,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Control\Maquila\Frm_Productos.resx">
       <DependentUpon>Frm_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Reportes\Contabilidad\Frm_RelacionContabilidad_de_Fruta.resx">
+      <DependentUpon>Frm_RelacionContabilidad_de_Fruta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Reportes\Contabilidad\Frm_RelacionContabilidad_Empresa_Corte.resx">
+      <DependentUpon>Frm_RelacionContabilidad_Empresa_Corte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Reportes\Contabilidad\Frm_RelacionContabilidad_Empresa_Acarreo.resx">
+      <DependentUpon>Frm_RelacionContabilidad_Empresa_Acarreo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Reportes\Cosecha\Frm_Relacion_Acumulada.resx">
       <DependentUpon>Frm_Relacion_Acumulada.cs</DependentUpon>

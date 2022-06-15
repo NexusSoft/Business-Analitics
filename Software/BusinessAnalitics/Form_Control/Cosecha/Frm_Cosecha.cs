@@ -16,6 +16,9 @@ namespace Business_Analitics
 {
     public partial class Frm_Cosecha : DevExpress.XtraEditors.XtraForm
     {
+        public string IdPerfil { get; set; }
+        List<string> Lista = new List<string>();
+
         NumberStyles style = NumberStyles.Number | NumberStyles.AllowCurrencySymbol;
         CultureInfo provider = new CultureInfo("es-MX");
         Byte[] ArchivoPDFGlobalProductor = null;
@@ -52,6 +55,20 @@ namespace Business_Analitics
                 m_FormDefInstance = value;
             }
         }
+        public int vCarga { get; set; }
+        public DateTime vFechaPagoProductor { get; set; }
+        public DateTime vFechaFacturaProductor { get; set; }
+        public DateTime vFechaFacturaCorteKilos { get; set; }
+        public DateTime vFechaPagoCorteKilos { get;  set; }
+        public DateTime vFechaFacturaCorteDia { get; set; }
+        public DateTime vFechaPagoCorteDia { get; set; }
+        public DateTime vFechaFacturaCorteApoyo { get; set; }
+        public DateTime vFechaPagoCorteApoyo { get;  set; }
+        public DateTime vFechaFacturaCorteSalida { get;  set; }
+        public DateTime vFechaPagoCorteSalida { get; set; }
+        public DateTime vFechaPagoAcarreo { get; set; }
+        public DateTime vFechaFacturaAcarreo { get;  set; }
+
         void CargarCosechas()
         {
             CLS_Cosecha_Datos obtener = new CLS_Cosecha_Datos();
@@ -64,6 +81,7 @@ namespace Business_Analitics
         }
         private void Frm_Cosecha_Shown(object sender, EventArgs e)
         {
+            vCarga = 1;
             navigationPane1.SelectedPageIndex = 0;
             dtgValRecepcion.OptionsSelection.EnableAppearanceFocusedCell = false;
             dtgValRecepcion.OptionsSelection.EnableAppearanceHideSelection = false;
@@ -158,6 +176,7 @@ namespace Business_Analitics
             CargarTemporadaActiva();
             CargarTemporada(TemActiva);
             CargarCosechas();
+            CargarAccesos();
 
         }
         private void CargarTemporadaActiva()
@@ -2924,6 +2943,7 @@ namespace Business_Analitics
                     txt_Cajas_Programa.EditValue = ins.Datos.Rows[0]["ProgramaCajas"].ToString();
                     txt_TipoCorte.Text = ins.Datos.Rows[0]["TipoCorte"].ToString();
                     txtTipoCorteEC.Text = ins.Datos.Rows[0]["TipoCorte"].ToString();
+                    Bloquear_OrdenCorte(!Convert.ToBoolean(ins.Datos.Rows[0]["Cerrado"]));
                 }
             }
             else
@@ -2953,7 +2973,6 @@ namespace Business_Analitics
                     txt_EmpresaBascula.Tag = ins.Datos.Rows[0]["Id_EmpresaBascula"].ToString();
                     txt_EmpresaBascula.Text = ins.Datos.Rows[0]["Nombre_EmpresaBascula"].ToString();
                     txt_KilosBasculaE.EditValue = ins.Datos.Rows[0]["KilosBasculaExterna"].ToString();
-                    
                     txt_KilosDiferencia.EditValue = ins.Datos.Rows[0]["KilosDiferencia"].ToString();
                     txt_KilosAjuste.EditValue = ins.Datos.Rows[0]["Ajuste"].ToString();
                     txt_kilosST.EditValue = ins.Datos.Rows[0]["KilosST"].ToString();
@@ -2976,6 +2995,7 @@ namespace Business_Analitics
                     {
                         chk_kgCorte.Checked = false;
                     }
+                    Bloquear_Recepcion(!Convert.ToBoolean(ins.Datos.Rows[0]["Cerrado"]));
                 }
             }
             else
@@ -3011,6 +3031,7 @@ namespace Business_Analitics
             {
                 XtraMessageBox.Show(ins.Mensaje);
             }
+            Bloquear_Comercializacion(!Convert.ToBoolean(ins.Datos.Rows[0]["Cerrado"]));
         }
         void SelectProductor()
         {
@@ -3039,12 +3060,14 @@ namespace Business_Analitics
                     {
                         chk_Mercado.Checked = false;
                     }
+                    Bloquear_Productor(!Convert.ToBoolean(ins.Datos.Rows[0]["Cerrado"]));
                 }
             }
             else
             {
                 XtraMessageBox.Show(ins.Mensaje);
             }
+            
         }
         void SelectCorte()
         {
@@ -3098,6 +3121,7 @@ namespace Business_Analitics
                     txt_CajasCortadasCorte.EditValue = ins.Datos.Rows[0]["CajasCortadas"].ToString();
                     txt_PagoTotalCorte.EditValue = ins.Datos.Rows[0]["TotalaPagar"].ToString();
                     txt_ObservacionesCorte.Text = ins.Datos.Rows[0]["Observaciones"].ToString();
+                    Bloquear_Corte(!Convert.ToBoolean(ins.Datos.Rows[0]["Cerrado"]));
                 }
             }
             else
@@ -3138,12 +3162,14 @@ namespace Business_Analitics
                     txt_Descuentos.EditValue = ins.Datos.Rows[0]["Descuentos"].ToString();
                     txt_TotalAcarreo.EditValue = ins.Datos.Rows[0]["TotalAcarreo"].ToString();
                     txt_ObservacionesAcarreo.Text = ins.Datos.Rows[0]["Observaciones"].ToString();
+                    Bloquear_Acarreo(!Convert.ToBoolean(ins.Datos.Rows[0]["Cerrado"]));
                 }
             }
             else
             {
                 XtraMessageBox.Show(ins.Mensaje);
             }
+            
         }
         void SelectFacturaProductor()
         {
@@ -3725,10 +3751,12 @@ namespace Business_Analitics
             {
                 foreach (int i in this.dtgValCosecha.GetSelectedRows())
                 {
+                    vCarga = 1;
                     DataRow row = this.dtgValCosecha.GetDataRow(i);
                     txt_IdCosecha.Text = row["Id_Cosecha"].ToString();
                     BarEstiba.Caption = "Estiba: " + row["EstibadeSeleccion"].ToString();
                     CargarCosecha();
+                    vCarga = 0;
                 }
             }
             catch (Exception ex)
@@ -3772,6 +3800,10 @@ namespace Business_Analitics
                     txt_RetencionFacturaProductor.EditValue = "0";
                 }
                 txt_TotalFacturaProductor.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaProductor.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaProductor.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaProductor.Text, style, provider)));
+                if(txtRazonSProductor.Text==String.Empty && Decimal.Parse(txt_TotalFacturaProductor.Text, style, provider) >0)
+                {
+                    txtRazonSProductor.Text = "Sin Factura";
+                }
             }
         }
 
@@ -3822,6 +3854,10 @@ namespace Business_Analitics
                     txt_RetencionFacturaCorteKilos.EditValue = "0";
                 }
                 txt_TotalFacturaCorteKilos.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteKilos.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaCorteKilos.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaCorteKilos.Text, style, provider)));
+                if (txtRazonSCorteKilos.Text == String.Empty && Decimal.Parse(txt_TotalFacturaCorteKilos.Text, style, provider) > 0)
+                {
+                    txtRazonSCorteKilos.Text = "Sin Factura";
+                }
             }
         }
 
@@ -3836,6 +3872,7 @@ namespace Business_Analitics
                 txt_RetencionFacturaCorteKilos.EditValue = "0";
             }
             txt_TotalFacturaCorteKilos.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteKilos.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaCorteKilos.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaCorteKilos.Text, style, provider)));
+
         }
         private void chk_IVACorteKilos_CheckedChanged(object sender, EventArgs e)
         {
@@ -3872,6 +3909,10 @@ namespace Business_Analitics
                     txt_RetencionFacturaCorteDia.EditValue = "0";
                 }
                 txt_TotalFacturaCorteDia.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteDia.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaCorteDia.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaCorteDia.Text, style, provider)));
+                if(txtRazonSCorteDia.Text == String.Empty&& Decimal.Parse(txt_TotalFacturaCorteDia.Text, style, provider) >0)
+                {
+                    txtRazonSCorteDia.Text = "Sin Factura";
+                }
             }
         }
 
@@ -3922,6 +3963,10 @@ namespace Business_Analitics
                     txt_RetencionFacturaCorteApoyo.EditValue = "0";
                 }
                 txt_TotalFacturaCorteApoyo.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteApoyo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaCorteApoyo.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaCorteApoyo.Text, style, provider)));
+                if(txtRazonSCorteApoyo.Text==String.Empty&&Decimal.Parse(txt_TotalFacturaCorteApoyo.Text, style, provider) >0)
+                {
+                    txtRazonSCorteApoyo.Text = "Sin Factura";
+                }
             }
         }
 
@@ -3972,6 +4017,10 @@ namespace Business_Analitics
                     txt_RetencionFacturaCorteSalida.EditValue = "0";
                 }
                 txt_TotalFacturaCorteSalida.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteSalida.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaCorteSalida.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaCorteSalida.Text, style, provider)));
+                if(txtRazonSCorteSalida.Text==String.Empty&&Decimal.Parse(txt_TotalFacturaCorteSalida.Text, style, provider) >0)
+                {
+                    txtRazonSCorteSalida.Text = "Sin Factura";
+                }
             }
         }
 
@@ -4022,6 +4071,10 @@ namespace Business_Analitics
                     txt_RetencionFacturaAcarreo.EditValue = "0";
                 }
                 txt_TotalFacturaAcarreo.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaAcarreo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaAcarreo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFleteFacturaAcarreo.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaAcarreo.Text, style, provider)));
+                if(txtRazonSAcarreo.Text==String.Empty&&Decimal.Parse(txt_TotalFacturaAcarreo.Text, style, provider) > 0)
+                {
+                    txtRazonSAcarreo.Text = "Sin Factura";
+                }
             }
         }
 
@@ -4139,46 +4192,7 @@ namespace Business_Analitics
         {
             CalcularCuadrillasdeApoyo();
         }
-
-
-        void BloquearOpciones(bool value)
-        {
-            btn_GuardarOrden.Enabled=value;
-        }
-        void BloquearOrdendeCorte(bool value)
-        {
-            
-        }
-        void BloquearRecepcion(bool value)
-        {
-            
-        }
-        void BloquearComercializadora(bool value)
-        {
-            
-        }
-        void BloquearProductor(bool value)
-        {
-            
-        }
-        void BloquearCorte(bool value)
-        {
-            
-        }
-        void BloquearAcarreo(bool value)
-        {
-            
-        }
-        private void btn_CerrarOrden_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            BloquearOpciones(true);
-            BloquearOrdendeCorte(true);
-            BloquearRecepcion(true);
-            BloquearComercializadora(true);
-            BloquearProductor(true);
-            BloquearCorte(true);
-            BloquearAcarreo(true);
-        }
+        
 
         private void btn_RefrescarPeso_Click(object sender, EventArgs e)
         {
@@ -4509,7 +4523,10 @@ namespace Business_Analitics
             EliminaFacturaXMLPDF(6);
             SelectFacturas();
         }
-
+        private void Bloquear_OrdenCorte(Boolean valor)
+        {
+            btnBusqProgramaCorte.Enabled = valor;
+        }
         private void Bloquear_Recepcion(Boolean valor)
         {
             txt_KilosBasculaE.Enabled = valor;
@@ -4595,14 +4612,21 @@ namespace Business_Analitics
         }
         private void Bloquear_Corte(Boolean valor)
         {
-            btn_EmpresaAcarreo.Enabled = valor;
-            cmb_Camiones.Enabled = valor;
-            cmb_Choferes.Enabled = valor;
-            txt_ObservacionesAcarreo.Enabled = valor;
-            chk_ServicioForaneo.Enabled = valor;
-            txt_CargosExtra.Enabled = valor;
-            txt_CajasExtras.Enabled = valor;
-            txt_Descuentos.Enabled = valor;
+            btn_EmpresaCorte.Enabled = valor;
+            btn_RefrescarPeso.Enabled = valor;
+            chk_PrecioPorkg.Enabled = valor;
+            txt_PrecioKiloCorte.Enabled = valor;
+            txt_ObservacionesCorte.Enabled = valor;
+            txt_NoCuadrillas.Enabled = valor;
+            if (txt_kilosCortadosCorte.Text != String.Empty)
+            {
+                chk_SalidaFalso.Enabled = false;
+            }
+            else
+            {
+                chk_SalidaFalso.Enabled = valor;
+            }
+            chk_CuadrillaApoyo.Enabled = valor;
             //Facturas
             txtRazonSCorteKilos.Enabled = valor;
             opt_TipoFacturaCorteKilos.Enabled = valor;
@@ -4710,132 +4734,440 @@ namespace Business_Analitics
         }
         private void btn_CerrarRecepcion_Click(object sender, EventArgs e)
         {
-            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
-            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
-            Clase.Usuario = UsuariosLogin;
-            Clase.Cerrado = 1;
-            Clase.MtdModificarCerradoRecepcion();
-            if(Clase.Exito)
-            {
-                Bloquear_Recepcion(false);
-            }
+            Cerrar_Recepcion(1);
         }
 
         private void btn_AbrirRecepcion_Click(object sender, EventArgs e)
         {
-            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
-            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
-            Clase.Usuario = UsuariosLogin;
-            Clase.Cerrado = 0;
-            Clase.MtdModificarCerradoRecepcion();
-            if (Clase.Exito)
+            Cerrar_Recepcion(0);
+        }
+
+        private void Cerrar_Recepcion(int Cierre)
+        {
+            if (TieneAcceso("023"))
             {
-                Bloquear_Recepcion(true);
+                CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+                Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+                Clase.Usuario = UsuariosLogin;
+                Clase.Cerrado = Cierre;
+                Clase.MtdModificarCerradoRecepcion();
+                if (Clase.Exito)
+                {
+                    if (Cierre == 0)
+                    {
+                        Bloquear_Recepcion(true);
+                    }
+                    else
+                    {
+                        Bloquear_Recepcion(false);
+                    }
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [023]");
             }
         }
 
         private void btn_CerrarComer_Click(object sender, EventArgs e)
         {
-            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
-            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
-            Clase.Usuario = UsuariosLogin;
-            Clase.Cerrado = 1;
-            Clase.MtdModificarCerradoComercializadora();
-            if (Clase.Exito)
-            {
-                Bloquear_Comercializacion(false);
-            }
+            Cerrar_Comercializacion(1);
         }
 
         private void btn_AbrirComer_Click(object sender, EventArgs e)
         {
-            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
-            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
-            Clase.Usuario = UsuariosLogin;
-            Clase.Cerrado = 0;
-            Clase.MtdModificarCerradoComercializadora();
-            if (Clase.Exito)
+            Cerrar_Comercializacion(0);
+        }
+
+        private void Cerrar_Comercializacion(int Cierre)
+        {
+            if (TieneAcceso("023"))
             {
-                Bloquear_Comercializacion(true);
+                CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+                Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+                Clase.Usuario = UsuariosLogin;
+                Clase.Cerrado = Cierre;
+                Clase.MtdModificarCerradoComercializadora();
+                if (Clase.Exito)
+                {
+                    if (Cierre == 0)
+                    {
+                        Bloquear_Comercializacion(true);
+                    }
+                    else
+                    {
+                        Bloquear_Comercializacion(false);
+                    }
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [023]");
             }
         }
 
         private void btn_CerrarProductor_Click(object sender, EventArgs e)
         {
-            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
-            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
-            Clase.Usuario = UsuariosLogin;
-            Clase.Cerrado = 1;
-            Clase.MtdModificarCerradoProductor();
-            if (Clase.Exito)
-            {
-                Bloquear_Productor(false);
-            }
+            Cerrar_Productor(1);
         }
 
         private void btn_AbrirProductor_Click(object sender, EventArgs e)
         {
-            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
-            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
-            Clase.Usuario = UsuariosLogin;
-            Clase.Cerrado = 0;
-            Clase.MtdModificarCerradoProductor();
-            if (Clase.Exito)
+            Cerrar_Productor(0);
+        }
+
+        private void Cerrar_Productor(int Cierre)
+        {
+            if (TieneAcceso("023"))
             {
-                Bloquear_Productor(true);
+                CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+                Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+                Clase.Usuario = UsuariosLogin;
+                Clase.Cerrado = Cierre;
+                Clase.MtdModificarCerradoProductor();
+                if (Clase.Exito)
+                {
+                    if (Cierre == 0)
+                    {
+                        Bloquear_Productor(true);
+                    }
+                    else
+                    {
+                        Bloquear_Productor(false);
+                    }
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [023]");
             }
         }
 
         private void btn_CerrarAcarreo_Click(object sender, EventArgs e)
         {
-            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
-            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
-            Clase.Usuario = UsuariosLogin;
-            Clase.Cerrado = 1;
-            Clase.MtdModificarCerradoAcarreo();
-            if (Clase.Exito)
-            {
-                Bloquear_Acarreo(false);
-            }
+            Cerrar_Acarreo(1);
         }
-
         private void btn_AbrirAcarreo_Click(object sender, EventArgs e)
         {
-            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
-            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
-            Clase.Usuario = UsuariosLogin;
-            Clase.Cerrado = 0;
-            Clase.MtdModificarCerradoAcarreo();
-            if (Clase.Exito)
+            Cerrar_Acarreo(0);
+        }
+        private void Cerrar_Acarreo(int Cierre)
+        {
+            if (TieneAcceso("023"))
             {
-                Bloquear_Acarreo(true);
+                CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+                Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+                Clase.Usuario = UsuariosLogin;
+                Clase.Cerrado = Cierre;
+                Clase.MtdModificarCerradoAcarreo();
+                if (Clase.Exito)
+                {
+                    if (Cierre == 0)
+                    {
+                        Bloquear_Acarreo(true);
+                    }
+                    else
+                    {
+                        Bloquear_Acarreo(false);
+                    }
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [023]");
             }
         }
-
         private void btn_CerrarCorte_Click(object sender, EventArgs e)
         {
-            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
-            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
-            Clase.Usuario = UsuariosLogin;
-            Clase.Cerrado = 1;
-            Clase.MtdModificarCerradoCorte();
+            Cerrar_Corte(1);
+        }
+        private void btn_AbrirCorte_Click(object sender, EventArgs e)
+        {
+            Cerrar_Corte(0);
+        }
+
+        private void Cerrar_Corte(int Cierre)
+        {
+            if (TieneAcceso("023"))
+            {
+                CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+                Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+                Clase.Usuario = UsuariosLogin;
+                Clase.Cerrado = Cierre;
+                Clase.MtdModificarCerradoCorte();
+                if (Clase.Exito)
+                {
+                    if (Cierre == 0)
+                    {
+                        Bloquear_Corte(true);
+                    }
+                    else
+                    {
+                        Bloquear_Corte(false);
+                    }
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [023]");
+            }
+        }
+        private void CargarAccesos()
+        {
+            CLS_Perfiles_Pantallas Clase = new CLS_Perfiles_Pantallas();
+            Clase.Id_Perfil = IdPerfil;
+            Clase.MtdSeleccionarAccesosPermisos();
             if (Clase.Exito)
             {
-                Bloquear_Corte(false);
+
+                for (int x = 0; x < Clase.Datos.Rows.Count; x++)
+                {
+                    Lista.Add(Clase.Datos.Rows[x][0].ToString());
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+        }
+        private Boolean TieneAcceso(String valor)
+        {
+            foreach (string x in Lista)
+            {
+                if (x == valor)
+                {
+                    return true;
+                }
+
+            }
+            return false;
+        }
+        private void btn_CerrarOrden_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("023"))
+            {
+                DialogResult = XtraMessageBox.Show("¿Desea Cerrar la estiba completa?", "Cierre de Estiba", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+                    Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+                    Clase.Usuario = UsuariosLogin;
+                    Clase.Cerrado = 1;
+                    Clase.MtdModificarCerradoOrdenCorte();
+
+                    if (Clase.Exito)
+                    {
+                        Bloquear_OrdenCorte(false);
+                        Cerrar_Recepcion(1);
+                        Cerrar_Productor(1);
+                        Cerrar_Comercializacion(1);
+                        Cerrar_Corte(1);
+                        Cerrar_Acarreo(1);
+                    }
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [023]");
+            }
+            
+        }
+        private void btn_AbrirOrden_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (TieneAcceso("023"))
+            {
+                DialogResult = XtraMessageBox.Show("¿Desea Abrir la estiba completa?", "Apertura de Estiba", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+                    Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+                    Clase.Usuario = UsuariosLogin;
+                    Clase.Cerrado = 1;
+                    Clase.MtdModificarCerradoOrdenCorte();
+
+                    if (Clase.Exito)
+                    {
+                        Bloquear_OrdenCorte(true);
+                        Cerrar_Recepcion(0);
+                        Cerrar_Productor(0);
+                        Cerrar_Comercializacion(0);
+                        Cerrar_Corte(0);
+                        Cerrar_Acarreo(0);
+                    }
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [023]");
             }
         }
 
-        private void btn_AbrirCorte_Click(object sender, EventArgs e)
+        private void dt_FechaFacturaProductor_EditValueChanged(object sender, EventArgs e)
         {
-            CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
-            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
-            Clase.Usuario = UsuariosLogin;
-            Clase.Cerrado = 0;
-            Clase.MtdModificarCerradoCorte();
-            if (Clase.Exito)
+            if (DateTime.Compare(dt_FechaFacturaProductor.DateTime, dt_FechaPagoProductor.DateTime) > 0 && vCarga==0)
             {
-                Bloquear_Corte(true);
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
+                dt_FechaFacturaProductor.DateTime = vFechaFacturaProductor ;
             }
+        }
+
+        private void dt_FechaPagoProductor_EditValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(dt_FechaFacturaProductor.DateTime, dt_FechaPagoProductor.DateTime) > 0 && vCarga == 0)
+            {
+                XtraMessageBox.Show("LA fecha de Factura debe ser menor a la fecha de pago");
+                dt_FechaPagoProductor.DateTime = vFechaPagoProductor;
+            }
+        }
+
+        private void dt_FechaPagoProductor_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            vFechaPagoProductor = dt_FechaPagoProductor.DateTime;
+        }
+
+        private void dt_FechaFacturaProductor_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            vFechaFacturaProductor = dt_FechaFacturaProductor.DateTime;
+        }
+
+        private void dt_FechaFacturaCorteKilos_EditValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(dt_FechaFacturaCorteKilos.DateTime, dt_FechaPagoCorteKilos.DateTime) > 0 && vCarga == 0)
+            {
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
+                dt_FechaFacturaCorteKilos.DateTime = vFechaFacturaCorteKilos;
+            }
+        }
+
+        private void dt_FechaPagoCorteKilos_EditValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(dt_FechaFacturaCorteKilos.DateTime, dt_FechaPagoCorteKilos.DateTime) > 0 && vCarga == 0)
+            {
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
+                dt_FechaPagoCorteKilos.DateTime = vFechaPagoCorteKilos;
+            }
+        }
+
+        private void dt_FechaFacturaCorteKilos_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            vFechaFacturaCorteKilos = dt_FechaFacturaCorteKilos.DateTime;
+        }
+
+        private void dt_FechaPagoCorteKilos_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            vFechaPagoCorteKilos = dt_FechaPagoCorteKilos.DateTime;
+        }
+
+        private void dt_FechaFacturaCorteDia_EditValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(dt_FechaFacturaCorteDia.DateTime, dt_FechaPagoCorteDia.DateTime) > 0 && vCarga == 0)
+            {
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
+                dt_FechaFacturaCorteDia.DateTime = vFechaFacturaCorteDia;
+            }
+        }
+
+        private void dt_FechaPagoCorteDia_EditValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(dt_FechaFacturaCorteDia.DateTime, dt_FechaPagoCorteDia.DateTime) > 0 && vCarga == 0)
+            {
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
+                dt_FechaPagoCorteDia.DateTime = vFechaPagoCorteDia;
+            }
+        }
+
+        private void dt_FechaFacturaCorteDia_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            vFechaFacturaCorteDia = dt_FechaFacturaCorteDia.DateTime;
+        }
+
+        private void dt_FechaPagoCorteDia_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            vFechaPagoCorteDia = dt_FechaPagoCorteDia.DateTime;
+        }
+
+        private void dt_FechaFacturaCorteApoyo_EditValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(dt_FechaFacturaCorteApoyo.DateTime, dt_FechaPagoCorteApoyo.DateTime) > 0 && vCarga == 0)
+            {
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
+                dt_FechaFacturaCorteApoyo.DateTime = vFechaFacturaCorteApoyo;
+            }
+        }
+
+        private void dt_FechaPagoCorteApoyo_EditValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(dt_FechaFacturaCorteApoyo.DateTime, dt_FechaPagoCorteApoyo.DateTime) > 0 && vCarga == 0)
+            {
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
+                dt_FechaPagoCorteApoyo.DateTime = vFechaPagoCorteApoyo;
+            }
+        }
+
+        private void dt_FechaFacturaCorteApoyo_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            vFechaFacturaCorteApoyo = dt_FechaFacturaCorteApoyo.DateTime;
+        }
+
+        private void dt_FechaPagoCorteApoyo_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            vFechaPagoCorteApoyo = dt_FechaPagoCorteApoyo.DateTime;
+        }
+
+        private void dt_FechaFacturaCorteSalida_EditValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(dt_FechaFacturaCorteSalida.DateTime, dt_FechaPagoCorteSalida.DateTime) > 0 && vCarga == 0)
+            {
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
+                dt_FechaFacturaCorteSalida.DateTime = vFechaFacturaCorteSalida;
+            }
+        }
+
+        private void dt_FechaPagoCorteSalida_EditValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(dt_FechaFacturaCorteSalida.DateTime, dt_FechaPagoCorteSalida.DateTime) > 0 && vCarga == 0)
+            {
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
+                dt_FechaPagoCorteSalida.DateTime = vFechaPagoCorteSalida;
+            }
+        }
+
+        private void dt_FechaFacturaCorteSalida_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            vFechaFacturaCorteSalida = dt_FechaFacturaCorteSalida.DateTime ;
+        }
+
+        private void dt_FechaPagoCorteSalida_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            vFechaPagoCorteSalida = dt_FechaPagoCorteSalida.DateTime;
+        }
+
+        private void dt_FechaFacturaAcarreo_EditValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(dt_FechaFacturaAcarreo.DateTime, dt_FechaPagoAcarreo.DateTime) > 0 && vCarga == 0)
+            {
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
+                dt_FechaFacturaAcarreo.DateTime = vFechaFacturaAcarreo;
+            }
+        }
+
+        private void dt_FechaPagoAcarreo_EditValueChanged(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(dt_FechaFacturaAcarreo.DateTime, dt_FechaPagoAcarreo.DateTime) > 0 && vCarga == 0)
+            {
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
+                dt_FechaPagoAcarreo.DateTime = vFechaPagoAcarreo;
+            }
+        }
+
+        private void dt_FechaFacturaAcarreo_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            vFechaFacturaAcarreo = dt_FechaFacturaAcarreo.DateTime;
+        }
+
+        private void dt_FechaPagoAcarreo_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            vFechaPagoAcarreo = dt_FechaPagoAcarreo.DateTime;
         }
     }
 }

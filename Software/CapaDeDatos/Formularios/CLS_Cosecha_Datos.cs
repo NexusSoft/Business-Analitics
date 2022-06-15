@@ -143,6 +143,39 @@ namespace CapaDeDatos
             }
 
         }
+        public void MtdModificarCerradoOrdenCorte()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_CerrarOrdenCorte_Update";
+                _dato.Texto = Id_Cosecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _dato.Entero = Cerrado;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Cerrado");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
+                _conexion.EjecutarDataset();
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
         public void MtdInsertarRecepcion()
         {
             TipoDato _dato = new TipoDato();
@@ -224,7 +257,7 @@ namespace CapaDeDatos
                 _dato.Texto = Id_Cosecha;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
                 _dato.Entero = Cerrado;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cerrado");
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Cerrado");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
@@ -298,7 +331,7 @@ namespace CapaDeDatos
                 _dato.Texto = Id_Cosecha;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
                 _dato.Entero = Cerrado;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cerrado");
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Cerrado");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
@@ -380,7 +413,7 @@ namespace CapaDeDatos
                 _dato.Texto = Id_Cosecha;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
                 _dato.Entero = Cerrado;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cerrado");
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Cerrado");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
@@ -482,7 +515,7 @@ namespace CapaDeDatos
                 _dato.Texto = Id_Cosecha;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
                 _dato.Entero = Cerrado;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cerrado");
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Cerrado");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
@@ -580,7 +613,7 @@ namespace CapaDeDatos
                 _dato.Texto = Id_Cosecha;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
                 _dato.Entero = Cerrado;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cerrado");
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Cerrado");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();

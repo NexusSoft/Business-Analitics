@@ -15,7 +15,7 @@ using System.Reflection;
 
 namespace Business_Analitics
 {
-    public partial class Frm_Relacion_Empresa_Corte : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_RelacionContabilidad_Empresa_Corte : DevExpress.XtraEditors.XtraForm
     {
         public string UsuariosLogin { get; set; }
         public string IdPerfil { get; set; }
@@ -25,13 +25,13 @@ namespace Business_Analitics
         Excel._Worksheet oSheet;
         Excel.Range oRng;
 
-        private static Frm_Relacion_Empresa_Corte m_FormDefInstance;
-        public static Frm_Relacion_Empresa_Corte DefInstance
+        private static Frm_RelacionContabilidad_Empresa_Corte m_FormDefInstance;
+        public static Frm_RelacionContabilidad_Empresa_Corte DefInstance
         {
             get
             {
                 if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
-                    m_FormDefInstance = new Frm_Relacion_Empresa_Corte();
+                    m_FormDefInstance = new Frm_RelacionContabilidad_Empresa_Corte();
                 return m_FormDefInstance;
             }
             set
@@ -47,7 +47,7 @@ namespace Business_Analitics
         public string vfoliofactura { get; set; }
         public decimal vtotalfacturas { get; set; }
         public int filaanterior { get; set; }
-        public Frm_Relacion_Empresa_Corte()
+        public Frm_RelacionContabilidad_Empresa_Corte()
         {
             InitializeComponent();
         }
@@ -90,18 +90,6 @@ namespace Business_Analitics
             gridColumn13.DisplayFormat.FormatString = "$ ###,###0.00";
             gridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             gridColumn14.DisplayFormat.FormatString = "$ ###,###0.00";
-            bandedGridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            bandedGridColumn15.DisplayFormat.FormatString = "$ ###,###0.00";
-            bandedGridColumn19.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            bandedGridColumn19.DisplayFormat.FormatString = "$ ###,###0.00";
-            bandedGridColumn23.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            bandedGridColumn23.DisplayFormat.FormatString = "$ ###,###0.00";
-            bandedGridColumn27.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            bandedGridColumn27.DisplayFormat.FormatString = "$ ###,###0.00";
-            bandedGridColumn33.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            bandedGridColumn33.DisplayFormat.FormatString = "$ ###,###0.00";
-            bandedGridColumn34.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            bandedGridColumn34.DisplayFormat.FormatString = "$ ###,###0.00";
             bandedGridColumn35.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             bandedGridColumn35.DisplayFormat.FormatString = "$ ###,###0.00";
             bandedGridColumn36.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
@@ -111,12 +99,10 @@ namespace Business_Analitics
 
             chk_Empresa.Checked= true;
             chk_Huerta.Checked= true;
-            chk_Kilos.Checked= true;
             chk_FKilos.Checked= true;
             chk_FDia.Checked= true;
             chk_FApoyo.Checked = true;
             chk_FSalida.Checked= true;
-            chkTotales.Checked = true;
         }
 
         string TemporadaReport(string str)
@@ -139,7 +125,7 @@ namespace Business_Analitics
             CLS_Cosecha_Reportes sel = new CLS_Cosecha_Reportes();
             sel.Fecha_Inicio = dt_FechaDesde.DateTime.Year.ToString() + DosCero(dt_FechaDesde.DateTime.Month.ToString()) + DosCero(dt_FechaDesde.DateTime.Day.ToString());
             sel.Fecha_Fin = dt_FechaHasta.DateTime.Year.ToString() + DosCero(dt_FechaHasta.DateTime.Month.ToString()) + DosCero(dt_FechaHasta.DateTime.Day.ToString());
-            sel.MtdSelecccionarRelacionEmpresaCorte();
+            sel.MtdSelecccionarRelacioncontabilidadEmpresaCorte();
             if (sel.Exito)
             {
                 dtgEmpresaCorte.DataSource = sel.Datos;
@@ -302,17 +288,7 @@ namespace Business_Analitics
             }
         }
 
-        private void chk_Kilos_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chk_Kilos.Checked == true)
-            {
-                ban_Kilos.Visible = true;
-            }
-            else
-            {
-                ban_Kilos.Visible = false;
-            }
-        }
+       
 
         private void chk_FKilos_CheckedChanged(object sender, EventArgs e)
         {
@@ -369,24 +345,13 @@ namespace Business_Analitics
             dtgEmpresaCorte.DataSource = null;
             chk_Empresa.Checked = true;
             chk_Huerta.Checked = true;
-            chk_Kilos.Checked = true;
             chk_FKilos.Checked = true;
             chk_FDia.Checked = true;
             chk_FApoyo.Checked = true;
             chk_FSalida.Checked = true;
         }
 
-        private void chkTotales_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkTotales.Checked == true)
-            {
-                ban_Totales.Visible = true;
-            }
-            else
-            {
-                ban_Totales.Visible = false;
-            }
-        }
+       
 
         private void dt_FechaDesde_KeyDown(object sender, KeyEventArgs e)
         {

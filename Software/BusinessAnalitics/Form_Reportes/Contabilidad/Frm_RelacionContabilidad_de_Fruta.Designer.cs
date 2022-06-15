@@ -1,6 +1,6 @@
 ﻿namespace Business_Analitics
 {
-    partial class Frm_Relacion_de_Fruta
+    partial class Frm_RelacionContabilidad_de_Fruta
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Relacion_de_Fruta));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_RelacionContabilidad_de_Fruta));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -63,26 +63,28 @@
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -200,15 +202,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1396, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1382, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 524);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 517);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1396, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1382, 24);
             // 
             // barDockControlLeft
             // 
@@ -216,15 +218,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(64, 524);
+            this.barDockControlLeft.Size = new System.Drawing.Size(64, 517);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1396, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1382, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 524);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 517);
             // 
             // btnComparar
             // 
@@ -263,7 +265,7 @@
             this.panelControl1.Location = new System.Drawing.Point(64, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(1332, 104);
+            this.panelControl1.Size = new System.Drawing.Size(1318, 104);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
@@ -281,9 +283,9 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1318, 90);
+            this.groupControl1.Size = new System.Drawing.Size(1304, 90);
             this.groupControl1.TabIndex = 1;
-            this.groupControl1.Text = "Fechas del Programa de Corte";
+            this.groupControl1.Text = "Fechas de Corte";
             // 
             // labelControl5
             // 
@@ -388,7 +390,7 @@
             this.panelControl2.Location = new System.Drawing.Point(64, 104);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1332, 420);
+            this.panelControl2.Size = new System.Drawing.Size(1318, 413);
             this.panelControl2.TabIndex = 5;
             // 
             // dtgFrutaCortada
@@ -398,7 +400,7 @@
             this.dtgFrutaCortada.MainView = this.dtgValFrutaCortada;
             this.dtgFrutaCortada.MenuManager = this.barManager1;
             this.dtgFrutaCortada.Name = "dtgFrutaCortada";
-            this.dtgFrutaCortada.Size = new System.Drawing.Size(1318, 406);
+            this.dtgFrutaCortada.Size = new System.Drawing.Size(1304, 399);
             this.dtgFrutaCortada.TabIndex = 0;
             this.dtgFrutaCortada.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValFrutaCortada});
@@ -412,26 +414,28 @@
             this.gridColumn25,
             this.gridColumn2,
             this.gridColumn3,
+            this.gridColumn22,
+            this.gridColumn20,
             this.gridColumn4,
             this.gridColumn5,
+            this.gridColumn26,
+            this.gridColumn23,
+            this.gridColumn21,
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
             this.gridColumn11,
             this.gridColumn12,
             this.gridColumn13,
             this.gridColumn14,
             this.gridColumn15,
             this.gridColumn16,
-            this.gridColumn17,
             this.gridColumn18,
+            this.gridColumn17,
+            this.gridColumn27,
             this.gridColumn19,
-            this.gridColumn20,
-            this.gridColumn21,
-            this.gridColumn22,
-            this.gridColumn23});
+            this.gridColumn9,
+            this.gridColumn10});
             this.dtgValFrutaCortada.GridControl = this.dtgFrutaCortada;
             this.dtgValFrutaCortada.Name = "dtgValFrutaCortada";
             this.dtgValFrutaCortada.OptionsFind.AlwaysVisible = true;
@@ -468,7 +472,7 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "Semana";
+            this.gridColumn2.Caption = "Semana Corte";
             this.gridColumn2.FieldName = "semana";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
@@ -477,12 +481,29 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "Fecha Recepcion";
+            this.gridColumn3.Caption = "Fecha Corte";
             this.gridColumn3.FieldName = "RecepcionFecha";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 4;
+            // 
+            // gridColumn22
+            // 
+            this.gridColumn22.FieldName = "Acopiador";
+            this.gridColumn22.Name = "gridColumn22";
+            this.gridColumn22.OptionsColumn.AllowEdit = false;
+            this.gridColumn22.Visible = true;
+            this.gridColumn22.VisibleIndex = 5;
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "Estiba";
+            this.gridColumn20.FieldName = "EstibadeSeleccion";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.OptionsColumn.AllowEdit = false;
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 6;
             // 
             // gridColumn4
             // 
@@ -502,6 +523,32 @@
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 8;
             // 
+            // gridColumn26
+            // 
+            this.gridColumn26.Caption = "Registro SAGARPA";
+            this.gridColumn26.FieldName = "v_registro_hue";
+            this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.OptionsColumn.AllowEdit = false;
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 9;
+            // 
+            // gridColumn23
+            // 
+            this.gridColumn23.FieldName = "Municipio";
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.OptionsColumn.AllowEdit = false;
+            this.gridColumn23.Visible = true;
+            this.gridColumn23.VisibleIndex = 10;
+            // 
+            // gridColumn21
+            // 
+            this.gridColumn21.Caption = "Precio Inicial";
+            this.gridColumn21.FieldName = "PreciokgInicial";
+            this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.OptionsColumn.AllowEdit = false;
+            this.gridColumn21.Visible = true;
+            this.gridColumn21.VisibleIndex = 11;
+            // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Precio Final";
@@ -509,7 +556,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 11;
+            this.gridColumn6.VisibleIndex = 12;
             // 
             // gridColumn7
             // 
@@ -518,7 +565,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 12;
+            this.gridColumn7.VisibleIndex = 13;
             // 
             // gridColumn8
             // 
@@ -527,25 +574,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 13;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "Dif. kg";
-            this.gridColumn9.FieldName = "KilosDiferencia";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.OptionsColumn.AllowEdit = false;
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 14;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "Muestra";
-            this.gridColumn10.FieldName = "KilosMuestra";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.OptionsColumn.AllowEdit = false;
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 15;
+            this.gridColumn8.VisibleIndex = 14;
             // 
             // gridColumn11
             // 
@@ -554,7 +583,7 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.AllowEdit = false;
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 16;
+            this.gridColumn11.VisibleIndex = 15;
             // 
             // gridColumn12
             // 
@@ -563,7 +592,7 @@
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.AllowEdit = false;
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 17;
+            this.gridColumn12.VisibleIndex = 16;
             // 
             // gridColumn13
             // 
@@ -572,7 +601,7 @@
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 18;
+            this.gridColumn13.VisibleIndex = 17;
             // 
             // gridColumn14
             // 
@@ -581,7 +610,7 @@
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 19;
+            this.gridColumn14.VisibleIndex = 18;
             // 
             // gridColumn15
             // 
@@ -590,7 +619,7 @@
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 20;
+            this.gridColumn15.VisibleIndex = 19;
             // 
             // gridColumn16
             // 
@@ -599,7 +628,16 @@
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.OptionsColumn.AllowEdit = false;
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 21;
+            this.gridColumn16.VisibleIndex = 20;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Fecha Pago";
+            this.gridColumn18.FieldName = "Fecha_Pago";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.OptionsColumn.AllowEdit = false;
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 21;
             // 
             // gridColumn17
             // 
@@ -610,14 +648,14 @@
             this.gridColumn17.Visible = true;
             this.gridColumn17.VisibleIndex = 22;
             // 
-            // gridColumn18
+            // gridColumn27
             // 
-            this.gridColumn18.Caption = "Fecha Pago";
-            this.gridColumn18.FieldName = "Fecha_Pago";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.OptionsColumn.AllowEdit = false;
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 23;
+            this.gridColumn27.Caption = "Observaciones";
+            this.gridColumn27.FieldName = "Observaciones";
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.OptionsColumn.AllowEdit = false;
+            this.gridColumn27.Visible = true;
+            this.gridColumn27.VisibleIndex = 23;
             // 
             // gridColumn19
             // 
@@ -626,52 +664,32 @@
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.OptionsColumn.AllowEdit = false;
             // 
-            // gridColumn20
+            // gridColumn9
             // 
-            this.gridColumn20.Caption = "Estiba";
-            this.gridColumn20.FieldName = "EstibadeSeleccion";
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.OptionsColumn.AllowEdit = false;
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 5;
+            this.gridColumn9.Caption = "Dif. kg";
+            this.gridColumn9.FieldName = "KilosDiferencia";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
             // 
-            // gridColumn21
+            // gridColumn10
             // 
-            this.gridColumn21.Caption = "Precio Inicial";
-            this.gridColumn21.FieldName = "PreciokgInicial";
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.OptionsColumn.AllowEdit = false;
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 10;
+            this.gridColumn10.Caption = "Muestra";
+            this.gridColumn10.FieldName = "KilosMuestra";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
             // 
-            // gridColumn22
-            // 
-            this.gridColumn22.FieldName = "Acopiador";
-            this.gridColumn22.Name = "gridColumn22";
-            this.gridColumn22.OptionsColumn.AllowEdit = false;
-            this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 6;
-            // 
-            // gridColumn23
-            // 
-            this.gridColumn23.FieldName = "Municipio";
-            this.gridColumn23.Name = "gridColumn23";
-            this.gridColumn23.OptionsColumn.AllowEdit = false;
-            this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 9;
-            // 
-            // Frm_Relacion_de_Fruta
+            // Frm_RelacionContabilidad_de_Fruta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1396, 548);
+            this.ClientSize = new System.Drawing.Size(1382, 541);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "Frm_Relacion_de_Fruta";
+            this.Name = "Frm_RelacionContabilidad_de_Fruta";
             this.Text = "Reporte Relacion de Fruta";
             this.Shown += new System.EventHandler(this.Frm_Relacion_de_Fruta_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -752,5 +770,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
     }
 }

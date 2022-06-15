@@ -57,6 +57,10 @@
             this.btn_RelacionEAcarreo = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_TipoCambio = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ReporteConta_Fruta = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ReporteConta_Corte = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_ReporteConta_Acarreo = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -68,6 +72,7 @@
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -111,9 +116,13 @@
             this.btn_RelacionECorte,
             this.btn_RelacionEAcarreo,
             this.barButtonItem2,
-            this.btn_TipoCambio});
+            this.btn_TipoCambio,
+            this.btn_ReporteConta_Fruta,
+            this.btn_ReporteConta_Corte,
+            this.btn_ReporteConta_Acarreo,
+            this.barButtonItem6});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 28;
+            this.ribbon.MaxItemId = 32;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -125,7 +134,7 @@
             this.ribbon.QuickToolbarItemLinks.Add(this.btn_inventario_ventas);
             this.ribbon.QuickToolbarItemLinks.Add(this.btnReportInventario);
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbon.Size = new System.Drawing.Size(875, 147);
+            this.ribbon.Size = new System.Drawing.Size(1163, 147);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // applicationMenu1
@@ -335,6 +344,40 @@
             this.btn_TipoCambio.Name = "btn_TipoCambio";
             this.btn_TipoCambio.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_TipoCambio_ItemClick);
             // 
+            // btn_ReporteConta_Fruta
+            // 
+            this.btn_ReporteConta_Fruta.Caption = "Fruta";
+            this.btn_ReporteConta_Fruta.Id = 28;
+            this.btn_ReporteConta_Fruta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ReporteConta_Fruta.ImageOptions.Image")));
+            this.btn_ReporteConta_Fruta.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_ReporteConta_Fruta.ImageOptions.LargeImage")));
+            this.btn_ReporteConta_Fruta.Name = "btn_ReporteConta_Fruta";
+            this.btn_ReporteConta_Fruta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ReporteConta_Fruta_ItemClick);
+            // 
+            // btn_ReporteConta_Corte
+            // 
+            this.btn_ReporteConta_Corte.Caption = "Corte";
+            this.btn_ReporteConta_Corte.Id = 29;
+            this.btn_ReporteConta_Corte.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ReporteConta_Corte.ImageOptions.Image")));
+            this.btn_ReporteConta_Corte.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_ReporteConta_Corte.ImageOptions.LargeImage")));
+            this.btn_ReporteConta_Corte.Name = "btn_ReporteConta_Corte";
+            this.btn_ReporteConta_Corte.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ReporteConta_Corte_ItemClick);
+            // 
+            // btn_ReporteConta_Acarreo
+            // 
+            this.btn_ReporteConta_Acarreo.Caption = "Acarreo";
+            this.btn_ReporteConta_Acarreo.Id = 30;
+            this.btn_ReporteConta_Acarreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
+            this.btn_ReporteConta_Acarreo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.btn_ReporteConta_Acarreo.Name = "btn_ReporteConta_Acarreo";
+            this.btn_ReporteConta_Acarreo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ReporteConta_Acarreo_ItemClick);
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "barButtonItem6";
+            this.barButtonItem6.Id = 31;
+            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -413,7 +456,8 @@
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup3,
-            this.ribbonPageGroup9});
+            this.ribbonPageGroup9,
+            this.ribbonPageGroup10});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Reportes";
             // 
@@ -433,6 +477,15 @@
             this.ribbonPageGroup9.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Cosecha";
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.AllowTextClipping = false;
+            this.ribbonPageGroup10.ItemLinks.Add(this.btn_ReporteConta_Fruta);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btn_ReporteConta_Corte);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btn_ReporteConta_Acarreo);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "Contabilidad ";
             // 
             // ribbonPage5
             // 
@@ -454,7 +507,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 426);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(875, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1163, 23);
             // 
             // ribbonPageGroup6
             // 
@@ -475,7 +528,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 449);
+            this.ClientSize = new System.Drawing.Size(1163, 449);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
@@ -542,5 +595,10 @@
         private DevExpress.XtraBars.BarButtonItem btn_RelacionEAcarreo;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem btn_TipoCambio;
+        private DevExpress.XtraBars.BarButtonItem btn_ReporteConta_Fruta;
+        private DevExpress.XtraBars.BarButtonItem btn_ReporteConta_Corte;
+        private DevExpress.XtraBars.BarButtonItem btn_ReporteConta_Acarreo;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
     }
 }

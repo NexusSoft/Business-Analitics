@@ -15,7 +15,7 @@ using System.Reflection;
 
 namespace Business_Analitics
 {
-    public partial class Frm_Relacion_Empresa_Acarreo : DevExpress.XtraEditors.XtraForm
+    public partial class Frm_RelacionContabilidad_Empresa_Acarreo : DevExpress.XtraEditors.XtraForm
     {
         public string UsuariosLogin { get; set; }
         public string IdPerfil { get; set; }
@@ -25,13 +25,13 @@ namespace Business_Analitics
         Excel._Worksheet oSheet;
         Excel.Range oRng;
 
-        private static Frm_Relacion_Empresa_Acarreo m_FormDefInstance;
-        public static Frm_Relacion_Empresa_Acarreo DefInstance
+        private static Frm_RelacionContabilidad_Empresa_Acarreo m_FormDefInstance;
+        public static Frm_RelacionContabilidad_Empresa_Acarreo DefInstance
         {
             get
             {
                 if (m_FormDefInstance == null || m_FormDefInstance.IsDisposed)
-                    m_FormDefInstance = new Frm_Relacion_Empresa_Acarreo();
+                    m_FormDefInstance = new Frm_RelacionContabilidad_Empresa_Acarreo();
                 return m_FormDefInstance;
             }
             set
@@ -47,7 +47,7 @@ namespace Business_Analitics
         public string vfoliofactura { get; set; }
         public decimal vtotalfacturas { get; set; }
         public int filaanterior { get; set; }
-        public Frm_Relacion_Empresa_Acarreo()
+        public Frm_RelacionContabilidad_Empresa_Acarreo()
         {
             InitializeComponent();
         }
@@ -99,7 +99,7 @@ namespace Business_Analitics
             CLS_Cosecha_Reportes sel = new CLS_Cosecha_Reportes();
             sel.Fecha_Inicio = dt_FechaDesde.DateTime.Year.ToString() + DosCero(dt_FechaDesde.DateTime.Month.ToString()) + DosCero(dt_FechaDesde.DateTime.Day.ToString());
             sel.Fecha_Fin = dt_FechaHasta.DateTime.Year.ToString() + DosCero(dt_FechaHasta.DateTime.Month.ToString()) + DosCero(dt_FechaHasta.DateTime.Day.ToString());
-            sel.MtdSelecccionarRelacionEmpresaAcarreo();
+            sel.MtdSelecccionarRelacionContabilidadEmpresaAcarreo();
             if (sel.Exito)
             {
                 dtgFrutaAcarreo.DataSource = sel.Datos;

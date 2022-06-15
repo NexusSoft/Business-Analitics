@@ -271,6 +271,7 @@ namespace Business_Analitics
             {
                 Frm_Cosecha Ventana = new Frm_Cosecha();
                 Frm_Cosecha.DefInstance.MdiParent = this;
+                Frm_Cosecha.DefInstance.IdPerfil = IdPerfil;
                 Frm_Cosecha.DefInstance.UsuariosLogin = UsuariosLogin;
                 Frm_Cosecha.DefInstance.Show();
             }
@@ -384,7 +385,55 @@ namespace Business_Analitics
             }
             else
             {
-                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [019]");
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [022]");
+            }
+        }
+
+        private void btn_ReporteConta_Fruta_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("024"))
+            {
+                Frm_RelacionContabilidad_de_Fruta Ventana = new Frm_RelacionContabilidad_de_Fruta();
+                Frm_RelacionContabilidad_de_Fruta.DefInstance.MdiParent = this;
+                Frm_RelacionContabilidad_de_Fruta.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_RelacionContabilidad_de_Fruta.DefInstance.IdPerfil = IdPerfil;
+                Frm_RelacionContabilidad_de_Fruta.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [024]");
+            }
+        }
+
+        private void btn_ReporteConta_Corte_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("025"))
+            {
+                Frm_RelacionContabilidad_Empresa_Corte Ventana = new Frm_RelacionContabilidad_Empresa_Corte();
+                Frm_RelacionContabilidad_Empresa_Corte.DefInstance.MdiParent = this;
+                Frm_RelacionContabilidad_Empresa_Corte.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_RelacionContabilidad_Empresa_Corte.DefInstance.IdPerfil = IdPerfil;
+                Frm_RelacionContabilidad_Empresa_Corte.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [025]");
+            }
+        }
+
+        private void btn_ReporteConta_Acarreo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("026"))
+            {
+                Frm_RelacionContabilidad_Empresa_Acarreo Ventana = new Frm_RelacionContabilidad_Empresa_Acarreo();
+                Frm_RelacionContabilidad_Empresa_Acarreo.DefInstance.MdiParent = this;
+                Frm_RelacionContabilidad_Empresa_Acarreo.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_RelacionContabilidad_Empresa_Acarreo.DefInstance.IdPerfil = IdPerfil;
+                Frm_RelacionContabilidad_Empresa_Acarreo.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [026]");
             }
         }
     }

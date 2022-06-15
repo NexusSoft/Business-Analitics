@@ -59,6 +59,8 @@
             this.dtgFrutaAcarreo = new DevExpress.XtraGrid.GridControl();
             this.dtgValFrutaAcarreo = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,8 +73,8 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -196,9 +198,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 526);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 524);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1396, 22);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1396, 24);
             // 
             // barDockControlLeft
             // 
@@ -206,7 +208,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(66, 526);
+            this.barDockControlLeft.Size = new System.Drawing.Size(64, 524);
             // 
             // barDockControlRight
             // 
@@ -214,7 +216,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1396, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 526);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 524);
             // 
             // btnComparar
             // 
@@ -250,10 +252,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(66, 0);
+            this.panelControl1.Location = new System.Drawing.Point(64, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(1330, 104);
+            this.panelControl1.Size = new System.Drawing.Size(1332, 104);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
@@ -271,9 +273,9 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1316, 90);
+            this.groupControl1.Size = new System.Drawing.Size(1318, 90);
             this.groupControl1.TabIndex = 1;
-            this.groupControl1.Text = "Fechas de Corte";
+            this.groupControl1.Text = "Fechas del Programa de Corte";
             // 
             // labelControl5
             // 
@@ -331,6 +333,7 @@
             this.dt_FechaHasta.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaHasta.Size = new System.Drawing.Size(181, 22);
             this.dt_FechaHasta.TabIndex = 13;
+            this.dt_FechaHasta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dt_FechaHasta_KeyDown);
             // 
             // labelControl1
             // 
@@ -359,6 +362,7 @@
             this.dt_FechaDesde.Size = new System.Drawing.Size(181, 22);
             this.dt_FechaDesde.TabIndex = 11;
             this.dt_FechaDesde.EditValueChanged += new System.EventHandler(this.dt_FechaDesde_EditValueChanged);
+            this.dt_FechaDesde.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dt_FechaDesde_KeyDown);
             // 
             // txtSemana
             // 
@@ -373,10 +377,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgFrutaAcarreo);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(66, 104);
+            this.panelControl2.Location = new System.Drawing.Point(64, 104);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1330, 422);
+            this.panelControl2.Size = new System.Drawing.Size(1332, 420);
             this.panelControl2.TabIndex = 5;
             // 
             // dtgFrutaAcarreo
@@ -386,7 +390,7 @@
             this.dtgFrutaAcarreo.MainView = this.dtgValFrutaAcarreo;
             this.dtgFrutaAcarreo.MenuManager = this.barManager1;
             this.dtgFrutaAcarreo.Name = "dtgFrutaAcarreo";
-            this.dtgFrutaAcarreo.Size = new System.Drawing.Size(1316, 408);
+            this.dtgFrutaAcarreo.Size = new System.Drawing.Size(1318, 406);
             this.dtgFrutaAcarreo.TabIndex = 0;
             this.dtgFrutaAcarreo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValFrutaAcarreo});
@@ -396,6 +400,8 @@
             // 
             this.dtgValFrutaAcarreo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
+            this.gridColumn10,
+            this.gridColumn11,
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn5,
@@ -412,6 +418,7 @@
             this.dtgValFrutaAcarreo.GridControl = this.dtgFrutaAcarreo;
             this.dtgValFrutaAcarreo.Name = "dtgValFrutaAcarreo";
             this.dtgValFrutaAcarreo.OptionsFind.AlwaysVisible = true;
+            this.dtgValFrutaAcarreo.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.dtgValFrutaAcarreo.OptionsView.ShowFooter = true;
             this.dtgValFrutaAcarreo.OptionsView.ShowGroupPanel = false;
             // 
@@ -424,6 +431,25 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Semana Programa";
+            this.gridColumn10.CustomizationCaption = "Semana Programa";
+            this.gridColumn10.FieldName = "semana_programa";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 1;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Fecha Programa";
+            this.gridColumn11.FieldName = "ProgramaFecha";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.AllowEdit = false;
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 2;
+            // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Semana";
@@ -431,7 +457,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 3;
             // 
             // gridColumn3
             // 
@@ -440,7 +466,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 4;
             // 
             // gridColumn5
             // 
@@ -449,7 +475,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.VisibleIndex = 7;
             // 
             // gridColumn15
             // 
@@ -458,7 +484,7 @@
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 9;
+            this.gridColumn15.VisibleIndex = 11;
             // 
             // gridColumn16
             // 
@@ -467,7 +493,7 @@
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.OptionsColumn.AllowEdit = false;
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 10;
+            this.gridColumn16.VisibleIndex = 12;
             // 
             // gridColumn17
             // 
@@ -476,7 +502,7 @@
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.OptionsColumn.AllowEdit = false;
             this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 7;
+            this.gridColumn17.VisibleIndex = 9;
             // 
             // gridColumn18
             // 
@@ -485,7 +511,7 @@
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.OptionsColumn.AllowEdit = false;
             this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 11;
+            this.gridColumn18.VisibleIndex = 13;
             // 
             // gridColumn19
             // 
@@ -501,7 +527,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 5;
             // 
             // gridColumn6
             // 
@@ -510,7 +536,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 8;
+            this.gridColumn6.VisibleIndex = 10;
             // 
             // gridColumn7
             // 
@@ -519,7 +545,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 4;
+            this.gridColumn7.VisibleIndex = 6;
             // 
             // gridColumn8
             // 
@@ -527,7 +553,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 6;
+            this.gridColumn8.VisibleIndex = 8;
             // 
             // gridColumn9
             // 
@@ -535,7 +561,7 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.AllowEdit = false;
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 12;
+            this.gridColumn9.VisibleIndex = 14;
             // 
             // Frm_Relacion_Empresa_Acarreo
             // 
@@ -618,5 +644,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
     }
 }

@@ -44,6 +44,37 @@ namespace CapaDeDatos
             }
 
         }
+        public void MtdSelecccionarRelacionContabilidadFrutaCortada()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_ReporteContaFruta_Cortada_Select";
+                _dato.Texto = Fecha_Inicio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha_Inicio");
+                _dato.Texto = Fecha_Fin;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha_Fin");
+                _conexion.EjecutarDataset();
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
 
         public void MtdSelecccionarRelacionEmpresaCorte()
         {
@@ -76,7 +107,37 @@ namespace CapaDeDatos
             }
 
         }
+        public void MtdSelecccionarRelacioncontabilidadEmpresaCorte()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
 
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_ReporteContaEmpresa_Corte_Select";
+                _dato.Texto = Fecha_Inicio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha_Inicio");
+                _dato.Texto = Fecha_Fin;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha_Fin");
+                _conexion.EjecutarDataset();
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
         public void MtdSelecccionarRelacionEmpresaAcarreo()
         {
             TipoDato _dato = new TipoDato();
@@ -108,7 +169,37 @@ namespace CapaDeDatos
             }
 
         }
+        public void MtdSelecccionarRelacionContabilidadEmpresaAcarreo()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
 
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_ReporteContaEmpresa_Acarreo_Select";
+                _dato.Texto = Fecha_Inicio;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha_Inicio");
+                _dato.Texto = Fecha_Fin;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha_Fin");
+                _conexion.EjecutarDataset();
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
         public void MtdSelecccionarRelacionAcumulada()
         {
             TipoDato _dato = new TipoDato();
