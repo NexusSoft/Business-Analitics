@@ -214,6 +214,7 @@ namespace Business_Analitics
         {
             Frm_BuscarProgramaCorte frm = new Frm_BuscarProgramaCorte();
             frm.ShowDialog();
+            vCarga = 1;
             btn_limpiarOrden.PerformClick();
             txt_ProgramaCorte.Text = frm.Id_ProgramaCorte;
             txt_Temporada.Text = frm.v_temporada;
@@ -223,6 +224,7 @@ namespace Business_Analitics
             {
                 CargarProgramaCorte();
             }
+            vCarga = 0;
         }
 
         private void CargarProgramaCorte()
@@ -1405,6 +1407,7 @@ namespace Business_Analitics
         }
         private void btn_limpiarOrden_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            vCarga = 1;
             LimpiarOrdenCorte();
             LimpiarRecepcion();
             LimpiarComercializadora();
@@ -1422,6 +1425,13 @@ namespace Business_Analitics
             BarProductor.Caption =string.Empty;
             BarHuerta.Caption =string.Empty;
             BarEstiba.Caption =string.Empty;
+            Bloquear_OrdenCorte(true);
+            Bloquear_Recepcion(true);
+            Bloquear_Productor(true);
+            Bloquear_Comercializacion(true);
+            Bloquear_Corte(true);
+            Bloquear_Acarreo(true);
+            vCarga = 0;
         }
 
         private void InicializaVariables()
