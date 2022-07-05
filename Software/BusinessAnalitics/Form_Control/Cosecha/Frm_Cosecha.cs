@@ -59,15 +59,15 @@ namespace Business_Analitics
         public DateTime vFechaPagoProductor { get; set; }
         public DateTime vFechaFacturaProductor { get; set; }
         public DateTime vFechaFacturaCorteKilos { get; set; }
-        public DateTime vFechaPagoCorteKilos { get;  set; }
+        public DateTime vFechaPagoCorteKilos { get; set; }
         public DateTime vFechaFacturaCorteDia { get; set; }
         public DateTime vFechaPagoCorteDia { get; set; }
         public DateTime vFechaFacturaCorteApoyo { get; set; }
-        public DateTime vFechaPagoCorteApoyo { get;  set; }
-        public DateTime vFechaFacturaCorteSalida { get;  set; }
+        public DateTime vFechaPagoCorteApoyo { get; set; }
+        public DateTime vFechaFacturaCorteSalida { get; set; }
         public DateTime vFechaPagoCorteSalida { get; set; }
         public DateTime vFechaPagoAcarreo { get; set; }
-        public DateTime vFechaFacturaAcarreo { get;  set; }
+        public DateTime vFechaFacturaAcarreo { get; set; }
 
         void CargarCosechas()
         {
@@ -252,7 +252,7 @@ namespace Business_Analitics
                         chk_Mercado.Checked = false;
                     }
                     txt_Huerta.Text = sel.Datos.Rows[0]["v_nombre_hue"].ToString();
-                    BarHuerta.Caption="Huerta: "+ sel.Datos.Rows[0]["v_nombre_hue"].ToString();
+                    BarHuerta.Caption = "Huerta: " + sel.Datos.Rows[0]["v_nombre_hue"].ToString();
                     txt_Huerta.Tag = sel.Datos.Rows[0]["c_codigo_hue"].ToString();
                     txt_Acopiador.Text = sel.Datos.Rows[0]["v_nombre_zon"].ToString();
                     txt_Acopiador.Tag = sel.Datos.Rows[0]["c_codigo_zon"].ToString();
@@ -264,7 +264,7 @@ namespace Business_Analitics
                     txt_Secuencia.Text = sel.Datos.Rows[0]["c_secuencia_ocd"].ToString();
                     txt_Temporada.Text = sel.Datos.Rows[0]["c_codigo_tem"].ToString();
                     txt_Productor.Text = sel.Datos.Rows[0]["v_nombre_dno"].ToString();
-                    BarProductor.Caption= "Productor: " + sel.Datos.Rows[0]["v_nombre_dno"].ToString();
+                    BarProductor.Caption = "Productor: " + sel.Datos.Rows[0]["v_nombre_dno"].ToString();
                     if (txt_Temporada.Text != string.Empty && txt_OrdenCorte.Text != string.Empty && txt_Secuencia.Text != string.Empty)
                     {
                         CargarRecepcion();
@@ -287,29 +287,29 @@ namespace Business_Analitics
             switch ((byte)Fecha.DayOfWeek)
             {
                 case 0:
-                    dt_FechaPagoProductor.DateTime = Fecha.AddDays(19);
+                    dt_FechaProgramaProductor.DateTime = Fecha.AddDays(19);
                     break;
                 case 1:
-                    dt_FechaPagoProductor.DateTime = Fecha.AddDays(25);
+                    dt_FechaProgramaProductor.DateTime = Fecha.AddDays(25);
                     break;
                 case 2:
-                    dt_FechaPagoProductor.DateTime = Fecha.AddDays(24);
+                    dt_FechaProgramaProductor.DateTime = Fecha.AddDays(24);
                     break;
                 case 3:
-                    dt_FechaPagoProductor.DateTime = Fecha.AddDays(23);
+                    dt_FechaProgramaProductor.DateTime = Fecha.AddDays(23);
                     break;
                 case 4:
-                    dt_FechaPagoProductor.DateTime = Fecha.AddDays(22);
+                    dt_FechaProgramaProductor.DateTime = Fecha.AddDays(22);
                     break;
                 case 5:
-                    dt_FechaPagoProductor.DateTime = Fecha.AddDays(21);
+                    dt_FechaProgramaProductor.DateTime = Fecha.AddDays(21);
                     break;
                 case 6:
-                    dt_FechaPagoProductor.DateTime = Fecha.AddDays(20);
+                    dt_FechaProgramaProductor.DateTime = Fecha.AddDays(20);
                     break;
                 default:
                     break;
-               
+
             }
         }
         private void CargarRecepcion()
@@ -327,7 +327,7 @@ namespace Business_Analitics
                     CalcularFechaPago(dt_FechaRecepcion.DateTime);
                     txt_Recepcion.Text = sel.Datos.Rows[0]["c_codigo_rec"].ToString();
                     txt_EstibaSel.Text = sel.Datos.Rows[0]["c_codigo_sel"].ToString();
-                    BarEstiba.Caption="Estiba: "+ sel.Datos.Rows[0]["c_codigo_sel"].ToString();
+                    BarEstiba.Caption = "Estiba: " + sel.Datos.Rows[0]["c_codigo_sel"].ToString();
                     txt_CajasCortadas.Text = sel.Datos.Rows[0]["n_cajascorte_red"].ToString();
                     txt_Cajas_CortadasA.Text = sel.Datos.Rows[0]["n_cajascorte_red"].ToString();
                     txt_CajasCortadasCorte.Text = sel.Datos.Rows[0]["n_cajascorte_red"].ToString();
@@ -338,7 +338,7 @@ namespace Business_Analitics
                     txt_TicketPesada.Text = sel.Datos.Rows[0]["c_ticketbas_rec"].ToString();
                     if (txt_EstibaSel.Text != string.Empty && txt_Temporada.Text != string.Empty)
                     {
-                        if (txt_KilosCortados.Text != String.Empty && Decimal.Parse(txt_KilosCortados.Text, style, provider)>0)
+                        if (txt_KilosCortados.Text != String.Empty && Decimal.Parse(txt_KilosCortados.Text, style, provider) > 0)
                         {
                             CorridaBanda();
                             txt_KilosBasculaE.Enabled = true;
@@ -542,7 +542,7 @@ namespace Business_Analitics
                 }
                 if (chk_kgCorte.Checked == false)
                 {
-                    txt_kilosCortadosCorte.Text = txt_kilosST.Text;
+                    txt_kilosCortadosCorte.Text = Convert.ToString(KC);
                 }
                 else
                 {
@@ -637,7 +637,7 @@ namespace Business_Analitics
 
         private void CalcularCostosCorte()
         {
-            if (txt_kilosCortadosCorte.Text != string.Empty && Decimal.Parse(txt_kilosCortadosCorte.Text, style, provider)>0)
+            if (txt_kilosCortadosCorte.Text != string.Empty && Decimal.Parse(txt_kilosCortadosCorte.Text, style, provider) > 0)
             {
                 chk_SalidaFalso.Enabled = false;
                 txt_Margen5.Text = Convert.ToString(Convert.ToDouble(txt_kilosCortadosCorte.Text) * 0.05);
@@ -645,13 +645,13 @@ namespace Business_Analitics
                 txt_KilosARestar.Text = (Decimal.Parse(txt_Margen5.Text, style, provider) - Decimal.Parse(txt_kgNoSolicitados.Text, style, provider)).ToString();
                 if (Decimal.Parse(txt_KilosARestar.Text, style, provider) < 0)
                 {
-                    txt_KilosAjustadosCorte.Text = (Decimal.Parse(txt_kilosCortadosCorte.Text, style, provider) - (Decimal.Parse(txt_KilosARestar.Text, style, provider)*(-1))).ToString();
+                    txt_KilosAjustadosCorte.Text = (Decimal.Parse(txt_kilosCortadosCorte.Text, style, provider) - (Decimal.Parse(txt_KilosARestar.Text, style, provider) * (-1))).ToString();
                 }
                 else
                 {
                     txt_KilosAjustadosCorte.Text = txt_kilosCortadosCorte.Text;
                 }
-                if (Decimal.Parse(txt_kilosCortadosCorte.Text, style, provider) > Decimal.Parse(txtMenorakg.Text, style, provider) || chk_PrecioPorkg.Checked==true)
+                if (Decimal.Parse(txt_kilosCortadosCorte.Text, style, provider) > Decimal.Parse(txtMenorakg.Text, style, provider) || chk_PrecioPorkg.Checked == true)
                 {
                     txt_PrecioKiloCorte.Text = txtPreciokg.Text;
                     if (chk_RangoCajas.Checked == false)
@@ -840,7 +840,7 @@ namespace Business_Analitics
             {
                 if (chk_Rango.Checked == false)
                 {
-                    txt_PrecioCuadrillaCorte.Text =Convert.ToString(Decimal.Parse(txtPrecioCuadrillaA.Text, style, provider) * Decimal.Parse(txt_NoCuadrillas.Text, style, provider));
+                    txt_PrecioCuadrillaCorte.Text = Convert.ToString(Decimal.Parse(txtPrecioCuadrillaA.Text, style, provider) * Decimal.Parse(txt_NoCuadrillas.Text, style, provider));
                 }
                 else
                 {
@@ -987,7 +987,7 @@ namespace Business_Analitics
                 {
                     txt_CostoServicio.Text = txtPrecioServicio.Text;
                 }
-                txt_TotalAcarreo.Text = (Decimal.Parse(txt_CostoServicio.Text, style, provider) + Decimal.Parse(txt_CostoxCajaExtra.Text, style, provider)+ Decimal.Parse(txt_CargosExtra.Text, style, provider) - Decimal.Parse(txt_Descuentos.Text, style, provider)).ToString();
+                txt_TotalAcarreo.Text = (Decimal.Parse(txt_CostoServicio.Text, style, provider) + Decimal.Parse(txt_CostoxCajaExtra.Text, style, provider) + Decimal.Parse(txt_CargosExtra.Text, style, provider) - Decimal.Parse(txt_Descuentos.Text, style, provider)).ToString();
             }
         }
 
@@ -1040,9 +1040,16 @@ namespace Business_Analitics
             {
                 CalcularTotalRecepcion();
             }
-            if(chk_kgCorte.Checked == true)
+            if (chk_kgCorte.Checked == true)
             {
-                txt_kilosCortadosCorte.Text = txt_KilosBasculaE.Text;
+                if (Convert.ToDecimal(txt_KilosBasculaE.Text) > 0)
+                {
+                    txt_kilosCortadosCorte.Text = txt_KilosBasculaE.Text;
+                }
+            }
+            else
+            {
+                txt_kilosCortadosCorte.Text = txt_KilosCortados.Text;
             }
             CalcularkilosTipoMercado();
             CalcularCostosCorte();
@@ -1271,6 +1278,7 @@ namespace Business_Analitics
             chk_PagadaProductor.Checked = false;
             dt_FechaFacturaProductor.DateTime = DateTime.Now;
             dt_FechaPagoProductor.DateTime = DateTime.Now;
+            dt_FechaProgramaProductor.DateTime = DateTime.Now;
             opt_TipoFacturaProductor.SelectedIndex = 0;
             btn_ViewPDFProductor.Enabled = false;
             btn_ViewXMLProductor.Enabled = false;
@@ -1296,6 +1304,7 @@ namespace Business_Analitics
             chk_PagadaCorteKilos.Checked = false;
             dt_FechaFacturaCorteKilos.DateTime = DateTime.Now;
             dt_FechaPagoCorteKilos.DateTime = DateTime.Now;
+            dt_FechaProgramaCorteKilos.DateTime = DateTime.Now;
             opt_TipoFacturaCorteKilos.SelectedIndex = 0;
             btn_ViewPDFCorteKilos.Enabled = false;
             btn_ViewXMLCorteKilos.Enabled = false;
@@ -1321,6 +1330,7 @@ namespace Business_Analitics
             chk_PagadaCorteDia.Checked = false;
             dt_FechaFacturaCorteDia.DateTime = DateTime.Now;
             dt_FechaPagoCorteDia.DateTime = DateTime.Now;
+            dt_FechaProgramaCorteDia.DateTime = DateTime.Now;
             opt_TipoFacturaCorteDia.SelectedIndex = 0;
             btn_ViewPDFCorteDia.Enabled = false;
             btn_ViewXMLCorteDia.Enabled = false;
@@ -1346,6 +1356,7 @@ namespace Business_Analitics
             chk_PagadaCorteApoyo.Checked = false;
             dt_FechaFacturaCorteApoyo.DateTime = DateTime.Now;
             dt_FechaPagoCorteApoyo.DateTime = DateTime.Now;
+            dt_FechaProgramaCorteApoyo.DateTime = DateTime.Now;
             opt_TipoFacturaCorteApoyo.SelectedIndex = 0;
             btn_ViewPDFCorteApoyo.Enabled = false;
             btn_ViewXMLCorteApoyo.Enabled = false;
@@ -1371,6 +1382,7 @@ namespace Business_Analitics
             chk_PagadaCorteSalida.Checked = false;
             dt_FechaFacturaCorteSalida.DateTime = DateTime.Now;
             dt_FechaPagoCorteSalida.DateTime = DateTime.Now;
+            dt_FechaProgramaCorteSalida.DateTime = DateTime.Now;
             opt_TipoFacturaCorteSalida.SelectedIndex = 0;
             btn_ViewPDFCorteSalida.Enabled = false;
             btn_ViewXMLCorteSalida.Enabled = false;
@@ -1397,6 +1409,7 @@ namespace Business_Analitics
             chk_PagadaAcarreo.Checked = false;
             dt_FechaFacturaAcarreo.DateTime = DateTime.Now;
             dt_FechaPagoAcarreo.DateTime = DateTime.Now;
+            dt_FechaProgramaAcarreo.DateTime = DateTime.Now;
             opt_TipoFacturaAcarreo.SelectedIndex = 0;
             btn_ViewPDFAcarreo.Enabled = false;
             btn_ViewXMLAcarreo.Enabled = false;
@@ -1422,9 +1435,9 @@ namespace Business_Analitics
             LimpiarFacturasAcarreo();
             InicializaVariables();
             navigationPane1.SelectedPageIndex = 0;
-            BarProductor.Caption =string.Empty;
-            BarHuerta.Caption =string.Empty;
-            BarEstiba.Caption =string.Empty;
+            BarProductor.Caption = string.Empty;
+            BarHuerta.Caption = string.Empty;
+            BarEstiba.Caption = string.Empty;
             Bloquear_OrdenCorte(true);
             Bloquear_Recepcion(true);
             Bloquear_Productor(true);
@@ -1436,18 +1449,18 @@ namespace Business_Analitics
 
         private void InicializaVariables()
         {
-           ArchivoPDFGlobalProductor = null;
-           ArchivoXMLGlobalProductor = null;
-           ArchivoPDFGlobalCorteKilos = null;
-           ArchivoXMLGlobalCorteKilos = null;
-           ArchivoPDFGlobalCorteDia = null;
-           ArchivoXMLGlobalCorteDia = null;
-           ArchivoPDFGlobalCorteApoyo = null;
-           ArchivoXMLGlobalCorteApoyo = null;
-           ArchivoPDFGlobalCorteSalida = null;
-           ArchivoXMLGlobalCorteSalida = null;
-           ArchivoPDFGlobalAcarreo = null;
-           ArchivoXMLGlobalAcarreo = null;
+            ArchivoPDFGlobalProductor = null;
+            ArchivoXMLGlobalProductor = null;
+            ArchivoPDFGlobalCorteKilos = null;
+            ArchivoXMLGlobalCorteKilos = null;
+            ArchivoPDFGlobalCorteDia = null;
+            ArchivoXMLGlobalCorteDia = null;
+            ArchivoPDFGlobalCorteApoyo = null;
+            ArchivoXMLGlobalCorteApoyo = null;
+            ArchivoPDFGlobalCorteSalida = null;
+            ArchivoXMLGlobalCorteSalida = null;
+            ArchivoPDFGlobalAcarreo = null;
+            ArchivoXMLGlobalAcarreo = null;
         }
 
         public string DosCeros(string sVal)
@@ -1472,9 +1485,9 @@ namespace Business_Analitics
                 GuardarAcarreo();
                 GuardarFacturas();
                 SelectFacturas();
+                XtraMessageBox.Show("Se ha guardado el registro con exito");
             }
             CargarCosechas();
-            XtraMessageBox.Show("Se ha guardado el registro con exito");
         }
 
         private void GuardarFacturas()
@@ -1611,6 +1624,15 @@ namespace Business_Analitics
             {
                 Fecha = Convert.ToDateTime(dt_FechaPagoProductor.Text.Trim());
                 Clase.Fecha_Pago = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
+            }
+            if (dt_FechaProgramaProductor.EditValue == null)
+            {
+                Clase.Fecha_Programacion = String.Empty;
+            }
+            else
+            {
+                Fecha = Convert.ToDateTime(dt_FechaProgramaProductor.Text.Trim());
+                Clase.Fecha_Programacion = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
             }
             if (opt_TipoFacturaProductor.SelectedIndex == 0)
             {
@@ -1749,7 +1771,7 @@ namespace Business_Analitics
             }
 
             Clase.Importe_Retencion_Flete = Decimal.Parse(txt_RetencionFleteFacturaCorteKilos.Text, style, provider);
-            
+
             Clase.Total_Factura = Decimal.Parse(txt_TotalFacturaCorteKilos.Text, style, provider);
             DateTime Fecha;
 
@@ -1771,6 +1793,15 @@ namespace Business_Analitics
             {
                 Fecha = Convert.ToDateTime(dt_FechaPagoCorteKilos.Text.Trim());
                 Clase.Fecha_Pago = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
+            }
+            if (dt_FechaProgramaCorteKilos.EditValue == null)
+            {
+                Clase.Fecha_Programacion = String.Empty;
+            }
+            else
+            {
+                Fecha = Convert.ToDateTime(dt_FechaProgramaCorteKilos.Text.Trim());
+                Clase.Fecha_Programacion = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
             }
             if (opt_TipoFacturaCorteKilos.SelectedIndex == 0)
             {
@@ -1908,7 +1939,7 @@ namespace Business_Analitics
             }
 
             Clase.Importe_Retencion_Flete = Decimal.Parse(txt_RetencionFleteFacturaCorteDia.Text, style, provider);
-            
+
             Clase.Total_Factura = Decimal.Parse(txt_TotalFacturaCorteDia.Text, style, provider);
             DateTime Fecha;
 
@@ -1930,6 +1961,15 @@ namespace Business_Analitics
             {
                 Fecha = Convert.ToDateTime(dt_FechaPagoCorteDia.Text.Trim());
                 Clase.Fecha_Pago = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
+            }
+            if (dt_FechaProgramaCorteDia.EditValue == null)
+            {
+                Clase.Fecha_Programacion = String.Empty;
+            }
+            else
+            {
+                Fecha = Convert.ToDateTime(dt_FechaProgramaCorteDia.Text.Trim());
+                Clase.Fecha_Programacion = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
             }
             if (opt_TipoFacturaCorteDia.SelectedIndex == 0)
             {
@@ -2091,6 +2131,15 @@ namespace Business_Analitics
                 Fecha = Convert.ToDateTime(dt_FechaPagoCorteApoyo.Text.Trim());
                 Clase.Fecha_Pago = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
             }
+            if (dt_FechaProgramaCorteApoyo.EditValue == null)
+            {
+                Clase.Fecha_Programacion = String.Empty;
+            }
+            else
+            {
+                Fecha = Convert.ToDateTime(dt_FechaProgramaCorteApoyo.Text.Trim());
+                Clase.Fecha_Programacion = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
+            }
             if (opt_TipoFacturaCorteApoyo.SelectedIndex == 0)
             {
                 Clase.Diferido = 1;
@@ -2227,7 +2276,7 @@ namespace Business_Analitics
             }
 
             Clase.Importe_Retencion_Flete = Decimal.Parse(txt_RetencionFleteFacturaCorteSalida.Text, style, provider);
-            
+
             Clase.Total_Factura = Decimal.Parse(txt_TotalFacturaCorteSalida.Text, style, provider);
             DateTime Fecha;
 
@@ -2249,6 +2298,15 @@ namespace Business_Analitics
             {
                 Fecha = Convert.ToDateTime(dt_FechaPagoCorteSalida.Text.Trim());
                 Clase.Fecha_Pago = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
+            }
+            if (dt_FechaProgramaCorteSalida.EditValue == null)
+            {
+                Clase.Fecha_Programacion = String.Empty;
+            }
+            else
+            {
+                Fecha = Convert.ToDateTime(dt_FechaProgramaCorteSalida.Text.Trim());
+                Clase.Fecha_Programacion = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
             }
             if (opt_TipoFacturaCorteSalida.SelectedIndex == 0)
             {
@@ -2409,6 +2467,15 @@ namespace Business_Analitics
                 Fecha = Convert.ToDateTime(dt_FechaPagoAcarreo.Text.Trim());
                 Clase.Fecha_Pago = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
             }
+            if (dt_FechaProgramaAcarreo.EditValue == null)
+            {
+                Clase.Fecha_Programacion = String.Empty;
+            }
+            else
+            {
+                Fecha = Convert.ToDateTime(dt_FechaProgramaAcarreo.Text.Trim());
+                Clase.Fecha_Programacion = Fecha.Year.ToString() + DosCeros(Fecha.Month.ToString()) + DosCeros(Fecha.Day.ToString());
+            }
             if (opt_TipoFacturaAcarreo.SelectedIndex == 0)
             {
                 Clase.Diferido = 1;
@@ -2441,6 +2508,7 @@ namespace Business_Analitics
         {
             if (txt_ProgramaCorte.Text != String.Empty)
             {
+
                 CLS_Cosecha_Datos ins = new CLS_Cosecha_Datos();
                 ins.Id_Cosecha = txt_IdCosecha.Text;
                 ins.ProgramaCorte = txt_ProgramaCorte.Text;
@@ -2453,16 +2521,41 @@ namespace Business_Analitics
                 ins.ProgramaCajas = Convert.ToInt32(txt_Cajas_Programa.EditValue);
                 ins.TipoCorte = txt_TipoCorte.Text;
                 ins.Usuario = UsuariosLogin;
-                ins.MtdInsertarOrdencorte();
-                if (ins.Exito)
+                if (txt_IdCosecha.Text != String.Empty)
                 {
-                    vId_Cosecha = ins.Datos.Rows[0]["Id_Cosecha"].ToString();
-                    txt_IdCosecha.EditValue = vId_Cosecha;
+                    ins.MtdInsertarOrdencorte();
+                    if (ins.Exito)
+                    {
+                        vId_Cosecha = ins.Datos.Rows[0]["Id_Cosecha"].ToString();
+                        txt_IdCosecha.EditValue = vId_Cosecha;
+                    }
+                    else
+                    {
+                        vId_Cosecha = "0";
+                    }
                 }
                 else
                 {
-                    vId_Cosecha = "0";
+                    DialogResult = XtraMessageBox.Show("¿Desea realmente guardar la cosecha?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                    if (DialogResult == DialogResult.Yes)
+                    {
+                        ins.MtdInsertarOrdencorte();
+                        if (ins.Exito)
+                        {
+                            vId_Cosecha = ins.Datos.Rows[0]["Id_Cosecha"].ToString();
+                            txt_IdCosecha.EditValue = vId_Cosecha;
+                        }
+                        else
+                        {
+                            vId_Cosecha = "0";
+                        }
+                    }
+                    else
+                    {
+                        vId_Cosecha = "0";
+                    }
                 }
+
             }
             else
             {
@@ -2948,7 +3041,7 @@ namespace Business_Analitics
                     txt_Mercado.Text = ins.Datos.Rows[0]["Mercado"].ToString();
                     txt_Huerta.Tag = ins.Datos.Rows[0]["c_codigo_hue"].ToString();
                     txt_Huerta.Text = ins.Datos.Rows[0]["Huerta"].ToString();
-                    BarHuerta.Caption="Huerta: "+ ins.Datos.Rows[0]["Huerta"].ToString();
+                    BarHuerta.Caption = "Huerta: " + ins.Datos.Rows[0]["Huerta"].ToString();
                     txt_Acopiador.Text = ins.Datos.Rows[0]["Acopiador"].ToString();
                     txt_Cajas_Programa.EditValue = ins.Datos.Rows[0]["ProgramaCajas"].ToString();
                     txt_TipoCorte.Text = ins.Datos.Rows[0]["TipoCorte"].ToString();
@@ -3053,14 +3146,14 @@ namespace Business_Analitics
                 if (ins.Datos.Rows.Count > 0)
                 {
                     txt_Productor.Text = ins.Datos.Rows[0]["Productor"].ToString();
-                    BarProductor.Caption="Productor: "+ ins.Datos.Rows[0]["Productor"].ToString();
+                    BarProductor.Caption = "Productor: " + ins.Datos.Rows[0]["Productor"].ToString();
                     txt_KilosAjustados.EditValue = ins.Datos.Rows[0]["KilosAjustados"].ToString();
                     txt_KilosMuestra.EditValue = ins.Datos.Rows[0]["KilosMuestra"].ToString();
                     txt_kilos_Totales.EditValue = ins.Datos.Rows[0]["KilosaPagar"].ToString();
                     txt_KiloPrecioInicial.EditValue = ins.Datos.Rows[0]["PreciokgInicial"].ToString();
                     txt_KiloPrecio.EditValue = ins.Datos.Rows[0]["Preciokg"].ToString();
                     txt_TotalaPagar.EditValue = ins.Datos.Rows[0]["TotalaPagar"].ToString();
-                    txt_ObservacionesProductor.Text= ins.Datos.Rows[0]["Observaciones"].ToString();
+                    txt_ObservacionesProductor.Text = ins.Datos.Rows[0]["Observaciones"].ToString();
                     if (ins.Datos.Rows[0]["Exportacion"].ToString() == "True")
                     {
                         chk_Mercado.Checked = true;
@@ -3077,7 +3170,7 @@ namespace Business_Analitics
             {
                 XtraMessageBox.Show(ins.Mensaje);
             }
-            
+
         }
         void SelectCorte()
         {
@@ -3179,7 +3272,7 @@ namespace Business_Analitics
             {
                 XtraMessageBox.Show(ins.Mensaje);
             }
-            
+
         }
         void SelectFacturaProductor()
         {
@@ -3193,15 +3286,15 @@ namespace Business_Analitics
                 {
                     ArchivoPDFGlobalProductor = (byte[])ins.Datos.Rows[0]["FacturaPDF"];
                     ArchivoXMLGlobalProductor = (byte[])ins.Datos.Rows[0]["FacturaXML"];
-                    if (ArchivoPDFGlobalProductor.Length>0)
+                    if (ArchivoPDFGlobalProductor.Length > 0)
                     {
-                        btn_ViewPDFProductor.Enabled=true;
+                        btn_ViewPDFProductor.Enabled = true;
                     }
                     else
                     {
                         btn_ViewPDFProductor.Enabled = false;
                     }
-                    if(ArchivoXMLGlobalProductor.Length > 0)
+                    if (ArchivoXMLGlobalProductor.Length > 0)
                     {
                         btn_ViewXMLProductor.Enabled = true;
                     }
@@ -3259,6 +3352,7 @@ namespace Business_Analitics
                     txt_TotalFacturaProductor.EditValue = ins.Datos.Rows[0]["Total_Factura"].ToString();
                     dt_FechaFacturaProductor.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Factura"].ToString());
                     dt_FechaPagoProductor.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Pago"].ToString());
+                    dt_FechaProgramaProductor.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Programacion"].ToString());
 
                     if (ins.Datos.Rows[0]["Diferido"].ToString() == "True")
                     {
@@ -3353,6 +3447,7 @@ namespace Business_Analitics
                     txt_TotalFacturaCorteKilos.EditValue = ins.Datos.Rows[0]["Total_Factura"].ToString();
                     dt_FechaFacturaCorteKilos.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Factura"].ToString());
                     dt_FechaPagoCorteKilos.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Pago"].ToString());
+                    dt_FechaProgramaCorteKilos.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Programacion"].ToString());
 
                     if (ins.Datos.Rows[0]["Diferido"].ToString() == "True")
                     {
@@ -3447,6 +3542,7 @@ namespace Business_Analitics
                     txt_TotalFacturaCorteDia.EditValue = ins.Datos.Rows[0]["Total_Factura"].ToString();
                     dt_FechaFacturaCorteDia.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Factura"].ToString());
                     dt_FechaPagoCorteDia.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Pago"].ToString());
+                    dt_FechaProgramaCorteDia.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Programacion"].ToString());
 
                     if (ins.Datos.Rows[0]["Diferido"].ToString() == "True")
                     {
@@ -3541,7 +3637,7 @@ namespace Business_Analitics
                     txt_TotalFacturaCorteApoyo.EditValue = ins.Datos.Rows[0]["Total_Factura"].ToString();
                     dt_FechaFacturaCorteApoyo.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Factura"].ToString());
                     dt_FechaPagoCorteApoyo.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Pago"].ToString());
-
+                    dt_FechaProgramaCorteApoyo.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Programacion"].ToString());
                     if (ins.Datos.Rows[0]["Diferido"].ToString() == "True")
                     {
                         opt_TipoFacturaCorteApoyo.SelectedIndex = 0;
@@ -3635,6 +3731,7 @@ namespace Business_Analitics
                     txt_TotalFacturaCorteSalida.EditValue = ins.Datos.Rows[0]["Total_Factura"].ToString();
                     dt_FechaFacturaCorteSalida.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Factura"].ToString());
                     dt_FechaPagoCorteSalida.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Pago"].ToString());
+                    dt_FechaProgramaCorteSalida.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Programacion"].ToString());
 
                     if (ins.Datos.Rows[0]["Diferido"].ToString() == "True")
                     {
@@ -3729,6 +3826,7 @@ namespace Business_Analitics
                     txt_TotalFacturaAcarreo.EditValue = ins.Datos.Rows[0]["Total_Factura"].ToString();
                     dt_FechaFacturaAcarreo.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Factura"].ToString());
                     dt_FechaPagoAcarreo.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Pago"].ToString());
+                    dt_FechaProgramaAcarreo.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["Fecha_Programacion"].ToString());
 
                     if (ins.Datos.Rows[0]["Diferido"].ToString() == "True")
                     {
@@ -3771,7 +3869,7 @@ namespace Business_Analitics
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message); 
+                Console.WriteLine(ex.Message);
             }
 
         }
@@ -3810,7 +3908,7 @@ namespace Business_Analitics
                     txt_RetencionFacturaProductor.EditValue = "0";
                 }
                 txt_TotalFacturaProductor.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaProductor.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaProductor.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaProductor.Text, style, provider)));
-                if(txtRazonSProductor.Text==String.Empty && Decimal.Parse(txt_TotalFacturaProductor.Text, style, provider) >0)
+                if (txtRazonSProductor.Text == String.Empty && Decimal.Parse(txt_TotalFacturaProductor.Text, style, provider) > 0)
                 {
                     txtRazonSProductor.Text = "Sin Factura";
                 }
@@ -3919,7 +4017,7 @@ namespace Business_Analitics
                     txt_RetencionFacturaCorteDia.EditValue = "0";
                 }
                 txt_TotalFacturaCorteDia.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteDia.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaCorteDia.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaCorteDia.Text, style, provider)));
-                if(txtRazonSCorteDia.Text == String.Empty&& Decimal.Parse(txt_TotalFacturaCorteDia.Text, style, provider) >0)
+                if (txtRazonSCorteDia.Text == String.Empty && Decimal.Parse(txt_TotalFacturaCorteDia.Text, style, provider) > 0)
                 {
                     txtRazonSCorteDia.Text = "Sin Factura";
                 }
@@ -3973,7 +4071,7 @@ namespace Business_Analitics
                     txt_RetencionFacturaCorteApoyo.EditValue = "0";
                 }
                 txt_TotalFacturaCorteApoyo.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteApoyo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaCorteApoyo.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaCorteApoyo.Text, style, provider)));
-                if(txtRazonSCorteApoyo.Text==String.Empty&&Decimal.Parse(txt_TotalFacturaCorteApoyo.Text, style, provider) >0)
+                if (txtRazonSCorteApoyo.Text == String.Empty && Decimal.Parse(txt_TotalFacturaCorteApoyo.Text, style, provider) > 0)
                 {
                     txtRazonSCorteApoyo.Text = "Sin Factura";
                 }
@@ -4027,7 +4125,7 @@ namespace Business_Analitics
                     txt_RetencionFacturaCorteSalida.EditValue = "0";
                 }
                 txt_TotalFacturaCorteSalida.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaCorteSalida.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaCorteSalida.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaCorteSalida.Text, style, provider)));
-                if(txtRazonSCorteSalida.Text==String.Empty&&Decimal.Parse(txt_TotalFacturaCorteSalida.Text, style, provider) >0)
+                if (txtRazonSCorteSalida.Text == String.Empty && Decimal.Parse(txt_TotalFacturaCorteSalida.Text, style, provider) > 0)
                 {
                     txtRazonSCorteSalida.Text = "Sin Factura";
                 }
@@ -4081,7 +4179,7 @@ namespace Business_Analitics
                     txt_RetencionFacturaAcarreo.EditValue = "0";
                 }
                 txt_TotalFacturaAcarreo.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaAcarreo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaAcarreo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFleteFacturaAcarreo.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaAcarreo.Text, style, provider)));
-                if(txtRazonSAcarreo.Text==String.Empty&&Decimal.Parse(txt_TotalFacturaAcarreo.Text, style, provider) > 0)
+                if (txtRazonSAcarreo.Text == String.Empty && Decimal.Parse(txt_TotalFacturaAcarreo.Text, style, provider) > 0)
                 {
                     txtRazonSAcarreo.Text = "Sin Factura";
                 }
@@ -4110,7 +4208,7 @@ namespace Business_Analitics
             {
                 txt_RetencionFleteFacturaAcarreo.EditValue = "0";
             }
-            txt_TotalFacturaAcarreo.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaAcarreo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaAcarreo.Text, style, provider))-(Decimal.Parse(txt_RetencionFleteFacturaAcarreo.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaAcarreo.Text, style, provider)));
+            txt_TotalFacturaAcarreo.Text = Convert.ToString((Decimal.Parse(txt_ImporteFacturaAcarreo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFacturaAcarreo.Text, style, provider)) - (Decimal.Parse(txt_RetencionFleteFacturaAcarreo.Text, style, provider)) + (Decimal.Parse(txt_IVAFacturaAcarreo.Text, style, provider)));
         }
         private void chk_IVAAcarreo_CheckedChanged(object sender, EventArgs e)
         {
@@ -4170,7 +4268,7 @@ namespace Business_Analitics
 
         private void txt_PrecioDiaCorte_EditValueChanged(object sender, EventArgs e)
         {
-            txt_ImporteFacturaCorteDia.EditValue=txt_PrecioDiaCorte.EditValue;
+            txt_ImporteFacturaCorteDia.EditValue = txt_PrecioDiaCorte.EditValue;
             if (Decimal.Parse(txt_ImporteFacturaCorteDia.Text, style, provider) > 0)
             {
                 txtRazonSCorteDia.EditValue = txt_NombreEmpresaCorte.EditValue;
@@ -4180,7 +4278,7 @@ namespace Business_Analitics
 
         private void txt_PrecioSalidaFCorte_EditValueChanged(object sender, EventArgs e)
         {
-            txt_ImporteFacturaCorteSalida.EditValue=txt_PrecioSalidaFCorte.EditValue;
+            txt_ImporteFacturaCorteSalida.EditValue = txt_PrecioSalidaFCorte.EditValue;
             if (Decimal.Parse(txt_ImporteFacturaCorteSalida.Text, style, provider) > 0)
             {
                 txtRazonSCorteSalida.EditValue = txt_NombreEmpresaCorte.EditValue;
@@ -4190,7 +4288,7 @@ namespace Business_Analitics
 
         private void txt_PrecioCuadrillaCorte_EditValueChanged(object sender, EventArgs e)
         {
-            txt_ImporteFacturaCorteApoyo.EditValue=txt_PrecioCuadrillaCorte.EditValue;
+            txt_ImporteFacturaCorteApoyo.EditValue = txt_PrecioCuadrillaCorte.EditValue;
             if (Decimal.Parse(txt_ImporteFacturaCorteApoyo.Text, style, provider) > 0)
             {
                 txtRazonSCorteSalida.EditValue = txt_NombreEmpresaCorte.EditValue;
@@ -4202,7 +4300,7 @@ namespace Business_Analitics
         {
             CalcularCuadrillasdeApoyo();
         }
-        
+
 
         private void btn_RefrescarPeso_Click(object sender, EventArgs e)
         {
@@ -4473,9 +4571,16 @@ namespace Business_Analitics
 
         private void chk_kgCorte_CheckedChanged(object sender, EventArgs e)
         {
-            if (Convert.ToDecimal(txt_KilosBasculaE.Text) > 0)
+            if (chk_kgCorte.Checked == true)
             {
-                txt_kilosCortadosCorte.Text = txt_KilosBasculaE.Text;
+                if (Convert.ToDecimal(txt_KilosBasculaE.Text) > 0)
+                {
+                    txt_kilosCortadosCorte.Text = txt_KilosBasculaE.Text;
+                }
+            }
+            else
+            {
+                txt_kilosCortadosCorte.Text = txt_KilosCortados.Text;
             }
         }
         private void EliminaFacturaXMLPDF(int Id_Factura)
@@ -4567,9 +4672,9 @@ namespace Business_Analitics
             dt_FechaFacturaProductor.Enabled = valor;
             dt_FechaPagoProductor.Enabled = valor;
             btn_CalcularFechaPago.Enabled = valor;
-            if(!valor)
+            if (!valor)
             {
-                btn_UpPDFProductor.Enabled= valor;
+                btn_UpPDFProductor.Enabled = valor;
                 btn_UpXMLProductor.Enabled = valor;
                 btn_ViewPDFProductor.Enabled = valor;
                 btn_ViewXMLProductor.Enabled = valor;
@@ -4980,7 +5085,7 @@ namespace Business_Analitics
             {
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [023]");
             }
-            
+
         }
         private void btn_AbrirOrden_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -5014,10 +5119,10 @@ namespace Business_Analitics
 
         private void dt_FechaFacturaProductor_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dt_FechaFacturaProductor.DateTime, dt_FechaPagoProductor.DateTime) > 0 && vCarga==0)
+            if (DateTime.Compare(dt_FechaFacturaProductor.DateTime, dt_FechaPagoProductor.DateTime) > 0 && vCarga == 0)
             {
                 XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
-                dt_FechaFacturaProductor.DateTime = vFechaFacturaProductor ;
+                dt_FechaFacturaProductor.DateTime = vFechaFacturaProductor;
             }
         }
 
@@ -5144,7 +5249,7 @@ namespace Business_Analitics
 
         private void dt_FechaFacturaCorteSalida_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            vFechaFacturaCorteSalida = dt_FechaFacturaCorteSalida.DateTime ;
+            vFechaFacturaCorteSalida = dt_FechaFacturaCorteSalida.DateTime;
         }
 
         private void dt_FechaPagoCorteSalida_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
@@ -5178,6 +5283,29 @@ namespace Business_Analitics
         private void dt_FechaPagoAcarreo_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
             vFechaPagoAcarreo = dt_FechaPagoAcarreo.DateTime;
+        }
+
+        private void btn_ActualizarAcopiador_Click(object sender, EventArgs e)
+        {
+            CLS_Cosecha sel = new CLS_Cosecha();
+            sel.c_codigo_tem = txt_Temporada.Text;
+            sel.c_codigo_pco = txt_ProgramaCorte.Text;
+            sel.c_codigo_oct = txt_OrdenCorte.Text;
+            sel.c_secuencia_ocd = txt_Secuencia.Text;
+            sel.MtdSeleccionarPrograma();
+            if (sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    txt_Acopiador.Text = sel.Datos.Rows[0]["v_nombre_zon"].ToString();
+                    txt_Acopiador.Tag = sel.Datos.Rows[0]["c_codigo_zon"].ToString();
+                    XtraMessageBox.Show("Se ha actualizado registro");
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No se encontraron registros");
+            }
         }
     }
 }

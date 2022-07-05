@@ -28,6 +28,7 @@ namespace CapaDeDatos
         public decimal Importe_IVA { get; set; }
         public int Retencion_Flete { get; set; }
         public decimal Importe_Retencion_Flete { get; set; }
+        public string Fecha_Programacion { get; set; }
 
         public void MtdSeleccionarCosechaArchivoPDFXML()
         {
@@ -137,6 +138,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha_Factura");
                 _dato.Texto = Fecha_Pago;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha_Pago");
+                _dato.Texto = Fecha_Programacion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha_Programacion");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();

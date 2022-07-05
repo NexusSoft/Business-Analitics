@@ -362,17 +362,16 @@ namespace Business_Analitics
                     labelControl24.Text = row["Nombre_EmpresaAcarreo"].ToString();
                     labelControl26.Text = row["Nombre_EmpresaAcarreo"].ToString();
                     labelControl27.Text = row["Nombre_EmpresaAcarreo"].ToString();
+                    CargarDomicilio();
+                    CargarCamiones();
+                    CargarChoferes();
+                    CargarServicios();
                 }
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show(ex.Message);
             }
-
-            CargarDomicilio();
-            CargarCamiones();
-            CargarChoferes();
-            CargarServicios();
         }
         private void CargarServicios()
         {
@@ -386,6 +385,7 @@ namespace Business_Analitics
                     txtPrecioServicio.Text = sel.Datos.Rows[0]["Precio_Acarreo"].ToString();
                     txtPrecioCaja.Text = sel.Datos.Rows[0]["Precio_Caja"].ToString();
                     txtPrecioSalidaForanea.Text = sel.Datos.Rows[0]["Precio_SalidaForanea"].ToString();
+                    dtgServicios.DataSource = sel.Datos;
                 }   
             }
             else
@@ -695,6 +695,12 @@ namespace Business_Analitics
             txtPrecioCaja.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtPrecioServicio.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtPrecioSalidaForanea.Properties.Mask.UseMaskAsDisplayFormat = true;
+            gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridColumn2.DisplayFormat.FormatString = "c2";
+            gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridColumn6.DisplayFormat.FormatString = "c2";
+            gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridColumn7.DisplayFormat.FormatString = "c2";
         }
     }
 }

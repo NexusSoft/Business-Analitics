@@ -76,6 +76,7 @@
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dtgDomicilio = new DevExpress.XtraGrid.GridControl();
             this.dtgValDomicilio = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -113,6 +114,7 @@
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.dtgCamiones = new DevExpress.XtraGrid.GridControl();
             this.dtgValCamiones = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -120,6 +122,9 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
+            this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtPlacasCamion = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.txtNombreCamion = new DevExpress.XtraEditors.TextEdit();
@@ -127,6 +132,7 @@
             this.txtIDCamion = new DevExpress.XtraEditors.TextEdit();
             this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.dtgChoferes = new DevExpress.XtraGrid.GridControl();
             this.dtgValChoferes = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -138,7 +144,19 @@
             this.txtIDChofer = new DevExpress.XtraEditors.TextEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
+            this.dtgServicios = new DevExpress.XtraGrid.GridControl();
+            this.dtgValServicios = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
+            this.gridLookUpEdit2 = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.txtPrecioCaja = new DevExpress.XtraEditors.TextEdit();
@@ -146,10 +164,8 @@
             this.txtPrecioServicio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl33 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl34 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -193,6 +209,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgValCamiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPlacasCamion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreCamion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDCamion.Properties)).BeginInit();
@@ -206,8 +224,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreChofer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDChofer.Properties)).BeginInit();
             this.xtraTabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgServicios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValServicios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioCaja.Properties)).BeginInit();
@@ -334,15 +356,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(971, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1184, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 441);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 518);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(971, 22);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1184, 22);
             // 
             // barDockControlLeft
             // 
@@ -350,15 +372,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(71, 441);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 518);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(971, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1184, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 441);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 518);
             // 
             // repositoryItemTextEdit1
             // 
@@ -370,7 +392,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(71, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(900, 441);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1113, 518);
             this.xtraTabControl1.TabIndex = 6;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -385,7 +407,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl1);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(898, 416);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1111, 493);
             this.xtraTabPage1.Text = "Datos";
             // 
             // panelControl1
@@ -395,7 +417,7 @@
             this.panelControl1.Location = new System.Drawing.Point(5, 151);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(888, 260);
+            this.panelControl1.Size = new System.Drawing.Size(1101, 337);
             this.panelControl1.TabIndex = 2;
             // 
             // dtgEmpAcarreo
@@ -404,7 +426,7 @@
             this.dtgEmpAcarreo.Location = new System.Drawing.Point(7, 7);
             this.dtgEmpAcarreo.MainView = this.dtgValEmpAcarreo;
             this.dtgEmpAcarreo.Name = "dtgEmpAcarreo";
-            this.dtgEmpAcarreo.Size = new System.Drawing.Size(874, 246);
+            this.dtgEmpAcarreo.Size = new System.Drawing.Size(1087, 323);
             this.dtgEmpAcarreo.TabIndex = 0;
             this.dtgEmpAcarreo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValEmpAcarreo});
@@ -509,7 +531,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(5, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(888, 146);
+            this.groupControl1.Size = new System.Drawing.Size(1101, 146);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Empresa";
             // 
@@ -665,8 +687,18 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(898, 416);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1111, 493);
             this.xtraTabPage2.Text = "Domicilio";
+            // 
+            // labelControl23
+            // 
+            this.labelControl23.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl23.Appearance.Options.UseFont = true;
+            this.labelControl23.Location = new System.Drawing.Point(8, 11);
+            this.labelControl23.Name = "labelControl23";
+            this.labelControl23.Size = new System.Drawing.Size(82, 13);
+            this.labelControl23.TabIndex = 17;
+            this.labelControl23.Text = "labelControl23";
             // 
             // panelControl2
             // 
@@ -675,7 +707,7 @@
             this.panelControl2.Location = new System.Drawing.Point(5, 197);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(888, 214);
+            this.panelControl2.Size = new System.Drawing.Size(1101, 291);
             this.panelControl2.TabIndex = 16;
             // 
             // dtgDomicilio
@@ -685,7 +717,7 @@
             this.dtgDomicilio.MainView = this.dtgValDomicilio;
             this.dtgDomicilio.MenuManager = this.barManager1;
             this.dtgDomicilio.Name = "dtgDomicilio";
-            this.dtgDomicilio.Size = new System.Drawing.Size(874, 200);
+            this.dtgDomicilio.Size = new System.Drawing.Size(1087, 277);
             this.dtgDomicilio.TabIndex = 0;
             this.dtgDomicilio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValDomicilio});
@@ -828,7 +860,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 30);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(888, 167);
+            this.groupControl2.Size = new System.Drawing.Size(1101, 167);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -1005,17 +1037,27 @@
             this.xtraTabPage3.Controls.Add(this.groupControl3);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.xtraTabPage3.Size = new System.Drawing.Size(898, 416);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1111, 493);
             this.xtraTabPage3.Text = "Camiones";
+            // 
+            // labelControl24
+            // 
+            this.labelControl24.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl24.Appearance.Options.UseFont = true;
+            this.labelControl24.Location = new System.Drawing.Point(8, 11);
+            this.labelControl24.Name = "labelControl24";
+            this.labelControl24.Size = new System.Drawing.Size(82, 13);
+            this.labelControl24.TabIndex = 18;
+            this.labelControl24.Text = "labelControl24";
             // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.dtgCamiones);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(5, 176);
+            this.panelControl3.Location = new System.Drawing.Point(5, 174);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl3.Size = new System.Drawing.Size(888, 235);
+            this.panelControl3.Size = new System.Drawing.Size(1101, 314);
             this.panelControl3.TabIndex = 3;
             // 
             // dtgCamiones
@@ -1024,7 +1066,7 @@
             this.dtgCamiones.Location = new System.Drawing.Point(7, 7);
             this.dtgCamiones.MainView = this.dtgValCamiones;
             this.dtgCamiones.Name = "dtgCamiones";
-            this.dtgCamiones.Size = new System.Drawing.Size(874, 221);
+            this.dtgCamiones.Size = new System.Drawing.Size(1087, 300);
             this.dtgCamiones.TabIndex = 0;
             this.dtgCamiones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValCamiones});
@@ -1037,7 +1079,9 @@
             this.dtgValCamiones.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn3,
             this.gridColumn4,
-            this.gridColumn5});
+            this.gridColumn5,
+            this.gridColumn12,
+            this.gridColumn13});
             this.dtgValCamiones.GridControl = this.dtgCamiones;
             this.dtgValCamiones.Name = "dtgValCamiones";
             this.dtgValCamiones.OptionsBehavior.Editable = false;
@@ -1058,7 +1102,7 @@
             this.gridColumn4.FieldName = "Nombre_Camion";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
+            this.gridColumn4.VisibleIndex = 3;
             // 
             // gridColumn5
             // 
@@ -1066,10 +1110,12 @@
             this.gridColumn5.FieldName = "Placas";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 2;
+            this.gridColumn5.VisibleIndex = 4;
             // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.labelControl28);
+            this.groupControl3.Controls.Add(this.gridLookUpEdit1);
             this.groupControl3.Controls.Add(this.txtPlacasCamion);
             this.groupControl3.Controls.Add(this.labelControl10);
             this.groupControl3.Controls.Add(this.txtNombreCamion);
@@ -1079,20 +1125,46 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl3.Location = new System.Drawing.Point(5, 30);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(888, 146);
+            this.groupControl3.Size = new System.Drawing.Size(1101, 144);
             this.groupControl3.TabIndex = 1;
             this.groupControl3.Text = "Camion";
             // 
+            // labelControl28
+            // 
+            this.labelControl28.Location = new System.Drawing.Point(17, 115);
+            this.labelControl28.Name = "labelControl28";
+            this.labelControl28.Size = new System.Drawing.Size(62, 13);
+            this.labelControl28.TabIndex = 20;
+            this.labelControl28.Text = "Tipo Camion:";
+            // 
+            // gridLookUpEdit1
+            // 
+            this.gridLookUpEdit1.Location = new System.Drawing.Point(103, 111);
+            this.gridLookUpEdit1.MenuManager = this.barManager1;
+            this.gridLookUpEdit1.Name = "gridLookUpEdit1";
+            this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit1.Properties.PopupView = this.gridLookUpEdit1View;
+            this.gridLookUpEdit1.Size = new System.Drawing.Size(192, 20);
+            this.gridLookUpEdit1.TabIndex = 19;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
             // txtPlacasCamion
             // 
-            this.txtPlacasCamion.Location = new System.Drawing.Point(103, 95);
+            this.txtPlacasCamion.Location = new System.Drawing.Point(103, 85);
             this.txtPlacasCamion.Name = "txtPlacasCamion";
             this.txtPlacasCamion.Size = new System.Drawing.Size(192, 20);
             this.txtPlacasCamion.TabIndex = 3;
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(17, 99);
+            this.labelControl10.Location = new System.Drawing.Point(17, 89);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(34, 13);
             this.labelControl10.TabIndex = 18;
@@ -1100,14 +1172,14 @@
             // 
             // txtNombreCamion
             // 
-            this.txtNombreCamion.Location = new System.Drawing.Point(103, 69);
+            this.txtNombreCamion.Location = new System.Drawing.Point(103, 59);
             this.txtNombreCamion.Name = "txtNombreCamion";
             this.txtNombreCamion.Size = new System.Drawing.Size(192, 20);
             this.txtNombreCamion.TabIndex = 2;
             // 
             // labelControl21
             // 
-            this.labelControl21.Location = new System.Drawing.Point(17, 73);
+            this.labelControl21.Location = new System.Drawing.Point(17, 63);
             this.labelControl21.Name = "labelControl21";
             this.labelControl21.Size = new System.Drawing.Size(79, 13);
             this.labelControl21.TabIndex = 2;
@@ -1116,14 +1188,14 @@
             // txtIDCamion
             // 
             this.txtIDCamion.Enabled = false;
-            this.txtIDCamion.Location = new System.Drawing.Point(103, 43);
+            this.txtIDCamion.Location = new System.Drawing.Point(103, 33);
             this.txtIDCamion.Name = "txtIDCamion";
             this.txtIDCamion.Size = new System.Drawing.Size(100, 20);
             this.txtIDCamion.TabIndex = 1;
             // 
             // labelControl22
             // 
-            this.labelControl22.Location = new System.Drawing.Point(17, 47);
+            this.labelControl22.Location = new System.Drawing.Point(17, 37);
             this.labelControl22.Name = "labelControl22";
             this.labelControl22.Size = new System.Drawing.Size(55, 13);
             this.labelControl22.TabIndex = 0;
@@ -1136,8 +1208,18 @@
             this.xtraTabPage4.Controls.Add(this.groupControl4);
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.xtraTabPage4.Size = new System.Drawing.Size(898, 416);
+            this.xtraTabPage4.Size = new System.Drawing.Size(1111, 493);
             this.xtraTabPage4.Text = "Choferes";
+            // 
+            // labelControl26
+            // 
+            this.labelControl26.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl26.Appearance.Options.UseFont = true;
+            this.labelControl26.Location = new System.Drawing.Point(8, 11);
+            this.labelControl26.Name = "labelControl26";
+            this.labelControl26.Size = new System.Drawing.Size(82, 13);
+            this.labelControl26.TabIndex = 19;
+            this.labelControl26.Text = "labelControl26";
             // 
             // panelControl4
             // 
@@ -1146,7 +1228,7 @@
             this.panelControl4.Location = new System.Drawing.Point(5, 176);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl4.Size = new System.Drawing.Size(888, 235);
+            this.panelControl4.Size = new System.Drawing.Size(1101, 312);
             this.panelControl4.TabIndex = 5;
             // 
             // dtgChoferes
@@ -1155,7 +1237,7 @@
             this.dtgChoferes.Location = new System.Drawing.Point(7, 7);
             this.dtgChoferes.MainView = this.dtgValChoferes;
             this.dtgChoferes.Name = "dtgChoferes";
-            this.dtgChoferes.Size = new System.Drawing.Size(874, 221);
+            this.dtgChoferes.Size = new System.Drawing.Size(1087, 298);
             this.dtgChoferes.TabIndex = 0;
             this.dtgChoferes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValChoferes});
@@ -1201,7 +1283,7 @@
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl4.Location = new System.Drawing.Point(5, 30);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(888, 146);
+            this.groupControl4.Size = new System.Drawing.Size(1101, 146);
             this.groupControl4.TabIndex = 4;
             this.groupControl4.Text = "Chofer";
             // 
@@ -1238,34 +1320,150 @@
             // 
             // xtraTabPage5
             // 
+            this.xtraTabPage5.Controls.Add(this.dtgServicios);
             this.xtraTabPage5.Controls.Add(this.labelControl27);
             this.xtraTabPage5.Controls.Add(this.groupControl5);
             this.xtraTabPage5.Name = "xtraTabPage5";
             this.xtraTabPage5.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.xtraTabPage5.Size = new System.Drawing.Size(898, 416);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1111, 493);
             this.xtraTabPage5.Text = "Servicios";
+            // 
+            // dtgServicios
+            // 
+            this.dtgServicios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgServicios.Location = new System.Drawing.Point(5, 227);
+            this.dtgServicios.MainView = this.dtgValServicios;
+            this.dtgServicios.MenuManager = this.barManager1;
+            this.dtgServicios.Name = "dtgServicios";
+            this.dtgServicios.Size = new System.Drawing.Size(1101, 261);
+            this.dtgServicios.TabIndex = 21;
+            this.dtgServicios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValServicios});
+            // 
+            // dtgValServicios
+            // 
+            this.dtgValServicios.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn10,
+            this.gridColumn11});
+            this.dtgValServicios.GridControl = this.dtgServicios;
+            this.dtgValServicios.Name = "dtgValServicios";
+            this.dtgValServicios.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Tipo de Camion";
+            this.gridColumn1.FieldName = "Nombre_TipoCamion";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 2;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Pago por Servicio";
+            this.gridColumn2.FieldName = "Precio_Acarreo";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 3;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Pago Salida Foranea";
+            this.gridColumn6.FieldName = "Precio_SalidaForanea";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 4;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Precio por caja";
+            this.gridColumn7.FieldName = "Precio_Caja";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 5;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.FieldName = "Id_EmpresaAcarreo";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 0;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.FieldName = "Id_TipoCamion";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.AllowEdit = false;
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 1;
+            // 
+            // labelControl27
+            // 
+            this.labelControl27.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl27.Appearance.Options.UseFont = true;
+            this.labelControl27.Location = new System.Drawing.Point(8, 11);
+            this.labelControl27.Name = "labelControl27";
+            this.labelControl27.Size = new System.Drawing.Size(82, 13);
+            this.labelControl27.TabIndex = 20;
+            this.labelControl27.Text = "labelControl27";
             // 
             // groupControl5
             // 
+            this.groupControl5.Controls.Add(this.labelControl29);
+            this.groupControl5.Controls.Add(this.gridLookUpEdit2);
             this.groupControl5.Controls.Add(this.groupControl6);
             this.groupControl5.Controls.Add(this.txtPrecioSalidaForanea);
             this.groupControl5.Controls.Add(this.txtPrecioServicio);
             this.groupControl5.Controls.Add(this.labelControl33);
             this.groupControl5.Controls.Add(this.labelControl34);
-            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl5.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl5.Location = new System.Drawing.Point(5, 30);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(888, 381);
+            this.groupControl5.Size = new System.Drawing.Size(1101, 197);
             this.groupControl5.TabIndex = 3;
             this.groupControl5.Text = "Cobro por Servicios";
+            // 
+            // labelControl29
+            // 
+            this.labelControl29.Location = new System.Drawing.Point(17, 31);
+            this.labelControl29.Name = "labelControl29";
+            this.labelControl29.Size = new System.Drawing.Size(62, 13);
+            this.labelControl29.TabIndex = 37;
+            this.labelControl29.Text = "Tipo Camion:";
+            // 
+            // gridLookUpEdit2
+            // 
+            this.gridLookUpEdit2.Location = new System.Drawing.Point(126, 28);
+            this.gridLookUpEdit2.MenuManager = this.barManager1;
+            this.gridLookUpEdit2.Name = "gridLookUpEdit2";
+            this.gridLookUpEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit2.Properties.PopupView = this.gridView1;
+            this.gridLookUpEdit2.Size = new System.Drawing.Size(192, 20);
+            this.gridLookUpEdit2.TabIndex = 36;
+            // 
+            // gridView1
+            // 
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // groupControl6
             // 
             this.groupControl6.Controls.Add(this.labelControl25);
             this.groupControl6.Controls.Add(this.txtPrecioCaja);
-            this.groupControl6.Location = new System.Drawing.Point(5, 56);
+            this.groupControl6.Location = new System.Drawing.Point(5, 106);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(267, 66);
+            this.groupControl6.Size = new System.Drawing.Size(313, 66);
             this.groupControl6.TabIndex = 35;
             this.groupControl6.Text = "Cajas Adicionales";
             // 
@@ -1279,11 +1477,11 @@
             // 
             // txtPrecioCaja
             // 
-            this.txtPrecioCaja.Location = new System.Drawing.Point(135, 30);
+            this.txtPrecioCaja.Location = new System.Drawing.Point(121, 31);
             this.txtPrecioCaja.MenuManager = this.barManager1;
             this.txtPrecioCaja.Name = "txtPrecioCaja";
-            this.txtPrecioCaja.Properties.Mask.EditMask = "c4";
-            this.txtPrecioCaja.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioCaja.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPrecioCaja.Properties.MaskSettings.Set("mask", "c4");
             this.txtPrecioCaja.Properties.NullText = "0";
             this.txtPrecioCaja.Properties.NullValuePrompt = "0";
             this.txtPrecioCaja.Size = new System.Drawing.Size(100, 20);
@@ -1291,7 +1489,7 @@
             // 
             // txtPrecioSalidaForanea
             // 
-            this.txtPrecioSalidaForanea.Location = new System.Drawing.Point(140, 134);
+            this.txtPrecioSalidaForanea.Location = new System.Drawing.Point(126, 80);
             this.txtPrecioSalidaForanea.MenuManager = this.barManager1;
             this.txtPrecioSalidaForanea.Name = "txtPrecioSalidaForanea";
             this.txtPrecioSalidaForanea.Properties.Mask.EditMask = "c4";
@@ -1303,7 +1501,7 @@
             // 
             // txtPrecioServicio
             // 
-            this.txtPrecioServicio.Location = new System.Drawing.Point(140, 26);
+            this.txtPrecioServicio.Location = new System.Drawing.Point(126, 54);
             this.txtPrecioServicio.MenuManager = this.barManager1;
             this.txtPrecioServicio.Name = "txtPrecioServicio";
             this.txtPrecioServicio.Properties.Mask.EditMask = "c4";
@@ -1315,7 +1513,7 @@
             // 
             // labelControl33
             // 
-            this.labelControl33.Location = new System.Drawing.Point(17, 139);
+            this.labelControl33.Location = new System.Drawing.Point(17, 85);
             this.labelControl33.Name = "labelControl33";
             this.labelControl33.Size = new System.Drawing.Size(102, 13);
             this.labelControl33.TabIndex = 8;
@@ -1323,57 +1521,32 @@
             // 
             // labelControl34
             // 
-            this.labelControl34.Location = new System.Drawing.Point(17, 29);
+            this.labelControl34.Location = new System.Drawing.Point(17, 57);
             this.labelControl34.Name = "labelControl34";
             this.labelControl34.Size = new System.Drawing.Size(87, 13);
             this.labelControl34.TabIndex = 5;
             this.labelControl34.Text = "Pago por Servicio:";
             // 
-            // labelControl23
+            // gridColumn12
             // 
-            this.labelControl23.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl23.Appearance.Options.UseFont = true;
-            this.labelControl23.Location = new System.Drawing.Point(8, 11);
-            this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(82, 13);
-            this.labelControl23.TabIndex = 17;
-            this.labelControl23.Text = "labelControl23";
+            this.gridColumn12.FieldName = "Id_TipoCamion";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 1;
             // 
-            // labelControl24
+            // gridColumn13
             // 
-            this.labelControl24.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl24.Appearance.Options.UseFont = true;
-            this.labelControl24.Location = new System.Drawing.Point(8, 11);
-            this.labelControl24.Name = "labelControl24";
-            this.labelControl24.Size = new System.Drawing.Size(82, 13);
-            this.labelControl24.TabIndex = 18;
-            this.labelControl24.Text = "labelControl24";
-            // 
-            // labelControl26
-            // 
-            this.labelControl26.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl26.Appearance.Options.UseFont = true;
-            this.labelControl26.Location = new System.Drawing.Point(8, 11);
-            this.labelControl26.Name = "labelControl26";
-            this.labelControl26.Size = new System.Drawing.Size(82, 13);
-            this.labelControl26.TabIndex = 19;
-            this.labelControl26.Text = "labelControl26";
-            // 
-            // labelControl27
-            // 
-            this.labelControl27.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl27.Appearance.Options.UseFont = true;
-            this.labelControl27.Location = new System.Drawing.Point(8, 11);
-            this.labelControl27.Name = "labelControl27";
-            this.labelControl27.Size = new System.Drawing.Size(82, 13);
-            this.labelControl27.TabIndex = 20;
-            this.labelControl27.Text = "labelControl27";
+            this.gridColumn13.Caption = "Tipo Camion";
+            this.gridColumn13.FieldName = "Nombre_TipoCamion";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 2;
             // 
             // Frm_EmpresaAcarreo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 463);
+            this.ClientSize = new System.Drawing.Size(1184, 540);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -1433,6 +1606,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
             this.groupControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPlacasCamion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreCamion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDCamion.Properties)).EndInit();
@@ -1449,9 +1624,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIDChofer.Properties)).EndInit();
             this.xtraTabPage5.ResumeLayout(false);
             this.xtraTabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgServicios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValServicios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
             this.groupControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.groupControl6.ResumeLayout(false);
             this.groupControl6.PerformLayout();
@@ -1585,5 +1764,21 @@
         private DevExpress.XtraEditors.LabelControl labelControl24;
         private DevExpress.XtraEditors.LabelControl labelControl26;
         private DevExpress.XtraEditors.LabelControl labelControl27;
+        private DevExpress.XtraEditors.LabelControl labelControl28;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraEditors.LabelControl labelControl29;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl dtgServicios;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValServicios;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
     }
 }

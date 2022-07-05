@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem2 = new DevExpress.Utils.ToolTipSeparatorItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cosecha));
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem1 = new DevExpress.Utils.ToolTipSeparatorItem();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
@@ -133,6 +133,11 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txt_Recepcion = new DevExpress.XtraEditors.TextEdit();
             this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.dateEdit15 = new DevExpress.XtraEditors.DateEdit();
+            this.simpleButton25 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton26 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton27 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl173 = new DevExpress.XtraEditors.LabelControl();
             this.btn_AbrirComer = new DevExpress.XtraEditors.SimpleButton();
             this.btn_CerrarComer = new DevExpress.XtraEditors.SimpleButton();
             this.btn_EmpresaComercializacion = new DevExpress.XtraEditors.SimpleButton();
@@ -268,6 +273,8 @@
             this.xtraScrollableControl4 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl18 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl17 = new DevExpress.XtraEditors.PanelControl();
+            this.dt_FechaProgramaCorteSalida = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl162 = new DevExpress.XtraEditors.LabelControl();
             this.btn_DelFacturaSalida = new DevExpress.XtraEditors.SimpleButton();
             this.chk_RetencionFleteCorteSalida = new DevExpress.XtraEditors.CheckEdit();
             this.txt_RetencionFleteFacturaCorteSalida = new DevExpress.XtraEditors.TextEdit();
@@ -304,6 +311,8 @@
             this.labelControl125 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl17 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl16 = new DevExpress.XtraEditors.PanelControl();
+            this.dt_FechaProgramaCorteApoyo = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl161 = new DevExpress.XtraEditors.LabelControl();
             this.btn_DelFacturaApoyo = new DevExpress.XtraEditors.SimpleButton();
             this.chk_RetencionFleteCorteApoyo = new DevExpress.XtraEditors.CheckEdit();
             this.txt_RetencionFleteFacturaCorteApoyo = new DevExpress.XtraEditors.TextEdit();
@@ -340,6 +349,8 @@
             this.labelControl117 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl16 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl15 = new DevExpress.XtraEditors.PanelControl();
+            this.dt_FechaProgramaCorteDia = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl160 = new DevExpress.XtraEditors.LabelControl();
             this.btn_DelFacturaDia = new DevExpress.XtraEditors.SimpleButton();
             this.chk_RetencionFleteCorteDia = new DevExpress.XtraEditors.CheckEdit();
             this.txt_RetencionFleteFacturaCorteDia = new DevExpress.XtraEditors.TextEdit();
@@ -376,6 +387,8 @@
             this.labelControl109 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl15 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl12 = new DevExpress.XtraEditors.PanelControl();
+            this.dt_FechaProgramaCorteKilos = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl159 = new DevExpress.XtraEditors.LabelControl();
             this.btn_DelFacturaKilos = new DevExpress.XtraEditors.SimpleButton();
             this.chk_RetencionFleteCorteKilos = new DevExpress.XtraEditors.CheckEdit();
             this.txt_RetencionFleteFacturaCorteKilos = new DevExpress.XtraEditors.TextEdit();
@@ -467,6 +480,8 @@
             this.tp_FacturaAcarreo = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl14 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl14 = new DevExpress.XtraEditors.PanelControl();
+            this.dt_FechaProgramaAcarreo = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl163 = new DevExpress.XtraEditors.LabelControl();
             this.btn_DelFacturaAcarreo = new DevExpress.XtraEditors.SimpleButton();
             this.chk_RetencionFleteAcarreo = new DevExpress.XtraEditors.CheckEdit();
             this.txt_RetencionFleteFacturaAcarreo = new DevExpress.XtraEditors.TextEdit();
@@ -531,6 +546,8 @@
             this.txt_Productor = new DevExpress.XtraEditors.TextEdit();
             this.tp_FacturaProductor = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl13 = new DevExpress.XtraEditors.GroupControl();
+            this.dt_FechaProgramaProductor = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl164 = new DevExpress.XtraEditors.LabelControl();
             this.btn_DelFacturaProductor = new DevExpress.XtraEditors.SimpleButton();
             this.chk_RetencionFleteProductor = new DevExpress.XtraEditors.CheckEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
@@ -566,22 +583,48 @@
             this.dt_FechaFacturaProductor = new DevExpress.XtraEditors.DateEdit();
             this.labelControl83 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl82 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl169 = new DevExpress.XtraEditors.LabelControl();
+            this.dateEdit12 = new DevExpress.XtraEditors.DateEdit();
+            this.dateEdit13 = new DevExpress.XtraEditors.DateEdit();
+            this.dateEdit14 = new DevExpress.XtraEditors.DateEdit();
+            this.dateEdit10 = new DevExpress.XtraEditors.DateEdit();
+            this.dateEdit9 = new DevExpress.XtraEditors.DateEdit();
+            this.dateEdit8 = new DevExpress.XtraEditors.DateEdit();
+            this.dateEdit7 = new DevExpress.XtraEditors.DateEdit();
+            this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton17 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton18 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl170 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton19 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton20 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton21 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl171 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton22 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton23 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton24 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl172 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl168 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl167 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl166 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl165 = new DevExpress.XtraEditors.LabelControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl159 = new DevExpress.XtraEditors.LabelControl();
-            this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl160 = new DevExpress.XtraEditors.LabelControl();
-            this.dateEdit3 = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl161 = new DevExpress.XtraEditors.LabelControl();
-            this.dateEdit4 = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl162 = new DevExpress.XtraEditors.LabelControl();
-            this.dateEdit5 = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl163 = new DevExpress.XtraEditors.LabelControl();
-            this.dateEdit6 = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl164 = new DevExpress.XtraEditors.LabelControl();
+            this.btn_ActualizarAcopiador = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
@@ -630,6 +673,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_TicketPesada.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Recepcion.Properties)).BeginInit();
             this.navigationPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit15.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit15.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_EmpresaComercializadora.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -717,6 +762,8 @@
             this.groupControl18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl17)).BeginInit();
             this.panelControl17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteSalida.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteSalida.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteSalida.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFleteFacturaCorteSalida.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteSalida.Properties)).BeginInit();
@@ -740,6 +787,8 @@
             this.groupControl17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl16)).BeginInit();
             this.panelControl16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteApoyo.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteApoyo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteApoyo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFleteFacturaCorteApoyo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteApoyo.Properties)).BeginInit();
@@ -763,6 +812,8 @@
             this.groupControl16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl15)).BeginInit();
             this.panelControl15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteDia.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFleteFacturaCorteDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteDia.Properties)).BeginInit();
@@ -786,6 +837,8 @@
             this.groupControl15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).BeginInit();
             this.panelControl12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteKilos.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteKilos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteKilos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFleteFacturaCorteKilos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteKilos.Properties)).BeginInit();
@@ -848,6 +901,8 @@
             this.groupControl14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).BeginInit();
             this.panelControl14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaAcarreo.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaAcarreo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteAcarreo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFleteFacturaAcarreo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaAcarreo.Properties)).BeginInit();
@@ -889,6 +944,8 @@
             this.tp_FacturaProductor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl13)).BeginInit();
             this.groupControl13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaProductor.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaProductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteProductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaProductor.Properties)).BeginInit();
@@ -908,19 +965,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaProductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaProductor.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaProductor.Properties)).BeginInit();
+            this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit12.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit12.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit13.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit13.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit14.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit14.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit10.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit10.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit9.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit8.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit8.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit4.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit5.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -998,18 +1058,18 @@
             this.btn_CerrarOrden.Id = 71;
             this.btn_CerrarOrden.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CerrarOrden.ImageOptions.SvgImage")));
             this.btn_CerrarOrden.Name = "btn_CerrarOrden";
-            toolTipTitleItem1.Text = "Importar datos";
-            toolTipItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "Si actualiza la informacion se sustituira por valores capturados en inventum";
-            toolTipTitleItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
-            toolTipTitleItem2.LeftIndent = 6;
-            toolTipTitleItem2.Text = "Business Analitics ";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            superToolTip1.Items.Add(toolTipSeparatorItem1);
-            superToolTip1.Items.Add(toolTipTitleItem2);
-            this.btn_CerrarOrden.SuperTip = superToolTip1;
+            toolTipTitleItem3.Text = "Importar datos";
+            toolTipItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipItem2.LeftIndent = 6;
+            toolTipItem2.Text = "Si actualiza la informacion se sustituira por valores capturados en inventum";
+            toolTipTitleItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            toolTipTitleItem4.LeftIndent = 6;
+            toolTipTitleItem4.Text = "Business Analitics ";
+            superToolTip2.Items.Add(toolTipTitleItem3);
+            superToolTip2.Items.Add(toolTipItem2);
+            superToolTip2.Items.Add(toolTipSeparatorItem2);
+            superToolTip2.Items.Add(toolTipTitleItem4);
+            this.btn_CerrarOrden.SuperTip = superToolTip2;
             this.btn_CerrarOrden.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_CerrarOrden_ItemClick);
             // 
             // btn_AbrirOrden
@@ -1301,6 +1361,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btn_ActualizarAcopiador);
             this.panelControl1.Controls.Add(this.labelControl18);
             this.panelControl1.Controls.Add(this.txt_IdCosecha);
             this.panelControl1.Controls.Add(this.labelControl10);
@@ -1363,7 +1424,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(332, 124);
+            this.labelControl9.Location = new System.Drawing.Point(332, 120);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(65, 13);
             this.labelControl9.TabIndex = 17;
@@ -1372,7 +1433,7 @@
             // txt_TipoCorte
             // 
             this.txt_TipoCorte.Enabled = false;
-            this.txt_TipoCorte.Location = new System.Drawing.Point(428, 115);
+            this.txt_TipoCorte.Location = new System.Drawing.Point(434, 116);
             this.txt_TipoCorte.MenuManager = this.barManager1;
             this.txt_TipoCorte.Name = "txt_TipoCorte";
             this.txt_TipoCorte.Size = new System.Drawing.Size(134, 20);
@@ -1380,7 +1441,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(332, 98);
+            this.labelControl6.Location = new System.Drawing.Point(332, 94);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(93, 13);
             this.labelControl6.TabIndex = 15;
@@ -1390,7 +1451,7 @@
             // 
             this.txt_Cajas_Programa.EditValue = "0";
             this.txt_Cajas_Programa.Enabled = false;
-            this.txt_Cajas_Programa.Location = new System.Drawing.Point(428, 89);
+            this.txt_Cajas_Programa.Location = new System.Drawing.Point(434, 90);
             this.txt_Cajas_Programa.MenuManager = this.barManager1;
             this.txt_Cajas_Programa.Name = "txt_Cajas_Programa";
             this.txt_Cajas_Programa.Properties.BeepOnError = true;
@@ -1400,7 +1461,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(332, 72);
+            this.labelControl5.Location = new System.Drawing.Point(332, 68);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(48, 13);
             this.labelControl5.TabIndex = 13;
@@ -1409,7 +1470,7 @@
             // txt_Acopiador
             // 
             this.txt_Acopiador.Enabled = false;
-            this.txt_Acopiador.Location = new System.Drawing.Point(428, 63);
+            this.txt_Acopiador.Location = new System.Drawing.Point(434, 64);
             this.txt_Acopiador.MenuManager = this.barManager1;
             this.txt_Acopiador.Name = "txt_Acopiador";
             this.txt_Acopiador.Size = new System.Drawing.Size(260, 20);
@@ -1434,7 +1495,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(333, 47);
+            this.labelControl3.Location = new System.Drawing.Point(333, 42);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(33, 13);
             this.labelControl3.TabIndex = 6;
@@ -1443,7 +1504,7 @@
             // txt_Huerta
             // 
             this.txt_Huerta.Enabled = false;
-            this.txt_Huerta.Location = new System.Drawing.Point(428, 38);
+            this.txt_Huerta.Location = new System.Drawing.Point(434, 38);
             this.txt_Huerta.MenuManager = this.barManager1;
             this.txt_Huerta.Name = "txt_Huerta";
             this.txt_Huerta.Size = new System.Drawing.Size(260, 20);
@@ -1920,6 +1981,11 @@
             // navigationPage3
             // 
             this.navigationPage3.Caption = "Comercializadora";
+            this.navigationPage3.Controls.Add(this.dateEdit15);
+            this.navigationPage3.Controls.Add(this.simpleButton25);
+            this.navigationPage3.Controls.Add(this.simpleButton26);
+            this.navigationPage3.Controls.Add(this.simpleButton27);
+            this.navigationPage3.Controls.Add(this.labelControl173);
             this.navigationPage3.Controls.Add(this.btn_AbrirComer);
             this.navigationPage3.Controls.Add(this.btn_CerrarComer);
             this.navigationPage3.Controls.Add(this.btn_EmpresaComercializacion);
@@ -1929,12 +1995,59 @@
             this.navigationPage3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage3.ImageOptions.Image")));
             this.navigationPage3.Name = "navigationPage3";
             this.navigationPage3.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage3.Size = new System.Drawing.Size(1097, 653);
+            this.navigationPage3.Size = new System.Drawing.Size(1081, 646);
+            // 
+            // dateEdit15
+            // 
+            this.dateEdit15.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dateEdit15.Location = new System.Drawing.Point(210, 204);
+            this.dateEdit15.MenuManager = this.barManager1;
+            this.dateEdit15.Name = "dateEdit15";
+            this.dateEdit15.Properties.BeepOnError = true;
+            this.dateEdit15.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit15.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit15.Properties.UseMaskAsDisplayFormat = true;
+            this.dateEdit15.Size = new System.Drawing.Size(99, 20);
+            this.dateEdit15.TabIndex = 197;
+            // 
+            // simpleButton25
+            // 
+            this.simpleButton25.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton25.ImageOptions.Image")));
+            this.simpleButton25.Location = new System.Drawing.Point(179, 203);
+            this.simpleButton25.Name = "simpleButton25";
+            this.simpleButton25.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton25.TabIndex = 164;
+            // 
+            // simpleButton26
+            // 
+            this.simpleButton26.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton26.ImageOptions.Image")));
+            this.simpleButton26.Location = new System.Drawing.Point(148, 203);
+            this.simpleButton26.Name = "simpleButton26";
+            this.simpleButton26.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton26.TabIndex = 163;
+            // 
+            // simpleButton27
+            // 
+            this.simpleButton27.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton27.ImageOptions.Image")));
+            this.simpleButton27.Location = new System.Drawing.Point(117, 203);
+            this.simpleButton27.Name = "simpleButton27";
+            this.simpleButton27.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton27.TabIndex = 162;
+            // 
+            // labelControl173
+            // 
+            this.labelControl173.Location = new System.Drawing.Point(49, 208);
+            this.labelControl173.Name = "labelControl173";
+            this.labelControl173.Size = new System.Drawing.Size(43, 13);
+            this.labelControl173.TabIndex = 161;
+            this.labelControl173.Text = "Contrato";
             // 
             // btn_AbrirComer
             // 
             this.btn_AbrirComer.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_AbrirComer.ImageOptions.SvgImage")));
-            this.btn_AbrirComer.Location = new System.Drawing.Point(160, 202);
+            this.btn_AbrirComer.Location = new System.Drawing.Point(160, 242);
             this.btn_AbrirComer.Name = "btn_AbrirComer";
             this.btn_AbrirComer.Size = new System.Drawing.Size(122, 49);
             this.btn_AbrirComer.TabIndex = 36;
@@ -1944,7 +2057,7 @@
             // btn_CerrarComer
             // 
             this.btn_CerrarComer.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CerrarComer.ImageOptions.SvgImage")));
-            this.btn_CerrarComer.Location = new System.Drawing.Point(32, 202);
+            this.btn_CerrarComer.Location = new System.Drawing.Point(32, 242);
             this.btn_CerrarComer.Name = "btn_CerrarComer";
             this.btn_CerrarComer.Size = new System.Drawing.Size(122, 49);
             this.btn_CerrarComer.TabIndex = 35;
@@ -2093,7 +2206,7 @@
             this.panelControl9.Location = new System.Drawing.Point(0, 925);
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Padding = new System.Windows.Forms.Padding(5, 25, 5, 5);
-            this.panelControl9.Size = new System.Drawing.Size(421, 242);
+            this.panelControl9.Size = new System.Drawing.Size(438, 242);
             this.panelControl9.TabIndex = 4;
             // 
             // labelControl48
@@ -2113,7 +2226,7 @@
             this.dtgMerma.MainView = this.dtgValMerma;
             this.dtgMerma.MenuManager = this.barManager1;
             this.dtgMerma.Name = "dtgMerma";
-            this.dtgMerma.Size = new System.Drawing.Size(407, 208);
+            this.dtgMerma.Size = new System.Drawing.Size(424, 208);
             this.dtgMerma.TabIndex = 0;
             this.dtgMerma.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValMerma});
@@ -2180,7 +2293,7 @@
             this.panelControl8.Location = new System.Drawing.Point(0, 609);
             this.panelControl8.Name = "panelControl8";
             this.panelControl8.Padding = new System.Windows.Forms.Padding(5, 25, 5, 5);
-            this.panelControl8.Size = new System.Drawing.Size(421, 316);
+            this.panelControl8.Size = new System.Drawing.Size(438, 316);
             this.panelControl8.TabIndex = 3;
             // 
             // labelControl47
@@ -2200,7 +2313,7 @@
             this.dtgNacional.MainView = this.dtgValNacional;
             this.dtgNacional.MenuManager = this.barManager1;
             this.dtgNacional.Name = "dtgNacional";
-            this.dtgNacional.Size = new System.Drawing.Size(407, 282);
+            this.dtgNacional.Size = new System.Drawing.Size(424, 282);
             this.dtgNacional.TabIndex = 0;
             this.dtgNacional.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValNacional});
@@ -2293,7 +2406,7 @@
             this.panelControl7.Location = new System.Drawing.Point(0, 182);
             this.panelControl7.Name = "panelControl7";
             this.panelControl7.Padding = new System.Windows.Forms.Padding(5, 25, 5, 5);
-            this.panelControl7.Size = new System.Drawing.Size(421, 427);
+            this.panelControl7.Size = new System.Drawing.Size(438, 427);
             this.panelControl7.TabIndex = 2;
             // 
             // labelControl46
@@ -2313,7 +2426,7 @@
             this.dtgExportacion.MainView = this.dtgValExportacion;
             this.dtgExportacion.MenuManager = this.barManager1;
             this.dtgExportacion.Name = "dtgExportacion";
-            this.dtgExportacion.Size = new System.Drawing.Size(407, 393);
+            this.dtgExportacion.Size = new System.Drawing.Size(424, 393);
             this.dtgExportacion.TabIndex = 0;
             this.dtgExportacion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValExportacion});
@@ -2422,7 +2535,7 @@
             this.panelControl6.Location = new System.Drawing.Point(0, 0);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Padding = new System.Windows.Forms.Padding(5, 25, 5, 5);
-            this.panelControl6.Size = new System.Drawing.Size(421, 182);
+            this.panelControl6.Size = new System.Drawing.Size(438, 182);
             this.panelControl6.TabIndex = 1;
             // 
             // labelControl45
@@ -2442,7 +2555,7 @@
             this.dtgRecepcion.MainView = this.dtgValRecepcion;
             this.dtgRecepcion.MenuManager = this.barManager1;
             this.dtgRecepcion.Name = "dtgRecepcion";
-            this.dtgRecepcion.Size = new System.Drawing.Size(407, 148);
+            this.dtgRecepcion.Size = new System.Drawing.Size(424, 148);
             this.dtgRecepcion.TabIndex = 0;
             this.dtgRecepcion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValRecepcion});
@@ -3461,13 +3574,13 @@
             this.groupControl18.Location = new System.Drawing.Point(0, 930);
             this.groupControl18.Name = "groupControl18";
             this.groupControl18.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl18.Size = new System.Drawing.Size(568, 307);
+            this.groupControl18.Size = new System.Drawing.Size(585, 307);
             this.groupControl18.TabIndex = 5;
             this.groupControl18.Text = "Factura Salida en Falso";
             // 
             // panelControl17
             // 
-            this.panelControl17.Controls.Add(this.dateEdit4);
+            this.panelControl17.Controls.Add(this.dt_FechaProgramaCorteSalida);
             this.panelControl17.Controls.Add(this.labelControl162);
             this.panelControl17.Controls.Add(this.btn_DelFacturaSalida);
             this.panelControl17.Controls.Add(this.chk_RetencionFleteCorteSalida);
@@ -3506,8 +3619,31 @@
             this.panelControl17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl17.Location = new System.Drawing.Point(7, 28);
             this.panelControl17.Name = "panelControl17";
-            this.panelControl17.Size = new System.Drawing.Size(554, 272);
+            this.panelControl17.Size = new System.Drawing.Size(571, 272);
             this.panelControl17.TabIndex = 56;
+            // 
+            // dt_FechaProgramaCorteSalida
+            // 
+            this.dt_FechaProgramaCorteSalida.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaProgramaCorteSalida.Location = new System.Drawing.Point(309, 219);
+            this.dt_FechaProgramaCorteSalida.MenuManager = this.barManager1;
+            this.dt_FechaProgramaCorteSalida.Name = "dt_FechaProgramaCorteSalida";
+            this.dt_FechaProgramaCorteSalida.Properties.BeepOnError = true;
+            this.dt_FechaProgramaCorteSalida.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaProgramaCorteSalida.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaProgramaCorteSalida.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaProgramaCorteSalida.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaProgramaCorteSalida.TabIndex = 163;
+            // 
+            // labelControl162
+            // 
+            this.labelControl162.Location = new System.Drawing.Point(228, 223);
+            this.labelControl162.Name = "labelControl162";
+            this.labelControl162.Size = new System.Drawing.Size(75, 13);
+            this.labelControl162.TabIndex = 162;
+            this.labelControl162.Text = "F. Programada:";
             // 
             // btn_DelFacturaSalida
             // 
@@ -3862,13 +3998,13 @@
             this.groupControl17.Location = new System.Drawing.Point(0, 617);
             this.groupControl17.Name = "groupControl17";
             this.groupControl17.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl17.Size = new System.Drawing.Size(568, 313);
+            this.groupControl17.Size = new System.Drawing.Size(585, 313);
             this.groupControl17.TabIndex = 4;
             this.groupControl17.Text = "Factura de Apoyo";
             // 
             // panelControl16
             // 
-            this.panelControl16.Controls.Add(this.dateEdit3);
+            this.panelControl16.Controls.Add(this.dt_FechaProgramaCorteApoyo);
             this.panelControl16.Controls.Add(this.labelControl161);
             this.panelControl16.Controls.Add(this.btn_DelFacturaApoyo);
             this.panelControl16.Controls.Add(this.chk_RetencionFleteCorteApoyo);
@@ -3907,8 +4043,31 @@
             this.panelControl16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl16.Location = new System.Drawing.Point(7, 28);
             this.panelControl16.Name = "panelControl16";
-            this.panelControl16.Size = new System.Drawing.Size(554, 278);
+            this.panelControl16.Size = new System.Drawing.Size(571, 278);
             this.panelControl16.TabIndex = 56;
+            // 
+            // dt_FechaProgramaCorteApoyo
+            // 
+            this.dt_FechaProgramaCorteApoyo.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaProgramaCorteApoyo.Location = new System.Drawing.Point(309, 219);
+            this.dt_FechaProgramaCorteApoyo.MenuManager = this.barManager1;
+            this.dt_FechaProgramaCorteApoyo.Name = "dt_FechaProgramaCorteApoyo";
+            this.dt_FechaProgramaCorteApoyo.Properties.BeepOnError = true;
+            this.dt_FechaProgramaCorteApoyo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaProgramaCorteApoyo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaProgramaCorteApoyo.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaProgramaCorteApoyo.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaProgramaCorteApoyo.TabIndex = 162;
+            // 
+            // labelControl161
+            // 
+            this.labelControl161.Location = new System.Drawing.Point(228, 223);
+            this.labelControl161.Name = "labelControl161";
+            this.labelControl161.Size = new System.Drawing.Size(75, 13);
+            this.labelControl161.TabIndex = 161;
+            this.labelControl161.Text = "F. Programada:";
             // 
             // btn_DelFacturaApoyo
             // 
@@ -4264,13 +4423,13 @@
             this.groupControl16.Location = new System.Drawing.Point(0, 307);
             this.groupControl16.Name = "groupControl16";
             this.groupControl16.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl16.Size = new System.Drawing.Size(568, 310);
+            this.groupControl16.Size = new System.Drawing.Size(585, 310);
             this.groupControl16.TabIndex = 3;
             this.groupControl16.Text = "Factura pago x Dia";
             // 
             // panelControl15
             // 
-            this.panelControl15.Controls.Add(this.dateEdit2);
+            this.panelControl15.Controls.Add(this.dt_FechaProgramaCorteDia);
             this.panelControl15.Controls.Add(this.labelControl160);
             this.panelControl15.Controls.Add(this.btn_DelFacturaDia);
             this.panelControl15.Controls.Add(this.chk_RetencionFleteCorteDia);
@@ -4309,8 +4468,31 @@
             this.panelControl15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl15.Location = new System.Drawing.Point(7, 28);
             this.panelControl15.Name = "panelControl15";
-            this.panelControl15.Size = new System.Drawing.Size(554, 275);
+            this.panelControl15.Size = new System.Drawing.Size(571, 275);
             this.panelControl15.TabIndex = 56;
+            // 
+            // dt_FechaProgramaCorteDia
+            // 
+            this.dt_FechaProgramaCorteDia.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaProgramaCorteDia.Location = new System.Drawing.Point(309, 220);
+            this.dt_FechaProgramaCorteDia.MenuManager = this.barManager1;
+            this.dt_FechaProgramaCorteDia.Name = "dt_FechaProgramaCorteDia";
+            this.dt_FechaProgramaCorteDia.Properties.BeepOnError = true;
+            this.dt_FechaProgramaCorteDia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaProgramaCorteDia.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaProgramaCorteDia.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaProgramaCorteDia.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaProgramaCorteDia.TabIndex = 161;
+            // 
+            // labelControl160
+            // 
+            this.labelControl160.Location = new System.Drawing.Point(228, 224);
+            this.labelControl160.Name = "labelControl160";
+            this.labelControl160.Size = new System.Drawing.Size(75, 13);
+            this.labelControl160.TabIndex = 160;
+            this.labelControl160.Text = "F. Programada:";
             // 
             // btn_DelFacturaDia
             // 
@@ -4666,13 +4848,13 @@
             this.groupControl15.Location = new System.Drawing.Point(0, 0);
             this.groupControl15.Name = "groupControl15";
             this.groupControl15.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl15.Size = new System.Drawing.Size(568, 307);
+            this.groupControl15.Size = new System.Drawing.Size(585, 307);
             this.groupControl15.TabIndex = 2;
             this.groupControl15.Text = "Factura Kilos";
             // 
             // panelControl12
             // 
-            this.panelControl12.Controls.Add(this.dateEdit1);
+            this.panelControl12.Controls.Add(this.dt_FechaProgramaCorteKilos);
             this.panelControl12.Controls.Add(this.labelControl159);
             this.panelControl12.Controls.Add(this.btn_DelFacturaKilos);
             this.panelControl12.Controls.Add(this.chk_RetencionFleteCorteKilos);
@@ -4711,8 +4893,31 @@
             this.panelControl12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl12.Location = new System.Drawing.Point(7, 28);
             this.panelControl12.Name = "panelControl12";
-            this.panelControl12.Size = new System.Drawing.Size(554, 272);
+            this.panelControl12.Size = new System.Drawing.Size(571, 272);
             this.panelControl12.TabIndex = 56;
+            // 
+            // dt_FechaProgramaCorteKilos
+            // 
+            this.dt_FechaProgramaCorteKilos.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaProgramaCorteKilos.Location = new System.Drawing.Point(309, 219);
+            this.dt_FechaProgramaCorteKilos.MenuManager = this.barManager1;
+            this.dt_FechaProgramaCorteKilos.Name = "dt_FechaProgramaCorteKilos";
+            this.dt_FechaProgramaCorteKilos.Properties.BeepOnError = true;
+            this.dt_FechaProgramaCorteKilos.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaProgramaCorteKilos.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaProgramaCorteKilos.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaProgramaCorteKilos.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaProgramaCorteKilos.TabIndex = 159;
+            // 
+            // labelControl159
+            // 
+            this.labelControl159.Location = new System.Drawing.Point(228, 223);
+            this.labelControl159.Name = "labelControl159";
+            this.labelControl159.Size = new System.Drawing.Size(75, 13);
+            this.labelControl159.TabIndex = 158;
+            this.labelControl159.Text = "F. Programada:";
             // 
             // btn_DelFacturaKilos
             // 
@@ -5646,7 +5851,7 @@
             // 
             // panelControl14
             // 
-            this.panelControl14.Controls.Add(this.dateEdit5);
+            this.panelControl14.Controls.Add(this.dt_FechaProgramaAcarreo);
             this.panelControl14.Controls.Add(this.labelControl163);
             this.panelControl14.Controls.Add(this.btn_DelFacturaAcarreo);
             this.panelControl14.Controls.Add(this.chk_RetencionFleteAcarreo);
@@ -5687,6 +5892,29 @@
             this.panelControl14.Name = "panelControl14";
             this.panelControl14.Size = new System.Drawing.Size(1041, 562);
             this.panelControl14.TabIndex = 56;
+            // 
+            // dt_FechaProgramaAcarreo
+            // 
+            this.dt_FechaProgramaAcarreo.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaProgramaAcarreo.Location = new System.Drawing.Point(308, 220);
+            this.dt_FechaProgramaAcarreo.MenuManager = this.barManager1;
+            this.dt_FechaProgramaAcarreo.Name = "dt_FechaProgramaAcarreo";
+            this.dt_FechaProgramaAcarreo.Properties.BeepOnError = true;
+            this.dt_FechaProgramaAcarreo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaProgramaAcarreo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaProgramaAcarreo.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaProgramaAcarreo.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaProgramaAcarreo.TabIndex = 164;
+            // 
+            // labelControl163
+            // 
+            this.labelControl163.Location = new System.Drawing.Point(227, 224);
+            this.labelControl163.Name = "labelControl163";
+            this.labelControl163.Size = new System.Drawing.Size(75, 13);
+            this.labelControl163.TabIndex = 163;
+            this.labelControl163.Text = "F. Programada:";
             // 
             // btn_DelFacturaAcarreo
             // 
@@ -6070,7 +6298,8 @@
             this.xtraTabControl2.TabIndex = 40;
             this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3,
-            this.tp_FacturaProductor});
+            this.tp_FacturaProductor,
+            this.xtraTabPage2});
             // 
             // xtraTabPage3
             // 
@@ -6375,7 +6604,7 @@
             // 
             // groupControl13
             // 
-            this.groupControl13.Controls.Add(this.dateEdit6);
+            this.groupControl13.Controls.Add(this.dt_FechaProgramaProductor);
             this.groupControl13.Controls.Add(this.labelControl164);
             this.groupControl13.Controls.Add(this.btn_DelFacturaProductor);
             this.groupControl13.Controls.Add(this.chk_RetencionFleteProductor);
@@ -6417,6 +6646,29 @@
             this.groupControl13.Name = "groupControl13";
             this.groupControl13.Size = new System.Drawing.Size(1055, 597);
             this.groupControl13.TabIndex = 39;
+            // 
+            // dt_FechaProgramaProductor
+            // 
+            this.dt_FechaProgramaProductor.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaProgramaProductor.Location = new System.Drawing.Point(311, 235);
+            this.dt_FechaProgramaProductor.MenuManager = this.barManager1;
+            this.dt_FechaProgramaProductor.Name = "dt_FechaProgramaProductor";
+            this.dt_FechaProgramaProductor.Properties.BeepOnError = true;
+            this.dt_FechaProgramaProductor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaProgramaProductor.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_FechaProgramaProductor.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaProgramaProductor.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaProgramaProductor.TabIndex = 161;
+            // 
+            // labelControl164
+            // 
+            this.labelControl164.Location = new System.Drawing.Point(230, 239);
+            this.labelControl164.Name = "labelControl164";
+            this.labelControl164.Size = new System.Drawing.Size(75, 13);
+            this.labelControl164.TabIndex = 160;
+            this.labelControl164.Text = "F. Programada:";
             // 
             // btn_DelFacturaProductor
             // 
@@ -6464,7 +6716,7 @@
             // 
             this.btn_CalcularFechaPago.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_CalcularFechaPago.ImageOptions.Image")));
             this.btn_CalcularFechaPago.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btn_CalcularFechaPago.Location = new System.Drawing.Point(416, 259);
+            this.btn_CalcularFechaPago.Location = new System.Drawing.Point(416, 233);
             this.btn_CalcularFechaPago.Name = "btn_CalcularFechaPago";
             this.btn_CalcularFechaPago.Size = new System.Drawing.Size(25, 25);
             this.btn_CalcularFechaPago.TabIndex = 134;
@@ -6793,6 +7045,386 @@
             this.labelControl82.TabIndex = 117;
             this.labelControl82.Text = "F. Pago:";
             // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Controls.Add(this.labelControl169);
+            this.xtraTabPage2.Controls.Add(this.dateEdit12);
+            this.xtraTabPage2.Controls.Add(this.dateEdit13);
+            this.xtraTabPage2.Controls.Add(this.dateEdit14);
+            this.xtraTabPage2.Controls.Add(this.dateEdit10);
+            this.xtraTabPage2.Controls.Add(this.dateEdit9);
+            this.xtraTabPage2.Controls.Add(this.dateEdit8);
+            this.xtraTabPage2.Controls.Add(this.dateEdit7);
+            this.xtraTabPage2.Controls.Add(this.simpleButton16);
+            this.xtraTabPage2.Controls.Add(this.simpleButton17);
+            this.xtraTabPage2.Controls.Add(this.simpleButton18);
+            this.xtraTabPage2.Controls.Add(this.labelControl170);
+            this.xtraTabPage2.Controls.Add(this.simpleButton19);
+            this.xtraTabPage2.Controls.Add(this.simpleButton20);
+            this.xtraTabPage2.Controls.Add(this.simpleButton21);
+            this.xtraTabPage2.Controls.Add(this.labelControl171);
+            this.xtraTabPage2.Controls.Add(this.simpleButton22);
+            this.xtraTabPage2.Controls.Add(this.simpleButton23);
+            this.xtraTabPage2.Controls.Add(this.simpleButton24);
+            this.xtraTabPage2.Controls.Add(this.labelControl172);
+            this.xtraTabPage2.Controls.Add(this.simpleButton10);
+            this.xtraTabPage2.Controls.Add(this.simpleButton11);
+            this.xtraTabPage2.Controls.Add(this.simpleButton12);
+            this.xtraTabPage2.Controls.Add(this.labelControl168);
+            this.xtraTabPage2.Controls.Add(this.simpleButton7);
+            this.xtraTabPage2.Controls.Add(this.simpleButton8);
+            this.xtraTabPage2.Controls.Add(this.simpleButton9);
+            this.xtraTabPage2.Controls.Add(this.labelControl167);
+            this.xtraTabPage2.Controls.Add(this.simpleButton4);
+            this.xtraTabPage2.Controls.Add(this.simpleButton5);
+            this.xtraTabPage2.Controls.Add(this.simpleButton6);
+            this.xtraTabPage2.Controls.Add(this.labelControl166);
+            this.xtraTabPage2.Controls.Add(this.simpleButton1);
+            this.xtraTabPage2.Controls.Add(this.simpleButton2);
+            this.xtraTabPage2.Controls.Add(this.simpleButton3);
+            this.xtraTabPage2.Controls.Add(this.labelControl165);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.PageVisible = false;
+            this.xtraTabPage2.Size = new System.Drawing.Size(1065, 607);
+            this.xtraTabPage2.Text = "Expedientes";
+            // 
+            // labelControl169
+            // 
+            this.labelControl169.Location = new System.Drawing.Point(279, 17);
+            this.labelControl169.Name = "labelControl169";
+            this.labelControl169.Size = new System.Drawing.Size(94, 13);
+            this.labelControl169.TabIndex = 196;
+            this.labelControl169.Text = "Ultima Actualización";
+            // 
+            // dateEdit12
+            // 
+            this.dateEdit12.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dateEdit12.Location = new System.Drawing.Point(279, 210);
+            this.dateEdit12.MenuManager = this.barManager1;
+            this.dateEdit12.Name = "dateEdit12";
+            this.dateEdit12.Properties.BeepOnError = true;
+            this.dateEdit12.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit12.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit12.Properties.UseMaskAsDisplayFormat = true;
+            this.dateEdit12.Size = new System.Drawing.Size(99, 20);
+            this.dateEdit12.TabIndex = 195;
+            // 
+            // dateEdit13
+            // 
+            this.dateEdit13.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dateEdit13.Location = new System.Drawing.Point(279, 181);
+            this.dateEdit13.MenuManager = this.barManager1;
+            this.dateEdit13.Name = "dateEdit13";
+            this.dateEdit13.Properties.BeepOnError = true;
+            this.dateEdit13.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit13.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit13.Properties.UseMaskAsDisplayFormat = true;
+            this.dateEdit13.Size = new System.Drawing.Size(99, 20);
+            this.dateEdit13.TabIndex = 194;
+            // 
+            // dateEdit14
+            // 
+            this.dateEdit14.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dateEdit14.Location = new System.Drawing.Point(279, 152);
+            this.dateEdit14.MenuManager = this.barManager1;
+            this.dateEdit14.Name = "dateEdit14";
+            this.dateEdit14.Properties.BeepOnError = true;
+            this.dateEdit14.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit14.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit14.Properties.UseMaskAsDisplayFormat = true;
+            this.dateEdit14.Size = new System.Drawing.Size(99, 20);
+            this.dateEdit14.TabIndex = 193;
+            // 
+            // dateEdit10
+            // 
+            this.dateEdit10.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dateEdit10.Location = new System.Drawing.Point(279, 123);
+            this.dateEdit10.MenuManager = this.barManager1;
+            this.dateEdit10.Name = "dateEdit10";
+            this.dateEdit10.Properties.BeepOnError = true;
+            this.dateEdit10.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit10.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit10.Properties.UseMaskAsDisplayFormat = true;
+            this.dateEdit10.Size = new System.Drawing.Size(99, 20);
+            this.dateEdit10.TabIndex = 192;
+            // 
+            // dateEdit9
+            // 
+            this.dateEdit9.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dateEdit9.Location = new System.Drawing.Point(279, 94);
+            this.dateEdit9.MenuManager = this.barManager1;
+            this.dateEdit9.Name = "dateEdit9";
+            this.dateEdit9.Properties.BeepOnError = true;
+            this.dateEdit9.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit9.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit9.Properties.UseMaskAsDisplayFormat = true;
+            this.dateEdit9.Size = new System.Drawing.Size(99, 20);
+            this.dateEdit9.TabIndex = 191;
+            // 
+            // dateEdit8
+            // 
+            this.dateEdit8.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dateEdit8.Location = new System.Drawing.Point(279, 65);
+            this.dateEdit8.MenuManager = this.barManager1;
+            this.dateEdit8.Name = "dateEdit8";
+            this.dateEdit8.Properties.BeepOnError = true;
+            this.dateEdit8.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit8.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit8.Properties.UseMaskAsDisplayFormat = true;
+            this.dateEdit8.Size = new System.Drawing.Size(99, 20);
+            this.dateEdit8.TabIndex = 190;
+            // 
+            // dateEdit7
+            // 
+            this.dateEdit7.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dateEdit7.Location = new System.Drawing.Point(279, 36);
+            this.dateEdit7.MenuManager = this.barManager1;
+            this.dateEdit7.Name = "dateEdit7";
+            this.dateEdit7.Properties.BeepOnError = true;
+            this.dateEdit7.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit7.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit7.Properties.UseMaskAsDisplayFormat = true;
+            this.dateEdit7.Size = new System.Drawing.Size(99, 20);
+            this.dateEdit7.TabIndex = 189;
+            // 
+            // simpleButton16
+            // 
+            this.simpleButton16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton16.ImageOptions.Image")));
+            this.simpleButton16.Location = new System.Drawing.Point(248, 209);
+            this.simpleButton16.Name = "simpleButton16";
+            this.simpleButton16.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton16.TabIndex = 184;
+            // 
+            // simpleButton17
+            // 
+            this.simpleButton17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton17.ImageOptions.Image")));
+            this.simpleButton17.Location = new System.Drawing.Point(217, 209);
+            this.simpleButton17.Name = "simpleButton17";
+            this.simpleButton17.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton17.TabIndex = 183;
+            // 
+            // simpleButton18
+            // 
+            this.simpleButton18.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton18.ImageOptions.Image")));
+            this.simpleButton18.Location = new System.Drawing.Point(186, 209);
+            this.simpleButton18.Name = "simpleButton18";
+            this.simpleButton18.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton18.TabIndex = 182;
+            // 
+            // labelControl170
+            // 
+            this.labelControl170.Location = new System.Drawing.Point(24, 214);
+            this.labelControl170.Name = "labelControl170";
+            this.labelControl170.Size = new System.Drawing.Size(71, 13);
+            this.labelControl170.TabIndex = 181;
+            this.labelControl170.Text = "Contrato GEST";
+            // 
+            // simpleButton19
+            // 
+            this.simpleButton19.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton19.ImageOptions.Image")));
+            this.simpleButton19.Location = new System.Drawing.Point(248, 180);
+            this.simpleButton19.Name = "simpleButton19";
+            this.simpleButton19.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton19.TabIndex = 180;
+            // 
+            // simpleButton20
+            // 
+            this.simpleButton20.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton20.ImageOptions.Image")));
+            this.simpleButton20.Location = new System.Drawing.Point(217, 180);
+            this.simpleButton20.Name = "simpleButton20";
+            this.simpleButton20.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton20.TabIndex = 179;
+            // 
+            // simpleButton21
+            // 
+            this.simpleButton21.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton21.ImageOptions.Image")));
+            this.simpleButton21.Location = new System.Drawing.Point(186, 180);
+            this.simpleButton21.Name = "simpleButton21";
+            this.simpleButton21.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton21.TabIndex = 178;
+            // 
+            // labelControl171
+            // 
+            this.labelControl171.Location = new System.Drawing.Point(24, 185);
+            this.labelControl171.Name = "labelControl171";
+            this.labelControl171.Size = new System.Drawing.Size(117, 13);
+            this.labelControl171.TabIndex = 177;
+            this.labelControl171.Text = "Contrato entre Terceros";
+            // 
+            // simpleButton22
+            // 
+            this.simpleButton22.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton22.ImageOptions.Image")));
+            this.simpleButton22.Location = new System.Drawing.Point(248, 151);
+            this.simpleButton22.Name = "simpleButton22";
+            this.simpleButton22.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton22.TabIndex = 176;
+            // 
+            // simpleButton23
+            // 
+            this.simpleButton23.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton23.ImageOptions.Image")));
+            this.simpleButton23.Location = new System.Drawing.Point(217, 151);
+            this.simpleButton23.Name = "simpleButton23";
+            this.simpleButton23.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton23.TabIndex = 175;
+            // 
+            // simpleButton24
+            // 
+            this.simpleButton24.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton24.ImageOptions.Image")));
+            this.simpleButton24.Location = new System.Drawing.Point(186, 151);
+            this.simpleButton24.Name = "simpleButton24";
+            this.simpleButton24.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton24.TabIndex = 174;
+            // 
+            // labelControl172
+            // 
+            this.labelControl172.Location = new System.Drawing.Point(24, 156);
+            this.labelControl172.Name = "labelControl172";
+            this.labelControl172.Size = new System.Drawing.Size(95, 13);
+            this.labelControl172.TabIndex = 173;
+            this.labelControl172.Text = "Clave Interbancaria";
+            // 
+            // simpleButton10
+            // 
+            this.simpleButton10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton10.ImageOptions.Image")));
+            this.simpleButton10.Location = new System.Drawing.Point(248, 122);
+            this.simpleButton10.Name = "simpleButton10";
+            this.simpleButton10.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton10.TabIndex = 172;
+            // 
+            // simpleButton11
+            // 
+            this.simpleButton11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.ImageOptions.Image")));
+            this.simpleButton11.Location = new System.Drawing.Point(217, 122);
+            this.simpleButton11.Name = "simpleButton11";
+            this.simpleButton11.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton11.TabIndex = 171;
+            // 
+            // simpleButton12
+            // 
+            this.simpleButton12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton12.ImageOptions.Image")));
+            this.simpleButton12.Location = new System.Drawing.Point(186, 122);
+            this.simpleButton12.Name = "simpleButton12";
+            this.simpleButton12.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton12.TabIndex = 170;
+            // 
+            // labelControl168
+            // 
+            this.labelControl168.Location = new System.Drawing.Point(24, 127);
+            this.labelControl168.Name = "labelControl168";
+            this.labelControl168.Size = new System.Drawing.Size(143, 13);
+            this.labelControl168.TabIndex = 169;
+            this.labelControl168.Text = "Constancia de Situacion Fiscal";
+            // 
+            // simpleButton7
+            // 
+            this.simpleButton7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.ImageOptions.Image")));
+            this.simpleButton7.Location = new System.Drawing.Point(248, 93);
+            this.simpleButton7.Name = "simpleButton7";
+            this.simpleButton7.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton7.TabIndex = 168;
+            // 
+            // simpleButton8
+            // 
+            this.simpleButton8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton8.ImageOptions.Image")));
+            this.simpleButton8.Location = new System.Drawing.Point(217, 93);
+            this.simpleButton8.Name = "simpleButton8";
+            this.simpleButton8.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton8.TabIndex = 167;
+            // 
+            // simpleButton9
+            // 
+            this.simpleButton9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.ImageOptions.Image")));
+            this.simpleButton9.Location = new System.Drawing.Point(186, 93);
+            this.simpleButton9.Name = "simpleButton9";
+            this.simpleButton9.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton9.TabIndex = 166;
+            // 
+            // labelControl167
+            // 
+            this.labelControl167.Location = new System.Drawing.Point(24, 98);
+            this.labelControl167.Name = "labelControl167";
+            this.labelControl167.Size = new System.Drawing.Size(117, 13);
+            this.labelControl167.TabIndex = 165;
+            this.labelControl167.Text = "Opinion de Cumplimiento";
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(248, 64);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton4.TabIndex = 164;
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
+            this.simpleButton5.Location = new System.Drawing.Point(217, 64);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton5.TabIndex = 163;
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
+            this.simpleButton6.Location = new System.Drawing.Point(186, 64);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton6.TabIndex = 162;
+            // 
+            // labelControl166
+            // 
+            this.labelControl166.Location = new System.Drawing.Point(24, 69);
+            this.labelControl166.Name = "labelControl166";
+            this.labelControl166.Size = new System.Drawing.Size(110, 13);
+            this.labelControl166.TabIndex = 161;
+            this.labelControl166.Text = "Identificacion IFE / INE";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(248, 35);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton1.TabIndex = 160;
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(217, 35);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton2.TabIndex = 159;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(186, 35);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(25, 23);
+            this.simpleButton3.TabIndex = 158;
+            // 
+            // labelControl165
+            // 
+            this.labelControl165.Location = new System.Drawing.Point(24, 40);
+            this.labelControl165.Name = "labelControl165";
+            this.labelControl165.Size = new System.Drawing.Size(72, 13);
+            this.labelControl165.TabIndex = 157;
+            this.labelControl165.Text = "Tarjeta APEAM";
+            // 
             // OpenDialog
             // 
             this.OpenDialog.FileName = "xtraOpenFileDialog1";
@@ -6807,143 +7439,15 @@
             this.gridColumn38.Visible = true;
             this.gridColumn38.VisibleIndex = 11;
             // 
-            // dateEdit1
+            // btn_ActualizarAcopiador
             // 
-            this.dateEdit1.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit1.Location = new System.Drawing.Point(309, 219);
-            this.dateEdit1.MenuManager = this.barManager1;
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.BeepOnError = true;
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit1.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit1.TabIndex = 159;
-            // 
-            // labelControl159
-            // 
-            this.labelControl159.Location = new System.Drawing.Point(228, 223);
-            this.labelControl159.Name = "labelControl159";
-            this.labelControl159.Size = new System.Drawing.Size(75, 13);
-            this.labelControl159.TabIndex = 158;
-            this.labelControl159.Text = "F. Programada:";
-            // 
-            // dateEdit2
-            // 
-            this.dateEdit2.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit2.Location = new System.Drawing.Point(309, 220);
-            this.dateEdit2.MenuManager = this.barManager1;
-            this.dateEdit2.Name = "dateEdit2";
-            this.dateEdit2.Properties.BeepOnError = true;
-            this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit2.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit2.TabIndex = 161;
-            // 
-            // labelControl160
-            // 
-            this.labelControl160.Location = new System.Drawing.Point(228, 224);
-            this.labelControl160.Name = "labelControl160";
-            this.labelControl160.Size = new System.Drawing.Size(75, 13);
-            this.labelControl160.TabIndex = 160;
-            this.labelControl160.Text = "F. Programada:";
-            // 
-            // dateEdit3
-            // 
-            this.dateEdit3.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit3.Location = new System.Drawing.Point(309, 219);
-            this.dateEdit3.MenuManager = this.barManager1;
-            this.dateEdit3.Name = "dateEdit3";
-            this.dateEdit3.Properties.BeepOnError = true;
-            this.dateEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit3.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit3.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit3.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit3.TabIndex = 162;
-            // 
-            // labelControl161
-            // 
-            this.labelControl161.Location = new System.Drawing.Point(228, 223);
-            this.labelControl161.Name = "labelControl161";
-            this.labelControl161.Size = new System.Drawing.Size(75, 13);
-            this.labelControl161.TabIndex = 161;
-            this.labelControl161.Text = "F. Programada:";
-            // 
-            // dateEdit4
-            // 
-            this.dateEdit4.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit4.Location = new System.Drawing.Point(309, 219);
-            this.dateEdit4.MenuManager = this.barManager1;
-            this.dateEdit4.Name = "dateEdit4";
-            this.dateEdit4.Properties.BeepOnError = true;
-            this.dateEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit4.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit4.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit4.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit4.TabIndex = 163;
-            // 
-            // labelControl162
-            // 
-            this.labelControl162.Location = new System.Drawing.Point(228, 223);
-            this.labelControl162.Name = "labelControl162";
-            this.labelControl162.Size = new System.Drawing.Size(75, 13);
-            this.labelControl162.TabIndex = 162;
-            this.labelControl162.Text = "F. Programada:";
-            // 
-            // dateEdit5
-            // 
-            this.dateEdit5.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit5.Location = new System.Drawing.Point(308, 220);
-            this.dateEdit5.MenuManager = this.barManager1;
-            this.dateEdit5.Name = "dateEdit5";
-            this.dateEdit5.Properties.BeepOnError = true;
-            this.dateEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit5.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit5.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit5.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit5.TabIndex = 164;
-            // 
-            // labelControl163
-            // 
-            this.labelControl163.Location = new System.Drawing.Point(227, 224);
-            this.labelControl163.Name = "labelControl163";
-            this.labelControl163.Size = new System.Drawing.Size(75, 13);
-            this.labelControl163.TabIndex = 163;
-            this.labelControl163.Text = "F. Programada:";
-            // 
-            // dateEdit6
-            // 
-            this.dateEdit6.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit6.Location = new System.Drawing.Point(311, 235);
-            this.dateEdit6.MenuManager = this.barManager1;
-            this.dateEdit6.Name = "dateEdit6";
-            this.dateEdit6.Properties.BeepOnError = true;
-            this.dateEdit6.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit6.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit6.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit6.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit6.TabIndex = 161;
-            // 
-            // labelControl164
-            // 
-            this.labelControl164.Location = new System.Drawing.Point(230, 239);
-            this.labelControl164.Name = "labelControl164";
-            this.labelControl164.Size = new System.Drawing.Size(75, 13);
-            this.labelControl164.TabIndex = 160;
-            this.labelControl164.Text = "F. Programada:";
+            this.btn_ActualizarAcopiador.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
+            this.btn_ActualizarAcopiador.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btn_ActualizarAcopiador.Location = new System.Drawing.Point(700, 62);
+            this.btn_ActualizarAcopiador.Name = "btn_ActualizarAcopiador";
+            this.btn_ActualizarAcopiador.Size = new System.Drawing.Size(25, 25);
+            this.btn_ActualizarAcopiador.TabIndex = 135;
+            this.btn_ActualizarAcopiador.Click += new System.EventHandler(this.btn_ActualizarAcopiador_Click);
             // 
             // Frm_Cosecha
             // 
@@ -7014,6 +7518,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Recepcion.Properties)).EndInit();
             this.navigationPage3.ResumeLayout(false);
             this.navigationPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit15.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit15.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_EmpresaComercializadora.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -7111,6 +7617,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl17)).EndInit();
             this.panelControl17.ResumeLayout(false);
             this.panelControl17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteSalida.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteSalida.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteSalida.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFleteFacturaCorteSalida.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteSalida.Properties)).EndInit();
@@ -7135,6 +7643,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl16)).EndInit();
             this.panelControl16.ResumeLayout(false);
             this.panelControl16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteApoyo.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteApoyo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteApoyo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFleteFacturaCorteApoyo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteApoyo.Properties)).EndInit();
@@ -7159,6 +7669,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl15)).EndInit();
             this.panelControl15.ResumeLayout(false);
             this.panelControl15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteDia.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFleteFacturaCorteDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteDia.Properties)).EndInit();
@@ -7183,6 +7695,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).EndInit();
             this.panelControl12.ResumeLayout(false);
             this.panelControl12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteKilos.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteKilos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteKilos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFleteFacturaCorteKilos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaCorteKilos.Properties)).EndInit();
@@ -7249,6 +7763,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).EndInit();
             this.panelControl14.ResumeLayout(false);
             this.panelControl14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaAcarreo.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaAcarreo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteAcarreo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_RetencionFleteFacturaAcarreo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaAcarreo.Properties)).EndInit();
@@ -7292,6 +7808,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl13)).EndInit();
             this.groupControl13.ResumeLayout(false);
             this.groupControl13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaProductor.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaProductor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteProductor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IVAFacturaProductor.Properties)).EndInit();
@@ -7311,19 +7829,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmb_MonedaProductor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaProductor.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaProductor.Properties)).EndInit();
+            this.xtraTabPage2.ResumeLayout(false);
+            this.xtraTabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit12.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit12.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit13.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit13.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit14.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit14.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit10.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit10.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit9.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit8.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit8.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit4.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit5.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit6.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -7866,17 +8388,60 @@
         private DevExpress.XtraEditors.SimpleButton btn_CerrarAcarreo;
         private DevExpress.XtraEditors.SimpleButton btn_AbrirProductor;
         private DevExpress.XtraEditors.SimpleButton btn_CerrarProductor;
-        private DevExpress.XtraEditors.DateEdit dateEdit2;
+        private DevExpress.XtraEditors.DateEdit dt_FechaProgramaCorteDia;
         private DevExpress.XtraEditors.LabelControl labelControl160;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dt_FechaProgramaCorteKilos;
         private DevExpress.XtraEditors.LabelControl labelControl159;
-        private DevExpress.XtraEditors.DateEdit dateEdit4;
+        private DevExpress.XtraEditors.DateEdit dt_FechaProgramaCorteSalida;
         private DevExpress.XtraEditors.LabelControl labelControl162;
-        private DevExpress.XtraEditors.DateEdit dateEdit3;
+        private DevExpress.XtraEditors.DateEdit dt_FechaProgramaCorteApoyo;
         private DevExpress.XtraEditors.LabelControl labelControl161;
-        private DevExpress.XtraEditors.DateEdit dateEdit5;
+        private DevExpress.XtraEditors.DateEdit dt_FechaProgramaAcarreo;
         private DevExpress.XtraEditors.LabelControl labelControl163;
-        private DevExpress.XtraEditors.DateEdit dateEdit6;
+        private DevExpress.XtraEditors.DateEdit dt_FechaProgramaProductor;
         private DevExpress.XtraEditors.LabelControl labelControl164;
+        private DevExpress.XtraEditors.SimpleButton simpleButton25;
+        private DevExpress.XtraEditors.SimpleButton simpleButton26;
+        private DevExpress.XtraEditors.SimpleButton simpleButton27;
+        private DevExpress.XtraEditors.LabelControl labelControl173;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton16;
+        private DevExpress.XtraEditors.SimpleButton simpleButton17;
+        private DevExpress.XtraEditors.SimpleButton simpleButton18;
+        private DevExpress.XtraEditors.LabelControl labelControl170;
+        private DevExpress.XtraEditors.SimpleButton simpleButton19;
+        private DevExpress.XtraEditors.SimpleButton simpleButton20;
+        private DevExpress.XtraEditors.SimpleButton simpleButton21;
+        private DevExpress.XtraEditors.LabelControl labelControl171;
+        private DevExpress.XtraEditors.SimpleButton simpleButton22;
+        private DevExpress.XtraEditors.SimpleButton simpleButton23;
+        private DevExpress.XtraEditors.SimpleButton simpleButton24;
+        private DevExpress.XtraEditors.LabelControl labelControl172;
+        private DevExpress.XtraEditors.SimpleButton simpleButton10;
+        private DevExpress.XtraEditors.SimpleButton simpleButton11;
+        private DevExpress.XtraEditors.SimpleButton simpleButton12;
+        private DevExpress.XtraEditors.LabelControl labelControl168;
+        private DevExpress.XtraEditors.SimpleButton simpleButton7;
+        private DevExpress.XtraEditors.SimpleButton simpleButton8;
+        private DevExpress.XtraEditors.SimpleButton simpleButton9;
+        private DevExpress.XtraEditors.LabelControl labelControl167;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.LabelControl labelControl166;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.LabelControl labelControl165;
+        private DevExpress.XtraEditors.DateEdit dateEdit15;
+        private DevExpress.XtraEditors.LabelControl labelControl169;
+        private DevExpress.XtraEditors.DateEdit dateEdit12;
+        private DevExpress.XtraEditors.DateEdit dateEdit13;
+        private DevExpress.XtraEditors.DateEdit dateEdit14;
+        private DevExpress.XtraEditors.DateEdit dateEdit10;
+        private DevExpress.XtraEditors.DateEdit dateEdit9;
+        private DevExpress.XtraEditors.DateEdit dateEdit8;
+        private DevExpress.XtraEditors.DateEdit dateEdit7;
+        private DevExpress.XtraEditors.SimpleButton btn_ActualizarAcopiador;
     }
 }
