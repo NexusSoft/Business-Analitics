@@ -14,6 +14,7 @@ namespace CapaDeDatos
         public string Placas { get; set; }
         public string Id_EmpresaAcarreo { get; set; }
         public string Usuario { get; set; }
+        public string Id_TipoCamion { get; set; }
 
         public void MtdSeleccionarCamion()
         {
@@ -77,6 +78,34 @@ namespace CapaDeDatos
             }
 
         }
+        public void MtdSeleccionarTipoCamion()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Tipo_Camion_Select";
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
 
         public void MtdInsertarCamion()
         {
@@ -93,6 +122,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Camion");
                 _dato.Texto = Placas;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Placas");
+                _dato.Texto = Id_TipoCamion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_TipoCamion");
                 _dato.Texto = Id_EmpresaAcarreo;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaAcarreo");
                 _dato.Texto = Usuario;

@@ -167,6 +167,7 @@ namespace Business_Analitics
                 Camion.Placas = txtPlacasCamion.Text.Trim();
                 Camion.Id_EmpresaAcarreo = textId.Text.Trim();
                 Camion.Usuario = UsuariosLogin;
+                Camion.Id_TipoCamion = cmb_TipoCamionCamiones.EditValue.ToString();
                 Camion.MtdInsertarCamion();
                 if (Camion.Exito)
                 {
@@ -334,6 +335,7 @@ namespace Business_Analitics
             txtIDCamion.Text = string.Empty;
             txtNombreCamion.Text = string.Empty;
             txtPlacasCamion.Text = string.Empty;
+            CargarTipoCamionCamiones("0001");
         }
         private void LimpiarCamposChoferes()
         {
@@ -366,12 +368,48 @@ namespace Business_Analitics
                     CargarCamiones();
                     CargarChoferes();
                     CargarServicios();
+                    CargarTipoCamionCamiones("0001");
+                    CargarTipoCamionServicios("0001");
                 }
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show(ex.Message);
             }
+        }
+        private void CargarTipoCamionCamiones(string Valor)
+        {
+            CLS_Camiones obtener = new CLS_Camiones();
+            obtener.MtdSeleccionarTipoCamion();
+            if (obtener.Exito)
+            {
+                if (obtener.Datos.Rows.Count > 0)
+                {
+                    cmb_TipoCamionCamiones.Properties.DisplayMember = "Nombre_TipoCamion";
+                    cmb_TipoCamionCamiones.Properties.ValueMember = "Id_TipoCamion";
+                    cmb_TipoCamionCamiones.EditValue = Valor;
+                    cmb_TipoCamionCamiones.Properties.DataSource = obtener.Datos;
+                }
+            }
+        }
+        private void CargarTipoCamionServicios(string Valor)
+        {
+            CLS_Camiones obtener = new CLS_Camiones();
+            obtener.MtdSeleccionarTipoCamion();
+            if (obtener.Exito)
+            {
+                if (obtener.Datos.Rows.Count > 0)
+                {
+                    cmb_TipoCamionServicios.Properties.DisplayMember = "Nombre_TipoCamion";
+                    cmb_TipoCamionServicios.Properties.ValueMember = "Id_TipoCamion";
+                    cmb_TipoCamionServicios.EditValue = Valor;
+                    cmb_TipoCamionServicios.Properties.DataSource = obtener.Datos;
+                }
+            }
+        }
+        private void CargarComboTemporada(DataTable Datos, string Valor)
+        {
+            
         }
         private void CargarServicios()
         {
@@ -382,9 +420,9 @@ namespace Business_Analitics
             {
                 if (sel.Datos.Rows.Count > 0)
                 {
-                    txtPrecioServicio.Text = sel.Datos.Rows[0]["Precio_Acarreo"].ToString();
-                    txtPrecioCaja.Text = sel.Datos.Rows[0]["Precio_Caja"].ToString();
-                    txtPrecioSalidaForanea.Text = sel.Datos.Rows[0]["Precio_SalidaForanea"].ToString();
+                    //txtPrecioServicio.Text = sel.Datos.Rows[0]["Precio_Acarreo"].ToString();
+                    //txtPrecioCaja.Text = sel.Datos.Rows[0]["Precio_Caja"].ToString();
+                    //txtPrecioSalidaForanea.Text = sel.Datos.Rows[0]["Precio_SalidaForanea"].ToString();
                     dtgServicios.DataSource = sel.Datos;
                 }   
             }
@@ -465,10 +503,12 @@ namespace Business_Analitics
             decimal Precio_SalidaForanea = 0;
             decimal.TryParse(txtPrecioSalidaForanea.Text, style, culture, out Precio_SalidaForanea);
             ins.Precio_SalidaForanea = Precio_SalidaForanea;
+            ins.Id_TipoCamion= cmb_TipoCamionServicios.EditValue.ToString();
             ins.Usuario = UsuariosLogin;
             ins.MtdInsertarEmpresasServicios();
             if (ins.Exito)
             {
+                CargarServicios();
                 XtraMessageBox.Show("Se ha Insertado el registro con exito");
             }
             else
@@ -665,6 +705,7 @@ namespace Business_Analitics
                     txtIDCamion.Text = row["Id_Camion"].ToString();
                     txtNombreCamion.Text = row["Nombre_Camion"].ToString();
                     txtPlacasCamion.Text = row["Placas"].ToString();
+                    CargarTipoCamionCamiones(row["Id_TipoCamion"].ToString());
                 }
             }
             catch (Exception ex)
@@ -701,6 +742,46 @@ namespace Business_Analitics
             gridColumn6.DisplayFormat.FormatString = "c2";
             gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             gridColumn7.DisplayFormat.FormatString = "c2";
+        }
+
+        private void cmb_TipoCamionServicios_EditValueChanged(object sender, EventArgs e)
+        {
+            CLS_EmpresasAcarreo sel = new CLS_EmpresasAcarreo();
+            sel.Id_EmpresaAcarreo = textId.Text.ToString();
+            sel.Id_TipoCamion = cmb_TipoCamionServicios.EditValue.ToString();
+            sel.MtdSeleccionarEmpresasCostoServicios();
+            if (sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    txtPrecioServicio.Text = sel.Datos.Rows[0]["Precio_Acarreo"].ToString();
+                    txtPrecioCaja.Text = sel.Datos.Rows[0]["Precio_Caja"].ToString();
+                    txtPrecioSalidaForanea.Text = sel.Datos.Rows[0]["Precio_SalidaForanea"].ToString();
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show(sel.Mensaje);
+            }
+        }
+
+        private void dtgServicios_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValServicios.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValServicios.GetDataRow(i);
+                    txtPrecioServicio.Text = row["Precio_Acarreo"].ToString();
+                    txtPrecioSalidaForanea.Text = row["Precio_SalidaForanea"].ToString();
+                    txtPrecioCaja.Text = row["Precio_Caja"].ToString();
+                    CargarTipoCamionServicios(row["Id_TipoCamion"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -54,6 +54,7 @@
     <Compile Include="Formularios\CLS_Calidades.cs" />
     <Compile Include="Formularios\CLS_Ciudades.cs" />
     <Compile Include="Formularios\CLS_CorridaFruta.cs" />
+    <Compile Include="Formularios\CLS_Cosecha_Expedientes.cs" />
     <Compile Include="Formularios\CLS_Cosecha_Reportes.cs" />
     <Compile Include="Formularios\CLS_Cosecha_Facturas.cs" />
     <Compile Include="Formularios\CLS_Cosecha_Datos.cs" />

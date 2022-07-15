@@ -44,6 +44,8 @@ namespace CapaDeDatos
         public string Nombre_Contacto { get; set; }
         public string Telefono_Contacto { get; set; }
         public string Email_Contacto { get; set; }
+        public byte[] Contrato { get; set; }
+        public string d_Contrato { get; set; }
         //Productor
         public string Productor { get; set; }
         public decimal KilosAjustados { get; set; }
@@ -93,6 +95,13 @@ namespace CapaDeDatos
         public int PrecioporKiloB { get; set; }
         public int TomarkgenCorte { get; set; }
         public int Cerrado { get;  set; }
+        public string Id_TipoCamion { get; set; }
+        public string Nombre_TipoCamion { get; set; }
+        public string SAGARPA { get; set; }
+        public string Estado_Huerta { get; set; }
+        public int Autorizado_USA { get; set; }
+        public string Poliza_aseguradora { get; set; }
+        public string Aseguradora { get; set; }
 
         public void MtdInsertarOrdencorte()
         {
@@ -117,12 +126,22 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_hue");
                 _dato.Texto = Huerta;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Huerta");
+                _dato.Texto = SAGARPA;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "SAGARPA");
+                _dato.Texto = Estado_Huerta;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Estado_Huerta");
                 _dato.Texto = Acopiador;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Acopiador");
                 _dato.Entero = ProgramaCajas;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "ProgramaCajas");
                 _dato.Texto = TipoCorte;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "TipoCorte");
+                _dato.Texto = Poliza_aseguradora;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Poliza_aseguradora");
+                _dato.Texto = Aseguradora;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Aseguradora");
+                _dato.Entero = Autorizado_USA;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Autorizado_USA");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
@@ -299,6 +318,43 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Telefono_Contacto");
                 _dato.Texto = Email_Contacto;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Email_Contacto");
+                _dato.Archivo = Contrato;
+                _conexion.agregarParametro(EnumTipoDato.Archivo, _dato, "Contrato");
+                _dato.Texto = d_Contrato;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "d_Contrato");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
+                _conexion.EjecutarDataset();
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdEliminarContratoComercializadora()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_ComercializadoraContrato_Delete";
+                _dato.Texto = Id_Cosecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _dato.Archivo = Contrato;
+                _conexion.agregarParametro(EnumTipoDato.Archivo, _dato, "Contrato");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
@@ -557,6 +613,10 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Camion");
                 _dato.Texto = Placas;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Placas");
+                _dato.Texto = Id_TipoCamion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_TipoCamion");
+                _dato.Texto = Nombre_TipoCamion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_TipoCamion");
                 _dato.Texto = Id_Chofer;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Chofer");
                 _dato.Texto = Nombre_Chofer;

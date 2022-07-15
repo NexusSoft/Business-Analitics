@@ -29,7 +29,13 @@ namespace CapaDeDatos
         public int Retencion_Flete { get; set; }
         public decimal Importe_Retencion_Flete { get; set; }
         public string Fecha_Programacion { get; set; }
-
+        //REP
+        public string UUID { get; set; }
+        public decimal FacturaTotal { get; set; }
+        public string MetodoPago { get; set; }
+        public decimal SubTotalXML { get; set; }
+        public decimal TotalXML { get; set; }
+        //Facturas
         public void MtdSeleccionarCosechaArchivoPDFXML()
         {
             TipoDato _dato = new TipoDato();
@@ -140,6 +146,14 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha_Pago");
                 _dato.Texto = Fecha_Programacion;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Fecha_Programacion");
+                _dato.Texto = UUID;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "UUID");
+                _dato.Texto = MetodoPago;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "MetodoPago");
+                _dato.Decimal = SubTotalXML;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "SubTotalXML");
+                _dato.Decimal = TotalXML;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "TotalXML");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
@@ -177,8 +191,205 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Archivo, _dato, "FacturaXML");
                 _dato.Entero = Id_Archivo;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Id_Archivo");
+                _dato.Texto = UUID;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "UUID");
+                _dato.Texto = MetodoPago;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "MetodoPago");
+                _dato.Decimal = SubTotalXML;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "SubTotalXML");
+                _dato.Decimal = TotalXML;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "TotalXML");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        //REP
+        public void MtdSeleccionarCosechaArchivoREP_PDFXML()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_FacturasREP_PDFXML_Select";
+                _dato.Texto = Id_Cosecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdSeleccionarCosechaArchivoREP_PDFXMLView()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_FacturaREP_PDFXML_Select";
+                _dato.Texto = Id_Cosecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _dato.Texto = UUID;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "UUID");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdSeleccionarCosechaTotalREP()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_TotalREP_Select";
+                _dato.Texto = Id_Cosecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdInsertarCosechaArchivoREP_PDFXML()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_FacturasREP_PDFXML_Insert";
+                _dato.Texto = Id_Cosecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _dato.Texto = UUID;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "UUID");
+                _dato.Archivo = FacturaPDF;
+                _conexion.agregarParametro(EnumTipoDato.Archivo, _dato, "FacturaPDF");
+                _dato.Archivo = FacturaXML;
+                _conexion.agregarParametro(EnumTipoDato.Archivo, _dato, "FacturaXML");
+                _dato.Decimal = FacturaTotal;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "FacturaTotal");
+                _dato.Texto = Usuario;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdDeleteCosechaArchivoREP_PDFXML()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_FacturasREP_PDFXML_Delete";
+                _dato.Texto = Id_Cosecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _dato.Texto = UUID;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "UUID");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
+        public void MtdDeleteCosechaTodosArchivoREP_PDFXML()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Cosecha_FacturasREPTodas_PDFXML_Delete";
+                _dato.Texto = Id_Cosecha;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)

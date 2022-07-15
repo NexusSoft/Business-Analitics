@@ -526,7 +526,7 @@
             // gridColumn26
             // 
             this.gridColumn26.Caption = "Registro SAGARPA";
-            this.gridColumn26.FieldName = "v_registro_hue";
+            this.gridColumn26.FieldName = "SAGARPA";
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.OptionsColumn.AllowEdit = false;
             this.gridColumn26.Visible = true;

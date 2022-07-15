@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using CapaDeDatos;
 using System.Globalization;
 using System.IO;
+using System.Xml;
 
 namespace Business_Analitics
 {
@@ -33,6 +34,28 @@ namespace Business_Analitics
         Byte[] ArchivoXMLGlobalCorteSalida = null;
         Byte[] ArchivoPDFGlobalAcarreo = null;
         Byte[] ArchivoXMLGlobalAcarreo = null;
+        //REP
+        Byte[] ArchivoPDFGlobalProductorREP= null;
+        Byte[] ArchivoXMLGlobalProductorREP = null;
+        //ArchivoExpediente
+        Byte[] ArchivoPDFGlobalTarjetaApeam = null;
+        string vRutaTarjetaApeam = String.Empty;
+        Byte[] ArchivoPDFGlobalIdentificacion_INE_IFE = null;
+        string vRutaIdentificacion_INE_IFE = String.Empty;
+        Byte[] ArchivoPDFGlobalOpinion_Cumplimiento = null;
+        string vRutaOpinion_Cumplimiento = String.Empty;
+        Byte[] ArchivoPDFGlobalConstancia_de_Situacion_Fiscal = null;
+        string vRutaConstancia_de_Situacion_Fiscal = String.Empty;
+        Byte[] ArchivoPDFGlobalClave_Interbancaria = null;
+        string vRutaClave_Interbancaria = String.Empty;
+        Byte[] ArchivoPDFGlobalContrato_entre_Terceros = null;
+        string vRutaContrato_entre_Terceros = String.Empty;
+        Byte[] ArchivoPDFGlobalContrato_GEST = null;
+        string vRutaContrato_GEST = String.Empty;
+        //Contrato Comercializadora
+        Byte[] ArchivoPDFGlobalContratoComercializadora = null;
+        string vRutaContratoComercializadora = string.Empty;
+
         public string TemActiva { get; private set; }
         public string vId_Cosecha { get; set; }
         public Frm_Cosecha()
@@ -115,6 +138,14 @@ namespace Business_Analitics
             dtgValMerma.OptionsView.ColumnAutoWidth = true;
             dtgValMerma.BestFitColumns();
 
+            dtgValFacturasREP.OptionsSelection.EnableAppearanceFocusedCell = false;
+            dtgValFacturasREP.OptionsSelection.EnableAppearanceHideSelection = false;
+            dtgValFacturasREP.OptionsSelection.MultiSelect = true;
+            dtgValFacturasREP.OptionsView.ShowGroupPanel = false;
+            dtgValFacturasREP.OptionsBehavior.AutoPopulateColumns = true;
+            dtgValFacturasREP.OptionsView.ColumnAutoWidth = true;
+            dtgValFacturasREP.BestFitColumns();
+
             gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             gridColumn4.DisplayFormat.FormatString = "n0";
             gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -144,6 +175,15 @@ namespace Business_Analitics
             gridColumn21.DisplayFormat.FormatString = "n3";
             gridColumn22.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             gridColumn22.DisplayFormat.FormatString = "p2";
+
+            gridColumn41.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridColumn41.DisplayFormat.FormatString = "c2";
+            gridColumn42.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridColumn42.DisplayFormat.FormatString = "c2";
+            gridColumn43.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridColumn43.DisplayFormat.FormatString = "c2";
+            gridColumn48.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridColumn48.DisplayFormat.FormatString = "c2";
 
 
             txt_KiloPrecio.Properties.Mask.UseMaskAsDisplayFormat = true;
@@ -254,6 +294,8 @@ namespace Business_Analitics
                     txt_Huerta.Text = sel.Datos.Rows[0]["v_nombre_hue"].ToString();
                     BarHuerta.Caption = "Huerta: " + sel.Datos.Rows[0]["v_nombre_hue"].ToString();
                     txt_Huerta.Tag = sel.Datos.Rows[0]["c_codigo_hue"].ToString();
+                    txt_SAGARPA.Text= sel.Datos.Rows[0]["v_registro_hue"].ToString();
+                    txt_Estado_Huerta.Text= sel.Datos.Rows[0]["v_nombre_est"].ToString();
                     txt_Acopiador.Text = sel.Datos.Rows[0]["v_nombre_zon"].ToString();
                     txt_Acopiador.Tag = sel.Datos.Rows[0]["c_codigo_zon"].ToString();
                     txt_Cajas_Programa.Text = sel.Datos.Rows[0]["n_cajas_pcd"].ToString();
@@ -264,6 +306,16 @@ namespace Business_Analitics
                     txt_Secuencia.Text = sel.Datos.Rows[0]["c_secuencia_ocd"].ToString();
                     txt_Temporada.Text = sel.Datos.Rows[0]["c_codigo_tem"].ToString();
                     txt_Productor.Text = sel.Datos.Rows[0]["v_nombre_dno"].ToString();
+                    if(sel.Datos.Rows[0]["b_autorizausa_ase"].ToString()=="True")
+                    {
+                        chk_Autorizado_USA.Checked = true;
+                    }
+                    else
+                    {
+                        chk_Autorizado_USA.Checked = false;
+                    }
+                    txt_Poliza_ase.Text= sel.Datos.Rows[0]["c_poliza_ase"].ToString();
+                    txt_Nombre_ase.Text= sel.Datos.Rows[0]["v_nombre_ase"].ToString();
                     BarProductor.Caption = "Productor: " + sel.Datos.Rows[0]["v_nombre_dno"].ToString();
                     if (txt_Temporada.Text != string.Empty && txt_OrdenCorte.Text != string.Empty && txt_Secuencia.Text != string.Empty)
                     {
@@ -709,7 +761,12 @@ namespace Business_Analitics
                 txt_CostoServicio.Text = txtPrecioServicio.Text;
                 txt_CajasExtras.Text = "0";
                 txt_CostoxCajaExtra.Text = "0";
-                txt_TotalAcarreo.EditValue = (Decimal.Parse(txt_CostoServicio.Text, style, provider) + Decimal.Parse(txt_CostoxCajaExtra.Text, style, provider)).ToString();
+                //txt_TotalAcarreo.EditValue = (Decimal.Parse(txt_CostoServicio.Text, style, provider) + Decimal.Parse(txt_CostoxCajaExtra.Text, style, provider)).ToString();
+                if (!string.IsNullOrEmpty(txt_CajasExtras.Text))
+                {
+                    txt_CostoxCajaExtra.Text = (Decimal.Parse(txt_CajasExtras.Text, style, provider) * Decimal.Parse(txtPrecioCaja.Text, style, provider)).ToString();
+                    txt_TotalAcarreo.Text = (Decimal.Parse(txt_CostoServicio.Text, style, provider) + Decimal.Parse(txt_CostoxCajaExtra.Text, style, provider) + Decimal.Parse(txt_CargosExtra.Text, style, provider) - Decimal.Parse(txt_Descuentos.Text, style, provider)).ToString();
+                }
                 txt_ImporteFacturaAcarreo.EditValue = txt_TotalAcarreo.EditValue;
                 CalcularTotalFacturaAcarreo();
             }
@@ -912,7 +969,8 @@ namespace Business_Analitics
         {
             CLS_EmpresasAcarreo sel = new CLS_EmpresasAcarreo();
             sel.Id_EmpresaAcarreo = txt_EmpresaAcarreo.Tag.ToString();
-            sel.MtdSeleccionarEmpresasServicios();
+            sel.Id_TipoCamion = txt_TipoCamion.Tag.ToString();
+            sel.MtdSeleccionarEmpresasCostoServicios();
             if (sel.Exito)
             {
                 if (sel.Datos.Rows.Count > 0)
@@ -920,6 +978,23 @@ namespace Business_Analitics
                     txtPrecioServicio.Text = sel.Datos.Rows[0]["Precio_Acarreo"].ToString();
                     txtPrecioCaja.Text = sel.Datos.Rows[0]["Precio_Caja"].ToString();
                     txtPrecioSalidaForanea.Text = sel.Datos.Rows[0]["Precio_SalidaForanea"].ToString();
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show(sel.Mensaje);
+            }
+        }
+        private void CargarCostosServicios()
+        {
+            CLS_EmpresasAcarreo sel = new CLS_EmpresasAcarreo();
+            sel.Id_EmpresaAcarreo = txt_EmpresaAcarreo.Tag.ToString().Trim();
+            sel.MtdSeleccionarEmpresasServicios();
+            if (sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    dtgServicios.DataSource = sel.Datos;
                 }
             }
             else
@@ -937,10 +1012,9 @@ namespace Business_Analitics
             {
                 txt_EmpresaAcarreo.Text = frm.Proveedor;
                 txt_EmpresaAcarreo.Tag = frm.IdProveedor;
-                CargarServiciosAcarreo();
                 CargarCamiones(null);
                 CargarChoferes(null);
-                CalcularCostosAcarreo();
+                CargarCostosServicios();
             }
         }
         private void CargarCamiones(string Valor)
@@ -1003,6 +1077,10 @@ namespace Business_Analitics
             }
         }
 
+        void ConsultarCostos(string str)
+        {
+            throw new NotImplementedException();
+        }
         private void cmb_Camiones_EditValueChanged(object sender, EventArgs e)
         {
             try
@@ -1018,6 +1096,10 @@ namespace Business_Analitics
                         if (sel.Datos.Rows.Count > 0)
                         {
                             txtPlacasCamion.Text = sel.Datos.Rows[0]["Placas"].ToString();
+                            txt_TipoCamion.Text= sel.Datos.Rows[0]["Nombre_TipoCamion"].ToString();
+                            txt_TipoCamion.Tag = sel.Datos.Rows[0]["Id_TipoCamion"].ToString();
+                            CargarServiciosAcarreo();
+                            CalcularCostosAcarreo();
                         }
                     }
                 }
@@ -1099,15 +1181,95 @@ namespace Business_Analitics
             }
             OpenDialog.Dispose();
         }
+        private string ConsultaFactura(string fileName)
+        {
+            string vMetodo=string.Empty;
+            try
+            {
+                string Valor = String.Empty;
+                XmlDocument doc = new XmlDocument();
+                doc.Load(fileName);
+                XmlNode nodoComprobante = doc.GetElementsByTagName("cfdi:Comprobante").Item(0);
+                Valor = nodoComprobante.Attributes["MetodoPago"].Value;
+                vMetodo = Valor;
+                txt_MetodoPago.Text = Valor;
+                Valor = nodoComprobante.Attributes["Fecha"].Value;
+                dt_FechaFacturaProductor.DateTime = Convert.ToDateTime(Valor);
+                Valor = nodoComprobante.Attributes["Folio"].Value;
+                txt_FolioFacturaProductor.Text = Valor;
+                Valor = nodoComprobante.Attributes["SubTotal"].Value;
+                txt_SubTotal.Text = Valor;
+                Valor = nodoComprobante.Attributes["Total"].Value;
+                txt_Total.Text = Valor;
+                XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                Valor = nodoComplemento.Attributes["UUID"].Value;
+                txt_UUID.Text = Valor;
+                XmlNode nodoEmisor = doc.GetElementsByTagName("cfdi:Emisor").Item(0);
+                Valor = nodoEmisor.Attributes["Nombre"].Value;
+                txtRazonSProductor.Text = Valor;
+
+            }
+            catch
+            {
+                txt_RutaXMLProductor.Text=String.Empty;
+                XtraMessageBox.Show("No es un Archivo CFDI Valido favor de verificarlo");
+                return vMetodo;
+            }
+            return vMetodo;
+        }
+        void CalcularTotalREP()
+        {
+            CLS_Cosecha_Facturas sel = new CLS_Cosecha_Facturas();
+            sel.Id_Cosecha = txt_IdCosecha.Text;
+            sel.MtdSeleccionarCosechaTotalREP();
+            if(sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    txt_SumaTotal_REP.Text = sel.Datos.Rows[0]["Total"].ToString();
+                    txt_Salto_REP.Text = Convert.ToString(Decimal.Parse(txt_Total.Text, style, provider) - decimal.Parse(txt_SumaTotal_REP.Text, style, provider));
+                }
+                else
+                {
+                    txt_SumaTotal_REP.Text = "0";
+                    txt_Salto_REP.Text = "0";
+                }
+            }
+        }
         private void btn_UpXMLProductor_Click(object sender, EventArgs e)
         {
-            DialogResult result = FileDialogXML();
-            if (result == DialogResult.OK)
+            if (txt_IdCosecha.Text != String.Empty)
             {
-                txt_RutaXMLProductor.Text = OpenDialog.FileName;
-                GuardarRuta(OpenDialog.FileName);
+                DialogResult result = FileDialogXML();
+                if (result == DialogResult.OK)
+                {
+                    txt_RutaXMLProductor.Text = OpenDialog.FileName;
+                    GuardarRuta(OpenDialog.FileName);
+                    if (ConsultaFactura(OpenDialog.FileName) == "PPD")
+                    {
+                        xtraTabPage4.PageVisible = true;
+                        txt_SumaTotal_REP.Visible = true;
+                        txt_Salto_REP.Visible = true;
+                        labelControl207.Visible = true;
+                        labelControl208.Visible = true;
+                        CalcularTotalREP();
+                    }
+                    else
+                    {
+                        xtraTabPage4.PageVisible = false;
+                        txt_SumaTotal_REP.Visible = false;
+                        txt_Salto_REP.Visible = false;
+                        labelControl207.Visible = false;
+                        labelControl208.Visible = false;
+                        CalcularTotalREP();
+                    }
+                }
+                OpenDialog.Dispose();
             }
-            OpenDialog.Dispose();
+            else
+            {
+                XtraMessageBox.Show("No se ha guardado o definido un folio de cosecha");
+            }
         }
         private DialogResult FileDialogPDF()
         {
@@ -1286,6 +1448,11 @@ namespace Business_Analitics
             this.dt_FechaPagoProductor.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.dt_FechaPagoProductor.Properties.Appearance.Options.UseFont = true;
             this.dt_FechaPagoProductor.Properties.Appearance.Options.UseForeColor = true;
+            xtraTabPage4.PageVisible = false;
+            txt_MetodoPago.Text = String.Empty;
+            txt_SubTotal.Text=String.Empty;
+            txt_Total.Text=String.Empty;
+            txt_UUID.Text=String.Empty;
         }
         void LimpiarFacturasKilos()
         {
@@ -1418,6 +1585,37 @@ namespace Business_Analitics
             this.dt_FechaPagoAcarreo.Properties.Appearance.Options.UseFont = true;
             this.dt_FechaPagoAcarreo.Properties.Appearance.Options.UseForeColor = true;
         }
+        void LimpiarProductorExpediente()
+        {
+            vRutaTarjetaApeam = String.Empty;
+            btn_ViewPDFTarjetaAPEAM.Enabled = false;
+            btn_DelTarjetaAPEAM.Enabled = false;
+            dt_FechaTarjetaAPEAM.EditValue = DateTime.Now;
+            vRutaIdentificacion_INE_IFE=String.Empty;
+            btn_ViewPDFIdentificacion_IFE_INE.Enabled = false;
+            btn_DelIdentificacion_IFE_INE.Enabled = false;
+            dt_FechaIdentificacion_IFE_INE.EditValue = DateTime.Now;
+            vRutaOpinion_Cumplimiento = String.Empty;   
+            btn_ViewPDFOpinionCumplimiento.Enabled = false;
+            btn_DelOpinionCumplimiento.Enabled = false;
+            dt_FechaOPinionCumplimiento.EditValue = DateTime.Now;
+            vRutaConstancia_de_Situacion_Fiscal = String.Empty;
+            btn_ViewPDFConstanciaSituacion.Enabled = false;
+            btn_DelConstanciaSituacion.Enabled = false;
+            dt_FechaConstanciaSituacion.EditValue = DateTime.Now;
+            vRutaClave_Interbancaria = String.Empty;
+            btn_ViewPDFClaveInterbancaria.Enabled = false;
+            btn_DelClaveInterbancaria.Enabled = false;
+            dt_FechaClaveInterbancaria.EditValue = DateTime.Now;
+            vRutaContrato_entre_Terceros = String.Empty;
+            btn_ViewPDFContratoTerceros.Enabled = false;
+            btn_DelContratoTerceros.Enabled = false;
+            dt_FechaContratoTerceros.EditValue = DateTime.Now;
+            vRutaContrato_GEST=String.Empty;
+            btn_ViewPDFContratoGEST.Enabled = false;
+            btn_DelContratoGEST.Enabled = false;
+            dt_FechaContratoGEST.EditValue = DateTime.Now;
+        }
         private void btn_limpiarOrden_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vCarga = 1;
@@ -1425,6 +1623,8 @@ namespace Business_Analitics
             LimpiarRecepcion();
             LimpiarComercializadora();
             LimpiarProductor();
+            LimpiarProductorExpediente();
+            LimpiarPPD();
             LimpiarCorte();
             LimpiarAcarreo();
             LimpiarFacturasProductor();
@@ -1445,6 +1645,7 @@ namespace Business_Analitics
             Bloquear_Corte(true);
             Bloquear_Acarreo(true);
             vCarga = 0;
+            dtgFacturasREP.DataSource = null;
         }
 
         private void InicializaVariables()
@@ -1472,6 +1673,11 @@ namespace Business_Analitics
             }
             return sVal;
         }
+        void GuardarProductorExpedientes()
+        {
+            ExpedienteProductor();
+            SelectExpedientesProductor();
+        }
         private void btn_GuardarOrden_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vId_Cosecha = "0";
@@ -1481,15 +1687,267 @@ namespace Business_Analitics
                 GuardarRecepcion();
                 GuardarComercializadora();
                 GuardarProductor();
+                GuardarProductorExpedientes();
                 GuardarCorte();
                 GuardarAcarreo();
                 GuardarFacturas();
                 SelectFacturas();
+                
                 XtraMessageBox.Show("Se ha guardado el registro con exito");
             }
             CargarCosechas();
         }
+        private void ExpedienteProductor()
+        {
+            Byte[] ArchivoPDFTarjetaAPEAM = null;
+            Byte[] ArchivoPDFIdentificacion_INE_IFE = null;
+            Byte[] ArchivoPDFOpinion_Cumplimiento = null;
+            Byte[] ArchivoPDFConstancia_de_Situacion_Fiscal = null;
+            Byte[] ArchivoPDFClave_Interbancaria = null;
+            Byte[] ArchivoPDFContrato_entre_Terceros = null;
+            Byte[] ArchivoPDFContrato_GEST = null;
 
+            FileStream fsPDF = null;
+
+            Boolean noentroPDFTarjetaAPEAM = true;
+            Boolean noentroPDFIdentificacion_INE_IFE = true;
+            Boolean noentroPDFOpinion_Cumplimiento = true;
+            Boolean noentroPDFConstancia_de_Situacion_Fiscal = true;
+            Boolean noentroPDFClave_Interbancaria = true;
+            Boolean noentroPDFContrato_entre_Terceros = true;
+            Boolean noentroPDFContrato_GEST = true;
+
+
+            if (vRutaTarjetaApeam.Length > 0)
+            {
+                //txtNombreArchivoPDF.Text = result2;
+                //string ar = OpenDialog.FileName;
+                fsPDF = new FileStream(vRutaTarjetaApeam, FileMode.Open, FileAccess.Read);
+                //Creamos un array de bytes para almacenar los datos leídos por fs.
+                ArchivoPDFTarjetaAPEAM = new byte[fsPDF.Length];
+                //Y guardamos los datos en el array data
+                fsPDF.Read(ArchivoPDFTarjetaAPEAM, 0, (int)fsPDF.Length);
+                ArchivoPDFGlobalTarjetaApeam = ArchivoPDFTarjetaAPEAM;
+            }
+            else
+            {
+                ArchivoPDFTarjetaAPEAM = ArchivoPDFGlobalTarjetaApeam;
+                noentroPDFTarjetaAPEAM = false;
+            }
+
+            if (vRutaIdentificacion_INE_IFE.Length > 0)
+            {
+                //txtNombreArchivoPDF.Text = result2;
+                //string ar = OpenDialog.FileName;
+                fsPDF = new FileStream(vRutaIdentificacion_INE_IFE, FileMode.Open, FileAccess.Read);
+                //Creamos un array de bytes para almacenar los datos leídos por fs.
+                ArchivoPDFIdentificacion_INE_IFE = new byte[fsPDF.Length];
+                //Y guardamos los datos en el array data
+                fsPDF.Read(ArchivoPDFIdentificacion_INE_IFE, 0, (int)fsPDF.Length);
+                ArchivoPDFGlobalIdentificacion_INE_IFE = ArchivoPDFIdentificacion_INE_IFE;
+            }
+            else
+            {
+                ArchivoPDFIdentificacion_INE_IFE = ArchivoPDFGlobalIdentificacion_INE_IFE;
+                noentroPDFIdentificacion_INE_IFE = false;
+            }
+
+            if (vRutaOpinion_Cumplimiento.Length > 0)
+            {
+                //txtNombreArchivoPDF.Text = result2;
+                //string ar = OpenDialog.FileName;
+                fsPDF = new FileStream(vRutaOpinion_Cumplimiento, FileMode.Open, FileAccess.Read);
+                //Creamos un array de bytes para almacenar los datos leídos por fs.
+                ArchivoPDFOpinion_Cumplimiento = new byte[fsPDF.Length];
+                //Y guardamos los datos en el array data
+                fsPDF.Read(ArchivoPDFOpinion_Cumplimiento, 0, (int)fsPDF.Length);
+                ArchivoPDFGlobalOpinion_Cumplimiento = ArchivoPDFOpinion_Cumplimiento;
+            }
+            else
+            {
+                ArchivoPDFOpinion_Cumplimiento = ArchivoPDFGlobalOpinion_Cumplimiento;
+                noentroPDFOpinion_Cumplimiento = false;
+            }
+
+            if (vRutaConstancia_de_Situacion_Fiscal.Length > 0)
+            {
+                //txtNombreArchivoPDF.Text = result2;
+                //string ar = OpenDialog.FileName;
+                fsPDF = new FileStream(vRutaConstancia_de_Situacion_Fiscal, FileMode.Open, FileAccess.Read);
+                //Creamos un array de bytes para almacenar los datos leídos por fs.
+                ArchivoPDFConstancia_de_Situacion_Fiscal = new byte[fsPDF.Length];
+                //Y guardamos los datos en el array data
+                fsPDF.Read(ArchivoPDFConstancia_de_Situacion_Fiscal, 0, (int)fsPDF.Length);
+                ArchivoPDFGlobalConstancia_de_Situacion_Fiscal = ArchivoPDFConstancia_de_Situacion_Fiscal;
+            }
+            else
+            {
+                ArchivoPDFConstancia_de_Situacion_Fiscal = ArchivoPDFGlobalConstancia_de_Situacion_Fiscal;
+                noentroPDFConstancia_de_Situacion_Fiscal = false;
+            }
+
+            if (vRutaClave_Interbancaria.Length > 0)
+            {
+                //txtNombreArchivoPDF.Text = result2;
+                //string ar = OpenDialog.FileName;
+                fsPDF = new FileStream(vRutaClave_Interbancaria, FileMode.Open, FileAccess.Read);
+                //Creamos un array de bytes para almacenar los datos leídos por fs.
+                ArchivoPDFClave_Interbancaria = new byte[fsPDF.Length];
+                //Y guardamos los datos en el array data
+                fsPDF.Read(ArchivoPDFClave_Interbancaria, 0, (int)fsPDF.Length);
+                ArchivoPDFGlobalClave_Interbancaria = ArchivoPDFClave_Interbancaria;
+            }
+            else
+            {
+                ArchivoPDFClave_Interbancaria = ArchivoPDFGlobalClave_Interbancaria;
+                noentroPDFClave_Interbancaria = false;
+            }
+
+            if (vRutaContrato_entre_Terceros.Length > 0)
+            {
+                //txtNombreArchivoPDF.Text = result2;
+                //string ar = OpenDialog.FileName;
+                fsPDF = new FileStream(vRutaContrato_entre_Terceros, FileMode.Open, FileAccess.Read);
+                //Creamos un array de bytes para almacenar los datos leídos por fs.
+                ArchivoPDFContrato_entre_Terceros = new byte[fsPDF.Length];
+                //Y guardamos los datos en el array data
+                fsPDF.Read(ArchivoPDFContrato_entre_Terceros, 0, (int)fsPDF.Length);
+                ArchivoPDFGlobalContrato_entre_Terceros = ArchivoPDFContrato_entre_Terceros;
+            }
+            else
+            {
+                ArchivoPDFContrato_entre_Terceros = ArchivoPDFGlobalContrato_entre_Terceros;
+                noentroPDFContrato_entre_Terceros = false;
+            }
+
+            if (vRutaContrato_GEST.Length > 0)
+            {
+                //txtNombreArchivoPDF.Text = result2;
+                //string ar = OpenDialog.FileName;
+                fsPDF = new FileStream(vRutaContrato_GEST, FileMode.Open, FileAccess.Read);
+                //Creamos un array de bytes para almacenar los datos leídos por fs.
+                ArchivoPDFContrato_GEST = new byte[fsPDF.Length];
+                //Y guardamos los datos en el array data
+                fsPDF.Read(ArchivoPDFContrato_GEST, 0, (int)fsPDF.Length);
+                ArchivoPDFGlobalContrato_GEST = ArchivoPDFContrato_GEST;
+            }
+            else
+            {
+                ArchivoPDFContrato_GEST = ArchivoPDFGlobalContrato_GEST;
+                noentroPDFContrato_GEST = false;
+            }
+
+            DateTime vFecha = DateTime.Now;
+
+            CLS_Cosecha_Expedientes Clase = new CLS_Cosecha_Expedientes();
+            Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            
+            //1
+            if (ArchivoPDFGlobalTarjetaApeam != null)
+            {
+                Clase.TarjetaApeam = ArchivoPDFGlobalTarjetaApeam;
+                vFecha = dt_FechaTarjetaAPEAM.DateTime;
+                Clase.d_TarjetaApeam = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+            else
+            {
+                Clase.TarjetaApeam = Encoding.UTF8.GetBytes("");
+                vFecha = DateTime.Now;
+                Clase.d_TarjetaApeam = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+            //2
+            if (ArchivoPDFGlobalIdentificacion_INE_IFE != null)
+            {
+                Clase.Identificacion_INE_IFE = ArchivoPDFGlobalIdentificacion_INE_IFE;
+                vFecha = dt_FechaIdentificacion_IFE_INE.DateTime;
+                Clase.d_Identificacion_INE_IFE = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+            else
+            {
+                Clase.Identificacion_INE_IFE = Encoding.UTF8.GetBytes("");
+                vFecha = DateTime.Now;
+                Clase.d_Identificacion_INE_IFE = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+            //3
+            if (ArchivoPDFGlobalOpinion_Cumplimiento != null)
+            {
+                Clase.Opinion_Cumplimiento = ArchivoPDFGlobalOpinion_Cumplimiento;
+                vFecha = dt_FechaOPinionCumplimiento.DateTime;
+                Clase.d_Opinion_Cumplimiento = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+            else
+            {
+                Clase.Opinion_Cumplimiento = Encoding.UTF8.GetBytes("");
+                vFecha = DateTime.Now;
+                Clase.d_Opinion_Cumplimiento = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+            //4
+            if (ArchivoPDFGlobalConstancia_de_Situacion_Fiscal != null)
+            {
+                Clase.Constancia_de_Situacion_Fiscal = ArchivoPDFGlobalConstancia_de_Situacion_Fiscal;
+                vFecha = dt_FechaConstanciaSituacion.DateTime;
+                Clase.d_Constancia_de_Situacion_Fiscal = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+            else
+            {
+                Clase.Constancia_de_Situacion_Fiscal = Encoding.UTF8.GetBytes("");
+                vFecha = DateTime.Now;
+                Clase.d_Constancia_de_Situacion_Fiscal = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+            //5
+            if (ArchivoPDFGlobalClave_Interbancaria != null)
+            {
+                Clase.Clave_Interbancaria = ArchivoPDFGlobalClave_Interbancaria;
+                vFecha = dt_FechaClaveInterbancaria.DateTime;
+                Clase.d_Clave_Interbancaria = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+            else
+            {
+                Clase.Clave_Interbancaria = Encoding.UTF8.GetBytes("");
+                vFecha = DateTime.Now;
+                Clase.d_Clave_Interbancaria = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+            //6
+            if (ArchivoPDFGlobalContrato_entre_Terceros != null)
+            {
+                Clase.Contrato_entre_Terceros = ArchivoPDFGlobalContrato_entre_Terceros;
+                vFecha = dt_FechaContratoTerceros.DateTime;
+                Clase.d_Contrato_entre_Terceros = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+            else
+            {
+                Clase.Contrato_entre_Terceros = Encoding.UTF8.GetBytes("");
+                vFecha = DateTime.Now;
+                Clase.d_Contrato_entre_Terceros = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+
+            }
+            //7
+            if (ArchivoPDFGlobalContrato_GEST != null)
+            {
+                Clase.Contrato_GEST = ArchivoPDFGlobalContrato_GEST;
+                vFecha = dt_FechaContratoGEST.DateTime;
+                Clase.d_Contrato_GEST = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+            else
+            {
+                Clase.Contrato_GEST = Encoding.UTF8.GetBytes("");
+                vFecha = DateTime.Now;
+                Clase.d_Contrato_GEST = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+
+            Clase.Usuario = UsuariosLogin;
+            
+            Clase.MtdInsertarCosechaArchivoPDFXML();
+            if (!Clase.Exito)
+            {
+                XtraMessageBox.Show(Clase.Mensaje);
+            }
+            
+            if (noentroPDFTarjetaAPEAM || noentroPDFIdentificacion_INE_IFE || noentroPDFOpinion_Cumplimiento || noentroPDFConstancia_de_Situacion_Fiscal || noentroPDFClave_Interbancaria || noentroPDFContrato_entre_Terceros || noentroPDFContrato_GEST)
+            {
+                fsPDF.Close();
+            }
+        }
         private void GuardarFacturas()
         {
             FacturaProductor();
@@ -1642,7 +2100,10 @@ namespace Business_Analitics
             {
                 Clase.Diferido = 0;
             }
-
+            Clase.UUID = txt_UUID.Text;
+            Clase.MetodoPago = txt_MetodoPago.Text;
+            Clase.SubTotalXML = Decimal.Parse(txt_SubTotal.Text, style, provider); 
+            Clase.TotalXML = Decimal.Parse(txt_Total.Text, style, provider); 
             Clase.Usuario = UsuariosLogin;
             //if (ArchivoPDFGlobalProductor != null || ArchivoXMLGlobalProductor != null)
             //{
@@ -1811,7 +2272,10 @@ namespace Business_Analitics
             {
                 Clase.Diferido = 0;
             }
-
+            Clase.UUID = txt_UUID_Kilos.Text;
+            Clase.MetodoPago = txt_MetodoPago_Kilos.Text;
+            Clase.SubTotalXML = Decimal.Parse(txt_SubTotal_Kilos.Text, style, provider);
+            Clase.TotalXML = Decimal.Parse(txt_Total_Kilos.Text, style, provider);
             Clase.Usuario = UsuariosLogin;
             //if (ArchivoPDFGlobalCorteKilos != null || ArchivoXMLGlobalCorteKilos != null)
             //{
@@ -1979,7 +2443,10 @@ namespace Business_Analitics
             {
                 Clase.Diferido = 0;
             }
-
+            Clase.UUID = txt_UUID_Dia.Text;
+            Clase.MetodoPago = txt_MetodoPago_Dia.Text;
+            Clase.SubTotalXML = Decimal.Parse(txt_SubTotal_Dia.Text, style, provider);
+            Clase.TotalXML = Decimal.Parse(txt_Total_Dia.Text, style, provider);
             Clase.Usuario = UsuariosLogin;
             //if (ArchivoPDFGlobalCorteDia != null || ArchivoXMLGlobalCorteDia != null)
             //{
@@ -2148,7 +2615,10 @@ namespace Business_Analitics
             {
                 Clase.Diferido = 0;
             }
-
+            Clase.UUID = txt_UUID_Apoyo.Text;
+            Clase.MetodoPago = txt_MetodoPago_Apoyo.Text;
+            Clase.SubTotalXML = Decimal.Parse(txt_SubTotal_Apoyo.Text, style, provider);
+            Clase.TotalXML = Decimal.Parse(txt_Total_Apoyo.Text, style, provider);
             Clase.Usuario = UsuariosLogin;
             //if (ArchivoPDFGlobalCorteApoyo != null || ArchivoXMLGlobalCorteApoyo != null)
             //{
@@ -2316,7 +2786,10 @@ namespace Business_Analitics
             {
                 Clase.Diferido = 0;
             }
-
+            Clase.UUID = txt_UUID_Salida.Text;
+            Clase.MetodoPago = txt_MetodoPago_Salida.Text;
+            Clase.SubTotalXML = Decimal.Parse(txt_SubTotal_Salida.Text, style, provider);
+            Clase.TotalXML = Decimal.Parse(txt_Total_Salida.Text, style, provider);
             Clase.Usuario = UsuariosLogin;
             //if (ArchivoPDFGlobalCorteSalida != null || ArchivoXMLGlobalCorteSalida != null)
             //{
@@ -2484,7 +2957,10 @@ namespace Business_Analitics
             {
                 Clase.Diferido = 0;
             }
-
+            Clase.UUID = txt_UUID_Acarreo.Text;
+            Clase.MetodoPago = txt_MetodoPago_Acarreo.Text;
+            Clase.SubTotalXML = Decimal.Parse(txt_SubTotal_Acarreo.Text, style, provider);
+            Clase.TotalXML = Decimal.Parse(txt_Total_Acarreo.Text, style, provider);
             Clase.Usuario = UsuariosLogin;
             //if (ArchivoPDFGlobalAcarreo != null || ArchivoXMLGlobalAcarreo != null)
             //{
@@ -2517,9 +2993,21 @@ namespace Business_Analitics
                 ins.Mercado = txt_Mercado.Text;
                 ins.c_codigo_hue = txt_Huerta.Tag.ToString();
                 ins.Huerta = txt_Huerta.Text;
+                ins.SAGARPA = txt_SAGARPA.Text;
+                ins.Estado_Huerta = txt_Estado_Huerta.Text;
                 ins.Acopiador = txt_Acopiador.Text;
                 ins.ProgramaCajas = Convert.ToInt32(txt_Cajas_Programa.EditValue);
                 ins.TipoCorte = txt_TipoCorte.Text;
+                if (chk_Autorizado_USA.Checked == true)
+                {
+                    ins.Autorizado_USA = 1;
+                }
+                else
+                {
+                    ins.Autorizado_USA = 0;
+                }
+                ins.Poliza_aseguradora = txt_Poliza_ase.Text;
+                ins.Aseguradora = txt_Nombre_ase.Text;
                 ins.Usuario = UsuariosLogin;
                 if (txt_IdCosecha.Text != String.Empty)
                 {
@@ -2616,6 +3104,28 @@ namespace Business_Analitics
         }
         private void GuardarComercializadora()
         {
+            Byte[] ArchivoPDFContratoComercializadora = null;
+            FileStream fsPDF = null;
+            Boolean noentroPDFContratoComercializadora = true;
+
+            if (vRutaContratoComercializadora.Length > 0)
+            {
+                //txtNombreArchivoPDF.Text = result2;
+                //string ar = OpenDialog.FileName;
+                fsPDF = new FileStream(vRutaContratoComercializadora, FileMode.Open, FileAccess.Read);
+                //Creamos un array de bytes para almacenar los datos leídos por fs.
+                ArchivoPDFContratoComercializadora = new byte[fsPDF.Length];
+                //Y guardamos los datos en el array data
+                fsPDF.Read(ArchivoPDFContratoComercializadora, 0, (int)fsPDF.Length);
+                ArchivoPDFGlobalContratoComercializadora = ArchivoPDFContratoComercializadora;
+            }
+            else
+            {
+                ArchivoPDFContratoComercializadora = ArchivoPDFGlobalContratoComercializadora;
+                noentroPDFContratoComercializadora = false;
+            }
+
+            DateTime vFecha = DateTime.Now;
             CLS_Cosecha_Datos ins = new CLS_Cosecha_Datos();
             ins.Id_Cosecha = txt_IdCosecha.Text;
             try
@@ -2630,11 +3140,27 @@ namespace Business_Analitics
             ins.Nombre_Contacto = txtNombreContacto.Text;
             ins.Telefono_Contacto = txtTelefonoContacto.Text;
             ins.Email_Contacto = txtCorreoContacto.Text;
+            if (ArchivoPDFContratoComercializadora != null)
+            {
+                ins.Contrato = ArchivoPDFContratoComercializadora;
+                vFecha = dt_FechaContratocomercializadora.DateTime;
+                ins.d_Contrato = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
+            else
+            {
+                ins.Contrato = Encoding.UTF8.GetBytes("");
+                vFecha = DateTime.Now;
+                ins.d_Contrato = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
+            }
             ins.Usuario = UsuariosLogin;
             ins.MtdInsertarComercializadora();
             if (!ins.Exito)
             {
                 XtraMessageBox.Show(ins.Mensaje);
+            }
+            else
+            {
+                SelectComercializadora();
             }
         }
 
@@ -2748,13 +3274,29 @@ namespace Business_Analitics
             }
             try
             {
-                ins.Nombre_Camion = cmb_Camiones.EditValue.ToString();
+                ins.Nombre_Camion = cmb_Camiones.Text.ToString();
             }
             catch (Exception)
             {
                 ins.Nombre_Camion = string.Empty;
             }
             ins.Placas = txtPlacasCamion.Text;
+            try
+            {
+                ins.Id_TipoCamion = txt_TipoCamion.Tag.ToString();
+            }
+            catch (Exception)
+            {
+                ins.Id_TipoCamion = String.Empty;
+            }
+            try
+            {
+                ins.Nombre_TipoCamion = txt_TipoCamion.Text;
+            }
+            catch (Exception)
+            {
+                ins.Nombre_TipoCamion = String.Empty;
+            }
             try
             {
                 ins.Id_Chofer = cmb_Choferes.EditValue.ToString();
@@ -2848,62 +3390,182 @@ namespace Business_Analitics
 
         private void btn_UpPDFAcarreo_Click(object sender, EventArgs e)
         {
-            OpenDialog.FileName = String.Empty;
-            DialogResult result = FileDialogPDF();
-            if (result == DialogResult.OK)
+            if (txt_IdCosecha.Text != String.Empty)
             {
-                txt_RutaPDFAcarreo.Text = OpenDialog.FileName;
-                GuardarRuta(OpenDialog.FileName);
+                OpenDialog.FileName = String.Empty;
+                DialogResult result = FileDialogPDF();
+                if (result == DialogResult.OK)
+                {
+                    txt_RutaPDFAcarreo.Text = OpenDialog.FileName;
+                    GuardarRuta(OpenDialog.FileName);
+                    
+                }
+                OpenDialog.Dispose();
             }
-            OpenDialog.Dispose();
+            else
+            {
+                XtraMessageBox.Show("No se ha guardado o definido un folio de cosecha");
+            }
         }
 
         private void btn_UpXMLCorteKilos_Click(object sender, EventArgs e)
         {
-            OpenDialog.FileName = String.Empty;
-            DialogResult result = FileDialogXML();
-            if (result == DialogResult.OK)
+            if (txt_IdCosecha.Text != String.Empty)
             {
-                txt_RutaXMLCorteKilos.Text = OpenDialog.FileName;
-                GuardarRuta(OpenDialog.FileName);
+                OpenDialog.FileName = String.Empty;
+                DialogResult result = FileDialogXML();
+                if (result == DialogResult.OK)
+                {
+                    txt_RutaXMLCorteKilos.Text = OpenDialog.FileName;
+                    GuardarRuta(OpenDialog.FileName);
+                    try
+                    {
+                        XmlDocument doc = new XmlDocument();
+                        doc.Load(OpenDialog.FileName);
+                        XmlNode nodoComprobante = doc.GetElementsByTagName("cfdi:Comprobante").Item(0);
+                        txt_MetodoPago_Kilos.Text = nodoComprobante.Attributes["MetodoPago"].Value;
+                        dt_FechaFacturaCorteKilos.DateTime = Convert.ToDateTime(nodoComprobante.Attributes["Fecha"].Value);
+                        txt_FolioFacturaCorteKilos.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        txt_SubTotal_Kilos.Text = nodoComprobante.Attributes["SubTotal"].Value;
+                        txt_Total_Kilos.Text = nodoComprobante.Attributes["Total"].Value;
+                        XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                        txt_UUID_Kilos.Text = nodoComplemento.Attributes["UUID"].Value;
+                        XmlNode nodoEmisor = doc.GetElementsByTagName("cfdi:Emisor").Item(0);
+                        txtRazonSCorteKilos.Text = nodoEmisor.Attributes["Nombre"].Value;
+                    }
+                    catch
+                    {
+                        txt_RutaXMLProductor.Text = String.Empty;
+                        XtraMessageBox.Show("No es un Archivo CFDI Valido favor de verificarlo");
+
+                    }
+                }
+                OpenDialog.Dispose();
             }
-            OpenDialog?.Dispose();
+            else
+            {
+                XtraMessageBox.Show("No se ha guardado o definido un folio de cosecha");
+            }
         }
 
         private void btn_UpXMLCorteDia_Click(object sender, EventArgs e)
         {
-            OpenDialog.FileName = String.Empty;
-            DialogResult result = FileDialogXML();
-            if (result == DialogResult.OK)
+            if (txt_IdCosecha.Text != String.Empty)
             {
-                txt_RutaXMLCorteDia.Text = OpenDialog.FileName;
-                GuardarRuta(OpenDialog.FileName);
+                OpenDialog.FileName = String.Empty;
+                DialogResult result = FileDialogXML();
+                if (result == DialogResult.OK)
+                {
+                    txt_RutaXMLCorteDia.Text = OpenDialog.FileName;
+                    GuardarRuta(OpenDialog.FileName);
+                    try
+                    {
+                        XmlDocument doc = new XmlDocument();
+                        doc.Load(OpenDialog.FileName);
+                        XmlNode nodoComprobante = doc.GetElementsByTagName("cfdi:Comprobante").Item(0);
+                        txt_MetodoPago_Dia.Text = nodoComprobante.Attributes["MetodoPago"].Value;
+                        dt_FechaFacturaCorteDia.DateTime = Convert.ToDateTime(nodoComprobante.Attributes["Fecha"].Value);
+                        txt_FolioFacturaCorteDia.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        txt_SubTotal_Dia.Text = nodoComprobante.Attributes["SubTotal"].Value;
+                        txt_Total_Dia.Text = nodoComprobante.Attributes["Total"].Value;
+                        XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                        txt_UUID_Dia.Text = nodoComplemento.Attributes["UUID"].Value;
+                        XmlNode nodoEmisor = doc.GetElementsByTagName("cfdi:Emisor").Item(0);
+                        txtRazonSCorteDia.Text = nodoEmisor.Attributes["Nombre"].Value;
+                    }
+                    catch
+                    {
+                        txt_RutaXMLProductor.Text = String.Empty;
+                        XtraMessageBox.Show("No es un Archivo CFDI Valido favor de verificarlo");
+
+                    }
+                }
+                OpenDialog.Dispose();
             }
-            OpenDialog.Dispose();
+            else
+            {
+                XtraMessageBox.Show("No se ha guardado o definido un folio de cosecha");
+            }
         }
 
         private void btn_UpXMLCorteApoyo_Click(object sender, EventArgs e)
         {
-            OpenDialog.FileName = String.Empty;
-            DialogResult result = FileDialogXML();
-            if (result == DialogResult.OK)
+            if (txt_IdCosecha.Text != String.Empty)
             {
-                txt_RutaXMLCorteApoyo.Text = OpenDialog.FileName;
-                GuardarRuta(OpenDialog.FileName);
+                OpenDialog.FileName = String.Empty;
+                DialogResult result = FileDialogXML();
+                if (result == DialogResult.OK)
+                {
+                    txt_RutaXMLCorteApoyo.Text = OpenDialog.FileName;
+                    GuardarRuta(OpenDialog.FileName);
+                    try
+                    {
+                        XmlDocument doc = new XmlDocument();
+                        doc.Load(OpenDialog.FileName);
+                        XmlNode nodoComprobante = doc.GetElementsByTagName("cfdi:Comprobante").Item(0);
+                        txt_MetodoPago_Apoyo.Text = nodoComprobante.Attributes["MetodoPago"].Value;
+                        dt_FechaFacturaCorteApoyo.DateTime = Convert.ToDateTime(nodoComprobante.Attributes["Fecha"].Value);
+                        txt_FolioFacturaCorteApoyo.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        txt_SubTotal_Apoyo.Text = nodoComprobante.Attributes["SubTotal"].Value;
+                        txt_Total_Apoyo.Text = nodoComprobante.Attributes["Total"].Value;
+                        XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                        txt_UUID_Apoyo.Text = nodoComplemento.Attributes["UUID"].Value;
+                        XmlNode nodoEmisor = doc.GetElementsByTagName("cfdi:Emisor").Item(0);
+                        txtRazonSCorteApoyo.Text = nodoEmisor.Attributes["Nombre"].Value;
+                    }
+                    catch
+                    {
+                        txt_RutaXMLProductor.Text = String.Empty;
+                        XtraMessageBox.Show("No es un Archivo CFDI Valido favor de verificarlo");
+
+                    }
+                }
+                OpenDialog?.Dispose();
             }
-            OpenDialog?.Dispose();
+            else
+            {
+                XtraMessageBox.Show("No se ha guardado o definido un folio de cosecha");
+            }
         }
 
         private void btn_UpXMLCorteSalida_Click(object sender, EventArgs e)
         {
-            OpenDialog.FileName = String.Empty;
-            DialogResult result = FileDialogXML();
-            if (result == DialogResult.OK)
+            if (txt_IdCosecha.Text != String.Empty)
             {
-                txt_RutaXMLCorteSalida.Text = OpenDialog.FileName;
-                GuardarRuta(OpenDialog.FileName);
+                OpenDialog.FileName = String.Empty;
+                DialogResult result = FileDialogXML();
+                if (result == DialogResult.OK)
+                {
+                    txt_RutaXMLCorteSalida.Text = OpenDialog.FileName;
+                    GuardarRuta(OpenDialog.FileName);
+                    try
+                    {
+                        XmlDocument doc = new XmlDocument();
+                        doc.Load(OpenDialog.FileName);
+                        XmlNode nodoComprobante = doc.GetElementsByTagName("cfdi:Comprobante").Item(0);
+                        txt_MetodoPago_Salida.Text = nodoComprobante.Attributes["MetodoPago"].Value;
+                        dt_FechaFacturaCorteSalida.DateTime = Convert.ToDateTime(nodoComprobante.Attributes["Fecha"].Value);
+                        txt_FolioFacturaCorteSalida.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        txt_SubTotal_Salida.Text = nodoComprobante.Attributes["SubTotal"].Value;
+                        txt_Total_Salida.Text = nodoComprobante.Attributes["Total"].Value;
+                        XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                        txt_UUID_Salida.Text = nodoComplemento.Attributes["UUID"].Value;
+                        XmlNode nodoEmisor = doc.GetElementsByTagName("cfdi:Emisor").Item(0);
+                        txtRazonSCorteSalida.Text = nodoEmisor.Attributes["Nombre"].Value;
+                    }
+                    catch
+                    {
+                        txt_RutaXMLProductor.Text = String.Empty;
+                        XtraMessageBox.Show("No es un Archivo CFDI Valido favor de verificarlo");
+
+                    }
+                }
+                OpenDialog?.Dispose();
             }
-            OpenDialog?.Dispose();
+            else
+            {
+                XtraMessageBox.Show("No se ha guardado o definido un folio de cosecha");
+            }
         }
 
         private void btn_ViewPDFProductor_Click(object sender, EventArgs e)
@@ -3041,11 +3703,23 @@ namespace Business_Analitics
                     txt_Mercado.Text = ins.Datos.Rows[0]["Mercado"].ToString();
                     txt_Huerta.Tag = ins.Datos.Rows[0]["c_codigo_hue"].ToString();
                     txt_Huerta.Text = ins.Datos.Rows[0]["Huerta"].ToString();
+                    txt_SAGARPA.Text= ins.Datos.Rows[0]["SAGARPA"].ToString();
+                    txt_Estado_Huerta.Text = ins.Datos.Rows[0]["Estado_Huerta"].ToString();
                     BarHuerta.Caption = "Huerta: " + ins.Datos.Rows[0]["Huerta"].ToString();
                     txt_Acopiador.Text = ins.Datos.Rows[0]["Acopiador"].ToString();
                     txt_Cajas_Programa.EditValue = ins.Datos.Rows[0]["ProgramaCajas"].ToString();
                     txt_TipoCorte.Text = ins.Datos.Rows[0]["TipoCorte"].ToString();
                     txtTipoCorteEC.Text = ins.Datos.Rows[0]["TipoCorte"].ToString();
+                    if(ins.Datos.Rows[0]["Autorizado_USA"].ToString()=="True")
+                    {
+                        chk_Autorizado_USA.Checked = true;
+                    }
+                    else
+                    {
+                        chk_Autorizado_USA.Checked = false;
+                    }
+                    txt_Poliza_ase.Text= ins.Datos.Rows[0]["Poliza_aseguradora"].ToString();
+                    txt_Nombre_ase.Text= ins.Datos.Rows[0]["Aseguradora"].ToString();
                     Bloquear_OrdenCorte(!Convert.ToBoolean(ins.Datos.Rows[0]["Cerrado"]));
                 }
             }
@@ -3117,17 +3791,46 @@ namespace Business_Analitics
                 {
                     try
                     {
+                        ArchivoPDFGlobalContratoComercializadora = (byte[])ins.Datos.Rows[0]["Contrato"];
+                    }
+                    catch 
+                    {
+                        ArchivoPDFGlobalContratoComercializadora=null;
+                    }
+                    try
+                    {
                         txt_EmpresaComercializadora.Tag = ins.Datos.Rows[0]["Id_EmpresaComercializacion"].ToString();
                     }
                     catch (Exception)
                     {
                         ins.Id_EmpresaComercializacion = string.Empty;
                     }
-                    //aqui me quede
+                   
                     txt_EmpresaComercializadora.Text = ins.Datos.Rows[0]["Nombre_EmpresaComercializacion"].ToString();
                     txtNombreContacto.Text = ins.Datos.Rows[0]["Nombre_Contacto"].ToString();
                     txtTelefonoContacto.Text = ins.Datos.Rows[0]["Telefono_Contacto"].ToString();
                     txtCorreoContacto.Text = ins.Datos.Rows[0]["Email_Contacto"].ToString();
+                    try
+                    {
+                        if (ArchivoPDFGlobalContratoComercializadora.Length > 0)
+                        {
+                            btn_ViewPDFComercializadora.Enabled = true;
+                            btn_DelContratoComercializadora.Enabled = true;
+                            dt_FechaContratocomercializadora.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["d_Contrato"].ToString());
+                        }
+                        else
+                        {
+                            btn_ViewPDFComercializadora.Enabled = false;
+                            btn_DelContratoComercializadora.Enabled = false;
+                            dt_FechaContratocomercializadora.EditValue = DateTime.Now;
+                        }
+                    }
+                    catch 
+                    {
+                        btn_ViewPDFComercializadora.Enabled = false;
+                        btn_DelContratoComercializadora.Enabled = false;
+                        dt_FechaContratocomercializadora.EditValue = DateTime.Now;
+                    }
                 }
             }
             else
@@ -3243,10 +3946,13 @@ namespace Business_Analitics
                 {
                     txt_EmpresaAcarreo.Tag = ins.Datos.Rows[0]["Id_EmpresaAcarreo"].ToString();
                     txt_EmpresaAcarreo.Text = ins.Datos.Rows[0]["Nombre_EmpresaAcarreo"].ToString();
-                    CargarServiciosAcarreo();
                     CargarCamiones(ins.Datos.Rows[0]["Id_Camion"].ToString());
                     CargarChoferes(ins.Datos.Rows[0]["Id_Chofer"].ToString());
                     txtPlacasCamion.Text = ins.Datos.Rows[0]["Placas"].ToString();
+                    txt_TipoCamion.Text= ins.Datos.Rows[0]["Nombre_TipoCamion"].ToString();
+                    txt_TipoCamion.Tag = ins.Datos.Rows[0]["Id_TipoCamion"].ToString();
+                    CargarServiciosAcarreo();
+                    CargarCostosServicios();
                     txt_CajasProgramadasA.EditValue = ins.Datos.Rows[0]["CajasProgramadas"].ToString();
                     txt_Cajas_CortadasA.EditValue = ins.Datos.Rows[0]["CajasCortadas"].ToString();
                     txt_CostoServicio.EditValue = ins.Datos.Rows[0]["CostoServicio"].ToString();
@@ -3271,6 +3977,155 @@ namespace Business_Analitics
             else
             {
                 XtraMessageBox.Show(ins.Mensaje);
+            }
+
+        }
+        void SelectExpedientesProductor()
+        {
+            CLS_Cosecha_Expedientes ins = new CLS_Cosecha_Expedientes();
+            ins.Id_Cosecha = txt_IdCosecha.Text;
+            ins.MtdSeleccionarCosechaArchivoPDFXML();
+            if (ins.Exito)
+            {
+                if (ins.Datos.Rows.Count > 0)
+                {
+                    ArchivoPDFGlobalTarjetaApeam = (byte[])ins.Datos.Rows[0]["TarjetaApeam"];
+                    ArchivoPDFGlobalIdentificacion_INE_IFE = (byte[])ins.Datos.Rows[0]["Identificacion_INE_IFE"];
+                    ArchivoPDFGlobalOpinion_Cumplimiento = (byte[])ins.Datos.Rows[0]["Opinion_Cumplimiento"];
+                    ArchivoPDFGlobalConstancia_de_Situacion_Fiscal = (byte[])ins.Datos.Rows[0]["Constancia_de_Situacion_Fiscal"];
+                    ArchivoPDFGlobalClave_Interbancaria = (byte[])ins.Datos.Rows[0]["Clave_Interbancaria"];
+                    ArchivoPDFGlobalContrato_entre_Terceros = (byte[])ins.Datos.Rows[0]["Contrato_entre_Terceros"];
+                    ArchivoPDFGlobalContrato_GEST = (byte[])ins.Datos.Rows[0]["Contrato_GEST"];
+                    
+                    if (ArchivoPDFGlobalTarjetaApeam.Length > 0)
+                    {
+                        btn_ViewPDFTarjetaAPEAM.Enabled = true;
+                        btn_DelTarjetaAPEAM.Enabled = true;
+                        dt_FechaTarjetaAPEAM.EditValue =Convert.ToDateTime(ins.Datos.Rows[0]["d_TarjetaApeam"].ToString());
+                    }
+                    else
+                    {
+                        btn_ViewPDFTarjetaAPEAM.Enabled = false;
+                        btn_DelTarjetaAPEAM.Enabled = false;
+                        dt_FechaTarjetaAPEAM.EditValue = DateTime.Now;
+                    }
+
+                    if (ArchivoPDFGlobalIdentificacion_INE_IFE.Length > 0)
+                    {
+                        btn_ViewPDFIdentificacion_IFE_INE.Enabled = true;
+                        btn_DelIdentificacion_IFE_INE.Enabled=true;
+                        dt_FechaIdentificacion_IFE_INE.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["d_Identificacion_INE_IFE"].ToString());
+                    }
+                    else
+                    {
+                        btn_ViewPDFIdentificacion_IFE_INE.Enabled = false;
+                        btn_DelIdentificacion_IFE_INE.Enabled = false;
+                        dt_FechaIdentificacion_IFE_INE.EditValue = DateTime.Now;
+                    }
+
+                    if (ArchivoPDFGlobalOpinion_Cumplimiento.Length > 0)
+                    {
+                        btn_ViewPDFOpinionCumplimiento.Enabled = true;
+                        btn_DelOpinionCumplimiento.Enabled=true;
+                        dt_FechaOPinionCumplimiento.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["d_Opinion_Cumplimiento"].ToString());
+                    }
+                    else
+                    {
+                        btn_ViewPDFOpinionCumplimiento.Enabled = false;
+                        btn_DelOpinionCumplimiento.Enabled = false;
+                        dt_FechaOPinionCumplimiento.EditValue = DateTime.Now;
+                    }
+
+                    if (ArchivoPDFGlobalConstancia_de_Situacion_Fiscal.Length > 0)
+                    {
+                        btn_ViewPDFConstanciaSituacion.Enabled = true;
+                        btn_DelConstanciaSituacion.Enabled=true;
+                        dt_FechaConstanciaSituacion.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["d_Constancia_de_Situacion_Fiscal"].ToString());
+                    }
+                    else
+                    {
+                        btn_ViewPDFConstanciaSituacion.Enabled = false;
+                        btn_DelConstanciaSituacion.Enabled = false;
+                        dt_FechaConstanciaSituacion.EditValue = DateTime.Now;
+                    }
+
+                    if (ArchivoPDFGlobalClave_Interbancaria.Length > 0)
+                    {
+                        btn_ViewPDFClaveInterbancaria.Enabled = true;
+                        btn_DelClaveInterbancaria.Enabled = true;
+                        dt_FechaClaveInterbancaria.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["d_Clave_Interbancaria"].ToString());
+                    }
+                    else
+                    {
+                        btn_ViewPDFClaveInterbancaria.Enabled = false;
+                        btn_DelClaveInterbancaria.Enabled = false;
+                        dt_FechaClaveInterbancaria.EditValue = DateTime.Now;
+                    }
+
+                    if (ArchivoPDFGlobalContrato_entre_Terceros.Length > 0)
+                    {
+                        btn_ViewPDFContratoTerceros.Enabled = true;
+                        btn_DelContratoTerceros.Enabled = true;
+                        dt_FechaContratoTerceros.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["d_Contrato_entre_Terceros"].ToString());
+                    }
+                    else
+                    {
+                        btn_ViewPDFContratoTerceros.Enabled = false;
+                        btn_DelContratoTerceros.Enabled = false;
+                        dt_FechaContratoTerceros.EditValue = DateTime.Now;
+                    }
+
+                    if (ArchivoPDFGlobalContrato_GEST.Length > 0)
+                    {
+                        btn_ViewPDFContratoGEST.Enabled = true;
+                        btn_DelContratoGEST.Enabled= true;
+                        dt_FechaContratoGEST.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["d_Contrato_GEST"].ToString());
+                    }
+                    else
+                    {
+                        btn_ViewPDFContratoGEST.Enabled = false;
+                        btn_DelContratoGEST.Enabled = false;
+                        dt_FechaContratoGEST.EditValue = DateTime.Now;
+                    }
+                }
+                else
+                {
+                    btn_ViewPDFTarjetaAPEAM.Enabled = false;
+                    btn_DelTarjetaAPEAM.Enabled = false;
+                    dt_FechaTarjetaAPEAM.EditValue = DateTime.Now;
+                    btn_ViewPDFIdentificacion_IFE_INE.Enabled = false;
+                    btn_DelIdentificacion_IFE_INE.Enabled = false;
+                    dt_FechaIdentificacion_IFE_INE.EditValue = DateTime.Now;
+                    btn_ViewPDFOpinionCumplimiento.Enabled = false;
+                    btn_DelOpinionCumplimiento.Enabled = false;
+                    dt_FechaOPinionCumplimiento.EditValue = DateTime.Now;
+                    btn_ViewPDFConstanciaSituacion.Enabled = false;
+                    btn_DelConstanciaSituacion.Enabled = false;
+                    dt_FechaConstanciaSituacion.EditValue = DateTime.Now;
+                    btn_ViewPDFClaveInterbancaria.Enabled = false;
+                    btn_DelClaveInterbancaria.Enabled = false;
+                    dt_FechaClaveInterbancaria.EditValue = DateTime.Now;
+                    btn_ViewPDFContratoTerceros.Enabled = false;
+                    btn_DelContratoTerceros.Enabled = false;
+                    dt_FechaContratoTerceros.EditValue = DateTime.Now;
+                    btn_ViewPDFContratoGEST.Enabled = false;
+                    btn_DelContratoGEST.Enabled = false;
+                    dt_FechaContratoGEST.EditValue = DateTime.Now;
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show(ins.Mensaje);
+            }
+        }
+        void CargarREP()
+        {
+            CLS_Cosecha_Facturas sel = new CLS_Cosecha_Facturas();
+            sel.Id_Cosecha = txt_IdCosecha.Text;
+            sel.MtdSeleccionarCosechaArchivoREP_PDFXML();
+            if(sel.Exito)
+            {
+                dtgFacturasREP.DataSource = sel.Datos;
             }
 
         }
@@ -3361,6 +4216,30 @@ namespace Business_Analitics
                     else
                     {
                         opt_TipoFacturaProductor.SelectedIndex = 1;
+                    }
+                    txt_UUID.EditValue = ins.Datos.Rows[0]["UUID"].ToString();
+                    txt_MetodoPago.EditValue = ins.Datos.Rows[0]["MetodoPago"].ToString();
+                    txt_SubTotal.EditValue = ins.Datos.Rows[0]["SubTotalXML"].ToString();
+                    txt_Total.EditValue = ins.Datos.Rows[0]["TotalXML"].ToString();
+                    if(txt_MetodoPago.Text=="PPD")
+                    {
+                        xtraTabPage4.PageVisible = true;
+                        txt_SumaTotal_REP.Visible = true;
+                        txt_Salto_REP.Visible = true;
+                        labelControl207.Visible = true;
+                        labelControl208.Visible = true;
+                        CargarREP();
+                        CalcularTotalREP();
+                    }
+                    else
+                    {
+                        xtraTabPage4.PageVisible = false;
+                        txt_SumaTotal_REP.Visible = false;
+                        txt_Salto_REP.Visible = false;
+                        labelControl207.Visible = false;
+                        labelControl208.Visible = false;
+                        CargarREP();
+                        CalcularTotalREP();
                     }
                 }
             }
@@ -3457,6 +4336,10 @@ namespace Business_Analitics
                     {
                         opt_TipoFacturaCorteKilos.SelectedIndex = 1;
                     }
+                    txt_UUID_Kilos.EditValue = ins.Datos.Rows[0]["UUID"].ToString();
+                    txt_MetodoPago_Kilos.EditValue = ins.Datos.Rows[0]["MetodoPago"].ToString();
+                    txt_SubTotal_Kilos.EditValue = ins.Datos.Rows[0]["SubTotalXML"].ToString();
+                    txt_Total_Kilos.EditValue = ins.Datos.Rows[0]["TotalXML"].ToString();
                 }
             }
             else
@@ -3552,6 +4435,10 @@ namespace Business_Analitics
                     {
                         opt_TipoFacturaCorteDia.SelectedIndex = 1;
                     }
+                    txt_UUID_Dia.EditValue = ins.Datos.Rows[0]["UUID"].ToString();
+                    txt_MetodoPago_Dia.EditValue = ins.Datos.Rows[0]["MetodoPago"].ToString();
+                    txt_SubTotal_Dia.EditValue = ins.Datos.Rows[0]["SubTotalXML"].ToString();
+                    txt_Total_Dia.EditValue = ins.Datos.Rows[0]["TotalXML"].ToString();
                 }
             }
             else
@@ -3646,6 +4533,10 @@ namespace Business_Analitics
                     {
                         opt_TipoFacturaCorteApoyo.SelectedIndex = 1;
                     }
+                    txt_UUID_Apoyo.EditValue = ins.Datos.Rows[0]["UUID"].ToString();
+                    txt_MetodoPago_Apoyo.EditValue = ins.Datos.Rows[0]["MetodoPago"].ToString();
+                    txt_SubTotal_Apoyo.EditValue = ins.Datos.Rows[0]["SubTotalXML"].ToString();
+                    txt_Total_Apoyo.EditValue = ins.Datos.Rows[0]["TotalXML"].ToString();
                 }
             }
             else
@@ -3741,6 +4632,10 @@ namespace Business_Analitics
                     {
                         opt_TipoFacturaCorteSalida.SelectedIndex = 1;
                     }
+                    txt_UUID_Salida.EditValue = ins.Datos.Rows[0]["UUID"].ToString();
+                    txt_MetodoPago_Salida.EditValue = ins.Datos.Rows[0]["MetodoPago"].ToString();
+                    txt_SubTotal_Salida.EditValue = ins.Datos.Rows[0]["SubTotalXML"].ToString();
+                    txt_Total_Salida.EditValue = ins.Datos.Rows[0]["TotalXML"].ToString();
                 }
             }
             else
@@ -3836,6 +4731,10 @@ namespace Business_Analitics
                     {
                         opt_TipoFacturaAcarreo.SelectedIndex = 1;
                     }
+                    txt_UUID_Acarreo.EditValue = ins.Datos.Rows[0]["UUID"].ToString();
+                    txt_MetodoPago_Acarreo.EditValue = ins.Datos.Rows[0]["MetodoPago"].ToString();
+                    txt_SubTotal_Acarreo.EditValue = ins.Datos.Rows[0]["SubTotalXML"].ToString();
+                    txt_Total_Acarreo.EditValue = ins.Datos.Rows[0]["TotalXML"].ToString();
                 }
             }
             else
@@ -3880,6 +4779,7 @@ namespace Business_Analitics
             SelectRecepcion();
             SelectComercializadora();
             SelectProductor();
+            SelectExpedientesProductor();
             SelectCorte();
             CorridaBanda();
             SelectAcarreo();
@@ -4314,14 +5214,43 @@ namespace Business_Analitics
 
         private void btn_UpXMLAcarreo_Click(object sender, EventArgs e)
         {
-            OpenDialog.FileName = String.Empty;
-            DialogResult result = FileDialogXML();
-            if (result == DialogResult.OK)
+            if (txt_IdCosecha.Text != String.Empty)
             {
-                txt_RutaXMLAcarreo.Text = OpenDialog.FileName;
-                GuardarRuta(OpenDialog.FileName);
+                OpenDialog.FileName = String.Empty;
+                DialogResult result = FileDialogXML();
+                if (result == DialogResult.OK)
+                {
+                    txt_RutaXMLAcarreo.Text = OpenDialog.FileName;
+                    GuardarRuta(OpenDialog.FileName);
+                    try
+                    {
+                        XmlDocument doc = new XmlDocument();
+                        doc.Load(OpenDialog.FileName);
+                        XmlNode nodoComprobante = doc.GetElementsByTagName("cfdi:Comprobante").Item(0);
+                        txt_MetodoPago_Acarreo.Text = nodoComprobante.Attributes["MetodoPago"].Value;
+                        dt_FechaFacturaAcarreo.DateTime = Convert.ToDateTime(nodoComprobante.Attributes["Fecha"].Value);
+                        txt_FolioFacturaAcarreo.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        txt_SubTotal_Acarreo.Text = nodoComprobante.Attributes["SubTotal"].Value;
+                        txt_Total_Acarreo.Text = nodoComprobante.Attributes["Total"].Value;
+                        XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                        txt_UUID_Acarreo.Text = nodoComplemento.Attributes["UUID"].Value;
+                        XmlNode nodoEmisor = doc.GetElementsByTagName("cfdi:Emisor").Item(0);
+                        txtRazonSAcarreo.Text = nodoEmisor.Attributes["Nombre"].Value;
+                    }
+                    catch
+                    {
+                        txt_RutaXMLProductor.Text = String.Empty;
+                        XtraMessageBox.Show("No es un Archivo CFDI Valido favor de verificarlo");
+
+                    }
+
+                }
+                OpenDialog.Dispose();
             }
-            OpenDialog.Dispose();
+            else
+            {
+                XtraMessageBox.Show("No se ha guardado o definido un folio de cosecha");
+            }
         }
 
         private void btn_Manifiesto_Click(object sender, EventArgs e)
@@ -4595,6 +5524,10 @@ namespace Business_Analitics
                     Clase.Id_Archivo = Id_Factura;
                     Clase.FacturaPDF = Encoding.UTF8.GetBytes("");
                     Clase.FacturaXML = Encoding.UTF8.GetBytes("");
+                    Clase.UUID = String.Empty;
+                    Clase.MetodoPago=String.Empty;
+                    Clase.SubTotalXML = 0;
+                    Clase.TotalXML = 0;
                     Clase.Usuario = UsuariosLogin;
                     Clase.MtdDeleteCosechaArchivoPDFXML();
                     if (!Clase.Exito)
@@ -4604,9 +5537,23 @@ namespace Business_Analitics
                 }
             }
         }
+        void EliminaREP()
+        {
+            if (txt_IdCosecha.Text.Trim() != String.Empty)
+            {
+                CLS_Cosecha_Facturas Clase = new CLS_Cosecha_Facturas();
+                Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+                Clase.MtdDeleteCosechaTodosArchivoREP_PDFXML();
+                if (!Clase.Exito)
+                {
+                    XtraMessageBox.Show(Clase.Mensaje);
+                }
+            }
+        }
         private void btn_DelFacturaProductor_Click(object sender, EventArgs e)
         {
             EliminaFacturaXMLPDF(1);
+            EliminaREP();
             SelectFacturas();
         }
         private void btn_DelFacturaKilos_Click(object sender, EventArgs e)
@@ -4652,6 +5599,12 @@ namespace Business_Analitics
         private void Bloquear_Comercializacion(Boolean valor)
         {
             btn_EmpresaComercializacion.Enabled = valor;
+            if (!valor)
+            {
+                btn_UpPDFComercializadora.Enabled = valor;
+                btn_ViewPDFComercializadora.Enabled = valor;
+                btn_DelContratoComercializadora.Enabled = !valor;
+            }
         }
         private void Bloquear_Productor(Boolean valor)
         {
@@ -4679,12 +5632,35 @@ namespace Business_Analitics
                 btn_ViewPDFProductor.Enabled = valor;
                 btn_ViewXMLProductor.Enabled = valor;
                 btn_DelFacturaProductor.Enabled = valor;
+                //Expedientes
+                btn_UpPDFTarjeta_APEAM.Enabled = valor;
+                btn_UpPDFIdntificacion_IFE_INE.Enabled = valor;
+                btn_UpPDFOpinion_Cumplimiento.Enabled = valor;
+                btn_UpPDFConstancia_Situacion.Enabled = valor;
+                btn_UpPDFClaveInterbancaria.Enabled = valor;
+                btn_UpPDFContratoTerceros.Enabled = valor;
+                btn_UpPDFContratoGEST.Enabled = valor;
+                btn_ViewPDFTarjetaAPEAM.Enabled = valor;
+                btn_DelTarjetaAPEAM.Enabled = valor;
+                btn_ViewPDFIdentificacion_IFE_INE.Enabled = valor;
+                btn_DelIdentificacion_IFE_INE.Enabled = valor;
+                btn_ViewPDFOpinionCumplimiento.Enabled = valor;
+                btn_DelOpinionCumplimiento.Enabled = valor;
+                btn_ViewPDFConstanciaSituacion.Enabled = valor;
+                btn_DelConstanciaSituacion.Enabled = valor;
+                btn_ViewPDFClaveInterbancaria.Enabled = valor;
+                btn_DelClaveInterbancaria.Enabled = valor;
+                btn_ViewPDFContratoTerceros.Enabled = valor;
+                btn_DelContratoTerceros.Enabled = valor;
+                btn_ViewPDFContratoGEST.Enabled = valor;
+                btn_DelContratoGEST.Enabled = valor;
             }
             else
             {
                 btn_UpPDFProductor.Enabled = valor;
                 btn_UpXMLProductor.Enabled = valor;
                 SelectFacturaProductor();
+                SelectExpedientesProductor();
             }
         }
         private void Bloquear_Acarreo(Boolean valor)
@@ -5305,6 +6281,449 @@ namespace Business_Analitics
             else
             {
                 XtraMessageBox.Show("No se encontraron registros");
+            }
+        }
+
+        private void txt_PrecioKiloCorte_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                CalcularCostosCorte();
+            }
+        }
+
+        private void btn_UpPDFTarjeta_APEAM_Click(object sender, EventArgs e)
+        {
+            DialogResult result = FileDialogPDF();
+            if (result == DialogResult.OK)
+            {
+                vRutaTarjetaApeam = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
+            }
+            OpenDialog.Dispose();
+        }
+
+        private void btn_UpPDFIdntificacion_IFE_INE_Click(object sender, EventArgs e)
+        {
+            DialogResult result = FileDialogPDF();
+            if (result == DialogResult.OK)
+            {
+                vRutaIdentificacion_INE_IFE = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
+            }
+            OpenDialog.Dispose();
+        }
+
+        private void btn_UpPDFOpinion_Cumplimiento_Click(object sender, EventArgs e)
+        {
+            DialogResult result = FileDialogPDF();
+            if (result == DialogResult.OK)
+            {
+                vRutaOpinion_Cumplimiento = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
+            }
+            OpenDialog.Dispose();
+        }
+
+        private void btn_UpPDFConstancia_Situacion_Click(object sender, EventArgs e)
+        {
+            DialogResult result = FileDialogPDF();
+            if (result == DialogResult.OK)
+            {
+                vRutaConstancia_de_Situacion_Fiscal = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
+            }
+            OpenDialog.Dispose();
+        }
+
+        private void btn_UpPDFClaveInterbancaria_Click(object sender, EventArgs e)
+        {
+            DialogResult result = FileDialogPDF();
+            if (result == DialogResult.OK)
+            {
+                vRutaClave_Interbancaria = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
+            }
+            OpenDialog.Dispose();
+        }
+
+        private void btn_UpPDFContratoTerceros_Click(object sender, EventArgs e)
+        {
+            DialogResult result = FileDialogPDF();
+            if (result == DialogResult.OK)
+            {
+                vRutaContrato_entre_Terceros = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
+            }
+            OpenDialog.Dispose();
+        }
+
+        private void btn_UpPDFContratoGEST_Click(object sender, EventArgs e)
+        {
+            DialogResult result = FileDialogPDF();
+            if (result == DialogResult.OK)
+            {
+                vRutaContrato_GEST = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
+            }
+            OpenDialog.Dispose();
+        }
+        private void CargarExpediente(int Archivo)
+        {
+            Frm_ViewExpedientePDF frm = new Frm_ViewExpedientePDF();
+            frm.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            frm.Id_Archivo = Archivo;
+            frm.ShowDialog();
+            frm.Dispose();
+            System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
+        }
+        private void btn_ViewPDFTarjetaAPEAM_Click(object sender, EventArgs e)
+        {
+            CargarExpediente(1);
+        }
+        private void btn_ViewPDFIdentificacion_IFE_INE_Click(object sender, EventArgs e)
+        {
+            CargarExpediente(2);
+        }
+        private void btn_ViewPDFOpinionCumplimiento_Click(object sender, EventArgs e)
+        {
+            CargarExpediente(3);
+        }
+        private void btn_ViewPDFConstanciaSituacion_Click(object sender, EventArgs e)
+        {
+            CargarExpediente(4);
+        }
+        private void btn_ViewPDFClaveInterbancaria_Click(object sender, EventArgs e)
+        {
+            CargarExpediente(5);
+        }
+        private void btn_ViewPDFContratoTerceros_Click(object sender, EventArgs e)
+        {
+            CargarExpediente(6);
+        }
+        private void btn_ViewPDFContratoGEST_Click(object sender, EventArgs e)
+        {
+            CargarExpediente(7);
+        }
+        private void EliminarExpediente(int Archivo)
+        {
+            if (txt_IdCosecha.Text.Trim() != String.Empty)
+            {
+                CLS_Cosecha_Expedientes Clase = new CLS_Cosecha_Expedientes();
+                Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+                Clase.Id_Doc = Archivo;
+                Clase.ArchivoPDF = Encoding.UTF8.GetBytes("");
+                Clase.Usuario = UsuariosLogin;
+                Clase.MtdDeleteCosechaArchivoPDFXML();
+                if (!Clase.Exito)
+                {
+                    XtraMessageBox.Show(Clase.Mensaje);
+                }
+            }
+            SelectExpedientesProductor();
+        }
+        private void btn_DelTarjetaAPEAM_Click(object sender, EventArgs e)
+        {
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el expediente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
+            {
+                EliminarExpediente(1);
+            }
+        }
+
+        private void btn_DelIdentificacion_IFE_INE_Click(object sender, EventArgs e)
+        {
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el expediente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
+            {
+                EliminarExpediente(2);
+            }
+        }
+
+        private void btn_DelOpinionCumplimiento_Click(object sender, EventArgs e)
+        {
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el expediente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
+            {
+                EliminarExpediente(3);
+            }
+        }
+
+        private void btn_DelConstanciaSituacion_Click(object sender, EventArgs e)
+        {
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el expediente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
+            {
+                EliminarExpediente(4);
+            }
+        }
+
+        private void btn_DelClaveInterbancaria_Click(object sender, EventArgs e)
+        {
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el expediente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
+            {
+                EliminarExpediente(5);
+            }
+        }
+
+        private void btn_DelContratoTerceros_Click(object sender, EventArgs e)
+        {
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el expediente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
+            {
+                EliminarExpediente(6);
+            }
+        }
+
+        private void btn_DelContratoGEST_Click(object sender, EventArgs e)
+        {
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el expediente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
+            {
+                EliminarExpediente(7);
+            }
+        }
+
+        private void btn_UpPDFComercializadora_Click(object sender, EventArgs e)
+        {
+            DialogResult result = FileDialogPDF();
+            if (result == DialogResult.OK)
+            {
+                vRutaContratoComercializadora = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
+            }
+            OpenDialog.Dispose();
+        }
+        private void CargarContratoComercializadora(int Archivo)
+        {
+            Frm_ViewExpedientePDF frm = new Frm_ViewExpedientePDF();
+            frm.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            frm.Id_Archivo = Archivo;
+            frm.ShowDialog();
+            frm.Dispose();
+            System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
+        }
+        private void btn_ViewPDFComercializadora_Click(object sender, EventArgs e)
+        {
+            CargarExpediente(8);
+        }
+        private void EliminarContrato()
+        {
+            if (txt_IdCosecha.Text.Trim() != String.Empty)
+            {
+                CLS_Cosecha_Datos Clase = new CLS_Cosecha_Datos();
+                Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+                Clase.Contrato = Encoding.UTF8.GetBytes("");
+                Clase.Usuario = UsuariosLogin;
+                Clase.MtdEliminarContratoComercializadora();
+                if (!Clase.Exito)
+                {
+                    XtraMessageBox.Show(Clase.Mensaje);
+                }
+            }
+            SelectExpedientesProductor();
+        }
+        private void btn_DelContratoComercializadora_Click(object sender, EventArgs e)
+        {
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el Contrato?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
+            {
+                EliminarContrato();
+            }
+        }
+
+        private void btn_PDFGrid_Click(object sender, EventArgs e)
+        {
+            Frm_ViewExpedientePDF frm = new Frm_ViewExpedientePDF();
+            frm.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            frm.Id_Archivo = 9;
+            frm.UUID= dtgValFacturasREP.GetFocusedRowCellValue("UUID").ToString();
+            frm.ShowDialog();
+            frm.Dispose();
+            System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
+        }
+
+        private void btn_XMLGrid_Click(object sender, EventArgs e)
+        {
+            Frm_ViewXML frm = new Frm_ViewXML();
+            frm.Id_Cosecha = txt_IdCosecha.Text.Trim();
+            frm.Id_Archivo = 7;
+            frm.UUID = dtgValFacturasREP.GetFocusedRowCellValue("UUID").ToString();
+            frm.ShowDialog();
+            frm.Dispose();
+            System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewXML.xml");
+        }
+        private void btn_EliminarREP_Click(object sender, EventArgs e)
+        {
+            DialogResult = XtraMessageBox.Show("¿Desea eliminar el REP?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            if (DialogResult == DialogResult.Yes)
+            {
+                CLS_Cosecha_Facturas del = new CLS_Cosecha_Facturas();
+                del.Id_Cosecha = txt_IdCosecha.Text.Trim();
+                del.UUID = dtgValFacturasREP.GetFocusedRowCellValue("UUID").ToString();
+                del.MtdDeleteCosechaArchivoREP_PDFXML();
+                if (del.Exito)
+                {
+                    XtraMessageBox.Show("Se ha Eliminado el REP con exito");
+                    CargarREP();
+                    CalcularTotalREP();
+                }
+            }
+        }
+        private void btn_UpXMLREP_Click(object sender, EventArgs e)
+        {
+            if (txt_IdCosecha.Text != String.Empty)
+            {
+                DialogResult result = FileDialogXML();
+                if (result == DialogResult.OK)
+                {
+                    
+                    GuardarRuta(OpenDialog.FileName);
+                    string vMetodo = string.Empty;
+                    try
+                    {
+                        string Valor = String.Empty;
+                        XmlDocument doc = new XmlDocument();
+                        doc.Load(OpenDialog.FileName);
+                        XmlNode nodoDocumentoRel = doc.GetElementsByTagName("pago10:DoctoRelacionado").Item(0);
+                        if(txt_UUID.Text== nodoDocumentoRel.Attributes["IdDocumento"].Value)
+                        {
+                            txt_RutaXMLREP.Text = OpenDialog.FileName;
+                            XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                            Valor = nodoComplemento.Attributes["UUID"].Value;
+                            txt_UUID_REP.Text = Valor;
+                            Valor = nodoDocumentoRel.Attributes["ImpPagado"].Value;
+                            txt_Total_REP.Text = Valor;
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("El Archivo REP no corresponde a este CFDI");
+                        }
+                    }
+                    catch
+                    {
+                        txt_RutaXMLProductor.Text = String.Empty;
+                        XtraMessageBox.Show("No es un Archivo REP Valido favor de verificarlo");
+                    }
+                }
+                OpenDialog.Dispose();
+            }
+            else
+            {
+                XtraMessageBox.Show("No se ha guardado o definido un folio de cosecha");
+            }
+        }
+
+        private void btn_UpPDFREP_Click(object sender, EventArgs e)
+        {
+            DialogResult result = FileDialogPDF();
+            if (result == DialogResult.OK)
+            {
+                txt_RutaPDFREP.Text = OpenDialog.FileName;
+                GuardarRuta(OpenDialog.FileName);
+            }
+            OpenDialog.Dispose();
+        }
+
+        void LimpiarPPD()
+        {
+            txt_RutaPDFREP.Text = String.Empty;
+            txt_RutaXMLREP.Text=String.Empty;
+            txt_UUID_REP.Text = String.Empty;
+            txt_Total_REP.Text= String.Empty;
+        }
+        private void btn_AgregarREP_Click(object sender, EventArgs e)
+        {
+            if (txt_RutaPDFREP.Text != String.Empty && txt_RutaXMLREP.Text != String.Empty)
+            {
+                Byte[] ArchivoPDF = null;
+                Byte[] ArchivoXML = null;
+
+                FileStream fsPDF = null;
+                FileStream fsXML = null;
+
+                Boolean noentroPDF = true, noentroXML = true;
+
+
+                if (txt_RutaPDFREP.Text.Length > 0)
+                {
+                    //txtNombreArchivoPDF.Text = result2;
+                    //string ar = OpenDialog.FileName;
+                    fsPDF = new FileStream(txt_RutaPDFREP.Text, FileMode.Open, FileAccess.Read);
+                    //Creamos un array de bytes para almacenar los datos leídos por fs.
+                    ArchivoPDF = new byte[fsPDF.Length];
+                    //Y guardamos los datos en el array data
+                    fsPDF.Read(ArchivoPDF, 0, (int)fsPDF.Length);
+                    ArchivoPDFGlobalProductorREP = ArchivoPDF;
+                }
+                else
+                {
+                    ArchivoPDF = ArchivoPDFGlobalProductorREP;
+                    noentroPDF = false;
+                }
+                if (txt_RutaXMLREP.Text.Length > 0)
+                {
+                    fsXML = new FileStream(txt_RutaXMLREP.Text, FileMode.Open);
+                    //Creamos un array de bytes para almacenar los datos leídos por fs.
+                    ArchivoXML = new byte[fsXML.Length];
+                    //Y guardamos los datos en el array data
+                    fsXML.Read(ArchivoXML, 0, Convert.ToInt32(fsXML.Length));
+                    ArchivoXMLGlobalProductorREP = ArchivoXML;
+                }
+                else
+                {
+                    ArchivoXML = ArchivoXMLGlobalProductorREP;
+                    noentroXML = false;
+                }
+
+                CLS_Cosecha_Facturas Clase = new CLS_Cosecha_Facturas();
+                Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
+                Clase.UUID = txt_UUID_REP.Text;
+                Clase.FacturaTotal = Decimal.Parse(txt_Total_REP.Text, style, provider);
+                if (ArchivoPDF != null)
+                {
+                    Clase.FacturaPDF = ArchivoPDF;
+                }
+                else
+                {
+                    Clase.FacturaPDF = Encoding.UTF8.GetBytes("");
+                }
+
+                if (ArchivoXML != null)
+                {
+                    Clase.FacturaXML = ArchivoXML;
+                }
+                else
+                {
+                    Clase.FacturaXML = Encoding.UTF8.GetBytes("");
+                }
+
+                Clase.Usuario = UsuariosLogin;
+
+                Clase.MtdInsertarCosechaArchivoREP_PDFXML();
+                if (!Clase.Exito)
+                {
+                    XtraMessageBox.Show(Clase.Mensaje);
+                }
+                else
+                {
+                    LimpiarPPD();
+                    CargarREP();
+                    CalcularTotalREP();
+                }
+                if (noentroXML)
+                {
+                    fsXML.Close();
+                }
+                if (noentroPDF)
+                {
+                    fsPDF.Close();
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("Se debe de cargar PDF y XML");
             }
         }
     }

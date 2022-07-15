@@ -605,16 +605,16 @@ namespace Business_Analitics
             txtMenorakg.Properties.Mask.EditMask = "n2";
             txtMenorakg.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtPreciokg.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPreciokg.Properties.Mask.EditMask = "c2";
+            txtPreciokg.Properties.Mask.EditMask = "c4";
             txtPreciokg.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtPrecioDia.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioDia.Properties.Mask.EditMask = "c2";
+            txtPrecioDia.Properties.Mask.EditMask = "c4";
             txtPrecioDia.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtPrecioCuadrillaA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioCuadrillaA.Properties.Mask.EditMask = "c2";
+            txtPrecioCuadrillaA.Properties.Mask.EditMask = "c4";
             txtPrecioCuadrillaA.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtPrecioSalidaFalso.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioSalidaFalso.Properties.Mask.EditMask = "c2";
+            txtPrecioSalidaFalso.Properties.Mask.EditMask = "c4";
             txtPrecioSalidaFalso.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtKilosMayorA.Properties.Mask.MaskType = MaskType.Numeric;
             txtKilosMayorA.Properties.Mask.EditMask = "n0";
@@ -623,10 +623,10 @@ namespace Business_Analitics
             txtKilosMenorA.Properties.Mask.EditMask = "n0";
             txtKilosMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtPrecioMayorA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioMayorA.Properties.Mask.EditMask = "c2";
+            txtPrecioMayorA.Properties.Mask.EditMask = "c4";
             txtPrecioMayorA.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtPrecioMenorA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioMenorA.Properties.Mask.EditMask = "c2";
+            txtPrecioMenorA.Properties.Mask.EditMask = "c4";
             txtPrecioMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
 
             txtCajasMayorA.Properties.Mask.MaskType = MaskType.Numeric;
@@ -636,10 +636,10 @@ namespace Business_Analitics
             txtCajasMenorA.Properties.Mask.EditMask = "n0";
             txtCajasMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtPrecioCajaMayorA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioCajaMayorA.Properties.Mask.EditMask = "c2";
+            txtPrecioCajaMayorA.Properties.Mask.EditMask = "c4";
             txtPrecioCajaMayorA.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtPrecioCajaMenorA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioCajaMenorA.Properties.Mask.EditMask = "c2";
+            txtPrecioCajaMenorA.Properties.Mask.EditMask = "c4";
             txtPrecioCajaMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
         }
 

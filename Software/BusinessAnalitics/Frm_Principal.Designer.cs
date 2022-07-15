@@ -133,6 +133,7 @@
             this.ribbonPage5});
             this.ribbon.QuickToolbarItemLinks.Add(this.btn_inventario_ventas);
             this.ribbon.QuickToolbarItemLinks.Add(this.btnReportInventario);
+            this.ribbon.QuickToolbarItemLinks.Add(this.btn_Cosecha);
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbon.Size = new System.Drawing.Size(1163, 147);
             this.ribbon.StatusBar = this.ribbonStatusBar;
@@ -366,8 +367,8 @@
             // 
             this.btn_ReporteConta_Acarreo.Caption = "Acarreo";
             this.btn_ReporteConta_Acarreo.Id = 30;
-            this.btn_ReporteConta_Acarreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.btn_ReporteConta_Acarreo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
+            this.btn_ReporteConta_Acarreo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ReporteConta_Acarreo.ImageOptions.Image")));
+            this.btn_ReporteConta_Acarreo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_ReporteConta_Acarreo.ImageOptions.LargeImage")));
             this.btn_ReporteConta_Acarreo.Name = "btn_ReporteConta_Acarreo";
             this.btn_ReporteConta_Acarreo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ReporteConta_Acarreo_ItemClick);
             // 

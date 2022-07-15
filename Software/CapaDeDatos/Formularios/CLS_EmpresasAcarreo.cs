@@ -21,6 +21,7 @@ namespace CapaDeDatos
         public decimal Precio_Acarreo { get; set; }
         public decimal Precio_Caja { get; set; }
         public decimal Precio_SalidaForanea { get; set; }
+        public string Id_TipoCamion { get; set; }
 
         public void MtdSeleccionarEmpresas()
         {
@@ -158,6 +159,38 @@ namespace CapaDeDatos
             }
 
         }
+        public void MtdSeleccionarEmpresasCostoServicios()
+        {
+            TipoDato _dato = new TipoDato();
+            Conexion _conexion = new Conexion(cadenaConexion);
+
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "SP_Empresa_Acarreo_CostoServicios_Select";
+                _dato.Texto = Id_EmpresaAcarreo;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaAcarreo");
+                _dato.Texto = Id_TipoCamion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_TipoCamion");
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+
+        }
         public void MtdInsertarEmpresasServicios()
         {
             TipoDato _dato = new TipoDato();
@@ -175,6 +208,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_Caja");
                 _dato.Decimal = Precio_SalidaForanea;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_SalidaForanea");
+                _dato.Texto = Id_TipoCamion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_TipoCamion");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();

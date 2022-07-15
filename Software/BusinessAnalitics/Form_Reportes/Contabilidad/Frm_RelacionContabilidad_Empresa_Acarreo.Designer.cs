@@ -200,9 +200,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 524);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 526);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1396, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1396, 22);
             // 
             // barDockControlLeft
             // 
@@ -210,7 +210,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(64, 524);
+            this.barDockControlLeft.Size = new System.Drawing.Size(66, 526);
             // 
             // barDockControlRight
             // 
@@ -218,7 +218,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1396, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 524);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 526);
             // 
             // btnComparar
             // 
@@ -254,10 +254,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(64, 0);
+            this.panelControl1.Location = new System.Drawing.Point(66, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(1332, 104);
+            this.panelControl1.Size = new System.Drawing.Size(1330, 104);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
@@ -275,7 +275,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1318, 90);
+            this.groupControl1.Size = new System.Drawing.Size(1316, 90);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Fechas de Corte";
             // 
@@ -379,10 +379,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgFrutaAcarreo);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(64, 104);
+            this.panelControl2.Location = new System.Drawing.Point(66, 104);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1332, 420);
+            this.panelControl2.Size = new System.Drawing.Size(1330, 422);
             this.panelControl2.TabIndex = 5;
             // 
             // dtgFrutaAcarreo
@@ -392,7 +392,7 @@
             this.dtgFrutaAcarreo.MainView = this.dtgValFrutaAcarreo;
             this.dtgFrutaAcarreo.MenuManager = this.barManager1;
             this.dtgFrutaAcarreo.Name = "dtgFrutaAcarreo";
-            this.dtgFrutaAcarreo.Size = new System.Drawing.Size(1318, 406);
+            this.dtgFrutaAcarreo.Size = new System.Drawing.Size(1316, 408);
             this.dtgFrutaAcarreo.TabIndex = 0;
             this.dtgFrutaAcarreo.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValFrutaAcarreo});
@@ -465,7 +465,7 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "Fecha Recepcion";
+            this.gridColumn3.Caption = "Fecha Corte";
             this.gridColumn3.FieldName = "RecepcionFecha";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;

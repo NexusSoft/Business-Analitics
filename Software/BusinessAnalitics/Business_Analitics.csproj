@@ -364,6 +364,12 @@
     <Compile Include="Form_Reportes\Frm_ReportInventarios.Designer.cs">
       <DependentUpon>Frm_ReportInventarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Reportes\Frm_ViewExpedientePDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Reportes\Frm_ViewExpedientePDF.designer.cs">
+      <DependentUpon>Frm_ViewExpedientePDF.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Reportes\Frm_ViewPDF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -548,6 +554,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Reportes\Frm_ReportInventarios.resx">
       <DependentUpon>Frm_ReportInventarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Reportes\Frm_ViewExpedientePDF.resx">
+      <DependentUpon>Frm_ViewExpedientePDF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Reportes\Frm_ViewPDF.resx">
       <DependentUpon>Frm_ViewPDF.cs</DependentUpon>

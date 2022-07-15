@@ -29,12 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem2 = new DevExpress.Utils.ToolTipSeparatorItem();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cosecha));
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem1 = new DevExpress.Utils.ToolTipSeparatorItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
@@ -73,6 +88,16 @@
             this.gridColumn37 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn39 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl186 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Nombre_ase = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl185 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Poliza_ase = new DevExpress.XtraEditors.TextEdit();
+            this.chk_Autorizado_USA = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl184 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Estado_Huerta = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl183 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_SAGARPA = new DevExpress.XtraEditors.TextEdit();
+            this.btn_ActualizarAcopiador = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.txt_IdCosecha = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -133,10 +158,10 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txt_Recepcion = new DevExpress.XtraEditors.TextEdit();
             this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.dateEdit15 = new DevExpress.XtraEditors.DateEdit();
-            this.simpleButton25 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton26 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton27 = new DevExpress.XtraEditors.SimpleButton();
+            this.dt_FechaContratocomercializadora = new DevExpress.XtraEditors.DateEdit();
+            this.btn_DelContratoComercializadora = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ViewPDFComercializadora = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpPDFComercializadora = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl173 = new DevExpress.XtraEditors.LabelControl();
             this.btn_AbrirComer = new DevExpress.XtraEditors.SimpleButton();
             this.btn_CerrarComer = new DevExpress.XtraEditors.SimpleButton();
@@ -273,6 +298,14 @@
             this.xtraScrollableControl4 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl18 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl17 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl202 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_UUID_Salida = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl199 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Total_Salida = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl200 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_SubTotal_Salida = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl201 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_MetodoPago_Salida = new DevExpress.XtraEditors.TextEdit();
             this.dt_FechaProgramaCorteSalida = new DevExpress.XtraEditors.DateEdit();
             this.labelControl162 = new DevExpress.XtraEditors.LabelControl();
             this.btn_DelFacturaSalida = new DevExpress.XtraEditors.SimpleButton();
@@ -311,6 +344,14 @@
             this.labelControl125 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl17 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl16 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl198 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_UUID_Apoyo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl195 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Total_Apoyo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl196 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_SubTotal_Apoyo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl197 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_MetodoPago_Apoyo = new DevExpress.XtraEditors.TextEdit();
             this.dt_FechaProgramaCorteApoyo = new DevExpress.XtraEditors.DateEdit();
             this.labelControl161 = new DevExpress.XtraEditors.LabelControl();
             this.btn_DelFacturaApoyo = new DevExpress.XtraEditors.SimpleButton();
@@ -349,6 +390,14 @@
             this.labelControl117 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl16 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl15 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl192 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Total_Dia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl193 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_SubTotal_Dia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl194 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_MetodoPago_Dia = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl191 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_UUID_Dia = new DevExpress.XtraEditors.TextEdit();
             this.dt_FechaProgramaCorteDia = new DevExpress.XtraEditors.DateEdit();
             this.labelControl160 = new DevExpress.XtraEditors.LabelControl();
             this.btn_DelFacturaDia = new DevExpress.XtraEditors.SimpleButton();
@@ -387,6 +436,14 @@
             this.labelControl109 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl15 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl12 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl190 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_UUID_Kilos = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl187 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Total_Kilos = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl188 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_SubTotal_Kilos = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl189 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_MetodoPago_Kilos = new DevExpress.XtraEditors.TextEdit();
             this.dt_FechaProgramaCorteKilos = new DevExpress.XtraEditors.DateEdit();
             this.labelControl159 = new DevExpress.XtraEditors.LabelControl();
             this.btn_DelFacturaKilos = new DevExpress.XtraEditors.SimpleButton();
@@ -428,6 +485,18 @@
             this.xtraTabControl3 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraScrollableControl5 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.panelControl20 = new DevExpress.XtraEditors.PanelControl();
+            this.dtgServicios = new DevExpress.XtraGrid.GridControl();
+            this.dtgValServicios = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn42 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn43 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
+            this.panelControl13 = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl19 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl74 = new DevExpress.XtraEditors.LabelControl();
@@ -437,9 +506,8 @@
             this.labelControl73 = new DevExpress.XtraEditors.LabelControl();
             this.txtPrecioSalidaForanea = new DevExpress.XtraEditors.TextEdit();
             this.txtPrecioServicio = new DevExpress.XtraEditors.TextEdit();
-            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
-            this.panelControl13 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl174 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_TipoCamion = new DevExpress.XtraEditors.TextEdit();
             this.btn_AbrirAcarreo = new DevExpress.XtraEditors.SimpleButton();
             this.btn_CerrarAcarreo = new DevExpress.XtraEditors.SimpleButton();
             this.txt_Descuentos = new DevExpress.XtraEditors.TextEdit();
@@ -480,6 +548,14 @@
             this.tp_FacturaAcarreo = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl14 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl14 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl206 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_UUID_Acarreo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl203 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Total_Acarreo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl204 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_SubTotal_Acarreo = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl205 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_MetodoPago_Acarreo = new DevExpress.XtraEditors.TextEdit();
             this.dt_FechaProgramaAcarreo = new DevExpress.XtraEditors.DateEdit();
             this.labelControl163 = new DevExpress.XtraEditors.LabelControl();
             this.btn_DelFacturaAcarreo = new DevExpress.XtraEditors.SimpleButton();
@@ -546,6 +622,18 @@
             this.txt_Productor = new DevExpress.XtraEditors.TextEdit();
             this.tp_FacturaProductor = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl13 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl208 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Salto_REP = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl207 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_SumaTotal_REP = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl180 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_UUID = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl179 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Total = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl178 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_SubTotal = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl177 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_MetodoPago = new DevExpress.XtraEditors.TextEdit();
             this.dt_FechaProgramaProductor = new DevExpress.XtraEditors.DateEdit();
             this.labelControl164 = new DevExpress.XtraEditors.LabelControl();
             this.btn_DelFacturaProductor = new DevExpress.XtraEditors.SimpleButton();
@@ -585,46 +673,70 @@
             this.labelControl82 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.labelControl169 = new DevExpress.XtraEditors.LabelControl();
-            this.dateEdit12 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit13 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit14 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit10 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit9 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit8 = new DevExpress.XtraEditors.DateEdit();
-            this.dateEdit7 = new DevExpress.XtraEditors.DateEdit();
-            this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton17 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton18 = new DevExpress.XtraEditors.SimpleButton();
+            this.dt_FechaContratoGEST = new DevExpress.XtraEditors.DateEdit();
+            this.dt_FechaContratoTerceros = new DevExpress.XtraEditors.DateEdit();
+            this.dt_FechaClaveInterbancaria = new DevExpress.XtraEditors.DateEdit();
+            this.dt_FechaConstanciaSituacion = new DevExpress.XtraEditors.DateEdit();
+            this.dt_FechaOPinionCumplimiento = new DevExpress.XtraEditors.DateEdit();
+            this.dt_FechaIdentificacion_IFE_INE = new DevExpress.XtraEditors.DateEdit();
+            this.dt_FechaTarjetaAPEAM = new DevExpress.XtraEditors.DateEdit();
+            this.btn_DelContratoGEST = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ViewPDFContratoGEST = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpPDFContratoGEST = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl170 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton19 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton20 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton21 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_DelContratoTerceros = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ViewPDFContratoTerceros = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpPDFContratoTerceros = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl171 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton22 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton23 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton24 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_DelClaveInterbancaria = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ViewPDFClaveInterbancaria = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpPDFClaveInterbancaria = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl172 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_DelConstanciaSituacion = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ViewPDFConstanciaSituacion = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpPDFConstancia_Situacion = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl168 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_DelOpinionCumplimiento = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ViewPDFOpinionCumplimiento = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpPDFOpinion_Cumplimiento = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl167 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_DelIdentificacion_IFE_INE = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ViewPDFIdentificacion_IFE_INE = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpPDFIdntificacion_IFE_INE = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl166 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_DelTarjetaAPEAM = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ViewPDFTarjetaAPEAM = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_UpPDFTarjeta_APEAM = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl165 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.panelControl22 = new DevExpress.XtraEditors.PanelControl();
+            this.dtgFacturasREP = new DevExpress.XtraGrid.GridControl();
+            this.dtgValFacturasREP = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn49 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn46 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_PDFGrid = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn47 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_XMLGrid = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.gridColumn48 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_EliminarREP = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.panelControl21 = new DevExpress.XtraEditors.PanelControl();
+            this.groupControl19 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl181 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_UUID_REP = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl182 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_Total_REP = new DevExpress.XtraEditors.TextEdit();
+            this.btn_AgregarREP = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl175 = new DevExpress.XtraEditors.LabelControl();
+            this.btn_UpPDFREP = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_RutaXMLREP = new DevExpress.XtraEditors.TextEdit();
+            this.txt_RutaPDFREP = new DevExpress.XtraEditors.TextEdit();
+            this.btn_UpXMLREP = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl176 = new DevExpress.XtraEditors.LabelControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btn_ActualizarAcopiador = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
@@ -638,6 +750,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgValCosecha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Nombre_ase.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Poliza_ase.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_Autorizado_USA.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Estado_Huerta.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SAGARPA.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IdCosecha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Temporada.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TipoCorte.Properties)).BeginInit();
@@ -673,8 +790,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_TicketPesada.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Recepcion.Properties)).BeginInit();
             this.navigationPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit15.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit15.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaContratocomercializadora.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaContratocomercializadora.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_EmpresaComercializadora.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -762,6 +879,10 @@
             this.groupControl18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl17)).BeginInit();
             this.panelControl17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID_Salida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total_Salida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SubTotal_Salida.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MetodoPago_Salida.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteSalida.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteSalida.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteSalida.Properties)).BeginInit();
@@ -787,6 +908,10 @@
             this.groupControl17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl16)).BeginInit();
             this.panelControl16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID_Apoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total_Apoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SubTotal_Apoyo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MetodoPago_Apoyo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteApoyo.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteApoyo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteApoyo.Properties)).BeginInit();
@@ -812,6 +937,10 @@
             this.groupControl16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl15)).BeginInit();
             this.panelControl15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total_Dia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SubTotal_Dia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MetodoPago_Dia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID_Dia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteDia.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteDia.Properties)).BeginInit();
@@ -837,6 +966,10 @@
             this.groupControl15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).BeginInit();
             this.panelControl12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID_Kilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total_Kilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SubTotal_Kilos.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MetodoPago_Kilos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteKilos.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteKilos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteKilos.Properties)).BeginInit();
@@ -865,6 +998,16 @@
             this.xtraTabControl3.SuspendLayout();
             this.xtraTabPage5.SuspendLayout();
             this.xtraScrollableControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl20)).BeginInit();
+            this.panelControl20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgServicios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValServicios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
+            this.groupControl8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl13)).BeginInit();
+            this.panelControl13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
+            this.panelControl11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
             this.groupControl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl19)).BeginInit();
@@ -874,12 +1017,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioCaja.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioSalidaForanea.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioServicio.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
-            this.groupControl8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl13)).BeginInit();
-            this.panelControl13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
-            this.panelControl11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TipoCamion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Descuentos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CargosExtra.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ObservacionesAcarreo.Properties)).BeginInit();
@@ -901,6 +1039,10 @@
             this.groupControl14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).BeginInit();
             this.panelControl14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID_Acarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total_Acarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SubTotal_Acarreo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MetodoPago_Acarreo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaAcarreo.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaAcarreo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteAcarreo.Properties)).BeginInit();
@@ -944,6 +1086,12 @@
             this.tp_FacturaProductor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl13)).BeginInit();
             this.groupControl13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Salto_REP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SumaTotal_REP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SubTotal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MetodoPago.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaProductor.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaProductor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteProductor.Properties)).BeginInit();
@@ -966,20 +1114,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaProductor.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaProductor.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit12.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit12.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit13.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit13.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit14.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit14.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit10.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit10.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit9.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit8.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaContratoGEST.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaContratoGEST.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaContratoTerceros.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaContratoTerceros.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaClaveInterbancaria.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaClaveInterbancaria.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaConstanciaSituacion.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaConstanciaSituacion.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaOPinionCumplimiento.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaOPinionCumplimiento.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaIdentificacion_IFE_INE.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaIdentificacion_IFE_INE.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaTarjetaAPEAM.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaTarjetaAPEAM.Properties)).BeginInit();
+            this.xtraTabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl22)).BeginInit();
+            this.panelControl22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgFacturasREP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValFacturasREP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_PDFGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_XMLGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_EliminarREP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl21)).BeginInit();
+            this.panelControl21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl19)).BeginInit();
+            this.groupControl19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID_REP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total_REP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLREP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFREP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1058,18 +1222,18 @@
             this.btn_CerrarOrden.Id = 71;
             this.btn_CerrarOrden.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CerrarOrden.ImageOptions.SvgImage")));
             this.btn_CerrarOrden.Name = "btn_CerrarOrden";
-            toolTipTitleItem3.Text = "Importar datos";
-            toolTipItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipItem2.LeftIndent = 6;
-            toolTipItem2.Text = "Si actualiza la informacion se sustituira por valores capturados en inventum";
-            toolTipTitleItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
-            toolTipTitleItem4.LeftIndent = 6;
-            toolTipTitleItem4.Text = "Business Analitics ";
-            superToolTip2.Items.Add(toolTipTitleItem3);
-            superToolTip2.Items.Add(toolTipItem2);
-            superToolTip2.Items.Add(toolTipSeparatorItem2);
-            superToolTip2.Items.Add(toolTipTitleItem4);
-            this.btn_CerrarOrden.SuperTip = superToolTip2;
+            toolTipTitleItem1.Text = "Importar datos";
+            toolTipItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Si actualiza la informacion se sustituira por valores capturados en inventum";
+            toolTipTitleItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            toolTipTitleItem2.LeftIndent = 6;
+            toolTipTitleItem2.Text = "Business Analitics ";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            superToolTip1.Items.Add(toolTipSeparatorItem1);
+            superToolTip1.Items.Add(toolTipTitleItem2);
+            this.btn_CerrarOrden.SuperTip = superToolTip1;
             this.btn_CerrarOrden.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_CerrarOrden_ItemClick);
             // 
             // btn_AbrirOrden
@@ -1109,15 +1273,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(5, 5);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1251, 56);
+            this.barDockControlTop.Size = new System.Drawing.Size(1406, 56);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(5, 780);
+            this.barDockControlBottom.Location = new System.Drawing.Point(5, 766);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1251, 22);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1406, 22);
             // 
             // barDockControlLeft
             // 
@@ -1125,15 +1289,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(5, 61);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 719);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 705);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1256, 61);
+            this.barDockControlRight.Location = new System.Drawing.Point(1411, 61);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 719);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 705);
             // 
             // btn_EliminarOrden
             // 
@@ -1164,9 +1328,9 @@
             this.navigationPage6,
             this.navigationPage4,
             this.navigationPage5});
-            this.navigationPane1.RegularSize = new System.Drawing.Size(1251, 719);
+            this.navigationPane1.RegularSize = new System.Drawing.Size(1406, 705);
             this.navigationPane1.SelectedPage = this.navigationPage2;
-            this.navigationPane1.Size = new System.Drawing.Size(1251, 719);
+            this.navigationPane1.Size = new System.Drawing.Size(1406, 705);
             this.navigationPane1.TabIndex = 9;
             this.navigationPane1.Text = "navigationPane1";
             // 
@@ -1180,7 +1344,7 @@
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.PageText = "Orden de Corte";
             this.navigationPage1.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage1.Size = new System.Drawing.Size(1081, 646);
+            this.navigationPage1.Size = new System.Drawing.Size(1236, 632);
             // 
             // panelControl2
             // 
@@ -1188,10 +1352,10 @@
             this.panelControl2.Controls.Add(this.labelControl126);
             this.panelControl2.Controls.Add(this.dtgCosecha);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 151);
+            this.panelControl2.Location = new System.Drawing.Point(0, 209);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1081, 495);
+            this.panelControl2.Size = new System.Drawing.Size(1236, 423);
             this.panelControl2.TabIndex = 1;
             // 
             // cmb_Temporada
@@ -1226,7 +1390,7 @@
             this.dtgCosecha.MainView = this.dtgValCosecha;
             this.dtgCosecha.MenuManager = this.barManager1;
             this.dtgCosecha.Name = "dtgCosecha";
-            this.dtgCosecha.Size = new System.Drawing.Size(1067, 481);
+            this.dtgCosecha.Size = new System.Drawing.Size(1222, 409);
             this.dtgCosecha.TabIndex = 0;
             this.dtgCosecha.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValCosecha});
@@ -1361,6 +1525,15 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl186);
+            this.panelControl1.Controls.Add(this.txt_Nombre_ase);
+            this.panelControl1.Controls.Add(this.labelControl185);
+            this.panelControl1.Controls.Add(this.txt_Poliza_ase);
+            this.panelControl1.Controls.Add(this.chk_Autorizado_USA);
+            this.panelControl1.Controls.Add(this.labelControl184);
+            this.panelControl1.Controls.Add(this.txt_Estado_Huerta);
+            this.panelControl1.Controls.Add(this.labelControl183);
+            this.panelControl1.Controls.Add(this.txt_SAGARPA);
             this.panelControl1.Controls.Add(this.btn_ActualizarAcopiador);
             this.panelControl1.Controls.Add(this.labelControl18);
             this.panelControl1.Controls.Add(this.txt_IdCosecha);
@@ -1385,8 +1558,98 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(1081, 151);
+            this.panelControl1.Size = new System.Drawing.Size(1236, 209);
             this.panelControl1.TabIndex = 0;
+            // 
+            // labelControl186
+            // 
+            this.labelControl186.Location = new System.Drawing.Point(332, 179);
+            this.labelControl186.Name = "labelControl186";
+            this.labelControl186.Size = new System.Drawing.Size(62, 13);
+            this.labelControl186.TabIndex = 144;
+            this.labelControl186.Text = "Aseguradora";
+            // 
+            // txt_Nombre_ase
+            // 
+            this.txt_Nombre_ase.Enabled = false;
+            this.txt_Nombre_ase.Location = new System.Drawing.Point(433, 175);
+            this.txt_Nombre_ase.MenuManager = this.barManager1;
+            this.txt_Nombre_ase.Name = "txt_Nombre_ase";
+            this.txt_Nombre_ase.Size = new System.Drawing.Size(196, 20);
+            this.txt_Nombre_ase.TabIndex = 143;
+            // 
+            // labelControl185
+            // 
+            this.labelControl185.Location = new System.Drawing.Point(31, 178);
+            this.labelControl185.Name = "labelControl185";
+            this.labelControl185.Size = new System.Drawing.Size(92, 13);
+            this.labelControl185.TabIndex = 142;
+            this.labelControl185.Text = "Poliza Aseguradora";
+            // 
+            // txt_Poliza_ase
+            // 
+            this.txt_Poliza_ase.Enabled = false;
+            this.txt_Poliza_ase.Location = new System.Drawing.Point(126, 174);
+            this.txt_Poliza_ase.MenuManager = this.barManager1;
+            this.txt_Poliza_ase.Name = "txt_Poliza_ase";
+            this.txt_Poliza_ase.Size = new System.Drawing.Size(134, 20);
+            this.txt_Poliza_ase.TabIndex = 141;
+            // 
+            // chk_Autorizado_USA
+            // 
+            this.chk_Autorizado_USA.Enabled = false;
+            this.chk_Autorizado_USA.Location = new System.Drawing.Point(31, 149);
+            this.chk_Autorizado_USA.MenuManager = this.barManager1;
+            this.chk_Autorizado_USA.Name = "chk_Autorizado_USA";
+            this.chk_Autorizado_USA.Properties.Caption = "Autorizado USA ";
+            this.chk_Autorizado_USA.Properties.ContentAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.chk_Autorizado_USA.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.chk_Autorizado_USA.Size = new System.Drawing.Size(112, 20);
+            this.chk_Autorizado_USA.TabIndex = 140;
+            // 
+            // labelControl184
+            // 
+            this.labelControl184.Location = new System.Drawing.Point(332, 47);
+            this.labelControl184.Name = "labelControl184";
+            this.labelControl184.Size = new System.Drawing.Size(33, 13);
+            this.labelControl184.TabIndex = 139;
+            this.labelControl184.Text = "Estado";
+            // 
+            // txt_Estado_Huerta
+            // 
+            this.txt_Estado_Huerta.Enabled = false;
+            this.txt_Estado_Huerta.Location = new System.Drawing.Point(433, 43);
+            this.txt_Estado_Huerta.MenuManager = this.barManager1;
+            this.txt_Estado_Huerta.Name = "txt_Estado_Huerta";
+            this.txt_Estado_Huerta.Size = new System.Drawing.Size(196, 20);
+            this.txt_Estado_Huerta.TabIndex = 138;
+            // 
+            // labelControl183
+            // 
+            this.labelControl183.Location = new System.Drawing.Point(332, 73);
+            this.labelControl183.Name = "labelControl183";
+            this.labelControl183.Size = new System.Drawing.Size(61, 13);
+            this.labelControl183.TabIndex = 137;
+            this.labelControl183.Text = "R. SAGARPA";
+            // 
+            // txt_SAGARPA
+            // 
+            this.txt_SAGARPA.Enabled = false;
+            this.txt_SAGARPA.Location = new System.Drawing.Point(433, 69);
+            this.txt_SAGARPA.MenuManager = this.barManager1;
+            this.txt_SAGARPA.Name = "txt_SAGARPA";
+            this.txt_SAGARPA.Size = new System.Drawing.Size(196, 20);
+            this.txt_SAGARPA.TabIndex = 136;
+            // 
+            // btn_ActualizarAcopiador
+            // 
+            this.btn_ActualizarAcopiador.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ActualizarAcopiador.ImageOptions.Image")));
+            this.btn_ActualizarAcopiador.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btn_ActualizarAcopiador.Location = new System.Drawing.Point(635, 93);
+            this.btn_ActualizarAcopiador.Name = "btn_ActualizarAcopiador";
+            this.btn_ActualizarAcopiador.Size = new System.Drawing.Size(25, 25);
+            this.btn_ActualizarAcopiador.TabIndex = 135;
+            this.btn_ActualizarAcopiador.Click += new System.EventHandler(this.btn_ActualizarAcopiador_Click);
             // 
             // labelControl18
             // 
@@ -1399,7 +1662,7 @@
             // txt_IdCosecha
             // 
             this.txt_IdCosecha.Enabled = false;
-            this.txt_IdCosecha.Location = new System.Drawing.Point(126, 12);
+            this.txt_IdCosecha.Location = new System.Drawing.Point(126, 17);
             this.txt_IdCosecha.MenuManager = this.barManager1;
             this.txt_IdCosecha.Name = "txt_IdCosecha";
             this.txt_IdCosecha.Size = new System.Drawing.Size(134, 20);
@@ -1416,7 +1679,7 @@
             // txt_Temporada
             // 
             this.txt_Temporada.Enabled = false;
-            this.txt_Temporada.Location = new System.Drawing.Point(126, 90);
+            this.txt_Temporada.Location = new System.Drawing.Point(126, 95);
             this.txt_Temporada.MenuManager = this.barManager1;
             this.txt_Temporada.Name = "txt_Temporada";
             this.txt_Temporada.Size = new System.Drawing.Size(134, 20);
@@ -1424,7 +1687,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(332, 120);
+            this.labelControl9.Location = new System.Drawing.Point(332, 152);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(65, 13);
             this.labelControl9.TabIndex = 17;
@@ -1433,7 +1696,7 @@
             // txt_TipoCorte
             // 
             this.txt_TipoCorte.Enabled = false;
-            this.txt_TipoCorte.Location = new System.Drawing.Point(434, 116);
+            this.txt_TipoCorte.Location = new System.Drawing.Point(434, 148);
             this.txt_TipoCorte.MenuManager = this.barManager1;
             this.txt_TipoCorte.Name = "txt_TipoCorte";
             this.txt_TipoCorte.Size = new System.Drawing.Size(134, 20);
@@ -1441,7 +1704,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(332, 94);
+            this.labelControl6.Location = new System.Drawing.Point(332, 125);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(93, 13);
             this.labelControl6.TabIndex = 15;
@@ -1451,7 +1714,7 @@
             // 
             this.txt_Cajas_Programa.EditValue = "0";
             this.txt_Cajas_Programa.Enabled = false;
-            this.txt_Cajas_Programa.Location = new System.Drawing.Point(434, 90);
+            this.txt_Cajas_Programa.Location = new System.Drawing.Point(434, 121);
             this.txt_Cajas_Programa.MenuManager = this.barManager1;
             this.txt_Cajas_Programa.Name = "txt_Cajas_Programa";
             this.txt_Cajas_Programa.Properties.BeepOnError = true;
@@ -1461,7 +1724,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(332, 68);
+            this.labelControl5.Location = new System.Drawing.Point(332, 99);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(48, 13);
             this.labelControl5.TabIndex = 13;
@@ -1470,16 +1733,16 @@
             // txt_Acopiador
             // 
             this.txt_Acopiador.Enabled = false;
-            this.txt_Acopiador.Location = new System.Drawing.Point(434, 64);
+            this.txt_Acopiador.Location = new System.Drawing.Point(434, 95);
             this.txt_Acopiador.MenuManager = this.barManager1;
             this.txt_Acopiador.Name = "txt_Acopiador";
-            this.txt_Acopiador.Size = new System.Drawing.Size(260, 20);
+            this.txt_Acopiador.Size = new System.Drawing.Size(195, 20);
             this.txt_Acopiador.TabIndex = 12;
             // 
             // btnBusqProgramaCorte
             // 
             this.btnBusqProgramaCorte.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBusqProgramaCorte.ImageOptions.Image")));
-            this.btnBusqProgramaCorte.Location = new System.Drawing.Point(266, 37);
+            this.btnBusqProgramaCorte.Location = new System.Drawing.Point(266, 42);
             this.btnBusqProgramaCorte.Name = "btnBusqProgramaCorte";
             this.btnBusqProgramaCorte.Size = new System.Drawing.Size(24, 23);
             this.btnBusqProgramaCorte.TabIndex = 11;
@@ -1495,7 +1758,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(333, 42);
+            this.labelControl3.Location = new System.Drawing.Point(332, 21);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(33, 13);
             this.labelControl3.TabIndex = 6;
@@ -1504,16 +1767,16 @@
             // txt_Huerta
             // 
             this.txt_Huerta.Enabled = false;
-            this.txt_Huerta.Location = new System.Drawing.Point(434, 38);
+            this.txt_Huerta.Location = new System.Drawing.Point(433, 17);
             this.txt_Huerta.MenuManager = this.barManager1;
             this.txt_Huerta.Name = "txt_Huerta";
-            this.txt_Huerta.Size = new System.Drawing.Size(260, 20);
+            this.txt_Huerta.Size = new System.Drawing.Size(196, 20);
             this.txt_Huerta.TabIndex = 5;
             // 
             // txt_Mercado
             // 
             this.txt_Mercado.Enabled = false;
-            this.txt_Mercado.Location = new System.Drawing.Point(126, 116);
+            this.txt_Mercado.Location = new System.Drawing.Point(126, 121);
             this.txt_Mercado.MenuManager = this.barManager1;
             this.txt_Mercado.Name = "txt_Mercado";
             this.txt_Mercado.Size = new System.Drawing.Size(134, 20);
@@ -1522,7 +1785,7 @@
             // txt_ProgramaCorte
             // 
             this.txt_ProgramaCorte.Enabled = false;
-            this.txt_ProgramaCorte.Location = new System.Drawing.Point(126, 38);
+            this.txt_ProgramaCorte.Location = new System.Drawing.Point(126, 43);
             this.txt_ProgramaCorte.MenuManager = this.barManager1;
             this.txt_ProgramaCorte.Name = "txt_ProgramaCorte";
             this.txt_ProgramaCorte.Size = new System.Drawing.Size(134, 20);
@@ -1548,7 +1811,7 @@
             // 
             this.dt_FechaPrograma.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
             this.dt_FechaPrograma.Enabled = false;
-            this.dt_FechaPrograma.Location = new System.Drawing.Point(126, 64);
+            this.dt_FechaPrograma.Location = new System.Drawing.Point(126, 69);
             this.dt_FechaPrograma.MenuManager = this.barManager1;
             this.dt_FechaPrograma.Name = "dt_FechaPrograma";
             this.dt_FechaPrograma.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1566,7 +1829,7 @@
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.PageText = "Recepcion";
             this.navigationPage2.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage2.Size = new System.Drawing.Size(1081, 646);
+            this.navigationPage2.Size = new System.Drawing.Size(1236, 632);
             // 
             // panelControl3
             // 
@@ -1596,7 +1859,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl3.Location = new System.Drawing.Point(0, 0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1081, 646);
+            this.panelControl3.Size = new System.Drawing.Size(1236, 632);
             this.panelControl3.TabIndex = 0;
             // 
             // btn_AbrirRecepcion
@@ -1981,10 +2244,10 @@
             // navigationPage3
             // 
             this.navigationPage3.Caption = "Comercializadora";
-            this.navigationPage3.Controls.Add(this.dateEdit15);
-            this.navigationPage3.Controls.Add(this.simpleButton25);
-            this.navigationPage3.Controls.Add(this.simpleButton26);
-            this.navigationPage3.Controls.Add(this.simpleButton27);
+            this.navigationPage3.Controls.Add(this.dt_FechaContratocomercializadora);
+            this.navigationPage3.Controls.Add(this.btn_DelContratoComercializadora);
+            this.navigationPage3.Controls.Add(this.btn_ViewPDFComercializadora);
+            this.navigationPage3.Controls.Add(this.btn_UpPDFComercializadora);
             this.navigationPage3.Controls.Add(this.labelControl173);
             this.navigationPage3.Controls.Add(this.btn_AbrirComer);
             this.navigationPage3.Controls.Add(this.btn_CerrarComer);
@@ -1995,46 +2258,50 @@
             this.navigationPage3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage3.ImageOptions.Image")));
             this.navigationPage3.Name = "navigationPage3";
             this.navigationPage3.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage3.Size = new System.Drawing.Size(1081, 646);
+            this.navigationPage3.Size = new System.Drawing.Size(1069, 639);
             // 
-            // dateEdit15
+            // dt_FechaContratocomercializadora
             // 
-            this.dateEdit15.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit15.Location = new System.Drawing.Point(210, 204);
-            this.dateEdit15.MenuManager = this.barManager1;
-            this.dateEdit15.Name = "dateEdit15";
-            this.dateEdit15.Properties.BeepOnError = true;
-            this.dateEdit15.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaContratocomercializadora.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaContratocomercializadora.Enabled = false;
+            this.dt_FechaContratocomercializadora.Location = new System.Drawing.Point(210, 204);
+            this.dt_FechaContratocomercializadora.MenuManager = this.barManager1;
+            this.dt_FechaContratocomercializadora.Name = "dt_FechaContratocomercializadora";
+            this.dt_FechaContratocomercializadora.Properties.BeepOnError = true;
+            this.dt_FechaContratocomercializadora.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit15.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaContratocomercializadora.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit15.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit15.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit15.TabIndex = 197;
+            this.dt_FechaContratocomercializadora.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaContratocomercializadora.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaContratocomercializadora.TabIndex = 197;
             // 
-            // simpleButton25
+            // btn_DelContratoComercializadora
             // 
-            this.simpleButton25.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton25.ImageOptions.Image")));
-            this.simpleButton25.Location = new System.Drawing.Point(179, 203);
-            this.simpleButton25.Name = "simpleButton25";
-            this.simpleButton25.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton25.TabIndex = 164;
+            this.btn_DelContratoComercializadora.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DelContratoComercializadora.ImageOptions.Image")));
+            this.btn_DelContratoComercializadora.Location = new System.Drawing.Point(179, 203);
+            this.btn_DelContratoComercializadora.Name = "btn_DelContratoComercializadora";
+            this.btn_DelContratoComercializadora.Size = new System.Drawing.Size(25, 23);
+            this.btn_DelContratoComercializadora.TabIndex = 164;
+            this.btn_DelContratoComercializadora.Click += new System.EventHandler(this.btn_DelContratoComercializadora_Click);
             // 
-            // simpleButton26
+            // btn_ViewPDFComercializadora
             // 
-            this.simpleButton26.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton26.ImageOptions.Image")));
-            this.simpleButton26.Location = new System.Drawing.Point(148, 203);
-            this.simpleButton26.Name = "simpleButton26";
-            this.simpleButton26.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton26.TabIndex = 163;
+            this.btn_ViewPDFComercializadora.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFComercializadora.ImageOptions.Image")));
+            this.btn_ViewPDFComercializadora.Location = new System.Drawing.Point(148, 203);
+            this.btn_ViewPDFComercializadora.Name = "btn_ViewPDFComercializadora";
+            this.btn_ViewPDFComercializadora.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFComercializadora.TabIndex = 163;
+            this.btn_ViewPDFComercializadora.Click += new System.EventHandler(this.btn_ViewPDFComercializadora_Click);
             // 
-            // simpleButton27
+            // btn_UpPDFComercializadora
             // 
-            this.simpleButton27.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton27.ImageOptions.Image")));
-            this.simpleButton27.Location = new System.Drawing.Point(117, 203);
-            this.simpleButton27.Name = "simpleButton27";
-            this.simpleButton27.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton27.TabIndex = 162;
+            this.btn_UpPDFComercializadora.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFComercializadora.ImageOptions.Image")));
+            this.btn_UpPDFComercializadora.Location = new System.Drawing.Point(117, 203);
+            this.btn_UpPDFComercializadora.Name = "btn_UpPDFComercializadora";
+            this.btn_UpPDFComercializadora.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFComercializadora.TabIndex = 162;
+            this.btn_UpPDFComercializadora.Click += new System.EventHandler(this.btn_UpPDFComercializadora_Click);
             // 
             // labelControl173
             // 
@@ -2164,16 +2431,16 @@
             this.navigationPage4.Name = "navigationPage4";
             this.navigationPage4.PageText = "Corte";
             this.navigationPage4.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage4.Size = new System.Drawing.Size(1081, 646);
+            this.navigationPage4.Size = new System.Drawing.Size(1236, 632);
             // 
             // panelControl5
             // 
             this.panelControl5.Controls.Add(this.groupControl3);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl5.Location = new System.Drawing.Point(615, 0);
+            this.panelControl5.Location = new System.Drawing.Point(763, 0);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl5.Size = new System.Drawing.Size(466, 646);
+            this.panelControl5.Size = new System.Drawing.Size(473, 632);
             this.panelControl5.TabIndex = 53;
             // 
             // groupControl3
@@ -2182,7 +2449,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(12, 12);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(442, 622);
+            this.groupControl3.Size = new System.Drawing.Size(449, 608);
             this.groupControl3.TabIndex = 49;
             this.groupControl3.Text = "Corrida de Fruta";
             // 
@@ -2195,7 +2462,7 @@
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl1.Location = new System.Drawing.Point(2, 23);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(438, 597);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(445, 583);
             this.xtraScrollableControl1.TabIndex = 1;
             // 
             // panelControl9
@@ -2206,7 +2473,7 @@
             this.panelControl9.Location = new System.Drawing.Point(0, 925);
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Padding = new System.Windows.Forms.Padding(5, 25, 5, 5);
-            this.panelControl9.Size = new System.Drawing.Size(438, 242);
+            this.panelControl9.Size = new System.Drawing.Size(445, 242);
             this.panelControl9.TabIndex = 4;
             // 
             // labelControl48
@@ -2226,7 +2493,7 @@
             this.dtgMerma.MainView = this.dtgValMerma;
             this.dtgMerma.MenuManager = this.barManager1;
             this.dtgMerma.Name = "dtgMerma";
-            this.dtgMerma.Size = new System.Drawing.Size(424, 208);
+            this.dtgMerma.Size = new System.Drawing.Size(431, 208);
             this.dtgMerma.TabIndex = 0;
             this.dtgMerma.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValMerma});
@@ -2293,7 +2560,7 @@
             this.panelControl8.Location = new System.Drawing.Point(0, 609);
             this.panelControl8.Name = "panelControl8";
             this.panelControl8.Padding = new System.Windows.Forms.Padding(5, 25, 5, 5);
-            this.panelControl8.Size = new System.Drawing.Size(438, 316);
+            this.panelControl8.Size = new System.Drawing.Size(445, 316);
             this.panelControl8.TabIndex = 3;
             // 
             // labelControl47
@@ -2313,7 +2580,7 @@
             this.dtgNacional.MainView = this.dtgValNacional;
             this.dtgNacional.MenuManager = this.barManager1;
             this.dtgNacional.Name = "dtgNacional";
-            this.dtgNacional.Size = new System.Drawing.Size(424, 282);
+            this.dtgNacional.Size = new System.Drawing.Size(431, 282);
             this.dtgNacional.TabIndex = 0;
             this.dtgNacional.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValNacional});
@@ -2406,7 +2673,7 @@
             this.panelControl7.Location = new System.Drawing.Point(0, 182);
             this.panelControl7.Name = "panelControl7";
             this.panelControl7.Padding = new System.Windows.Forms.Padding(5, 25, 5, 5);
-            this.panelControl7.Size = new System.Drawing.Size(438, 427);
+            this.panelControl7.Size = new System.Drawing.Size(445, 427);
             this.panelControl7.TabIndex = 2;
             // 
             // labelControl46
@@ -2426,7 +2693,7 @@
             this.dtgExportacion.MainView = this.dtgValExportacion;
             this.dtgExportacion.MenuManager = this.barManager1;
             this.dtgExportacion.Name = "dtgExportacion";
-            this.dtgExportacion.Size = new System.Drawing.Size(424, 393);
+            this.dtgExportacion.Size = new System.Drawing.Size(431, 393);
             this.dtgExportacion.TabIndex = 0;
             this.dtgExportacion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValExportacion});
@@ -2535,7 +2802,7 @@
             this.panelControl6.Location = new System.Drawing.Point(0, 0);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Padding = new System.Windows.Forms.Padding(5, 25, 5, 5);
-            this.panelControl6.Size = new System.Drawing.Size(438, 182);
+            this.panelControl6.Size = new System.Drawing.Size(445, 182);
             this.panelControl6.TabIndex = 1;
             // 
             // labelControl45
@@ -2555,7 +2822,7 @@
             this.dtgRecepcion.MainView = this.dtgValRecepcion;
             this.dtgRecepcion.MenuManager = this.barManager1;
             this.dtgRecepcion.Name = "dtgRecepcion";
-            this.dtgRecepcion.Size = new System.Drawing.Size(424, 148);
+            this.dtgRecepcion.Size = new System.Drawing.Size(431, 148);
             this.dtgRecepcion.TabIndex = 0;
             this.dtgRecepcion.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValRecepcion});
@@ -2667,7 +2934,7 @@
             this.panelControl4.Location = new System.Drawing.Point(0, 0);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl4.Size = new System.Drawing.Size(615, 646);
+            this.panelControl4.Size = new System.Drawing.Size(763, 632);
             this.panelControl4.TabIndex = 52;
             // 
             // xtraScrollableControl2
@@ -2676,7 +2943,7 @@
             this.xtraScrollableControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl2.Location = new System.Drawing.Point(7, 7);
             this.xtraScrollableControl2.Name = "xtraScrollableControl2";
-            this.xtraScrollableControl2.Size = new System.Drawing.Size(601, 632);
+            this.xtraScrollableControl2.Size = new System.Drawing.Size(749, 618);
             this.xtraScrollableControl2.TabIndex = 0;
             // 
             // xtraTabControl1
@@ -2685,7 +2952,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(601, 632);
+            this.xtraTabControl1.Size = new System.Drawing.Size(749, 618);
             this.xtraTabControl1.TabIndex = 61;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -2697,7 +2964,7 @@
             this.xtraTabPage1.Controls.Add(this.groupControl6);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(599, 607);
+            this.xtraTabPage1.Size = new System.Drawing.Size(747, 593);
             this.xtraTabPage1.Text = "Calculo Corte";
             // 
             // groupControl4
@@ -2706,7 +2973,7 @@
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(5, 305);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(589, 297);
+            this.groupControl4.Size = new System.Drawing.Size(737, 283);
             this.groupControl4.TabIndex = 61;
             this.groupControl4.Text = "Cobro por Servicios";
             // 
@@ -2723,7 +2990,7 @@
             this.xtraScrollableControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl3.Location = new System.Drawing.Point(2, 23);
             this.xtraScrollableControl3.Name = "xtraScrollableControl3";
-            this.xtraScrollableControl3.Size = new System.Drawing.Size(585, 272);
+            this.xtraScrollableControl3.Size = new System.Drawing.Size(733, 258);
             this.xtraScrollableControl3.TabIndex = 0;
             // 
             // groupControl5
@@ -2808,8 +3075,8 @@
             this.txtPreciokg.Location = new System.Drawing.Point(135, 48);
             this.txtPreciokg.MenuManager = this.barManager1;
             this.txtPreciokg.Name = "txtPreciokg";
-            this.txtPreciokg.Properties.Mask.EditMask = "c2";
-            this.txtPreciokg.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPreciokg.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPreciokg.Properties.MaskSettings.Set("mask", "c4");
             this.txtPreciokg.Properties.NullText = "0";
             this.txtPreciokg.Properties.NullValuePrompt = "0";
             this.txtPreciokg.Size = new System.Drawing.Size(100, 20);
@@ -3121,7 +3388,7 @@
             this.groupControl6.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl6.Location = new System.Drawing.Point(5, 5);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(589, 300);
+            this.groupControl6.Size = new System.Drawing.Size(737, 300);
             this.groupControl6.TabIndex = 57;
             // 
             // btn_AbrirCorte
@@ -3512,6 +3779,7 @@
             this.txt_PrecioKiloCorte.Properties.UseMaskAsDisplayFormat = true;
             this.txt_PrecioKiloCorte.Size = new System.Drawing.Size(100, 20);
             this.txt_PrecioKiloCorte.TabIndex = 36;
+            this.txt_PrecioKiloCorte.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_PrecioKiloCorte_KeyDown);
             // 
             // txt_NoCuadrillas
             // 
@@ -3543,7 +3811,7 @@
             this.tp_FacturaCorte.Controls.Add(this.groupControl12);
             this.tp_FacturaCorte.Name = "tp_FacturaCorte";
             this.tp_FacturaCorte.Padding = new System.Windows.Forms.Padding(5);
-            this.tp_FacturaCorte.Size = new System.Drawing.Size(599, 607);
+            this.tp_FacturaCorte.Size = new System.Drawing.Size(747, 593);
             this.tp_FacturaCorte.Text = "Facturas";
             // 
             // groupControl12
@@ -3552,7 +3820,7 @@
             this.groupControl12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl12.Location = new System.Drawing.Point(5, 5);
             this.groupControl12.Name = "groupControl12";
-            this.groupControl12.Size = new System.Drawing.Size(589, 597);
+            this.groupControl12.Size = new System.Drawing.Size(737, 583);
             this.groupControl12.TabIndex = 0;
             // 
             // xtraScrollableControl4
@@ -3564,22 +3832,30 @@
             this.xtraScrollableControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl4.Location = new System.Drawing.Point(2, 23);
             this.xtraScrollableControl4.Name = "xtraScrollableControl4";
-            this.xtraScrollableControl4.Size = new System.Drawing.Size(585, 572);
+            this.xtraScrollableControl4.Size = new System.Drawing.Size(733, 558);
             this.xtraScrollableControl4.TabIndex = 0;
             // 
             // groupControl18
             // 
             this.groupControl18.Controls.Add(this.panelControl17);
             this.groupControl18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl18.Location = new System.Drawing.Point(0, 930);
+            this.groupControl18.Location = new System.Drawing.Point(0, 1024);
             this.groupControl18.Name = "groupControl18";
             this.groupControl18.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl18.Size = new System.Drawing.Size(585, 307);
+            this.groupControl18.Size = new System.Drawing.Size(733, 340);
             this.groupControl18.TabIndex = 5;
             this.groupControl18.Text = "Factura Salida en Falso";
             // 
             // panelControl17
             // 
+            this.panelControl17.Controls.Add(this.labelControl202);
+            this.panelControl17.Controls.Add(this.txt_UUID_Salida);
+            this.panelControl17.Controls.Add(this.labelControl199);
+            this.panelControl17.Controls.Add(this.txt_Total_Salida);
+            this.panelControl17.Controls.Add(this.labelControl200);
+            this.panelControl17.Controls.Add(this.txt_SubTotal_Salida);
+            this.panelControl17.Controls.Add(this.labelControl201);
+            this.panelControl17.Controls.Add(this.txt_MetodoPago_Salida);
             this.panelControl17.Controls.Add(this.dt_FechaProgramaCorteSalida);
             this.panelControl17.Controls.Add(this.labelControl162);
             this.panelControl17.Controls.Add(this.btn_DelFacturaSalida);
@@ -3619,13 +3895,102 @@
             this.panelControl17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl17.Location = new System.Drawing.Point(7, 28);
             this.panelControl17.Name = "panelControl17";
-            this.panelControl17.Size = new System.Drawing.Size(571, 272);
+            this.panelControl17.Size = new System.Drawing.Size(719, 305);
             this.panelControl17.TabIndex = 56;
+            // 
+            // labelControl202
+            // 
+            this.labelControl202.Location = new System.Drawing.Point(19, 96);
+            this.labelControl202.Name = "labelControl202";
+            this.labelControl202.Size = new System.Drawing.Size(25, 13);
+            this.labelControl202.TabIndex = 196;
+            this.labelControl202.Text = "UUID";
+            // 
+            // txt_UUID_Salida
+            // 
+            this.txt_UUID_Salida.Location = new System.Drawing.Point(66, 90);
+            this.txt_UUID_Salida.Name = "txt_UUID_Salida";
+            this.txt_UUID_Salida.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_UUID_Salida.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_UUID_Salida.Properties.Appearance.Options.UseFont = true;
+            this.txt_UUID_Salida.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_UUID_Salida.Properties.ReadOnly = true;
+            this.txt_UUID_Salida.Size = new System.Drawing.Size(262, 20);
+            this.txt_UUID_Salida.TabIndex = 197;
+            // 
+            // labelControl199
+            // 
+            this.labelControl199.Location = new System.Drawing.Point(524, 68);
+            this.labelControl199.Name = "labelControl199";
+            this.labelControl199.Size = new System.Drawing.Size(28, 13);
+            this.labelControl199.TabIndex = 195;
+            this.labelControl199.Text = "Total:";
+            // 
+            // txt_Total_Salida
+            // 
+            this.txt_Total_Salida.Enabled = false;
+            this.txt_Total_Salida.Location = new System.Drawing.Point(596, 64);
+            this.txt_Total_Salida.MenuManager = this.barManager1;
+            this.txt_Total_Salida.Name = "txt_Total_Salida";
+            this.txt_Total_Salida.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_Total_Salida.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_Total_Salida.Properties.Appearance.Options.UseFont = true;
+            this.txt_Total_Salida.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_Total_Salida.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Total_Salida.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_Total_Salida.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_Total_Salida.Size = new System.Drawing.Size(94, 20);
+            this.txt_Total_Salida.TabIndex = 194;
+            // 
+            // labelControl200
+            // 
+            this.labelControl200.Location = new System.Drawing.Point(522, 42);
+            this.labelControl200.Name = "labelControl200";
+            this.labelControl200.Size = new System.Drawing.Size(46, 13);
+            this.labelControl200.TabIndex = 193;
+            this.labelControl200.Text = "SubTotal:";
+            // 
+            // txt_SubTotal_Salida
+            // 
+            this.txt_SubTotal_Salida.Enabled = false;
+            this.txt_SubTotal_Salida.Location = new System.Drawing.Point(596, 38);
+            this.txt_SubTotal_Salida.MenuManager = this.barManager1;
+            this.txt_SubTotal_Salida.Name = "txt_SubTotal_Salida";
+            this.txt_SubTotal_Salida.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_SubTotal_Salida.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_SubTotal_Salida.Properties.Appearance.Options.UseFont = true;
+            this.txt_SubTotal_Salida.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_SubTotal_Salida.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_SubTotal_Salida.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_SubTotal_Salida.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_SubTotal_Salida.Size = new System.Drawing.Size(94, 20);
+            this.txt_SubTotal_Salida.TabIndex = 192;
+            // 
+            // labelControl201
+            // 
+            this.labelControl201.Location = new System.Drawing.Point(522, 16);
+            this.labelControl201.Name = "labelControl201";
+            this.labelControl201.Size = new System.Drawing.Size(67, 13);
+            this.labelControl201.TabIndex = 191;
+            this.labelControl201.Text = "Metodo Pago:";
+            // 
+            // txt_MetodoPago_Salida
+            // 
+            this.txt_MetodoPago_Salida.Enabled = false;
+            this.txt_MetodoPago_Salida.Location = new System.Drawing.Point(596, 12);
+            this.txt_MetodoPago_Salida.MenuManager = this.barManager1;
+            this.txt_MetodoPago_Salida.Name = "txt_MetodoPago_Salida";
+            this.txt_MetodoPago_Salida.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_MetodoPago_Salida.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_MetodoPago_Salida.Properties.Appearance.Options.UseFont = true;
+            this.txt_MetodoPago_Salida.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_MetodoPago_Salida.Size = new System.Drawing.Size(94, 20);
+            this.txt_MetodoPago_Salida.TabIndex = 190;
             // 
             // dt_FechaProgramaCorteSalida
             // 
             this.dt_FechaProgramaCorteSalida.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaProgramaCorteSalida.Location = new System.Drawing.Point(309, 219);
+            this.dt_FechaProgramaCorteSalida.Location = new System.Drawing.Point(309, 245);
             this.dt_FechaProgramaCorteSalida.MenuManager = this.barManager1;
             this.dt_FechaProgramaCorteSalida.Name = "dt_FechaProgramaCorteSalida";
             this.dt_FechaProgramaCorteSalida.Properties.BeepOnError = true;
@@ -3639,7 +4004,7 @@
             // 
             // labelControl162
             // 
-            this.labelControl162.Location = new System.Drawing.Point(228, 223);
+            this.labelControl162.Location = new System.Drawing.Point(228, 249);
             this.labelControl162.Name = "labelControl162";
             this.labelControl162.Size = new System.Drawing.Size(75, 13);
             this.labelControl162.TabIndex = 162;
@@ -3657,7 +4022,7 @@
             // chk_RetencionFleteCorteSalida
             // 
             this.chk_RetencionFleteCorteSalida.EditValue = true;
-            this.chk_RetencionFleteCorteSalida.Location = new System.Drawing.Point(262, 167);
+            this.chk_RetencionFleteCorteSalida.Location = new System.Drawing.Point(262, 193);
             this.chk_RetencionFleteCorteSalida.MenuManager = this.barManager1;
             this.chk_RetencionFleteCorteSalida.Name = "chk_RetencionFleteCorteSalida";
             this.chk_RetencionFleteCorteSalida.Properties.Caption = "Retencion Flete";
@@ -3668,7 +4033,7 @@
             // txt_RetencionFleteFacturaCorteSalida
             // 
             this.txt_RetencionFleteFacturaCorteSalida.EditValue = "0";
-            this.txt_RetencionFleteFacturaCorteSalida.Location = new System.Drawing.Point(114, 167);
+            this.txt_RetencionFleteFacturaCorteSalida.Location = new System.Drawing.Point(114, 193);
             this.txt_RetencionFleteFacturaCorteSalida.MenuManager = this.barManager1;
             this.txt_RetencionFleteFacturaCorteSalida.Name = "txt_RetencionFleteFacturaCorteSalida";
             this.txt_RetencionFleteFacturaCorteSalida.Properties.BeepOnError = true;
@@ -3679,7 +4044,7 @@
             // 
             // labelControl157
             // 
-            this.labelControl157.Location = new System.Drawing.Point(16, 170);
+            this.labelControl157.Location = new System.Drawing.Point(16, 196);
             this.labelControl157.Name = "labelControl157";
             this.labelControl157.Size = new System.Drawing.Size(72, 13);
             this.labelControl157.TabIndex = 157;
@@ -3688,7 +4053,7 @@
             // txt_IVAFacturaCorteSalida
             // 
             this.txt_IVAFacturaCorteSalida.EditValue = "0";
-            this.txt_IVAFacturaCorteSalida.Location = new System.Drawing.Point(114, 193);
+            this.txt_IVAFacturaCorteSalida.Location = new System.Drawing.Point(114, 219);
             this.txt_IVAFacturaCorteSalida.MenuManager = this.barManager1;
             this.txt_IVAFacturaCorteSalida.Name = "txt_IVAFacturaCorteSalida";
             this.txt_IVAFacturaCorteSalida.Properties.BeepOnError = true;
@@ -3700,7 +4065,7 @@
             // 
             // labelControl143
             // 
-            this.labelControl143.Location = new System.Drawing.Point(17, 197);
+            this.labelControl143.Location = new System.Drawing.Point(17, 223);
             this.labelControl143.Name = "labelControl143";
             this.labelControl143.Size = new System.Drawing.Size(21, 13);
             this.labelControl143.TabIndex = 146;
@@ -3709,7 +4074,7 @@
             // chk_IVACorteSalida
             // 
             this.chk_IVACorteSalida.EditValue = true;
-            this.chk_IVACorteSalida.Location = new System.Drawing.Point(262, 193);
+            this.chk_IVACorteSalida.Location = new System.Drawing.Point(262, 219);
             this.chk_IVACorteSalida.MenuManager = this.barManager1;
             this.chk_IVACorteSalida.Name = "chk_IVACorteSalida";
             this.chk_IVACorteSalida.Properties.Caption = "IVA";
@@ -3720,7 +4085,7 @@
             // chk_RetencionCorteSalida
             // 
             this.chk_RetencionCorteSalida.EditValue = true;
-            this.chk_RetencionCorteSalida.Location = new System.Drawing.Point(261, 141);
+            this.chk_RetencionCorteSalida.Location = new System.Drawing.Point(261, 167);
             this.chk_RetencionCorteSalida.MenuManager = this.barManager1;
             this.chk_RetencionCorteSalida.Name = "chk_RetencionCorteSalida";
             this.chk_RetencionCorteSalida.Properties.Caption = "Retencion RESICO";
@@ -3731,7 +4096,7 @@
             // txt_TotalFacturaCorteSalida
             // 
             this.txt_TotalFacturaCorteSalida.EditValue = "0";
-            this.txt_TotalFacturaCorteSalida.Location = new System.Drawing.Point(114, 219);
+            this.txt_TotalFacturaCorteSalida.Location = new System.Drawing.Point(114, 245);
             this.txt_TotalFacturaCorteSalida.MenuManager = this.barManager1;
             this.txt_TotalFacturaCorteSalida.Name = "txt_TotalFacturaCorteSalida";
             this.txt_TotalFacturaCorteSalida.Properties.BeepOnError = true;
@@ -3743,7 +4108,7 @@
             // 
             // labelControl135
             // 
-            this.labelControl135.Location = new System.Drawing.Point(17, 223);
+            this.labelControl135.Location = new System.Drawing.Point(17, 249);
             this.labelControl135.Name = "labelControl135";
             this.labelControl135.Size = new System.Drawing.Size(28, 13);
             this.labelControl135.TabIndex = 133;
@@ -3752,7 +4117,7 @@
             // txt_RetencionFacturaCorteSalida
             // 
             this.txt_RetencionFacturaCorteSalida.EditValue = "0";
-            this.txt_RetencionFacturaCorteSalida.Location = new System.Drawing.Point(113, 141);
+            this.txt_RetencionFacturaCorteSalida.Location = new System.Drawing.Point(113, 167);
             this.txt_RetencionFacturaCorteSalida.MenuManager = this.barManager1;
             this.txt_RetencionFacturaCorteSalida.Name = "txt_RetencionFacturaCorteSalida";
             this.txt_RetencionFacturaCorteSalida.Properties.BeepOnError = true;
@@ -3764,7 +4129,7 @@
             // 
             // labelControl136
             // 
-            this.labelControl136.Location = new System.Drawing.Point(16, 145);
+            this.labelControl136.Location = new System.Drawing.Point(16, 171);
             this.labelControl136.Name = "labelControl136";
             this.labelControl136.Size = new System.Drawing.Size(88, 13);
             this.labelControl136.TabIndex = 131;
@@ -3772,7 +4137,7 @@
             // 
             // labelControl118
             // 
-            this.labelControl118.Location = new System.Drawing.Point(16, 94);
+            this.labelControl118.Location = new System.Drawing.Point(16, 120);
             this.labelControl118.Name = "labelControl118";
             this.labelControl118.Size = new System.Drawing.Size(64, 13);
             this.labelControl118.TabIndex = 103;
@@ -3780,7 +4145,7 @@
             // 
             // txt_FolioFacturaCorteSalida
             // 
-            this.txt_FolioFacturaCorteSalida.Location = new System.Drawing.Point(113, 90);
+            this.txt_FolioFacturaCorteSalida.Location = new System.Drawing.Point(113, 116);
             this.txt_FolioFacturaCorteSalida.MenuManager = this.barManager1;
             this.txt_FolioFacturaCorteSalida.Name = "txt_FolioFacturaCorteSalida";
             this.txt_FolioFacturaCorteSalida.Size = new System.Drawing.Size(94, 20);
@@ -3813,13 +4178,13 @@
             this.opt_TipoFacturaCorteSalida.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Diferido"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Total")});
-            this.opt_TipoFacturaCorteSalida.Size = new System.Drawing.Size(100, 50);
+            this.opt_TipoFacturaCorteSalida.Size = new System.Drawing.Size(87, 50);
             this.opt_TipoFacturaCorteSalida.TabIndex = 99;
             // 
             // chk_PagadaCorteSalida
             // 
             this.chk_PagadaCorteSalida.EditValue = true;
-            this.chk_PagadaCorteSalida.Location = new System.Drawing.Point(261, 115);
+            this.chk_PagadaCorteSalida.Location = new System.Drawing.Point(261, 141);
             this.chk_PagadaCorteSalida.MenuManager = this.barManager1;
             this.chk_PagadaCorteSalida.Name = "chk_PagadaCorteSalida";
             this.chk_PagadaCorteSalida.Properties.Caption = "Pagada";
@@ -3830,7 +4195,7 @@
             // dt_FechaPagoCorteSalida
             // 
             this.dt_FechaPagoCorteSalida.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaPagoCorteSalida.Location = new System.Drawing.Point(309, 245);
+            this.dt_FechaPagoCorteSalida.Location = new System.Drawing.Point(309, 271);
             this.dt_FechaPagoCorteSalida.MenuManager = this.barManager1;
             this.dt_FechaPagoCorteSalida.Name = "dt_FechaPagoCorteSalida";
             this.dt_FechaPagoCorteSalida.Properties.BeepOnError = true;
@@ -3848,7 +4213,7 @@
             // dt_FechaFacturaCorteSalida
             // 
             this.dt_FechaFacturaCorteSalida.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaFacturaCorteSalida.Location = new System.Drawing.Point(114, 245);
+            this.dt_FechaFacturaCorteSalida.Location = new System.Drawing.Point(114, 271);
             this.dt_FechaFacturaCorteSalida.MenuManager = this.barManager1;
             this.dt_FechaFacturaCorteSalida.Name = "dt_FechaFacturaCorteSalida";
             this.dt_FechaFacturaCorteSalida.Properties.BeepOnError = true;
@@ -3865,7 +4230,7 @@
             // 
             // labelControl120
             // 
-            this.labelControl120.Location = new System.Drawing.Point(228, 249);
+            this.labelControl120.Location = new System.Drawing.Point(228, 275);
             this.labelControl120.Name = "labelControl120";
             this.labelControl120.Size = new System.Drawing.Size(41, 13);
             this.labelControl120.TabIndex = 94;
@@ -3873,7 +4238,7 @@
             // 
             // labelControl121
             // 
-            this.labelControl121.Location = new System.Drawing.Point(17, 249);
+            this.labelControl121.Location = new System.Drawing.Point(17, 275);
             this.labelControl121.Name = "labelControl121";
             this.labelControl121.Size = new System.Drawing.Size(54, 13);
             this.labelControl121.TabIndex = 92;
@@ -3881,7 +4246,7 @@
             // 
             // cmb_MonedaCorteSalida
             // 
-            this.cmb_MonedaCorteSalida.Location = new System.Drawing.Point(274, 90);
+            this.cmb_MonedaCorteSalida.Location = new System.Drawing.Point(274, 116);
             this.cmb_MonedaCorteSalida.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_MonedaCorteSalida.MenuManager = this.barManager1;
             this.cmb_MonedaCorteSalida.Name = "cmb_MonedaCorteSalida";
@@ -3896,7 +4261,7 @@
             // 
             // labelControl122
             // 
-            this.labelControl122.Location = new System.Drawing.Point(222, 94);
+            this.labelControl122.Location = new System.Drawing.Point(222, 120);
             this.labelControl122.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl122.Name = "labelControl122";
             this.labelControl122.Size = new System.Drawing.Size(42, 13);
@@ -3905,7 +4270,7 @@
             // 
             // labelControl123
             // 
-            this.labelControl123.Location = new System.Drawing.Point(16, 119);
+            this.labelControl123.Location = new System.Drawing.Point(16, 145);
             this.labelControl123.Name = "labelControl123";
             this.labelControl123.Size = new System.Drawing.Size(80, 13);
             this.labelControl123.TabIndex = 68;
@@ -3914,7 +4279,7 @@
             // txt_ImporteFacturaCorteSalida
             // 
             this.txt_ImporteFacturaCorteSalida.EditValue = "0";
-            this.txt_ImporteFacturaCorteSalida.Location = new System.Drawing.Point(113, 115);
+            this.txt_ImporteFacturaCorteSalida.Location = new System.Drawing.Point(113, 141);
             this.txt_ImporteFacturaCorteSalida.MenuManager = this.barManager1;
             this.txt_ImporteFacturaCorteSalida.Name = "txt_ImporteFacturaCorteSalida";
             this.txt_ImporteFacturaCorteSalida.Properties.BeepOnError = true;
@@ -3995,15 +4360,23 @@
             // 
             this.groupControl17.Controls.Add(this.panelControl16);
             this.groupControl17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl17.Location = new System.Drawing.Point(0, 617);
+            this.groupControl17.Location = new System.Drawing.Point(0, 680);
             this.groupControl17.Name = "groupControl17";
             this.groupControl17.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl17.Size = new System.Drawing.Size(585, 313);
+            this.groupControl17.Size = new System.Drawing.Size(733, 344);
             this.groupControl17.TabIndex = 4;
             this.groupControl17.Text = "Factura de Apoyo";
             // 
             // panelControl16
             // 
+            this.panelControl16.Controls.Add(this.labelControl198);
+            this.panelControl16.Controls.Add(this.txt_UUID_Apoyo);
+            this.panelControl16.Controls.Add(this.labelControl195);
+            this.panelControl16.Controls.Add(this.txt_Total_Apoyo);
+            this.panelControl16.Controls.Add(this.labelControl196);
+            this.panelControl16.Controls.Add(this.txt_SubTotal_Apoyo);
+            this.panelControl16.Controls.Add(this.labelControl197);
+            this.panelControl16.Controls.Add(this.txt_MetodoPago_Apoyo);
             this.panelControl16.Controls.Add(this.dt_FechaProgramaCorteApoyo);
             this.panelControl16.Controls.Add(this.labelControl161);
             this.panelControl16.Controls.Add(this.btn_DelFacturaApoyo);
@@ -4043,13 +4416,102 @@
             this.panelControl16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl16.Location = new System.Drawing.Point(7, 28);
             this.panelControl16.Name = "panelControl16";
-            this.panelControl16.Size = new System.Drawing.Size(571, 278);
+            this.panelControl16.Size = new System.Drawing.Size(719, 309);
             this.panelControl16.TabIndex = 56;
+            // 
+            // labelControl198
+            // 
+            this.labelControl198.Location = new System.Drawing.Point(19, 96);
+            this.labelControl198.Name = "labelControl198";
+            this.labelControl198.Size = new System.Drawing.Size(25, 13);
+            this.labelControl198.TabIndex = 190;
+            this.labelControl198.Text = "UUID";
+            // 
+            // txt_UUID_Apoyo
+            // 
+            this.txt_UUID_Apoyo.Location = new System.Drawing.Point(66, 90);
+            this.txt_UUID_Apoyo.Name = "txt_UUID_Apoyo";
+            this.txt_UUID_Apoyo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_UUID_Apoyo.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_UUID_Apoyo.Properties.Appearance.Options.UseFont = true;
+            this.txt_UUID_Apoyo.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_UUID_Apoyo.Properties.ReadOnly = true;
+            this.txt_UUID_Apoyo.Size = new System.Drawing.Size(262, 20);
+            this.txt_UUID_Apoyo.TabIndex = 191;
+            // 
+            // labelControl195
+            // 
+            this.labelControl195.Location = new System.Drawing.Point(524, 68);
+            this.labelControl195.Name = "labelControl195";
+            this.labelControl195.Size = new System.Drawing.Size(28, 13);
+            this.labelControl195.TabIndex = 189;
+            this.labelControl195.Text = "Total:";
+            // 
+            // txt_Total_Apoyo
+            // 
+            this.txt_Total_Apoyo.Enabled = false;
+            this.txt_Total_Apoyo.Location = new System.Drawing.Point(596, 64);
+            this.txt_Total_Apoyo.MenuManager = this.barManager1;
+            this.txt_Total_Apoyo.Name = "txt_Total_Apoyo";
+            this.txt_Total_Apoyo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_Total_Apoyo.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_Total_Apoyo.Properties.Appearance.Options.UseFont = true;
+            this.txt_Total_Apoyo.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_Total_Apoyo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Total_Apoyo.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_Total_Apoyo.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_Total_Apoyo.Size = new System.Drawing.Size(94, 20);
+            this.txt_Total_Apoyo.TabIndex = 188;
+            // 
+            // labelControl196
+            // 
+            this.labelControl196.Location = new System.Drawing.Point(522, 42);
+            this.labelControl196.Name = "labelControl196";
+            this.labelControl196.Size = new System.Drawing.Size(46, 13);
+            this.labelControl196.TabIndex = 187;
+            this.labelControl196.Text = "SubTotal:";
+            // 
+            // txt_SubTotal_Apoyo
+            // 
+            this.txt_SubTotal_Apoyo.Enabled = false;
+            this.txt_SubTotal_Apoyo.Location = new System.Drawing.Point(596, 38);
+            this.txt_SubTotal_Apoyo.MenuManager = this.barManager1;
+            this.txt_SubTotal_Apoyo.Name = "txt_SubTotal_Apoyo";
+            this.txt_SubTotal_Apoyo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_SubTotal_Apoyo.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_SubTotal_Apoyo.Properties.Appearance.Options.UseFont = true;
+            this.txt_SubTotal_Apoyo.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_SubTotal_Apoyo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_SubTotal_Apoyo.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_SubTotal_Apoyo.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_SubTotal_Apoyo.Size = new System.Drawing.Size(94, 20);
+            this.txt_SubTotal_Apoyo.TabIndex = 186;
+            // 
+            // labelControl197
+            // 
+            this.labelControl197.Location = new System.Drawing.Point(522, 16);
+            this.labelControl197.Name = "labelControl197";
+            this.labelControl197.Size = new System.Drawing.Size(67, 13);
+            this.labelControl197.TabIndex = 185;
+            this.labelControl197.Text = "Metodo Pago:";
+            // 
+            // txt_MetodoPago_Apoyo
+            // 
+            this.txt_MetodoPago_Apoyo.Enabled = false;
+            this.txt_MetodoPago_Apoyo.Location = new System.Drawing.Point(596, 12);
+            this.txt_MetodoPago_Apoyo.MenuManager = this.barManager1;
+            this.txt_MetodoPago_Apoyo.Name = "txt_MetodoPago_Apoyo";
+            this.txt_MetodoPago_Apoyo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_MetodoPago_Apoyo.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_MetodoPago_Apoyo.Properties.Appearance.Options.UseFont = true;
+            this.txt_MetodoPago_Apoyo.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_MetodoPago_Apoyo.Size = new System.Drawing.Size(94, 20);
+            this.txt_MetodoPago_Apoyo.TabIndex = 184;
             // 
             // dt_FechaProgramaCorteApoyo
             // 
             this.dt_FechaProgramaCorteApoyo.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaProgramaCorteApoyo.Location = new System.Drawing.Point(309, 219);
+            this.dt_FechaProgramaCorteApoyo.Location = new System.Drawing.Point(310, 245);
             this.dt_FechaProgramaCorteApoyo.MenuManager = this.barManager1;
             this.dt_FechaProgramaCorteApoyo.Name = "dt_FechaProgramaCorteApoyo";
             this.dt_FechaProgramaCorteApoyo.Properties.BeepOnError = true;
@@ -4063,7 +4525,7 @@
             // 
             // labelControl161
             // 
-            this.labelControl161.Location = new System.Drawing.Point(228, 223);
+            this.labelControl161.Location = new System.Drawing.Point(229, 249);
             this.labelControl161.Name = "labelControl161";
             this.labelControl161.Size = new System.Drawing.Size(75, 13);
             this.labelControl161.TabIndex = 161;
@@ -4081,7 +4543,7 @@
             // chk_RetencionFleteCorteApoyo
             // 
             this.chk_RetencionFleteCorteApoyo.EditValue = true;
-            this.chk_RetencionFleteCorteApoyo.Location = new System.Drawing.Point(261, 167);
+            this.chk_RetencionFleteCorteApoyo.Location = new System.Drawing.Point(262, 193);
             this.chk_RetencionFleteCorteApoyo.MenuManager = this.barManager1;
             this.chk_RetencionFleteCorteApoyo.Name = "chk_RetencionFleteCorteApoyo";
             this.chk_RetencionFleteCorteApoyo.Properties.Caption = "Retencion Flete";
@@ -4092,7 +4554,7 @@
             // txt_RetencionFleteFacturaCorteApoyo
             // 
             this.txt_RetencionFleteFacturaCorteApoyo.EditValue = "0";
-            this.txt_RetencionFleteFacturaCorteApoyo.Location = new System.Drawing.Point(113, 167);
+            this.txt_RetencionFleteFacturaCorteApoyo.Location = new System.Drawing.Point(114, 193);
             this.txt_RetencionFleteFacturaCorteApoyo.MenuManager = this.barManager1;
             this.txt_RetencionFleteFacturaCorteApoyo.Name = "txt_RetencionFleteFacturaCorteApoyo";
             this.txt_RetencionFleteFacturaCorteApoyo.Properties.BeepOnError = true;
@@ -4103,7 +4565,7 @@
             // 
             // labelControl156
             // 
-            this.labelControl156.Location = new System.Drawing.Point(16, 170);
+            this.labelControl156.Location = new System.Drawing.Point(17, 196);
             this.labelControl156.Name = "labelControl156";
             this.labelControl156.Size = new System.Drawing.Size(72, 13);
             this.labelControl156.TabIndex = 157;
@@ -4112,7 +4574,7 @@
             // txt_IVAFacturaCorteApoyo
             // 
             this.txt_IVAFacturaCorteApoyo.EditValue = "0";
-            this.txt_IVAFacturaCorteApoyo.Location = new System.Drawing.Point(113, 193);
+            this.txt_IVAFacturaCorteApoyo.Location = new System.Drawing.Point(114, 219);
             this.txt_IVAFacturaCorteApoyo.MenuManager = this.barManager1;
             this.txt_IVAFacturaCorteApoyo.Name = "txt_IVAFacturaCorteApoyo";
             this.txt_IVAFacturaCorteApoyo.Properties.BeepOnError = true;
@@ -4124,7 +4586,7 @@
             // 
             // labelControl142
             // 
-            this.labelControl142.Location = new System.Drawing.Point(16, 197);
+            this.labelControl142.Location = new System.Drawing.Point(17, 223);
             this.labelControl142.Name = "labelControl142";
             this.labelControl142.Size = new System.Drawing.Size(21, 13);
             this.labelControl142.TabIndex = 143;
@@ -4133,7 +4595,7 @@
             // chk_IVACorteApoyo
             // 
             this.chk_IVACorteApoyo.EditValue = true;
-            this.chk_IVACorteApoyo.Location = new System.Drawing.Point(261, 193);
+            this.chk_IVACorteApoyo.Location = new System.Drawing.Point(262, 219);
             this.chk_IVACorteApoyo.MenuManager = this.barManager1;
             this.chk_IVACorteApoyo.Name = "chk_IVACorteApoyo";
             this.chk_IVACorteApoyo.Properties.Caption = "IVA";
@@ -4144,7 +4606,7 @@
             // chk_RetencionCorteApoyo
             // 
             this.chk_RetencionCorteApoyo.EditValue = true;
-            this.chk_RetencionCorteApoyo.Location = new System.Drawing.Point(261, 141);
+            this.chk_RetencionCorteApoyo.Location = new System.Drawing.Point(262, 167);
             this.chk_RetencionCorteApoyo.MenuManager = this.barManager1;
             this.chk_RetencionCorteApoyo.Name = "chk_RetencionCorteApoyo";
             this.chk_RetencionCorteApoyo.Properties.Caption = "Retencion RESICO";
@@ -4155,7 +4617,7 @@
             // txt_TotalFacturaCorteApoyo
             // 
             this.txt_TotalFacturaCorteApoyo.EditValue = "0";
-            this.txt_TotalFacturaCorteApoyo.Location = new System.Drawing.Point(113, 219);
+            this.txt_TotalFacturaCorteApoyo.Location = new System.Drawing.Point(114, 245);
             this.txt_TotalFacturaCorteApoyo.MenuManager = this.barManager1;
             this.txt_TotalFacturaCorteApoyo.Name = "txt_TotalFacturaCorteApoyo";
             this.txt_TotalFacturaCorteApoyo.Properties.BeepOnError = true;
@@ -4167,7 +4629,7 @@
             // 
             // labelControl133
             // 
-            this.labelControl133.Location = new System.Drawing.Point(16, 223);
+            this.labelControl133.Location = new System.Drawing.Point(17, 249);
             this.labelControl133.Name = "labelControl133";
             this.labelControl133.Size = new System.Drawing.Size(28, 13);
             this.labelControl133.TabIndex = 133;
@@ -4176,7 +4638,7 @@
             // txt_RetencionFacturaCorteApoyo
             // 
             this.txt_RetencionFacturaCorteApoyo.EditValue = "0";
-            this.txt_RetencionFacturaCorteApoyo.Location = new System.Drawing.Point(113, 141);
+            this.txt_RetencionFacturaCorteApoyo.Location = new System.Drawing.Point(114, 167);
             this.txt_RetencionFacturaCorteApoyo.MenuManager = this.barManager1;
             this.txt_RetencionFacturaCorteApoyo.Name = "txt_RetencionFacturaCorteApoyo";
             this.txt_RetencionFacturaCorteApoyo.Properties.BeepOnError = true;
@@ -4188,7 +4650,7 @@
             // 
             // labelControl134
             // 
-            this.labelControl134.Location = new System.Drawing.Point(16, 145);
+            this.labelControl134.Location = new System.Drawing.Point(17, 171);
             this.labelControl134.Name = "labelControl134";
             this.labelControl134.Size = new System.Drawing.Size(88, 13);
             this.labelControl134.TabIndex = 131;
@@ -4196,7 +4658,7 @@
             // 
             // labelControl110
             // 
-            this.labelControl110.Location = new System.Drawing.Point(16, 94);
+            this.labelControl110.Location = new System.Drawing.Point(17, 120);
             this.labelControl110.Name = "labelControl110";
             this.labelControl110.Size = new System.Drawing.Size(64, 13);
             this.labelControl110.TabIndex = 103;
@@ -4204,7 +4666,7 @@
             // 
             // txt_FolioFacturaCorteApoyo
             // 
-            this.txt_FolioFacturaCorteApoyo.Location = new System.Drawing.Point(113, 90);
+            this.txt_FolioFacturaCorteApoyo.Location = new System.Drawing.Point(114, 116);
             this.txt_FolioFacturaCorteApoyo.MenuManager = this.barManager1;
             this.txt_FolioFacturaCorteApoyo.Name = "txt_FolioFacturaCorteApoyo";
             this.txt_FolioFacturaCorteApoyo.Size = new System.Drawing.Size(94, 20);
@@ -4237,13 +4699,13 @@
             this.opt_TipoFacturaCorteApoyo.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Diferido"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Total")});
-            this.opt_TipoFacturaCorteApoyo.Size = new System.Drawing.Size(100, 50);
+            this.opt_TipoFacturaCorteApoyo.Size = new System.Drawing.Size(87, 50);
             this.opt_TipoFacturaCorteApoyo.TabIndex = 99;
             // 
             // chk_PagadaCorteApoyo
             // 
             this.chk_PagadaCorteApoyo.EditValue = true;
-            this.chk_PagadaCorteApoyo.Location = new System.Drawing.Point(261, 116);
+            this.chk_PagadaCorteApoyo.Location = new System.Drawing.Point(262, 142);
             this.chk_PagadaCorteApoyo.MenuManager = this.barManager1;
             this.chk_PagadaCorteApoyo.Name = "chk_PagadaCorteApoyo";
             this.chk_PagadaCorteApoyo.Properties.Caption = "Pagada";
@@ -4254,7 +4716,7 @@
             // dt_FechaPagoCorteApoyo
             // 
             this.dt_FechaPagoCorteApoyo.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaPagoCorteApoyo.Location = new System.Drawing.Point(309, 245);
+            this.dt_FechaPagoCorteApoyo.Location = new System.Drawing.Point(310, 271);
             this.dt_FechaPagoCorteApoyo.MenuManager = this.barManager1;
             this.dt_FechaPagoCorteApoyo.Name = "dt_FechaPagoCorteApoyo";
             this.dt_FechaPagoCorteApoyo.Properties.BeepOnError = true;
@@ -4272,7 +4734,7 @@
             // dt_FechaFacturaCorteApoyo
             // 
             this.dt_FechaFacturaCorteApoyo.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaFacturaCorteApoyo.Location = new System.Drawing.Point(113, 245);
+            this.dt_FechaFacturaCorteApoyo.Location = new System.Drawing.Point(114, 271);
             this.dt_FechaFacturaCorteApoyo.MenuManager = this.barManager1;
             this.dt_FechaFacturaCorteApoyo.Name = "dt_FechaFacturaCorteApoyo";
             this.dt_FechaFacturaCorteApoyo.Properties.BeepOnError = true;
@@ -4289,7 +4751,7 @@
             // 
             // labelControl112
             // 
-            this.labelControl112.Location = new System.Drawing.Point(227, 249);
+            this.labelControl112.Location = new System.Drawing.Point(228, 275);
             this.labelControl112.Name = "labelControl112";
             this.labelControl112.Size = new System.Drawing.Size(41, 13);
             this.labelControl112.TabIndex = 94;
@@ -4297,7 +4759,7 @@
             // 
             // labelControl113
             // 
-            this.labelControl113.Location = new System.Drawing.Point(16, 249);
+            this.labelControl113.Location = new System.Drawing.Point(17, 275);
             this.labelControl113.Name = "labelControl113";
             this.labelControl113.Size = new System.Drawing.Size(54, 13);
             this.labelControl113.TabIndex = 92;
@@ -4305,7 +4767,7 @@
             // 
             // cmb_MonedaCorteApoyo
             // 
-            this.cmb_MonedaCorteApoyo.Location = new System.Drawing.Point(274, 90);
+            this.cmb_MonedaCorteApoyo.Location = new System.Drawing.Point(275, 116);
             this.cmb_MonedaCorteApoyo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_MonedaCorteApoyo.MenuManager = this.barManager1;
             this.cmb_MonedaCorteApoyo.Name = "cmb_MonedaCorteApoyo";
@@ -4320,7 +4782,7 @@
             // 
             // labelControl114
             // 
-            this.labelControl114.Location = new System.Drawing.Point(222, 94);
+            this.labelControl114.Location = new System.Drawing.Point(223, 120);
             this.labelControl114.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl114.Name = "labelControl114";
             this.labelControl114.Size = new System.Drawing.Size(42, 13);
@@ -4329,7 +4791,7 @@
             // 
             // labelControl115
             // 
-            this.labelControl115.Location = new System.Drawing.Point(16, 119);
+            this.labelControl115.Location = new System.Drawing.Point(17, 145);
             this.labelControl115.Name = "labelControl115";
             this.labelControl115.Size = new System.Drawing.Size(80, 13);
             this.labelControl115.TabIndex = 68;
@@ -4338,7 +4800,7 @@
             // txt_ImporteFacturaCorteApoyo
             // 
             this.txt_ImporteFacturaCorteApoyo.EditValue = "0";
-            this.txt_ImporteFacturaCorteApoyo.Location = new System.Drawing.Point(113, 115);
+            this.txt_ImporteFacturaCorteApoyo.Location = new System.Drawing.Point(114, 141);
             this.txt_ImporteFacturaCorteApoyo.MenuManager = this.barManager1;
             this.txt_ImporteFacturaCorteApoyo.Name = "txt_ImporteFacturaCorteApoyo";
             this.txt_ImporteFacturaCorteApoyo.Properties.BeepOnError = true;
@@ -4420,15 +4882,23 @@
             // 
             this.groupControl16.Controls.Add(this.panelControl15);
             this.groupControl16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl16.Location = new System.Drawing.Point(0, 307);
+            this.groupControl16.Location = new System.Drawing.Point(0, 336);
             this.groupControl16.Name = "groupControl16";
             this.groupControl16.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl16.Size = new System.Drawing.Size(585, 310);
+            this.groupControl16.Size = new System.Drawing.Size(733, 344);
             this.groupControl16.TabIndex = 3;
             this.groupControl16.Text = "Factura pago x Dia";
             // 
             // panelControl15
             // 
+            this.panelControl15.Controls.Add(this.labelControl192);
+            this.panelControl15.Controls.Add(this.txt_Total_Dia);
+            this.panelControl15.Controls.Add(this.labelControl193);
+            this.panelControl15.Controls.Add(this.txt_SubTotal_Dia);
+            this.panelControl15.Controls.Add(this.labelControl194);
+            this.panelControl15.Controls.Add(this.txt_MetodoPago_Dia);
+            this.panelControl15.Controls.Add(this.labelControl191);
+            this.panelControl15.Controls.Add(this.txt_UUID_Dia);
             this.panelControl15.Controls.Add(this.dt_FechaProgramaCorteDia);
             this.panelControl15.Controls.Add(this.labelControl160);
             this.panelControl15.Controls.Add(this.btn_DelFacturaDia);
@@ -4468,13 +4938,102 @@
             this.panelControl15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl15.Location = new System.Drawing.Point(7, 28);
             this.panelControl15.Name = "panelControl15";
-            this.panelControl15.Size = new System.Drawing.Size(571, 275);
+            this.panelControl15.Size = new System.Drawing.Size(719, 309);
             this.panelControl15.TabIndex = 56;
+            // 
+            // labelControl192
+            // 
+            this.labelControl192.Location = new System.Drawing.Point(524, 68);
+            this.labelControl192.Name = "labelControl192";
+            this.labelControl192.Size = new System.Drawing.Size(28, 13);
+            this.labelControl192.TabIndex = 183;
+            this.labelControl192.Text = "Total:";
+            // 
+            // txt_Total_Dia
+            // 
+            this.txt_Total_Dia.Enabled = false;
+            this.txt_Total_Dia.Location = new System.Drawing.Point(596, 64);
+            this.txt_Total_Dia.MenuManager = this.barManager1;
+            this.txt_Total_Dia.Name = "txt_Total_Dia";
+            this.txt_Total_Dia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_Total_Dia.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_Total_Dia.Properties.Appearance.Options.UseFont = true;
+            this.txt_Total_Dia.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_Total_Dia.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Total_Dia.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_Total_Dia.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_Total_Dia.Size = new System.Drawing.Size(94, 20);
+            this.txt_Total_Dia.TabIndex = 182;
+            // 
+            // labelControl193
+            // 
+            this.labelControl193.Location = new System.Drawing.Point(522, 42);
+            this.labelControl193.Name = "labelControl193";
+            this.labelControl193.Size = new System.Drawing.Size(46, 13);
+            this.labelControl193.TabIndex = 181;
+            this.labelControl193.Text = "SubTotal:";
+            // 
+            // txt_SubTotal_Dia
+            // 
+            this.txt_SubTotal_Dia.Enabled = false;
+            this.txt_SubTotal_Dia.Location = new System.Drawing.Point(596, 38);
+            this.txt_SubTotal_Dia.MenuManager = this.barManager1;
+            this.txt_SubTotal_Dia.Name = "txt_SubTotal_Dia";
+            this.txt_SubTotal_Dia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_SubTotal_Dia.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_SubTotal_Dia.Properties.Appearance.Options.UseFont = true;
+            this.txt_SubTotal_Dia.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_SubTotal_Dia.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_SubTotal_Dia.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_SubTotal_Dia.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_SubTotal_Dia.Size = new System.Drawing.Size(94, 20);
+            this.txt_SubTotal_Dia.TabIndex = 180;
+            // 
+            // labelControl194
+            // 
+            this.labelControl194.Location = new System.Drawing.Point(522, 16);
+            this.labelControl194.Name = "labelControl194";
+            this.labelControl194.Size = new System.Drawing.Size(67, 13);
+            this.labelControl194.TabIndex = 179;
+            this.labelControl194.Text = "Metodo Pago:";
+            // 
+            // txt_MetodoPago_Dia
+            // 
+            this.txt_MetodoPago_Dia.Enabled = false;
+            this.txt_MetodoPago_Dia.Location = new System.Drawing.Point(596, 12);
+            this.txt_MetodoPago_Dia.MenuManager = this.barManager1;
+            this.txt_MetodoPago_Dia.Name = "txt_MetodoPago_Dia";
+            this.txt_MetodoPago_Dia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_MetodoPago_Dia.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_MetodoPago_Dia.Properties.Appearance.Options.UseFont = true;
+            this.txt_MetodoPago_Dia.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_MetodoPago_Dia.Size = new System.Drawing.Size(94, 20);
+            this.txt_MetodoPago_Dia.TabIndex = 178;
+            // 
+            // labelControl191
+            // 
+            this.labelControl191.Location = new System.Drawing.Point(19, 96);
+            this.labelControl191.Name = "labelControl191";
+            this.labelControl191.Size = new System.Drawing.Size(25, 13);
+            this.labelControl191.TabIndex = 176;
+            this.labelControl191.Text = "UUID";
+            // 
+            // txt_UUID_Dia
+            // 
+            this.txt_UUID_Dia.Location = new System.Drawing.Point(66, 90);
+            this.txt_UUID_Dia.Name = "txt_UUID_Dia";
+            this.txt_UUID_Dia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_UUID_Dia.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_UUID_Dia.Properties.Appearance.Options.UseFont = true;
+            this.txt_UUID_Dia.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_UUID_Dia.Properties.ReadOnly = true;
+            this.txt_UUID_Dia.Size = new System.Drawing.Size(262, 20);
+            this.txt_UUID_Dia.TabIndex = 177;
             // 
             // dt_FechaProgramaCorteDia
             // 
             this.dt_FechaProgramaCorteDia.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaProgramaCorteDia.Location = new System.Drawing.Point(309, 220);
+            this.dt_FechaProgramaCorteDia.Location = new System.Drawing.Point(309, 246);
             this.dt_FechaProgramaCorteDia.MenuManager = this.barManager1;
             this.dt_FechaProgramaCorteDia.Name = "dt_FechaProgramaCorteDia";
             this.dt_FechaProgramaCorteDia.Properties.BeepOnError = true;
@@ -4488,7 +5047,7 @@
             // 
             // labelControl160
             // 
-            this.labelControl160.Location = new System.Drawing.Point(228, 224);
+            this.labelControl160.Location = new System.Drawing.Point(228, 250);
             this.labelControl160.Name = "labelControl160";
             this.labelControl160.Size = new System.Drawing.Size(75, 13);
             this.labelControl160.TabIndex = 160;
@@ -4506,7 +5065,7 @@
             // chk_RetencionFleteCorteDia
             // 
             this.chk_RetencionFleteCorteDia.EditValue = true;
-            this.chk_RetencionFleteCorteDia.Location = new System.Drawing.Point(261, 167);
+            this.chk_RetencionFleteCorteDia.Location = new System.Drawing.Point(261, 193);
             this.chk_RetencionFleteCorteDia.MenuManager = this.barManager1;
             this.chk_RetencionFleteCorteDia.Name = "chk_RetencionFleteCorteDia";
             this.chk_RetencionFleteCorteDia.Properties.Caption = "Retencion Flete";
@@ -4517,7 +5076,7 @@
             // txt_RetencionFleteFacturaCorteDia
             // 
             this.txt_RetencionFleteFacturaCorteDia.EditValue = "0";
-            this.txt_RetencionFleteFacturaCorteDia.Location = new System.Drawing.Point(113, 167);
+            this.txt_RetencionFleteFacturaCorteDia.Location = new System.Drawing.Point(113, 193);
             this.txt_RetencionFleteFacturaCorteDia.MenuManager = this.barManager1;
             this.txt_RetencionFleteFacturaCorteDia.Name = "txt_RetencionFleteFacturaCorteDia";
             this.txt_RetencionFleteFacturaCorteDia.Properties.BeepOnError = true;
@@ -4528,7 +5087,7 @@
             // 
             // labelControl155
             // 
-            this.labelControl155.Location = new System.Drawing.Point(16, 170);
+            this.labelControl155.Location = new System.Drawing.Point(16, 196);
             this.labelControl155.Name = "labelControl155";
             this.labelControl155.Size = new System.Drawing.Size(72, 13);
             this.labelControl155.TabIndex = 157;
@@ -4537,7 +5096,7 @@
             // txt_IVAFacturaCorteDia
             // 
             this.txt_IVAFacturaCorteDia.EditValue = "0";
-            this.txt_IVAFacturaCorteDia.Location = new System.Drawing.Point(113, 193);
+            this.txt_IVAFacturaCorteDia.Location = new System.Drawing.Point(113, 219);
             this.txt_IVAFacturaCorteDia.MenuManager = this.barManager1;
             this.txt_IVAFacturaCorteDia.Name = "txt_IVAFacturaCorteDia";
             this.txt_IVAFacturaCorteDia.Properties.BeepOnError = true;
@@ -4549,7 +5108,7 @@
             // 
             // labelControl141
             // 
-            this.labelControl141.Location = new System.Drawing.Point(16, 197);
+            this.labelControl141.Location = new System.Drawing.Point(16, 223);
             this.labelControl141.Name = "labelControl141";
             this.labelControl141.Size = new System.Drawing.Size(21, 13);
             this.labelControl141.TabIndex = 140;
@@ -4558,7 +5117,7 @@
             // chk_IVACorteDia
             // 
             this.chk_IVACorteDia.EditValue = true;
-            this.chk_IVACorteDia.Location = new System.Drawing.Point(261, 193);
+            this.chk_IVACorteDia.Location = new System.Drawing.Point(261, 219);
             this.chk_IVACorteDia.MenuManager = this.barManager1;
             this.chk_IVACorteDia.Name = "chk_IVACorteDia";
             this.chk_IVACorteDia.Properties.Caption = "IVA";
@@ -4569,7 +5128,7 @@
             // chk_RetencionCorteDia
             // 
             this.chk_RetencionCorteDia.EditValue = true;
-            this.chk_RetencionCorteDia.Location = new System.Drawing.Point(261, 141);
+            this.chk_RetencionCorteDia.Location = new System.Drawing.Point(261, 167);
             this.chk_RetencionCorteDia.MenuManager = this.barManager1;
             this.chk_RetencionCorteDia.Name = "chk_RetencionCorteDia";
             this.chk_RetencionCorteDia.Properties.Caption = "Retencion RESICO";
@@ -4580,7 +5139,7 @@
             // txt_TotalFacturaCorteDia
             // 
             this.txt_TotalFacturaCorteDia.EditValue = "0";
-            this.txt_TotalFacturaCorteDia.Location = new System.Drawing.Point(113, 219);
+            this.txt_TotalFacturaCorteDia.Location = new System.Drawing.Point(113, 245);
             this.txt_TotalFacturaCorteDia.MenuManager = this.barManager1;
             this.txt_TotalFacturaCorteDia.Name = "txt_TotalFacturaCorteDia";
             this.txt_TotalFacturaCorteDia.Properties.BeepOnError = true;
@@ -4592,7 +5151,7 @@
             // 
             // labelControl131
             // 
-            this.labelControl131.Location = new System.Drawing.Point(16, 223);
+            this.labelControl131.Location = new System.Drawing.Point(16, 249);
             this.labelControl131.Name = "labelControl131";
             this.labelControl131.Size = new System.Drawing.Size(28, 13);
             this.labelControl131.TabIndex = 133;
@@ -4601,7 +5160,7 @@
             // txt_RetencionFacturaCorteDia
             // 
             this.txt_RetencionFacturaCorteDia.EditValue = "0";
-            this.txt_RetencionFacturaCorteDia.Location = new System.Drawing.Point(113, 141);
+            this.txt_RetencionFacturaCorteDia.Location = new System.Drawing.Point(113, 167);
             this.txt_RetencionFacturaCorteDia.MenuManager = this.barManager1;
             this.txt_RetencionFacturaCorteDia.Name = "txt_RetencionFacturaCorteDia";
             this.txt_RetencionFacturaCorteDia.Properties.BeepOnError = true;
@@ -4613,7 +5172,7 @@
             // 
             // labelControl132
             // 
-            this.labelControl132.Location = new System.Drawing.Point(16, 145);
+            this.labelControl132.Location = new System.Drawing.Point(16, 171);
             this.labelControl132.Name = "labelControl132";
             this.labelControl132.Size = new System.Drawing.Size(88, 13);
             this.labelControl132.TabIndex = 131;
@@ -4621,7 +5180,7 @@
             // 
             // labelControl102
             // 
-            this.labelControl102.Location = new System.Drawing.Point(16, 94);
+            this.labelControl102.Location = new System.Drawing.Point(16, 120);
             this.labelControl102.Name = "labelControl102";
             this.labelControl102.Size = new System.Drawing.Size(64, 13);
             this.labelControl102.TabIndex = 103;
@@ -4629,7 +5188,7 @@
             // 
             // txt_FolioFacturaCorteDia
             // 
-            this.txt_FolioFacturaCorteDia.Location = new System.Drawing.Point(113, 90);
+            this.txt_FolioFacturaCorteDia.Location = new System.Drawing.Point(113, 116);
             this.txt_FolioFacturaCorteDia.MenuManager = this.barManager1;
             this.txt_FolioFacturaCorteDia.Name = "txt_FolioFacturaCorteDia";
             this.txt_FolioFacturaCorteDia.Size = new System.Drawing.Size(94, 20);
@@ -4662,13 +5221,13 @@
             this.opt_TipoFacturaCorteDia.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Diferido"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Total")});
-            this.opt_TipoFacturaCorteDia.Size = new System.Drawing.Size(100, 50);
+            this.opt_TipoFacturaCorteDia.Size = new System.Drawing.Size(87, 50);
             this.opt_TipoFacturaCorteDia.TabIndex = 99;
             // 
             // chk_PagadaCorteDia
             // 
             this.chk_PagadaCorteDia.EditValue = true;
-            this.chk_PagadaCorteDia.Location = new System.Drawing.Point(261, 115);
+            this.chk_PagadaCorteDia.Location = new System.Drawing.Point(261, 141);
             this.chk_PagadaCorteDia.MenuManager = this.barManager1;
             this.chk_PagadaCorteDia.Name = "chk_PagadaCorteDia";
             this.chk_PagadaCorteDia.Properties.Caption = "Pagada";
@@ -4679,7 +5238,7 @@
             // dt_FechaPagoCorteDia
             // 
             this.dt_FechaPagoCorteDia.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaPagoCorteDia.Location = new System.Drawing.Point(309, 245);
+            this.dt_FechaPagoCorteDia.Location = new System.Drawing.Point(309, 271);
             this.dt_FechaPagoCorteDia.MenuManager = this.barManager1;
             this.dt_FechaPagoCorteDia.Name = "dt_FechaPagoCorteDia";
             this.dt_FechaPagoCorteDia.Properties.BeepOnError = true;
@@ -4697,7 +5256,7 @@
             // dt_FechaFacturaCorteDia
             // 
             this.dt_FechaFacturaCorteDia.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaFacturaCorteDia.Location = new System.Drawing.Point(113, 245);
+            this.dt_FechaFacturaCorteDia.Location = new System.Drawing.Point(113, 271);
             this.dt_FechaFacturaCorteDia.MenuManager = this.barManager1;
             this.dt_FechaFacturaCorteDia.Name = "dt_FechaFacturaCorteDia";
             this.dt_FechaFacturaCorteDia.Properties.BeepOnError = true;
@@ -4714,7 +5273,7 @@
             // 
             // labelControl104
             // 
-            this.labelControl104.Location = new System.Drawing.Point(227, 249);
+            this.labelControl104.Location = new System.Drawing.Point(227, 275);
             this.labelControl104.Name = "labelControl104";
             this.labelControl104.Size = new System.Drawing.Size(41, 13);
             this.labelControl104.TabIndex = 94;
@@ -4722,7 +5281,7 @@
             // 
             // labelControl105
             // 
-            this.labelControl105.Location = new System.Drawing.Point(16, 249);
+            this.labelControl105.Location = new System.Drawing.Point(16, 275);
             this.labelControl105.Name = "labelControl105";
             this.labelControl105.Size = new System.Drawing.Size(54, 13);
             this.labelControl105.TabIndex = 92;
@@ -4730,7 +5289,7 @@
             // 
             // cmb_MonedaCorteDia
             // 
-            this.cmb_MonedaCorteDia.Location = new System.Drawing.Point(274, 90);
+            this.cmb_MonedaCorteDia.Location = new System.Drawing.Point(274, 116);
             this.cmb_MonedaCorteDia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_MonedaCorteDia.MenuManager = this.barManager1;
             this.cmb_MonedaCorteDia.Name = "cmb_MonedaCorteDia";
@@ -4745,7 +5304,7 @@
             // 
             // labelControl106
             // 
-            this.labelControl106.Location = new System.Drawing.Point(222, 94);
+            this.labelControl106.Location = new System.Drawing.Point(222, 120);
             this.labelControl106.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl106.Name = "labelControl106";
             this.labelControl106.Size = new System.Drawing.Size(42, 13);
@@ -4754,7 +5313,7 @@
             // 
             // labelControl107
             // 
-            this.labelControl107.Location = new System.Drawing.Point(16, 119);
+            this.labelControl107.Location = new System.Drawing.Point(16, 145);
             this.labelControl107.Name = "labelControl107";
             this.labelControl107.Size = new System.Drawing.Size(80, 13);
             this.labelControl107.TabIndex = 68;
@@ -4763,7 +5322,7 @@
             // txt_ImporteFacturaCorteDia
             // 
             this.txt_ImporteFacturaCorteDia.EditValue = "0";
-            this.txt_ImporteFacturaCorteDia.Location = new System.Drawing.Point(113, 115);
+            this.txt_ImporteFacturaCorteDia.Location = new System.Drawing.Point(113, 141);
             this.txt_ImporteFacturaCorteDia.MenuManager = this.barManager1;
             this.txt_ImporteFacturaCorteDia.Name = "txt_ImporteFacturaCorteDia";
             this.txt_ImporteFacturaCorteDia.Properties.BeepOnError = true;
@@ -4848,12 +5407,20 @@
             this.groupControl15.Location = new System.Drawing.Point(0, 0);
             this.groupControl15.Name = "groupControl15";
             this.groupControl15.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl15.Size = new System.Drawing.Size(585, 307);
+            this.groupControl15.Size = new System.Drawing.Size(733, 336);
             this.groupControl15.TabIndex = 2;
             this.groupControl15.Text = "Factura Kilos";
             // 
             // panelControl12
             // 
+            this.panelControl12.Controls.Add(this.labelControl190);
+            this.panelControl12.Controls.Add(this.txt_UUID_Kilos);
+            this.panelControl12.Controls.Add(this.labelControl187);
+            this.panelControl12.Controls.Add(this.txt_Total_Kilos);
+            this.panelControl12.Controls.Add(this.labelControl188);
+            this.panelControl12.Controls.Add(this.txt_SubTotal_Kilos);
+            this.panelControl12.Controls.Add(this.labelControl189);
+            this.panelControl12.Controls.Add(this.txt_MetodoPago_Kilos);
             this.panelControl12.Controls.Add(this.dt_FechaProgramaCorteKilos);
             this.panelControl12.Controls.Add(this.labelControl159);
             this.panelControl12.Controls.Add(this.btn_DelFacturaKilos);
@@ -4893,13 +5460,102 @@
             this.panelControl12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl12.Location = new System.Drawing.Point(7, 28);
             this.panelControl12.Name = "panelControl12";
-            this.panelControl12.Size = new System.Drawing.Size(571, 272);
+            this.panelControl12.Size = new System.Drawing.Size(719, 301);
             this.panelControl12.TabIndex = 56;
+            // 
+            // labelControl190
+            // 
+            this.labelControl190.Location = new System.Drawing.Point(19, 96);
+            this.labelControl190.Name = "labelControl190";
+            this.labelControl190.Size = new System.Drawing.Size(25, 13);
+            this.labelControl190.TabIndex = 174;
+            this.labelControl190.Text = "UUID";
+            // 
+            // txt_UUID_Kilos
+            // 
+            this.txt_UUID_Kilos.Location = new System.Drawing.Point(66, 90);
+            this.txt_UUID_Kilos.Name = "txt_UUID_Kilos";
+            this.txt_UUID_Kilos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_UUID_Kilos.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_UUID_Kilos.Properties.Appearance.Options.UseFont = true;
+            this.txt_UUID_Kilos.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_UUID_Kilos.Properties.ReadOnly = true;
+            this.txt_UUID_Kilos.Size = new System.Drawing.Size(262, 20);
+            this.txt_UUID_Kilos.TabIndex = 175;
+            // 
+            // labelControl187
+            // 
+            this.labelControl187.Location = new System.Drawing.Point(524, 68);
+            this.labelControl187.Name = "labelControl187";
+            this.labelControl187.Size = new System.Drawing.Size(28, 13);
+            this.labelControl187.TabIndex = 173;
+            this.labelControl187.Text = "Total:";
+            // 
+            // txt_Total_Kilos
+            // 
+            this.txt_Total_Kilos.Enabled = false;
+            this.txt_Total_Kilos.Location = new System.Drawing.Point(596, 64);
+            this.txt_Total_Kilos.MenuManager = this.barManager1;
+            this.txt_Total_Kilos.Name = "txt_Total_Kilos";
+            this.txt_Total_Kilos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_Total_Kilos.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_Total_Kilos.Properties.Appearance.Options.UseFont = true;
+            this.txt_Total_Kilos.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_Total_Kilos.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Total_Kilos.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_Total_Kilos.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_Total_Kilos.Size = new System.Drawing.Size(94, 20);
+            this.txt_Total_Kilos.TabIndex = 172;
+            // 
+            // labelControl188
+            // 
+            this.labelControl188.Location = new System.Drawing.Point(522, 42);
+            this.labelControl188.Name = "labelControl188";
+            this.labelControl188.Size = new System.Drawing.Size(46, 13);
+            this.labelControl188.TabIndex = 171;
+            this.labelControl188.Text = "SubTotal:";
+            // 
+            // txt_SubTotal_Kilos
+            // 
+            this.txt_SubTotal_Kilos.Enabled = false;
+            this.txt_SubTotal_Kilos.Location = new System.Drawing.Point(596, 38);
+            this.txt_SubTotal_Kilos.MenuManager = this.barManager1;
+            this.txt_SubTotal_Kilos.Name = "txt_SubTotal_Kilos";
+            this.txt_SubTotal_Kilos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_SubTotal_Kilos.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_SubTotal_Kilos.Properties.Appearance.Options.UseFont = true;
+            this.txt_SubTotal_Kilos.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_SubTotal_Kilos.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_SubTotal_Kilos.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_SubTotal_Kilos.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_SubTotal_Kilos.Size = new System.Drawing.Size(94, 20);
+            this.txt_SubTotal_Kilos.TabIndex = 170;
+            // 
+            // labelControl189
+            // 
+            this.labelControl189.Location = new System.Drawing.Point(522, 16);
+            this.labelControl189.Name = "labelControl189";
+            this.labelControl189.Size = new System.Drawing.Size(67, 13);
+            this.labelControl189.TabIndex = 169;
+            this.labelControl189.Text = "Metodo Pago:";
+            // 
+            // txt_MetodoPago_Kilos
+            // 
+            this.txt_MetodoPago_Kilos.Enabled = false;
+            this.txt_MetodoPago_Kilos.Location = new System.Drawing.Point(596, 12);
+            this.txt_MetodoPago_Kilos.MenuManager = this.barManager1;
+            this.txt_MetodoPago_Kilos.Name = "txt_MetodoPago_Kilos";
+            this.txt_MetodoPago_Kilos.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_MetodoPago_Kilos.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_MetodoPago_Kilos.Properties.Appearance.Options.UseFont = true;
+            this.txt_MetodoPago_Kilos.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_MetodoPago_Kilos.Size = new System.Drawing.Size(94, 20);
+            this.txt_MetodoPago_Kilos.TabIndex = 168;
             // 
             // dt_FechaProgramaCorteKilos
             // 
             this.dt_FechaProgramaCorteKilos.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaProgramaCorteKilos.Location = new System.Drawing.Point(309, 219);
+            this.dt_FechaProgramaCorteKilos.Location = new System.Drawing.Point(309, 245);
             this.dt_FechaProgramaCorteKilos.MenuManager = this.barManager1;
             this.dt_FechaProgramaCorteKilos.Name = "dt_FechaProgramaCorteKilos";
             this.dt_FechaProgramaCorteKilos.Properties.BeepOnError = true;
@@ -4913,7 +5569,7 @@
             // 
             // labelControl159
             // 
-            this.labelControl159.Location = new System.Drawing.Point(228, 223);
+            this.labelControl159.Location = new System.Drawing.Point(228, 249);
             this.labelControl159.Name = "labelControl159";
             this.labelControl159.Size = new System.Drawing.Size(75, 13);
             this.labelControl159.TabIndex = 158;
@@ -4931,7 +5587,7 @@
             // chk_RetencionFleteCorteKilos
             // 
             this.chk_RetencionFleteCorteKilos.EditValue = true;
-            this.chk_RetencionFleteCorteKilos.Location = new System.Drawing.Point(261, 167);
+            this.chk_RetencionFleteCorteKilos.Location = new System.Drawing.Point(261, 193);
             this.chk_RetencionFleteCorteKilos.MenuManager = this.barManager1;
             this.chk_RetencionFleteCorteKilos.Name = "chk_RetencionFleteCorteKilos";
             this.chk_RetencionFleteCorteKilos.Properties.Caption = "Retencion Flete";
@@ -4942,7 +5598,7 @@
             // txt_RetencionFleteFacturaCorteKilos
             // 
             this.txt_RetencionFleteFacturaCorteKilos.EditValue = "0";
-            this.txt_RetencionFleteFacturaCorteKilos.Location = new System.Drawing.Point(113, 167);
+            this.txt_RetencionFleteFacturaCorteKilos.Location = new System.Drawing.Point(113, 193);
             this.txt_RetencionFleteFacturaCorteKilos.MenuManager = this.barManager1;
             this.txt_RetencionFleteFacturaCorteKilos.Name = "txt_RetencionFleteFacturaCorteKilos";
             this.txt_RetencionFleteFacturaCorteKilos.Properties.BeepOnError = true;
@@ -4953,7 +5609,7 @@
             // 
             // labelControl154
             // 
-            this.labelControl154.Location = new System.Drawing.Point(16, 170);
+            this.labelControl154.Location = new System.Drawing.Point(16, 196);
             this.labelControl154.Name = "labelControl154";
             this.labelControl154.Size = new System.Drawing.Size(72, 13);
             this.labelControl154.TabIndex = 154;
@@ -4962,7 +5618,7 @@
             // txt_IVAFacturaCorteKilos
             // 
             this.txt_IVAFacturaCorteKilos.EditValue = "0";
-            this.txt_IVAFacturaCorteKilos.Location = new System.Drawing.Point(113, 193);
+            this.txt_IVAFacturaCorteKilos.Location = new System.Drawing.Point(113, 219);
             this.txt_IVAFacturaCorteKilos.MenuManager = this.barManager1;
             this.txt_IVAFacturaCorteKilos.Name = "txt_IVAFacturaCorteKilos";
             this.txt_IVAFacturaCorteKilos.Properties.BeepOnError = true;
@@ -4974,7 +5630,7 @@
             // 
             // labelControl140
             // 
-            this.labelControl140.Location = new System.Drawing.Point(16, 197);
+            this.labelControl140.Location = new System.Drawing.Point(16, 223);
             this.labelControl140.Name = "labelControl140";
             this.labelControl140.Size = new System.Drawing.Size(21, 13);
             this.labelControl140.TabIndex = 137;
@@ -4983,7 +5639,7 @@
             // chk_IVACorteKilos
             // 
             this.chk_IVACorteKilos.EditValue = true;
-            this.chk_IVACorteKilos.Location = new System.Drawing.Point(261, 193);
+            this.chk_IVACorteKilos.Location = new System.Drawing.Point(261, 219);
             this.chk_IVACorteKilos.MenuManager = this.barManager1;
             this.chk_IVACorteKilos.Name = "chk_IVACorteKilos";
             this.chk_IVACorteKilos.Properties.Caption = "IVA";
@@ -4994,7 +5650,7 @@
             // chk_RetencionCorteKilos
             // 
             this.chk_RetencionCorteKilos.EditValue = true;
-            this.chk_RetencionCorteKilos.Location = new System.Drawing.Point(261, 141);
+            this.chk_RetencionCorteKilos.Location = new System.Drawing.Point(261, 167);
             this.chk_RetencionCorteKilos.MenuManager = this.barManager1;
             this.chk_RetencionCorteKilos.Name = "chk_RetencionCorteKilos";
             this.chk_RetencionCorteKilos.Properties.Caption = "Retencion RESICO";
@@ -5005,7 +5661,7 @@
             // txt_TotalFacturaCorteKilos
             // 
             this.txt_TotalFacturaCorteKilos.EditValue = "0";
-            this.txt_TotalFacturaCorteKilos.Location = new System.Drawing.Point(113, 219);
+            this.txt_TotalFacturaCorteKilos.Location = new System.Drawing.Point(113, 245);
             this.txt_TotalFacturaCorteKilos.MenuManager = this.barManager1;
             this.txt_TotalFacturaCorteKilos.Name = "txt_TotalFacturaCorteKilos";
             this.txt_TotalFacturaCorteKilos.Properties.BeepOnError = true;
@@ -5017,7 +5673,7 @@
             // 
             // labelControl129
             // 
-            this.labelControl129.Location = new System.Drawing.Point(16, 223);
+            this.labelControl129.Location = new System.Drawing.Point(16, 249);
             this.labelControl129.Name = "labelControl129";
             this.labelControl129.Size = new System.Drawing.Size(68, 13);
             this.labelControl129.TabIndex = 133;
@@ -5026,7 +5682,7 @@
             // txt_RetencionFacturaCorteKilos
             // 
             this.txt_RetencionFacturaCorteKilos.EditValue = "0";
-            this.txt_RetencionFacturaCorteKilos.Location = new System.Drawing.Point(113, 141);
+            this.txt_RetencionFacturaCorteKilos.Location = new System.Drawing.Point(113, 167);
             this.txt_RetencionFacturaCorteKilos.MenuManager = this.barManager1;
             this.txt_RetencionFacturaCorteKilos.Name = "txt_RetencionFacturaCorteKilos";
             this.txt_RetencionFacturaCorteKilos.Properties.BeepOnError = true;
@@ -5038,7 +5694,7 @@
             // 
             // labelControl130
             // 
-            this.labelControl130.Location = new System.Drawing.Point(16, 145);
+            this.labelControl130.Location = new System.Drawing.Point(16, 171);
             this.labelControl130.Name = "labelControl130";
             this.labelControl130.Size = new System.Drawing.Size(88, 13);
             this.labelControl130.TabIndex = 131;
@@ -5046,7 +5702,7 @@
             // 
             // labelControl94
             // 
-            this.labelControl94.Location = new System.Drawing.Point(16, 94);
+            this.labelControl94.Location = new System.Drawing.Point(16, 120);
             this.labelControl94.Name = "labelControl94";
             this.labelControl94.Size = new System.Drawing.Size(64, 13);
             this.labelControl94.TabIndex = 103;
@@ -5054,7 +5710,7 @@
             // 
             // txt_FolioFacturaCorteKilos
             // 
-            this.txt_FolioFacturaCorteKilos.Location = new System.Drawing.Point(113, 90);
+            this.txt_FolioFacturaCorteKilos.Location = new System.Drawing.Point(113, 116);
             this.txt_FolioFacturaCorteKilos.MenuManager = this.barManager1;
             this.txt_FolioFacturaCorteKilos.Name = "txt_FolioFacturaCorteKilos";
             this.txt_FolioFacturaCorteKilos.Size = new System.Drawing.Size(94, 20);
@@ -5087,13 +5743,13 @@
             this.opt_TipoFacturaCorteKilos.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Diferido"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Total")});
-            this.opt_TipoFacturaCorteKilos.Size = new System.Drawing.Size(100, 50);
+            this.opt_TipoFacturaCorteKilos.Size = new System.Drawing.Size(85, 50);
             this.opt_TipoFacturaCorteKilos.TabIndex = 99;
             // 
             // chk_PagadaCorteKilos
             // 
             this.chk_PagadaCorteKilos.EditValue = true;
-            this.chk_PagadaCorteKilos.Location = new System.Drawing.Point(261, 115);
+            this.chk_PagadaCorteKilos.Location = new System.Drawing.Point(261, 141);
             this.chk_PagadaCorteKilos.MenuManager = this.barManager1;
             this.chk_PagadaCorteKilos.Name = "chk_PagadaCorteKilos";
             this.chk_PagadaCorteKilos.Properties.Caption = "Pagada";
@@ -5104,7 +5760,7 @@
             // dt_FechaPagoCorteKilos
             // 
             this.dt_FechaPagoCorteKilos.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaPagoCorteKilos.Location = new System.Drawing.Point(309, 245);
+            this.dt_FechaPagoCorteKilos.Location = new System.Drawing.Point(309, 271);
             this.dt_FechaPagoCorteKilos.MenuManager = this.barManager1;
             this.dt_FechaPagoCorteKilos.Name = "dt_FechaPagoCorteKilos";
             this.dt_FechaPagoCorteKilos.Properties.BeepOnError = true;
@@ -5122,7 +5778,7 @@
             // dt_FechaFacturaCorteKilos
             // 
             this.dt_FechaFacturaCorteKilos.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaFacturaCorteKilos.Location = new System.Drawing.Point(113, 245);
+            this.dt_FechaFacturaCorteKilos.Location = new System.Drawing.Point(113, 271);
             this.dt_FechaFacturaCorteKilos.MenuManager = this.barManager1;
             this.dt_FechaFacturaCorteKilos.Name = "dt_FechaFacturaCorteKilos";
             this.dt_FechaFacturaCorteKilos.Properties.BeepOnError = true;
@@ -5139,7 +5795,7 @@
             // 
             // labelControl96
             // 
-            this.labelControl96.Location = new System.Drawing.Point(227, 249);
+            this.labelControl96.Location = new System.Drawing.Point(227, 275);
             this.labelControl96.Name = "labelControl96";
             this.labelControl96.Size = new System.Drawing.Size(41, 13);
             this.labelControl96.TabIndex = 94;
@@ -5147,7 +5803,7 @@
             // 
             // labelControl97
             // 
-            this.labelControl97.Location = new System.Drawing.Point(16, 249);
+            this.labelControl97.Location = new System.Drawing.Point(16, 275);
             this.labelControl97.Name = "labelControl97";
             this.labelControl97.Size = new System.Drawing.Size(54, 13);
             this.labelControl97.TabIndex = 92;
@@ -5155,7 +5811,7 @@
             // 
             // cmb_MonedaCorteKilos
             // 
-            this.cmb_MonedaCorteKilos.Location = new System.Drawing.Point(274, 90);
+            this.cmb_MonedaCorteKilos.Location = new System.Drawing.Point(274, 116);
             this.cmb_MonedaCorteKilos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_MonedaCorteKilos.MenuManager = this.barManager1;
             this.cmb_MonedaCorteKilos.Name = "cmb_MonedaCorteKilos";
@@ -5170,7 +5826,7 @@
             // 
             // labelControl98
             // 
-            this.labelControl98.Location = new System.Drawing.Point(222, 94);
+            this.labelControl98.Location = new System.Drawing.Point(222, 120);
             this.labelControl98.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl98.Name = "labelControl98";
             this.labelControl98.Size = new System.Drawing.Size(42, 13);
@@ -5179,7 +5835,7 @@
             // 
             // labelControl99
             // 
-            this.labelControl99.Location = new System.Drawing.Point(16, 119);
+            this.labelControl99.Location = new System.Drawing.Point(16, 145);
             this.labelControl99.Name = "labelControl99";
             this.labelControl99.Size = new System.Drawing.Size(82, 13);
             this.labelControl99.TabIndex = 68;
@@ -5188,7 +5844,7 @@
             // txt_ImporteFacturaCorteKilos
             // 
             this.txt_ImporteFacturaCorteKilos.EditValue = "0";
-            this.txt_ImporteFacturaCorteKilos.Location = new System.Drawing.Point(113, 115);
+            this.txt_ImporteFacturaCorteKilos.Location = new System.Drawing.Point(113, 141);
             this.txt_ImporteFacturaCorteKilos.MenuManager = this.barManager1;
             this.txt_ImporteFacturaCorteKilos.Name = "txt_ImporteFacturaCorteKilos";
             this.txt_ImporteFacturaCorteKilos.Properties.BeepOnError = true;
@@ -5274,7 +5930,7 @@
             this.navigationPage5.Name = "navigationPage5";
             this.navigationPage5.PageText = "Acarreo";
             this.navigationPage5.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage5.Size = new System.Drawing.Size(1081, 646);
+            this.navigationPage5.Size = new System.Drawing.Size(1236, 632);
             // 
             // panelControl10
             // 
@@ -5283,7 +5939,7 @@
             this.panelControl10.Location = new System.Drawing.Point(0, 0);
             this.panelControl10.Name = "panelControl10";
             this.panelControl10.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl10.Size = new System.Drawing.Size(1081, 646);
+            this.panelControl10.Size = new System.Drawing.Size(1236, 632);
             this.panelControl10.TabIndex = 0;
             // 
             // xtraTabControl3
@@ -5292,7 +5948,7 @@
             this.xtraTabControl3.Location = new System.Drawing.Point(7, 7);
             this.xtraTabControl3.Name = "xtraTabControl3";
             this.xtraTabControl3.SelectedTabPage = this.xtraTabPage5;
-            this.xtraTabControl3.Size = new System.Drawing.Size(1067, 632);
+            this.xtraTabControl3.Size = new System.Drawing.Size(1222, 618);
             this.xtraTabControl3.TabIndex = 58;
             this.xtraTabControl3.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage5,
@@ -5303,115 +5959,103 @@
             this.xtraTabPage5.Controls.Add(this.xtraScrollableControl5);
             this.xtraTabPage5.Name = "xtraTabPage5";
             this.xtraTabPage5.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage5.Size = new System.Drawing.Size(1065, 607);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1220, 593);
             this.xtraTabPage5.Text = "Calculo Acarreo";
             // 
             // xtraScrollableControl5
             // 
-            this.xtraScrollableControl5.Controls.Add(this.groupControl9);
+            this.xtraScrollableControl5.Controls.Add(this.panelControl20);
             this.xtraScrollableControl5.Controls.Add(this.groupControl8);
             this.xtraScrollableControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl5.Location = new System.Drawing.Point(5, 5);
             this.xtraScrollableControl5.Name = "xtraScrollableControl5";
-            this.xtraScrollableControl5.Size = new System.Drawing.Size(1055, 597);
+            this.xtraScrollableControl5.Size = new System.Drawing.Size(1210, 583);
             this.xtraScrollableControl5.TabIndex = 0;
             // 
-            // groupControl9
+            // panelControl20
             // 
-            this.groupControl9.Controls.Add(this.panelControl19);
-            this.groupControl9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl9.Location = new System.Drawing.Point(0, 374);
-            this.groupControl9.Name = "groupControl9";
-            this.groupControl9.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl9.Size = new System.Drawing.Size(1055, 223);
-            this.groupControl9.TabIndex = 58;
-            this.groupControl9.Text = "Cobro por Servicios";
+            this.panelControl20.Controls.Add(this.dtgServicios);
+            this.panelControl20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl20.Location = new System.Drawing.Point(0, 394);
+            this.panelControl20.Name = "panelControl20";
+            this.panelControl20.Padding = new System.Windows.Forms.Padding(5);
+            this.panelControl20.Size = new System.Drawing.Size(1210, 189);
+            this.panelControl20.TabIndex = 1;
             // 
-            // panelControl19
+            // dtgServicios
             // 
-            this.panelControl19.Controls.Add(this.labelControl74);
-            this.panelControl19.Controls.Add(this.groupControl10);
-            this.panelControl19.Controls.Add(this.labelControl73);
-            this.panelControl19.Controls.Add(this.txtPrecioSalidaForanea);
-            this.panelControl19.Controls.Add(this.txtPrecioServicio);
-            this.panelControl19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl19.Location = new System.Drawing.Point(7, 28);
-            this.panelControl19.Name = "panelControl19";
-            this.panelControl19.Size = new System.Drawing.Size(1041, 188);
-            this.panelControl19.TabIndex = 36;
+            this.dtgServicios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgServicios.Location = new System.Drawing.Point(7, 7);
+            this.dtgServicios.MainView = this.dtgValServicios;
+            this.dtgServicios.MenuManager = this.barManager1;
+            this.dtgServicios.Name = "dtgServicios";
+            this.dtgServicios.Size = new System.Drawing.Size(1196, 175);
+            this.dtgServicios.TabIndex = 22;
+            this.dtgServicios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValServicios});
             // 
-            // labelControl74
+            // dtgValServicios
             // 
-            this.labelControl74.Location = new System.Drawing.Point(27, 16);
-            this.labelControl74.Name = "labelControl74";
-            this.labelControl74.Size = new System.Drawing.Size(87, 13);
-            this.labelControl74.TabIndex = 5;
-            this.labelControl74.Text = "Pago por Servicio:";
+            this.dtgValServicios.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn40,
+            this.gridColumn41,
+            this.gridColumn42,
+            this.gridColumn43,
+            this.gridColumn44,
+            this.gridColumn45});
+            this.dtgValServicios.GridControl = this.dtgServicios;
+            this.dtgValServicios.Name = "dtgValServicios";
+            this.dtgValServicios.OptionsView.ShowGroupPanel = false;
             // 
-            // groupControl10
+            // gridColumn40
             // 
-            this.groupControl10.Controls.Add(this.labelControl72);
-            this.groupControl10.Controls.Add(this.txtPrecioCaja);
-            this.groupControl10.Location = new System.Drawing.Point(9, 41);
-            this.groupControl10.Name = "groupControl10";
-            this.groupControl10.Size = new System.Drawing.Size(267, 66);
-            this.groupControl10.TabIndex = 35;
-            this.groupControl10.Text = "Cajas Adicionales";
+            this.gridColumn40.Caption = "Tipo de Camion";
+            this.gridColumn40.FieldName = "Nombre_TipoCamion";
+            this.gridColumn40.Name = "gridColumn40";
+            this.gridColumn40.OptionsColumn.AllowEdit = false;
+            this.gridColumn40.Visible = true;
+            this.gridColumn40.VisibleIndex = 1;
             // 
-            // labelControl72
+            // gridColumn41
             // 
-            this.labelControl72.Location = new System.Drawing.Point(18, 35);
-            this.labelControl72.Name = "labelControl72";
-            this.labelControl72.Size = new System.Drawing.Size(75, 13);
-            this.labelControl72.TabIndex = 24;
-            this.labelControl72.Text = "Precio por caja:";
+            this.gridColumn41.Caption = "Pago por Servicio";
+            this.gridColumn41.FieldName = "Precio_Acarreo";
+            this.gridColumn41.Name = "gridColumn41";
+            this.gridColumn41.OptionsColumn.AllowEdit = false;
+            this.gridColumn41.Visible = true;
+            this.gridColumn41.VisibleIndex = 2;
             // 
-            // txtPrecioCaja
+            // gridColumn42
             // 
-            this.txtPrecioCaja.Enabled = false;
-            this.txtPrecioCaja.Location = new System.Drawing.Point(130, 32);
-            this.txtPrecioCaja.MenuManager = this.barManager1;
-            this.txtPrecioCaja.Name = "txtPrecioCaja";
-            this.txtPrecioCaja.Properties.BeepOnError = true;
-            this.txtPrecioCaja.Properties.NullText = "0";
-            this.txtPrecioCaja.Properties.NullValuePrompt = "0";
-            this.txtPrecioCaja.Properties.UseMaskAsDisplayFormat = true;
-            this.txtPrecioCaja.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecioCaja.TabIndex = 2;
+            this.gridColumn42.Caption = "Pago Salida Foranea";
+            this.gridColumn42.FieldName = "Precio_SalidaForanea";
+            this.gridColumn42.Name = "gridColumn42";
+            this.gridColumn42.OptionsColumn.AllowEdit = false;
+            this.gridColumn42.Visible = true;
+            this.gridColumn42.VisibleIndex = 3;
             // 
-            // labelControl73
+            // gridColumn43
             // 
-            this.labelControl73.Location = new System.Drawing.Point(260, 16);
-            this.labelControl73.Name = "labelControl73";
-            this.labelControl73.Size = new System.Drawing.Size(102, 13);
-            this.labelControl73.TabIndex = 8;
-            this.labelControl73.Text = "Pago Salida Foranea:";
+            this.gridColumn43.Caption = "Precio por caja";
+            this.gridColumn43.FieldName = "Precio_Caja";
+            this.gridColumn43.Name = "gridColumn43";
+            this.gridColumn43.OptionsColumn.AllowEdit = false;
+            this.gridColumn43.Visible = true;
+            this.gridColumn43.VisibleIndex = 4;
             // 
-            // txtPrecioSalidaForanea
+            // gridColumn44
             // 
-            this.txtPrecioSalidaForanea.Enabled = false;
-            this.txtPrecioSalidaForanea.Location = new System.Drawing.Point(372, 12);
-            this.txtPrecioSalidaForanea.MenuManager = this.barManager1;
-            this.txtPrecioSalidaForanea.Name = "txtPrecioSalidaForanea";
-            this.txtPrecioSalidaForanea.Properties.BeepOnError = true;
-            this.txtPrecioSalidaForanea.Properties.NullText = "0";
-            this.txtPrecioSalidaForanea.Properties.NullValuePrompt = "0";
-            this.txtPrecioSalidaForanea.Properties.UseMaskAsDisplayFormat = true;
-            this.txtPrecioSalidaForanea.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecioSalidaForanea.TabIndex = 6;
+            this.gridColumn44.FieldName = "Id_EmpresaAcarreo";
+            this.gridColumn44.Name = "gridColumn44";
+            this.gridColumn44.OptionsColumn.AllowEdit = false;
+            this.gridColumn44.Visible = true;
+            this.gridColumn44.VisibleIndex = 0;
             // 
-            // txtPrecioServicio
+            // gridColumn45
             // 
-            this.txtPrecioServicio.Enabled = false;
-            this.txtPrecioServicio.Location = new System.Drawing.Point(139, 12);
-            this.txtPrecioServicio.MenuManager = this.barManager1;
-            this.txtPrecioServicio.Name = "txtPrecioServicio";
-            this.txtPrecioServicio.Properties.BeepOnError = true;
-            this.txtPrecioServicio.Properties.NullText = "0";
-            this.txtPrecioServicio.Properties.NullValuePrompt = "0";
-            this.txtPrecioServicio.Properties.UseMaskAsDisplayFormat = true;
-            this.txtPrecioServicio.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecioServicio.TabIndex = 3;
+            this.gridColumn45.FieldName = "Id_TipoCamion";
+            this.gridColumn45.Name = "gridColumn45";
+            this.gridColumn45.OptionsColumn.AllowEdit = false;
             // 
             // groupControl8
             // 
@@ -5420,7 +6064,7 @@
             this.groupControl8.Location = new System.Drawing.Point(0, 0);
             this.groupControl8.Name = "groupControl8";
             this.groupControl8.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl8.Size = new System.Drawing.Size(1055, 374);
+            this.groupControl8.Size = new System.Drawing.Size(1210, 394);
             this.groupControl8.TabIndex = 0;
             this.groupControl8.Text = "Calculo de Acarreo";
             // 
@@ -5430,11 +6074,14 @@
             this.panelControl13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl13.Location = new System.Drawing.Point(7, 28);
             this.panelControl13.Name = "panelControl13";
-            this.panelControl13.Size = new System.Drawing.Size(1041, 339);
+            this.panelControl13.Size = new System.Drawing.Size(1196, 359);
             this.panelControl13.TabIndex = 56;
             // 
             // panelControl11
             // 
+            this.panelControl11.Controls.Add(this.groupControl9);
+            this.panelControl11.Controls.Add(this.labelControl174);
+            this.panelControl11.Controls.Add(this.txt_TipoCamion);
             this.panelControl11.Controls.Add(this.btn_AbrirAcarreo);
             this.panelControl11.Controls.Add(this.btn_CerrarAcarreo);
             this.panelControl11.Controls.Add(this.txt_Descuentos);
@@ -5468,13 +6115,125 @@
             this.panelControl11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl11.Location = new System.Drawing.Point(2, 2);
             this.panelControl11.Name = "panelControl11";
-            this.panelControl11.Size = new System.Drawing.Size(1037, 335);
+            this.panelControl11.Size = new System.Drawing.Size(1192, 355);
             this.panelControl11.TabIndex = 55;
+            // 
+            // groupControl9
+            // 
+            this.groupControl9.Controls.Add(this.panelControl19);
+            this.groupControl9.Location = new System.Drawing.Point(396, 146);
+            this.groupControl9.Name = "groupControl9";
+            this.groupControl9.Padding = new System.Windows.Forms.Padding(5);
+            this.groupControl9.Size = new System.Drawing.Size(278, 169);
+            this.groupControl9.TabIndex = 58;
+            this.groupControl9.Text = "Cobro por Servicios";
+            // 
+            // panelControl19
+            // 
+            this.panelControl19.Controls.Add(this.labelControl74);
+            this.panelControl19.Controls.Add(this.groupControl10);
+            this.panelControl19.Controls.Add(this.labelControl73);
+            this.panelControl19.Controls.Add(this.txtPrecioSalidaForanea);
+            this.panelControl19.Controls.Add(this.txtPrecioServicio);
+            this.panelControl19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl19.Location = new System.Drawing.Point(7, 28);
+            this.panelControl19.Name = "panelControl19";
+            this.panelControl19.Size = new System.Drawing.Size(264, 134);
+            this.panelControl19.TabIndex = 36;
+            // 
+            // labelControl74
+            // 
+            this.labelControl74.Location = new System.Drawing.Point(26, 15);
+            this.labelControl74.Name = "labelControl74";
+            this.labelControl74.Size = new System.Drawing.Size(87, 13);
+            this.labelControl74.TabIndex = 5;
+            this.labelControl74.Text = "Pago por Servicio:";
+            // 
+            // groupControl10
+            // 
+            this.groupControl10.Controls.Add(this.labelControl72);
+            this.groupControl10.Controls.Add(this.txtPrecioCaja);
+            this.groupControl10.Location = new System.Drawing.Point(8, 64);
+            this.groupControl10.Name = "groupControl10";
+            this.groupControl10.Size = new System.Drawing.Size(245, 61);
+            this.groupControl10.TabIndex = 35;
+            this.groupControl10.Text = "Cajas Adicionales";
+            // 
+            // labelControl72
+            // 
+            this.labelControl72.Location = new System.Drawing.Point(18, 25);
+            this.labelControl72.Name = "labelControl72";
+            this.labelControl72.Size = new System.Drawing.Size(75, 13);
+            this.labelControl72.TabIndex = 24;
+            this.labelControl72.Text = "Precio por caja:";
+            // 
+            // txtPrecioCaja
+            // 
+            this.txtPrecioCaja.Enabled = false;
+            this.txtPrecioCaja.Location = new System.Drawing.Point(130, 21);
+            this.txtPrecioCaja.MenuManager = this.barManager1;
+            this.txtPrecioCaja.Name = "txtPrecioCaja";
+            this.txtPrecioCaja.Properties.BeepOnError = true;
+            this.txtPrecioCaja.Properties.NullText = "0";
+            this.txtPrecioCaja.Properties.NullValuePrompt = "0";
+            this.txtPrecioCaja.Properties.UseMaskAsDisplayFormat = true;
+            this.txtPrecioCaja.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioCaja.TabIndex = 2;
+            // 
+            // labelControl73
+            // 
+            this.labelControl73.Location = new System.Drawing.Point(26, 41);
+            this.labelControl73.Name = "labelControl73";
+            this.labelControl73.Size = new System.Drawing.Size(102, 13);
+            this.labelControl73.TabIndex = 8;
+            this.labelControl73.Text = "Pago Salida Foranea:";
+            // 
+            // txtPrecioSalidaForanea
+            // 
+            this.txtPrecioSalidaForanea.Enabled = false;
+            this.txtPrecioSalidaForanea.Location = new System.Drawing.Point(139, 37);
+            this.txtPrecioSalidaForanea.MenuManager = this.barManager1;
+            this.txtPrecioSalidaForanea.Name = "txtPrecioSalidaForanea";
+            this.txtPrecioSalidaForanea.Properties.BeepOnError = true;
+            this.txtPrecioSalidaForanea.Properties.NullText = "0";
+            this.txtPrecioSalidaForanea.Properties.NullValuePrompt = "0";
+            this.txtPrecioSalidaForanea.Properties.UseMaskAsDisplayFormat = true;
+            this.txtPrecioSalidaForanea.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioSalidaForanea.TabIndex = 6;
+            // 
+            // txtPrecioServicio
+            // 
+            this.txtPrecioServicio.Enabled = false;
+            this.txtPrecioServicio.Location = new System.Drawing.Point(139, 11);
+            this.txtPrecioServicio.MenuManager = this.barManager1;
+            this.txtPrecioServicio.Name = "txtPrecioServicio";
+            this.txtPrecioServicio.Properties.BeepOnError = true;
+            this.txtPrecioServicio.Properties.NullText = "0";
+            this.txtPrecioServicio.Properties.NullValuePrompt = "0";
+            this.txtPrecioServicio.Properties.UseMaskAsDisplayFormat = true;
+            this.txtPrecioServicio.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioServicio.TabIndex = 3;
+            // 
+            // labelControl174
+            // 
+            this.labelControl174.Location = new System.Drawing.Point(15, 68);
+            this.labelControl174.Name = "labelControl174";
+            this.labelControl174.Size = new System.Drawing.Size(62, 13);
+            this.labelControl174.TabIndex = 69;
+            this.labelControl174.Text = "Tipo Camion:";
+            // 
+            // txt_TipoCamion
+            // 
+            this.txt_TipoCamion.Enabled = false;
+            this.txt_TipoCamion.Location = new System.Drawing.Point(123, 64);
+            this.txt_TipoCamion.Name = "txt_TipoCamion";
+            this.txt_TipoCamion.Size = new System.Drawing.Size(96, 20);
+            this.txt_TipoCamion.TabIndex = 68;
             // 
             // btn_AbrirAcarreo
             // 
             this.btn_AbrirAcarreo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_AbrirAcarreo.ImageOptions.SvgImage")));
-            this.btn_AbrirAcarreo.Location = new System.Drawing.Point(345, 268);
+            this.btn_AbrirAcarreo.Location = new System.Drawing.Point(243, 295);
             this.btn_AbrirAcarreo.Name = "btn_AbrirAcarreo";
             this.btn_AbrirAcarreo.Size = new System.Drawing.Size(100, 49);
             this.btn_AbrirAcarreo.TabIndex = 67;
@@ -5484,7 +6243,7 @@
             // btn_CerrarAcarreo
             // 
             this.btn_CerrarAcarreo.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CerrarAcarreo.ImageOptions.SvgImage")));
-            this.btn_CerrarAcarreo.Location = new System.Drawing.Point(241, 268);
+            this.btn_CerrarAcarreo.Location = new System.Drawing.Point(243, 239);
             this.btn_CerrarAcarreo.Name = "btn_CerrarAcarreo";
             this.btn_CerrarAcarreo.Size = new System.Drawing.Size(98, 49);
             this.btn_CerrarAcarreo.TabIndex = 66;
@@ -5494,7 +6253,7 @@
             // txt_Descuentos
             // 
             this.txt_Descuentos.EditValue = "0";
-            this.txt_Descuentos.Location = new System.Drawing.Point(123, 271);
+            this.txt_Descuentos.Location = new System.Drawing.Point(123, 298);
             this.txt_Descuentos.Name = "txt_Descuentos";
             this.txt_Descuentos.Properties.BeepOnError = true;
             this.txt_Descuentos.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
@@ -5507,7 +6266,7 @@
             // 
             // labelControl158
             // 
-            this.labelControl158.Location = new System.Drawing.Point(15, 275);
+            this.labelControl158.Location = new System.Drawing.Point(15, 302);
             this.labelControl158.Name = "labelControl158";
             this.labelControl158.Size = new System.Drawing.Size(60, 13);
             this.labelControl158.TabIndex = 65;
@@ -5516,7 +6275,7 @@
             // txt_CargosExtra
             // 
             this.txt_CargosExtra.EditValue = "0";
-            this.txt_CargosExtra.Location = new System.Drawing.Point(123, 193);
+            this.txt_CargosExtra.Location = new System.Drawing.Point(123, 220);
             this.txt_CargosExtra.Name = "txt_CargosExtra";
             this.txt_CargosExtra.Properties.BeepOnError = true;
             this.txt_CargosExtra.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
@@ -5529,7 +6288,7 @@
             // 
             // labelControl149
             // 
-            this.labelControl149.Location = new System.Drawing.Point(15, 197);
+            this.labelControl149.Location = new System.Drawing.Point(15, 224);
             this.labelControl149.Name = "labelControl149";
             this.labelControl149.Size = new System.Drawing.Size(72, 13);
             this.labelControl149.TabIndex = 63;
@@ -5540,7 +6299,7 @@
             this.txt_ObservacionesAcarreo.Location = new System.Drawing.Point(396, 60);
             this.txt_ObservacionesAcarreo.MenuManager = this.barManager1;
             this.txt_ObservacionesAcarreo.Name = "txt_ObservacionesAcarreo";
-            this.txt_ObservacionesAcarreo.Size = new System.Drawing.Size(260, 82);
+            this.txt_ObservacionesAcarreo.Size = new System.Drawing.Size(278, 82);
             this.txt_ObservacionesAcarreo.TabIndex = 61;
             // 
             // labelControl148
@@ -5555,7 +6314,7 @@
             // 
             this.txt_CostoxCajaExtra.EditValue = "0";
             this.txt_CostoxCajaExtra.Enabled = false;
-            this.txt_CostoxCajaExtra.Location = new System.Drawing.Point(123, 245);
+            this.txt_CostoxCajaExtra.Location = new System.Drawing.Point(123, 272);
             this.txt_CostoxCajaExtra.Name = "txt_CostoxCajaExtra";
             this.txt_CostoxCajaExtra.Properties.BeepOnError = true;
             this.txt_CostoxCajaExtra.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
@@ -5567,7 +6326,7 @@
             // 
             // labelControl77
             // 
-            this.labelControl77.Location = new System.Drawing.Point(15, 249);
+            this.labelControl77.Location = new System.Drawing.Point(15, 276);
             this.labelControl77.Name = "labelControl77";
             this.labelControl77.Size = new System.Drawing.Size(96, 13);
             this.labelControl77.TabIndex = 59;
@@ -5577,7 +6336,7 @@
             // 
             this.txt_Cajas_CortadasA.EditValue = "0";
             this.txt_Cajas_CortadasA.Enabled = false;
-            this.txt_Cajas_CortadasA.Location = new System.Drawing.Point(123, 141);
+            this.txt_Cajas_CortadasA.Location = new System.Drawing.Point(123, 168);
             this.txt_Cajas_CortadasA.Name = "txt_Cajas_CortadasA";
             this.txt_Cajas_CortadasA.Properties.NullText = "0";
             this.txt_Cajas_CortadasA.Size = new System.Drawing.Size(96, 20);
@@ -5585,7 +6344,7 @@
             // 
             // labelControl76
             // 
-            this.labelControl76.Location = new System.Drawing.Point(15, 144);
+            this.labelControl76.Location = new System.Drawing.Point(15, 171);
             this.labelControl76.Name = "labelControl76";
             this.labelControl76.Size = new System.Drawing.Size(78, 13);
             this.labelControl76.TabIndex = 57;
@@ -5595,7 +6354,7 @@
             // 
             this.txt_CajasProgramadasA.EditValue = "0";
             this.txt_CajasProgramadasA.Enabled = false;
-            this.txt_CajasProgramadasA.Location = new System.Drawing.Point(123, 115);
+            this.txt_CajasProgramadasA.Location = new System.Drawing.Point(123, 142);
             this.txt_CajasProgramadasA.Name = "txt_CajasProgramadasA";
             this.txt_CajasProgramadasA.Properties.NullText = "0";
             this.txt_CajasProgramadasA.Size = new System.Drawing.Size(96, 20);
@@ -5603,7 +6362,7 @@
             // 
             // labelControl75
             // 
-            this.labelControl75.Location = new System.Drawing.Point(15, 118);
+            this.labelControl75.Location = new System.Drawing.Point(15, 145);
             this.labelControl75.Name = "labelControl75";
             this.labelControl75.Size = new System.Drawing.Size(97, 13);
             this.labelControl75.TabIndex = 55;
@@ -5620,7 +6379,7 @@
             // txt_TotalAcarreo
             // 
             this.txt_TotalAcarreo.EditValue = "0";
-            this.txt_TotalAcarreo.Location = new System.Drawing.Point(123, 297);
+            this.txt_TotalAcarreo.Location = new System.Drawing.Point(123, 324);
             this.txt_TotalAcarreo.Name = "txt_TotalAcarreo";
             this.txt_TotalAcarreo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_TotalAcarreo.Properties.Appearance.Options.UseFont = true;
@@ -5645,7 +6404,7 @@
             // 
             // labelControl71
             // 
-            this.labelControl71.Location = new System.Drawing.Point(15, 301);
+            this.labelControl71.Location = new System.Drawing.Point(15, 328);
             this.labelControl71.Name = "labelControl71";
             this.labelControl71.Size = new System.Drawing.Size(69, 13);
             this.labelControl71.TabIndex = 53;
@@ -5663,7 +6422,7 @@
             // txt_CajasExtras
             // 
             this.txt_CajasExtras.EditValue = "0";
-            this.txt_CajasExtras.Location = new System.Drawing.Point(123, 219);
+            this.txt_CajasExtras.Location = new System.Drawing.Point(123, 246);
             this.txt_CajasExtras.Name = "txt_CajasExtras";
             this.txt_CajasExtras.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txt_CajasExtras.Properties.MaskSettings.Set("mask", "c3");
@@ -5684,7 +6443,7 @@
             // 
             // labelControl70
             // 
-            this.labelControl70.Location = new System.Drawing.Point(15, 223);
+            this.labelControl70.Location = new System.Drawing.Point(15, 250);
             this.labelControl70.Name = "labelControl70";
             this.labelControl70.Size = new System.Drawing.Size(65, 13);
             this.labelControl70.TabIndex = 51;
@@ -5692,7 +6451,7 @@
             // 
             // labelControl66
             // 
-            this.labelControl66.Location = new System.Drawing.Point(15, 67);
+            this.labelControl66.Location = new System.Drawing.Point(15, 94);
             this.labelControl66.Name = "labelControl66";
             this.labelControl66.Size = new System.Drawing.Size(34, 13);
             this.labelControl66.TabIndex = 42;
@@ -5700,7 +6459,7 @@
             // 
             // chk_ServicioForaneo
             // 
-            this.chk_ServicioForaneo.Location = new System.Drawing.Point(225, 168);
+            this.chk_ServicioForaneo.Location = new System.Drawing.Point(225, 195);
             this.chk_ServicioForaneo.MenuManager = this.barManager1;
             this.chk_ServicioForaneo.Name = "chk_ServicioForaneo";
             this.chk_ServicioForaneo.Properties.Caption = "Foraneo";
@@ -5711,7 +6470,7 @@
             // txtPlacasCamion
             // 
             this.txtPlacasCamion.Enabled = false;
-            this.txtPlacasCamion.Location = new System.Drawing.Point(123, 63);
+            this.txtPlacasCamion.Location = new System.Drawing.Point(123, 90);
             this.txtPlacasCamion.Name = "txtPlacasCamion";
             this.txtPlacasCamion.Size = new System.Drawing.Size(96, 20);
             this.txtPlacasCamion.TabIndex = 41;
@@ -5720,7 +6479,7 @@
             // 
             this.txt_CostoServicio.EditValue = "0";
             this.txt_CostoServicio.Enabled = false;
-            this.txt_CostoServicio.Location = new System.Drawing.Point(123, 167);
+            this.txt_CostoServicio.Location = new System.Drawing.Point(123, 194);
             this.txt_CostoServicio.Name = "txt_CostoServicio";
             this.txt_CostoServicio.Properties.BeepOnError = true;
             this.txt_CostoServicio.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
@@ -5779,7 +6538,7 @@
             // 
             // labelControl69
             // 
-            this.labelControl69.Location = new System.Drawing.Point(15, 171);
+            this.labelControl69.Location = new System.Drawing.Point(15, 198);
             this.labelControl69.Name = "labelControl69";
             this.labelControl69.Size = new System.Drawing.Size(89, 13);
             this.labelControl69.TabIndex = 48;
@@ -5787,7 +6546,7 @@
             // 
             // labelControl68
             // 
-            this.labelControl68.Location = new System.Drawing.Point(15, 93);
+            this.labelControl68.Location = new System.Drawing.Point(15, 120);
             this.labelControl68.Name = "labelControl68";
             this.labelControl68.Size = new System.Drawing.Size(77, 13);
             this.labelControl68.TabIndex = 45;
@@ -5795,7 +6554,7 @@
             // 
             // cmb_Choferes
             // 
-            this.cmb_Choferes.Location = new System.Drawing.Point(123, 89);
+            this.cmb_Choferes.Location = new System.Drawing.Point(123, 116);
             this.cmb_Choferes.MenuManager = this.barManager1;
             this.cmb_Choferes.Name = "cmb_Choferes";
             this.cmb_Choferes.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -5835,7 +6594,7 @@
             this.tp_FacturaAcarreo.Controls.Add(this.groupControl14);
             this.tp_FacturaAcarreo.Name = "tp_FacturaAcarreo";
             this.tp_FacturaAcarreo.Padding = new System.Windows.Forms.Padding(5);
-            this.tp_FacturaAcarreo.Size = new System.Drawing.Size(1065, 607);
+            this.tp_FacturaAcarreo.Size = new System.Drawing.Size(1220, 593);
             this.tp_FacturaAcarreo.Text = "Factura";
             // 
             // groupControl14
@@ -5845,12 +6604,20 @@
             this.groupControl14.Location = new System.Drawing.Point(5, 5);
             this.groupControl14.Name = "groupControl14";
             this.groupControl14.Padding = new System.Windows.Forms.Padding(5);
-            this.groupControl14.Size = new System.Drawing.Size(1055, 597);
+            this.groupControl14.Size = new System.Drawing.Size(1210, 583);
             this.groupControl14.TabIndex = 1;
             this.groupControl14.Text = "Factura";
             // 
             // panelControl14
             // 
+            this.panelControl14.Controls.Add(this.labelControl206);
+            this.panelControl14.Controls.Add(this.txt_UUID_Acarreo);
+            this.panelControl14.Controls.Add(this.labelControl203);
+            this.panelControl14.Controls.Add(this.txt_Total_Acarreo);
+            this.panelControl14.Controls.Add(this.labelControl204);
+            this.panelControl14.Controls.Add(this.txt_SubTotal_Acarreo);
+            this.panelControl14.Controls.Add(this.labelControl205);
+            this.panelControl14.Controls.Add(this.txt_MetodoPago_Acarreo);
             this.panelControl14.Controls.Add(this.dt_FechaProgramaAcarreo);
             this.panelControl14.Controls.Add(this.labelControl163);
             this.panelControl14.Controls.Add(this.btn_DelFacturaAcarreo);
@@ -5890,13 +6657,102 @@
             this.panelControl14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl14.Location = new System.Drawing.Point(7, 28);
             this.panelControl14.Name = "panelControl14";
-            this.panelControl14.Size = new System.Drawing.Size(1041, 562);
+            this.panelControl14.Size = new System.Drawing.Size(1196, 548);
             this.panelControl14.TabIndex = 56;
+            // 
+            // labelControl206
+            // 
+            this.labelControl206.Location = new System.Drawing.Point(19, 96);
+            this.labelControl206.Name = "labelControl206";
+            this.labelControl206.Size = new System.Drawing.Size(25, 13);
+            this.labelControl206.TabIndex = 196;
+            this.labelControl206.Text = "UUID";
+            // 
+            // txt_UUID_Acarreo
+            // 
+            this.txt_UUID_Acarreo.Location = new System.Drawing.Point(66, 90);
+            this.txt_UUID_Acarreo.Name = "txt_UUID_Acarreo";
+            this.txt_UUID_Acarreo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_UUID_Acarreo.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_UUID_Acarreo.Properties.Appearance.Options.UseFont = true;
+            this.txt_UUID_Acarreo.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_UUID_Acarreo.Properties.ReadOnly = true;
+            this.txt_UUID_Acarreo.Size = new System.Drawing.Size(262, 20);
+            this.txt_UUID_Acarreo.TabIndex = 197;
+            // 
+            // labelControl203
+            // 
+            this.labelControl203.Location = new System.Drawing.Point(522, 68);
+            this.labelControl203.Name = "labelControl203";
+            this.labelControl203.Size = new System.Drawing.Size(28, 13);
+            this.labelControl203.TabIndex = 195;
+            this.labelControl203.Text = "Total:";
+            // 
+            // txt_Total_Acarreo
+            // 
+            this.txt_Total_Acarreo.Enabled = false;
+            this.txt_Total_Acarreo.Location = new System.Drawing.Point(594, 64);
+            this.txt_Total_Acarreo.MenuManager = this.barManager1;
+            this.txt_Total_Acarreo.Name = "txt_Total_Acarreo";
+            this.txt_Total_Acarreo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_Total_Acarreo.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_Total_Acarreo.Properties.Appearance.Options.UseFont = true;
+            this.txt_Total_Acarreo.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_Total_Acarreo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Total_Acarreo.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_Total_Acarreo.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_Total_Acarreo.Size = new System.Drawing.Size(94, 20);
+            this.txt_Total_Acarreo.TabIndex = 194;
+            // 
+            // labelControl204
+            // 
+            this.labelControl204.Location = new System.Drawing.Point(520, 42);
+            this.labelControl204.Name = "labelControl204";
+            this.labelControl204.Size = new System.Drawing.Size(46, 13);
+            this.labelControl204.TabIndex = 193;
+            this.labelControl204.Text = "SubTotal:";
+            // 
+            // txt_SubTotal_Acarreo
+            // 
+            this.txt_SubTotal_Acarreo.Enabled = false;
+            this.txt_SubTotal_Acarreo.Location = new System.Drawing.Point(594, 38);
+            this.txt_SubTotal_Acarreo.MenuManager = this.barManager1;
+            this.txt_SubTotal_Acarreo.Name = "txt_SubTotal_Acarreo";
+            this.txt_SubTotal_Acarreo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_SubTotal_Acarreo.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_SubTotal_Acarreo.Properties.Appearance.Options.UseFont = true;
+            this.txt_SubTotal_Acarreo.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_SubTotal_Acarreo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_SubTotal_Acarreo.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_SubTotal_Acarreo.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_SubTotal_Acarreo.Size = new System.Drawing.Size(94, 20);
+            this.txt_SubTotal_Acarreo.TabIndex = 192;
+            // 
+            // labelControl205
+            // 
+            this.labelControl205.Location = new System.Drawing.Point(520, 16);
+            this.labelControl205.Name = "labelControl205";
+            this.labelControl205.Size = new System.Drawing.Size(67, 13);
+            this.labelControl205.TabIndex = 191;
+            this.labelControl205.Text = "Metodo Pago:";
+            // 
+            // txt_MetodoPago_Acarreo
+            // 
+            this.txt_MetodoPago_Acarreo.Enabled = false;
+            this.txt_MetodoPago_Acarreo.Location = new System.Drawing.Point(594, 12);
+            this.txt_MetodoPago_Acarreo.MenuManager = this.barManager1;
+            this.txt_MetodoPago_Acarreo.Name = "txt_MetodoPago_Acarreo";
+            this.txt_MetodoPago_Acarreo.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_MetodoPago_Acarreo.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_MetodoPago_Acarreo.Properties.Appearance.Options.UseFont = true;
+            this.txt_MetodoPago_Acarreo.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_MetodoPago_Acarreo.Size = new System.Drawing.Size(94, 20);
+            this.txt_MetodoPago_Acarreo.TabIndex = 190;
             // 
             // dt_FechaProgramaAcarreo
             // 
             this.dt_FechaProgramaAcarreo.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaProgramaAcarreo.Location = new System.Drawing.Point(308, 220);
+            this.dt_FechaProgramaAcarreo.Location = new System.Drawing.Point(310, 246);
             this.dt_FechaProgramaAcarreo.MenuManager = this.barManager1;
             this.dt_FechaProgramaAcarreo.Name = "dt_FechaProgramaAcarreo";
             this.dt_FechaProgramaAcarreo.Properties.BeepOnError = true;
@@ -5910,7 +6766,7 @@
             // 
             // labelControl163
             // 
-            this.labelControl163.Location = new System.Drawing.Point(227, 224);
+            this.labelControl163.Location = new System.Drawing.Point(229, 250);
             this.labelControl163.Name = "labelControl163";
             this.labelControl163.Size = new System.Drawing.Size(75, 13);
             this.labelControl163.TabIndex = 163;
@@ -5928,7 +6784,7 @@
             // chk_RetencionFleteAcarreo
             // 
             this.chk_RetencionFleteAcarreo.EditValue = true;
-            this.chk_RetencionFleteAcarreo.Location = new System.Drawing.Point(262, 167);
+            this.chk_RetencionFleteAcarreo.Location = new System.Drawing.Point(264, 193);
             this.chk_RetencionFleteAcarreo.MenuManager = this.barManager1;
             this.chk_RetencionFleteAcarreo.Name = "chk_RetencionFleteAcarreo";
             this.chk_RetencionFleteAcarreo.Properties.Caption = "Retencion Flete";
@@ -5939,7 +6795,7 @@
             // txt_RetencionFleteFacturaAcarreo
             // 
             this.txt_RetencionFleteFacturaAcarreo.EditValue = "0";
-            this.txt_RetencionFleteFacturaAcarreo.Location = new System.Drawing.Point(114, 167);
+            this.txt_RetencionFleteFacturaAcarreo.Location = new System.Drawing.Point(116, 193);
             this.txt_RetencionFleteFacturaAcarreo.MenuManager = this.barManager1;
             this.txt_RetencionFleteFacturaAcarreo.Name = "txt_RetencionFleteFacturaAcarreo";
             this.txt_RetencionFleteFacturaAcarreo.Properties.BeepOnError = true;
@@ -5952,7 +6808,7 @@
             // 
             // labelControl145
             // 
-            this.labelControl145.Location = new System.Drawing.Point(16, 171);
+            this.labelControl145.Location = new System.Drawing.Point(18, 197);
             this.labelControl145.Name = "labelControl145";
             this.labelControl145.Size = new System.Drawing.Size(72, 13);
             this.labelControl145.TabIndex = 151;
@@ -5961,7 +6817,7 @@
             // txt_IVAFacturaAcarreo
             // 
             this.txt_IVAFacturaAcarreo.EditValue = "0";
-            this.txt_IVAFacturaAcarreo.Location = new System.Drawing.Point(114, 193);
+            this.txt_IVAFacturaAcarreo.Location = new System.Drawing.Point(116, 219);
             this.txt_IVAFacturaAcarreo.MenuManager = this.barManager1;
             this.txt_IVAFacturaAcarreo.Name = "txt_IVAFacturaAcarreo";
             this.txt_IVAFacturaAcarreo.Properties.BeepOnError = true;
@@ -5974,7 +6830,7 @@
             // 
             // labelControl144
             // 
-            this.labelControl144.Location = new System.Drawing.Point(16, 197);
+            this.labelControl144.Location = new System.Drawing.Point(18, 223);
             this.labelControl144.Name = "labelControl144";
             this.labelControl144.Size = new System.Drawing.Size(21, 13);
             this.labelControl144.TabIndex = 149;
@@ -5983,7 +6839,7 @@
             // chk_IVAAcarreo
             // 
             this.chk_IVAAcarreo.EditValue = true;
-            this.chk_IVAAcarreo.Location = new System.Drawing.Point(262, 193);
+            this.chk_IVAAcarreo.Location = new System.Drawing.Point(264, 219);
             this.chk_IVAAcarreo.MenuManager = this.barManager1;
             this.chk_IVAAcarreo.Name = "chk_IVAAcarreo";
             this.chk_IVAAcarreo.Properties.Caption = "IVA";
@@ -5994,7 +6850,7 @@
             // chk_RetencionAcarreo
             // 
             this.chk_RetencionAcarreo.EditValue = true;
-            this.chk_RetencionAcarreo.Location = new System.Drawing.Point(262, 141);
+            this.chk_RetencionAcarreo.Location = new System.Drawing.Point(264, 167);
             this.chk_RetencionAcarreo.MenuManager = this.barManager1;
             this.chk_RetencionAcarreo.Name = "chk_RetencionAcarreo";
             this.chk_RetencionAcarreo.Properties.Caption = "Retencion RESICO";
@@ -6005,7 +6861,7 @@
             // txt_TotalFacturaAcarreo
             // 
             this.txt_TotalFacturaAcarreo.EditValue = "0";
-            this.txt_TotalFacturaAcarreo.Location = new System.Drawing.Point(114, 219);
+            this.txt_TotalFacturaAcarreo.Location = new System.Drawing.Point(116, 245);
             this.txt_TotalFacturaAcarreo.MenuManager = this.barManager1;
             this.txt_TotalFacturaAcarreo.Name = "txt_TotalFacturaAcarreo";
             this.txt_TotalFacturaAcarreo.Properties.BeepOnError = true;
@@ -6018,7 +6874,7 @@
             // 
             // labelControl137
             // 
-            this.labelControl137.Location = new System.Drawing.Point(16, 223);
+            this.labelControl137.Location = new System.Drawing.Point(18, 249);
             this.labelControl137.Name = "labelControl137";
             this.labelControl137.Size = new System.Drawing.Size(68, 13);
             this.labelControl137.TabIndex = 133;
@@ -6027,7 +6883,7 @@
             // txt_RetencionFacturaAcarreo
             // 
             this.txt_RetencionFacturaAcarreo.EditValue = "0";
-            this.txt_RetencionFacturaAcarreo.Location = new System.Drawing.Point(114, 141);
+            this.txt_RetencionFacturaAcarreo.Location = new System.Drawing.Point(116, 167);
             this.txt_RetencionFacturaAcarreo.MenuManager = this.barManager1;
             this.txt_RetencionFacturaAcarreo.Name = "txt_RetencionFacturaAcarreo";
             this.txt_RetencionFacturaAcarreo.Properties.BeepOnError = true;
@@ -6040,7 +6896,7 @@
             // 
             // labelControl138
             // 
-            this.labelControl138.Location = new System.Drawing.Point(16, 145);
+            this.labelControl138.Location = new System.Drawing.Point(18, 171);
             this.labelControl138.Name = "labelControl138";
             this.labelControl138.Size = new System.Drawing.Size(91, 13);
             this.labelControl138.TabIndex = 131;
@@ -6048,7 +6904,7 @@
             // 
             // labelControl91
             // 
-            this.labelControl91.Location = new System.Drawing.Point(16, 94);
+            this.labelControl91.Location = new System.Drawing.Point(18, 120);
             this.labelControl91.Name = "labelControl91";
             this.labelControl91.Size = new System.Drawing.Size(64, 13);
             this.labelControl91.TabIndex = 103;
@@ -6056,7 +6912,7 @@
             // 
             // txt_FolioFacturaAcarreo
             // 
-            this.txt_FolioFacturaAcarreo.Location = new System.Drawing.Point(114, 90);
+            this.txt_FolioFacturaAcarreo.Location = new System.Drawing.Point(116, 116);
             this.txt_FolioFacturaAcarreo.MenuManager = this.barManager1;
             this.txt_FolioFacturaAcarreo.Name = "txt_FolioFacturaAcarreo";
             this.txt_FolioFacturaAcarreo.Size = new System.Drawing.Size(94, 20);
@@ -6089,13 +6945,13 @@
             this.opt_TipoFacturaAcarreo.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Diferido"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Total")});
-            this.opt_TipoFacturaAcarreo.Size = new System.Drawing.Size(100, 50);
+            this.opt_TipoFacturaAcarreo.Size = new System.Drawing.Size(83, 50);
             this.opt_TipoFacturaAcarreo.TabIndex = 99;
             // 
             // chk_PagadaAcarreo
             // 
             this.chk_PagadaAcarreo.EditValue = true;
-            this.chk_PagadaAcarreo.Location = new System.Drawing.Point(262, 115);
+            this.chk_PagadaAcarreo.Location = new System.Drawing.Point(264, 141);
             this.chk_PagadaAcarreo.MenuManager = this.barManager1;
             this.chk_PagadaAcarreo.Name = "chk_PagadaAcarreo";
             this.chk_PagadaAcarreo.Properties.Caption = "Pagada";
@@ -6106,7 +6962,7 @@
             // dt_FechaPagoAcarreo
             // 
             this.dt_FechaPagoAcarreo.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaPagoAcarreo.Location = new System.Drawing.Point(308, 245);
+            this.dt_FechaPagoAcarreo.Location = new System.Drawing.Point(310, 271);
             this.dt_FechaPagoAcarreo.MenuManager = this.barManager1;
             this.dt_FechaPagoAcarreo.Name = "dt_FechaPagoAcarreo";
             this.dt_FechaPagoAcarreo.Properties.BeepOnError = true;
@@ -6124,7 +6980,7 @@
             // dt_FechaFacturaAcarreo
             // 
             this.dt_FechaFacturaAcarreo.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaFacturaAcarreo.Location = new System.Drawing.Point(114, 245);
+            this.dt_FechaFacturaAcarreo.Location = new System.Drawing.Point(116, 271);
             this.dt_FechaFacturaAcarreo.MenuManager = this.barManager1;
             this.dt_FechaFacturaAcarreo.Name = "dt_FechaFacturaAcarreo";
             this.dt_FechaFacturaAcarreo.Properties.BeepOnError = true;
@@ -6141,7 +6997,7 @@
             // 
             // labelControl78
             // 
-            this.labelControl78.Location = new System.Drawing.Point(228, 249);
+            this.labelControl78.Location = new System.Drawing.Point(230, 275);
             this.labelControl78.Name = "labelControl78";
             this.labelControl78.Size = new System.Drawing.Size(41, 13);
             this.labelControl78.TabIndex = 94;
@@ -6149,7 +7005,7 @@
             // 
             // labelControl80
             // 
-            this.labelControl80.Location = new System.Drawing.Point(16, 249);
+            this.labelControl80.Location = new System.Drawing.Point(18, 275);
             this.labelControl80.Name = "labelControl80";
             this.labelControl80.Size = new System.Drawing.Size(54, 13);
             this.labelControl80.TabIndex = 92;
@@ -6157,7 +7013,7 @@
             // 
             // cmb_MonedaAcarreo
             // 
-            this.cmb_MonedaAcarreo.Location = new System.Drawing.Point(275, 90);
+            this.cmb_MonedaAcarreo.Location = new System.Drawing.Point(277, 116);
             this.cmb_MonedaAcarreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_MonedaAcarreo.MenuManager = this.barManager1;
             this.cmb_MonedaAcarreo.Name = "cmb_MonedaAcarreo";
@@ -6172,7 +7028,7 @@
             // 
             // labelControl86
             // 
-            this.labelControl86.Location = new System.Drawing.Point(223, 94);
+            this.labelControl86.Location = new System.Drawing.Point(225, 120);
             this.labelControl86.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl86.Name = "labelControl86";
             this.labelControl86.Size = new System.Drawing.Size(42, 13);
@@ -6181,7 +7037,7 @@
             // 
             // labelControl87
             // 
-            this.labelControl87.Location = new System.Drawing.Point(16, 119);
+            this.labelControl87.Location = new System.Drawing.Point(18, 145);
             this.labelControl87.Name = "labelControl87";
             this.labelControl87.Size = new System.Drawing.Size(80, 13);
             this.labelControl87.TabIndex = 68;
@@ -6190,7 +7046,7 @@
             // txt_ImporteFacturaAcarreo
             // 
             this.txt_ImporteFacturaAcarreo.EditValue = "0";
-            this.txt_ImporteFacturaAcarreo.Location = new System.Drawing.Point(114, 115);
+            this.txt_ImporteFacturaAcarreo.Location = new System.Drawing.Point(116, 141);
             this.txt_ImporteFacturaAcarreo.MenuManager = this.barManager1;
             this.txt_ImporteFacturaAcarreo.Name = "txt_ImporteFacturaAcarreo";
             this.txt_ImporteFacturaAcarreo.Properties.BeepOnError = true;
@@ -6276,7 +7132,7 @@
             this.navigationPage6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage6.ImageOptions.Image")));
             this.navigationPage6.Name = "navigationPage6";
             this.navigationPage6.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage6.Size = new System.Drawing.Size(1081, 646);
+            this.navigationPage6.Size = new System.Drawing.Size(1236, 632);
             // 
             // panelControl18
             // 
@@ -6285,7 +7141,7 @@
             this.panelControl18.Location = new System.Drawing.Point(0, 0);
             this.panelControl18.Name = "panelControl18";
             this.panelControl18.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl18.Size = new System.Drawing.Size(1081, 646);
+            this.panelControl18.Size = new System.Drawing.Size(1236, 632);
             this.panelControl18.TabIndex = 41;
             // 
             // xtraTabControl2
@@ -6294,19 +7150,20 @@
             this.xtraTabControl2.Location = new System.Drawing.Point(7, 7);
             this.xtraTabControl2.Name = "xtraTabControl2";
             this.xtraTabControl2.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl2.Size = new System.Drawing.Size(1067, 632);
+            this.xtraTabControl2.Size = new System.Drawing.Size(1222, 618);
             this.xtraTabControl2.TabIndex = 40;
             this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3,
             this.tp_FacturaProductor,
-            this.xtraTabPage2});
+            this.xtraTabPage2,
+            this.xtraTabPage4});
             // 
             // xtraTabPage3
             // 
             this.xtraTabPage3.Controls.Add(this.groupControl11);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage3.Size = new System.Drawing.Size(1065, 607);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1220, 593);
             this.xtraTabPage3.Text = "Pago Productor";
             // 
             // groupControl11
@@ -6337,7 +7194,7 @@
             this.groupControl11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl11.Location = new System.Drawing.Point(5, 5);
             this.groupControl11.Name = "groupControl11";
-            this.groupControl11.Size = new System.Drawing.Size(1055, 597);
+            this.groupControl11.Size = new System.Drawing.Size(1210, 583);
             this.groupControl11.TabIndex = 38;
             // 
             // btn_AbrirProductor
@@ -6599,11 +7456,23 @@
             this.tp_FacturaProductor.Controls.Add(this.groupControl13);
             this.tp_FacturaProductor.Name = "tp_FacturaProductor";
             this.tp_FacturaProductor.Padding = new System.Windows.Forms.Padding(5);
-            this.tp_FacturaProductor.Size = new System.Drawing.Size(1065, 607);
+            this.tp_FacturaProductor.Size = new System.Drawing.Size(1220, 593);
             this.tp_FacturaProductor.Text = "Factura";
             // 
             // groupControl13
             // 
+            this.groupControl13.Controls.Add(this.labelControl208);
+            this.groupControl13.Controls.Add(this.txt_Salto_REP);
+            this.groupControl13.Controls.Add(this.labelControl207);
+            this.groupControl13.Controls.Add(this.txt_SumaTotal_REP);
+            this.groupControl13.Controls.Add(this.labelControl180);
+            this.groupControl13.Controls.Add(this.txt_UUID);
+            this.groupControl13.Controls.Add(this.labelControl179);
+            this.groupControl13.Controls.Add(this.txt_Total);
+            this.groupControl13.Controls.Add(this.labelControl178);
+            this.groupControl13.Controls.Add(this.txt_SubTotal);
+            this.groupControl13.Controls.Add(this.labelControl177);
+            this.groupControl13.Controls.Add(this.txt_MetodoPago);
             this.groupControl13.Controls.Add(this.dt_FechaProgramaProductor);
             this.groupControl13.Controls.Add(this.labelControl164);
             this.groupControl13.Controls.Add(this.btn_DelFacturaProductor);
@@ -6644,13 +7513,150 @@
             this.groupControl13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl13.Location = new System.Drawing.Point(5, 5);
             this.groupControl13.Name = "groupControl13";
-            this.groupControl13.Size = new System.Drawing.Size(1055, 597);
+            this.groupControl13.Size = new System.Drawing.Size(1210, 583);
             this.groupControl13.TabIndex = 39;
+            // 
+            // labelControl208
+            // 
+            this.labelControl208.Location = new System.Drawing.Point(728, 61);
+            this.labelControl208.Name = "labelControl208";
+            this.labelControl208.Size = new System.Drawing.Size(52, 13);
+            this.labelControl208.TabIndex = 173;
+            this.labelControl208.Text = "Saldo REP:";
+            // 
+            // txt_Salto_REP
+            // 
+            this.txt_Salto_REP.Enabled = false;
+            this.txt_Salto_REP.Location = new System.Drawing.Point(784, 57);
+            this.txt_Salto_REP.MenuManager = this.barManager1;
+            this.txt_Salto_REP.Name = "txt_Salto_REP";
+            this.txt_Salto_REP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_Salto_REP.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_Salto_REP.Properties.Appearance.Options.UseFont = true;
+            this.txt_Salto_REP.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_Salto_REP.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Salto_REP.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_Salto_REP.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_Salto_REP.Size = new System.Drawing.Size(94, 20);
+            this.txt_Salto_REP.TabIndex = 172;
+            // 
+            // labelControl207
+            // 
+            this.labelControl207.Location = new System.Drawing.Point(728, 35);
+            this.labelControl207.Name = "labelControl207";
+            this.labelControl207.Size = new System.Drawing.Size(50, 13);
+            this.labelControl207.TabIndex = 171;
+            this.labelControl207.Text = "Total REP:";
+            // 
+            // txt_SumaTotal_REP
+            // 
+            this.txt_SumaTotal_REP.Enabled = false;
+            this.txt_SumaTotal_REP.Location = new System.Drawing.Point(784, 31);
+            this.txt_SumaTotal_REP.MenuManager = this.barManager1;
+            this.txt_SumaTotal_REP.Name = "txt_SumaTotal_REP";
+            this.txt_SumaTotal_REP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_SumaTotal_REP.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_SumaTotal_REP.Properties.Appearance.Options.UseFont = true;
+            this.txt_SumaTotal_REP.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_SumaTotal_REP.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_SumaTotal_REP.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_SumaTotal_REP.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_SumaTotal_REP.Size = new System.Drawing.Size(94, 20);
+            this.txt_SumaTotal_REP.TabIndex = 170;
+            // 
+            // labelControl180
+            // 
+            this.labelControl180.Location = new System.Drawing.Point(19, 112);
+            this.labelControl180.Name = "labelControl180";
+            this.labelControl180.Size = new System.Drawing.Size(25, 13);
+            this.labelControl180.TabIndex = 168;
+            this.labelControl180.Text = "UUID";
+            // 
+            // txt_UUID
+            // 
+            this.txt_UUID.Location = new System.Drawing.Point(66, 106);
+            this.txt_UUID.Name = "txt_UUID";
+            this.txt_UUID.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_UUID.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_UUID.Properties.Appearance.Options.UseFont = true;
+            this.txt_UUID.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_UUID.Properties.ReadOnly = true;
+            this.txt_UUID.Size = new System.Drawing.Size(262, 20);
+            this.txt_UUID.TabIndex = 169;
+            // 
+            // labelControl179
+            // 
+            this.labelControl179.Location = new System.Drawing.Point(547, 87);
+            this.labelControl179.Name = "labelControl179";
+            this.labelControl179.Size = new System.Drawing.Size(28, 13);
+            this.labelControl179.TabIndex = 167;
+            this.labelControl179.Text = "Total:";
+            // 
+            // txt_Total
+            // 
+            this.txt_Total.Enabled = false;
+            this.txt_Total.Location = new System.Drawing.Point(620, 83);
+            this.txt_Total.MenuManager = this.barManager1;
+            this.txt_Total.Name = "txt_Total";
+            this.txt_Total.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_Total.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_Total.Properties.Appearance.Options.UseFont = true;
+            this.txt_Total.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_Total.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Total.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_Total.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_Total.Size = new System.Drawing.Size(94, 20);
+            this.txt_Total.TabIndex = 166;
+            // 
+            // labelControl178
+            // 
+            this.labelControl178.Location = new System.Drawing.Point(547, 61);
+            this.labelControl178.Name = "labelControl178";
+            this.labelControl178.Size = new System.Drawing.Size(46, 13);
+            this.labelControl178.TabIndex = 165;
+            this.labelControl178.Text = "SubTotal:";
+            // 
+            // txt_SubTotal
+            // 
+            this.txt_SubTotal.Enabled = false;
+            this.txt_SubTotal.Location = new System.Drawing.Point(620, 57);
+            this.txt_SubTotal.MenuManager = this.barManager1;
+            this.txt_SubTotal.Name = "txt_SubTotal";
+            this.txt_SubTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_SubTotal.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_SubTotal.Properties.Appearance.Options.UseFont = true;
+            this.txt_SubTotal.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_SubTotal.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_SubTotal.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_SubTotal.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_SubTotal.Size = new System.Drawing.Size(94, 20);
+            this.txt_SubTotal.TabIndex = 164;
+            // 
+            // labelControl177
+            // 
+            this.labelControl177.Location = new System.Drawing.Point(547, 35);
+            this.labelControl177.Name = "labelControl177";
+            this.labelControl177.Size = new System.Drawing.Size(67, 13);
+            this.labelControl177.TabIndex = 163;
+            this.labelControl177.Text = "Metodo Pago:";
+            // 
+            // txt_MetodoPago
+            // 
+            this.txt_MetodoPago.Enabled = false;
+            this.txt_MetodoPago.Location = new System.Drawing.Point(620, 31);
+            this.txt_MetodoPago.MenuManager = this.barManager1;
+            this.txt_MetodoPago.Name = "txt_MetodoPago";
+            this.txt_MetodoPago.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_MetodoPago.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_MetodoPago.Properties.Appearance.Options.UseFont = true;
+            this.txt_MetodoPago.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_MetodoPago.Size = new System.Drawing.Size(94, 20);
+            this.txt_MetodoPago.TabIndex = 162;
             // 
             // dt_FechaProgramaProductor
             // 
             this.dt_FechaProgramaProductor.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaProgramaProductor.Location = new System.Drawing.Point(311, 235);
+            this.dt_FechaProgramaProductor.Location = new System.Drawing.Point(314, 280);
             this.dt_FechaProgramaProductor.MenuManager = this.barManager1;
             this.dt_FechaProgramaProductor.Name = "dt_FechaProgramaProductor";
             this.dt_FechaProgramaProductor.Properties.BeepOnError = true;
@@ -6664,7 +7670,7 @@
             // 
             // labelControl164
             // 
-            this.labelControl164.Location = new System.Drawing.Point(230, 239);
+            this.labelControl164.Location = new System.Drawing.Point(233, 284);
             this.labelControl164.Name = "labelControl164";
             this.labelControl164.Size = new System.Drawing.Size(75, 13);
             this.labelControl164.TabIndex = 160;
@@ -6682,7 +7688,7 @@
             // chk_RetencionFleteProductor
             // 
             this.chk_RetencionFleteProductor.EditValue = true;
-            this.chk_RetencionFleteProductor.Location = new System.Drawing.Point(264, 183);
+            this.chk_RetencionFleteProductor.Location = new System.Drawing.Point(267, 228);
             this.chk_RetencionFleteProductor.MenuManager = this.barManager1;
             this.chk_RetencionFleteProductor.Name = "chk_RetencionFleteProductor";
             this.chk_RetencionFleteProductor.Properties.Caption = "Retencion Flete";
@@ -6692,7 +7698,7 @@
             // textEdit1
             // 
             this.textEdit1.EditValue = "0";
-            this.textEdit1.Location = new System.Drawing.Point(116, 183);
+            this.textEdit1.Location = new System.Drawing.Point(119, 228);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.BeepOnError = true;
@@ -6706,7 +7712,7 @@
             // 
             // labelControl153
             // 
-            this.labelControl153.Location = new System.Drawing.Point(16, 186);
+            this.labelControl153.Location = new System.Drawing.Point(19, 231);
             this.labelControl153.Name = "labelControl153";
             this.labelControl153.Size = new System.Drawing.Size(72, 13);
             this.labelControl153.TabIndex = 154;
@@ -6716,7 +7722,7 @@
             // 
             this.btn_CalcularFechaPago.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_CalcularFechaPago.ImageOptions.Image")));
             this.btn_CalcularFechaPago.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btn_CalcularFechaPago.Location = new System.Drawing.Point(416, 233);
+            this.btn_CalcularFechaPago.Location = new System.Drawing.Point(419, 278);
             this.btn_CalcularFechaPago.Name = "btn_CalcularFechaPago";
             this.btn_CalcularFechaPago.Size = new System.Drawing.Size(25, 25);
             this.btn_CalcularFechaPago.TabIndex = 134;
@@ -6725,7 +7731,7 @@
             // txt_IVAFacturaProductor
             // 
             this.txt_IVAFacturaProductor.EditValue = "0";
-            this.txt_IVAFacturaProductor.Location = new System.Drawing.Point(116, 209);
+            this.txt_IVAFacturaProductor.Location = new System.Drawing.Point(119, 254);
             this.txt_IVAFacturaProductor.MenuManager = this.barManager1;
             this.txt_IVAFacturaProductor.Name = "txt_IVAFacturaProductor";
             this.txt_IVAFacturaProductor.Properties.BeepOnError = true;
@@ -6740,7 +7746,7 @@
             // 
             // labelControl139
             // 
-            this.labelControl139.Location = new System.Drawing.Point(16, 213);
+            this.labelControl139.Location = new System.Drawing.Point(19, 258);
             this.labelControl139.Name = "labelControl139";
             this.labelControl139.Size = new System.Drawing.Size(21, 13);
             this.labelControl139.TabIndex = 133;
@@ -6749,7 +7755,7 @@
             // chk_IVAProductor
             // 
             this.chk_IVAProductor.EditValue = true;
-            this.chk_IVAProductor.Location = new System.Drawing.Point(264, 209);
+            this.chk_IVAProductor.Location = new System.Drawing.Point(267, 254);
             this.chk_IVAProductor.MenuManager = this.barManager1;
             this.chk_IVAProductor.Name = "chk_IVAProductor";
             this.chk_IVAProductor.Properties.Caption = "IVA";
@@ -6760,7 +7766,7 @@
             // chk_RetencionProductor
             // 
             this.chk_RetencionProductor.EditValue = true;
-            this.chk_RetencionProductor.Location = new System.Drawing.Point(264, 157);
+            this.chk_RetencionProductor.Location = new System.Drawing.Point(267, 202);
             this.chk_RetencionProductor.MenuManager = this.barManager1;
             this.chk_RetencionProductor.Name = "chk_RetencionProductor";
             this.chk_RetencionProductor.Properties.Caption = "Retencion RESICO";
@@ -6771,7 +7777,7 @@
             // txt_TotalFacturaProductor
             // 
             this.txt_TotalFacturaProductor.EditValue = "0";
-            this.txt_TotalFacturaProductor.Location = new System.Drawing.Point(116, 235);
+            this.txt_TotalFacturaProductor.Location = new System.Drawing.Point(119, 280);
             this.txt_TotalFacturaProductor.MenuManager = this.barManager1;
             this.txt_TotalFacturaProductor.Name = "txt_TotalFacturaProductor";
             this.txt_TotalFacturaProductor.Properties.BeepOnError = true;
@@ -6786,7 +7792,7 @@
             // 
             // labelControl128
             // 
-            this.labelControl128.Location = new System.Drawing.Point(16, 239);
+            this.labelControl128.Location = new System.Drawing.Point(19, 284);
             this.labelControl128.Name = "labelControl128";
             this.labelControl128.Size = new System.Drawing.Size(68, 13);
             this.labelControl128.TabIndex = 129;
@@ -6795,7 +7801,7 @@
             // txt_RetencionFacturaProductor
             // 
             this.txt_RetencionFacturaProductor.EditValue = "0";
-            this.txt_RetencionFacturaProductor.Location = new System.Drawing.Point(116, 157);
+            this.txt_RetencionFacturaProductor.Location = new System.Drawing.Point(119, 202);
             this.txt_RetencionFacturaProductor.MenuManager = this.barManager1;
             this.txt_RetencionFacturaProductor.Name = "txt_RetencionFacturaProductor";
             this.txt_RetencionFacturaProductor.Properties.BeepOnError = true;
@@ -6810,7 +7816,7 @@
             // 
             // labelControl127
             // 
-            this.labelControl127.Location = new System.Drawing.Point(16, 161);
+            this.labelControl127.Location = new System.Drawing.Point(19, 206);
             this.labelControl127.Name = "labelControl127";
             this.labelControl127.Size = new System.Drawing.Size(88, 13);
             this.labelControl127.TabIndex = 127;
@@ -6818,7 +7824,7 @@
             // 
             // labelControl79
             // 
-            this.labelControl79.Location = new System.Drawing.Point(16, 110);
+            this.labelControl79.Location = new System.Drawing.Point(19, 155);
             this.labelControl79.Name = "labelControl79";
             this.labelControl79.Size = new System.Drawing.Size(64, 13);
             this.labelControl79.TabIndex = 125;
@@ -6842,7 +7848,7 @@
             // 
             // txt_FolioFacturaProductor
             // 
-            this.txt_FolioFacturaProductor.Location = new System.Drawing.Point(116, 106);
+            this.txt_FolioFacturaProductor.Location = new System.Drawing.Point(119, 151);
             this.txt_FolioFacturaProductor.MenuManager = this.barManager1;
             this.txt_FolioFacturaProductor.Name = "txt_FolioFacturaProductor";
             this.txt_FolioFacturaProductor.Size = new System.Drawing.Size(94, 20);
@@ -6933,7 +7939,7 @@
             // chk_PagadaProductor
             // 
             this.chk_PagadaProductor.EditValue = true;
-            this.chk_PagadaProductor.Location = new System.Drawing.Point(264, 131);
+            this.chk_PagadaProductor.Location = new System.Drawing.Point(267, 176);
             this.chk_PagadaProductor.MenuManager = this.barManager1;
             this.chk_PagadaProductor.Name = "chk_PagadaProductor";
             this.chk_PagadaProductor.Properties.Caption = "Pagada";
@@ -6944,7 +7950,7 @@
             // txt_ImporteFacturaProductor
             // 
             this.txt_ImporteFacturaProductor.EditValue = "0";
-            this.txt_ImporteFacturaProductor.Location = new System.Drawing.Point(116, 131);
+            this.txt_ImporteFacturaProductor.Location = new System.Drawing.Point(119, 176);
             this.txt_ImporteFacturaProductor.MenuManager = this.barManager1;
             this.txt_ImporteFacturaProductor.Name = "txt_ImporteFacturaProductor";
             this.txt_ImporteFacturaProductor.Properties.BeepOnError = true;
@@ -6959,7 +7965,7 @@
             // 
             // labelControl85
             // 
-            this.labelControl85.Location = new System.Drawing.Point(16, 135);
+            this.labelControl85.Location = new System.Drawing.Point(19, 180);
             this.labelControl85.Name = "labelControl85";
             this.labelControl85.Size = new System.Drawing.Size(82, 13);
             this.labelControl85.TabIndex = 113;
@@ -6968,7 +7974,7 @@
             // dt_FechaPagoProductor
             // 
             this.dt_FechaPagoProductor.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaPagoProductor.Location = new System.Drawing.Point(311, 261);
+            this.dt_FechaPagoProductor.Location = new System.Drawing.Point(314, 306);
             this.dt_FechaPagoProductor.MenuManager = this.barManager1;
             this.dt_FechaPagoProductor.Name = "dt_FechaPagoProductor";
             this.dt_FechaPagoProductor.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -6989,7 +7995,7 @@
             // 
             // labelControl84
             // 
-            this.labelControl84.Location = new System.Drawing.Point(225, 110);
+            this.labelControl84.Location = new System.Drawing.Point(228, 155);
             this.labelControl84.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labelControl84.Name = "labelControl84";
             this.labelControl84.Size = new System.Drawing.Size(42, 13);
@@ -6998,7 +8004,7 @@
             // 
             // cmb_MonedaProductor
             // 
-            this.cmb_MonedaProductor.Location = new System.Drawing.Point(277, 106);
+            this.cmb_MonedaProductor.Location = new System.Drawing.Point(280, 151);
             this.cmb_MonedaProductor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_MonedaProductor.MenuManager = this.barManager1;
             this.cmb_MonedaProductor.Name = "cmb_MonedaProductor";
@@ -7014,7 +8020,7 @@
             // dt_FechaFacturaProductor
             // 
             this.dt_FechaFacturaProductor.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dt_FechaFacturaProductor.Location = new System.Drawing.Point(116, 261);
+            this.dt_FechaFacturaProductor.Location = new System.Drawing.Point(119, 306);
             this.dt_FechaFacturaProductor.MenuManager = this.barManager1;
             this.dt_FechaFacturaProductor.Name = "dt_FechaFacturaProductor";
             this.dt_FechaFacturaProductor.Properties.BeepOnError = true;
@@ -7031,7 +8037,7 @@
             // 
             // labelControl83
             // 
-            this.labelControl83.Location = new System.Drawing.Point(16, 265);
+            this.labelControl83.Location = new System.Drawing.Point(19, 310);
             this.labelControl83.Name = "labelControl83";
             this.labelControl83.Size = new System.Drawing.Size(54, 13);
             this.labelControl83.TabIndex = 116;
@@ -7039,7 +8045,7 @@
             // 
             // labelControl82
             // 
-            this.labelControl82.Location = new System.Drawing.Point(230, 265);
+            this.labelControl82.Location = new System.Drawing.Point(233, 310);
             this.labelControl82.Name = "labelControl82";
             this.labelControl82.Size = new System.Drawing.Size(41, 13);
             this.labelControl82.TabIndex = 117;
@@ -7048,44 +8054,43 @@
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.labelControl169);
-            this.xtraTabPage2.Controls.Add(this.dateEdit12);
-            this.xtraTabPage2.Controls.Add(this.dateEdit13);
-            this.xtraTabPage2.Controls.Add(this.dateEdit14);
-            this.xtraTabPage2.Controls.Add(this.dateEdit10);
-            this.xtraTabPage2.Controls.Add(this.dateEdit9);
-            this.xtraTabPage2.Controls.Add(this.dateEdit8);
-            this.xtraTabPage2.Controls.Add(this.dateEdit7);
-            this.xtraTabPage2.Controls.Add(this.simpleButton16);
-            this.xtraTabPage2.Controls.Add(this.simpleButton17);
-            this.xtraTabPage2.Controls.Add(this.simpleButton18);
+            this.xtraTabPage2.Controls.Add(this.dt_FechaContratoGEST);
+            this.xtraTabPage2.Controls.Add(this.dt_FechaContratoTerceros);
+            this.xtraTabPage2.Controls.Add(this.dt_FechaClaveInterbancaria);
+            this.xtraTabPage2.Controls.Add(this.dt_FechaConstanciaSituacion);
+            this.xtraTabPage2.Controls.Add(this.dt_FechaOPinionCumplimiento);
+            this.xtraTabPage2.Controls.Add(this.dt_FechaIdentificacion_IFE_INE);
+            this.xtraTabPage2.Controls.Add(this.dt_FechaTarjetaAPEAM);
+            this.xtraTabPage2.Controls.Add(this.btn_DelContratoGEST);
+            this.xtraTabPage2.Controls.Add(this.btn_ViewPDFContratoGEST);
+            this.xtraTabPage2.Controls.Add(this.btn_UpPDFContratoGEST);
             this.xtraTabPage2.Controls.Add(this.labelControl170);
-            this.xtraTabPage2.Controls.Add(this.simpleButton19);
-            this.xtraTabPage2.Controls.Add(this.simpleButton20);
-            this.xtraTabPage2.Controls.Add(this.simpleButton21);
+            this.xtraTabPage2.Controls.Add(this.btn_DelContratoTerceros);
+            this.xtraTabPage2.Controls.Add(this.btn_ViewPDFContratoTerceros);
+            this.xtraTabPage2.Controls.Add(this.btn_UpPDFContratoTerceros);
             this.xtraTabPage2.Controls.Add(this.labelControl171);
-            this.xtraTabPage2.Controls.Add(this.simpleButton22);
-            this.xtraTabPage2.Controls.Add(this.simpleButton23);
-            this.xtraTabPage2.Controls.Add(this.simpleButton24);
+            this.xtraTabPage2.Controls.Add(this.btn_DelClaveInterbancaria);
+            this.xtraTabPage2.Controls.Add(this.btn_ViewPDFClaveInterbancaria);
+            this.xtraTabPage2.Controls.Add(this.btn_UpPDFClaveInterbancaria);
             this.xtraTabPage2.Controls.Add(this.labelControl172);
-            this.xtraTabPage2.Controls.Add(this.simpleButton10);
-            this.xtraTabPage2.Controls.Add(this.simpleButton11);
-            this.xtraTabPage2.Controls.Add(this.simpleButton12);
+            this.xtraTabPage2.Controls.Add(this.btn_DelConstanciaSituacion);
+            this.xtraTabPage2.Controls.Add(this.btn_ViewPDFConstanciaSituacion);
+            this.xtraTabPage2.Controls.Add(this.btn_UpPDFConstancia_Situacion);
             this.xtraTabPage2.Controls.Add(this.labelControl168);
-            this.xtraTabPage2.Controls.Add(this.simpleButton7);
-            this.xtraTabPage2.Controls.Add(this.simpleButton8);
-            this.xtraTabPage2.Controls.Add(this.simpleButton9);
+            this.xtraTabPage2.Controls.Add(this.btn_DelOpinionCumplimiento);
+            this.xtraTabPage2.Controls.Add(this.btn_ViewPDFOpinionCumplimiento);
+            this.xtraTabPage2.Controls.Add(this.btn_UpPDFOpinion_Cumplimiento);
             this.xtraTabPage2.Controls.Add(this.labelControl167);
-            this.xtraTabPage2.Controls.Add(this.simpleButton4);
-            this.xtraTabPage2.Controls.Add(this.simpleButton5);
-            this.xtraTabPage2.Controls.Add(this.simpleButton6);
+            this.xtraTabPage2.Controls.Add(this.btn_DelIdentificacion_IFE_INE);
+            this.xtraTabPage2.Controls.Add(this.btn_ViewPDFIdentificacion_IFE_INE);
+            this.xtraTabPage2.Controls.Add(this.btn_UpPDFIdntificacion_IFE_INE);
             this.xtraTabPage2.Controls.Add(this.labelControl166);
-            this.xtraTabPage2.Controls.Add(this.simpleButton1);
-            this.xtraTabPage2.Controls.Add(this.simpleButton2);
-            this.xtraTabPage2.Controls.Add(this.simpleButton3);
+            this.xtraTabPage2.Controls.Add(this.btn_DelTarjetaAPEAM);
+            this.xtraTabPage2.Controls.Add(this.btn_ViewPDFTarjetaAPEAM);
+            this.xtraTabPage2.Controls.Add(this.btn_UpPDFTarjeta_APEAM);
             this.xtraTabPage2.Controls.Add(this.labelControl165);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.PageVisible = false;
-            this.xtraTabPage2.Size = new System.Drawing.Size(1065, 607);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1220, 593);
             this.xtraTabPage2.Text = "Expedientes";
             // 
             // labelControl169
@@ -7096,134 +8101,144 @@
             this.labelControl169.TabIndex = 196;
             this.labelControl169.Text = "Ultima Actualización";
             // 
-            // dateEdit12
+            // dt_FechaContratoGEST
             // 
-            this.dateEdit12.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit12.Location = new System.Drawing.Point(279, 210);
-            this.dateEdit12.MenuManager = this.barManager1;
-            this.dateEdit12.Name = "dateEdit12";
-            this.dateEdit12.Properties.BeepOnError = true;
-            this.dateEdit12.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaContratoGEST.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaContratoGEST.Enabled = false;
+            this.dt_FechaContratoGEST.Location = new System.Drawing.Point(279, 210);
+            this.dt_FechaContratoGEST.MenuManager = this.barManager1;
+            this.dt_FechaContratoGEST.Name = "dt_FechaContratoGEST";
+            this.dt_FechaContratoGEST.Properties.BeepOnError = true;
+            this.dt_FechaContratoGEST.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit12.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaContratoGEST.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit12.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit12.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit12.TabIndex = 195;
+            this.dt_FechaContratoGEST.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaContratoGEST.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaContratoGEST.TabIndex = 195;
             // 
-            // dateEdit13
+            // dt_FechaContratoTerceros
             // 
-            this.dateEdit13.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit13.Location = new System.Drawing.Point(279, 181);
-            this.dateEdit13.MenuManager = this.barManager1;
-            this.dateEdit13.Name = "dateEdit13";
-            this.dateEdit13.Properties.BeepOnError = true;
-            this.dateEdit13.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaContratoTerceros.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaContratoTerceros.Enabled = false;
+            this.dt_FechaContratoTerceros.Location = new System.Drawing.Point(279, 181);
+            this.dt_FechaContratoTerceros.MenuManager = this.barManager1;
+            this.dt_FechaContratoTerceros.Name = "dt_FechaContratoTerceros";
+            this.dt_FechaContratoTerceros.Properties.BeepOnError = true;
+            this.dt_FechaContratoTerceros.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit13.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaContratoTerceros.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit13.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit13.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit13.TabIndex = 194;
+            this.dt_FechaContratoTerceros.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaContratoTerceros.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaContratoTerceros.TabIndex = 194;
             // 
-            // dateEdit14
+            // dt_FechaClaveInterbancaria
             // 
-            this.dateEdit14.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit14.Location = new System.Drawing.Point(279, 152);
-            this.dateEdit14.MenuManager = this.barManager1;
-            this.dateEdit14.Name = "dateEdit14";
-            this.dateEdit14.Properties.BeepOnError = true;
-            this.dateEdit14.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaClaveInterbancaria.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaClaveInterbancaria.Enabled = false;
+            this.dt_FechaClaveInterbancaria.Location = new System.Drawing.Point(279, 152);
+            this.dt_FechaClaveInterbancaria.MenuManager = this.barManager1;
+            this.dt_FechaClaveInterbancaria.Name = "dt_FechaClaveInterbancaria";
+            this.dt_FechaClaveInterbancaria.Properties.BeepOnError = true;
+            this.dt_FechaClaveInterbancaria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit14.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaClaveInterbancaria.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit14.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit14.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit14.TabIndex = 193;
+            this.dt_FechaClaveInterbancaria.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaClaveInterbancaria.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaClaveInterbancaria.TabIndex = 193;
             // 
-            // dateEdit10
+            // dt_FechaConstanciaSituacion
             // 
-            this.dateEdit10.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit10.Location = new System.Drawing.Point(279, 123);
-            this.dateEdit10.MenuManager = this.barManager1;
-            this.dateEdit10.Name = "dateEdit10";
-            this.dateEdit10.Properties.BeepOnError = true;
-            this.dateEdit10.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaConstanciaSituacion.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaConstanciaSituacion.Enabled = false;
+            this.dt_FechaConstanciaSituacion.Location = new System.Drawing.Point(279, 123);
+            this.dt_FechaConstanciaSituacion.MenuManager = this.barManager1;
+            this.dt_FechaConstanciaSituacion.Name = "dt_FechaConstanciaSituacion";
+            this.dt_FechaConstanciaSituacion.Properties.BeepOnError = true;
+            this.dt_FechaConstanciaSituacion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit10.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaConstanciaSituacion.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit10.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit10.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit10.TabIndex = 192;
+            this.dt_FechaConstanciaSituacion.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaConstanciaSituacion.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaConstanciaSituacion.TabIndex = 192;
             // 
-            // dateEdit9
+            // dt_FechaOPinionCumplimiento
             // 
-            this.dateEdit9.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit9.Location = new System.Drawing.Point(279, 94);
-            this.dateEdit9.MenuManager = this.barManager1;
-            this.dateEdit9.Name = "dateEdit9";
-            this.dateEdit9.Properties.BeepOnError = true;
-            this.dateEdit9.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaOPinionCumplimiento.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaOPinionCumplimiento.Enabled = false;
+            this.dt_FechaOPinionCumplimiento.Location = new System.Drawing.Point(279, 94);
+            this.dt_FechaOPinionCumplimiento.MenuManager = this.barManager1;
+            this.dt_FechaOPinionCumplimiento.Name = "dt_FechaOPinionCumplimiento";
+            this.dt_FechaOPinionCumplimiento.Properties.BeepOnError = true;
+            this.dt_FechaOPinionCumplimiento.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit9.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaOPinionCumplimiento.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit9.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit9.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit9.TabIndex = 191;
+            this.dt_FechaOPinionCumplimiento.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaOPinionCumplimiento.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaOPinionCumplimiento.TabIndex = 191;
             // 
-            // dateEdit8
+            // dt_FechaIdentificacion_IFE_INE
             // 
-            this.dateEdit8.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit8.Location = new System.Drawing.Point(279, 65);
-            this.dateEdit8.MenuManager = this.barManager1;
-            this.dateEdit8.Name = "dateEdit8";
-            this.dateEdit8.Properties.BeepOnError = true;
-            this.dateEdit8.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaIdentificacion_IFE_INE.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaIdentificacion_IFE_INE.Enabled = false;
+            this.dt_FechaIdentificacion_IFE_INE.Location = new System.Drawing.Point(279, 65);
+            this.dt_FechaIdentificacion_IFE_INE.MenuManager = this.barManager1;
+            this.dt_FechaIdentificacion_IFE_INE.Name = "dt_FechaIdentificacion_IFE_INE";
+            this.dt_FechaIdentificacion_IFE_INE.Properties.BeepOnError = true;
+            this.dt_FechaIdentificacion_IFE_INE.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit8.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaIdentificacion_IFE_INE.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit8.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit8.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit8.TabIndex = 190;
+            this.dt_FechaIdentificacion_IFE_INE.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaIdentificacion_IFE_INE.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaIdentificacion_IFE_INE.TabIndex = 190;
             // 
-            // dateEdit7
+            // dt_FechaTarjetaAPEAM
             // 
-            this.dateEdit7.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
-            this.dateEdit7.Location = new System.Drawing.Point(279, 36);
-            this.dateEdit7.MenuManager = this.barManager1;
-            this.dateEdit7.Name = "dateEdit7";
-            this.dateEdit7.Properties.BeepOnError = true;
-            this.dateEdit7.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaTarjetaAPEAM.EditValue = new System.DateTime(2022, 5, 4, 0, 0, 0, 0);
+            this.dt_FechaTarjetaAPEAM.Enabled = false;
+            this.dt_FechaTarjetaAPEAM.Location = new System.Drawing.Point(279, 36);
+            this.dt_FechaTarjetaAPEAM.MenuManager = this.barManager1;
+            this.dt_FechaTarjetaAPEAM.Name = "dt_FechaTarjetaAPEAM";
+            this.dt_FechaTarjetaAPEAM.Properties.BeepOnError = true;
+            this.dt_FechaTarjetaAPEAM.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit7.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dt_FechaTarjetaAPEAM.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit7.Properties.UseMaskAsDisplayFormat = true;
-            this.dateEdit7.Size = new System.Drawing.Size(99, 20);
-            this.dateEdit7.TabIndex = 189;
+            this.dt_FechaTarjetaAPEAM.Properties.UseMaskAsDisplayFormat = true;
+            this.dt_FechaTarjetaAPEAM.Size = new System.Drawing.Size(99, 20);
+            this.dt_FechaTarjetaAPEAM.TabIndex = 189;
             // 
-            // simpleButton16
+            // btn_DelContratoGEST
             // 
-            this.simpleButton16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton16.ImageOptions.Image")));
-            this.simpleButton16.Location = new System.Drawing.Point(248, 209);
-            this.simpleButton16.Name = "simpleButton16";
-            this.simpleButton16.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton16.TabIndex = 184;
+            this.btn_DelContratoGEST.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DelContratoGEST.ImageOptions.Image")));
+            this.btn_DelContratoGEST.Location = new System.Drawing.Point(248, 209);
+            this.btn_DelContratoGEST.Name = "btn_DelContratoGEST";
+            this.btn_DelContratoGEST.Size = new System.Drawing.Size(25, 23);
+            this.btn_DelContratoGEST.TabIndex = 184;
+            this.btn_DelContratoGEST.Click += new System.EventHandler(this.btn_DelContratoGEST_Click);
             // 
-            // simpleButton17
+            // btn_ViewPDFContratoGEST
             // 
-            this.simpleButton17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton17.ImageOptions.Image")));
-            this.simpleButton17.Location = new System.Drawing.Point(217, 209);
-            this.simpleButton17.Name = "simpleButton17";
-            this.simpleButton17.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton17.TabIndex = 183;
+            this.btn_ViewPDFContratoGEST.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFContratoGEST.ImageOptions.Image")));
+            this.btn_ViewPDFContratoGEST.Location = new System.Drawing.Point(217, 209);
+            this.btn_ViewPDFContratoGEST.Name = "btn_ViewPDFContratoGEST";
+            this.btn_ViewPDFContratoGEST.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFContratoGEST.TabIndex = 183;
+            this.btn_ViewPDFContratoGEST.Click += new System.EventHandler(this.btn_ViewPDFContratoGEST_Click);
             // 
-            // simpleButton18
+            // btn_UpPDFContratoGEST
             // 
-            this.simpleButton18.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton18.ImageOptions.Image")));
-            this.simpleButton18.Location = new System.Drawing.Point(186, 209);
-            this.simpleButton18.Name = "simpleButton18";
-            this.simpleButton18.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton18.TabIndex = 182;
+            this.btn_UpPDFContratoGEST.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFContratoGEST.ImageOptions.Image")));
+            this.btn_UpPDFContratoGEST.Location = new System.Drawing.Point(186, 209);
+            this.btn_UpPDFContratoGEST.Name = "btn_UpPDFContratoGEST";
+            this.btn_UpPDFContratoGEST.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFContratoGEST.TabIndex = 182;
+            this.btn_UpPDFContratoGEST.Click += new System.EventHandler(this.btn_UpPDFContratoGEST_Click);
             // 
             // labelControl170
             // 
@@ -7233,29 +8248,32 @@
             this.labelControl170.TabIndex = 181;
             this.labelControl170.Text = "Contrato GEST";
             // 
-            // simpleButton19
+            // btn_DelContratoTerceros
             // 
-            this.simpleButton19.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton19.ImageOptions.Image")));
-            this.simpleButton19.Location = new System.Drawing.Point(248, 180);
-            this.simpleButton19.Name = "simpleButton19";
-            this.simpleButton19.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton19.TabIndex = 180;
+            this.btn_DelContratoTerceros.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DelContratoTerceros.ImageOptions.Image")));
+            this.btn_DelContratoTerceros.Location = new System.Drawing.Point(248, 180);
+            this.btn_DelContratoTerceros.Name = "btn_DelContratoTerceros";
+            this.btn_DelContratoTerceros.Size = new System.Drawing.Size(25, 23);
+            this.btn_DelContratoTerceros.TabIndex = 180;
+            this.btn_DelContratoTerceros.Click += new System.EventHandler(this.btn_DelContratoTerceros_Click);
             // 
-            // simpleButton20
+            // btn_ViewPDFContratoTerceros
             // 
-            this.simpleButton20.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton20.ImageOptions.Image")));
-            this.simpleButton20.Location = new System.Drawing.Point(217, 180);
-            this.simpleButton20.Name = "simpleButton20";
-            this.simpleButton20.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton20.TabIndex = 179;
+            this.btn_ViewPDFContratoTerceros.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFContratoTerceros.ImageOptions.Image")));
+            this.btn_ViewPDFContratoTerceros.Location = new System.Drawing.Point(217, 180);
+            this.btn_ViewPDFContratoTerceros.Name = "btn_ViewPDFContratoTerceros";
+            this.btn_ViewPDFContratoTerceros.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFContratoTerceros.TabIndex = 179;
+            this.btn_ViewPDFContratoTerceros.Click += new System.EventHandler(this.btn_ViewPDFContratoTerceros_Click);
             // 
-            // simpleButton21
+            // btn_UpPDFContratoTerceros
             // 
-            this.simpleButton21.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton21.ImageOptions.Image")));
-            this.simpleButton21.Location = new System.Drawing.Point(186, 180);
-            this.simpleButton21.Name = "simpleButton21";
-            this.simpleButton21.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton21.TabIndex = 178;
+            this.btn_UpPDFContratoTerceros.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFContratoTerceros.ImageOptions.Image")));
+            this.btn_UpPDFContratoTerceros.Location = new System.Drawing.Point(186, 180);
+            this.btn_UpPDFContratoTerceros.Name = "btn_UpPDFContratoTerceros";
+            this.btn_UpPDFContratoTerceros.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFContratoTerceros.TabIndex = 178;
+            this.btn_UpPDFContratoTerceros.Click += new System.EventHandler(this.btn_UpPDFContratoTerceros_Click);
             // 
             // labelControl171
             // 
@@ -7265,29 +8283,32 @@
             this.labelControl171.TabIndex = 177;
             this.labelControl171.Text = "Contrato entre Terceros";
             // 
-            // simpleButton22
+            // btn_DelClaveInterbancaria
             // 
-            this.simpleButton22.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton22.ImageOptions.Image")));
-            this.simpleButton22.Location = new System.Drawing.Point(248, 151);
-            this.simpleButton22.Name = "simpleButton22";
-            this.simpleButton22.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton22.TabIndex = 176;
+            this.btn_DelClaveInterbancaria.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DelClaveInterbancaria.ImageOptions.Image")));
+            this.btn_DelClaveInterbancaria.Location = new System.Drawing.Point(248, 151);
+            this.btn_DelClaveInterbancaria.Name = "btn_DelClaveInterbancaria";
+            this.btn_DelClaveInterbancaria.Size = new System.Drawing.Size(25, 23);
+            this.btn_DelClaveInterbancaria.TabIndex = 176;
+            this.btn_DelClaveInterbancaria.Click += new System.EventHandler(this.btn_DelClaveInterbancaria_Click);
             // 
-            // simpleButton23
+            // btn_ViewPDFClaveInterbancaria
             // 
-            this.simpleButton23.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton23.ImageOptions.Image")));
-            this.simpleButton23.Location = new System.Drawing.Point(217, 151);
-            this.simpleButton23.Name = "simpleButton23";
-            this.simpleButton23.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton23.TabIndex = 175;
+            this.btn_ViewPDFClaveInterbancaria.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFClaveInterbancaria.ImageOptions.Image")));
+            this.btn_ViewPDFClaveInterbancaria.Location = new System.Drawing.Point(217, 151);
+            this.btn_ViewPDFClaveInterbancaria.Name = "btn_ViewPDFClaveInterbancaria";
+            this.btn_ViewPDFClaveInterbancaria.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFClaveInterbancaria.TabIndex = 175;
+            this.btn_ViewPDFClaveInterbancaria.Click += new System.EventHandler(this.btn_ViewPDFClaveInterbancaria_Click);
             // 
-            // simpleButton24
+            // btn_UpPDFClaveInterbancaria
             // 
-            this.simpleButton24.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton24.ImageOptions.Image")));
-            this.simpleButton24.Location = new System.Drawing.Point(186, 151);
-            this.simpleButton24.Name = "simpleButton24";
-            this.simpleButton24.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton24.TabIndex = 174;
+            this.btn_UpPDFClaveInterbancaria.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFClaveInterbancaria.ImageOptions.Image")));
+            this.btn_UpPDFClaveInterbancaria.Location = new System.Drawing.Point(186, 151);
+            this.btn_UpPDFClaveInterbancaria.Name = "btn_UpPDFClaveInterbancaria";
+            this.btn_UpPDFClaveInterbancaria.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFClaveInterbancaria.TabIndex = 174;
+            this.btn_UpPDFClaveInterbancaria.Click += new System.EventHandler(this.btn_UpPDFClaveInterbancaria_Click);
             // 
             // labelControl172
             // 
@@ -7297,29 +8318,32 @@
             this.labelControl172.TabIndex = 173;
             this.labelControl172.Text = "Clave Interbancaria";
             // 
-            // simpleButton10
+            // btn_DelConstanciaSituacion
             // 
-            this.simpleButton10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton10.ImageOptions.Image")));
-            this.simpleButton10.Location = new System.Drawing.Point(248, 122);
-            this.simpleButton10.Name = "simpleButton10";
-            this.simpleButton10.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton10.TabIndex = 172;
+            this.btn_DelConstanciaSituacion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DelConstanciaSituacion.ImageOptions.Image")));
+            this.btn_DelConstanciaSituacion.Location = new System.Drawing.Point(248, 122);
+            this.btn_DelConstanciaSituacion.Name = "btn_DelConstanciaSituacion";
+            this.btn_DelConstanciaSituacion.Size = new System.Drawing.Size(25, 23);
+            this.btn_DelConstanciaSituacion.TabIndex = 172;
+            this.btn_DelConstanciaSituacion.Click += new System.EventHandler(this.btn_DelConstanciaSituacion_Click);
             // 
-            // simpleButton11
+            // btn_ViewPDFConstanciaSituacion
             // 
-            this.simpleButton11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.ImageOptions.Image")));
-            this.simpleButton11.Location = new System.Drawing.Point(217, 122);
-            this.simpleButton11.Name = "simpleButton11";
-            this.simpleButton11.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton11.TabIndex = 171;
+            this.btn_ViewPDFConstanciaSituacion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFConstanciaSituacion.ImageOptions.Image")));
+            this.btn_ViewPDFConstanciaSituacion.Location = new System.Drawing.Point(217, 122);
+            this.btn_ViewPDFConstanciaSituacion.Name = "btn_ViewPDFConstanciaSituacion";
+            this.btn_ViewPDFConstanciaSituacion.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFConstanciaSituacion.TabIndex = 171;
+            this.btn_ViewPDFConstanciaSituacion.Click += new System.EventHandler(this.btn_ViewPDFConstanciaSituacion_Click);
             // 
-            // simpleButton12
+            // btn_UpPDFConstancia_Situacion
             // 
-            this.simpleButton12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton12.ImageOptions.Image")));
-            this.simpleButton12.Location = new System.Drawing.Point(186, 122);
-            this.simpleButton12.Name = "simpleButton12";
-            this.simpleButton12.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton12.TabIndex = 170;
+            this.btn_UpPDFConstancia_Situacion.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFConstancia_Situacion.ImageOptions.Image")));
+            this.btn_UpPDFConstancia_Situacion.Location = new System.Drawing.Point(186, 122);
+            this.btn_UpPDFConstancia_Situacion.Name = "btn_UpPDFConstancia_Situacion";
+            this.btn_UpPDFConstancia_Situacion.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFConstancia_Situacion.TabIndex = 170;
+            this.btn_UpPDFConstancia_Situacion.Click += new System.EventHandler(this.btn_UpPDFConstancia_Situacion_Click);
             // 
             // labelControl168
             // 
@@ -7329,29 +8353,32 @@
             this.labelControl168.TabIndex = 169;
             this.labelControl168.Text = "Constancia de Situacion Fiscal";
             // 
-            // simpleButton7
+            // btn_DelOpinionCumplimiento
             // 
-            this.simpleButton7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.ImageOptions.Image")));
-            this.simpleButton7.Location = new System.Drawing.Point(248, 93);
-            this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton7.TabIndex = 168;
+            this.btn_DelOpinionCumplimiento.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DelOpinionCumplimiento.ImageOptions.Image")));
+            this.btn_DelOpinionCumplimiento.Location = new System.Drawing.Point(248, 93);
+            this.btn_DelOpinionCumplimiento.Name = "btn_DelOpinionCumplimiento";
+            this.btn_DelOpinionCumplimiento.Size = new System.Drawing.Size(25, 23);
+            this.btn_DelOpinionCumplimiento.TabIndex = 168;
+            this.btn_DelOpinionCumplimiento.Click += new System.EventHandler(this.btn_DelOpinionCumplimiento_Click);
             // 
-            // simpleButton8
+            // btn_ViewPDFOpinionCumplimiento
             // 
-            this.simpleButton8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton8.ImageOptions.Image")));
-            this.simpleButton8.Location = new System.Drawing.Point(217, 93);
-            this.simpleButton8.Name = "simpleButton8";
-            this.simpleButton8.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton8.TabIndex = 167;
+            this.btn_ViewPDFOpinionCumplimiento.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFOpinionCumplimiento.ImageOptions.Image")));
+            this.btn_ViewPDFOpinionCumplimiento.Location = new System.Drawing.Point(217, 93);
+            this.btn_ViewPDFOpinionCumplimiento.Name = "btn_ViewPDFOpinionCumplimiento";
+            this.btn_ViewPDFOpinionCumplimiento.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFOpinionCumplimiento.TabIndex = 167;
+            this.btn_ViewPDFOpinionCumplimiento.Click += new System.EventHandler(this.btn_ViewPDFOpinionCumplimiento_Click);
             // 
-            // simpleButton9
+            // btn_UpPDFOpinion_Cumplimiento
             // 
-            this.simpleButton9.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton9.ImageOptions.Image")));
-            this.simpleButton9.Location = new System.Drawing.Point(186, 93);
-            this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton9.TabIndex = 166;
+            this.btn_UpPDFOpinion_Cumplimiento.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFOpinion_Cumplimiento.ImageOptions.Image")));
+            this.btn_UpPDFOpinion_Cumplimiento.Location = new System.Drawing.Point(186, 93);
+            this.btn_UpPDFOpinion_Cumplimiento.Name = "btn_UpPDFOpinion_Cumplimiento";
+            this.btn_UpPDFOpinion_Cumplimiento.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFOpinion_Cumplimiento.TabIndex = 166;
+            this.btn_UpPDFOpinion_Cumplimiento.Click += new System.EventHandler(this.btn_UpPDFOpinion_Cumplimiento_Click);
             // 
             // labelControl167
             // 
@@ -7361,29 +8388,32 @@
             this.labelControl167.TabIndex = 165;
             this.labelControl167.Text = "Opinion de Cumplimiento";
             // 
-            // simpleButton4
+            // btn_DelIdentificacion_IFE_INE
             // 
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(248, 64);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton4.TabIndex = 164;
+            this.btn_DelIdentificacion_IFE_INE.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DelIdentificacion_IFE_INE.ImageOptions.Image")));
+            this.btn_DelIdentificacion_IFE_INE.Location = new System.Drawing.Point(248, 64);
+            this.btn_DelIdentificacion_IFE_INE.Name = "btn_DelIdentificacion_IFE_INE";
+            this.btn_DelIdentificacion_IFE_INE.Size = new System.Drawing.Size(25, 23);
+            this.btn_DelIdentificacion_IFE_INE.TabIndex = 164;
+            this.btn_DelIdentificacion_IFE_INE.Click += new System.EventHandler(this.btn_DelIdentificacion_IFE_INE_Click);
             // 
-            // simpleButton5
+            // btn_ViewPDFIdentificacion_IFE_INE
             // 
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(217, 64);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton5.TabIndex = 163;
+            this.btn_ViewPDFIdentificacion_IFE_INE.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFIdentificacion_IFE_INE.ImageOptions.Image")));
+            this.btn_ViewPDFIdentificacion_IFE_INE.Location = new System.Drawing.Point(217, 64);
+            this.btn_ViewPDFIdentificacion_IFE_INE.Name = "btn_ViewPDFIdentificacion_IFE_INE";
+            this.btn_ViewPDFIdentificacion_IFE_INE.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFIdentificacion_IFE_INE.TabIndex = 163;
+            this.btn_ViewPDFIdentificacion_IFE_INE.Click += new System.EventHandler(this.btn_ViewPDFIdentificacion_IFE_INE_Click);
             // 
-            // simpleButton6
+            // btn_UpPDFIdntificacion_IFE_INE
             // 
-            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
-            this.simpleButton6.Location = new System.Drawing.Point(186, 64);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton6.TabIndex = 162;
+            this.btn_UpPDFIdntificacion_IFE_INE.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFIdntificacion_IFE_INE.ImageOptions.Image")));
+            this.btn_UpPDFIdntificacion_IFE_INE.Location = new System.Drawing.Point(186, 64);
+            this.btn_UpPDFIdntificacion_IFE_INE.Name = "btn_UpPDFIdntificacion_IFE_INE";
+            this.btn_UpPDFIdntificacion_IFE_INE.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFIdntificacion_IFE_INE.TabIndex = 162;
+            this.btn_UpPDFIdntificacion_IFE_INE.Click += new System.EventHandler(this.btn_UpPDFIdntificacion_IFE_INE_Click);
             // 
             // labelControl166
             // 
@@ -7393,29 +8423,32 @@
             this.labelControl166.TabIndex = 161;
             this.labelControl166.Text = "Identificacion IFE / INE";
             // 
-            // simpleButton1
+            // btn_DelTarjetaAPEAM
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(248, 35);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton1.TabIndex = 160;
+            this.btn_DelTarjetaAPEAM.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DelTarjetaAPEAM.ImageOptions.Image")));
+            this.btn_DelTarjetaAPEAM.Location = new System.Drawing.Point(248, 35);
+            this.btn_DelTarjetaAPEAM.Name = "btn_DelTarjetaAPEAM";
+            this.btn_DelTarjetaAPEAM.Size = new System.Drawing.Size(25, 23);
+            this.btn_DelTarjetaAPEAM.TabIndex = 160;
+            this.btn_DelTarjetaAPEAM.Click += new System.EventHandler(this.btn_DelTarjetaAPEAM_Click);
             // 
-            // simpleButton2
+            // btn_ViewPDFTarjetaAPEAM
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(217, 35);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton2.TabIndex = 159;
+            this.btn_ViewPDFTarjetaAPEAM.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_ViewPDFTarjetaAPEAM.ImageOptions.Image")));
+            this.btn_ViewPDFTarjetaAPEAM.Location = new System.Drawing.Point(217, 35);
+            this.btn_ViewPDFTarjetaAPEAM.Name = "btn_ViewPDFTarjetaAPEAM";
+            this.btn_ViewPDFTarjetaAPEAM.Size = new System.Drawing.Size(25, 23);
+            this.btn_ViewPDFTarjetaAPEAM.TabIndex = 159;
+            this.btn_ViewPDFTarjetaAPEAM.Click += new System.EventHandler(this.btn_ViewPDFTarjetaAPEAM_Click);
             // 
-            // simpleButton3
+            // btn_UpPDFTarjeta_APEAM
             // 
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(186, 35);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(25, 23);
-            this.simpleButton3.TabIndex = 158;
+            this.btn_UpPDFTarjeta_APEAM.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFTarjeta_APEAM.ImageOptions.Image")));
+            this.btn_UpPDFTarjeta_APEAM.Location = new System.Drawing.Point(186, 35);
+            this.btn_UpPDFTarjeta_APEAM.Name = "btn_UpPDFTarjeta_APEAM";
+            this.btn_UpPDFTarjeta_APEAM.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFTarjeta_APEAM.TabIndex = 158;
+            this.btn_UpPDFTarjeta_APEAM.Click += new System.EventHandler(this.btn_UpPDFTarjeta_APEAM_Click);
             // 
             // labelControl165
             // 
@@ -7424,6 +8457,263 @@
             this.labelControl165.Size = new System.Drawing.Size(72, 13);
             this.labelControl165.TabIndex = 157;
             this.labelControl165.Text = "Tarjeta APEAM";
+            // 
+            // xtraTabPage4
+            // 
+            this.xtraTabPage4.Controls.Add(this.panelControl22);
+            this.xtraTabPage4.Controls.Add(this.panelControl21);
+            this.xtraTabPage4.Name = "xtraTabPage4";
+            this.xtraTabPage4.Padding = new System.Windows.Forms.Padding(5);
+            this.xtraTabPage4.PageVisible = false;
+            this.xtraTabPage4.Size = new System.Drawing.Size(1220, 593);
+            this.xtraTabPage4.Text = "PPD";
+            // 
+            // panelControl22
+            // 
+            this.panelControl22.Controls.Add(this.dtgFacturasREP);
+            this.panelControl22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl22.Location = new System.Drawing.Point(5, 171);
+            this.panelControl22.Name = "panelControl22";
+            this.panelControl22.Padding = new System.Windows.Forms.Padding(10);
+            this.panelControl22.Size = new System.Drawing.Size(1210, 417);
+            this.panelControl22.TabIndex = 1;
+            // 
+            // dtgFacturasREP
+            // 
+            this.dtgFacturasREP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgFacturasREP.Location = new System.Drawing.Point(12, 12);
+            this.dtgFacturasREP.MainView = this.dtgValFacturasREP;
+            this.dtgFacturasREP.MenuManager = this.barManager1;
+            this.dtgFacturasREP.Name = "dtgFacturasREP";
+            this.dtgFacturasREP.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.btn_PDFGrid,
+            this.btn_XMLGrid,
+            this.btn_EliminarREP});
+            this.dtgFacturasREP.Size = new System.Drawing.Size(1186, 393);
+            this.dtgFacturasREP.TabIndex = 0;
+            this.dtgFacturasREP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValFacturasREP});
+            // 
+            // dtgValFacturasREP
+            // 
+            this.dtgValFacturasREP.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn49,
+            this.gridColumn46,
+            this.gridColumn47,
+            this.gridColumn48,
+            this.gridColumn50});
+            this.dtgValFacturasREP.GridControl = this.dtgFacturasREP;
+            this.dtgValFacturasREP.Name = "dtgValFacturasREP";
+            this.dtgValFacturasREP.OptionsView.ShowFooter = true;
+            this.dtgValFacturasREP.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn49
+            // 
+            this.gridColumn49.Caption = "UUID";
+            this.gridColumn49.FieldName = "UUID";
+            this.gridColumn49.Name = "gridColumn49";
+            this.gridColumn49.OptionsColumn.AllowEdit = false;
+            this.gridColumn49.Visible = true;
+            this.gridColumn49.VisibleIndex = 0;
+            // 
+            // gridColumn46
+            // 
+            this.gridColumn46.Caption = "Factura PDF";
+            this.gridColumn46.ColumnEdit = this.btn_PDFGrid;
+            this.gridColumn46.Name = "gridColumn46";
+            this.gridColumn46.Visible = true;
+            this.gridColumn46.VisibleIndex = 1;
+            // 
+            // btn_PDFGrid
+            // 
+            this.btn_PDFGrid.AutoHeight = false;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.btn_PDFGrid.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btn_PDFGrid.Name = "btn_PDFGrid";
+            this.btn_PDFGrid.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btn_PDFGrid.Click += new System.EventHandler(this.btn_PDFGrid_Click);
+            // 
+            // gridColumn47
+            // 
+            this.gridColumn47.Caption = "Factura XML";
+            this.gridColumn47.ColumnEdit = this.btn_XMLGrid;
+            this.gridColumn47.Name = "gridColumn47";
+            this.gridColumn47.Visible = true;
+            this.gridColumn47.VisibleIndex = 2;
+            // 
+            // btn_XMLGrid
+            // 
+            this.btn_XMLGrid.AutoHeight = false;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.btn_XMLGrid.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btn_XMLGrid.Name = "btn_XMLGrid";
+            this.btn_XMLGrid.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btn_XMLGrid.Click += new System.EventHandler(this.btn_XMLGrid_Click);
+            // 
+            // gridColumn48
+            // 
+            this.gridColumn48.Caption = "Total";
+            this.gridColumn48.FieldName = "FacturaTotal";
+            this.gridColumn48.Name = "gridColumn48";
+            this.gridColumn48.OptionsColumn.AllowEdit = false;
+            this.gridColumn48.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "FacturaTotal", "Total={0:c3}")});
+            this.gridColumn48.Visible = true;
+            this.gridColumn48.VisibleIndex = 3;
+            // 
+            // gridColumn50
+            // 
+            this.gridColumn50.Caption = "Eliminar";
+            this.gridColumn50.ColumnEdit = this.btn_EliminarREP;
+            this.gridColumn50.Name = "gridColumn50";
+            this.gridColumn50.Visible = true;
+            this.gridColumn50.VisibleIndex = 4;
+            // 
+            // btn_EliminarREP
+            // 
+            this.btn_EliminarREP.AutoHeight = false;
+            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            this.btn_EliminarREP.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btn_EliminarREP.Name = "btn_EliminarREP";
+            this.btn_EliminarREP.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btn_EliminarREP.Click += new System.EventHandler(this.btn_EliminarREP_Click);
+            // 
+            // panelControl21
+            // 
+            this.panelControl21.Controls.Add(this.groupControl19);
+            this.panelControl21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl21.Location = new System.Drawing.Point(5, 5);
+            this.panelControl21.Name = "panelControl21";
+            this.panelControl21.Padding = new System.Windows.Forms.Padding(10);
+            this.panelControl21.Size = new System.Drawing.Size(1210, 166);
+            this.panelControl21.TabIndex = 0;
+            // 
+            // groupControl19
+            // 
+            this.groupControl19.Controls.Add(this.labelControl181);
+            this.groupControl19.Controls.Add(this.txt_UUID_REP);
+            this.groupControl19.Controls.Add(this.labelControl182);
+            this.groupControl19.Controls.Add(this.txt_Total_REP);
+            this.groupControl19.Controls.Add(this.btn_AgregarREP);
+            this.groupControl19.Controls.Add(this.labelControl175);
+            this.groupControl19.Controls.Add(this.btn_UpPDFREP);
+            this.groupControl19.Controls.Add(this.txt_RutaXMLREP);
+            this.groupControl19.Controls.Add(this.txt_RutaPDFREP);
+            this.groupControl19.Controls.Add(this.btn_UpXMLREP);
+            this.groupControl19.Controls.Add(this.labelControl176);
+            this.groupControl19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl19.Location = new System.Drawing.Point(12, 12);
+            this.groupControl19.Name = "groupControl19";
+            this.groupControl19.Size = new System.Drawing.Size(1186, 142);
+            this.groupControl19.TabIndex = 0;
+            this.groupControl19.Text = "Agregar REP";
+            // 
+            // labelControl181
+            // 
+            this.labelControl181.Location = new System.Drawing.Point(13, 86);
+            this.labelControl181.Name = "labelControl181";
+            this.labelControl181.Size = new System.Drawing.Size(25, 13);
+            this.labelControl181.TabIndex = 172;
+            this.labelControl181.Text = "UUID";
+            // 
+            // txt_UUID_REP
+            // 
+            this.txt_UUID_REP.Location = new System.Drawing.Point(53, 82);
+            this.txt_UUID_REP.Name = "txt_UUID_REP";
+            this.txt_UUID_REP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_UUID_REP.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_UUID_REP.Properties.Appearance.Options.UseFont = true;
+            this.txt_UUID_REP.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_UUID_REP.Properties.ReadOnly = true;
+            this.txt_UUID_REP.Size = new System.Drawing.Size(262, 20);
+            this.txt_UUID_REP.TabIndex = 173;
+            // 
+            // labelControl182
+            // 
+            this.labelControl182.Location = new System.Drawing.Point(13, 112);
+            this.labelControl182.Name = "labelControl182";
+            this.labelControl182.Size = new System.Drawing.Size(28, 13);
+            this.labelControl182.TabIndex = 171;
+            this.labelControl182.Text = "Total:";
+            // 
+            // txt_Total_REP
+            // 
+            this.txt_Total_REP.Enabled = false;
+            this.txt_Total_REP.Location = new System.Drawing.Point(53, 108);
+            this.txt_Total_REP.MenuManager = this.barManager1;
+            this.txt_Total_REP.Name = "txt_Total_REP";
+            this.txt_Total_REP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txt_Total_REP.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.txt_Total_REP.Properties.Appearance.Options.UseFont = true;
+            this.txt_Total_REP.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_Total_REP.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_Total_REP.Properties.MaskSettings.Set("mask", "c3");
+            this.txt_Total_REP.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_Total_REP.Size = new System.Drawing.Size(94, 20);
+            this.txt_Total_REP.TabIndex = 170;
+            // 
+            // btn_AgregarREP
+            // 
+            this.btn_AgregarREP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_AgregarREP.ImageOptions.Image")));
+            this.btn_AgregarREP.Location = new System.Drawing.Point(366, 35);
+            this.btn_AgregarREP.Name = "btn_AgregarREP";
+            this.btn_AgregarREP.Size = new System.Drawing.Size(90, 36);
+            this.btn_AgregarREP.TabIndex = 117;
+            this.btn_AgregarREP.Text = "Agregar";
+            this.btn_AgregarREP.Click += new System.EventHandler(this.btn_AgregarREP_Click);
+            // 
+            // labelControl175
+            // 
+            this.labelControl175.Location = new System.Drawing.Point(13, 60);
+            this.labelControl175.Name = "labelControl175";
+            this.labelControl175.Size = new System.Drawing.Size(19, 13);
+            this.labelControl175.TabIndex = 114;
+            this.labelControl175.Text = "XML";
+            // 
+            // btn_UpPDFREP
+            // 
+            this.btn_UpPDFREP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpPDFREP.ImageOptions.Image")));
+            this.btn_UpPDFREP.Location = new System.Drawing.Point(326, 29);
+            this.btn_UpPDFREP.Name = "btn_UpPDFREP";
+            this.btn_UpPDFREP.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpPDFREP.TabIndex = 113;
+            this.btn_UpPDFREP.Click += new System.EventHandler(this.btn_UpPDFREP_Click);
+            // 
+            // txt_RutaXMLREP
+            // 
+            this.txt_RutaXMLREP.Location = new System.Drawing.Point(53, 56);
+            this.txt_RutaXMLREP.Name = "txt_RutaXMLREP";
+            this.txt_RutaXMLREP.Properties.ReadOnly = true;
+            this.txt_RutaXMLREP.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaXMLREP.TabIndex = 115;
+            // 
+            // txt_RutaPDFREP
+            // 
+            this.txt_RutaPDFREP.Location = new System.Drawing.Point(53, 30);
+            this.txt_RutaPDFREP.Name = "txt_RutaPDFREP";
+            this.txt_RutaPDFREP.Properties.ReadOnly = true;
+            this.txt_RutaPDFREP.Size = new System.Drawing.Size(262, 20);
+            this.txt_RutaPDFREP.TabIndex = 112;
+            // 
+            // btn_UpXMLREP
+            // 
+            this.btn_UpXMLREP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_UpXMLREP.ImageOptions.Image")));
+            this.btn_UpXMLREP.Location = new System.Drawing.Point(326, 55);
+            this.btn_UpXMLREP.Name = "btn_UpXMLREP";
+            this.btn_UpXMLREP.Size = new System.Drawing.Size(25, 23);
+            this.btn_UpXMLREP.TabIndex = 116;
+            this.btn_UpXMLREP.Click += new System.EventHandler(this.btn_UpXMLREP_Click);
+            // 
+            // labelControl176
+            // 
+            this.labelControl176.Location = new System.Drawing.Point(13, 34);
+            this.labelControl176.Name = "labelControl176";
+            this.labelControl176.Size = new System.Drawing.Size(19, 13);
+            this.labelControl176.TabIndex = 111;
+            this.labelControl176.Text = "PDF";
             // 
             // OpenDialog
             // 
@@ -7439,21 +8729,11 @@
             this.gridColumn38.Visible = true;
             this.gridColumn38.VisibleIndex = 11;
             // 
-            // btn_ActualizarAcopiador
-            // 
-            this.btn_ActualizarAcopiador.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
-            this.btn_ActualizarAcopiador.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btn_ActualizarAcopiador.Location = new System.Drawing.Point(700, 62);
-            this.btn_ActualizarAcopiador.Name = "btn_ActualizarAcopiador";
-            this.btn_ActualizarAcopiador.Size = new System.Drawing.Size(25, 25);
-            this.btn_ActualizarAcopiador.TabIndex = 135;
-            this.btn_ActualizarAcopiador.Click += new System.EventHandler(this.btn_ActualizarAcopiador_Click);
-            // 
             // Frm_Cosecha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 807);
+            this.ClientSize = new System.Drawing.Size(1416, 793);
             this.Controls.Add(this.navigationPane1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -7480,6 +8760,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Nombre_ase.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Poliza_ase.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chk_Autorizado_USA.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Estado_Huerta.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SAGARPA.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_IdCosecha.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Temporada.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TipoCorte.Properties)).EndInit();
@@ -7518,8 +8803,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Recepcion.Properties)).EndInit();
             this.navigationPage3.ResumeLayout(false);
             this.navigationPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit15.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit15.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaContratocomercializadora.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaContratocomercializadora.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_EmpresaComercializadora.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -7617,6 +8902,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl17)).EndInit();
             this.panelControl17.ResumeLayout(false);
             this.panelControl17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID_Salida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total_Salida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SubTotal_Salida.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MetodoPago_Salida.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteSalida.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteSalida.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteSalida.Properties)).EndInit();
@@ -7643,6 +8932,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl16)).EndInit();
             this.panelControl16.ResumeLayout(false);
             this.panelControl16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID_Apoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total_Apoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SubTotal_Apoyo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MetodoPago_Apoyo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteApoyo.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteApoyo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteApoyo.Properties)).EndInit();
@@ -7669,6 +8962,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl15)).EndInit();
             this.panelControl15.ResumeLayout(false);
             this.panelControl15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total_Dia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SubTotal_Dia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MetodoPago_Dia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID_Dia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteDia.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteDia.Properties)).EndInit();
@@ -7695,6 +8992,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl12)).EndInit();
             this.panelControl12.ResumeLayout(false);
             this.panelControl12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID_Kilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total_Kilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SubTotal_Kilos.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MetodoPago_Kilos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteKilos.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaCorteKilos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteCorteKilos.Properties)).EndInit();
@@ -7723,6 +9024,17 @@
             this.xtraTabControl3.ResumeLayout(false);
             this.xtraTabPage5.ResumeLayout(false);
             this.xtraScrollableControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl20)).EndInit();
+            this.panelControl20.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgServicios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValServicios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
+            this.groupControl8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl13)).EndInit();
+            this.panelControl13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
+            this.panelControl11.ResumeLayout(false);
+            this.panelControl11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).EndInit();
             this.groupControl9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl19)).EndInit();
@@ -7734,13 +9046,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioCaja.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioSalidaForanea.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioServicio.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
-            this.groupControl8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl13)).EndInit();
-            this.panelControl13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
-            this.panelControl11.ResumeLayout(false);
-            this.panelControl11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_TipoCamion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Descuentos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CargosExtra.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ObservacionesAcarreo.Properties)).EndInit();
@@ -7763,6 +9069,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl14)).EndInit();
             this.panelControl14.ResumeLayout(false);
             this.panelControl14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID_Acarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total_Acarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SubTotal_Acarreo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MetodoPago_Acarreo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaAcarreo.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaAcarreo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteAcarreo.Properties)).EndInit();
@@ -7808,6 +9118,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl13)).EndInit();
             this.groupControl13.ResumeLayout(false);
             this.groupControl13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Salto_REP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SumaTotal_REP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_SubTotal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_MetodoPago.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaProductor.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaProgramaProductor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chk_RetencionFleteProductor.Properties)).EndInit();
@@ -7831,20 +9147,37 @@
             ((System.ComponentModel.ISupportInitialize)(this.dt_FechaFacturaProductor.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit12.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit12.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit13.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit13.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit14.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit14.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit10.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit10.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit9.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit8.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaContratoGEST.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaContratoGEST.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaContratoTerceros.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaContratoTerceros.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaClaveInterbancaria.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaClaveInterbancaria.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaConstanciaSituacion.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaConstanciaSituacion.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaOPinionCumplimiento.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaOPinionCumplimiento.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaIdentificacion_IFE_INE.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaIdentificacion_IFE_INE.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaTarjetaAPEAM.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_FechaTarjetaAPEAM.Properties)).EndInit();
+            this.xtraTabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl22)).EndInit();
+            this.panelControl22.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgFacturasREP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValFacturasREP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_PDFGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_XMLGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_EliminarREP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl21)).EndInit();
+            this.panelControl21.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl19)).EndInit();
+            this.groupControl19.ResumeLayout(false);
+            this.groupControl19.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UUID_REP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Total_REP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaXMLREP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_RutaPDFREP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -8400,48 +9733,145 @@
         private DevExpress.XtraEditors.LabelControl labelControl163;
         private DevExpress.XtraEditors.DateEdit dt_FechaProgramaProductor;
         private DevExpress.XtraEditors.LabelControl labelControl164;
-        private DevExpress.XtraEditors.SimpleButton simpleButton25;
-        private DevExpress.XtraEditors.SimpleButton simpleButton26;
-        private DevExpress.XtraEditors.SimpleButton simpleButton27;
+        private DevExpress.XtraEditors.SimpleButton btn_DelContratoComercializadora;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFComercializadora;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFComercializadora;
         private DevExpress.XtraEditors.LabelControl labelControl173;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton16;
-        private DevExpress.XtraEditors.SimpleButton simpleButton17;
-        private DevExpress.XtraEditors.SimpleButton simpleButton18;
+        private DevExpress.XtraEditors.SimpleButton btn_DelContratoGEST;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFContratoGEST;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFContratoGEST;
         private DevExpress.XtraEditors.LabelControl labelControl170;
-        private DevExpress.XtraEditors.SimpleButton simpleButton19;
-        private DevExpress.XtraEditors.SimpleButton simpleButton20;
-        private DevExpress.XtraEditors.SimpleButton simpleButton21;
+        private DevExpress.XtraEditors.SimpleButton btn_DelContratoTerceros;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFContratoTerceros;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFContratoTerceros;
         private DevExpress.XtraEditors.LabelControl labelControl171;
-        private DevExpress.XtraEditors.SimpleButton simpleButton22;
-        private DevExpress.XtraEditors.SimpleButton simpleButton23;
-        private DevExpress.XtraEditors.SimpleButton simpleButton24;
+        private DevExpress.XtraEditors.SimpleButton btn_DelClaveInterbancaria;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFClaveInterbancaria;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFClaveInterbancaria;
         private DevExpress.XtraEditors.LabelControl labelControl172;
-        private DevExpress.XtraEditors.SimpleButton simpleButton10;
-        private DevExpress.XtraEditors.SimpleButton simpleButton11;
-        private DevExpress.XtraEditors.SimpleButton simpleButton12;
+        private DevExpress.XtraEditors.SimpleButton btn_DelConstanciaSituacion;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFConstanciaSituacion;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFConstancia_Situacion;
         private DevExpress.XtraEditors.LabelControl labelControl168;
-        private DevExpress.XtraEditors.SimpleButton simpleButton7;
-        private DevExpress.XtraEditors.SimpleButton simpleButton8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton9;
+        private DevExpress.XtraEditors.SimpleButton btn_DelOpinionCumplimiento;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFOpinionCumplimiento;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFOpinion_Cumplimiento;
         private DevExpress.XtraEditors.LabelControl labelControl167;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton btn_DelIdentificacion_IFE_INE;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFIdentificacion_IFE_INE;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFIdntificacion_IFE_INE;
         private DevExpress.XtraEditors.LabelControl labelControl166;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btn_DelTarjetaAPEAM;
+        private DevExpress.XtraEditors.SimpleButton btn_ViewPDFTarjetaAPEAM;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFTarjeta_APEAM;
         private DevExpress.XtraEditors.LabelControl labelControl165;
-        private DevExpress.XtraEditors.DateEdit dateEdit15;
+        private DevExpress.XtraEditors.DateEdit dt_FechaContratocomercializadora;
         private DevExpress.XtraEditors.LabelControl labelControl169;
-        private DevExpress.XtraEditors.DateEdit dateEdit12;
-        private DevExpress.XtraEditors.DateEdit dateEdit13;
-        private DevExpress.XtraEditors.DateEdit dateEdit14;
-        private DevExpress.XtraEditors.DateEdit dateEdit10;
-        private DevExpress.XtraEditors.DateEdit dateEdit9;
-        private DevExpress.XtraEditors.DateEdit dateEdit8;
-        private DevExpress.XtraEditors.DateEdit dateEdit7;
+        private DevExpress.XtraEditors.DateEdit dt_FechaContratoGEST;
+        private DevExpress.XtraEditors.DateEdit dt_FechaContratoTerceros;
+        private DevExpress.XtraEditors.DateEdit dt_FechaClaveInterbancaria;
+        private DevExpress.XtraEditors.DateEdit dt_FechaConstanciaSituacion;
+        private DevExpress.XtraEditors.DateEdit dt_FechaOPinionCumplimiento;
+        private DevExpress.XtraEditors.DateEdit dt_FechaIdentificacion_IFE_INE;
+        private DevExpress.XtraEditors.DateEdit dt_FechaTarjetaAPEAM;
         private DevExpress.XtraEditors.SimpleButton btn_ActualizarAcopiador;
+        private DevExpress.XtraEditors.LabelControl labelControl174;
+        private DevExpress.XtraEditors.TextEdit txt_TipoCamion;
+        private DevExpress.XtraEditors.PanelControl panelControl20;
+        private DevExpress.XtraGrid.GridControl dtgServicios;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValServicios;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn40;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn42;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn44;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn45;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
+        private DevExpress.XtraEditors.PanelControl panelControl22;
+        private DevExpress.XtraGrid.GridControl dtgFacturasREP;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValFacturasREP;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn46;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn47;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn48;
+        private DevExpress.XtraEditors.PanelControl panelControl21;
+        private DevExpress.XtraEditors.GroupControl groupControl19;
+        private DevExpress.XtraEditors.SimpleButton btn_AgregarREP;
+        private DevExpress.XtraEditors.LabelControl labelControl175;
+        private DevExpress.XtraEditors.SimpleButton btn_UpPDFREP;
+        private DevExpress.XtraEditors.TextEdit txt_RutaXMLREP;
+        private DevExpress.XtraEditors.TextEdit txt_RutaPDFREP;
+        private DevExpress.XtraEditors.SimpleButton btn_UpXMLREP;
+        private DevExpress.XtraEditors.LabelControl labelControl176;
+        private DevExpress.XtraEditors.LabelControl labelControl177;
+        private DevExpress.XtraEditors.TextEdit txt_MetodoPago;
+        private DevExpress.XtraEditors.LabelControl labelControl179;
+        private DevExpress.XtraEditors.TextEdit txt_Total;
+        private DevExpress.XtraEditors.LabelControl labelControl178;
+        private DevExpress.XtraEditors.TextEdit txt_SubTotal;
+        private DevExpress.XtraEditors.LabelControl labelControl180;
+        private DevExpress.XtraEditors.TextEdit txt_UUID;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn49;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_PDFGrid;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_XMLGrid;
+        private DevExpress.XtraEditors.LabelControl labelControl181;
+        private DevExpress.XtraEditors.TextEdit txt_UUID_REP;
+        private DevExpress.XtraEditors.LabelControl labelControl182;
+        private DevExpress.XtraEditors.TextEdit txt_Total_REP;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn50;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btn_EliminarREP;
+        private DevExpress.XtraEditors.LabelControl labelControl183;
+        private DevExpress.XtraEditors.TextEdit txt_SAGARPA;
+        private DevExpress.XtraEditors.LabelControl labelControl184;
+        private DevExpress.XtraEditors.TextEdit txt_Estado_Huerta;
+        private DevExpress.XtraEditors.CheckEdit chk_Autorizado_USA;
+        private DevExpress.XtraEditors.LabelControl labelControl186;
+        private DevExpress.XtraEditors.TextEdit txt_Nombre_ase;
+        private DevExpress.XtraEditors.LabelControl labelControl185;
+        private DevExpress.XtraEditors.TextEdit txt_Poliza_ase;
+        private DevExpress.XtraEditors.LabelControl labelControl202;
+        private DevExpress.XtraEditors.TextEdit txt_UUID_Salida;
+        private DevExpress.XtraEditors.LabelControl labelControl199;
+        private DevExpress.XtraEditors.TextEdit txt_Total_Salida;
+        private DevExpress.XtraEditors.LabelControl labelControl200;
+        private DevExpress.XtraEditors.TextEdit txt_SubTotal_Salida;
+        private DevExpress.XtraEditors.LabelControl labelControl201;
+        private DevExpress.XtraEditors.TextEdit txt_MetodoPago_Salida;
+        private DevExpress.XtraEditors.LabelControl labelControl198;
+        private DevExpress.XtraEditors.TextEdit txt_UUID_Apoyo;
+        private DevExpress.XtraEditors.LabelControl labelControl195;
+        private DevExpress.XtraEditors.TextEdit txt_Total_Apoyo;
+        private DevExpress.XtraEditors.LabelControl labelControl196;
+        private DevExpress.XtraEditors.TextEdit txt_SubTotal_Apoyo;
+        private DevExpress.XtraEditors.LabelControl labelControl197;
+        private DevExpress.XtraEditors.TextEdit txt_MetodoPago_Apoyo;
+        private DevExpress.XtraEditors.LabelControl labelControl192;
+        private DevExpress.XtraEditors.TextEdit txt_Total_Dia;
+        private DevExpress.XtraEditors.LabelControl labelControl193;
+        private DevExpress.XtraEditors.TextEdit txt_SubTotal_Dia;
+        private DevExpress.XtraEditors.LabelControl labelControl194;
+        private DevExpress.XtraEditors.TextEdit txt_MetodoPago_Dia;
+        private DevExpress.XtraEditors.LabelControl labelControl191;
+        private DevExpress.XtraEditors.TextEdit txt_UUID_Dia;
+        private DevExpress.XtraEditors.LabelControl labelControl190;
+        private DevExpress.XtraEditors.TextEdit txt_UUID_Kilos;
+        private DevExpress.XtraEditors.LabelControl labelControl187;
+        private DevExpress.XtraEditors.TextEdit txt_Total_Kilos;
+        private DevExpress.XtraEditors.LabelControl labelControl188;
+        private DevExpress.XtraEditors.TextEdit txt_SubTotal_Kilos;
+        private DevExpress.XtraEditors.LabelControl labelControl189;
+        private DevExpress.XtraEditors.TextEdit txt_MetodoPago_Kilos;
+        private DevExpress.XtraEditors.LabelControl labelControl206;
+        private DevExpress.XtraEditors.TextEdit txt_UUID_Acarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl203;
+        private DevExpress.XtraEditors.TextEdit txt_Total_Acarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl204;
+        private DevExpress.XtraEditors.TextEdit txt_SubTotal_Acarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl205;
+        private DevExpress.XtraEditors.TextEdit txt_MetodoPago_Acarreo;
+        private DevExpress.XtraEditors.LabelControl labelControl208;
+        private DevExpress.XtraEditors.TextEdit txt_Salto_REP;
+        private DevExpress.XtraEditors.LabelControl labelControl207;
+        private DevExpress.XtraEditors.TextEdit txt_SumaTotal_REP;
     }
 }

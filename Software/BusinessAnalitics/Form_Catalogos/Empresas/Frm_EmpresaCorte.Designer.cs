@@ -72,6 +72,7 @@
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dtgDomicilio = new DevExpress.XtraGrid.GridControl();
             this.dtgValDomicilio = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -109,6 +110,7 @@
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
@@ -142,8 +144,6 @@
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.txtMenorakg = new DevExpress.XtraEditors.TextEdit();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -613,6 +613,15 @@
             this.xtraTabPage2.Size = new System.Drawing.Size(797, 457);
             this.xtraTabPage2.Text = "Domicilio";
             // 
+            // labelControl23
+            // 
+            this.labelControl23.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl23.Appearance.Options.UseFont = true;
+            this.labelControl23.Location = new System.Drawing.Point(8, 10);
+            this.labelControl23.Name = "labelControl23";
+            this.labelControl23.Size = new System.Drawing.Size(0, 13);
+            this.labelControl23.TabIndex = 20;
+            // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.dtgDomicilio);
@@ -952,6 +961,15 @@
             this.xtraTabPage3.Size = new System.Drawing.Size(797, 457);
             this.xtraTabPage3.Text = "Servicios";
             // 
+            // labelControl30
+            // 
+            this.labelControl30.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl30.Appearance.Options.UseFont = true;
+            this.labelControl30.Location = new System.Drawing.Point(8, 10);
+            this.labelControl30.Name = "labelControl30";
+            this.labelControl30.Size = new System.Drawing.Size(0, 13);
+            this.labelControl30.TabIndex = 21;
+            // 
             // groupControl3
             // 
             this.groupControl3.Controls.Add(this.groupControl5);
@@ -1049,8 +1067,8 @@
             this.txtPreciokg.Location = new System.Drawing.Point(135, 48);
             this.txtPreciokg.MenuManager = this.barManager1;
             this.txtPreciokg.Name = "txtPreciokg";
-            this.txtPreciokg.Properties.Mask.EditMask = "c2";
-            this.txtPreciokg.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPreciokg.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPreciokg.Properties.MaskSettings.Set("mask", "c4");
             this.txtPreciokg.Properties.NullText = "0";
             this.txtPreciokg.Properties.NullValuePrompt = "0";
             this.txtPreciokg.Size = new System.Drawing.Size(100, 20);
@@ -1151,8 +1169,8 @@
             this.txtPrecioCuadrillaA.Location = new System.Drawing.Point(135, 46);
             this.txtPrecioCuadrillaA.MenuManager = this.barManager1;
             this.txtPrecioCuadrillaA.Name = "txtPrecioCuadrillaA";
-            this.txtPrecioCuadrillaA.Properties.Mask.EditMask = "c2";
-            this.txtPrecioCuadrillaA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtPrecioCuadrillaA.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPrecioCuadrillaA.Properties.MaskSettings.Set("mask", "c4");
             this.txtPrecioCuadrillaA.Properties.NullText = "0";
             this.txtPrecioCuadrillaA.Properties.NullValuePrompt = "0";
             this.txtPrecioCuadrillaA.Size = new System.Drawing.Size(100, 20);
@@ -1310,24 +1328,6 @@
             this.labelControl24.Size = new System.Drawing.Size(60, 13);
             this.labelControl24.TabIndex = 0;
             this.labelControl24.Text = "Menor a kg: ";
-            // 
-            // labelControl23
-            // 
-            this.labelControl23.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl23.Appearance.Options.UseFont = true;
-            this.labelControl23.Location = new System.Drawing.Point(8, 10);
-            this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(0, 13);
-            this.labelControl23.TabIndex = 20;
-            // 
-            // labelControl30
-            // 
-            this.labelControl30.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl30.Appearance.Options.UseFont = true;
-            this.labelControl30.Location = new System.Drawing.Point(8, 10);
-            this.labelControl30.Name = "labelControl30";
-            this.labelControl30.Size = new System.Drawing.Size(0, 13);
-            this.labelControl30.TabIndex = 21;
             // 
             // Frm_EmpresaCorte
             // 
