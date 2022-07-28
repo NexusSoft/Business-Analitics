@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem2 = new DevExpress.Utils.ToolTipSeparatorItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cosecha));
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem1 = new DevExpress.Utils.ToolTipSeparatorItem();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
@@ -298,6 +298,7 @@
             this.xtraScrollableControl4 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl18 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl17 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_CalcularFechaPagoS = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl202 = new DevExpress.XtraEditors.LabelControl();
             this.txt_UUID_Salida = new DevExpress.XtraEditors.TextEdit();
             this.labelControl199 = new DevExpress.XtraEditors.LabelControl();
@@ -344,6 +345,7 @@
             this.labelControl125 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl17 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl16 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_CalcularFechaPagoA = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl198 = new DevExpress.XtraEditors.LabelControl();
             this.txt_UUID_Apoyo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl195 = new DevExpress.XtraEditors.LabelControl();
@@ -390,6 +392,7 @@
             this.labelControl117 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl16 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl15 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_CalcularFechaPagoD = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl192 = new DevExpress.XtraEditors.LabelControl();
             this.txt_Total_Dia = new DevExpress.XtraEditors.TextEdit();
             this.labelControl193 = new DevExpress.XtraEditors.LabelControl();
@@ -436,6 +439,7 @@
             this.labelControl109 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl15 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl12 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_CalcularFechaPagoK = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl190 = new DevExpress.XtraEditors.LabelControl();
             this.txt_UUID_Kilos = new DevExpress.XtraEditors.TextEdit();
             this.labelControl187 = new DevExpress.XtraEditors.LabelControl();
@@ -548,6 +552,7 @@
             this.tp_FacturaAcarreo = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl14 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl14 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_CalcularFechaPagoAC = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl206 = new DevExpress.XtraEditors.LabelControl();
             this.txt_UUID_Acarreo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl203 = new DevExpress.XtraEditors.LabelControl();
@@ -737,6 +742,7 @@
             this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_RecargarTem = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
@@ -1222,18 +1228,18 @@
             this.btn_CerrarOrden.Id = 71;
             this.btn_CerrarOrden.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CerrarOrden.ImageOptions.SvgImage")));
             this.btn_CerrarOrden.Name = "btn_CerrarOrden";
-            toolTipTitleItem1.Text = "Importar datos";
-            toolTipItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "Si actualiza la informacion se sustituira por valores capturados en inventum";
-            toolTipTitleItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
-            toolTipTitleItem2.LeftIndent = 6;
-            toolTipTitleItem2.Text = "Business Analitics ";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            superToolTip1.Items.Add(toolTipSeparatorItem1);
-            superToolTip1.Items.Add(toolTipTitleItem2);
-            this.btn_CerrarOrden.SuperTip = superToolTip1;
+            toolTipTitleItem3.Text = "Importar datos";
+            toolTipItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipItem2.LeftIndent = 6;
+            toolTipItem2.Text = "Si actualiza la informacion se sustituira por valores capturados en inventum";
+            toolTipTitleItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            toolTipTitleItem4.LeftIndent = 6;
+            toolTipTitleItem4.Text = "Business Analitics ";
+            superToolTip2.Items.Add(toolTipTitleItem3);
+            superToolTip2.Items.Add(toolTipItem2);
+            superToolTip2.Items.Add(toolTipSeparatorItem2);
+            superToolTip2.Items.Add(toolTipTitleItem4);
+            this.btn_CerrarOrden.SuperTip = superToolTip2;
             this.btn_CerrarOrden.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_CerrarOrden_ItemClick);
             // 
             // btn_AbrirOrden
@@ -1348,6 +1354,7 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.btn_RecargarTem);
             this.panelControl2.Controls.Add(this.cmb_Temporada);
             this.panelControl2.Controls.Add(this.labelControl126);
             this.panelControl2.Controls.Add(this.dtgCosecha);
@@ -1377,7 +1384,7 @@
             // 
             // labelControl126
             // 
-            this.labelControl126.Location = new System.Drawing.Point(514, 28);
+            this.labelControl126.Location = new System.Drawing.Point(514, 23);
             this.labelControl126.Name = "labelControl126";
             this.labelControl126.Size = new System.Drawing.Size(54, 13);
             this.labelControl126.TabIndex = 23;
@@ -3848,6 +3855,7 @@
             // 
             // panelControl17
             // 
+            this.panelControl17.Controls.Add(this.btn_CalcularFechaPagoS);
             this.panelControl17.Controls.Add(this.labelControl202);
             this.panelControl17.Controls.Add(this.txt_UUID_Salida);
             this.panelControl17.Controls.Add(this.labelControl199);
@@ -3897,6 +3905,16 @@
             this.panelControl17.Name = "panelControl17";
             this.panelControl17.Size = new System.Drawing.Size(719, 305);
             this.panelControl17.TabIndex = 56;
+            // 
+            // btn_CalcularFechaPagoS
+            // 
+            this.btn_CalcularFechaPagoS.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_CalcularFechaPagoS.ImageOptions.Image")));
+            this.btn_CalcularFechaPagoS.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btn_CalcularFechaPagoS.Location = new System.Drawing.Point(414, 243);
+            this.btn_CalcularFechaPagoS.Name = "btn_CalcularFechaPagoS";
+            this.btn_CalcularFechaPagoS.Size = new System.Drawing.Size(25, 25);
+            this.btn_CalcularFechaPagoS.TabIndex = 198;
+            this.btn_CalcularFechaPagoS.Click += new System.EventHandler(this.btn_CalcularFechaPagoS_Click);
             // 
             // labelControl202
             // 
@@ -4001,6 +4019,8 @@
             this.dt_FechaProgramaCorteSalida.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaProgramaCorteSalida.Size = new System.Drawing.Size(99, 20);
             this.dt_FechaProgramaCorteSalida.TabIndex = 163;
+            this.dt_FechaProgramaCorteSalida.EditValueChanged += new System.EventHandler(this.dt_FechaProgramaCorteSalida_EditValueChanged);
+            this.dt_FechaProgramaCorteSalida.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.dt_FechaProgramaCorteSalida_EditValueChanging);
             // 
             // labelControl162
             // 
@@ -4206,8 +4226,6 @@
             this.dt_FechaPagoCorteSalida.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaPagoCorteSalida.Size = new System.Drawing.Size(99, 20);
             this.dt_FechaPagoCorteSalida.TabIndex = 97;
-            this.dt_FechaPagoCorteSalida.EditValueChanged += new System.EventHandler(this.dt_FechaPagoCorteSalida_EditValueChanged);
-            this.dt_FechaPagoCorteSalida.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.dt_FechaPagoCorteSalida_EditValueChanging);
             this.dt_FechaPagoCorteSalida.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dt_FechaPagoCorteSalida_KeyDown);
             // 
             // dt_FechaFacturaCorteSalida
@@ -4369,6 +4387,7 @@
             // 
             // panelControl16
             // 
+            this.panelControl16.Controls.Add(this.btn_CalcularFechaPagoA);
             this.panelControl16.Controls.Add(this.labelControl198);
             this.panelControl16.Controls.Add(this.txt_UUID_Apoyo);
             this.panelControl16.Controls.Add(this.labelControl195);
@@ -4418,6 +4437,16 @@
             this.panelControl16.Name = "panelControl16";
             this.panelControl16.Size = new System.Drawing.Size(719, 309);
             this.panelControl16.TabIndex = 56;
+            // 
+            // btn_CalcularFechaPagoA
+            // 
+            this.btn_CalcularFechaPagoA.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_CalcularFechaPagoA.ImageOptions.Image")));
+            this.btn_CalcularFechaPagoA.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btn_CalcularFechaPagoA.Location = new System.Drawing.Point(415, 243);
+            this.btn_CalcularFechaPagoA.Name = "btn_CalcularFechaPagoA";
+            this.btn_CalcularFechaPagoA.Size = new System.Drawing.Size(25, 25);
+            this.btn_CalcularFechaPagoA.TabIndex = 192;
+            this.btn_CalcularFechaPagoA.Click += new System.EventHandler(this.btn_CalcularFechaPagoA_Click);
             // 
             // labelControl198
             // 
@@ -4522,6 +4551,8 @@
             this.dt_FechaProgramaCorteApoyo.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaProgramaCorteApoyo.Size = new System.Drawing.Size(99, 20);
             this.dt_FechaProgramaCorteApoyo.TabIndex = 162;
+            this.dt_FechaProgramaCorteApoyo.EditValueChanged += new System.EventHandler(this.dt_FechaProgramaCorteApoyo_EditValueChanged);
+            this.dt_FechaProgramaCorteApoyo.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.dt_FechaProgramaCorteApoyo_EditValueChanging);
             // 
             // labelControl161
             // 
@@ -4727,8 +4758,6 @@
             this.dt_FechaPagoCorteApoyo.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaPagoCorteApoyo.Size = new System.Drawing.Size(99, 20);
             this.dt_FechaPagoCorteApoyo.TabIndex = 97;
-            this.dt_FechaPagoCorteApoyo.EditValueChanged += new System.EventHandler(this.dt_FechaPagoCorteApoyo_EditValueChanged);
-            this.dt_FechaPagoCorteApoyo.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.dt_FechaPagoCorteApoyo_EditValueChanging);
             this.dt_FechaPagoCorteApoyo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dt_FechaPagoCorteApoyo_KeyDown);
             // 
             // dt_FechaFacturaCorteApoyo
@@ -4891,6 +4920,7 @@
             // 
             // panelControl15
             // 
+            this.panelControl15.Controls.Add(this.btn_CalcularFechaPagoD);
             this.panelControl15.Controls.Add(this.labelControl192);
             this.panelControl15.Controls.Add(this.txt_Total_Dia);
             this.panelControl15.Controls.Add(this.labelControl193);
@@ -4940,6 +4970,16 @@
             this.panelControl15.Name = "panelControl15";
             this.panelControl15.Size = new System.Drawing.Size(719, 309);
             this.panelControl15.TabIndex = 56;
+            // 
+            // btn_CalcularFechaPagoD
+            // 
+            this.btn_CalcularFechaPagoD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_CalcularFechaPagoD.ImageOptions.Image")));
+            this.btn_CalcularFechaPagoD.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btn_CalcularFechaPagoD.Location = new System.Drawing.Point(414, 244);
+            this.btn_CalcularFechaPagoD.Name = "btn_CalcularFechaPagoD";
+            this.btn_CalcularFechaPagoD.Size = new System.Drawing.Size(25, 25);
+            this.btn_CalcularFechaPagoD.TabIndex = 184;
+            this.btn_CalcularFechaPagoD.Click += new System.EventHandler(this.btn_CalcularFechaPagoD_Click);
             // 
             // labelControl192
             // 
@@ -5044,6 +5084,8 @@
             this.dt_FechaProgramaCorteDia.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaProgramaCorteDia.Size = new System.Drawing.Size(99, 20);
             this.dt_FechaProgramaCorteDia.TabIndex = 161;
+            this.dt_FechaProgramaCorteDia.EditValueChanged += new System.EventHandler(this.dt_FechaProgramaCorteDia_EditValueChanged);
+            this.dt_FechaProgramaCorteDia.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.dt_FechaProgramaCorteDia_EditValueChanging);
             // 
             // labelControl160
             // 
@@ -5249,8 +5291,6 @@
             this.dt_FechaPagoCorteDia.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaPagoCorteDia.Size = new System.Drawing.Size(99, 20);
             this.dt_FechaPagoCorteDia.TabIndex = 97;
-            this.dt_FechaPagoCorteDia.EditValueChanged += new System.EventHandler(this.dt_FechaPagoCorteDia_EditValueChanged);
-            this.dt_FechaPagoCorteDia.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.dt_FechaPagoCorteDia_EditValueChanging);
             this.dt_FechaPagoCorteDia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dt_FechaPagoCorteDia_KeyDown);
             // 
             // dt_FechaFacturaCorteDia
@@ -5413,6 +5453,7 @@
             // 
             // panelControl12
             // 
+            this.panelControl12.Controls.Add(this.btn_CalcularFechaPagoK);
             this.panelControl12.Controls.Add(this.labelControl190);
             this.panelControl12.Controls.Add(this.txt_UUID_Kilos);
             this.panelControl12.Controls.Add(this.labelControl187);
@@ -5462,6 +5503,16 @@
             this.panelControl12.Name = "panelControl12";
             this.panelControl12.Size = new System.Drawing.Size(719, 301);
             this.panelControl12.TabIndex = 56;
+            // 
+            // btn_CalcularFechaPagoK
+            // 
+            this.btn_CalcularFechaPagoK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_CalcularFechaPagoK.ImageOptions.Image")));
+            this.btn_CalcularFechaPagoK.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btn_CalcularFechaPagoK.Location = new System.Drawing.Point(414, 243);
+            this.btn_CalcularFechaPagoK.Name = "btn_CalcularFechaPagoK";
+            this.btn_CalcularFechaPagoK.Size = new System.Drawing.Size(25, 25);
+            this.btn_CalcularFechaPagoK.TabIndex = 176;
+            this.btn_CalcularFechaPagoK.Click += new System.EventHandler(this.btn_CalcularFechaPagoK_Click);
             // 
             // labelControl190
             // 
@@ -5566,6 +5617,8 @@
             this.dt_FechaProgramaCorteKilos.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaProgramaCorteKilos.Size = new System.Drawing.Size(99, 20);
             this.dt_FechaProgramaCorteKilos.TabIndex = 159;
+            this.dt_FechaProgramaCorteKilos.EditValueChanged += new System.EventHandler(this.dt_FechaProgramaCorteKilos_EditValueChanged);
+            this.dt_FechaProgramaCorteKilos.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.dt_FechaProgramaCorteKilos_EditValueChanging);
             // 
             // labelControl159
             // 
@@ -5771,8 +5824,6 @@
             this.dt_FechaPagoCorteKilos.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaPagoCorteKilos.Size = new System.Drawing.Size(99, 20);
             this.dt_FechaPagoCorteKilos.TabIndex = 97;
-            this.dt_FechaPagoCorteKilos.EditValueChanged += new System.EventHandler(this.dt_FechaPagoCorteKilos_EditValueChanged);
-            this.dt_FechaPagoCorteKilos.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.dt_FechaPagoCorteKilos_EditValueChanging);
             this.dt_FechaPagoCorteKilos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dt_FechaPagoCorteKilos_KeyDown);
             // 
             // dt_FechaFacturaCorteKilos
@@ -6610,6 +6661,7 @@
             // 
             // panelControl14
             // 
+            this.panelControl14.Controls.Add(this.btn_CalcularFechaPagoAC);
             this.panelControl14.Controls.Add(this.labelControl206);
             this.panelControl14.Controls.Add(this.txt_UUID_Acarreo);
             this.panelControl14.Controls.Add(this.labelControl203);
@@ -6659,6 +6711,16 @@
             this.panelControl14.Name = "panelControl14";
             this.panelControl14.Size = new System.Drawing.Size(1196, 548);
             this.panelControl14.TabIndex = 56;
+            // 
+            // btn_CalcularFechaPagoAC
+            // 
+            this.btn_CalcularFechaPagoAC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_CalcularFechaPagoAC.ImageOptions.Image")));
+            this.btn_CalcularFechaPagoAC.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btn_CalcularFechaPagoAC.Location = new System.Drawing.Point(415, 244);
+            this.btn_CalcularFechaPagoAC.Name = "btn_CalcularFechaPagoAC";
+            this.btn_CalcularFechaPagoAC.Size = new System.Drawing.Size(25, 25);
+            this.btn_CalcularFechaPagoAC.TabIndex = 198;
+            this.btn_CalcularFechaPagoAC.Click += new System.EventHandler(this.btn_CalcularFechaPagoAC_Click);
             // 
             // labelControl206
             // 
@@ -6763,6 +6825,8 @@
             this.dt_FechaProgramaAcarreo.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaProgramaAcarreo.Size = new System.Drawing.Size(99, 20);
             this.dt_FechaProgramaAcarreo.TabIndex = 164;
+            this.dt_FechaProgramaAcarreo.EditValueChanged += new System.EventHandler(this.dt_FechaProgramaAcarreo_EditValueChanged);
+            this.dt_FechaProgramaAcarreo.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.dt_FechaProgramaAcarreo_EditValueChanging);
             // 
             // labelControl163
             // 
@@ -6973,8 +7037,7 @@
             this.dt_FechaPagoAcarreo.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaPagoAcarreo.Size = new System.Drawing.Size(99, 20);
             this.dt_FechaPagoAcarreo.TabIndex = 97;
-            this.dt_FechaPagoAcarreo.EditValueChanged += new System.EventHandler(this.dt_FechaPagoAcarreo_EditValueChanged);
-            this.dt_FechaPagoAcarreo.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.dt_FechaPagoAcarreo_EditValueChanging);
+            this.dt_FechaPagoAcarreo.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.dt_FechaProgramaAcarreo_EditValueChanging);
             this.dt_FechaPagoAcarreo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dt_FechaPagoAcarreo_KeyDown);
             // 
             // dt_FechaFacturaAcarreo
@@ -7667,6 +7730,8 @@
             this.dt_FechaProgramaProductor.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaProgramaProductor.Size = new System.Drawing.Size(99, 20);
             this.dt_FechaProgramaProductor.TabIndex = 161;
+            this.dt_FechaProgramaProductor.EditValueChanged += new System.EventHandler(this.dt_FechaProgramaProductor_EditValueChanged);
+            this.dt_FechaProgramaProductor.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.dt_FechaProgramaProductor_EditValueChanging);
             // 
             // labelControl164
             // 
@@ -7989,8 +8054,6 @@
             this.dt_FechaPagoProductor.Properties.UseMaskAsDisplayFormat = true;
             this.dt_FechaPagoProductor.Size = new System.Drawing.Size(99, 20);
             this.dt_FechaPagoProductor.TabIndex = 119;
-            this.dt_FechaPagoProductor.EditValueChanged += new System.EventHandler(this.dt_FechaPagoProductor_EditValueChanged);
-            this.dt_FechaPagoProductor.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.dt_FechaPagoProductor_EditValueChanging);
             this.dt_FechaPagoProductor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dt_FechaPagoProductor_KeyDown);
             // 
             // labelControl84
@@ -8527,9 +8590,9 @@
             // btn_PDFGrid
             // 
             this.btn_PDFGrid.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.btn_PDFGrid.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btn_PDFGrid.Name = "btn_PDFGrid";
             this.btn_PDFGrid.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_PDFGrid.Click += new System.EventHandler(this.btn_PDFGrid_Click);
@@ -8545,9 +8608,9 @@
             // btn_XMLGrid
             // 
             this.btn_XMLGrid.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.btn_XMLGrid.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btn_XMLGrid.Name = "btn_XMLGrid";
             this.btn_XMLGrid.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_XMLGrid.Click += new System.EventHandler(this.btn_XMLGrid_Click);
@@ -8574,9 +8637,9 @@
             // btn_EliminarREP
             // 
             this.btn_EliminarREP.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
             this.btn_EliminarREP.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btn_EliminarREP.Name = "btn_EliminarREP";
             this.btn_EliminarREP.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btn_EliminarREP.Click += new System.EventHandler(this.btn_EliminarREP_Click);
@@ -8728,6 +8791,16 @@
             this.gridColumn38.Name = "gridColumn38";
             this.gridColumn38.Visible = true;
             this.gridColumn38.VisibleIndex = 11;
+            // 
+            // btn_RecargarTem
+            // 
+            this.btn_RecargarTem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btn_RecargarTem.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btn_RecargarTem.Location = new System.Drawing.Point(713, 17);
+            this.btn_RecargarTem.Name = "btn_RecargarTem";
+            this.btn_RecargarTem.Size = new System.Drawing.Size(25, 25);
+            this.btn_RecargarTem.TabIndex = 145;
+            this.btn_RecargarTem.Click += new System.EventHandler(this.btn_RecargarTem_Click);
             // 
             // Frm_Cosecha
             // 
@@ -9873,5 +9946,11 @@
         private DevExpress.XtraEditors.TextEdit txt_Salto_REP;
         private DevExpress.XtraEditors.LabelControl labelControl207;
         private DevExpress.XtraEditors.TextEdit txt_SumaTotal_REP;
+        private DevExpress.XtraEditors.SimpleButton btn_CalcularFechaPagoS;
+        private DevExpress.XtraEditors.SimpleButton btn_CalcularFechaPagoA;
+        private DevExpress.XtraEditors.SimpleButton btn_CalcularFechaPagoD;
+        private DevExpress.XtraEditors.SimpleButton btn_CalcularFechaPagoK;
+        private DevExpress.XtraEditors.SimpleButton btn_CalcularFechaPagoAC;
+        private DevExpress.XtraEditors.SimpleButton btn_RecargarTem;
     }
 }

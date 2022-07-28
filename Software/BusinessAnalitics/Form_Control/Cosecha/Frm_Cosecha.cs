@@ -79,17 +79,17 @@ namespace Business_Analitics
             }
         }
         public int vCarga { get; set; }
-        public DateTime vFechaPagoProductor { get; set; }
+        public DateTime vFechaProgramaProductor { get; set; }
         public DateTime vFechaFacturaProductor { get; set; }
         public DateTime vFechaFacturaCorteKilos { get; set; }
-        public DateTime vFechaPagoCorteKilos { get; set; }
+        public DateTime vFechaProgramaCorteKilos { get; set; }
         public DateTime vFechaFacturaCorteDia { get; set; }
-        public DateTime vFechaPagoCorteDia { get; set; }
+        public DateTime vFechaProgramaCorteDia { get; set; }
         public DateTime vFechaFacturaCorteApoyo { get; set; }
-        public DateTime vFechaPagoCorteApoyo { get; set; }
+        public DateTime vFechaProgramaCorteApoyo { get; set; }
         public DateTime vFechaFacturaCorteSalida { get; set; }
-        public DateTime vFechaPagoCorteSalida { get; set; }
-        public DateTime vFechaPagoAcarreo { get; set; }
+        public DateTime vFechaProgramaCorteSalida { get; set; }
+        public DateTime vFechaProgramaAcarreo { get; set; }
         public DateTime vFechaFacturaAcarreo { get; set; }
 
         void CargarCosechas()
@@ -333,7 +333,7 @@ namespace Business_Analitics
             }
         }
 
-        void CalcularFechaPago(DateTime Fecha)
+        void CalcularFechaPrograma(DateTime Fecha)
         {
             //XtraMessageBox.Show(Fecha.ToString("dddd", new CultureInfo("es-MX")));
             switch ((byte)Fecha.DayOfWeek)
@@ -364,6 +364,154 @@ namespace Business_Analitics
 
             }
         }
+        void CalcularFechaPrograma8(DateTime Fecha, int Id_Factura)
+        {
+            if (Id_Factura == 1)
+            {
+                switch ((byte)Fecha.DayOfWeek)
+                {
+                    case 0:
+                        dt_FechaProgramaCorteKilos.DateTime = Fecha.AddDays(5);
+                        break;
+                    case 1:
+                        dt_FechaProgramaCorteKilos.DateTime = Fecha.AddDays(11);
+                        break;
+                    case 2:
+                        dt_FechaProgramaCorteKilos.DateTime = Fecha.AddDays(10);
+                        break;
+                    case 3:
+                        dt_FechaProgramaCorteKilos.DateTime = Fecha.AddDays(9);
+                        break;
+                    case 4:
+                        dt_FechaProgramaCorteKilos.DateTime = Fecha.AddDays(8);
+                        break;
+                    case 5:
+                        dt_FechaProgramaCorteKilos.DateTime = Fecha.AddDays(7);
+                        break;
+                    case 6:
+                        dt_FechaProgramaCorteKilos.DateTime = Fecha.AddDays(6);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (Id_Factura == 2)
+            {
+                switch ((byte)Fecha.DayOfWeek)
+                {
+                    case 0:
+                        dt_FechaProgramaCorteDia.DateTime = Fecha.AddDays(5);
+                        break;
+                    case 1:
+                        dt_FechaProgramaCorteDia.DateTime = Fecha.AddDays(11);
+                        break;
+                    case 2:
+                        dt_FechaProgramaCorteDia.DateTime = Fecha.AddDays(10);
+                        break;
+                    case 3:
+                        dt_FechaProgramaCorteDia.DateTime = Fecha.AddDays(9);
+                        break;
+                    case 4:
+                        dt_FechaProgramaCorteDia.DateTime = Fecha.AddDays(8);
+                        break;
+                    case 5:
+                        dt_FechaProgramaCorteDia.DateTime = Fecha.AddDays(7);
+                        break;
+                    case 6:
+                        dt_FechaProgramaCorteDia.DateTime = Fecha.AddDays(6);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (Id_Factura == 3)
+            {
+                switch ((byte)Fecha.DayOfWeek)
+                {
+                    case 0:
+                        dt_FechaProgramaCorteApoyo.DateTime = Fecha.AddDays(5);
+                        break;
+                    case 1:
+                        dt_FechaProgramaCorteApoyo.DateTime = Fecha.AddDays(11);
+                        break;
+                    case 2:
+                        dt_FechaProgramaCorteApoyo.DateTime = Fecha.AddDays(10);
+                        break;
+                    case 3:
+                        dt_FechaProgramaCorteApoyo.DateTime = Fecha.AddDays(9);
+                        break;
+                    case 4:
+                        dt_FechaProgramaCorteApoyo.DateTime = Fecha.AddDays(8);
+                        break;
+                    case 5:
+                        dt_FechaProgramaCorteApoyo.DateTime = Fecha.AddDays(7);
+                        break;
+                    case 6:
+                        dt_FechaProgramaCorteApoyo.DateTime = Fecha.AddDays(6);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (Id_Factura == 4)
+            {
+                switch ((byte)Fecha.DayOfWeek)
+                {
+                    case 0:
+                        dt_FechaProgramaCorteSalida.DateTime = Fecha.AddDays(5);
+                        break;
+                    case 1:
+                        dt_FechaProgramaCorteSalida.DateTime = Fecha.AddDays(11);
+                        break;
+                    case 2:
+                        dt_FechaProgramaCorteSalida.DateTime = Fecha.AddDays(10);
+                        break;
+                    case 3:
+                        dt_FechaProgramaCorteSalida.DateTime = Fecha.AddDays(9);
+                        break;
+                    case 4:
+                        dt_FechaProgramaCorteSalida.DateTime = Fecha.AddDays(8);
+                        break;
+                    case 5:
+                        dt_FechaProgramaCorteSalida.DateTime = Fecha.AddDays(7);
+                        break;
+                    case 6:
+                        dt_FechaProgramaCorteSalida.DateTime = Fecha.AddDays(6);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else if (Id_Factura == 5)
+            {
+                switch ((byte)Fecha.DayOfWeek)
+                {
+                    case 0:
+                        dt_FechaProgramaAcarreo.DateTime = Fecha.AddDays(5);
+                        break;
+                    case 1:
+                        dt_FechaProgramaAcarreo.DateTime = Fecha.AddDays(11);
+                        break;
+                    case 2:
+                        dt_FechaProgramaAcarreo.DateTime = Fecha.AddDays(10);
+                        break;
+                    case 3:
+                        dt_FechaProgramaAcarreo.DateTime = Fecha.AddDays(9);
+                        break;
+                    case 4:
+                        dt_FechaProgramaAcarreo.DateTime = Fecha.AddDays(8);
+                        break;
+                    case 5:
+                        dt_FechaProgramaAcarreo.DateTime = Fecha.AddDays(7);
+                        break;
+                    case 6:
+                        dt_FechaProgramaAcarreo.DateTime = Fecha.AddDays(6);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
         private void CargarRecepcion()
         {
             CLS_Cosecha sel = new CLS_Cosecha();
@@ -376,7 +524,7 @@ namespace Business_Analitics
                 if (sel.Datos.Rows.Count > 0)
                 {
                     dt_FechaRecepcion.DateTime = Convert.ToDateTime(sel.Datos.Rows[0]["d_fecha_rec"].ToString());
-                    CalcularFechaPago(dt_FechaRecepcion.DateTime);
+                    CalcularFechaPrograma(dt_FechaRecepcion.DateTime);
                     txt_Recepcion.Text = sel.Datos.Rows[0]["c_codigo_rec"].ToString();
                     txt_EstibaSel.Text = sel.Datos.Rows[0]["c_codigo_sel"].ToString();
                     BarEstiba.Caption = "Estiba: " + sel.Datos.Rows[0]["c_codigo_sel"].ToString();
@@ -691,7 +839,7 @@ namespace Business_Analitics
         {
             if (txt_kilosCortadosCorte.Text != string.Empty && Decimal.Parse(txt_kilosCortadosCorte.Text, style, provider) > 0)
             {
-                chk_SalidaFalso.Enabled = false;
+                //chk_SalidaFalso.Enabled = false;
                 txt_Margen5.Text = Convert.ToString(Convert.ToDouble(txt_kilosCortadosCorte.Text) * 0.05);
                 txt_kgNoSolicitados.Text = CalcularkilosNoDeseados();
                 txt_KilosARestar.Text = (Decimal.Parse(txt_Margen5.Text, style, provider) - Decimal.Parse(txt_kgNoSolicitados.Text, style, provider)).ToString();
@@ -740,7 +888,7 @@ namespace Business_Analitics
                 }
                 txt_PrecioSalidaFCorte.Text = "0";
                 txt_PrecioCuadrillaCorte.Text = "0";
-                chk_SalidaFalso.Checked = false;
+                //chk_SalidaFalso.Checked = false;
                 chk_CuadrillaApoyo.Enabled = true;
                 txt_NoCuadrillas.Enabled = true;
                 chk_CuadrillaApoyo.Checked = false;
@@ -878,6 +1026,7 @@ namespace Business_Analitics
             if (chk_SalidaFalso.Checked == true)
             {
                 txt_PrecioSalidaFCorte.Text = txtPrecioSalidaFalso.Text;
+                txt_PrecioTCorte.Text = "0";
             }
             else
             {
@@ -1264,6 +1413,7 @@ namespace Business_Analitics
                         CalcularTotalREP();
                     }
                 }
+                CalcularFechaPrograma(dt_FechaRecepcion.DateTime);
                 OpenDialog.Dispose();
             }
             else
@@ -1479,6 +1629,8 @@ namespace Business_Analitics
             this.dt_FechaPagoCorteKilos.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.dt_FechaPagoCorteKilos.Properties.Appearance.Options.UseFont = true;
             this.dt_FechaPagoCorteKilos.Properties.Appearance.Options.UseForeColor = true;
+            txt_SubTotal_Kilos.Text = "0";
+            txt_Total_Kilos.Text = "0";
         }
         void LimpiarFacturasDia()
         {
@@ -1505,6 +1657,8 @@ namespace Business_Analitics
             this.dt_FechaPagoCorteDia.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.dt_FechaPagoCorteDia.Properties.Appearance.Options.UseFont = true;
             this.dt_FechaPagoCorteDia.Properties.Appearance.Options.UseForeColor = true;
+            txt_SubTotal_Dia.Text = "0";
+            txt_Total_Dia.Text = "0";
         }
         void LimpiarFacturasApoyo()
         {
@@ -1531,6 +1685,8 @@ namespace Business_Analitics
             this.dt_FechaPagoCorteApoyo.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.dt_FechaPagoCorteApoyo.Properties.Appearance.Options.UseFont = true;
             this.dt_FechaPagoCorteApoyo.Properties.Appearance.Options.UseForeColor = true;
+            txt_SubTotal_Apoyo.Text = "0";
+            txt_Total_Apoyo.Text = "0";
         }
         void LimpiarFacturasSalida()
         {
@@ -1557,6 +1713,8 @@ namespace Business_Analitics
             this.dt_FechaPagoCorteSalida.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.dt_FechaPagoCorteSalida.Properties.Appearance.Options.UseFont = true;
             this.dt_FechaPagoCorteSalida.Properties.Appearance.Options.UseForeColor = true;
+            txt_SubTotal_Salida.Text = "0";
+            txt_Total_Salida.Text = "0";
         }
         void LimpiarFacturasAcarreo()
         {
@@ -1584,6 +1742,8 @@ namespace Business_Analitics
             this.dt_FechaPagoAcarreo.Properties.Appearance.ForeColor = System.Drawing.Color.Red;
             this.dt_FechaPagoAcarreo.Properties.Appearance.Options.UseFont = true;
             this.dt_FechaPagoAcarreo.Properties.Appearance.Options.UseForeColor = true;
+            txt_SubTotal_Acarreo.Text = "0";
+            txt_Total_Acarreo.Text = "0";
         }
         void LimpiarProductorExpediente()
         {
@@ -1627,12 +1787,7 @@ namespace Business_Analitics
             LimpiarPPD();
             LimpiarCorte();
             LimpiarAcarreo();
-            LimpiarFacturasProductor();
-            LimpiarFacturasKilos();
-            LimpiarFacturasDia();
-            LimpiarFacturasApoyo();
-            LimpiarFacturasSalida();
-            LimpiarFacturasAcarreo();
+            LimpiarFacturas();
             InicializaVariables();
             navigationPane1.SelectedPageIndex = 0;
             BarProductor.Caption = string.Empty;
@@ -1646,6 +1801,16 @@ namespace Business_Analitics
             Bloquear_Acarreo(true);
             vCarga = 0;
             dtgFacturasREP.DataSource = null;
+        }
+
+        private void LimpiarFacturas()
+        {
+            LimpiarFacturasProductor();
+            LimpiarFacturasKilos();
+            LimpiarFacturasDia();
+            LimpiarFacturasApoyo();
+            LimpiarFacturasSalida();
+            LimpiarFacturasAcarreo();
         }
 
         private void InicializaVariables()
@@ -3440,6 +3605,10 @@ namespace Business_Analitics
 
                     }
                 }
+                else
+                {
+                    txt_RutaXMLCorteKilos.Text = String.Empty;
+                }
                 OpenDialog.Dispose();
             }
             else
@@ -4744,6 +4913,7 @@ namespace Business_Analitics
         }
         void SelectFacturas()
         {
+            //LimpiarFacturas();
             SelectFacturaProductor();
             SelectFacturaKilos();
             SelectFacturaDia();
@@ -5153,7 +5323,7 @@ namespace Business_Analitics
 
         private void btn_CalcularFechaPago_Click(object sender, EventArgs e)
         {
-            CalcularFechaPago(dt_FechaRecepcion.DateTime);
+            CalcularFechaPrograma(dt_FechaRecepcion.DateTime);
         }
 
         private void txt_PrecioTCorte_EditValueChanged(object sender, EventArgs e)
@@ -5524,6 +5694,9 @@ namespace Business_Analitics
                     Clase.Id_Archivo = Id_Factura;
                     Clase.FacturaPDF = Encoding.UTF8.GetBytes("");
                     Clase.FacturaXML = Encoding.UTF8.GetBytes("");
+                    Clase.RazonSocial=String.Empty;
+                    Clase.FolioFactura = String.Empty;
+                    Clase.Fecha_Factura=DateTime.Now.Year.ToString() + DosCeros(DateTime.Now.Month.ToString()) + DosCeros(DateTime.Now.Day.ToString());
                     Clase.UUID = String.Empty;
                     Clase.MetodoPago=String.Empty;
                     Clase.SubTotalXML = 0;
@@ -5533,6 +5706,13 @@ namespace Business_Analitics
                     if (!Clase.Exito)
                     {
                         XtraMessageBox.Show(Clase.Mensaje);
+                    }
+                    else
+                    {
+                        if(Id_Factura==1)
+                        {
+                            EliminaREP();
+                        }
                     }
                 }
             }
@@ -5553,7 +5733,6 @@ namespace Business_Analitics
         private void btn_DelFacturaProductor_Click(object sender, EventArgs e)
         {
             EliminaFacturaXMLPDF(1);
-            EliminaREP();
             SelectFacturas();
         }
         private void btn_DelFacturaKilos_Click(object sender, EventArgs e)
@@ -5711,7 +5890,7 @@ namespace Business_Analitics
             txt_NoCuadrillas.Enabled = valor;
             if (txt_kilosCortadosCorte.Text != String.Empty)
             {
-                chk_SalidaFalso.Enabled = false;
+                chk_SalidaFalso.Enabled = true;
             }
             else
             {
@@ -6095,25 +6274,25 @@ namespace Business_Analitics
 
         private void dt_FechaFacturaProductor_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dt_FechaFacturaProductor.DateTime, dt_FechaPagoProductor.DateTime) > 0 && vCarga == 0)
+            if (DateTime.Compare(dt_FechaFacturaProductor.DateTime, dt_FechaProgramaProductor.DateTime) > 0 && vCarga == 0)
             {
                 XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
                 dt_FechaFacturaProductor.DateTime = vFechaFacturaProductor;
             }
         }
 
-        private void dt_FechaPagoProductor_EditValueChanged(object sender, EventArgs e)
+        private void dt_FechaProgramaProductor_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dt_FechaFacturaProductor.DateTime, dt_FechaPagoProductor.DateTime) > 0 && vCarga == 0)
+            if (DateTime.Compare(dt_FechaFacturaProductor.DateTime, dt_FechaProgramaProductor.DateTime) > 0 && vCarga == 0)
             {
                 XtraMessageBox.Show("LA fecha de Factura debe ser menor a la fecha de pago");
-                dt_FechaPagoProductor.DateTime = vFechaPagoProductor;
+                dt_FechaProgramaProductor.DateTime = vFechaProgramaProductor;
             }
         }
 
-        private void dt_FechaPagoProductor_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        private void dt_FechaProgramaProductor_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            vFechaPagoProductor = dt_FechaPagoProductor.DateTime;
+            vFechaProgramaProductor = dt_FechaProgramaProductor.DateTime;
         }
 
         private void dt_FechaFacturaProductor_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
@@ -6123,19 +6302,19 @@ namespace Business_Analitics
 
         private void dt_FechaFacturaCorteKilos_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dt_FechaFacturaCorteKilos.DateTime, dt_FechaPagoCorteKilos.DateTime) > 0 && vCarga == 0)
+            if (DateTime.Compare(dt_FechaFacturaCorteKilos.DateTime, dt_FechaProgramaCorteKilos.DateTime) > 0 && vCarga == 0)
             {
                 XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
                 dt_FechaFacturaCorteKilos.DateTime = vFechaFacturaCorteKilos;
             }
         }
 
-        private void dt_FechaPagoCorteKilos_EditValueChanged(object sender, EventArgs e)
+        private void dt_FechaProgramaCorteKilos_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dt_FechaFacturaCorteKilos.DateTime, dt_FechaPagoCorteKilos.DateTime) > 0 && vCarga == 0)
+            if (DateTime.Compare(dt_FechaFacturaCorteKilos.DateTime, dt_FechaProgramaCorteKilos.DateTime) > 0 && vCarga == 0)
             {
                 XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
-                dt_FechaPagoCorteKilos.DateTime = vFechaPagoCorteKilos;
+                dt_FechaProgramaCorteKilos.DateTime = vFechaProgramaCorteKilos;
             }
         }
 
@@ -6144,26 +6323,26 @@ namespace Business_Analitics
             vFechaFacturaCorteKilos = dt_FechaFacturaCorteKilos.DateTime;
         }
 
-        private void dt_FechaPagoCorteKilos_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        private void dt_FechaProgramaCorteKilos_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            vFechaPagoCorteKilos = dt_FechaPagoCorteKilos.DateTime;
+            vFechaProgramaCorteKilos = dt_FechaProgramaCorteKilos.DateTime;
         }
 
         private void dt_FechaFacturaCorteDia_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dt_FechaFacturaCorteDia.DateTime, dt_FechaPagoCorteDia.DateTime) > 0 && vCarga == 0)
+            if (DateTime.Compare(dt_FechaFacturaCorteDia.DateTime, dt_FechaProgramaCorteDia.DateTime) > 0 && vCarga == 0)
             {
-                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de Programa");
                 dt_FechaFacturaCorteDia.DateTime = vFechaFacturaCorteDia;
             }
         }
 
-        private void dt_FechaPagoCorteDia_EditValueChanged(object sender, EventArgs e)
+        private void dt_FechaProgramaCorteDia_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dt_FechaFacturaCorteDia.DateTime, dt_FechaPagoCorteDia.DateTime) > 0 && vCarga == 0)
+            if (DateTime.Compare(dt_FechaFacturaCorteDia.DateTime, dt_FechaProgramaCorteDia.DateTime) > 0 && vCarga == 0)
             {
-                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
-                dt_FechaPagoCorteDia.DateTime = vFechaPagoCorteDia;
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de Programa");
+                dt_FechaProgramaCorteDia.DateTime = vFechaProgramaCorteDia;
             }
         }
 
@@ -6172,26 +6351,26 @@ namespace Business_Analitics
             vFechaFacturaCorteDia = dt_FechaFacturaCorteDia.DateTime;
         }
 
-        private void dt_FechaPagoCorteDia_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        private void dt_FechaProgramaCorteDia_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            vFechaPagoCorteDia = dt_FechaPagoCorteDia.DateTime;
+            vFechaProgramaCorteDia = dt_FechaProgramaCorteDia.DateTime;
         }
 
         private void dt_FechaFacturaCorteApoyo_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dt_FechaFacturaCorteApoyo.DateTime, dt_FechaPagoCorteApoyo.DateTime) > 0 && vCarga == 0)
+            if (DateTime.Compare(dt_FechaFacturaCorteApoyo.DateTime, dt_FechaProgramaCorteApoyo.DateTime) > 0 && vCarga == 0)
             {
-                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
+                XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de Programa");
                 dt_FechaFacturaCorteApoyo.DateTime = vFechaFacturaCorteApoyo;
             }
         }
 
-        private void dt_FechaPagoCorteApoyo_EditValueChanged(object sender, EventArgs e)
+        private void dt_FechaProgramaCorteApoyo_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dt_FechaFacturaCorteApoyo.DateTime, dt_FechaPagoCorteApoyo.DateTime) > 0 && vCarga == 0)
+            if (DateTime.Compare(dt_FechaFacturaCorteApoyo.DateTime, dt_FechaProgramaCorteApoyo.DateTime) > 0 && vCarga == 0)
             {
                 XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
-                dt_FechaPagoCorteApoyo.DateTime = vFechaPagoCorteApoyo;
+                dt_FechaProgramaCorteApoyo.DateTime = vFechaProgramaCorteApoyo;
             }
         }
 
@@ -6200,26 +6379,26 @@ namespace Business_Analitics
             vFechaFacturaCorteApoyo = dt_FechaFacturaCorteApoyo.DateTime;
         }
 
-        private void dt_FechaPagoCorteApoyo_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        private void dt_FechaProgramaCorteApoyo_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            vFechaPagoCorteApoyo = dt_FechaPagoCorteApoyo.DateTime;
+            vFechaProgramaCorteApoyo = dt_FechaProgramaCorteApoyo.DateTime;
         }
 
         private void dt_FechaFacturaCorteSalida_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dt_FechaFacturaCorteSalida.DateTime, dt_FechaPagoCorteSalida.DateTime) > 0 && vCarga == 0)
+            if (DateTime.Compare(dt_FechaFacturaCorteSalida.DateTime, dt_FechaProgramaCorteSalida.DateTime) > 0 && vCarga == 0)
             {
                 XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
                 dt_FechaFacturaCorteSalida.DateTime = vFechaFacturaCorteSalida;
             }
         }
 
-        private void dt_FechaPagoCorteSalida_EditValueChanged(object sender, EventArgs e)
+        private void dt_FechaProgramaCorteSalida_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dt_FechaFacturaCorteSalida.DateTime, dt_FechaPagoCorteSalida.DateTime) > 0 && vCarga == 0)
+            if (DateTime.Compare(dt_FechaFacturaCorteSalida.DateTime, dt_FechaProgramaCorteSalida.DateTime) > 0 && vCarga == 0)
             {
                 XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
-                dt_FechaPagoCorteSalida.DateTime = vFechaPagoCorteSalida;
+                dt_FechaProgramaCorteSalida.DateTime = vFechaProgramaCorteSalida;
             }
         }
 
@@ -6228,26 +6407,26 @@ namespace Business_Analitics
             vFechaFacturaCorteSalida = dt_FechaFacturaCorteSalida.DateTime;
         }
 
-        private void dt_FechaPagoCorteSalida_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        private void dt_FechaProgramaCorteSalida_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            vFechaPagoCorteSalida = dt_FechaPagoCorteSalida.DateTime;
+            vFechaProgramaCorteSalida = dt_FechaProgramaCorteSalida.DateTime;
         }
 
         private void dt_FechaFacturaAcarreo_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dt_FechaFacturaAcarreo.DateTime, dt_FechaPagoAcarreo.DateTime) > 0 && vCarga == 0)
+            if (DateTime.Compare(dt_FechaFacturaAcarreo.DateTime, dt_FechaProgramaAcarreo.DateTime) > 0 && vCarga == 0)
             {
                 XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
                 dt_FechaFacturaAcarreo.DateTime = vFechaFacturaAcarreo;
             }
         }
 
-        private void dt_FechaPagoAcarreo_EditValueChanged(object sender, EventArgs e)
+        private void dt_FechaProgramaAcarreo_EditValueChanged(object sender, EventArgs e)
         {
-            if (DateTime.Compare(dt_FechaFacturaAcarreo.DateTime, dt_FechaPagoAcarreo.DateTime) > 0 && vCarga == 0)
+            if (DateTime.Compare(dt_FechaFacturaAcarreo.DateTime, dt_FechaProgramaAcarreo.DateTime) > 0 && vCarga == 0)
             {
                 XtraMessageBox.Show("La fecha de Factura debe ser menor a la fecha de pago");
-                dt_FechaPagoAcarreo.DateTime = vFechaPagoAcarreo;
+                dt_FechaProgramaAcarreo.DateTime = vFechaProgramaAcarreo;
             }
         }
 
@@ -6256,9 +6435,9 @@ namespace Business_Analitics
             vFechaFacturaAcarreo = dt_FechaFacturaAcarreo.DateTime;
         }
 
-        private void dt_FechaPagoAcarreo_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        private void dt_FechaProgramaAcarreo_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            vFechaPagoAcarreo = dt_FechaPagoAcarreo.DateTime;
+            vFechaProgramaAcarreo = dt_FechaProgramaAcarreo.DateTime;
         }
 
         private void btn_ActualizarAcopiador_Click(object sender, EventArgs e)
@@ -6725,6 +6904,35 @@ namespace Business_Analitics
             {
                 XtraMessageBox.Show("Se debe de cargar PDF y XML");
             }
+        }
+        private void btn_CalcularFechaPagoK_Click(object sender, EventArgs e)
+        {
+            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime,1);
+        }
+
+        private void btn_CalcularFechaPagoD_Click(object sender, EventArgs e)
+        {
+            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime,2);
+        }
+
+        private void btn_CalcularFechaPagoA_Click(object sender, EventArgs e)
+        {
+            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime,3);
+        }
+
+        private void btn_CalcularFechaPagoS_Click(object sender, EventArgs e)
+        {
+            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime,4);
+        }
+
+        private void btn_CalcularFechaPagoAC_Click(object sender, EventArgs e)
+        {
+            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime,5);
+        }
+
+        private void btn_RecargarTem_Click(object sender, EventArgs e)
+        {
+            CargarCosechas();
         }
     }
 }
