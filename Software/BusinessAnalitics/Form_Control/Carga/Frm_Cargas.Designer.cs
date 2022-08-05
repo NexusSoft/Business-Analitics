@@ -45,6 +45,7 @@
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_RecargarTem = new DevExpress.XtraEditors.SimpleButton();
             this.cmb_Temporada = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl126 = new DevExpress.XtraEditors.LabelControl();
@@ -77,8 +78,8 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dt_FechaPrograma = new DevExpress.XtraEditors.DateEdit();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage4 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage5 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage6 = new DevExpress.XtraBars.Navigation.NavigationPage();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -176,7 +177,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(985, 56);
+            this.barDockControlTop.Size = new System.Drawing.Size(1165, 56);
             // 
             // barDockControlBottom
             // 
@@ -184,7 +185,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 615);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(985, 22);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1165, 22);
             // 
             // barDockControlLeft
             // 
@@ -198,7 +199,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(985, 56);
+            this.barDockControlRight.Location = new System.Drawing.Point(1165, 56);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 559);
             // 
@@ -231,9 +232,9 @@
             this.navigationPage6,
             this.navigationPage4,
             this.navigationPage5});
-            this.navigationPane1.RegularSize = new System.Drawing.Size(985, 559);
+            this.navigationPane1.RegularSize = new System.Drawing.Size(1165, 559);
             this.navigationPane1.SelectedPage = this.navigationPage2;
-            this.navigationPane1.Size = new System.Drawing.Size(985, 559);
+            this.navigationPane1.Size = new System.Drawing.Size(1165, 559);
             this.navigationPane1.TabIndex = 10;
             this.navigationPane1.Text = "navigationPane1";
             // 
@@ -247,10 +248,11 @@
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.PageText = "Manifiesto";
             this.navigationPage1.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage1.Size = new System.Drawing.Size(830, 486);
+            this.navigationPage1.Size = new System.Drawing.Size(1010, 486);
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.btn_RecargarTem);
             this.panelControl2.Controls.Add(this.cmb_Temporada);
             this.panelControl2.Controls.Add(this.labelControl126);
             this.panelControl2.Controls.Add(this.dtgManifiesto);
@@ -258,8 +260,17 @@
             this.panelControl2.Location = new System.Drawing.Point(0, 151);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(830, 335);
+            this.panelControl2.Size = new System.Drawing.Size(1010, 335);
             this.panelControl2.TabIndex = 1;
+            // 
+            // btn_RecargarTem
+            // 
+            this.btn_RecargarTem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_RecargarTem.ImageOptions.Image")));
+            this.btn_RecargarTem.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btn_RecargarTem.Location = new System.Drawing.Point(713, 17);
+            this.btn_RecargarTem.Name = "btn_RecargarTem";
+            this.btn_RecargarTem.Size = new System.Drawing.Size(25, 25);
+            this.btn_RecargarTem.TabIndex = 146;
             // 
             // cmb_Temporada
             // 
@@ -293,7 +304,7 @@
             this.dtgManifiesto.MainView = this.dtgValManifiesto;
             this.dtgManifiesto.MenuManager = this.barManager1;
             this.dtgManifiesto.Name = "dtgManifiesto";
-            this.dtgManifiesto.Size = new System.Drawing.Size(816, 321);
+            this.dtgManifiesto.Size = new System.Drawing.Size(996, 321);
             this.dtgManifiesto.TabIndex = 0;
             this.dtgManifiesto.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValManifiesto});
@@ -395,7 +406,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(830, 151);
+            this.panelControl1.Size = new System.Drawing.Size(1010, 151);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl18
@@ -566,15 +577,6 @@
             this.navigationPage2.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.navigationPage2.Size = new System.Drawing.Size(830, 486);
             // 
-            // navigationPage3
-            // 
-            this.navigationPage3.Caption = "Factura Fiscal";
-            this.navigationPage3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage3.ImageOptions.Image")));
-            this.navigationPage3.Name = "navigationPage3";
-            this.navigationPage3.PageText = "Factura Fiscal";
-            this.navigationPage3.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage3.Size = new System.Drawing.Size(830, 437);
-            // 
             // navigationPage4
             // 
             this.navigationPage4.Caption = "Corte";
@@ -583,6 +585,15 @@
             this.navigationPage4.PageText = "Corte";
             this.navigationPage4.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.navigationPage4.Size = new System.Drawing.Size(830, 486);
+            // 
+            // navigationPage3
+            // 
+            this.navigationPage3.Caption = "Factura Fiscal";
+            this.navigationPage3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage3.ImageOptions.Image")));
+            this.navigationPage3.Name = "navigationPage3";
+            this.navigationPage3.PageText = "Factura Fiscal";
+            this.navigationPage3.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
+            this.navigationPage3.Size = new System.Drawing.Size(830, 486);
             // 
             // navigationPage5
             // 
@@ -605,7 +616,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 637);
+            this.ClientSize = new System.Drawing.Size(1165, 637);
             this.Controls.Add(this.navigationPane1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -695,5 +706,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraEditors.SimpleButton btn_RecargarTem;
     }
 }

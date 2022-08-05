@@ -1338,19 +1338,30 @@ namespace Business_Analitics
                 string Valor = String.Empty;
                 XmlDocument doc = new XmlDocument();
                 doc.Load(fileName);
+                XmlNode nodoComplemento;
                 XmlNode nodoComprobante = doc.GetElementsByTagName("cfdi:Comprobante").Item(0);
                 Valor = nodoComprobante.Attributes["MetodoPago"].Value;
                 vMetodo = Valor;
                 txt_MetodoPago.Text = Valor;
                 Valor = nodoComprobante.Attributes["Fecha"].Value;
                 dt_FechaFacturaProductor.DateTime = Convert.ToDateTime(Valor);
-                Valor = nodoComprobante.Attributes["Folio"].Value;
-                txt_FolioFacturaProductor.Text = Valor;
+                try
+                {
+                    Valor = nodoComprobante.Attributes["Folio"].Value;
+                    txt_FolioFacturaProductor.Text = Valor;
+                }
+                catch (Exception)
+                {
+                    nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                    string valor = nodoComplemento.Attributes["UUID"].Value;
+                    txt_FolioFacturaProductor.Text = valor.Substring(valor.Length-4);
+                }
+                
                 Valor = nodoComprobante.Attributes["SubTotal"].Value;
                 txt_SubTotal.Text = Valor;
                 Valor = nodoComprobante.Attributes["Total"].Value;
                 txt_Total.Text = Valor;
-                XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
                 Valor = nodoComplemento.Attributes["UUID"].Value;
                 txt_UUID.Text = Valor;
                 XmlNode nodoEmisor = doc.GetElementsByTagName("cfdi:Emisor").Item(0);
@@ -3587,13 +3598,23 @@ namespace Business_Analitics
                     {
                         XmlDocument doc = new XmlDocument();
                         doc.Load(OpenDialog.FileName);
+                        XmlNode nodoComplemento;
                         XmlNode nodoComprobante = doc.GetElementsByTagName("cfdi:Comprobante").Item(0);
                         txt_MetodoPago_Kilos.Text = nodoComprobante.Attributes["MetodoPago"].Value;
                         dt_FechaFacturaCorteKilos.DateTime = Convert.ToDateTime(nodoComprobante.Attributes["Fecha"].Value);
-                        txt_FolioFacturaCorteKilos.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        try
+                        {
+                            txt_FolioFacturaCorteKilos.Text = nodoComprobante.Attributes["Folio"].Value;
+                        }
+                        catch (Exception)
+                        {
+                            nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                            string valor = nodoComplemento.Attributes["UUID"].Value;
+                            txt_FolioFacturaCorteKilos.Text = valor.Substring(valor.Length-4);
+                        }
                         txt_SubTotal_Kilos.Text = nodoComprobante.Attributes["SubTotal"].Value;
                         txt_Total_Kilos.Text = nodoComprobante.Attributes["Total"].Value;
-                        XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                        nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
                         txt_UUID_Kilos.Text = nodoComplemento.Attributes["UUID"].Value;
                         XmlNode nodoEmisor = doc.GetElementsByTagName("cfdi:Emisor").Item(0);
                         txtRazonSCorteKilos.Text = nodoEmisor.Attributes["Nombre"].Value;
@@ -3631,13 +3652,24 @@ namespace Business_Analitics
                     {
                         XmlDocument doc = new XmlDocument();
                         doc.Load(OpenDialog.FileName);
+                        XmlNode nodoComplemento;
                         XmlNode nodoComprobante = doc.GetElementsByTagName("cfdi:Comprobante").Item(0);
                         txt_MetodoPago_Dia.Text = nodoComprobante.Attributes["MetodoPago"].Value;
                         dt_FechaFacturaCorteDia.DateTime = Convert.ToDateTime(nodoComprobante.Attributes["Fecha"].Value);
-                        txt_FolioFacturaCorteDia.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        try
+                        {
+                            txt_FolioFacturaCorteDia.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        }
+                        catch (Exception)
+                        {
+                            nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                            string valor = nodoComplemento.Attributes["UUID"].Value;
+                            txt_FolioFacturaCorteDia.Text = valor.Substring(valor.Length-4) ;
+                        }
+                        
                         txt_SubTotal_Dia.Text = nodoComprobante.Attributes["SubTotal"].Value;
                         txt_Total_Dia.Text = nodoComprobante.Attributes["Total"].Value;
-                        XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                        nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
                         txt_UUID_Dia.Text = nodoComplemento.Attributes["UUID"].Value;
                         XmlNode nodoEmisor = doc.GetElementsByTagName("cfdi:Emisor").Item(0);
                         txtRazonSCorteDia.Text = nodoEmisor.Attributes["Nombre"].Value;
@@ -3671,13 +3703,24 @@ namespace Business_Analitics
                     {
                         XmlDocument doc = new XmlDocument();
                         doc.Load(OpenDialog.FileName);
+                        XmlNode nodoComplemento;
                         XmlNode nodoComprobante = doc.GetElementsByTagName("cfdi:Comprobante").Item(0);
                         txt_MetodoPago_Apoyo.Text = nodoComprobante.Attributes["MetodoPago"].Value;
                         dt_FechaFacturaCorteApoyo.DateTime = Convert.ToDateTime(nodoComprobante.Attributes["Fecha"].Value);
-                        txt_FolioFacturaCorteApoyo.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        try
+                        {
+                            txt_FolioFacturaCorteApoyo.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        }
+                        catch (Exception)
+                        {
+                            nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                            string valor = nodoComplemento.Attributes["UUID"].Value;
+                            txt_FolioFacturaCorteApoyo.Text = valor.Substring(valor.Length-4);
+                        }
+                        
                         txt_SubTotal_Apoyo.Text = nodoComprobante.Attributes["SubTotal"].Value;
                         txt_Total_Apoyo.Text = nodoComprobante.Attributes["Total"].Value;
-                        XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                        nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
                         txt_UUID_Apoyo.Text = nodoComplemento.Attributes["UUID"].Value;
                         XmlNode nodoEmisor = doc.GetElementsByTagName("cfdi:Emisor").Item(0);
                         txtRazonSCorteApoyo.Text = nodoEmisor.Attributes["Nombre"].Value;
@@ -3711,13 +3754,24 @@ namespace Business_Analitics
                     {
                         XmlDocument doc = new XmlDocument();
                         doc.Load(OpenDialog.FileName);
+                        XmlNode nodoComplemento;
                         XmlNode nodoComprobante = doc.GetElementsByTagName("cfdi:Comprobante").Item(0);
                         txt_MetodoPago_Salida.Text = nodoComprobante.Attributes["MetodoPago"].Value;
                         dt_FechaFacturaCorteSalida.DateTime = Convert.ToDateTime(nodoComprobante.Attributes["Fecha"].Value);
-                        txt_FolioFacturaCorteSalida.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        try
+                        {
+                            txt_FolioFacturaCorteSalida.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        }
+                        catch (Exception)
+                        {
+                            nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                            string valor = nodoComplemento.Attributes["UUID"].Value;
+                            txt_FolioFacturaCorteSalida.Text = valor.Substring(valor.Length - 4);
+                        }
+                        
                         txt_SubTotal_Salida.Text = nodoComprobante.Attributes["SubTotal"].Value;
                         txt_Total_Salida.Text = nodoComprobante.Attributes["Total"].Value;
-                        XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                        nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
                         txt_UUID_Salida.Text = nodoComplemento.Attributes["UUID"].Value;
                         XmlNode nodoEmisor = doc.GetElementsByTagName("cfdi:Emisor").Item(0);
                         txtRazonSCorteSalida.Text = nodoEmisor.Attributes["Nombre"].Value;
@@ -5396,13 +5450,24 @@ namespace Business_Analitics
                     {
                         XmlDocument doc = new XmlDocument();
                         doc.Load(OpenDialog.FileName);
+                        XmlNode nodoComplemento;
                         XmlNode nodoComprobante = doc.GetElementsByTagName("cfdi:Comprobante").Item(0);
                         txt_MetodoPago_Acarreo.Text = nodoComprobante.Attributes["MetodoPago"].Value;
                         dt_FechaFacturaAcarreo.DateTime = Convert.ToDateTime(nodoComprobante.Attributes["Fecha"].Value);
-                        txt_FolioFacturaAcarreo.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        try
+                        {
+                            txt_FolioFacturaAcarreo.Text = nodoComprobante.Attributes["Folio"].Value; ;
+                        }
+                        catch (Exception)
+                        {
+                            nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                            string valor = nodoComplemento.Attributes["UUID"].Value;
+                            txt_FolioFacturaAcarreo.Text = valor.Substring(valor.Length - 4);
+                        }
+                        
                         txt_SubTotal_Acarreo.Text = nodoComprobante.Attributes["SubTotal"].Value;
                         txt_Total_Acarreo.Text = nodoComprobante.Attributes["Total"].Value;
-                        XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
+                        nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
                         txt_UUID_Acarreo.Text = nodoComplemento.Attributes["UUID"].Value;
                         XmlNode nodoEmisor = doc.GetElementsByTagName("cfdi:Emisor").Item(0);
                         txtRazonSAcarreo.Text = nodoEmisor.Attributes["Nombre"].Value;

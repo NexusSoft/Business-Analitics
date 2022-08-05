@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_BuscarProgramaCorte));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.cmb_Temporada = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -47,6 +48,7 @@
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btn_RecargarTem = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Temporada.Properties)).BeginInit();
@@ -59,6 +61,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btn_RecargarTem);
             this.panelControl1.Controls.Add(this.cmb_Temporada);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -240,6 +243,16 @@
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 7;
             // 
+            // btn_RecargarTem
+            // 
+            this.btn_RecargarTem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_RecargarTem.ImageOptions.Image")));
+            this.btn_RecargarTem.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
+            this.btn_RecargarTem.Location = new System.Drawing.Point(231, 17);
+            this.btn_RecargarTem.Name = "btn_RecargarTem";
+            this.btn_RecargarTem.Size = new System.Drawing.Size(25, 25);
+            this.btn_RecargarTem.TabIndex = 146;
+            this.btn_RecargarTem.Click += new System.EventHandler(this.btn_RecargarTem_Click);
+            // 
             // Frm_BuscarProgramaCorte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,7 +266,6 @@
             this.Name = "Frm_BuscarProgramaCorte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccionar Programa";
-            this.Load += new System.EventHandler(this.Frm_BuscarProgramaCorte_Load);
             this.Shown += new System.EventHandler(this.Frm_BuscarProgramaCorte_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -289,5 +301,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraEditors.SimpleButton btn_RecargarTem;
     }
 }

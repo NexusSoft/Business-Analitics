@@ -63,7 +63,6 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dtgEmpresaCorte = new DevExpress.XtraGrid.GridControl();
             this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
-            this.ban_Huerta = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bandedGridColumn38 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn39 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn31 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -74,29 +73,24 @@
             this.bandedGridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn40 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.ban_Empresa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn41 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn10 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn14 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.ban_FKilos = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bandedGridColumn7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn16 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn17 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn18 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.ban_FDia = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bandedGridColumn35 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn20 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn21 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn22 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.ban_FApoyo = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bandedGridColumn37 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn24 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn25 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn26 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.ban_FSalida = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bandedGridColumn36 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn28 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn29 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -133,6 +127,13 @@
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.bandedGridColumn9 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.ban_Huerta = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.ban_Empresa = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.ban_FKilos = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.ban_FDia = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.ban_FApoyo = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.ban_FSalida = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -266,9 +267,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 517);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 519);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1382, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1382, 22);
             // 
             // barDockControlLeft
             // 
@@ -276,7 +277,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(64, 517);
+            this.barDockControlLeft.Size = new System.Drawing.Size(66, 519);
             // 
             // barDockControlRight
             // 
@@ -284,7 +285,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1382, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 517);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 519);
             // 
             // btnComparar
             // 
@@ -320,10 +321,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(64, 0);
+            this.panelControl1.Location = new System.Drawing.Point(66, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(1318, 220);
+            this.panelControl1.Size = new System.Drawing.Size(1316, 220);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
@@ -340,7 +341,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1304, 206);
+            this.groupControl1.Size = new System.Drawing.Size(1302, 206);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Fechas de Corte";
             // 
@@ -361,7 +362,7 @@
             this.chk_Huerta.MenuManager = this.barManager1;
             this.chk_Huerta.Name = "chk_Huerta";
             this.chk_Huerta.Properties.Caption = "Detalles huerta";
-            this.chk_Huerta.Size = new System.Drawing.Size(106, 19);
+            this.chk_Huerta.Size = new System.Drawing.Size(106, 20);
             this.chk_Huerta.TabIndex = 18;
             this.chk_Huerta.CheckedChanged += new System.EventHandler(this.chk_Huerta_CheckedChanged);
             // 
@@ -371,7 +372,7 @@
             this.chk_Empresa.MenuManager = this.barManager1;
             this.chk_Empresa.Name = "chk_Empresa";
             this.chk_Empresa.Properties.Caption = "Detalles Empresa Corte";
-            this.chk_Empresa.Size = new System.Drawing.Size(142, 19);
+            this.chk_Empresa.Size = new System.Drawing.Size(142, 20);
             this.chk_Empresa.TabIndex = 19;
             this.chk_Empresa.CheckedChanged += new System.EventHandler(this.chk_Empresa_CheckedChanged);
             // 
@@ -394,7 +395,7 @@
             this.chk_FSalida.MenuManager = this.barManager1;
             this.chk_FSalida.Name = "chk_FSalida";
             this.chk_FSalida.Properties.Caption = "Salida en Falso";
-            this.chk_FSalida.Size = new System.Drawing.Size(106, 19);
+            this.chk_FSalida.Size = new System.Drawing.Size(106, 20);
             this.chk_FSalida.TabIndex = 22;
             this.chk_FSalida.CheckedChanged += new System.EventHandler(this.chk_FSalida_CheckedChanged);
             // 
@@ -404,7 +405,7 @@
             this.chk_FApoyo.MenuManager = this.barManager1;
             this.chk_FApoyo.Name = "chk_FApoyo";
             this.chk_FApoyo.Properties.Caption = "Apoyo";
-            this.chk_FApoyo.Size = new System.Drawing.Size(106, 19);
+            this.chk_FApoyo.Size = new System.Drawing.Size(106, 20);
             this.chk_FApoyo.TabIndex = 21;
             this.chk_FApoyo.CheckedChanged += new System.EventHandler(this.chk_FApoyo_CheckedChanged);
             // 
@@ -414,7 +415,7 @@
             this.chk_FDia.MenuManager = this.barManager1;
             this.chk_FDia.Name = "chk_FDia";
             this.chk_FDia.Properties.Caption = "Dia";
-            this.chk_FDia.Size = new System.Drawing.Size(106, 19);
+            this.chk_FDia.Size = new System.Drawing.Size(106, 20);
             this.chk_FDia.TabIndex = 20;
             this.chk_FDia.CheckedChanged += new System.EventHandler(this.chk_FDia_CheckedChanged);
             // 
@@ -424,7 +425,7 @@
             this.chk_FKilos.MenuManager = this.barManager1;
             this.chk_FKilos.Name = "chk_FKilos";
             this.chk_FKilos.Properties.Caption = "Kilos";
-            this.chk_FKilos.Size = new System.Drawing.Size(106, 19);
+            this.chk_FKilos.Size = new System.Drawing.Size(106, 20);
             this.chk_FKilos.TabIndex = 19;
             this.chk_FKilos.CheckedChanged += new System.EventHandler(this.chk_FKilos_CheckedChanged);
             // 
@@ -499,10 +500,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgEmpresaCorte);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(64, 220);
+            this.panelControl2.Location = new System.Drawing.Point(66, 220);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1318, 297);
+            this.panelControl2.Size = new System.Drawing.Size(1316, 299);
             this.panelControl2.TabIndex = 5;
             // 
             // dtgEmpresaCorte
@@ -512,7 +513,7 @@
             this.dtgEmpresaCorte.MainView = this.bandedGridView1;
             this.dtgEmpresaCorte.MenuManager = this.barManager1;
             this.dtgEmpresaCorte.Name = "dtgEmpresaCorte";
-            this.dtgEmpresaCorte.Size = new System.Drawing.Size(1304, 283);
+            this.dtgEmpresaCorte.Size = new System.Drawing.Size(1302, 285);
             this.dtgEmpresaCorte.TabIndex = 0;
             this.dtgEmpresaCorte.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1,
@@ -529,6 +530,7 @@
             this.ban_FSalida});
             this.bandedGridView1.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
             this.bandedGridColumn31,
+            this.bandedGridColumn9,
             this.bandedGridColumn2,
             this.bandedGridColumn42,
             this.bandedGridColumn3,
@@ -569,23 +571,6 @@
             this.bandedGridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.bandedGridView1.OptionsView.ShowFooter = true;
             this.bandedGridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // ban_Huerta
-            // 
-            this.ban_Huerta.Caption = "Huerta";
-            this.ban_Huerta.Columns.Add(this.bandedGridColumn38);
-            this.ban_Huerta.Columns.Add(this.bandedGridColumn39);
-            this.ban_Huerta.Columns.Add(this.bandedGridColumn31);
-            this.ban_Huerta.Columns.Add(this.bandedGridColumn2);
-            this.ban_Huerta.Columns.Add(this.bandedGridColumn42);
-            this.ban_Huerta.Columns.Add(this.bandedGridColumn32);
-            this.ban_Huerta.Columns.Add(this.bandedGridColumn3);
-            this.ban_Huerta.Columns.Add(this.bandedGridColumn4);
-            this.ban_Huerta.Columns.Add(this.bandedGridColumn40);
-            this.ban_Huerta.Columns.Add(this.bandedGridColumn5);
-            this.ban_Huerta.Name = "ban_Huerta";
-            this.ban_Huerta.VisibleIndex = 0;
-            this.ban_Huerta.Width = 947;
             // 
             // bandedGridColumn38
             // 
@@ -672,19 +657,6 @@
             this.bandedGridColumn5.Visible = true;
             this.bandedGridColumn5.Width = 78;
             // 
-            // ban_Empresa
-            // 
-            this.ban_Empresa.Caption = "Empresa de Corte";
-            this.ban_Empresa.Columns.Add(this.bandedGridColumn1);
-            this.ban_Empresa.Columns.Add(this.bandedGridColumn6);
-            this.ban_Empresa.Columns.Add(this.bandedGridColumn41);
-            this.ban_Empresa.Columns.Add(this.bandedGridColumn10);
-            this.ban_Empresa.Columns.Add(this.bandedGridColumn14);
-            this.ban_Empresa.Columns.Add(this.bandedGridColumn8);
-            this.ban_Empresa.Name = "ban_Empresa";
-            this.ban_Empresa.VisibleIndex = 1;
-            this.ban_Empresa.Width = 491;
-            // 
             // bandedGridColumn1
             // 
             this.bandedGridColumn1.Caption = "Fecha Corte";
@@ -737,17 +709,6 @@
             this.bandedGridColumn8.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn8.Visible = true;
             // 
-            // ban_FKilos
-            // 
-            this.ban_FKilos.Caption = "Factura Precio por Kilo";
-            this.ban_FKilos.Columns.Add(this.bandedGridColumn7);
-            this.ban_FKilos.Columns.Add(this.bandedGridColumn16);
-            this.ban_FKilos.Columns.Add(this.bandedGridColumn17);
-            this.ban_FKilos.Columns.Add(this.bandedGridColumn18);
-            this.ban_FKilos.Name = "ban_FKilos";
-            this.ban_FKilos.VisibleIndex = 2;
-            this.ban_FKilos.Width = 289;
-            // 
             // bandedGridColumn7
             // 
             this.bandedGridColumn7.Caption = "Precio Cosecha";
@@ -782,17 +743,6 @@
             this.bandedGridColumn18.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn18.Visible = true;
             this.bandedGridColumn18.Width = 65;
-            // 
-            // ban_FDia
-            // 
-            this.ban_FDia.Caption = "Factura Precio por dia";
-            this.ban_FDia.Columns.Add(this.bandedGridColumn35);
-            this.ban_FDia.Columns.Add(this.bandedGridColumn20);
-            this.ban_FDia.Columns.Add(this.bandedGridColumn21);
-            this.ban_FDia.Columns.Add(this.bandedGridColumn22);
-            this.ban_FDia.Name = "ban_FDia";
-            this.ban_FDia.VisibleIndex = 3;
-            this.ban_FDia.Width = 289;
             // 
             // bandedGridColumn35
             // 
@@ -829,17 +779,6 @@
             this.bandedGridColumn22.Visible = true;
             this.bandedGridColumn22.Width = 65;
             // 
-            // ban_FApoyo
-            // 
-            this.ban_FApoyo.Caption = "Factura Precio por Apoyo";
-            this.ban_FApoyo.Columns.Add(this.bandedGridColumn37);
-            this.ban_FApoyo.Columns.Add(this.bandedGridColumn24);
-            this.ban_FApoyo.Columns.Add(this.bandedGridColumn25);
-            this.ban_FApoyo.Columns.Add(this.bandedGridColumn26);
-            this.ban_FApoyo.Name = "ban_FApoyo";
-            this.ban_FApoyo.VisibleIndex = 4;
-            this.ban_FApoyo.Width = 289;
-            // 
             // bandedGridColumn37
             // 
             this.bandedGridColumn37.Caption = "Precio Cuadrilla Apoyo";
@@ -874,17 +813,6 @@
             this.bandedGridColumn26.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn26.Visible = true;
             this.bandedGridColumn26.Width = 65;
-            // 
-            // ban_FSalida
-            // 
-            this.ban_FSalida.Caption = "Factura Precio por Salida";
-            this.ban_FSalida.Columns.Add(this.bandedGridColumn36);
-            this.ban_FSalida.Columns.Add(this.bandedGridColumn28);
-            this.ban_FSalida.Columns.Add(this.bandedGridColumn29);
-            this.ban_FSalida.Columns.Add(this.bandedGridColumn30);
-            this.ban_FSalida.Name = "ban_FSalida";
-            this.ban_FSalida.VisibleIndex = 5;
-            this.ban_FSalida.Width = 289;
             // 
             // bandedGridColumn36
             // 
@@ -1171,6 +1099,88 @@
             this.gridColumn30.Visible = true;
             this.gridColumn30.VisibleIndex = 29;
             // 
+            // bandedGridColumn9
+            // 
+            this.bandedGridColumn9.Caption = "Temporada";
+            this.bandedGridColumn9.FieldName = "Temporada";
+            this.bandedGridColumn9.Name = "bandedGridColumn9";
+            this.bandedGridColumn9.Visible = true;
+            // 
+            // ban_Huerta
+            // 
+            this.ban_Huerta.Caption = "Huerta";
+            this.ban_Huerta.Columns.Add(this.bandedGridColumn9);
+            this.ban_Huerta.Columns.Add(this.bandedGridColumn38);
+            this.ban_Huerta.Columns.Add(this.bandedGridColumn39);
+            this.ban_Huerta.Columns.Add(this.bandedGridColumn31);
+            this.ban_Huerta.Columns.Add(this.bandedGridColumn2);
+            this.ban_Huerta.Columns.Add(this.bandedGridColumn42);
+            this.ban_Huerta.Columns.Add(this.bandedGridColumn32);
+            this.ban_Huerta.Columns.Add(this.bandedGridColumn3);
+            this.ban_Huerta.Columns.Add(this.bandedGridColumn4);
+            this.ban_Huerta.Columns.Add(this.bandedGridColumn40);
+            this.ban_Huerta.Columns.Add(this.bandedGridColumn5);
+            this.ban_Huerta.Name = "ban_Huerta";
+            this.ban_Huerta.VisibleIndex = 0;
+            this.ban_Huerta.Width = 1022;
+            // 
+            // ban_Empresa
+            // 
+            this.ban_Empresa.Caption = "Empresa de Corte";
+            this.ban_Empresa.Columns.Add(this.bandedGridColumn1);
+            this.ban_Empresa.Columns.Add(this.bandedGridColumn6);
+            this.ban_Empresa.Columns.Add(this.bandedGridColumn41);
+            this.ban_Empresa.Columns.Add(this.bandedGridColumn10);
+            this.ban_Empresa.Columns.Add(this.bandedGridColumn14);
+            this.ban_Empresa.Columns.Add(this.bandedGridColumn8);
+            this.ban_Empresa.Name = "ban_Empresa";
+            this.ban_Empresa.VisibleIndex = 1;
+            this.ban_Empresa.Width = 491;
+            // 
+            // ban_FKilos
+            // 
+            this.ban_FKilos.Caption = "Factura Precio por Kilo";
+            this.ban_FKilos.Columns.Add(this.bandedGridColumn7);
+            this.ban_FKilos.Columns.Add(this.bandedGridColumn16);
+            this.ban_FKilos.Columns.Add(this.bandedGridColumn17);
+            this.ban_FKilos.Columns.Add(this.bandedGridColumn18);
+            this.ban_FKilos.Name = "ban_FKilos";
+            this.ban_FKilos.VisibleIndex = 2;
+            this.ban_FKilos.Width = 289;
+            // 
+            // ban_FDia
+            // 
+            this.ban_FDia.Caption = "Factura Precio por dia";
+            this.ban_FDia.Columns.Add(this.bandedGridColumn35);
+            this.ban_FDia.Columns.Add(this.bandedGridColumn20);
+            this.ban_FDia.Columns.Add(this.bandedGridColumn21);
+            this.ban_FDia.Columns.Add(this.bandedGridColumn22);
+            this.ban_FDia.Name = "ban_FDia";
+            this.ban_FDia.VisibleIndex = 3;
+            this.ban_FDia.Width = 289;
+            // 
+            // ban_FApoyo
+            // 
+            this.ban_FApoyo.Caption = "Factura Precio por Apoyo";
+            this.ban_FApoyo.Columns.Add(this.bandedGridColumn37);
+            this.ban_FApoyo.Columns.Add(this.bandedGridColumn24);
+            this.ban_FApoyo.Columns.Add(this.bandedGridColumn25);
+            this.ban_FApoyo.Columns.Add(this.bandedGridColumn26);
+            this.ban_FApoyo.Name = "ban_FApoyo";
+            this.ban_FApoyo.VisibleIndex = 4;
+            this.ban_FApoyo.Width = 289;
+            // 
+            // ban_FSalida
+            // 
+            this.ban_FSalida.Caption = "Factura Precio por Salida";
+            this.ban_FSalida.Columns.Add(this.bandedGridColumn36);
+            this.ban_FSalida.Columns.Add(this.bandedGridColumn28);
+            this.ban_FSalida.Columns.Add(this.bandedGridColumn29);
+            this.ban_FSalida.Columns.Add(this.bandedGridColumn30);
+            this.ban_FSalida.Name = "ban_FSalida";
+            this.ban_FSalida.VisibleIndex = 5;
+            this.ban_FSalida.Width = 289;
+            // 
             // Frm_RelacionContabilidad_Empresa_Corte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1315,9 +1325,10 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn41;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn42;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn7;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand ban_Huerta;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand ban_Empresa;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn8;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand ban_Huerta;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn9;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand ban_Empresa;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand ban_FKilos;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand ban_FDia;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand ban_FApoyo;

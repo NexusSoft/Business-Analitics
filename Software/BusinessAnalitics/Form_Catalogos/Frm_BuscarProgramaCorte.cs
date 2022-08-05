@@ -106,6 +106,11 @@ namespace Business_Analitics
         {
 
         }
+
+        private void btn_RecargarTem_Click(object sender, EventArgs e)
+        {
+            Cargar_Programa(cmb_Temporada.EditValue.ToString());
+        }
     }
    
 }
