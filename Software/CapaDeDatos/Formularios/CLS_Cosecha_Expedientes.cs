@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
@@ -138,7 +134,7 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Archivo, _dato, "Contrato_GEST");
 
                 _dato.Texto = d_Contrato_GEST;
-                _conexion.agregarParametro(EnumTipoDato.Archivo, _dato, "d_Contrato_GEST");
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "d_Contrato_GEST");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();
@@ -146,6 +142,7 @@ namespace CapaDeDatos
                 if (_conexion.Exito)
                 {
                     Datos = _conexion.Datos;
+                    string valor = Datos.Rows[0][0].ToString();
                 }
                 else
                 {

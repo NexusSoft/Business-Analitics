@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
-using System.Diagnostics;
 using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraPrintingLinks;
+using System;
+using System.Drawing;
 using System.Xml;
 
 namespace Business_Analitics
@@ -244,12 +235,12 @@ namespace Business_Analitics
         }
         private DateTime FechaMaxima()
         {
-            DateTime Fecha= DateTime.Now;
+            DateTime Fecha = DateTime.Now;
             CLS_Reporte_Inventario_Ventas sel = new CLS_Reporte_Inventario_Ventas();
             sel.MtdSeleccionarFechaMaxima();
-            if(sel.Exito)
+            if (sel.Exito)
             {
-                if(sel.Datos.Rows.Count>0)
+                if (sel.Datos.Rows.Count > 0)
                 {
                     Fecha = Convert.ToDateTime(sel.Datos.Rows[0]["Fecha"].ToString());
                 }
@@ -276,6 +267,7 @@ namespace Business_Analitics
         {
             GridView view = sender as GridView;
             if (view == null) return;
+#pragma warning disable CS0168 // La variable 'ee' se ha declarado pero nunca se usa
             try
             {
                 if (e.Column.FieldName == "Concepto")
@@ -290,8 +282,9 @@ namespace Business_Analitics
             {
                 //...
             }
+#pragma warning restore CS0168 // La variable 'ee' se ha declarado pero nunca se usa
         }
-            private void btnExportar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnExportar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (dtgValReporte.RowCount > 0)
             {
@@ -322,15 +315,15 @@ namespace Business_Analitics
             link3.Component = dtgReporteTSerie;
             PrintableComponentLinkBase link4 = new PrintableComponentLinkBase();
             link4.Component = dtgReporteSerie;
-           
+
             compositeLink.Links.Add(link1);
             compositeLink.Links.Add(link2);
             compositeLink.Links.Add(link3);
             compositeLink.Links.Add(link4);
             XlsxExportOptionsEx options = new XlsxExportOptionsEx();
-            options.RawDataMode= false;
+            options.RawDataMode = false;
             options.ExportType = DevExpress.Export.ExportType.DataAware;
-            options.ShowColumnHeaders=DevExpress.Utils.DefaultBoolean.True;
+            options.ShowColumnHeaders = DevExpress.Utils.DefaultBoolean.True;
             options.AllowConditionalFormatting = DevExpress.Utils.DefaultBoolean.False;
             options.TextExportMode = TextExportMode.Text;
             options.ExportMode = XlsxExportMode.SingleFilePageByPage;
@@ -362,7 +355,7 @@ namespace Business_Analitics
             XmlNodeList itemNodes = doc.SelectNodes("Dashboard/DataSources/SqlDataSource/Query/Parameter");
             foreach (XmlNode itemNode in itemNodes)
             {
-                if(itemNode.Attributes["Name"].Value=="@Fecha1")
+                if (itemNode.Attributes["Name"].Value == "@Fecha1")
                 {
                     itemNode.InnerText = Fecha1;
                 }
@@ -388,7 +381,7 @@ namespace Business_Analitics
             sel.Fecha1 = dtFecha1.DateTime.Year.ToString() + DosCeros(dtFecha1.DateTime.Month.ToString()) + DosCeros(dtFecha1.DateTime.Day.ToString());
             sel.Fecha2 = dtFecha2.DateTime.Year.ToString() + DosCeros(dtFecha2.DateTime.Month.ToString()) + DosCeros(dtFecha2.DateTime.Day.ToString());
             sel.MtdSeleccionarFechaValidar();
-            if(sel.Exito)
+            if (sel.Exito)
             {
                 if (sel.Datos.Rows.Count > 0)
                 {

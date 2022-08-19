@@ -1,9 +1,9 @@
 ﻿using CapaDeDatos;
+using DevExpress.XtraEditors;
 using System;
 using System.Data;
-using System.Windows.Forms;
 using System.Globalization;
-using DevExpress.XtraEditors;
+using System.Windows.Forms;
 
 namespace Business_Analitics
 {
@@ -415,11 +415,11 @@ namespace Business_Analitics
         }
         void AcumularCortes(DataTable datos)
         {
-            
+
             decimal TotalaPagar = 0;
             decimal TotalCorte = 0;
             decimal TotalAcarreo = 0;
-            
+
             decimal TotalaPagarUSD = 0;
             decimal TotalCorteUSD = 0;
             decimal TotalAcarreoUSD = 0;
@@ -446,7 +446,7 @@ namespace Business_Analitics
                 , KilosRecibidos, Preciokg, TotalaPagar, TotalCorte, TotalAcarreo, SemanaTC, TipoCambio,
                 TotalaPagarUSD, TotalCorteUSD, TotalAcarreoUSD);
             }
-            
+
         }
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
@@ -494,7 +494,7 @@ namespace Business_Analitics
 
         private void dt_FechaHasta_KeyDown(object sender, KeyEventArgs e)
         {
-            e.SuppressKeyPress= true;
+            e.SuppressKeyPress = true;
         }
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -640,7 +640,7 @@ namespace Business_Analitics
                     XtraMessageBox.Show("No se ha consultado cortes");
                 }
             }
-            
+
         }
     }
 }

@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace CapaDeDatos
 {
-    public class CLS_Temporada:ConexionBase
+    public class CLS_Temporada : ConexionBase
     {
         public string c_codigo_tem { get; set; }
         public void MtdSeleccionarEtiquetaTemporada()

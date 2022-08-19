@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using iTextSharp.text.pdf;
+using System;
 using System.Drawing;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using System.IO;
-using Image = iTextSharp.text.Image;
 
 namespace Business_Analitics
 {
@@ -118,7 +112,7 @@ namespace Business_Analitics
         }
         public static Bitmap CodigosBarraUPCA(string _Code, Single Height = 0)
         {
-           
+
             BarcodeEAN uccEan128 = new BarcodeEAN();
             uccEan128.CodeType = Barcode.UPCA;
             if (Height != 0)

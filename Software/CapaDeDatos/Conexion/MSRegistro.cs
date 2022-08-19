@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Security.Cryptography;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 
 namespace CapaDeDatos
 {

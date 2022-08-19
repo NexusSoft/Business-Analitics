@@ -134,6 +134,7 @@
             this.ribbon.QuickToolbarItemLinks.Add(this.btn_inventario_ventas);
             this.ribbon.QuickToolbarItemLinks.Add(this.btnReportInventario);
             this.ribbon.QuickToolbarItemLinks.Add(this.btn_Cosecha);
+            this.ribbon.QuickToolbarItemLinks.Add(this.btn_Cargas);
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbon.Size = new System.Drawing.Size(1163, 147);
             this.ribbon.StatusBar = this.ribbonStatusBar;
@@ -173,6 +174,8 @@
             this.btn_Cargas.Id = 5;
             this.btn_Cargas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Cargas.ImageOptions.LargeImage")));
             this.btn_Cargas.Name = "btn_Cargas";
+            this.btn_Cargas.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btn_Cargas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Cargas_ItemClick);
             // 
             // btn_EmpBascula
             // 
@@ -505,10 +508,10 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 426);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 424);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1163, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1163, 25);
             // 
             // ribbonPageGroup6
             // 

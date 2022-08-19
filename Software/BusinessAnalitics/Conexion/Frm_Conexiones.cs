@@ -1,21 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Security.Cryptography;
-using Microsoft.Win32;
-using DevExpress.XtraEditors;
 
 namespace Business_Analitics
 {
     public partial class Frm_Conexiones : DevExpress.XtraEditors.XtraForm
     {
-        
+
         private static Frm_Conexiones m_FormDefInstance;
         public static Frm_Conexiones DefInstance
         {
@@ -30,7 +22,7 @@ namespace Business_Analitics
                 m_FormDefInstance = value;
             }
         }
-        
+
         public Frm_Conexiones()
         {
             InitializeComponent();
@@ -40,7 +32,7 @@ namespace Business_Analitics
             btnGuardarConexion.LargeGlyph = imageCollection1.Images[0];
             btnProbarConexion.LargeGlyph = imageCollection1.Images[1];
         }
-        
+
         public string LeerConexion()
         {
             try
@@ -196,6 +188,6 @@ namespace Business_Analitics
             }
         }
 
-        
+
     }
 }

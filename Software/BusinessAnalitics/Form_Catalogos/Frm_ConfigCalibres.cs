@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace Business_Analitics
 {
@@ -37,7 +31,7 @@ namespace Business_Analitics
             {
                 if (obtener.Datos.Rows.Count > 0)
                 {
-                    cmbTipoCorte.Properties.DisplayMember = "v_nombre_tipocorte"; 
+                    cmbTipoCorte.Properties.DisplayMember = "v_nombre_tipocorte";
                     cmbTipoCorte.Properties.ValueMember = "c_codigo_tipocorte";
                     cmbTipoCorte.EditValue = Valor;
                     cmbTipoCorte.Properties.DataSource = obtener.Datos;
@@ -53,7 +47,7 @@ namespace Business_Analitics
             {
                 if (obtener.Datos.Rows.Count > 0)
                 {
-                    cmbCalibre.Properties.DisplayMember = "v_nombre_tam"; 
+                    cmbCalibre.Properties.DisplayMember = "v_nombre_tam";
                     cmbCalibre.Properties.ValueMember = "c_codigo_tam";
                     cmbCalibre.EditValue = Valor;
                     cmbCalibre.Properties.DataSource = obtener.Datos;
@@ -63,7 +57,7 @@ namespace Business_Analitics
 
         private void cmbTipoCorte_EditValueChanged(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(cmbTipoCorte.EditValue.ToString()))
+            if (!string.IsNullOrEmpty(cmbTipoCorte.EditValue.ToString()))
             {
                 CargarTamanio(string.Empty);
             }
@@ -82,7 +76,7 @@ namespace Business_Analitics
         }
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if( !string.IsNullOrEmpty(cmbTipoCorte.EditValue.ToString())&& !string.IsNullOrEmpty(cmbCalibre.EditValue.ToString()))
+            if (!string.IsNullOrEmpty(cmbTipoCorte.EditValue.ToString()) && !string.IsNullOrEmpty(cmbCalibre.EditValue.ToString()))
             {
                 CLS_ConfigTipoC_Tamanio ins = new CLS_ConfigTipoC_Tamanio();
                 ins.c_codigo_tam = cmbCalibre.EditValue.ToString();
@@ -91,7 +85,7 @@ namespace Business_Analitics
                 ins.v_nombre_tipocorte = cmbTipoCorte.Text;
                 ins.Id_Usuario = UsuariosLogin;
                 ins.MtdInsertarTipoCorte_Tamanio();
-                if(ins.Exito)
+                if (ins.Exito)
                 {
                     XtraMessageBox.Show("Se guardo el registro con exito");
                     CargarTamanio(string.Empty);
@@ -135,7 +129,7 @@ namespace Business_Analitics
 
         private void dtgCortesTamanio_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

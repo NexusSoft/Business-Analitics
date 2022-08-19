@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
-using DevExpress.XtraEditors.Mask;
-using System.Globalization;
 using DevExpress.XtraGrid.Views.Grid;
+using System;
+using System.Data;
+using System.Globalization;
+using System.Windows.Forms;
 
 namespace Business_Analitics
 {
@@ -43,6 +36,10 @@ namespace Business_Analitics
         public string vVolumen { get; private set; }
         public string vVenta { get; private set; }
         public bool PrimeraEdicion { get; private set; }
+        public string vIdPais { get; private set; }
+        public string vIdTratamiento { get; private set; }
+        public string vIdCategoria { get; private set; }
+        public string vIdTamanio { get; private set; }
 
         public string DosCeros(string sVal)
         {
@@ -235,7 +232,7 @@ namespace Business_Analitics
             Ins.Id_Tratamiento = cmb_Tratamiento.EditValue.ToString();
             Ins.Id_Categoria = cmb_Categoria.EditValue.ToString();
             Ins.Usuario = UsuariosLogin.Trim();
-            
+
             for (int i = 0; i < dtgValTamanio.DataRowCount; i++)
             {
                 Ins.Id_Tamanio = dtgValTamanio.GetRowCellValue(i, dtgValTamanio.Columns["Id_Tamanio"]).ToString();
@@ -348,6 +345,10 @@ namespace Business_Analitics
                     vIdRegistro = row["Id_Registro"].ToString();
                     vVolumen = row["Volumen"].ToString();
                     vVenta = row["Venta"].ToString();
+                    vIdPais=row["Id_Pais"].ToString();
+                    vIdTratamiento=row["Id_Tratamiento"].ToString();
+                    vIdCategoria=row["Id_Categoria"].ToString();
+                    vIdTamanio=row["Id_Tamanio"].ToString();
                 }
             }
             catch (Exception ex)
@@ -363,11 +364,11 @@ namespace Business_Analitics
                 GridView gv = sender as GridView;
                 CLS_Inventario_Ventas Ins = new CLS_Inventario_Ventas();
                 Ins.Id_Registro = vIdRegistro;
-                Ins.Fecha = string.Empty;
-                Ins.Id_Pais = string.Empty;
-                Ins.Id_Tratamiento = string.Empty;
-                Ins.Id_Categoria = string.Empty;
-                Ins.Id_Tamanio = string.Empty;
+                Ins.Fecha = dtFecha.DateTime.Year.ToString() + DosCeros(dtFecha.DateTime.Month.ToString()) + DosCeros(dtFecha.DateTime.Day.ToString());
+                Ins.Id_Pais = vIdPais;
+                Ins.Id_Tratamiento = vIdTratamiento;
+                Ins.Id_Categoria = vIdCategoria;
+                Ins.Id_Tamanio = vIdTamanio;
                 Ins.Usuario = UsuariosLogin.Trim();
 
                 if (e.Column.FieldName == "Volumen")
@@ -383,6 +384,10 @@ namespace Business_Analitics
                     if (!Ins.Exito)
                     {
                         XtraMessageBox.Show(Ins.Mensaje);
+                    }
+                    else
+                    {
+                        CargarTotalesPais();
                     }
 
                 }
@@ -400,6 +405,10 @@ namespace Business_Analitics
                     {
                         XtraMessageBox.Show(Ins.Mensaje);
                     }
+                    else
+                    {
+                        CargarTotalesPais();
+                    }
                 }
                 PrimeraEdicion = false;
             }
@@ -410,5 +419,6 @@ namespace Business_Analitics
             FrmHistorialInventario frm = new FrmHistorialInventario();
             frm.ShowDialog();
         }
+
     }
 }

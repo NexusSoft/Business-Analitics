@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.IO;
+using System.Text;
+using System.Windows.Forms;
 using System.Xml;
 
 namespace Business_Analitics
@@ -35,7 +31,7 @@ namespace Business_Analitics
         Byte[] ArchivoPDFGlobalAcarreo = null;
         Byte[] ArchivoXMLGlobalAcarreo = null;
         //REP
-        Byte[] ArchivoPDFGlobalProductorREP= null;
+        Byte[] ArchivoPDFGlobalProductorREP = null;
         Byte[] ArchivoXMLGlobalProductorREP = null;
         //ArchivoExpediente
         Byte[] ArchivoPDFGlobalTarjetaApeam = null;
@@ -294,8 +290,8 @@ namespace Business_Analitics
                     txt_Huerta.Text = sel.Datos.Rows[0]["v_nombre_hue"].ToString();
                     BarHuerta.Caption = "Huerta: " + sel.Datos.Rows[0]["v_nombre_hue"].ToString();
                     txt_Huerta.Tag = sel.Datos.Rows[0]["c_codigo_hue"].ToString();
-                    txt_SAGARPA.Text= sel.Datos.Rows[0]["v_registro_hue"].ToString();
-                    txt_Estado_Huerta.Text= sel.Datos.Rows[0]["v_nombre_est"].ToString();
+                    txt_SAGARPA.Text = sel.Datos.Rows[0]["v_registro_hue"].ToString();
+                    txt_Estado_Huerta.Text = sel.Datos.Rows[0]["v_nombre_est"].ToString();
                     txt_Acopiador.Text = sel.Datos.Rows[0]["v_nombre_zon"].ToString();
                     txt_Acopiador.Tag = sel.Datos.Rows[0]["c_codigo_zon"].ToString();
                     txt_Cajas_Programa.Text = sel.Datos.Rows[0]["n_cajas_pcd"].ToString();
@@ -306,7 +302,7 @@ namespace Business_Analitics
                     txt_Secuencia.Text = sel.Datos.Rows[0]["c_secuencia_ocd"].ToString();
                     txt_Temporada.Text = sel.Datos.Rows[0]["c_codigo_tem"].ToString();
                     txt_Productor.Text = sel.Datos.Rows[0]["v_nombre_dno"].ToString();
-                    if(sel.Datos.Rows[0]["b_autorizausa_ase"].ToString()=="True")
+                    if (sel.Datos.Rows[0]["b_autorizausa_ase"].ToString() == "True")
                     {
                         chk_Autorizado_USA.Checked = true;
                     }
@@ -314,8 +310,8 @@ namespace Business_Analitics
                     {
                         chk_Autorizado_USA.Checked = false;
                     }
-                    txt_Poliza_ase.Text= sel.Datos.Rows[0]["c_poliza_ase"].ToString();
-                    txt_Nombre_ase.Text= sel.Datos.Rows[0]["v_nombre_ase"].ToString();
+                    txt_Poliza_ase.Text = sel.Datos.Rows[0]["c_poliza_ase"].ToString();
+                    txt_Nombre_ase.Text = sel.Datos.Rows[0]["v_nombre_ase"].ToString();
                     BarProductor.Caption = "Productor: " + sel.Datos.Rows[0]["v_nombre_dno"].ToString();
                     if (txt_Temporada.Text != string.Empty && txt_OrdenCorte.Text != string.Empty && txt_Secuencia.Text != string.Empty)
                     {
@@ -1245,7 +1241,7 @@ namespace Business_Analitics
                         if (sel.Datos.Rows.Count > 0)
                         {
                             txtPlacasCamion.Text = sel.Datos.Rows[0]["Placas"].ToString();
-                            txt_TipoCamion.Text= sel.Datos.Rows[0]["Nombre_TipoCamion"].ToString();
+                            txt_TipoCamion.Text = sel.Datos.Rows[0]["Nombre_TipoCamion"].ToString();
                             txt_TipoCamion.Tag = sel.Datos.Rows[0]["Id_TipoCamion"].ToString();
                             CargarServiciosAcarreo();
                             CalcularCostosAcarreo();
@@ -1332,7 +1328,7 @@ namespace Business_Analitics
         }
         private string ConsultaFactura(string fileName)
         {
-            string vMetodo=string.Empty;
+            string vMetodo = string.Empty;
             try
             {
                 string Valor = String.Empty;
@@ -1354,9 +1350,9 @@ namespace Business_Analitics
                 {
                     nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
                     string valor = nodoComplemento.Attributes["UUID"].Value;
-                    txt_FolioFacturaProductor.Text = valor.Substring(valor.Length-4);
+                    txt_FolioFacturaProductor.Text = valor.Substring(valor.Length - 4);
                 }
-                
+
                 Valor = nodoComprobante.Attributes["SubTotal"].Value;
                 txt_SubTotal.Text = Valor;
                 Valor = nodoComprobante.Attributes["Total"].Value;
@@ -1371,7 +1367,7 @@ namespace Business_Analitics
             }
             catch
             {
-                txt_RutaXMLProductor.Text=String.Empty;
+                txt_RutaXMLProductor.Text = String.Empty;
                 XtraMessageBox.Show("No es un Archivo CFDI Valido favor de verificarlo");
                 return vMetodo;
             }
@@ -1382,7 +1378,7 @@ namespace Business_Analitics
             CLS_Cosecha_Facturas sel = new CLS_Cosecha_Facturas();
             sel.Id_Cosecha = txt_IdCosecha.Text;
             sel.MtdSeleccionarCosechaTotalREP();
-            if(sel.Exito)
+            if (sel.Exito)
             {
                 if (sel.Datos.Rows.Count > 0)
                 {
@@ -1611,9 +1607,9 @@ namespace Business_Analitics
             this.dt_FechaPagoProductor.Properties.Appearance.Options.UseForeColor = true;
             xtraTabPage4.PageVisible = false;
             txt_MetodoPago.Text = String.Empty;
-            txt_SubTotal.Text=String.Empty;
-            txt_Total.Text=String.Empty;
-            txt_UUID.Text=String.Empty;
+            txt_SubTotal.Text = String.Empty;
+            txt_Total.Text = String.Empty;
+            txt_UUID.Text = String.Empty;
         }
         void LimpiarFacturasKilos()
         {
@@ -1762,11 +1758,11 @@ namespace Business_Analitics
             btn_ViewPDFTarjetaAPEAM.Enabled = false;
             btn_DelTarjetaAPEAM.Enabled = false;
             dt_FechaTarjetaAPEAM.EditValue = DateTime.Now;
-            vRutaIdentificacion_INE_IFE=String.Empty;
+            vRutaIdentificacion_INE_IFE = String.Empty;
             btn_ViewPDFIdentificacion_IFE_INE.Enabled = false;
             btn_DelIdentificacion_IFE_INE.Enabled = false;
             dt_FechaIdentificacion_IFE_INE.EditValue = DateTime.Now;
-            vRutaOpinion_Cumplimiento = String.Empty;   
+            vRutaOpinion_Cumplimiento = String.Empty;
             btn_ViewPDFOpinionCumplimiento.Enabled = false;
             btn_DelOpinionCumplimiento.Enabled = false;
             dt_FechaOPinionCumplimiento.EditValue = DateTime.Now;
@@ -1782,7 +1778,7 @@ namespace Business_Analitics
             btn_ViewPDFContratoTerceros.Enabled = false;
             btn_DelContratoTerceros.Enabled = false;
             dt_FechaContratoTerceros.EditValue = DateTime.Now;
-            vRutaContrato_GEST=String.Empty;
+            vRutaContrato_GEST = String.Empty;
             btn_ViewPDFContratoGEST.Enabled = false;
             btn_DelContratoGEST.Enabled = false;
             dt_FechaContratoGEST.EditValue = DateTime.Now;
@@ -1868,7 +1864,7 @@ namespace Business_Analitics
                 GuardarAcarreo();
                 GuardarFacturas();
                 SelectFacturas();
-                
+
                 XtraMessageBox.Show("Se ha guardado el registro con exito");
             }
             CargarCosechas();
@@ -1883,7 +1879,13 @@ namespace Business_Analitics
             Byte[] ArchivoPDFContrato_entre_Terceros = null;
             Byte[] ArchivoPDFContrato_GEST = null;
 
-            FileStream fsPDF = null;
+            FileStream fsPDFTarjetaAPEAM = null;
+            FileStream fsPDFIdentificacion_INE_IFE = null;
+            FileStream fsPDFOpinion_Cumplimiento = null;
+            FileStream fsPDFConstancia_de_Situacion_Fiscal = null;
+            FileStream fsPDFClave_Interbancaria = null;
+            FileStream fsPDFContrato_entre_Terceros = null;
+            FileStream fsPDFContrato_GEST = null;
 
             Boolean noentroPDFTarjetaAPEAM = true;
             Boolean noentroPDFIdentificacion_INE_IFE = true;
@@ -1898,11 +1900,11 @@ namespace Business_Analitics
             {
                 //txtNombreArchivoPDF.Text = result2;
                 //string ar = OpenDialog.FileName;
-                fsPDF = new FileStream(vRutaTarjetaApeam, FileMode.Open, FileAccess.Read);
+                fsPDFTarjetaAPEAM = new FileStream(vRutaTarjetaApeam, FileMode.Open, FileAccess.Read);
                 //Creamos un array de bytes para almacenar los datos leídos por fs.
-                ArchivoPDFTarjetaAPEAM = new byte[fsPDF.Length];
+                ArchivoPDFTarjetaAPEAM = new byte[fsPDFTarjetaAPEAM.Length];
                 //Y guardamos los datos en el array data
-                fsPDF.Read(ArchivoPDFTarjetaAPEAM, 0, (int)fsPDF.Length);
+                fsPDFTarjetaAPEAM.Read(ArchivoPDFTarjetaAPEAM, 0, (int)fsPDFTarjetaAPEAM.Length);
                 ArchivoPDFGlobalTarjetaApeam = ArchivoPDFTarjetaAPEAM;
             }
             else
@@ -1915,11 +1917,11 @@ namespace Business_Analitics
             {
                 //txtNombreArchivoPDF.Text = result2;
                 //string ar = OpenDialog.FileName;
-                fsPDF = new FileStream(vRutaIdentificacion_INE_IFE, FileMode.Open, FileAccess.Read);
+                fsPDFIdentificacion_INE_IFE = new FileStream(vRutaIdentificacion_INE_IFE, FileMode.Open, FileAccess.Read);
                 //Creamos un array de bytes para almacenar los datos leídos por fs.
-                ArchivoPDFIdentificacion_INE_IFE = new byte[fsPDF.Length];
+                ArchivoPDFIdentificacion_INE_IFE = new byte[fsPDFIdentificacion_INE_IFE.Length];
                 //Y guardamos los datos en el array data
-                fsPDF.Read(ArchivoPDFIdentificacion_INE_IFE, 0, (int)fsPDF.Length);
+                fsPDFIdentificacion_INE_IFE.Read(ArchivoPDFIdentificacion_INE_IFE, 0, (int)fsPDFIdentificacion_INE_IFE.Length);
                 ArchivoPDFGlobalIdentificacion_INE_IFE = ArchivoPDFIdentificacion_INE_IFE;
             }
             else
@@ -1932,11 +1934,11 @@ namespace Business_Analitics
             {
                 //txtNombreArchivoPDF.Text = result2;
                 //string ar = OpenDialog.FileName;
-                fsPDF = new FileStream(vRutaOpinion_Cumplimiento, FileMode.Open, FileAccess.Read);
+                fsPDFOpinion_Cumplimiento = new FileStream(vRutaOpinion_Cumplimiento, FileMode.Open, FileAccess.Read);
                 //Creamos un array de bytes para almacenar los datos leídos por fs.
-                ArchivoPDFOpinion_Cumplimiento = new byte[fsPDF.Length];
+                ArchivoPDFOpinion_Cumplimiento = new byte[fsPDFOpinion_Cumplimiento.Length];
                 //Y guardamos los datos en el array data
-                fsPDF.Read(ArchivoPDFOpinion_Cumplimiento, 0, (int)fsPDF.Length);
+                fsPDFOpinion_Cumplimiento.Read(ArchivoPDFOpinion_Cumplimiento, 0, (int)fsPDFOpinion_Cumplimiento.Length);
                 ArchivoPDFGlobalOpinion_Cumplimiento = ArchivoPDFOpinion_Cumplimiento;
             }
             else
@@ -1949,11 +1951,11 @@ namespace Business_Analitics
             {
                 //txtNombreArchivoPDF.Text = result2;
                 //string ar = OpenDialog.FileName;
-                fsPDF = new FileStream(vRutaConstancia_de_Situacion_Fiscal, FileMode.Open, FileAccess.Read);
+                fsPDFConstancia_de_Situacion_Fiscal = new FileStream(vRutaConstancia_de_Situacion_Fiscal, FileMode.Open, FileAccess.Read);
                 //Creamos un array de bytes para almacenar los datos leídos por fs.
-                ArchivoPDFConstancia_de_Situacion_Fiscal = new byte[fsPDF.Length];
+                ArchivoPDFConstancia_de_Situacion_Fiscal = new byte[fsPDFConstancia_de_Situacion_Fiscal.Length];
                 //Y guardamos los datos en el array data
-                fsPDF.Read(ArchivoPDFConstancia_de_Situacion_Fiscal, 0, (int)fsPDF.Length);
+                fsPDFConstancia_de_Situacion_Fiscal.Read(ArchivoPDFConstancia_de_Situacion_Fiscal, 0, (int)fsPDFConstancia_de_Situacion_Fiscal.Length);
                 ArchivoPDFGlobalConstancia_de_Situacion_Fiscal = ArchivoPDFConstancia_de_Situacion_Fiscal;
             }
             else
@@ -1966,11 +1968,11 @@ namespace Business_Analitics
             {
                 //txtNombreArchivoPDF.Text = result2;
                 //string ar = OpenDialog.FileName;
-                fsPDF = new FileStream(vRutaClave_Interbancaria, FileMode.Open, FileAccess.Read);
+                fsPDFClave_Interbancaria = new FileStream(vRutaClave_Interbancaria, FileMode.Open, FileAccess.Read);
                 //Creamos un array de bytes para almacenar los datos leídos por fs.
-                ArchivoPDFClave_Interbancaria = new byte[fsPDF.Length];
+                ArchivoPDFClave_Interbancaria = new byte[fsPDFClave_Interbancaria.Length];
                 //Y guardamos los datos en el array data
-                fsPDF.Read(ArchivoPDFClave_Interbancaria, 0, (int)fsPDF.Length);
+                fsPDFClave_Interbancaria.Read(ArchivoPDFClave_Interbancaria, 0, (int)fsPDFClave_Interbancaria.Length);
                 ArchivoPDFGlobalClave_Interbancaria = ArchivoPDFClave_Interbancaria;
             }
             else
@@ -1983,11 +1985,11 @@ namespace Business_Analitics
             {
                 //txtNombreArchivoPDF.Text = result2;
                 //string ar = OpenDialog.FileName;
-                fsPDF = new FileStream(vRutaContrato_entre_Terceros, FileMode.Open, FileAccess.Read);
+                fsPDFContrato_entre_Terceros = new FileStream(vRutaContrato_entre_Terceros, FileMode.Open, FileAccess.Read);
                 //Creamos un array de bytes para almacenar los datos leídos por fs.
-                ArchivoPDFContrato_entre_Terceros = new byte[fsPDF.Length];
+                ArchivoPDFContrato_entre_Terceros = new byte[fsPDFContrato_entre_Terceros.Length];
                 //Y guardamos los datos en el array data
-                fsPDF.Read(ArchivoPDFContrato_entre_Terceros, 0, (int)fsPDF.Length);
+                fsPDFContrato_entre_Terceros.Read(ArchivoPDFContrato_entre_Terceros, 0, (int)fsPDFContrato_entre_Terceros.Length);
                 ArchivoPDFGlobalContrato_entre_Terceros = ArchivoPDFContrato_entre_Terceros;
             }
             else
@@ -2000,11 +2002,11 @@ namespace Business_Analitics
             {
                 //txtNombreArchivoPDF.Text = result2;
                 //string ar = OpenDialog.FileName;
-                fsPDF = new FileStream(vRutaContrato_GEST, FileMode.Open, FileAccess.Read);
+                fsPDFContrato_GEST = new FileStream(vRutaContrato_GEST, FileMode.Open, FileAccess.Read);
                 //Creamos un array de bytes para almacenar los datos leídos por fs.
-                ArchivoPDFContrato_GEST = new byte[fsPDF.Length];
+                ArchivoPDFContrato_GEST = new byte[fsPDFContrato_GEST.Length];
                 //Y guardamos los datos en el array data
-                fsPDF.Read(ArchivoPDFContrato_GEST, 0, (int)fsPDF.Length);
+                fsPDFContrato_GEST.Read(ArchivoPDFContrato_GEST, 0, (int)fsPDFContrato_GEST.Length);
                 ArchivoPDFGlobalContrato_GEST = ArchivoPDFContrato_GEST;
             }
             else
@@ -2017,7 +2019,7 @@ namespace Business_Analitics
 
             CLS_Cosecha_Expedientes Clase = new CLS_Cosecha_Expedientes();
             Clase.Id_Cosecha = txt_IdCosecha.Text.Trim();
-            
+
             //1
             if (ArchivoPDFGlobalTarjetaApeam != null)
             {
@@ -2112,16 +2114,40 @@ namespace Business_Analitics
             }
 
             Clase.Usuario = UsuariosLogin;
-            
+
             Clase.MtdInsertarCosechaArchivoPDFXML();
             if (!Clase.Exito)
             {
                 XtraMessageBox.Show(Clase.Mensaje);
             }
-            
-            if (noentroPDFTarjetaAPEAM || noentroPDFIdentificacion_INE_IFE || noentroPDFOpinion_Cumplimiento || noentroPDFConstancia_de_Situacion_Fiscal || noentroPDFClave_Interbancaria || noentroPDFContrato_entre_Terceros || noentroPDFContrato_GEST)
+
+            if (noentroPDFTarjetaAPEAM)
             {
-                fsPDF.Close();
+                fsPDFTarjetaAPEAM.Close();
+            }
+            if (noentroPDFIdentificacion_INE_IFE)
+            {
+                fsPDFIdentificacion_INE_IFE.Close();
+            }
+            if (noentroPDFOpinion_Cumplimiento)
+            {
+                fsPDFOpinion_Cumplimiento.Close();
+            }
+            if (noentroPDFConstancia_de_Situacion_Fiscal)
+            {
+                fsPDFConstancia_de_Situacion_Fiscal.Close();
+            }
+            if (noentroPDFClave_Interbancaria)
+            {
+                fsPDFClave_Interbancaria.Close();
+            }
+            if (noentroPDFContrato_entre_Terceros)
+            {
+                fsPDFContrato_entre_Terceros.Close();
+            }
+            if (noentroPDFContrato_GEST)
+            {
+                fsPDFContrato_GEST.Close();
             }
         }
         private void GuardarFacturas()
@@ -2278,8 +2304,8 @@ namespace Business_Analitics
             }
             Clase.UUID = txt_UUID.Text;
             Clase.MetodoPago = txt_MetodoPago.Text;
-            Clase.SubTotalXML = Decimal.Parse(txt_SubTotal.Text, style, provider); 
-            Clase.TotalXML = Decimal.Parse(txt_Total.Text, style, provider); 
+            Clase.SubTotalXML = Decimal.Parse(txt_SubTotal.Text, style, provider);
+            Clase.TotalXML = Decimal.Parse(txt_Total.Text, style, provider);
             Clase.Usuario = UsuariosLogin;
             //if (ArchivoPDFGlobalProductor != null || ArchivoXMLGlobalProductor != null)
             //{
@@ -3282,7 +3308,9 @@ namespace Business_Analitics
         {
             Byte[] ArchivoPDFContratoComercializadora = null;
             FileStream fsPDF = null;
+#pragma warning disable CS0219 // La variable 'noentroPDFContratoComercializadora' está asignada pero su valor nunca se usa
             Boolean noentroPDFContratoComercializadora = true;
+#pragma warning restore CS0219 // La variable 'noentroPDFContratoComercializadora' está asignada pero su valor nunca se usa
 
             if (vRutaContratoComercializadora.Length > 0)
             {
@@ -3338,6 +3366,7 @@ namespace Business_Analitics
             {
                 SelectComercializadora();
             }
+
         }
 
         private void GuardarProductor()
@@ -3574,7 +3603,7 @@ namespace Business_Analitics
                 {
                     txt_RutaPDFAcarreo.Text = OpenDialog.FileName;
                     GuardarRuta(OpenDialog.FileName);
-                    
+
                 }
                 OpenDialog.Dispose();
             }
@@ -3610,7 +3639,7 @@ namespace Business_Analitics
                         {
                             nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
                             string valor = nodoComplemento.Attributes["UUID"].Value;
-                            txt_FolioFacturaCorteKilos.Text = valor.Substring(valor.Length-4);
+                            txt_FolioFacturaCorteKilos.Text = valor.Substring(valor.Length - 4);
                         }
                         txt_SubTotal_Kilos.Text = nodoComprobante.Attributes["SubTotal"].Value;
                         txt_Total_Kilos.Text = nodoComprobante.Attributes["Total"].Value;
@@ -3664,9 +3693,9 @@ namespace Business_Analitics
                         {
                             nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
                             string valor = nodoComplemento.Attributes["UUID"].Value;
-                            txt_FolioFacturaCorteDia.Text = valor.Substring(valor.Length-4) ;
+                            txt_FolioFacturaCorteDia.Text = valor.Substring(valor.Length - 4);
                         }
-                        
+
                         txt_SubTotal_Dia.Text = nodoComprobante.Attributes["SubTotal"].Value;
                         txt_Total_Dia.Text = nodoComprobante.Attributes["Total"].Value;
                         nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
@@ -3715,9 +3744,9 @@ namespace Business_Analitics
                         {
                             nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
                             string valor = nodoComplemento.Attributes["UUID"].Value;
-                            txt_FolioFacturaCorteApoyo.Text = valor.Substring(valor.Length-4);
+                            txt_FolioFacturaCorteApoyo.Text = valor.Substring(valor.Length - 4);
                         }
-                        
+
                         txt_SubTotal_Apoyo.Text = nodoComprobante.Attributes["SubTotal"].Value;
                         txt_Total_Apoyo.Text = nodoComprobante.Attributes["Total"].Value;
                         nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
@@ -3768,7 +3797,7 @@ namespace Business_Analitics
                             string valor = nodoComplemento.Attributes["UUID"].Value;
                             txt_FolioFacturaCorteSalida.Text = valor.Substring(valor.Length - 4);
                         }
-                        
+
                         txt_SubTotal_Salida.Text = nodoComprobante.Attributes["SubTotal"].Value;
                         txt_Total_Salida.Text = nodoComprobante.Attributes["Total"].Value;
                         nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
@@ -3926,14 +3955,14 @@ namespace Business_Analitics
                     txt_Mercado.Text = ins.Datos.Rows[0]["Mercado"].ToString();
                     txt_Huerta.Tag = ins.Datos.Rows[0]["c_codigo_hue"].ToString();
                     txt_Huerta.Text = ins.Datos.Rows[0]["Huerta"].ToString();
-                    txt_SAGARPA.Text= ins.Datos.Rows[0]["SAGARPA"].ToString();
+                    txt_SAGARPA.Text = ins.Datos.Rows[0]["SAGARPA"].ToString();
                     txt_Estado_Huerta.Text = ins.Datos.Rows[0]["Estado_Huerta"].ToString();
                     BarHuerta.Caption = "Huerta: " + ins.Datos.Rows[0]["Huerta"].ToString();
                     txt_Acopiador.Text = ins.Datos.Rows[0]["Acopiador"].ToString();
                     txt_Cajas_Programa.EditValue = ins.Datos.Rows[0]["ProgramaCajas"].ToString();
                     txt_TipoCorte.Text = ins.Datos.Rows[0]["TipoCorte"].ToString();
                     txtTipoCorteEC.Text = ins.Datos.Rows[0]["TipoCorte"].ToString();
-                    if(ins.Datos.Rows[0]["Autorizado_USA"].ToString()=="True")
+                    if (ins.Datos.Rows[0]["Autorizado_USA"].ToString() == "True")
                     {
                         chk_Autorizado_USA.Checked = true;
                     }
@@ -3941,8 +3970,8 @@ namespace Business_Analitics
                     {
                         chk_Autorizado_USA.Checked = false;
                     }
-                    txt_Poliza_ase.Text= ins.Datos.Rows[0]["Poliza_aseguradora"].ToString();
-                    txt_Nombre_ase.Text= ins.Datos.Rows[0]["Aseguradora"].ToString();
+                    txt_Poliza_ase.Text = ins.Datos.Rows[0]["Poliza_aseguradora"].ToString();
+                    txt_Nombre_ase.Text = ins.Datos.Rows[0]["Aseguradora"].ToString();
                     Bloquear_OrdenCorte(!Convert.ToBoolean(ins.Datos.Rows[0]["Cerrado"]));
                 }
             }
@@ -4016,9 +4045,9 @@ namespace Business_Analitics
                     {
                         ArchivoPDFGlobalContratoComercializadora = (byte[])ins.Datos.Rows[0]["Contrato"];
                     }
-                    catch 
+                    catch
                     {
-                        ArchivoPDFGlobalContratoComercializadora=null;
+                        ArchivoPDFGlobalContratoComercializadora = null;
                     }
                     try
                     {
@@ -4028,7 +4057,7 @@ namespace Business_Analitics
                     {
                         ins.Id_EmpresaComercializacion = string.Empty;
                     }
-                   
+
                     txt_EmpresaComercializadora.Text = ins.Datos.Rows[0]["Nombre_EmpresaComercializacion"].ToString();
                     txtNombreContacto.Text = ins.Datos.Rows[0]["Nombre_Contacto"].ToString();
                     txtTelefonoContacto.Text = ins.Datos.Rows[0]["Telefono_Contacto"].ToString();
@@ -4048,7 +4077,7 @@ namespace Business_Analitics
                             dt_FechaContratocomercializadora.EditValue = DateTime.Now;
                         }
                     }
-                    catch 
+                    catch
                     {
                         btn_ViewPDFComercializadora.Enabled = false;
                         btn_DelContratoComercializadora.Enabled = false;
@@ -4172,7 +4201,7 @@ namespace Business_Analitics
                     CargarCamiones(ins.Datos.Rows[0]["Id_Camion"].ToString());
                     CargarChoferes(ins.Datos.Rows[0]["Id_Chofer"].ToString());
                     txtPlacasCamion.Text = ins.Datos.Rows[0]["Placas"].ToString();
-                    txt_TipoCamion.Text= ins.Datos.Rows[0]["Nombre_TipoCamion"].ToString();
+                    txt_TipoCamion.Text = ins.Datos.Rows[0]["Nombre_TipoCamion"].ToString();
                     txt_TipoCamion.Tag = ins.Datos.Rows[0]["Id_TipoCamion"].ToString();
                     CargarServiciosAcarreo();
                     CargarCostosServicios();
@@ -4219,12 +4248,12 @@ namespace Business_Analitics
                     ArchivoPDFGlobalClave_Interbancaria = (byte[])ins.Datos.Rows[0]["Clave_Interbancaria"];
                     ArchivoPDFGlobalContrato_entre_Terceros = (byte[])ins.Datos.Rows[0]["Contrato_entre_Terceros"];
                     ArchivoPDFGlobalContrato_GEST = (byte[])ins.Datos.Rows[0]["Contrato_GEST"];
-                    
+
                     if (ArchivoPDFGlobalTarjetaApeam.Length > 0)
                     {
                         btn_ViewPDFTarjetaAPEAM.Enabled = true;
                         btn_DelTarjetaAPEAM.Enabled = true;
-                        dt_FechaTarjetaAPEAM.EditValue =Convert.ToDateTime(ins.Datos.Rows[0]["d_TarjetaApeam"].ToString());
+                        dt_FechaTarjetaAPEAM.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["d_TarjetaApeam"].ToString());
                     }
                     else
                     {
@@ -4236,7 +4265,7 @@ namespace Business_Analitics
                     if (ArchivoPDFGlobalIdentificacion_INE_IFE.Length > 0)
                     {
                         btn_ViewPDFIdentificacion_IFE_INE.Enabled = true;
-                        btn_DelIdentificacion_IFE_INE.Enabled=true;
+                        btn_DelIdentificacion_IFE_INE.Enabled = true;
                         dt_FechaIdentificacion_IFE_INE.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["d_Identificacion_INE_IFE"].ToString());
                     }
                     else
@@ -4249,7 +4278,7 @@ namespace Business_Analitics
                     if (ArchivoPDFGlobalOpinion_Cumplimiento.Length > 0)
                     {
                         btn_ViewPDFOpinionCumplimiento.Enabled = true;
-                        btn_DelOpinionCumplimiento.Enabled=true;
+                        btn_DelOpinionCumplimiento.Enabled = true;
                         dt_FechaOPinionCumplimiento.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["d_Opinion_Cumplimiento"].ToString());
                     }
                     else
@@ -4262,7 +4291,7 @@ namespace Business_Analitics
                     if (ArchivoPDFGlobalConstancia_de_Situacion_Fiscal.Length > 0)
                     {
                         btn_ViewPDFConstanciaSituacion.Enabled = true;
-                        btn_DelConstanciaSituacion.Enabled=true;
+                        btn_DelConstanciaSituacion.Enabled = true;
                         dt_FechaConstanciaSituacion.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["d_Constancia_de_Situacion_Fiscal"].ToString());
                     }
                     else
@@ -4301,7 +4330,7 @@ namespace Business_Analitics
                     if (ArchivoPDFGlobalContrato_GEST.Length > 0)
                     {
                         btn_ViewPDFContratoGEST.Enabled = true;
-                        btn_DelContratoGEST.Enabled= true;
+                        btn_DelContratoGEST.Enabled = true;
                         dt_FechaContratoGEST.EditValue = Convert.ToDateTime(ins.Datos.Rows[0]["d_Contrato_GEST"].ToString());
                     }
                     else
@@ -4346,7 +4375,7 @@ namespace Business_Analitics
             CLS_Cosecha_Facturas sel = new CLS_Cosecha_Facturas();
             sel.Id_Cosecha = txt_IdCosecha.Text;
             sel.MtdSeleccionarCosechaArchivoREP_PDFXML();
-            if(sel.Exito)
+            if (sel.Exito)
             {
                 dtgFacturasREP.DataSource = sel.Datos;
             }
@@ -4444,7 +4473,7 @@ namespace Business_Analitics
                     txt_MetodoPago.EditValue = ins.Datos.Rows[0]["MetodoPago"].ToString();
                     txt_SubTotal.EditValue = ins.Datos.Rows[0]["SubTotalXML"].ToString();
                     txt_Total.EditValue = ins.Datos.Rows[0]["TotalXML"].ToString();
-                    if(txt_MetodoPago.Text=="PPD")
+                    if (txt_MetodoPago.Text == "PPD")
                     {
                         xtraTabPage4.PageVisible = true;
                         txt_SumaTotal_REP.Visible = true;
@@ -5429,11 +5458,13 @@ namespace Business_Analitics
         private void btn_RefrescarPeso_Click(object sender, EventArgs e)
         {
             CalcularTotalRecepcion();
+#pragma warning disable CS0252 // Posible comparación de referencias no intencionada; para obtener una comparación de valores, convierta el lado de la izquierda en el tipo 'string'
             if (!string.IsNullOrEmpty(txt_NombreEmpresaCorte.Text) && txt_EmpresaAcarreo.Tag != string.Empty)
             {
                 CargarServicios();
                 CalcularCostosCorte();
             }
+#pragma warning restore CS0252 // Posible comparación de referencias no intencionada; para obtener una comparación de valores, convierta el lado de la izquierda en el tipo 'string'
         }
 
         private void btn_UpXMLAcarreo_Click(object sender, EventArgs e)
@@ -5464,7 +5495,7 @@ namespace Business_Analitics
                             string valor = nodoComplemento.Attributes["UUID"].Value;
                             txt_FolioFacturaAcarreo.Text = valor.Substring(valor.Length - 4);
                         }
-                        
+
                         txt_SubTotal_Acarreo.Text = nodoComprobante.Attributes["SubTotal"].Value;
                         txt_Total_Acarreo.Text = nodoComprobante.Attributes["Total"].Value;
                         nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
@@ -5726,11 +5757,13 @@ namespace Business_Analitics
 
         private void chk_PrecioPorkg_CheckedChanged(object sender, EventArgs e)
         {
+#pragma warning disable CS0252 // Posible comparación de referencias no intencionada; para obtener una comparación de valores, convierta el lado de la izquierda en el tipo 'string'
             if (!string.IsNullOrEmpty(txt_NombreEmpresaCorte.Text) && txt_EmpresaAcarreo.Tag != string.Empty)
             {
                 CargarServicios();
                 CalcularCostosCorte();
             }
+#pragma warning restore CS0252 // Posible comparación de referencias no intencionada; para obtener una comparación de valores, convierta el lado de la izquierda en el tipo 'string'
         }
 
         private void chk_kgCorte_CheckedChanged(object sender, EventArgs e)
@@ -5759,11 +5792,11 @@ namespace Business_Analitics
                     Clase.Id_Archivo = Id_Factura;
                     Clase.FacturaPDF = Encoding.UTF8.GetBytes("");
                     Clase.FacturaXML = Encoding.UTF8.GetBytes("");
-                    Clase.RazonSocial=String.Empty;
+                    Clase.RazonSocial = String.Empty;
                     Clase.FolioFactura = String.Empty;
-                    Clase.Fecha_Factura=DateTime.Now.Year.ToString() + DosCeros(DateTime.Now.Month.ToString()) + DosCeros(DateTime.Now.Day.ToString());
+                    Clase.Fecha_Factura = DateTime.Now.Year.ToString() + DosCeros(DateTime.Now.Month.ToString()) + DosCeros(DateTime.Now.Day.ToString());
                     Clase.UUID = String.Empty;
-                    Clase.MetodoPago=String.Empty;
+                    Clase.MetodoPago = String.Empty;
                     Clase.SubTotalXML = 0;
                     Clase.TotalXML = 0;
                     Clase.Usuario = UsuariosLogin;
@@ -5774,7 +5807,7 @@ namespace Business_Analitics
                     }
                     else
                     {
-                        if(Id_Factura==1)
+                        if (Id_Factura == 1)
                         {
                             EliminaREP();
                         }
@@ -5885,24 +5918,39 @@ namespace Business_Analitics
                 btn_UpPDFContratoTerceros.Enabled = valor;
                 btn_UpPDFContratoGEST.Enabled = valor;
                 btn_ViewPDFTarjetaAPEAM.Enabled = valor;
-                btn_DelTarjetaAPEAM.Enabled = valor;
+                //btn_DelTarjetaAPEAM.Enabled = valor;
                 btn_ViewPDFIdentificacion_IFE_INE.Enabled = valor;
-                btn_DelIdentificacion_IFE_INE.Enabled = valor;
+                //btn_DelIdentificacion_IFE_INE.Enabled = valor;
                 btn_ViewPDFOpinionCumplimiento.Enabled = valor;
-                btn_DelOpinionCumplimiento.Enabled = valor;
+                //btn_DelOpinionCumplimiento.Enabled = valor;
                 btn_ViewPDFConstanciaSituacion.Enabled = valor;
-                btn_DelConstanciaSituacion.Enabled = valor;
+                //btn_DelConstanciaSituacion.Enabled = valor;
                 btn_ViewPDFClaveInterbancaria.Enabled = valor;
-                btn_DelClaveInterbancaria.Enabled = valor;
+                //btn_DelClaveInterbancaria.Enabled = valor;
                 btn_ViewPDFContratoTerceros.Enabled = valor;
-                btn_DelContratoTerceros.Enabled = valor;
+                //btn_DelContratoTerceros.Enabled = valor;
                 btn_ViewPDFContratoGEST.Enabled = valor;
-                btn_DelContratoGEST.Enabled = valor;
+                //btn_DelContratoGEST.Enabled = valor;
+                SelectFacturaProductor();
+                SelectExpedientesProductor();
             }
             else
             {
                 btn_UpPDFProductor.Enabled = valor;
                 btn_UpXMLProductor.Enabled = valor;
+                btn_UpPDFTarjeta_APEAM.Enabled = valor;
+                btn_UpPDFIdntificacion_IFE_INE.Enabled = valor;
+                btn_UpPDFOpinion_Cumplimiento.Enabled = valor;
+                btn_UpPDFConstancia_Situacion.Enabled = valor;
+                btn_UpPDFClaveInterbancaria.Enabled = valor;
+                btn_UpPDFContratoTerceros.Enabled = valor;
+                btn_UpPDFContratoGEST.Enabled = valor;
+                //btn_DelTarjetaAPEAM.Enabled = valor;
+                //btn_DelIdentificacion_IFE_INE.Enabled = valor;
+                //btn_DelOpinionCumplimiento.Enabled = valor;
+                //btn_DelConstanciaSituacion.Enabled = valor;
+                //btn_DelClaveInterbancaria.Enabled = valor;
+                //btn_DelContratoTerceros.Enabled = valor;
                 SelectFacturaProductor();
                 SelectExpedientesProductor();
             }
@@ -6782,7 +6830,7 @@ namespace Business_Analitics
             Frm_ViewExpedientePDF frm = new Frm_ViewExpedientePDF();
             frm.Id_Cosecha = txt_IdCosecha.Text.Trim();
             frm.Id_Archivo = 9;
-            frm.UUID= dtgValFacturasREP.GetFocusedRowCellValue("UUID").ToString();
+            frm.UUID = dtgValFacturasREP.GetFocusedRowCellValue("UUID").ToString();
             frm.ShowDialog();
             frm.Dispose();
             System.IO.File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
@@ -6822,7 +6870,7 @@ namespace Business_Analitics
                 DialogResult result = FileDialogXML();
                 if (result == DialogResult.OK)
                 {
-                    
+
                     GuardarRuta(OpenDialog.FileName);
                     string vMetodo = string.Empty;
                     try
@@ -6831,7 +6879,7 @@ namespace Business_Analitics
                         XmlDocument doc = new XmlDocument();
                         doc.Load(OpenDialog.FileName);
                         XmlNode nodoDocumentoRel = doc.GetElementsByTagName("pago10:DoctoRelacionado").Item(0);
-                        if(txt_UUID.Text== nodoDocumentoRel.Attributes["IdDocumento"].Value)
+                        if (txt_UUID.Text == nodoDocumentoRel.Attributes["IdDocumento"].Value)
                         {
                             txt_RutaXMLREP.Text = OpenDialog.FileName;
                             XmlNode nodoComplemento = doc.GetElementsByTagName("tfd:TimbreFiscalDigital").Item(0);
@@ -6873,9 +6921,9 @@ namespace Business_Analitics
         void LimpiarPPD()
         {
             txt_RutaPDFREP.Text = String.Empty;
-            txt_RutaXMLREP.Text=String.Empty;
+            txt_RutaXMLREP.Text = String.Empty;
             txt_UUID_REP.Text = String.Empty;
-            txt_Total_REP.Text= String.Empty;
+            txt_Total_REP.Text = String.Empty;
         }
         private void btn_AgregarREP_Click(object sender, EventArgs e)
         {
@@ -6972,27 +7020,27 @@ namespace Business_Analitics
         }
         private void btn_CalcularFechaPagoK_Click(object sender, EventArgs e)
         {
-            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime,1);
+            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime, 1);
         }
 
         private void btn_CalcularFechaPagoD_Click(object sender, EventArgs e)
         {
-            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime,2);
+            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime, 2);
         }
 
         private void btn_CalcularFechaPagoA_Click(object sender, EventArgs e)
         {
-            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime,3);
+            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime, 3);
         }
 
         private void btn_CalcularFechaPagoS_Click(object sender, EventArgs e)
         {
-            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime,4);
+            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime, 4);
         }
 
         private void btn_CalcularFechaPagoAC_Click(object sender, EventArgs e)
         {
-            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime,5);
+            CalcularFechaPrograma8(dt_FechaRecepcion.DateTime, 5);
         }
 
         private void btn_RecargarTem_Click(object sender, EventArgs e)

@@ -1,17 +1,12 @@
-﻿using DevExpress.XtraEditors;
+﻿using CapaDeDatos;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CapaDeDatos;
-using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
+using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Business_Analitics
 {
@@ -124,9 +119,9 @@ namespace Business_Analitics
                     try
                     {
                         vFechaLiquidacion = Convert.ToDateTime(sel.Datos.Rows[0]["Fecha_Pago"].ToString()).ToString("dd MMMM yyyy");
-                        
+
                     }
-                    catch 
+                    catch
                     {
                     }
                     DateTimeFormatInfo dtinfo = new CultureInfo("es-MX", false).DateTimeFormat;
@@ -808,7 +803,7 @@ namespace Business_Analitics
 
                 oRng = oSheet.get_Range("G" + Fila.ToString());
                 oRng.NumberFormat = "@";
-                oRng.Value2 ="'"+ sel.Datos.Rows[x]["EstibadeSeleccion"].ToString();
+                oRng.Value2 = "'" + sel.Datos.Rows[x]["EstibadeSeleccion"].ToString();
                 oRng.Font.FontStyle = "Calibri";
                 oRng.Font.Size = 11;
                 oRng.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
@@ -1035,7 +1030,7 @@ namespace Business_Analitics
                 vtotalfacturas = 0;
             }
 
-            oRng = oSheet.get_Range("B"+ Fila.ToString(),"Y"+Fila.ToString());
+            oRng = oSheet.get_Range("B" + Fila.ToString(), "Y" + Fila.ToString());
             oRng.Interior.Pattern = Excel.XlPattern.xlPatternSolid;
             oRng.Interior.PatternColorIndex = Excel.XlPattern.xlPatternAutomatic;
             oRng.Interior.ThemeColor = Excel.XlThemeColor.xlThemeColorAccent6;
@@ -1045,7 +1040,7 @@ namespace Business_Analitics
             oRng.Font.TintAndShade = 0;
 
             filaanterior = Fila - 1;
-            oRng = oSheet.get_Range("N"+ Fila.ToString());
+            oRng = oSheet.get_Range("N" + Fila.ToString());
             oRng.Formula = "=SUM(N6:" + "N" + filaanterior.ToString() + ")";
             oRng.EntireColumn.AutoFit();
 
@@ -1058,7 +1053,7 @@ namespace Business_Analitics
             oRng.EntireColumn.AutoFit();
 
             oRng = oSheet.get_Range("A:A");
-            oRng.EntireColumn.Hidden=true;
+            oRng.EntireColumn.Hidden = true;
 
         }
 

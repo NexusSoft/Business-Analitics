@@ -1,17 +1,11 @@
-﻿using DevExpress.XtraEditors;
+﻿using CapaDeDatos;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaDeDatos;
 using Excel = Microsoft.Office.Interop.Excel;
-using System.Reflection;
 
 namespace Business_Analitics
 {
@@ -20,10 +14,18 @@ namespace Business_Analitics
         public string UsuariosLogin { get; set; }
         public string IdPerfil { get; set; }
         List<string> Lista = new List<string>();
+#pragma warning disable CS0169 // El campo 'Frm_RelacionContabilidad_Empresa_Corte.oXL' nunca se usa
         Excel.Application oXL;
+#pragma warning restore CS0169 // El campo 'Frm_RelacionContabilidad_Empresa_Corte.oXL' nunca se usa
+#pragma warning disable CS0169 // El campo 'Frm_RelacionContabilidad_Empresa_Corte.oWB' nunca se usa
         Excel._Workbook oWB;
+#pragma warning restore CS0169 // El campo 'Frm_RelacionContabilidad_Empresa_Corte.oWB' nunca se usa
+#pragma warning disable CS0169 // El campo 'Frm_RelacionContabilidad_Empresa_Corte.oSheet' nunca se usa
         Excel._Worksheet oSheet;
+#pragma warning restore CS0169 // El campo 'Frm_RelacionContabilidad_Empresa_Corte.oSheet' nunca se usa
+#pragma warning disable CS0169 // El campo 'Frm_RelacionContabilidad_Empresa_Corte.oRng' nunca se usa
         Excel.Range oRng;
+#pragma warning restore CS0169 // El campo 'Frm_RelacionContabilidad_Empresa_Corte.oRng' nunca se usa
 
         private static Frm_RelacionContabilidad_Empresa_Corte m_FormDefInstance;
         public static Frm_RelacionContabilidad_Empresa_Corte DefInstance
@@ -56,7 +58,7 @@ namespace Business_Analitics
         {
             DateTime Fecha = dt_FechaDesde.DateTime;
             int Semana = CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(Fecha, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
-            
+
         }
 
         private void Frm_Relacion_de_Fruta_Shown(object sender, EventArgs e)
@@ -97,12 +99,12 @@ namespace Business_Analitics
             bandedGridColumn37.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             bandedGridColumn37.DisplayFormat.FormatString = "$ ###,###0.00";
 
-            chk_Empresa.Checked= true;
-            chk_Huerta.Checked= true;
-            chk_FKilos.Checked= true;
-            chk_FDia.Checked= true;
+            chk_Empresa.Checked = true;
+            chk_Huerta.Checked = true;
+            chk_FKilos.Checked = true;
+            chk_FDia.Checked = true;
             chk_FApoyo.Checked = true;
-            chk_FSalida.Checked= true;
+            chk_FSalida.Checked = true;
         }
 
         string TemporadaReport(string str)
@@ -266,7 +268,7 @@ namespace Business_Analitics
         }
         private void chk_Huerta_CheckedChanged(object sender, EventArgs e)
         {
-            if (chk_Huerta.Checked==true)
+            if (chk_Huerta.Checked == true)
             {
                 ban_Huerta.Visible = true;
             }
@@ -288,7 +290,7 @@ namespace Business_Analitics
             }
         }
 
-       
+
 
         private void chk_FKilos_CheckedChanged(object sender, EventArgs e)
         {
@@ -351,7 +353,7 @@ namespace Business_Analitics
             chk_FSalida.Checked = true;
         }
 
-       
+
 
         private void dt_FechaDesde_KeyDown(object sender, KeyEventArgs e)
         {

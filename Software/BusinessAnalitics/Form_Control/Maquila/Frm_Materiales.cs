@@ -1,14 +1,7 @@
 ﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Business_Analitics
 {
@@ -48,7 +41,7 @@ namespace Business_Analitics
         private void CargarMaterial()
         {
             CLS_Parametros sel = new CLS_Parametros();
-            sel.c_codigo_tmat= DosCeros(v_Opcion.ToString());
+            sel.c_codigo_tmat = DosCeros(v_Opcion.ToString());
             sel.MtdSeleccionarParametroMaterial();
             if (sel.Exito)
             {
@@ -69,7 +62,7 @@ namespace Business_Analitics
             {
                 CLS_Parametros del = new CLS_Parametros();
                 del.c_codigo_mat = vc_codigo_mat;
-                del.c_codigo_tmat=DosCeros(v_Opcion.ToString());
+                del.c_codigo_tmat = DosCeros(v_Opcion.ToString());
                 del.MtdProductoMaterial_Delete();
                 if (del.Exito)
                 {

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class CLS_Tipo_Domicilio:ConexionBase
+    public class CLS_Tipo_Domicilio : ConexionBase
     {
 
         public string Id_Tipo_Domicilio { get; set; }
@@ -23,7 +19,7 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Tipo_Domicilio_Select";
-               
+
 
                 _conexion.EjecutarDataset();
 

@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
 using DevExpress.XtraEditors.Mask;
 using DevExpress.XtraGrid.Views.Grid;
+using System;
+using System.Data;
 using System.Globalization;
 
 namespace Business_Analitics
@@ -32,12 +25,12 @@ namespace Business_Analitics
         private decimal vPrecioCajaSAMS;
         private decimal vPrecioCajaRPC;
 
-        public string vc_codigo_mat25 { get;  set; }
-        public string vc_codigo_matRPC { get;  set; }
-        public string vPrecioMaquilaId { get;  set; }
-        public bool PrimeraEdicionC { get;  set; }
-        public string vc_codigo_pai { get;  set; }
-        public string vc_codigo_matMalla { get;  set; }
+        public string vc_codigo_mat25 { get; set; }
+        public string vc_codigo_matRPC { get; set; }
+        public string vPrecioMaquilaId { get; set; }
+        public bool PrimeraEdicionC { get; set; }
+        public string vc_codigo_pai { get; set; }
+        public string vc_codigo_matMalla { get; set; }
         public string vc_codigo_pro { get; private set; }
 
         public Frm_Parametros()
@@ -58,7 +51,7 @@ namespace Business_Analitics
             dtgValPrecioTermo.OptionsSelection.MultiSelect = true;
             dtgValPrecioTermo.OptionsView.ShowGroupPanel = false;
 
-            
+
 
             dtgValAPEAM.OptionsSelection.EnableAppearanceFocusedCell = false;
             dtgValAPEAM.OptionsSelection.EnableAppearanceHideSelection = false;
@@ -116,7 +109,7 @@ namespace Business_Analitics
             txtPrecioCajaSAMS.Properties.Mask.EditMask = "c6";
             txtPrecioCajaSAMS.Properties.Mask.UseMaskAsDisplayFormat = true;
         }
-        
+
         private void CargarPaisAPEAM()
         {
             CLS_Parametros sel = new CLS_Parametros();
@@ -187,7 +180,7 @@ namespace Business_Analitics
                 cmb_Producto_O.Properties.DataSource = sel.Datos;
             }
         }
-        
+
         private void btnAgregarPais_Click(object sender, EventArgs e)
         {
             Frm_Paises frm = new Frm_Paises();
@@ -234,7 +227,7 @@ namespace Business_Analitics
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if(txtPrecioNacional.Text!=string.Empty)
+            if (txtPrecioNacional.Text != string.Empty)
             {
                 if (txtPrecioMalla.Text != string.Empty)
                 {
@@ -349,10 +342,10 @@ namespace Business_Analitics
                 PrimeraEdicionC = true;
                 CLS_Parametros udp = new CLS_Parametros();
                 GridView gv = sender as GridView;
-                udp.PrecioMaquilaDesde=Convert.ToInt32(gv.GetRowCellValue(e.RowHandle, gv.Columns["PrecioMaquilaDesde"]).ToString());
+                udp.PrecioMaquilaDesde = Convert.ToInt32(gv.GetRowCellValue(e.RowHandle, gv.Columns["PrecioMaquilaDesde"]).ToString());
                 udp.PrecioMaquilaHasta = Convert.ToInt32(gv.GetRowCellValue(e.RowHandle, gv.Columns["PrecioMaquilaHasta"]).ToString());
                 udp.PrecioMaquilaCosto = Convert.ToDecimal(gv.GetRowCellValue(e.RowHandle, gv.Columns["PrecioMaquilaCosto"]).ToString());
-                udp.PrecioMaquilaId= gv.GetRowCellValue(e.RowHandle, gv.Columns["PrecioMaquilaId"]).ToString();
+                udp.PrecioMaquilaId = gv.GetRowCellValue(e.RowHandle, gv.Columns["PrecioMaquilaId"]).ToString();
                 udp.MtdPrecioTermo_Update();
                 PrimeraEdicionC = false;
             }
@@ -383,7 +376,7 @@ namespace Business_Analitics
                     ins.c_codigo_pro = cmb_Producto_O.EditValue.ToString();
                     ins.v_nombre_pro = cmb_Producto_O.Text;
                     ins.MtdProductoExc_Insert();
-                    if(ins.Exito)
+                    if (ins.Exito)
                     {
                         CargarProductosExc();
                         CargarProductosO(null);

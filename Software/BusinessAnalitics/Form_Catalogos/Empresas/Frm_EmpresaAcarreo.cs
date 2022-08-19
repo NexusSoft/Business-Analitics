@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
+using System.Data;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace Business_Analitics
 {
-    
+
     public partial class Frm_EmpresaAcarreo : DevExpress.XtraEditors.XtraForm
     {
         public Boolean PaSel { get; set; }
@@ -101,7 +95,7 @@ namespace Business_Analitics
             Empresas.Email = textCorreo.Text.Trim();
             Empresas.Contacto = textContacto.Text.Trim();
             Empresas.RFC = txtRFC.Text.Trim();
-            Empresas.PrecioA =Convert.ToDecimal(txtPrecioA.EditValue);
+            Empresas.PrecioA = Convert.ToDecimal(txtPrecioA.EditValue);
             Empresas.PrecioB = Convert.ToDecimal(txtPrecioB.EditValue);
             Empresas.Usuario = UsuariosLogin.Trim();
             Empresas.MtdInsertarEmpresas();
@@ -159,7 +153,7 @@ namespace Business_Analitics
         }
         private void InsertarCamiones()
         {
-            if (txtNombreCamion.Text != string.Empty )
+            if (txtNombreCamion.Text != string.Empty)
             {
                 CLS_Camiones Camion = new CLS_Camiones();
                 Camion.Id_Camion = txtIDCamion.Text.Trim();
@@ -187,7 +181,7 @@ namespace Business_Analitics
         }
         private void InsertarChoferes()
         {
-            if (txtNombreChofer.Text != string.Empty )
+            if (txtNombreChofer.Text != string.Empty)
             {
                 CLS_Choferes Chofer = new CLS_Choferes();
                 Chofer.Id_Chofer = txtIDChofer.Text.Trim();
@@ -409,7 +403,7 @@ namespace Business_Analitics
         }
         private void CargarComboTemporada(DataTable Datos, string Valor)
         {
-            
+
         }
         private void CargarServicios()
         {
@@ -424,7 +418,7 @@ namespace Business_Analitics
                     //txtPrecioCaja.Text = sel.Datos.Rows[0]["Precio_Caja"].ToString();
                     //txtPrecioSalidaForanea.Text = sel.Datos.Rows[0]["Precio_SalidaForanea"].ToString();
                     dtgServicios.DataSource = sel.Datos;
-                }   
+                }
             }
             else
             {
@@ -503,7 +497,7 @@ namespace Business_Analitics
             decimal Precio_SalidaForanea = 0;
             decimal.TryParse(txtPrecioSalidaForanea.Text, style, culture, out Precio_SalidaForanea);
             ins.Precio_SalidaForanea = Precio_SalidaForanea;
-            ins.Id_TipoCamion= cmb_TipoCamionServicios.EditValue.ToString();
+            ins.Id_TipoCamion = cmb_TipoCamionServicios.EditValue.ToString();
             ins.Usuario = UsuariosLogin;
             ins.MtdInsertarEmpresasServicios();
             if (ins.Exito)

@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace Business_Analitics
 {
-    
+
     public partial class Frm_EmpresaComercializadora : DevExpress.XtraEditors.XtraForm
     {
         public Boolean PaSel { get; set; }
@@ -36,7 +30,7 @@ namespace Business_Analitics
             }
         }
 
-        
+
 
         public Frm_EmpresaComercializadora()
         {
@@ -150,7 +144,7 @@ namespace Business_Analitics
         }
         private void InsertarContacto()
         {
-            if (txtNombreContacto.Text != string.Empty )
+            if (txtNombreContacto.Text != string.Empty)
             {
                 CLS_EmpresasComercializadora_Contacto Contacto = new CLS_EmpresasComercializadora_Contacto();
                 Contacto.Id_Contacto = txtIdContacto.Text.Trim();
@@ -535,7 +529,7 @@ namespace Business_Analitics
                     txtNombreHuerta.Text = row["v_nombre_hue"].ToString();
                     txtEmail.Text = row["EMail_Contacto"].ToString();
                     txtTelefono.Text = row["Telefono_Contacto"].ToString();
-                    
+
                 }
             }
             catch (Exception ex)

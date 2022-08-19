@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
+using System.Data;
 
 namespace Business_Analitics
 {
@@ -38,14 +31,14 @@ namespace Business_Analitics
             }
         }
 
-        public string AddPantalla { get;  set; }
-        public string RemovePantalla { get;  set; }
+        public string AddPantalla { get; set; }
+        public string RemovePantalla { get; set; }
 
         public Frm_Permisos()
         {
             InitializeComponent();
         }
-        
+
         private void CargarPerfiles()
         {
             CLS_Perfiles Clase = new CLS_Perfiles();
@@ -59,7 +52,7 @@ namespace Business_Analitics
                 cmbPerfiles.Properties.DataSource = Clase.Datos;
             }
         }
-        
+
         private void InsertarPerfilesPantallas()
         {
             CLS_Perfiles_Pantallas Clase = new CLS_Perfiles_Pantallas();
@@ -70,7 +63,7 @@ namespace Business_Analitics
             Clase.MtdInsertarPerfilesPantallas();
             if (Clase.Exito)
             {
-                if (Clase.Datos.Rows[0][0].ToString()== "Ya existe")
+                if (Clase.Datos.Rows[0][0].ToString() == "Ya existe")
                 {
                     XtraMessageBox.Show("Ya Se encuentra esta ventana en el perfil seleccionado");
                 }
@@ -79,7 +72,7 @@ namespace Business_Analitics
                     XtraMessageBox.Show("Se ha Insertado el registro con exito");
                     LimpiarCampos();
                 }
-               
+
             }
             else
             {
@@ -245,7 +238,7 @@ namespace Business_Analitics
 
         private void btnAsigna_Click(object sender, EventArgs e)
         {
-            if (cmbPerfiles.EditValue != null && InventarioPantallaIdDisponible !=string.Empty)
+            if (cmbPerfiles.EditValue != null && InventarioPantallaIdDisponible != string.Empty)
             {
                 CLS_Perfiles_Pantallas del = new CLS_Perfiles_Pantallas();
                 del.Id_Perfil = cmbPerfiles.EditValue.ToString();
@@ -271,7 +264,7 @@ namespace Business_Analitics
 
         private void btnDispone_Click(object sender, EventArgs e)
         {
-            if (cmbPerfiles.EditValue != null && InventarioPantallaIdAsignada !=string.Empty)
+            if (cmbPerfiles.EditValue != null && InventarioPantallaIdAsignada != string.Empty)
             {
                 CLS_Perfiles_Pantallas del = new CLS_Perfiles_Pantallas();
                 del.Id_Perfil = cmbPerfiles.EditValue.ToString();

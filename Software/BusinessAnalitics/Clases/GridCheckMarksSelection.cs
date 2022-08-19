@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Collections;
+﻿using DevExpress.Utils.Drawing;
 using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid.Views.Base;
-using System.Windows.Forms;
-using DevExpress.Utils.Drawing;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
-using System.Drawing;
 using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using System;
+using System.Collections;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace GridLookUpEditCBMultipleSelection
 {

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
@@ -94,7 +90,7 @@ namespace CapaDeDatos
         public decimal Descuentos { get; set; }
         public int PrecioporKiloB { get; set; }
         public int TomarkgenCorte { get; set; }
-        public int Cerrado { get;  set; }
+        public int Cerrado { get; set; }
         public string Id_TipoCamion { get; set; }
         public string Nombre_TipoCamion { get; set; }
         public string SAGARPA { get; set; }

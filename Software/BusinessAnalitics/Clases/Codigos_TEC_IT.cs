@@ -17,7 +17,7 @@ namespace Business_Analitics
                 CodigoB.CharacterSpacing = 1;
                 CodigoB.CheckdigitMethod = CheckdigitMethod.UpcA;
                 CodigoB.TextDistance = 1.3F;
-               // CodigoB.BearerBarType = TECIT.TBarCode.BearerBarType.TopAndBottom;
+                // CodigoB.BearerBarType = TECIT.TBarCode.BearerBarType.TopAndBottom;
 
                 CodigoB.BearerBarWidth = 2.4F;
 
@@ -33,7 +33,7 @@ namespace Business_Analitics
                 Single height = 35;
 
 
-                width = width / (Convert.ToSingle(25.4) /Convert.ToSingle(CodigoB.Dpi));
+                width = width / (Convert.ToSingle(25.4) / Convert.ToSingle(CodigoB.Dpi));
                 height = height / (Convert.ToSingle(25.4) / Convert.ToSingle(CodigoB.Dpi));
 
                 CodigoB.Font = new System.Drawing.Font("Arial", 13, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -42,7 +42,7 @@ namespace Business_Analitics
                                                                  (int)(width), // Width
                                                                  (int)(height));// Height
 
-               CodigoB.Draw("C:\\Etiquetas\\CodeBarUPCA1.bmp", TECIT.TBarCode.ImageType.Bmp);
+                CodigoB.Draw("C:\\Etiquetas\\CodeBarUPCA1.bmp", TECIT.TBarCode.ImageType.Bmp);
             }
             catch (Exception ex)
             {

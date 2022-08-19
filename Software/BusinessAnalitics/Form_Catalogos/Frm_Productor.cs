@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
+using System.Data;
 
 namespace Business_Analitics
 {
@@ -17,7 +10,7 @@ namespace Business_Analitics
         public Boolean PaSel { get; set; }
         public Frm_Productor()
         {
-          
+
             InitializeComponent();
         }
 
@@ -125,7 +118,7 @@ namespace Business_Analitics
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textId.Text.Trim().Length > 0 )
+            if (textId.Text.Trim().Length > 0)
             {
                 EliminarProductor();
             }

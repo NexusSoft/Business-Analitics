@@ -1,4 +1,4 @@
-﻿namespace BusinessAnalitics.Form_Control
+﻿namespace BusinessAnalitics
 {
     partial class Frm_Cargas
     {
@@ -45,6 +45,11 @@
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.cmb_Mercado = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.btn_RecargarTem = new DevExpress.XtraEditors.SimpleButton();
             this.cmb_Temporada = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -78,10 +83,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dt_FechaPrograma = new DevExpress.XtraEditors.DateEdit();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.navigationPage4 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.navigationPage5 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.navigationPage6 = new DevExpress.XtraBars.Navigation.NavigationPage();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
@@ -89,6 +91,8 @@
             this.navigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_Mercado.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Temporada.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgManifiesto)).BeginInit();
@@ -218,22 +222,15 @@
             // 
             this.navigationPane1.Controls.Add(this.navigationPage1);
             this.navigationPane1.Controls.Add(this.navigationPage2);
-            this.navigationPane1.Controls.Add(this.navigationPage4);
             this.navigationPane1.Controls.Add(this.navigationPage3);
-            this.navigationPane1.Controls.Add(this.navigationPage5);
-            this.navigationPane1.Controls.Add(this.navigationPage6);
             this.navigationPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navigationPane1.Location = new System.Drawing.Point(0, 56);
             this.navigationPane1.Name = "navigationPane1";
             this.navigationPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.navigationPage1,
             this.navigationPage2,
-            this.navigationPage3,
-            this.navigationPage6,
-            this.navigationPage4,
-            this.navigationPage5});
+            this.navigationPage3});
             this.navigationPane1.RegularSize = new System.Drawing.Size(1165, 559);
-            this.navigationPane1.SelectedPage = this.navigationPage2;
             this.navigationPane1.Size = new System.Drawing.Size(1165, 559);
             this.navigationPane1.TabIndex = 10;
             this.navigationPane1.Text = "navigationPane1";
@@ -252,6 +249,8 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.cmb_Mercado);
+            this.panelControl2.Controls.Add(this.labelControl7);
             this.panelControl2.Controls.Add(this.btn_RecargarTem);
             this.panelControl2.Controls.Add(this.cmb_Temporada);
             this.panelControl2.Controls.Add(this.labelControl126);
@@ -263,18 +262,63 @@
             this.panelControl2.Size = new System.Drawing.Size(1010, 335);
             this.panelControl2.TabIndex = 1;
             // 
+            // cmb_Mercado
+            // 
+            this.cmb_Mercado.AllowDrop = true;
+            this.cmb_Mercado.Location = new System.Drawing.Point(754, 19);
+            this.cmb_Mercado.Name = "cmb_Mercado";
+            this.cmb_Mercado.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_Mercado.Properties.PopupView = this.gridView1;
+            this.cmb_Mercado.Size = new System.Drawing.Size(125, 20);
+            this.cmb_Mercado.TabIndex = 147;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn8,
+            this.gridColumn9});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Codigo";
+            this.gridColumn8.FieldName = "c_merdes_man";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 0;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Mercado";
+            this.gridColumn9.FieldName = "Mercado";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 1;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(707, 23);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(41, 13);
+            this.labelControl7.TabIndex = 148;
+            this.labelControl7.Text = "Mercado";
+            // 
             // btn_RecargarTem
             // 
             this.btn_RecargarTem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_RecargarTem.ImageOptions.Image")));
             this.btn_RecargarTem.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
-            this.btn_RecargarTem.Location = new System.Drawing.Point(713, 17);
+            this.btn_RecargarTem.Location = new System.Drawing.Point(883, 17);
             this.btn_RecargarTem.Name = "btn_RecargarTem";
             this.btn_RecargarTem.Size = new System.Drawing.Size(25, 25);
             this.btn_RecargarTem.TabIndex = 146;
             // 
             // cmb_Temporada
             // 
-            this.cmb_Temporada.Location = new System.Drawing.Point(582, 19);
+            this.cmb_Temporada.Location = new System.Drawing.Point(569, 19);
             this.cmb_Temporada.Name = "cmb_Temporada";
             this.cmb_Temporada.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -575,16 +619,7 @@
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.PageText = "Proforma";
             this.navigationPage2.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage2.Size = new System.Drawing.Size(830, 486);
-            // 
-            // navigationPage4
-            // 
-            this.navigationPage4.Caption = "Corte";
-            this.navigationPage4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage4.ImageOptions.Image")));
-            this.navigationPage4.Name = "navigationPage4";
-            this.navigationPage4.PageText = "Corte";
-            this.navigationPage4.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage4.Size = new System.Drawing.Size(830, 486);
+            this.navigationPage2.Size = new System.Drawing.Size(1165, 559);
             // 
             // navigationPage3
             // 
@@ -593,24 +628,7 @@
             this.navigationPage3.Name = "navigationPage3";
             this.navigationPage3.PageText = "Factura Fiscal";
             this.navigationPage3.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage3.Size = new System.Drawing.Size(830, 486);
-            // 
-            // navigationPage5
-            // 
-            this.navigationPage5.Caption = "Acarreo";
-            this.navigationPage5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage5.ImageOptions.Image")));
-            this.navigationPage5.Name = "navigationPage5";
-            this.navigationPage5.PageText = "Acarreo";
-            this.navigationPage5.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage5.Size = new System.Drawing.Size(830, 437);
-            // 
-            // navigationPage6
-            // 
-            this.navigationPage6.Caption = "Productor";
-            this.navigationPage6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage6.ImageOptions.Image")));
-            this.navigationPage6.Name = "navigationPage6";
-            this.navigationPage6.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage6.Size = new System.Drawing.Size(830, 486);
+            this.navigationPage3.Size = new System.Drawing.Size(1165, 559);
             // 
             // Frm_Cargas
             // 
@@ -624,6 +642,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Frm_Cargas";
             this.Text = "Cargas";
+            this.Shown += new System.EventHandler(this.Frm_Cargas_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
@@ -632,6 +651,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_Mercado.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Temporada.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgManifiesto)).EndInit();
@@ -696,9 +717,6 @@
         private DevExpress.XtraEditors.DateEdit dt_FechaPrograma;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage3;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage4;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage5;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
@@ -707,5 +725,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.SimpleButton btn_RecargarTem;
+        private DevExpress.XtraEditors.GridLookUpEdit cmb_Mercado;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }

@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
 
 namespace Business_Analitics
 {
@@ -33,9 +25,9 @@ namespace Business_Analitics
                 if (sel.Datos.Rows.Count > 0 && sel.Datos.Rows[0]["FacturaPDF"] != null)
                 {
                     byte[] bytes = (byte[])sel.Datos.Rows[0]["FacturaPDF"];
-                    if (bytes.Length>0)
+                    if (bytes.Length > 0)
                     {
-                    System.IO.File.WriteAllBytes(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf", bytes);
+                        System.IO.File.WriteAllBytes(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf", bytes);
                         this.pdfViewer1.LoadDocument(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\ViewPDF.pdf");
                     }
                 }

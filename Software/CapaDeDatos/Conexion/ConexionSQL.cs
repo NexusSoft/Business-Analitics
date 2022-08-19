@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Security.Cryptography;
-using Microsoft.Win32;
 
 
 namespace CapaDeDatos
 {
-    
+
     public class ConexionSQL
     {
-        
+
 
         const string NombreProyecto = "Business_Analitics";
         static public string LeerConexion()
@@ -94,7 +87,7 @@ namespace CapaDeDatos
             try
             {
                 string StrConexion;
-                string ValServerR=string.Empty;
+                string ValServerR = string.Empty;
                 string ValDBaseR = string.Empty;
                 string ValUserR = string.Empty;
                 string ValPassR = string.Empty;
@@ -156,7 +149,7 @@ namespace CapaDeDatos
                     }
                 }
                 else
-                { 
+                {
                     return false;
                 }
             }
@@ -165,6 +158,6 @@ namespace CapaDeDatos
                 return false;
             }
         }
-        
+
     }
 }

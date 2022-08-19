@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
@@ -13,7 +9,7 @@ namespace CapaDeDatos
         public string Nombre_Usuario { get; set; }
         public string Contrasena { get; set; }
         public string Id_Perfil { get; set; }
-        
+
         public string Activo { get; set; }
 
         public string Usuario { get; set; }

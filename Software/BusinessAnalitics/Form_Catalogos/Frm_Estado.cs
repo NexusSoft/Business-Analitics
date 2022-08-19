@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace Business_Analitics
 {
@@ -122,7 +116,7 @@ namespace Business_Analitics
                     textIdEstado.Text = row["Id_Estado"].ToString();
                     textEstado.Text = row["Nombre_Estado"].ToString();
                     textIdPais.Text = row["Id_Pais"].ToString();
-                    textPais.Text=row["Nombre_Pais"].ToString();
+                    textPais.Text = row["Nombre_Pais"].ToString();
                 }
             }
             catch (Exception ex)

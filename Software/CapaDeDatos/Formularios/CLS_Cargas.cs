@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class CLS_Version : ConexionBase
+    public class CLS_Cargas : ConexionBase
     {
-
-
-        public void MtdSeleccionarVersion()
+        public void MtdSelecccionarMercado()
         {
             TipoDato _dato = new TipoDato();
             Conexion _conexion = new Conexion(cadenaConexion);
@@ -14,10 +16,8 @@ namespace CapaDeDatos
             Exito = true;
             try
             {
-                _conexion.NombreProcedimiento = "SP_Version_Select";
-
+                _conexion.NombreProcedimiento = "SP_Mercado_Select";
                 _conexion.EjecutarDataset();
-
                 if (_conexion.Exito)
                 {
                     Datos = _conexion.Datos;
@@ -33,6 +33,7 @@ namespace CapaDeDatos
                 Mensaje = e.Message;
                 Exito = false;
             }
+
         }
     }
 }

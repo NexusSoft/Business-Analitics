@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using CapaDeDatos;
+﻿using CapaDeDatos;
+using System;
 
 namespace Business_Analitics
 {
@@ -33,7 +24,7 @@ namespace Business_Analitics
             sel.FechaInicio = dtFecha1.DateTime.Year.ToString() + DosCeros(dtFecha1.DateTime.Month.ToString()) + DosCeros(dtFecha1.DateTime.Day.ToString());
             sel.FechaFin = dtFecha2.DateTime.Year.ToString() + DosCeros(dtFecha2.DateTime.Month.ToString()) + DosCeros(dtFecha2.DateTime.Day.ToString());
             sel.MtdSeleccionarInventario_Historico();
-            if(sel.Exito)
+            if (sel.Exito)
             {
                 dtgHistorico.DataSource = sel.Datos;
             }

@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
 using DevExpress.XtraEditors.Mask;
+using System;
+using System.Data;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace Business_Analitics
 {
-    
+
     public partial class Frm_EmpresaCorte : DevExpress.XtraEditors.XtraForm
     {
         public NumberStyles style = NumberStyles.Number | NumberStyles.AllowCurrencySymbol;
@@ -40,7 +34,7 @@ namespace Business_Analitics
             }
         }
 
-        
+
 
         public Frm_EmpresaCorte()
         {
@@ -241,7 +235,7 @@ namespace Business_Analitics
             decimal.TryParse(txtPrecioCajaMayorA.Text, style, culture, out PrecioCajas_MayorA);
             ins.PrecioCaja_MayorA = PrecioCajas_MayorA;
 
-            if (chk_Rango.Checked==true)
+            if (chk_Rango.Checked == true)
             {
                 ins.EsRango = 1;
             }
@@ -319,7 +313,7 @@ namespace Business_Analitics
             if (del.Exito)
             {
                 CargarServicios();
-                
+
                 LimpiarCamposDomicilio();
             }
             else
@@ -402,7 +396,7 @@ namespace Business_Analitics
                     textCorreo.Text = row["Email"].ToString();
                     textContacto.Text = row["Contacto"].ToString();
                     txtRFC.Text = row["RFC"].ToString();
-                    labelControl23.Text= row["Nombre_EmpresaCorte"].ToString();
+                    labelControl23.Text = row["Nombre_EmpresaCorte"].ToString();
                     labelControl30.Text = row["Nombre_EmpresaCorte"].ToString();
                 }
             }
@@ -645,7 +639,7 @@ namespace Business_Analitics
 
         private void chk_Rango_CheckedChanged(object sender, EventArgs e)
         {
-            if (chk_Rango.Checked==false)
+            if (chk_Rango.Checked == false)
             {
                 txtPrecioCuadrillaA.Enabled = true;
                 txtKilosMayorA.Enabled = false;

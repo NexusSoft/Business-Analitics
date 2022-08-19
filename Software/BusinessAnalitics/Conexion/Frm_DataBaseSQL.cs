@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Business_Analitics
 {
@@ -18,7 +12,7 @@ namespace Business_Analitics
         public string User { get; set; }
         public string Pass { get; set; }
         public string DataBase { get; set; }
-        
+
         public Frm_DataBaseSQL()
         {
             InitializeComponent();

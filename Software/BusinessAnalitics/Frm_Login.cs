@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
-using DevExpress.XtraBars.Helpers;
+using System;
+using System.Windows.Forms;
 
 namespace Business_Analitics
 {
@@ -39,7 +31,7 @@ namespace Business_Analitics
                 if (txtUser.Text != string.Empty && txtPass.Text != string.Empty)
                 {
                     Crypto claseencripta = new Crypto();
-                    SEG_Login sLogin = new SEG_Login() { Id_Usuario = txtUser.Text, Contrasena =claseencripta.Encriptar(txtPass.Text) };
+                    SEG_Login sLogin = new SEG_Login() { Id_Usuario = txtUser.Text, Contrasena = claseencripta.Encriptar(txtPass.Text) };
                     sLogin.MtdSeleccionarUsuarioLogin();
                     if (sLogin.Exito)
                     {
@@ -57,7 +49,7 @@ namespace Business_Analitics
                             IdPerfil = sLogin.Datos.Rows[0]["Id_Perfil"].ToString();
                             Frm_Principal frmP = new Frm_Principal();
                             MSRegistro RegIn = new MSRegistro();
-                            
+
                             if (vIdActivo == 1)
                             {
                                 frmP.IdPerfil = IdPerfil;
@@ -95,7 +87,7 @@ namespace Business_Analitics
 
         private void txtUser_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyValue==13 && txtUser.Text!=string.Empty)
+            if (e.KeyValue == 13 && txtUser.Text != string.Empty)
             {
                 txtPass.Focus();
             }

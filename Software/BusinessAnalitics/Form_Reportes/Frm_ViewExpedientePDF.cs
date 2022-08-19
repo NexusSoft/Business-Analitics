@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
 
 namespace Business_Analitics
 {
@@ -48,7 +40,7 @@ namespace Business_Analitics
                     XtraMessageBox.Show(sel.Mensaje);
                 }
             }
-            else if(Id_Archivo ==8)
+            else if (Id_Archivo == 8)
             {
                 CLS_Cosecha_Datos sel = new CLS_Cosecha_Datos();
                 sel.Id_Cosecha = Id_Cosecha;

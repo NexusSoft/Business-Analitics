@@ -1,17 +1,12 @@
-﻿using DevExpress.XtraEditors;
+﻿using CapaDeDatos;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CapaDeDatos;
-using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
+using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Business_Analitics
 {
@@ -876,7 +871,7 @@ namespace Business_Analitics
                 vtotalfacturas = 0;
             }
 
-            oRng = oSheet.get_Range("B"+ Fila.ToString(),"V"+Fila.ToString());
+            oRng = oSheet.get_Range("B" + Fila.ToString(), "V" + Fila.ToString());
             oRng.Interior.Pattern = Excel.XlPattern.xlPatternSolid;
             oRng.Interior.PatternColorIndex = Excel.XlPattern.xlPatternAutomatic;
             oRng.Interior.ThemeColor = Excel.XlThemeColor.xlThemeColorAccent6;
@@ -885,7 +880,7 @@ namespace Business_Analitics
             oRng.Font.ThemeColor = Excel.XlThemeColor.xlThemeColorDark1;
             oRng.Font.TintAndShade = 0;
 
-            oRng = oSheet.get_Range("M"+ Fila.ToString());
+            oRng = oSheet.get_Range("M" + Fila.ToString());
             oRng.Formula = "=SUM(M6:" + "M" + filaanterior.ToString() + ")";
             oRng.EntireColumn.AutoFit();
 
@@ -898,7 +893,7 @@ namespace Business_Analitics
             oRng.EntireColumn.AutoFit();
 
             oRng = oSheet.get_Range("A:A");
-            oRng.EntireColumn.Hidden=true;
+            oRng.EntireColumn.Hidden = true;
 
         }
 

@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
+using System.Data;
 
 namespace Business_Analitics
 {
     public partial class Frm_Productos : DevExpress.XtraEditors.XtraForm
     {
         public int Opcion { get; set; }
-        public string vc_codigo_pro { get;  set; }
-        public string vv_nombre_pro { get;  set; }
+        public string vc_codigo_pro { get; set; }
+        public string vv_nombre_pro { get; set; }
 
         public Frm_Productos()
         {
@@ -33,7 +26,7 @@ namespace Business_Analitics
         private void CargarProductos()
         {
             CLS_Productos sel = new CLS_Productos();
-            
+
             sel.MtdSeleccionarProductos();
             if (sel.Exito)
             {

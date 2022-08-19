@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace Business_Analitics
 {
@@ -32,7 +26,7 @@ namespace Business_Analitics
             {
                 gridControl1.DataSource = Clase.Datos;
             }
-             
+
         }
 
         private string DosCero(string sVal)
@@ -52,7 +46,7 @@ namespace Business_Analitics
             Fecha = Convert.ToDateTime(dateFecha.Text.Trim());
             Clase.Fecha = Fecha.Year.ToString() + DosCero(Fecha.Month.ToString()) + DosCero(Fecha.Day.ToString());
             Clase.Tipo_Cambio = Convert.ToDecimal(textTC.Text);
-            
+
             Clase.MtdInsertarTipoCambio();
             if (Clase.Exito)
             {
@@ -88,7 +82,7 @@ namespace Business_Analitics
 
         private void LimpiarCampos()
         {
-            dateFecha.EditValue=DateTime.Now;
+            dateFecha.EditValue = DateTime.Now;
             textTC.Text = "";
         }
 
@@ -105,7 +99,7 @@ namespace Business_Analitics
                         textTC.Text = row["Tipo_Cambio"].ToString();
                     }
                 }
-                  
+
             }
             catch (Exception ex)
             {
@@ -115,7 +109,7 @@ namespace Business_Analitics
 
         private void Frm_TipoCambio_Load(object sender, EventArgs e)
         {
-            
+
             if (vIni)
             {
                 btnSalir.Enabled = false;
@@ -127,23 +121,23 @@ namespace Business_Analitics
             dateFecha.EditValue = DateTime.Today;
             if (BuscarTipoCambio(Convert.ToDateTime(dateFecha.EditValue.ToString())))
             {
-                
+
             }
         }
 
 
         private Boolean BuscarTipoCambio(DateTime Valor)
         {
-            for(int i = 0; i < gridView1.RowCount; i++)
+            for (int i = 0; i < gridView1.RowCount; i++)
             {
-                DataRow row=gridView1.GetDataRow(i);
+                DataRow row = gridView1.GetDataRow(i);
                 if (Valor == Convert.ToDateTime(row["Fecha"]))
                 {
                     textTC.Text = row["Tipo_Cambio"].ToString();
                     btnSalir.Enabled = true;
-                    
+
                     return true;
-                    
+
                 }
             }
             return false;
@@ -156,26 +150,26 @@ namespace Business_Analitics
                 if (Convert.ToDecimal(textTC.Text) > 0)
                 {
                     InsertarTipoCambio();
-                   
+
                 }
                 else
                 {
                     XtraMessageBox.Show("El tipo de cambio debe ser mayor que cero.");
                 }
-                
+
             }
             else
             {
                 XtraMessageBox.Show("Es necesario agregar el tipo de cambio.");
             }
             BuscarTipoCambio(DateTime.Today);
-            
+
         }
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-                EliminarTipoCambio();
-           
+            EliminarTipoCambio();
+
         }
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

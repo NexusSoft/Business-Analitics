@@ -1,22 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using CapaDeDatos;
-using DevExpress.XtraGrid;
-using System.Reflection;
-using System.Globalization;
+﻿using CapaDeDatos;
 using DevExpress.DataAccess.ConnectionParameters;
 using DevExpress.DataAccess.Sql;
-using DevExpress.XtraReports.UI;
-using DevExpress.XtraPrinting;
+using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Mask;
+using DevExpress.XtraPrinting;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Globalization;
+using System.Windows.Forms;
 
 namespace Business_Analitics
 {
@@ -504,7 +496,7 @@ namespace Business_Analitics
         public string v_FechaFin { get; private set; }
         public string v_secuenciaX { get; private set; }
         public string v_semanaX { get; private set; }
-        decimal  n_costo_extra { get;  set; }
+        decimal n_costo_extra { get; set; }
         public decimal cPrecioX { get; private set; }
 
         private void CreatNewRowArticulo(string cManifiesto, string cDistribuidor, string cFechaEmbarque, string cProducto, string cEnvase, decimal cPesoEstandar, int cCajas, decimal cMontoMaquila, decimal cMallas, decimal cAPEAM, decimal cSubTotal1, decimal cCharola, decimal cSubTotal, decimal cCaja, decimal cTOTAL)
@@ -530,7 +522,7 @@ namespace Business_Analitics
                 dtgValMaquila.SetRowCellValue(rowHandle, dtgValMaquila.Columns["cTOTAL"], cTOTAL);
 
                 CLS_Maquila ins2 = new CLS_Maquila();
-                ins2.d_fecha_inicio_maq= dtFechaInicio.DateTime.Year.ToString() + DosCeros(dtFechaInicio.DateTime.Month.ToString()) + DosCeros(dtFechaInicio.DateTime.Day.ToString());
+                ins2.d_fecha_inicio_maq = dtFechaInicio.DateTime.Year.ToString() + DosCeros(dtFechaInicio.DateTime.Month.ToString()) + DosCeros(dtFechaInicio.DateTime.Day.ToString());
                 ins2.d_fecha_fin_maq = dtFechaFin.DateTime.Year.ToString() + DosCeros(dtFechaFin.DateTime.Month.ToString()) + DosCeros(dtFechaFin.DateTime.Day.ToString());
                 ins2.n_semana_maq = Convert.ToInt32(txtSemana.EditValue);
                 ins2.Semana = Convert.ToInt32(txtSemana.EditValue);
@@ -551,7 +543,7 @@ namespace Business_Analitics
                 ins2.cCaja = cCaja;
                 ins2.cTOTAL = cTOTAL;
                 ins2.MtdGuardarMaquilaDetalles();
-                if(!ins2.Exito)
+                if (!ins2.Exito)
                 {
                     XtraMessageBox.Show(ins2.Mensaje);
                 }
@@ -560,7 +552,7 @@ namespace Business_Analitics
             ins.cManifiesto = cManifiesto;
             ins.cDistribuidor = cDistribuidor;
             DateTime vFecha = Convert.ToDateTime(cFechaEmbarque);
-            ins.cFechaEmbarque = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString()); 
+            ins.cFechaEmbarque = vFecha.Year.ToString() + DosCeros(vFecha.Month.ToString()) + DosCeros(vFecha.Day.ToString());
             ins.cProducto = cProducto;
             ins.cEnvase = cEnvase;
             ins.cPesoEstandar = Convert.ToDecimal(cPesoEstandar);
@@ -574,7 +566,7 @@ namespace Business_Analitics
             ins.cCaja = cCaja;
             ins.cTOTAL = cTOTAL;
             ins.MtdInsertarMaquila();
-            if(!ins.Exito)
+            if (!ins.Exito)
             {
                 XtraMessageBox.Show(ins.Mensaje);
             }
@@ -583,7 +575,7 @@ namespace Business_Analitics
         private void CreatNewRowReempaque(DateTime d_fecha_rem
             , string v_nombre_pro_O, string v_nombre_env_O, string v_nombre_eti_O, string v_nombre_plu_O, int n_cajas_rem_O
             , string v_nombre_pro_N, string v_nombre_env_N, string v_nombre_eti_N, string v_nombre_plu_N, int n_cajas_rem_N
-            , string v_Observaciones, decimal n_kilogramos, string v_nombre_causa, DateTime d_fecha_inicio_maq,DateTime d_fecha_fin_maq,int n_semana_maq, int n_secuencia)
+            , string v_Observaciones, decimal n_kilogramos, string v_nombre_causa, DateTime d_fecha_inicio_maq, DateTime d_fecha_fin_maq, int n_semana_maq, int n_secuencia)
         {
             decimal n_costo_rem = 0;
             dtgValReempaque.AddNewRow();
@@ -605,7 +597,7 @@ namespace Business_Analitics
                 dtgValReempaque.SetRowCellValue(rowHandle, dtgValReempaque.Columns["n_kilogramos"], n_kilogramos);
                 dtgValReempaque.SetRowCellValue(rowHandle, dtgValReempaque.Columns["v_nombre_causa"], v_nombre_causa);
                 TomarPrecio(1);
-                n_costo_rem = vPrecioMaquila*Convert.ToDecimal(cmb_Motivo.EditValue.ToString())*n_kilogramos;
+                n_costo_rem = vPrecioMaquila * Convert.ToDecimal(cmb_Motivo.EditValue.ToString()) * n_kilogramos;
                 dtgValReempaque.SetRowCellValue(rowHandle, dtgValReempaque.Columns["n_costo_rem"], n_costo_rem);
                 dtgValReempaque.SetRowCellValue(rowHandle, dtgValReempaque.Columns["d_fecha_inicio_maq"], d_fecha_inicio_maq);
                 dtgValReempaque.SetRowCellValue(rowHandle, dtgValReempaque.Columns["d_fecha_fin_maq"], d_fecha_fin_maq);
@@ -613,7 +605,7 @@ namespace Business_Analitics
                 dtgValReempaque.SetRowCellValue(rowHandle, dtgValReempaque.Columns["n_secuencia"], n_secuencia);
             }
             CLS_Reempaques ins = new CLS_Reempaques();
-            ins.d_fecha_rem = d_fecha_rem.Year+DosCeros(d_fecha_rem.Month.ToString())+DosCeros(d_fecha_rem.Day.ToString());
+            ins.d_fecha_rem = d_fecha_rem.Year + DosCeros(d_fecha_rem.Month.ToString()) + DosCeros(d_fecha_rem.Day.ToString());
             ins.v_nombre_pro_O = v_nombre_pro_O;
             ins.v_nombre_env_O = v_nombre_env_O;
             ins.v_nombre_eti_O = v_nombre_eti_O;
@@ -628,7 +620,7 @@ namespace Business_Analitics
             ins.n_kilogramos = n_kilogramos;
             ins.v_nombre_causa = v_nombre_causa;
             ins.n_costo_rem = n_costo_rem;
-            ins.d_fecha_inicio_maq = d_fecha_inicio_maq.Year + DosCeros(d_fecha_inicio_maq.Month.ToString()) + DosCeros(d_fecha_inicio_maq.Day.ToString()); 
+            ins.d_fecha_inicio_maq = d_fecha_inicio_maq.Year + DosCeros(d_fecha_inicio_maq.Month.ToString()) + DosCeros(d_fecha_inicio_maq.Day.ToString());
             ins.d_fecha_fin_maq = d_fecha_fin_maq.Year + DosCeros(d_fecha_fin_maq.Month.ToString()) + DosCeros(d_fecha_fin_maq.Day.ToString());
             ins.n_semana_maq = n_semana_maq;
             ins.n_secuencia = n_secuencia;
@@ -645,7 +637,7 @@ namespace Business_Analitics
         }
         private void CreatNewRowExtra(string n_semana_maq
             , string n_secuencia, string v_nombre_causa, string v_nombre_horario, string v_unidad_causa
-            , string n_precio_causa , string n_cantidad_causa, string n_total_causa, DateTime d_fecha_inicio_maq, DateTime d_fecha_fin_maq,DateTime d_fecha_causa)
+            , string n_precio_causa, string n_cantidad_causa, string n_total_causa, DateTime d_fecha_inicio_maq, DateTime d_fecha_fin_maq, DateTime d_fecha_causa)
         {
             dtgValReempaque.AddNewRow();
             int rowHandle = dtgValReempaque.GetRowHandle(dtgValReempaque.DataRowCount);
@@ -659,18 +651,18 @@ namespace Business_Analitics
                 dtgValReempaque.SetRowCellValue(rowHandle, dtgValReempaque.Columns["n_precio_causa"], n_precio_causa);
                 dtgValReempaque.SetRowCellValue(rowHandle, dtgValReempaque.Columns["n_cantidad_causa"], n_cantidad_causa);
                 dtgValReempaque.SetRowCellValue(rowHandle, dtgValReempaque.Columns["n_total_causa"], n_total_causa);
-                n_costo_extra = n_costo_extra +Convert.ToDecimal(n_total_causa);
+                n_costo_extra = n_costo_extra + Convert.ToDecimal(n_total_causa);
             }
             CLS_Reempaques ins = new CLS_Reempaques();
-            
-            ins.n_semana_maq =Convert.ToInt32(n_semana_maq);
+
+            ins.n_semana_maq = Convert.ToInt32(n_semana_maq);
             ins.n_secuencia = Convert.ToInt32(n_secuencia);
             ins.v_nombre_causa = v_nombre_causa;
             ins.v_nombre_horario = v_nombre_horario;
             ins.v_unidad_causa = v_unidad_causa;
-            ins.n_precio_causa =Convert.ToDecimal(n_precio_causa);
-            ins.n_cantidad_causa =Convert.ToInt32(n_cantidad_causa);
-            ins.n_total_causa =Convert.ToDecimal(n_total_causa);
+            ins.n_precio_causa = Convert.ToDecimal(n_precio_causa);
+            ins.n_cantidad_causa = Convert.ToInt32(n_cantidad_causa);
+            ins.n_total_causa = Convert.ToDecimal(n_total_causa);
             ins.d_fecha_inicio_maq = d_fecha_inicio_maq.Year + DosCeros(d_fecha_inicio_maq.Month.ToString()) + DosCeros(d_fecha_inicio_maq.Day.ToString());
             ins.d_fecha_fin_maq = d_fecha_fin_maq.Year + DosCeros(d_fecha_fin_maq.Month.ToString()) + DosCeros(d_fecha_fin_maq.Day.ToString());
             ins.d_fecha_causa = d_fecha_causa.Year + DosCeros(d_fecha_causa.Month.ToString()) + DosCeros(d_fecha_causa.Day.ToString());
@@ -773,7 +765,7 @@ namespace Business_Analitics
             //dtgValMaquila.GroupSummary.Add(item1);
             LimpiaReempaques();
             LimpiaCausaExtra();
-            
+
         }
         private void CargarCausa(string Valor)
         {
@@ -849,7 +841,7 @@ namespace Business_Analitics
                 cmb_Producto_N.Properties.DataSource = sel.Datos;
             }
         }
-        public void CargarEnvaseO(string Valor,string c_codigo_pro)
+        public void CargarEnvaseO(string Valor, string c_codigo_pro)
         {
             CLS_Reempaques sel = new CLS_Reempaques();
             sel.c_codigo_pro = c_codigo_pro;
@@ -962,7 +954,7 @@ namespace Business_Analitics
                 sel.FechaFin = dtFechaFin.DateTime.Year.ToString() + DosCeros(dtFechaFin.DateTime.Month.ToString()) + DosCeros(dtFechaFin.DateTime.Day.ToString());
                 sel.MtdSeleccionarMaquila();
                 vNTermo = 1;
-                if (sel.Exito && sel.Datos.Rows.Count>0)
+                if (sel.Exito && sel.Datos.Rows.Count > 0)
                 {
                     vManifiesto = sel.Datos.Rows[0]["c_codigo_man"].ToString();
                     TomarPrecio(vNTermo);
@@ -1018,8 +1010,8 @@ namespace Business_Analitics
                                 decimal cCaja = Convert.ToDecimal(sel.Datos.Rows[i]["TCaja"].ToString());
                                 cTOTAL = Convert.ToDecimal(Convert.ToDecimal(cSubTotal) + Convert.ToDecimal(cCaja));
                                 sTotal += cTOTAL;
-                                CreatNewRowArticulo(cManifiesto, cDistribuidor, cFechaEmbarque, cProducto, cEnvase, cPesoEstandar, cCajas, cMontoMaquila, cMallas, cAPEAM,cSubTotal1, cCharola, cSubTotal, cCaja, cTOTAL);
-                                
+                                CreatNewRowArticulo(cManifiesto, cDistribuidor, cFechaEmbarque, cProducto, cEnvase, cPesoEstandar, cCajas, cMontoMaquila, cMallas, cAPEAM, cSubTotal1, cCharola, cSubTotal, cCaja, cTOTAL);
+
                             }
                             dtgValMaquila.OptionsView.ColumnAutoWidth = true;
                             dtgValMaquila.BestFitColumns();
@@ -1039,14 +1031,14 @@ namespace Business_Analitics
                 }
                 else
                 {
-                    XtraMessageBox.Show(sel.Mensaje+ " o no existen datos para mostrar");
+                    XtraMessageBox.Show(sel.Mensaje + " o no existen datos para mostrar");
                 }
             }
             else
             {
                 XtraMessageBox.Show("La fecha de Inicio no puede ser mayor a la Fecha Fin");
             }
-            
+
         }
 
         private void btnParametros_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1116,7 +1108,7 @@ namespace Business_Analitics
             int vSemana = Convert.ToInt32(txtSemana.Value);
             //int vAño =Convert.ToInt32(nAño.Value);
 
-           //ObtenerFechadeSemana(vSemana, vAño);
+            //ObtenerFechadeSemana(vSemana, vAño);
             XtraFolderBrowserDialog saveFileDialog = new XtraFolderBrowserDialog();
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -1146,7 +1138,7 @@ namespace Business_Analitics
                     XtraMessageBox.Show("No se ingreso Nombre para el Archivo a exportar");
                 }
             }
-           
+
         }
         private void CrearPDF(string fileNamepdf)
         {
@@ -1163,7 +1155,7 @@ namespace Business_Analitics
             rpt.Parameters["FechaFin"].Value = FechaFin;
             rpt.Parameters["Semana"].Value = txtSemana.Text;
             rpt.Parameters["Reempaque"].Value = txt_TotalRem.Text;
-            rpt.Parameters["iva"].Value = (Convert.ToDecimal(txt_TotalRem.EditValue) + Convert.ToDecimal(sTotal)) *Convert.ToDecimal(0.16);
+            rpt.Parameters["iva"].Value = (Convert.ToDecimal(txt_TotalRem.EditValue) + Convert.ToDecimal(sTotal)) * Convert.ToDecimal(0.16);
             rpt.Parameters["Total"].Value = (Convert.ToDecimal(txt_TotalRem.EditValue) + Convert.ToDecimal(sTotal)) * Convert.ToDecimal(1.16);
             PdfExportOptions pdfOptions = rpt.ExportOptions.Pdf;
             pdfOptions.PageRange = "1-1000";
@@ -1236,7 +1228,7 @@ namespace Business_Analitics
             switch (vDiaSemana)
             {
                 case 1:
-                    DiaSemanaUno= FechaInicioAño.AddDays(-1);
+                    DiaSemanaUno = FechaInicioAño.AddDays(-1);
                     break;
                 case 2:
                     DiaSemanaUno = FechaInicioAño.AddDays(-2);
@@ -1258,7 +1250,7 @@ namespace Business_Analitics
             }
             int agregadias = semana * 7;
             Fechainicio = DiaSemanaUno.AddDays(agregadias);
-            FechaFin = DiaSemanaUno.AddDays(agregadias+6);
+            FechaFin = DiaSemanaUno.AddDays(agregadias + 6);
         }
 
         private void dtFechaInicio_EditValueChanged(object sender, EventArgs e)
@@ -1266,7 +1258,7 @@ namespace Business_Analitics
             DateTime Fecha = dtFechaInicio.DateTime;
             int Semana = CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(Fecha, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
             txtSemana.Value = Semana;
-            
+
         }
 
         private void CargarReempaques()
@@ -1274,9 +1266,9 @@ namespace Business_Analitics
             CLS_Reempaques sel = new CLS_Reempaques();
             sel.d_fecha_inicio_maq = dtFechaInicio.DateTime.Year.ToString() + DosCeros(dtFechaInicio.DateTime.Month.ToString()) + DosCeros(dtFechaInicio.DateTime.Day.ToString());
             sel.d_fecha_fin_maq = dtFechaFin.DateTime.Year.ToString() + DosCeros(dtFechaFin.DateTime.Month.ToString()) + DosCeros(dtFechaFin.DateTime.Day.ToString());
-            sel.n_semana_maq =Convert.ToInt32(txtSemana.Text);
+            sel.n_semana_maq = Convert.ToInt32(txtSemana.Text);
             sel.MtdSeleccionarReempaque();
-            if(sel.Exito)
+            if (sel.Exito)
             {
                 dtgReempaque.DataSource = sel.Datos;
                 vn_Secuencia = sel.Datos.Rows.Count;
@@ -1293,7 +1285,7 @@ namespace Business_Analitics
             sel.d_fecha_inicio_maq = dtFechaInicio.DateTime.Year.ToString() + DosCeros(dtFechaInicio.DateTime.Month.ToString()) + DosCeros(dtFechaInicio.DateTime.Day.ToString());
             sel.d_fecha_fin_maq = dtFechaFin.DateTime.Year.ToString() + DosCeros(dtFechaFin.DateTime.Month.ToString()) + DosCeros(dtFechaFin.DateTime.Day.ToString());
             sel.n_semana_maq = Convert.ToInt32(txtSemana.Text);
-            
+
             sel.MtdSeleccionarReempaque();
             if (sel.Exito)
             {
@@ -1342,7 +1334,7 @@ namespace Business_Analitics
                 {
                     cPrecioX = cPrecioX + Convert.ToDecimal(sel.Datos.Rows[i]["n_total_causa"].ToString());
                 }
-                txt_TotalRem.Text =Convert.ToString(Convert.ToDecimal(txt_TotalRem.EditValue)+cPrecioX);
+                txt_TotalRem.Text = Convert.ToString(Convert.ToDecimal(txt_TotalRem.EditValue) + cPrecioX);
             }
             else
             {
@@ -1361,9 +1353,9 @@ namespace Business_Analitics
             catch (Exception)
             {
 
-                
+
             }
-            
+
         }
 
         private void cmb_Producto_N_EditValueChanged(object sender, EventArgs e)
@@ -1378,33 +1370,33 @@ namespace Business_Analitics
             catch (Exception)
             {
 
-                
+
             }
-            
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (!CamposVacios())
             {
-                DateTime d_fecha_rem =Convert.ToDateTime(dtFechaReempaque.EditValue.ToString());
-                string v_nombre_pro_O = cmb_Producto_O.Text.ToString(); 
-                string v_nombre_env_O=cmb_Envase_O.Text.ToString();
-                string v_nombre_eti_O=cmb_Etiqueta_O.Text.ToString();
-                string v_nombre_plu_O= cmb_PLU_O.Text.ToString(); 
+                DateTime d_fecha_rem = Convert.ToDateTime(dtFechaReempaque.EditValue.ToString());
+                string v_nombre_pro_O = cmb_Producto_O.Text.ToString();
+                string v_nombre_env_O = cmb_Envase_O.Text.ToString();
+                string v_nombre_eti_O = cmb_Etiqueta_O.Text.ToString();
+                string v_nombre_plu_O = cmb_PLU_O.Text.ToString();
                 int n_cajas_rem_O = Convert.ToInt32(txt_Cajas_O.Text);
                 string v_nombre_pro_N = cmb_Producto_N.Text.ToString();
                 string v_nombre_env_N = cmb_Envase_N.Text.ToString();
                 string v_nombre_eti_N = cmb_Etiqueta_N.Text.ToString();
                 string v_nombre_plu_N = cmb_PLU_N.Text.ToString();
-                int n_cajas_rem_N=Convert.ToInt32(txt_Cajas_N.Text);
-                string v_Observaciones=txt_Observaciones.Text;
+                int n_cajas_rem_N = Convert.ToInt32(txt_Cajas_N.Text);
+                string v_Observaciones = txt_Observaciones.Text;
                 decimal n_kilogramos = Convert.ToDecimal(txt_Kilogramos.Text);
-                string v_nombre_causa= cmb_Motivo.Text.ToString();
-                DateTime d_fecha_inicio_maq = Convert.ToDateTime(dtFechaInicio.EditValue.ToString()); 
+                string v_nombre_causa = cmb_Motivo.Text.ToString();
+                DateTime d_fecha_inicio_maq = Convert.ToDateTime(dtFechaInicio.EditValue.ToString());
                 DateTime d_fecha_fin_maq = Convert.ToDateTime(dtFechaFin.EditValue.ToString()); ;
-                int n_semana_maq=Convert.ToInt32(txtSemana.Text);
-                int n_secuencia = vn_Secuencia+1;
+                int n_semana_maq = Convert.ToInt32(txtSemana.Text);
+                int n_secuencia = vn_Secuencia + 1;
                 CreatNewRowReempaque(d_fecha_rem, v_nombre_pro_O, v_nombre_env_O, v_nombre_eti_O, v_nombre_plu_O, n_cajas_rem_O
                             , v_nombre_pro_N, v_nombre_env_N, v_nombre_eti_N, v_nombre_plu_N, n_cajas_rem_N
             , v_Observaciones, n_kilogramos, v_nombre_causa, d_fecha_inicio_maq, d_fecha_fin_maq, n_semana_maq, n_secuencia);
@@ -1617,11 +1609,11 @@ namespace Business_Analitics
 
         private void btnQuitar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(v_secuencia)&& !string.IsNullOrEmpty(Convert.ToString(v_semana)) && !string.IsNullOrEmpty(v_FechaInicio) && !string.IsNullOrEmpty(v_FechaFin))
+            if (!string.IsNullOrEmpty(v_secuencia) && !string.IsNullOrEmpty(Convert.ToString(v_semana)) && !string.IsNullOrEmpty(v_FechaInicio) && !string.IsNullOrEmpty(v_FechaFin))
             {
                 CLS_Reempaques del = new CLS_Reempaques();
                 del.n_secuencia = Convert.ToInt32(v_secuencia);
-                del.n_semana_maq=Convert.ToInt32(v_semana);
+                del.n_semana_maq = Convert.ToInt32(v_semana);
                 del.d_fecha_inicio_maq = v_FechaInicio;
                 del.d_fecha_fin_maq = v_FechaFin;
                 del.MtdEliminarReempaque();
@@ -1666,7 +1658,7 @@ namespace Business_Analitics
             }
             catch (Exception)
             {
-                
+
             }
         }
 
@@ -1694,7 +1686,7 @@ namespace Business_Analitics
             }
             catch (Exception)
             {
-                
+
             }
         }
 
@@ -1722,7 +1714,7 @@ namespace Business_Analitics
             }
             catch (Exception)
             {
-                
+
             }
         }
 

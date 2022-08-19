@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
@@ -11,7 +7,7 @@ namespace CapaDeDatos
 
         public string Fecha { get; set; }
         public decimal Tipo_Cambio { get; set; }
-     
+
 
         public void MtdSeleccionarTipoCambio()
         {

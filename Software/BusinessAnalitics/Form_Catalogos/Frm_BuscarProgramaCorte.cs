@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
+using System.Data;
 
 namespace Business_Analitics
 {
     public partial class Frm_BuscarProgramaCorte : DevExpress.XtraEditors.XtraForm
     {
         public string TemActiva { get; private set; }
-        public string Id_ProgramaCorte { get;  set; }
-        public string v_temporada { get;  set; }
-        public string v_secuencia { get;  set; }
+        public string Id_ProgramaCorte { get; set; }
+        public string v_temporada { get; set; }
+        public string v_secuencia { get; set; }
         public string v_ordencorte { get; set; }
 
         public Frm_BuscarProgramaCorte()
@@ -76,7 +69,7 @@ namespace Business_Analitics
             CLS_ProgramaCorte sel = new CLS_ProgramaCorte();
             sel.c_codigo_tem = p;
             sel.MtdSeleccionarPrograma();
-            if(sel.Exito)
+            if (sel.Exito)
             {
                 dtgProgramas.DataSource = sel.Datos;
             }
@@ -92,7 +85,7 @@ namespace Business_Analitics
                     Id_ProgramaCorte = row["c_codigo_pco"].ToString();
                     v_temporada = row["c_codigo_tem"].ToString();
                     v_secuencia = row["c_secuencia_ocd"].ToString();
-                    v_ordencorte= row["c_codigo_oct"].ToString();
+                    v_ordencorte = row["c_codigo_oct"].ToString();
                 }
             }
             catch (Exception ex)
@@ -112,5 +105,5 @@ namespace Business_Analitics
             Cargar_Programa(cmb_Temporada.EditValue.ToString());
         }
     }
-   
+
 }

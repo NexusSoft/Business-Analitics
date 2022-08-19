@@ -256,9 +256,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 440);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 443);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1159, 25);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1159, 22);
             // 
             // barDockControlLeft
             // 
@@ -266,7 +266,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(56, 440);
+            this.barDockControlLeft.Size = new System.Drawing.Size(56, 443);
             // 
             // barDockControlRight
             // 
@@ -274,7 +274,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1159, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 440);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 443);
             // 
             // btnSeleccionar
             // 
@@ -317,10 +317,10 @@
             // 
             this.panelControl5.Controls.Add(this.dtgPais_Inventario);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl5.Location = new System.Drawing.Point(702, 25);
+            this.panelControl5.Location = new System.Drawing.Point(702, 28);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl5.Size = new System.Drawing.Size(382, 233);
+            this.panelControl5.Size = new System.Drawing.Size(382, 230);
             this.panelControl5.TabIndex = 18;
             // 
             // dtgPais_Inventario
@@ -332,7 +332,7 @@
             this.dtgPais_Inventario.Name = "dtgPais_Inventario";
             this.dtgPais_Inventario.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit3});
-            this.dtgPais_Inventario.Size = new System.Drawing.Size(368, 219);
+            this.dtgPais_Inventario.Size = new System.Drawing.Size(368, 216);
             this.dtgPais_Inventario.TabIndex = 0;
             this.dtgPais_Inventario.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValPais_Inventario});
@@ -393,10 +393,10 @@
             // 
             this.panelControl4.Controls.Add(this.dtgTamanio);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl4.Location = new System.Drawing.Point(320, 25);
+            this.panelControl4.Location = new System.Drawing.Point(320, 28);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl4.Size = new System.Drawing.Size(382, 233);
+            this.panelControl4.Size = new System.Drawing.Size(382, 230);
             this.panelControl4.TabIndex = 17;
             // 
             // dtgTamanio
@@ -408,7 +408,7 @@
             this.dtgTamanio.Name = "dtgTamanio";
             this.dtgTamanio.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit2});
-            this.dtgTamanio.Size = new System.Drawing.Size(368, 219);
+            this.dtgTamanio.Size = new System.Drawing.Size(368, 216);
             this.dtgTamanio.TabIndex = 0;
             this.dtgTamanio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValTamanio});
@@ -485,9 +485,9 @@
             this.panelControl3.Controls.Add(this.dtFecha);
             this.panelControl3.Controls.Add(this.cmb_Categoria);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl3.Location = new System.Drawing.Point(7, 25);
+            this.panelControl3.Location = new System.Drawing.Point(7, 28);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(313, 233);
+            this.panelControl3.Size = new System.Drawing.Size(313, 230);
             this.panelControl3.TabIndex = 16;
             // 
             // labelControl8
@@ -653,7 +653,7 @@
             this.panelControl2.Location = new System.Drawing.Point(56, 289);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(1103, 151);
+            this.panelControl2.Size = new System.Drawing.Size(1103, 154);
             this.panelControl2.TabIndex = 5;
             // 
             // dtg_Inventario_Ventas
@@ -665,7 +665,7 @@
             this.dtg_Inventario_Ventas.Name = "dtg_Inventario_Ventas";
             this.dtg_Inventario_Ventas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.cmb_EditCategoria});
-            this.dtg_Inventario_Ventas.Size = new System.Drawing.Size(1079, 127);
+            this.dtg_Inventario_Ventas.Size = new System.Drawing.Size(1079, 130);
             this.dtg_Inventario_Ventas.TabIndex = 0;
             this.dtg_Inventario_Ventas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgVal_Inventario_Ventas});

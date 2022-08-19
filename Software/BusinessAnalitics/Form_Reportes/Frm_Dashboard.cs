@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+﻿using DevExpress.DashboardCommon;
 using DevExpress.DataAccess.ConnectionParameters;
-using DevExpress.DashboardCommon;
-using DevExpress.DataAccess.Sql;
+using System;
 using System.IO;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.DashboardWin.Bars;
 
 namespace Business_Analitics
 {
@@ -46,7 +34,7 @@ namespace Business_Analitics
                 {
                     MSRegistro RegOut = new MSRegistro();
                     Crypto DesencriptarTexto = new Crypto();
-                    parameters.ServerName=DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "Server"));
+                    parameters.ServerName = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "Server"));
                     parameters.UserName = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "User"));
                     parameters.Password = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "Password"));
                     parameters.DatabaseName = DesencriptarTexto.Desencriptar(RegOut.GetSetting("ConexionSQL", "DBase"));

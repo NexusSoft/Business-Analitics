@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class CLS_Tamanio: ConexionBase
+    public class CLS_Tamanio : ConexionBase
     {
 
         public string Id_Tamanio { get; set; }
-        public string Nombre_Tamanio{ get; set; }
+        public string Nombre_Tamanio { get; set; }
 
         public string Usuario { get; set; }
-        public string Id_Registro { get;  set; }
+        public string Id_Registro { get; set; }
 
         public void MtdSeleccionarTamanio()
         {

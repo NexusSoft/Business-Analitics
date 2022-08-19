@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace Business_Analitics
 {
@@ -44,7 +42,7 @@ namespace Business_Analitics
             byte[] ArrayResultado = cTransform.TransformFinalBlock(Arreglo_a_Cifrar, 0, Arreglo_a_Cifrar.Length);
             tdes.Clear();
             //se regresa el resultado en forma de una cadena
-            string Dato= Convert.ToBase64String(ArrayResultado, 0, ArrayResultado.Length);
+            string Dato = Convert.ToBase64String(ArrayResultado, 0, ArrayResultado.Length);
             return Dato;
         }
         public string Desencriptar(string textoEncriptado)

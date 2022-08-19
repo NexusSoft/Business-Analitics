@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-using System.ComponentModel;
+﻿using System.Linq;
 using System.Windows.Forms;
 
 namespace Business_Analitics
@@ -23,7 +20,7 @@ namespace Business_Analitics
             else if (e.KeyValue == 189 && valor > 0) e.SuppressKeyPress = true; // -
             else if ((e.KeyValue == 109 || e.KeyValue == 189) && valor1 < 0) e.SuppressKeyPress = false; // -
             else e.SuppressKeyPress = true;
-            
+
         }
         public void Solo_Numeros(object sender, KeyEventArgs e, string Cadena)
         {
@@ -78,7 +75,7 @@ namespace Business_Analitics
 
         public void Valida_Campo(object sender, KeyPressEventArgs e, string tipo)
         {
-            string [] aux = tipo.Split('-');
+            string[] aux = tipo.Split('-');
             string nuevaCadena = "";
 
             for (int i = 0; i < aux.Length; i++)
@@ -87,11 +84,11 @@ namespace Business_Analitics
                 {
                     nuevaCadena = nuevaCadena + "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
                 }
-                else if(aux[i] == "ac")
+                else if (aux[i] == "ac")
                 {
                     nuevaCadena = nuevaCadena + "áéíóúÁÉÍÓÚ";
                 }
-                else if(aux[i] == "09")
+                else if (aux[i] == "09")
                 {
                     nuevaCadena = nuevaCadena + "0123456789";
                 }

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class CLS_Reempaques:ConexionBase
+    public class CLS_Reempaques : ConexionBase
     {
         public string c_codigo_pro { get; set; }
         public string d_fecha_rem { get; set; }
@@ -28,13 +24,13 @@ namespace CapaDeDatos
         public string d_fecha_fin_maq { get; set; }
         public int n_semana_maq { get; set; }
         public int n_secuencia { get; set; }
-        public string c_codigo_causa { get;  set; }
-        public string c_codigo_causah { get;  set; }
-        public string v_nombre_horario { get;  set; }
-        public string v_unidad_causa { get;  set; }
-        public int? n_cantidad_causa { get;  set; }
-        public decimal? n_total_causa { get;  set; }
-        public decimal? n_precio_causa { get;  set; }
+        public string c_codigo_causa { get; set; }
+        public string c_codigo_causah { get; set; }
+        public string v_nombre_horario { get; set; }
+        public string v_unidad_causa { get; set; }
+        public int? n_cantidad_causa { get; set; }
+        public decimal? n_total_causa { get; set; }
+        public decimal? n_precio_causa { get; set; }
         public string d_fecha_causa { get; set; }
 
         public void MtdSeleccionarProductosReempaque()

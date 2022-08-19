@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
-    public class CLS_Maquila:ConexionBase
+    public class CLS_Maquila : ConexionBase
     {
         public int Semana { get; set; }
         public string cManifiesto { get; set; }
@@ -26,9 +22,9 @@ namespace CapaDeDatos
         public int Anio { get; set; }
         public string FechaInicio { get; set; }
         public string FechaFin { get; set; }
-        public string d_fecha_inicio_maq { get;  set; }
-        public string d_fecha_fin_maq { get;  set; }
-        public int? n_semana_maq { get;  set; }
+        public string d_fecha_inicio_maq { get; set; }
+        public string d_fecha_fin_maq { get; set; }
+        public int? n_semana_maq { get; set; }
         public decimal cCaja { get; set; }
 
         public void MtdSeleccionarMaquila()
@@ -264,6 +260,6 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-        
+
     }
 }

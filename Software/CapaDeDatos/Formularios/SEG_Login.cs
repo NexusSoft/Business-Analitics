@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data;
 
 
 namespace CapaDeDatos
 {
-    public class SEG_Login:ConexionBase
+    public class SEG_Login : ConexionBase
     {
         public System.Nullable<int> IdUsuario { get; set; }
         public string Contrasena { get; set; }
@@ -56,7 +52,7 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SPR_SEGLoginFechaAccesoModificar";
-                
+
                 _dato.Entero = IdUsuario;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "IdUsuario");
 
@@ -70,6 +66,6 @@ namespace CapaDeDatos
             }
 
         }
-        
+
     }
 }

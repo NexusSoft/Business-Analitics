@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BusinessAnalitics;
+using CapaDeDatos;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Business_Analitics
 {
@@ -20,9 +15,9 @@ namespace Business_Analitics
             InitializeComponent();
         }
 
-        public string c_codigo_usu { get;  set; }
-        public string IdPerfil { get;  set; }
-        public string UsuariosLogin { get;  set; }
+        public string c_codigo_usu { get; set; }
+        public string IdPerfil { get; set; }
+        public string UsuariosLogin { get; set; }
         List<string> Lista = new List<string>();
 
         private void CargarAccesos()
@@ -225,7 +220,7 @@ namespace Business_Analitics
         {
             if (TieneAcceso("011"))
             {
-                Frm_EmpresaComercializadora Ventana= new Frm_EmpresaComercializadora();
+                Frm_EmpresaComercializadora Ventana = new Frm_EmpresaComercializadora();
                 Frm_EmpresaComercializadora.DefInstance.MdiParent = this;
                 Frm_EmpresaComercializadora.DefInstance.UsuariosLogin = UsuariosLogin;
                 Frm_EmpresaComercializadora.DefInstance.Show();
@@ -434,6 +429,22 @@ namespace Business_Analitics
             else
             {
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [026]");
+            }
+        }
+
+        private void btn_Cargas_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("027"))
+            {
+                Frm_Cargas Ventana = new Frm_Cargas();
+                Frm_Cargas.DefInstance.MdiParent = this;
+                Frm_Cargas.DefInstance.IdPerfil = IdPerfil;
+                Frm_Cargas.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_Cargas.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [027]");
             }
         }
     }

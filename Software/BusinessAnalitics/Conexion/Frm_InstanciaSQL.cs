@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.Data.Sql;
-using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Business_Analitics
 {
@@ -32,7 +26,7 @@ namespace Business_Analitics
             Application.DoEvents();
         }
 
-        
+
 
         private void dtgValoresInstancia_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
@@ -83,6 +77,6 @@ namespace Business_Analitics
             }
         }
 
-        
+
     }
 }

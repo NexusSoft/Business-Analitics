@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using CapaDeDatos;
 using DevExpress.XtraEditors;
-using CapaDeDatos;
+using System;
+using System.Data;
 
 namespace Business_Analitics
 {
@@ -45,7 +38,8 @@ namespace Business_Analitics
             if (checkActivo.Checked)
             {
                 Clase.Activo = "0";
-            }else
+            }
+            else
             {
                 Clase.Activo = "1";
             }
@@ -74,17 +68,17 @@ namespace Business_Analitics
             Crypto encryp = new Crypto();
             CLS_Usuarios Clase = new CLS_Usuarios();
             Clase.Id_Usuario = textUsuario.Text.Trim();
-            Clase.Nombre_Usuario =textNombre.Text.Trim();
-            Clase.Contrasena =encryp.Encriptar(textContrasena.Text.Trim());
+            Clase.Nombre_Usuario = textNombre.Text.Trim();
+            Clase.Contrasena = encryp.Encriptar(textContrasena.Text.Trim());
             Clase.Id_Perfil = gridLookUpEdit1.EditValue.ToString();
             Clase.Usuario = UsuariosLogin;
             Clase.MtdInsertarUsuarios();
             if (Clase.Exito)
             {
-               
-                    CargarUsuarios();
-                    XtraMessageBox.Show("Se ha Insertado el registro con exito");
-                    LimpiarCampos();
+
+                CargarUsuarios();
+                XtraMessageBox.Show("Se ha Insertado el registro con exito");
+                LimpiarCampos();
             }
             else
             {
@@ -131,7 +125,7 @@ namespace Business_Analitics
         {
             CargarPerfiles(null);
             CargarUsuarios();
-            
+
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
@@ -144,8 +138,8 @@ namespace Business_Analitics
                     DataRow row = this.gridView1.GetDataRow(i);
                     textUsuario.Text = row["Id_Usuario"].ToString();
                     textNombre.Text = row["Nombre_Usuario"].ToString();
-                    textContrasena.Text =desencryp.Desencriptar(row["Contrasena"].ToString());
-                    textConfirmaContra.Text= desencryp.Desencriptar(row["Contrasena"].ToString());
+                    textContrasena.Text = desencryp.Desencriptar(row["Contrasena"].ToString());
+                    textConfirmaContra.Text = desencryp.Desencriptar(row["Contrasena"].ToString());
                     gridLookUpEdit1.EditValue = row["Id_Perfil"].ToString();
 
                     labelActivo.Visible = true;
@@ -174,7 +168,7 @@ namespace Business_Analitics
 
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textUsuario.Text!=String.Empty)
+            if (textUsuario.Text != String.Empty)
             {
                 if (textContrasena.Text.Trim().Equals(textConfirmaContra.Text.Trim()))
                 {
@@ -184,7 +178,7 @@ namespace Business_Analitics
                 {
                     XtraMessageBox.Show("La contraseña no coincide con la ingresada");
                 }
-                
+
             }
             else
             {
@@ -194,7 +188,7 @@ namespace Business_Analitics
 
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (textUsuario.Text!=String.Empty)
+            if (textUsuario.Text != String.Empty)
             {
                 EliminarUsuarios();
             }

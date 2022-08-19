@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
     public class CLS_ProgramaCorte : ConexionBase
     {
-        public string c_codigo_pco { get;  set; }
-        public string c_codigo_tem { get;  set; }
+        public string c_codigo_pco { get; set; }
+        public string c_codigo_tem { get; set; }
 
         public void MtdSeleccionarPrograma()
         {

@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDeDatos
 {
     public class CLS_Parametros : ConexionBase
     {
-        public string c_codigo_mat { get;  set; }
-        public string v_nombre_mat { get;  set; }
+        public string c_codigo_mat { get; set; }
+        public string v_nombre_mat { get; set; }
         public string c_codigo_tmat { get; set; }
         public string c_codigo_pai { get; set; }
         public string v_nombre_pai { get; set; }
@@ -33,8 +29,8 @@ namespace CapaDeDatos
 
         public string c_codigo_pro { get; set; }
         public string v_nombre_pro { get; set; }
-        public string c_codigo_causa { get;  set; }
-        public string c_codigo_causah { get;  set; }
+        public string c_codigo_causa { get; set; }
+        public string c_codigo_causah { get; set; }
 
         public void MtdSeleccionarParametroTermo()
         {
@@ -336,7 +332,7 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-        
+
 
         public void MtdProductoMaterial_Delete()
         {
@@ -421,7 +417,7 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
-       
+
 
         public void MtdPrecioTermo_Update()
         {
