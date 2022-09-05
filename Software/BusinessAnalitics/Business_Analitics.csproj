@@ -166,10 +166,10 @@
     <Compile Include="Form_Catalogos\Frm_BuscarHuerta.Designer.cs">
       <DependentUpon>Frm_BuscarHuerta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Catalogos\Frm_BuscarProgramaCorte.cs">
+    <Compile Include="Form_Control\Cosecha\Frm_BuscarProgramaCorte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Catalogos\Frm_BuscarProgramaCorte.Designer.cs">
+    <Compile Include="Form_Control\Cosecha\Frm_BuscarProgramaCorte.Designer.cs">
       <DependentUpon>Frm_BuscarProgramaCorte.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Catalogos\Frm_Calidad.cs">
@@ -243,12 +243,6 @@
     </Compile>
     <Compile Include="Form_Control\Carga\Frm_BuscarManifiesto.Designer.cs">
       <DependentUpon>Frm_BuscarManifiesto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_Control\Cosecha\Frm_Manifiesto_Buscar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Control\Cosecha\Frm_Manifiesto_Buscar.Designer.cs">
-      <DependentUpon>Frm_Manifiesto_Buscar.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Control\Inventario_Ventas\FrmHistorialInventario.cs">
       <SubType>Form</SubType>
@@ -462,7 +456,7 @@
     <EmbeddedResource Include="Form_Catalogos\Frm_BuscarHuerta.resx">
       <DependentUpon>Frm_BuscarHuerta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Catalogos\Frm_BuscarProgramaCorte.resx">
+    <EmbeddedResource Include="Form_Control\Cosecha\Frm_BuscarProgramaCorte.resx">
       <DependentUpon>Frm_BuscarProgramaCorte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Catalogos\Frm_Calidad.resx">
@@ -498,8 +492,8 @@
     <EmbeddedResource Include="Form_Catalogos\Frm_Zona.resx">
       <DependentUpon>Frm_Zona.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Control\Cosecha\Frm_Manifiesto_Buscar.resx">
-      <DependentUpon>Frm_Manifiesto_Buscar.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Control\Carga\Frm_BuscarManifiesto.resx">
+      <DependentUpon>Frm_BuscarManifiesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Control\Inventario_Ventas\FrmHistorialInventario.resx">
       <DependentUpon>FrmHistorialInventario.cs</DependentUpon>
