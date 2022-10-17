@@ -46,6 +46,16 @@ namespace Business_Analitics
             // DataRow row;
             column = new DataColumn();
             column.DataType = typeof(string);
+            column.ColumnName = "cTemporada";
+            column.AutoIncrement = false;
+            column.Caption = "Temporada";
+            column.ReadOnly = false;
+            column.Unique = false;
+
+            table.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = typeof(string);
             column.ColumnName = "cManifiesto";
             column.AutoIncrement = false;
             column.Caption = "Manifiesto";
@@ -499,12 +509,13 @@ namespace Business_Analitics
         decimal n_costo_extra { get; set; }
         public decimal cPrecioX { get; private set; }
 
-        private void CreatNewRowArticulo(string cManifiesto, string cDistribuidor, string cFechaEmbarque, string cProducto, string cEnvase, decimal cPesoEstandar, int cCajas, decimal cMontoMaquila, decimal cMallas, decimal cAPEAM, decimal cSubTotal1, decimal cCharola, decimal cSubTotal, decimal cCaja, decimal cTOTAL)
+        private void CreatNewRowArticulo(string cTemporada, string cManifiesto, string cDistribuidor, string cFechaEmbarque, string cProducto, string cEnvase, decimal cPesoEstandar, int cCajas, decimal cMontoMaquila, decimal cMallas, decimal cAPEAM, decimal cSubTotal1, decimal cCharola, decimal cSubTotal, decimal cCaja, decimal cTOTAL)
         {
             dtgValMaquila.AddNewRow();
             int rowHandle = dtgValMaquila.GetRowHandle(dtgValMaquila.DataRowCount);
             if (dtgValMaquila.IsNewItemRow(rowHandle))
             {
+                dtgValMaquila.SetRowCellValue(rowHandle, dtgValMaquila.Columns["ctemporada"], cTemporada);
                 dtgValMaquila.SetRowCellValue(rowHandle, dtgValMaquila.Columns["cManifiesto"], cManifiesto);
                 dtgValMaquila.SetRowCellValue(rowHandle, dtgValMaquila.Columns["cDistribuidor"], cDistribuidor);
                 dtgValMaquila.SetRowCellValue(rowHandle, dtgValMaquila.Columns["cFechaEmbarque"], cFechaEmbarque);
@@ -522,6 +533,7 @@ namespace Business_Analitics
                 dtgValMaquila.SetRowCellValue(rowHandle, dtgValMaquila.Columns["cTOTAL"], cTOTAL);
 
                 CLS_Maquila ins2 = new CLS_Maquila();
+                ins2.cTemporada = cTemporada;
                 ins2.d_fecha_inicio_maq = dtFechaInicio.DateTime.Year.ToString() + DosCeros(dtFechaInicio.DateTime.Month.ToString()) + DosCeros(dtFechaInicio.DateTime.Day.ToString());
                 ins2.d_fecha_fin_maq = dtFechaFin.DateTime.Year.ToString() + DosCeros(dtFechaFin.DateTime.Month.ToString()) + DosCeros(dtFechaFin.DateTime.Day.ToString());
                 ins2.n_semana_maq = Convert.ToInt32(txtSemana.EditValue);
@@ -977,6 +989,7 @@ namespace Business_Analitics
                                     vManifiesto = sel.Datos.Rows[i]["c_codigo_man"].ToString();
                                     TomarPrecio(vNTermo);
                                 }
+                                string cTemporada = sel.Datos.Rows[i]["c_codigo_tem"].ToString().Trim();
                                 string cManifiesto = sel.Datos.Rows[i]["c_codigo_man"].ToString().Trim();
                                 string cDistribuidor = sel.Datos.Rows[i]["v_nombre_dis"].ToString().Trim();
                                 string cFechaEmbarque = sel.Datos.Rows[i]["d_embarque_man"].ToString();
@@ -1010,7 +1023,7 @@ namespace Business_Analitics
                                 decimal cCaja = Convert.ToDecimal(sel.Datos.Rows[i]["TCaja"].ToString());
                                 cTOTAL = Convert.ToDecimal(Convert.ToDecimal(cSubTotal) + Convert.ToDecimal(cCaja));
                                 sTotal += cTOTAL;
-                                CreatNewRowArticulo(cManifiesto, cDistribuidor, cFechaEmbarque, cProducto, cEnvase, cPesoEstandar, cCajas, cMontoMaquila, cMallas, cAPEAM, cSubTotal1, cCharola, cSubTotal, cCaja, cTOTAL);
+                                CreatNewRowArticulo(cTemporada,cManifiesto, cDistribuidor, cFechaEmbarque, cProducto, cEnvase, cPesoEstandar, cCajas, cMontoMaquila, cMallas, cAPEAM, cSubTotal1, cCharola, cSubTotal, cCaja, cTOTAL);
 
                             }
                             dtgValMaquila.OptionsView.ColumnAutoWidth = true;
@@ -1258,7 +1271,6 @@ namespace Business_Analitics
             DateTime Fecha = dtFechaInicio.DateTime;
             int Semana = CultureInfo.CurrentUICulture.Calendar.GetWeekOfYear(Fecha, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
             txtSemana.Value = Semana;
-
         }
 
         private void CargarReempaques()
@@ -1479,8 +1491,8 @@ namespace Business_Analitics
             if (result < 1)
             {
                 CLS_Maquila del1 = new CLS_Maquila();
-                del1.FechaInicio = dtFechaInicio.DateTime.Year.ToString() + DosCeros(dtFechaInicio.DateTime.Month.ToString()) + DosCeros(dtFechaInicio.DateTime.Day.ToString());
-                del1.FechaFin = dtFechaFin.DateTime.Year.ToString() + DosCeros(dtFechaFin.DateTime.Month.ToString()) + DosCeros(dtFechaFin.DateTime.Day.ToString());
+                del1.d_fecha_inicio_maq = dtFechaInicio.DateTime.Year.ToString() + DosCeros(dtFechaInicio.DateTime.Month.ToString()) + DosCeros(dtFechaInicio.DateTime.Day.ToString());
+                del1.d_fecha_fin_maq = dtFechaFin.DateTime.Year.ToString() + DosCeros(dtFechaFin.DateTime.Month.ToString()) + DosCeros(dtFechaFin.DateTime.Day.ToString());
                 del1.n_semana_maq = Convert.ToInt32(txtSemana.Text);
                 del1.MtdEliminarMaquilaDetalles();
                 if (del1.Exito)
@@ -1506,6 +1518,7 @@ namespace Business_Analitics
                                     vManifiesto = sel.Datos.Rows[i]["c_codigo_man"].ToString();
                                     TomarPrecio(vNTermo);
                                 }
+                                string cTemporada = sel.Datos.Rows[i]["c_codigo_tem"].ToString().Trim();
                                 string cManifiesto = sel.Datos.Rows[i]["c_codigo_man"].ToString().Trim();
                                 string cDistribuidor = sel.Datos.Rows[i]["v_nombre_dis"].ToString().Trim();
                                 string cFechaEmbarque = sel.Datos.Rows[i]["d_embarque_man"].ToString();
@@ -1538,6 +1551,7 @@ namespace Business_Analitics
                                 decimal cTOTAL = Convert.ToDecimal(Convert.ToDecimal(cSubTotal) + Convert.ToDecimal(cCharola));
 
                                 CLS_Maquila ins = new CLS_Maquila();
+                                ins.cTemporada = cTemporada;
                                 ins.cManifiesto = cManifiesto;
                                 ins.cDistribuidor = cDistribuidor;
                                 DateTime vFecha = Convert.ToDateTime(cFechaEmbarque);
@@ -1559,6 +1573,14 @@ namespace Business_Analitics
                                 if (!ins.Exito)
                                 {
                                     XtraMessageBox.Show(ins.Mensaje);
+                                    break;
+                                }
+                                else
+                                {
+                                    if ((i + 1) == sel.Datos.Rows.Count)
+                                    {
+                                        XtraMessageBox.Show("Se han guardado los datos con exito");
+                                    }
                                 }
                             }
                         }
@@ -1582,12 +1604,6 @@ namespace Business_Analitics
                 XtraMessageBox.Show("La fecha de Inicio no puede ser mayor a la Fecha Fin");
             }
         }
-
-        private void btnAbrir_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
         private void dtgReempaque_Click(object sender, EventArgs e)
         {
             try

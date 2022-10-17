@@ -1279,15 +1279,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(5, 5);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1392, 56);
+            this.barDockControlTop.Size = new System.Drawing.Size(1378, 56);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(5, 759);
+            this.barDockControlBottom.Location = new System.Drawing.Point(5, 752);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1392, 22);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1378, 22);
             // 
             // barDockControlLeft
             // 
@@ -1295,15 +1295,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(5, 61);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 698);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 691);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1397, 61);
+            this.barDockControlRight.Location = new System.Drawing.Point(1383, 61);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 698);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 691);
             // 
             // btn_EliminarOrden
             // 
@@ -1334,8 +1334,8 @@
             this.navigationPage6,
             this.navigationPage4,
             this.navigationPage5});
-            this.navigationPane1.RegularSize = new System.Drawing.Size(1392, 698);
-            this.navigationPane1.Size = new System.Drawing.Size(1392, 698);
+            this.navigationPane1.RegularSize = new System.Drawing.Size(1378, 691);
+            this.navigationPane1.Size = new System.Drawing.Size(1378, 691);
             this.navigationPane1.TabIndex = 9;
             this.navigationPane1.Text = "navigationPane1";
             // 
@@ -1349,7 +1349,7 @@
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.PageText = "Orden de Corte";
             this.navigationPage1.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage1.Size = new System.Drawing.Size(1222, 625);
+            this.navigationPage1.Size = new System.Drawing.Size(1208, 618);
             // 
             // panelControl2
             // 
@@ -1361,7 +1361,7 @@
             this.panelControl2.Location = new System.Drawing.Point(0, 209);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1222, 416);
+            this.panelControl2.Size = new System.Drawing.Size(1208, 409);
             this.panelControl2.TabIndex = 1;
             // 
             // btn_RecargarTem
@@ -1406,7 +1406,7 @@
             this.dtgCosecha.MainView = this.dtgValCosecha;
             this.dtgCosecha.MenuManager = this.barManager1;
             this.dtgCosecha.Name = "dtgCosecha";
-            this.dtgCosecha.Size = new System.Drawing.Size(1208, 402);
+            this.dtgCosecha.Size = new System.Drawing.Size(1194, 395);
             this.dtgCosecha.TabIndex = 0;
             this.dtgCosecha.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValCosecha});
@@ -1574,7 +1574,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(1222, 209);
+            this.panelControl1.Size = new System.Drawing.Size(1208, 209);
             this.panelControl1.TabIndex = 0;
             // 
             // labelControl186
@@ -7204,7 +7204,7 @@
             this.navigationPage6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage6.ImageOptions.Image")));
             this.navigationPage6.Name = "navigationPage6";
             this.navigationPage6.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage6.Size = new System.Drawing.Size(1238, 632);
+            this.navigationPage6.Size = new System.Drawing.Size(1208, 618);
             // 
             // panelControl18
             // 
@@ -7213,7 +7213,7 @@
             this.panelControl18.Location = new System.Drawing.Point(0, 0);
             this.panelControl18.Name = "panelControl18";
             this.panelControl18.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl18.Size = new System.Drawing.Size(1238, 632);
+            this.panelControl18.Size = new System.Drawing.Size(1208, 618);
             this.panelControl18.TabIndex = 41;
             // 
             // xtraTabControl2
@@ -7222,7 +7222,7 @@
             this.xtraTabControl2.Location = new System.Drawing.Point(7, 7);
             this.xtraTabControl2.Name = "xtraTabControl2";
             this.xtraTabControl2.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl2.Size = new System.Drawing.Size(1224, 618);
+            this.xtraTabControl2.Size = new System.Drawing.Size(1194, 604);
             this.xtraTabControl2.TabIndex = 40;
             this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3,
@@ -7235,7 +7235,7 @@
             this.xtraTabPage3.Controls.Add(this.groupControl11);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage3.Size = new System.Drawing.Size(1222, 593);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1192, 579);
             this.xtraTabPage3.Text = "Pago Productor";
             // 
             // groupControl11
@@ -7266,7 +7266,7 @@
             this.groupControl11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl11.Location = new System.Drawing.Point(5, 5);
             this.groupControl11.Name = "groupControl11";
-            this.groupControl11.Size = new System.Drawing.Size(1212, 583);
+            this.groupControl11.Size = new System.Drawing.Size(1182, 569);
             this.groupControl11.TabIndex = 38;
             // 
             // btn_AbrirProductor
@@ -7528,7 +7528,7 @@
             this.tp_FacturaProductor.Controls.Add(this.groupControl13);
             this.tp_FacturaProductor.Name = "tp_FacturaProductor";
             this.tp_FacturaProductor.Padding = new System.Windows.Forms.Padding(5);
-            this.tp_FacturaProductor.Size = new System.Drawing.Size(1222, 593);
+            this.tp_FacturaProductor.Size = new System.Drawing.Size(1192, 579);
             this.tp_FacturaProductor.Text = "Factura";
             // 
             // groupControl13
@@ -7585,7 +7585,7 @@
             this.groupControl13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl13.Location = new System.Drawing.Point(5, 5);
             this.groupControl13.Name = "groupControl13";
-            this.groupControl13.Size = new System.Drawing.Size(1212, 583);
+            this.groupControl13.Size = new System.Drawing.Size(1182, 569);
             this.groupControl13.TabIndex = 39;
             // 
             // labelControl208
@@ -8162,7 +8162,7 @@
             this.xtraTabPage2.Controls.Add(this.btn_UpPDFTarjeta_APEAM);
             this.xtraTabPage2.Controls.Add(this.labelControl165);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1222, 593);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1192, 579);
             this.xtraTabPage2.Text = "Expedientes";
             // 
             // labelControl169
@@ -8537,7 +8537,7 @@
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.Padding = new System.Windows.Forms.Padding(5);
             this.xtraTabPage4.PageVisible = false;
-            this.xtraTabPage4.Size = new System.Drawing.Size(1222, 593);
+            this.xtraTabPage4.Size = new System.Drawing.Size(1192, 579);
             this.xtraTabPage4.Text = "PPD";
             // 
             // panelControl22
@@ -8547,7 +8547,7 @@
             this.panelControl22.Location = new System.Drawing.Point(5, 171);
             this.panelControl22.Name = "panelControl22";
             this.panelControl22.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl22.Size = new System.Drawing.Size(1212, 417);
+            this.panelControl22.Size = new System.Drawing.Size(1182, 403);
             this.panelControl22.TabIndex = 1;
             // 
             // dtgFacturasREP
@@ -8561,7 +8561,7 @@
             this.btn_PDFGrid,
             this.btn_XMLGrid,
             this.btn_EliminarREP});
-            this.dtgFacturasREP.Size = new System.Drawing.Size(1188, 393);
+            this.dtgFacturasREP.Size = new System.Drawing.Size(1158, 379);
             this.dtgFacturasREP.TabIndex = 0;
             this.dtgFacturasREP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValFacturasREP});
@@ -8660,7 +8660,7 @@
             this.panelControl21.Location = new System.Drawing.Point(5, 5);
             this.panelControl21.Name = "panelControl21";
             this.panelControl21.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl21.Size = new System.Drawing.Size(1212, 166);
+            this.panelControl21.Size = new System.Drawing.Size(1182, 166);
             this.panelControl21.TabIndex = 0;
             // 
             // groupControl19
@@ -8679,7 +8679,7 @@
             this.groupControl19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl19.Location = new System.Drawing.Point(12, 12);
             this.groupControl19.Name = "groupControl19";
-            this.groupControl19.Size = new System.Drawing.Size(1188, 142);
+            this.groupControl19.Size = new System.Drawing.Size(1158, 142);
             this.groupControl19.TabIndex = 0;
             this.groupControl19.Text = "Agregar REP";
             // 
@@ -8805,7 +8805,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1402, 786);
+            this.ClientSize = new System.Drawing.Size(1388, 779);
             this.Controls.Add(this.navigationPane1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Maquila));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnCalcular = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -54,6 +54,7 @@
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.dtgMaquila = new DevExpress.XtraGrid.GridControl();
             this.dtgValMaquila = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn61 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,11 +65,11 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn60 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn59 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn60 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
             this.dtgReempaque = new DevExpress.XtraGrid.GridControl();
@@ -204,6 +205,8 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Guardar = new DevExpress.XtraBars.BarLargeButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -302,9 +305,11 @@
             this.btnPDF,
             this.btnGuardar,
             this.btnAbrir,
-            this.btnExcel});
+            this.btnExcel,
+            this.barButtonItem1,
+            this.btn_Guardar});
             this.barManager1.MainMenu = this.bIconos;
-            this.barManager1.MaxItemId = 68;
+            this.barManager1.MaxItemId = 70;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.barManager1.StatusBar = this.bEstado;
@@ -322,6 +327,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnParametros),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnExcel),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnPDF),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Guardar),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSalir)});
             this.bIconos.OptionsBar.AllowCollapse = true;
             this.bIconos.OptionsBar.AllowQuickCustomization = false;
@@ -455,7 +461,6 @@
             this.btnAbrir.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAbrir.ImageOptions.Image")));
             this.btnAbrir.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAbrir.ImageOptions.LargeImage")));
             this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAbrir_ItemClick);
             // 
             // repositoryItemTextEdit1
             // 
@@ -517,6 +522,7 @@
             // dtgValMaquila
             // 
             this.dtgValMaquila.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn61,
             this.gridColumn13,
             this.gridColumn1,
             this.gridColumn2,
@@ -542,7 +548,7 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cMallas", this.gridColumn8, "{0:c2}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cMontoMaquila", this.gridColumn7, "{0:c2}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cCajas", this.gridColumn6, "{0:###,###0}"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cPesoEstandar", this.gridColumn5, "{0:c2}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cPesoEstandar", this.gridColumn5, "{0:###,###0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cCaja", this.gridColumn59, "{0:c2}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cSubTotal1", this.gridColumn60, "{0:c2}")});
             this.dtgValMaquila.Name = "dtgValMaquila";
@@ -550,6 +556,15 @@
             this.dtgValMaquila.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn13, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.dtgValMaquila.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.dtgValMaquila_CellValueChanged);
+            // 
+            // gridColumn61
+            // 
+            this.gridColumn61.Caption = "Temporada";
+            this.gridColumn61.FieldName = "cTemporada";
+            this.gridColumn61.Name = "gridColumn61";
+            this.gridColumn61.OptionsColumn.AllowEdit = false;
+            this.gridColumn61.Visible = true;
+            this.gridColumn61.VisibleIndex = 0;
             // 
             // gridColumn13
             // 
@@ -571,7 +586,7 @@
             this.gridColumn1.OptionsColumn.AllowMove = false;
             this.gridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.VisibleIndex = 1;
             // 
             // gridColumn2
             // 
@@ -584,7 +599,7 @@
             this.gridColumn2.OptionsColumn.AllowMove = false;
             this.gridColumn2.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 2;
             // 
             // gridColumn3
             // 
@@ -595,7 +610,7 @@
             this.gridColumn3.OptionsColumn.AllowMove = false;
             this.gridColumn3.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 3;
             // 
             // gridColumn4
             // 
@@ -606,7 +621,7 @@
             this.gridColumn4.OptionsColumn.AllowMove = false;
             this.gridColumn4.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 4;
             // 
             // gridColumn5
             // 
@@ -619,7 +634,7 @@
             this.gridColumn5.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cPesoEstandar", "{0:c2}")});
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 5;
             // 
             // gridColumn6
             // 
@@ -632,7 +647,7 @@
             this.gridColumn6.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cCajas", "{0:###,###0}")});
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 6;
             // 
             // gridColumn7
             // 
@@ -645,7 +660,7 @@
             this.gridColumn7.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cMontoMaquila", "{0:c2}")});
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.VisibleIndex = 7;
             // 
             // gridColumn8
             // 
@@ -658,7 +673,7 @@
             this.gridColumn8.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cMallas", "{0:c2}")});
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.VisibleIndex = 8;
             // 
             // gridColumn9
             // 
@@ -671,7 +686,18 @@
             this.gridColumn9.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cAPEAM", "{0:c2}")});
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 8;
+            this.gridColumn9.VisibleIndex = 9;
+            // 
+            // gridColumn60
+            // 
+            this.gridColumn60.Caption = "Subtotal";
+            this.gridColumn60.FieldName = "cSubTotal1";
+            this.gridColumn60.Name = "gridColumn60";
+            this.gridColumn60.OptionsColumn.AllowEdit = false;
+            this.gridColumn60.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cSubTotal1", "{0:c2}")});
+            this.gridColumn60.Visible = true;
+            this.gridColumn60.VisibleIndex = 10;
             // 
             // gridColumn11
             // 
@@ -684,7 +710,7 @@
             this.gridColumn11.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cCharola", "{0:c2}")});
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 10;
+            this.gridColumn11.VisibleIndex = 11;
             // 
             // gridColumn10
             // 
@@ -697,7 +723,7 @@
             this.gridColumn10.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cSubTotal", "{0:c2}")});
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 11;
+            this.gridColumn10.VisibleIndex = 12;
             // 
             // gridColumn59
             // 
@@ -710,7 +736,7 @@
             this.gridColumn59.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cCaja", "{0:c2}")});
             this.gridColumn59.Visible = true;
-            this.gridColumn59.VisibleIndex = 12;
+            this.gridColumn59.VisibleIndex = 13;
             // 
             // gridColumn12
             // 
@@ -723,17 +749,7 @@
             this.gridColumn12.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cTOTAL", "{0:c2}")});
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 13;
-            // 
-            // gridColumn60
-            // 
-            this.gridColumn60.Caption = "Subtotal";
-            this.gridColumn60.FieldName = "cSubTotal1";
-            this.gridColumn60.Name = "gridColumn60";
-            this.gridColumn60.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "cSubTotal1", "{0:c2}")});
-            this.gridColumn60.Visible = true;
-            this.gridColumn60.VisibleIndex = 9;
+            this.gridColumn12.VisibleIndex = 14;
             // 
             // xtraTabPage2
             // 
@@ -756,9 +772,9 @@
             // dtgReempaque
             // 
             this.dtgReempaque.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.dtgReempaque.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.dtgReempaque.Location = new System.Drawing.Point(7, 7);
             this.dtgReempaque.MainView = this.dtgValReempaque;
             this.dtgReempaque.MenuManager = this.barManager1;
@@ -2117,6 +2133,21 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Guardar";
+            this.barButtonItem1.Id = 68;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btn_Guardar
+            // 
+            this.btn_Guardar.Caption = "Guardar";
+            this.btn_Guardar.Id = 69;
+            this.btn_Guardar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem2.ImageOptions.Image")));
+            this.btn_Guardar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barLargeButtonItem2.ImageOptions.LargeImage")));
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_ItemClick);
+            // 
             // Frm_Maquila
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2393,5 +2424,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn58;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn59;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn60;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn61;
+        private DevExpress.XtraBars.BarLargeButtonItem btn_Guardar;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

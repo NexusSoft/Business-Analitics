@@ -68,6 +68,7 @@
     <Compile Include="Formularios\CLS_Estado.cs" />
     <Compile Include="Formularios\CLS_Categoria.cs" />
     <Compile Include="Formularios\CLS_Maquila.cs" />
+    <Compile Include="Formularios\CLS_Distribuidor.cs" />
     <Compile Include="Formularios\CLS_Parametros.cs" />
     <Compile Include="Formularios\CLS_Productos.cs" />
     <Compile Include="Formularios\CLS_ProgramaCorte.cs" />

@@ -1,5 +1,6 @@
 ﻿using Business_Analitics;
 using CapaDeDatos;
+using System;
 using System.Data;
 
 namespace BusinessAnalitics
@@ -74,6 +75,67 @@ namespace BusinessAnalitics
                     cmb_Mercado.EditValue = Valor;
                     cmb_Mercado.Properties.DataSource = obtener.Datos;
                 }
+            }
+        }
+
+        void BuscarManifiesto()
+        {
+            CLS_Cargas sel = new CLS_Cargas();
+            sel.c_codigo_man = txt_Manifiesto.Text;
+            sel.c_codigo_tem = txt_Temporada.Text;
+            sel.MtdSeleccionarCargaManifiesto();
+            if(sel.Exito)
+            {
+                if(sel.Datos.Rows.Count>0)
+                {
+                    dt_FechaManifiesto.DateTime = Convert.ToDateTime(sel.Datos.Rows[0]["d_embarque_man"].ToString());
+                    txt_Distribuidor.Tag = Convert.ToString(sel.Datos.Rows[0]["c_codigo_dis"].ToString());
+                    txt_Distribuidor.Text = Convert.ToString(sel.Datos.Rows[0]["v_nombre_dis"].ToString());
+                    txt_Mercado.Text = Convert.ToString(sel.Datos.Rows[0]["Mercado"].ToString());
+                    txt_Kilos.Text = Convert.ToString(sel.Datos.Rows[0]["n_peso_pal"].ToString());
+                }
+            }
+        }
+        void BuscarCargarProductos()
+        {
+            CLS_Cargas sel = new CLS_Cargas();
+            sel.c_codigo_man = txt_Manifiesto.Text;
+            sel.c_codigo_tem = txt_Temporada.Text;
+            sel.MtdSeleccionarCargaProductos();
+            if (sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    dtgProductos.DataSource = sel.Datos;
+                }
+            }
+        }
+        void BuscarCargarMaquila()
+        {
+            CLS_Cargas sel = new CLS_Cargas();
+            sel.c_codigo_man = txt_Manifiesto.Text;
+            sel.c_codigo_tem = txt_Temporada.Text;
+            sel.MtdSeleccionarCargaMaquila();
+            if (sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    dtgMaquila.DataSource = sel.Datos;
+                }
+            }
+        }
+        private void btnBusqCarga_Click(object sender, System.EventArgs e)
+        {
+            Frm_BuscarManifiesto frm = new Frm_BuscarManifiesto();
+            frm.ShowDialog();
+            btn_limpiarOrden.PerformClick();
+            txt_Manifiesto.Text = frm.Id_Manifiesto;
+            txt_Temporada.Text = frm.v_temporada;
+            if (txt_Manifiesto.Text != string.Empty && txt_Temporada.Text != string.Empty)
+            {
+                BuscarManifiesto();
+                BuscarCargarProductos();
+                BuscarCargarMaquila();
             }
         }
     }

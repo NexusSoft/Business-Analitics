@@ -1,6 +1,6 @@
 ﻿namespace Business_Analitics
 {
-    partial class Frm_Paises
+    partial class Frm_Distribuidor
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Paises));
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Distribuidor));
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnSeleccionar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -48,8 +48,8 @@
             this.btn_ImportarProveedor = new DevExpress.XtraBars.BarLargeButtonItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.dtgEstibas = new DevExpress.XtraGrid.GridControl();
-            this.dtgValEstibas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dtgDistribuidor = new DevExpress.XtraGrid.GridControl();
+            this.dtgValDistribuidor = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bandedGridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bandedGridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
@@ -57,8 +57,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgEstibas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValEstibas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDistribuidor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValDistribuidor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
@@ -114,13 +114,13 @@
             this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
             this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
             this.btnSeleccionar.Name = "btnSeleccionar";
-            toolTipItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipItem1.Appearance.Options.UseImage = true;
-            toolTipItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            toolTipTitleItem1.Text = "Seleccionar";
-            superToolTip1.Items.Add(toolTipItem1);
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            this.btnSeleccionar.SuperTip = superToolTip1;
+            toolTipItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipItem2.Appearance.Options.UseImage = true;
+            toolTipItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            toolTipTitleItem2.Text = "Seleccionar";
+            superToolTip2.Items.Add(toolTipItem2);
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            this.btnSeleccionar.SuperTip = superToolTip2;
             this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
             // 
             // bEstado
@@ -208,7 +208,7 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.dtgEstibas);
+            this.panelControl1.Controls.Add(this.dtgDistribuidor);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
@@ -216,34 +216,34 @@
             this.panelControl1.Size = new System.Drawing.Size(670, 391);
             this.panelControl1.TabIndex = 18;
             // 
-            // dtgEstibas
+            // dtgDistribuidor
             // 
-            this.dtgEstibas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgEstibas.Location = new System.Drawing.Point(12, 12);
-            this.dtgEstibas.MainView = this.dtgValEstibas;
-            this.dtgEstibas.Name = "dtgEstibas";
-            this.dtgEstibas.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.dtgDistribuidor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgDistribuidor.Location = new System.Drawing.Point(12, 12);
+            this.dtgDistribuidor.MainView = this.dtgValDistribuidor;
+            this.dtgDistribuidor.Name = "dtgDistribuidor";
+            this.dtgDistribuidor.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemDateEdit1});
-            this.dtgEstibas.Size = new System.Drawing.Size(646, 367);
-            this.dtgEstibas.TabIndex = 4;
-            this.dtgEstibas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dtgValEstibas});
-            this.dtgEstibas.Click += new System.EventHandler(this.dtgEstibas_Click);
+            this.dtgDistribuidor.Size = new System.Drawing.Size(646, 367);
+            this.dtgDistribuidor.TabIndex = 4;
+            this.dtgDistribuidor.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValDistribuidor});
+            this.dtgDistribuidor.Click += new System.EventHandler(this.dtgEstibas_Click);
             // 
-            // dtgValEstibas
+            // dtgValDistribuidor
             // 
-            this.dtgValEstibas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.dtgValDistribuidor.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.bandedGridColumn1,
             this.bandedGridColumn2});
-            this.dtgValEstibas.GridControl = this.dtgEstibas;
-            this.dtgValEstibas.Name = "dtgValEstibas";
-            this.dtgValEstibas.OptionsFind.AlwaysVisible = true;
-            this.dtgValEstibas.OptionsView.ShowGroupPanel = false;
+            this.dtgValDistribuidor.GridControl = this.dtgDistribuidor;
+            this.dtgValDistribuidor.Name = "dtgValDistribuidor";
+            this.dtgValDistribuidor.OptionsFind.AlwaysVisible = true;
+            this.dtgValDistribuidor.OptionsView.ShowGroupPanel = false;
             // 
             // bandedGridColumn1
             // 
-            this.bandedGridColumn1.Caption = "Codigo Pais";
-            this.bandedGridColumn1.FieldName = "c_codigo_pai";
+            this.bandedGridColumn1.Caption = "Codigo Distribuidor";
+            this.bandedGridColumn1.FieldName = "c_codigo_dis";
             this.bandedGridColumn1.Name = "bandedGridColumn1";
             this.bandedGridColumn1.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn1.Visible = true;
@@ -252,8 +252,8 @@
             // 
             // bandedGridColumn2
             // 
-            this.bandedGridColumn2.Caption = "Nombre Pais";
-            this.bandedGridColumn2.FieldName = "v_nombre_pai";
+            this.bandedGridColumn2.Caption = "Nombre Distrobuidor";
+            this.bandedGridColumn2.FieldName = "v_nombre_dis";
             this.bandedGridColumn2.Name = "bandedGridColumn2";
             this.bandedGridColumn2.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn2.Visible = true;
@@ -269,7 +269,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             // 
-            // Frm_Paises
+            // Frm_Distribuidor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -282,15 +282,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Frm_Paises";
-            this.Text = "Paises";
+            this.Name = "Frm_Distribuidor";
+            this.Text = "Distribuidores";
             this.Shown += new System.EventHandler(this.Frm_Productos_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgEstibas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValEstibas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDistribuidor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValDistribuidor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             this.ResumeLayout(false);
@@ -315,8 +315,8 @@
         private DevExpress.XtraBars.BarLargeButtonItem btn_ImportarProveedor;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraGrid.GridControl dtgEstibas;
-        private DevExpress.XtraGrid.Views.Grid.GridView dtgValEstibas;
+        private DevExpress.XtraGrid.GridControl dtgDistribuidor;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValDistribuidor;
         private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn bandedGridColumn2;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;

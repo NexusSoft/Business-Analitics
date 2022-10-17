@@ -292,6 +292,12 @@
     <Compile Include="Form_Control\Maquila\Frm_Materiales.Designer.cs">
       <DependentUpon>Frm_Materiales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Control\Maquila\Frm_Distribuidor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Control\Maquila\Frm_Distribuidor.designer.cs">
+      <DependentUpon>Frm_Distribuidor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Control\Maquila\Frm_Paises.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -518,6 +524,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Control\Maquila\Frm_Materiales.resx">
       <DependentUpon>Frm_Materiales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Control\Maquila\Frm_Distribuidor.resx">
+      <DependentUpon>Frm_Distribuidor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Control\Maquila\Frm_Paises.resx">
       <DependentUpon>Frm_Paises.cs</DependentUpon>

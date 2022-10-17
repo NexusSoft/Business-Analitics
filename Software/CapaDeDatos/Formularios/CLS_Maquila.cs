@@ -5,6 +5,7 @@ namespace CapaDeDatos
     public class CLS_Maquila : ConexionBase
     {
         public int Semana { get; set; }
+        public string cTemporada { get; set; }
         public string cManifiesto { get; set; }
         public string cDistribuidor { get; set; }
         public string cFechaEmbarque { get; set; }
@@ -144,6 +145,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "MaquilaDetalles_Insert";
+                _dato.Texto = cTemporada;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "cTemporada");
                 _dato.Texto = cManifiesto;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "cManifiesto");
                 _dato.Texto = cDistribuidor;

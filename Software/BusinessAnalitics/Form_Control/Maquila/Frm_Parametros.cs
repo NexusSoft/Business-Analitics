@@ -30,6 +30,7 @@ namespace Business_Analitics
         public string vPrecioMaquilaId { get; set; }
         public bool PrimeraEdicionC { get; set; }
         public string vc_codigo_pai { get; set; }
+        public string vc_codigo_dis { get; set; }
         public string vc_codigo_matMalla { get; set; }
         public string vc_codigo_pro { get; private set; }
 
@@ -46,6 +47,7 @@ namespace Business_Analitics
             CargarPaisAPEAM();
             CargarProductosO(null);
             CargarProductosExc();
+            CargarDistribuidorSinAPEAM();
             dtgValPrecioTermo.OptionsSelection.EnableAppearanceFocusedCell = false;
             dtgValPrecioTermo.OptionsSelection.EnableAppearanceHideSelection = false;
             dtgValPrecioTermo.OptionsSelection.MultiSelect = true;
@@ -116,10 +118,16 @@ namespace Business_Analitics
             sel.MtdSeleccionarParametroAPEAM();
             if (sel.Exito)
             {
-                if (sel.Datos.Rows.Count > 0)
-                {
-                    dtgAPEAM.DataSource = sel.Datos;
-                }
+                dtgAPEAM.DataSource = sel.Datos;
+            }
+        }
+        private void CargarDistribuidorSinAPEAM()
+        {
+            CLS_Parametros sel = new CLS_Parametros();
+            sel.MtdSeleccionarParametroDistribuidorSinAPEAM();
+            if (sel.Exito)
+            {
+                dtgDistribuidor.DataSource = sel.Datos;
             }
         }
         private void CargarProductosExc()
@@ -128,10 +136,7 @@ namespace Business_Analitics
             sel.MtdSeleccionarParametroProductoExt();
             if (sel.Exito)
             {
-                if (sel.Datos.Rows.Count > 0)
-                {
-                    dtgProductoExc.DataSource = sel.Datos;
-                }
+                dtgProductoExc.DataSource = sel.Datos;
             }
         }
         private void CargarPrecios()
@@ -504,6 +509,52 @@ namespace Business_Analitics
             frm.v_Opcion = 9;
             frm.Text = "Materiales Caja RPC";
             frm.ShowDialog();
+        }
+
+        private void btn_QuitarDis_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(vc_codigo_dis))
+            {
+                CLS_Parametros del = new CLS_Parametros();
+                del.c_codigo_dis = vc_codigo_dis;
+                del.MtdDistribuidorSinAPEAM_Delete();
+                if (del.Exito)
+                {
+                    CargarDistribuidorSinAPEAM();
+                    XtraMessageBox.Show("se ha eliminado el dato con exito");
+                }
+                else
+                {
+                    XtraMessageBox.Show(del.Mensaje);
+                }
+            }
+            else
+            {
+                XtraMessageBox.Show("No se ha seleccionado pais para quitar");
+            }
+        }
+
+        private void btn_AgregarDis_Click(object sender, EventArgs e)
+        {
+            Frm_Distribuidor frm = new Frm_Distribuidor();
+            frm.ShowDialog();
+            CargarDistribuidorSinAPEAM();
+        }
+
+        private void dtgDistribuidor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (int i in this.dtgValDistribuidor.GetSelectedRows())
+                {
+                    DataRow row = this.dtgValDistribuidor.GetDataRow(i);
+                    vc_codigo_dis = row["c_codigo_dis"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
         }
     }
 }

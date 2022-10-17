@@ -31,6 +31,8 @@ namespace CapaDeDatos
         public string v_nombre_pro { get; set; }
         public string c_codigo_causa { get; set; }
         public string c_codigo_causah { get; set; }
+        public string c_codigo_dis { get; set; }
+        public string v_nombre_dis { get; set; }
 
         public void MtdSeleccionarParametroTermo()
         {
@@ -159,6 +161,31 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
+        public void MtdSeleccionarParametroDistribuidorSinAPEAM()
+        {
+            TipoDato _dato = new TipoDato();
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "MaquilaParametroDistribuidorSinAPEAM_Select";
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
 
         public void MtdSeleccionarParametroCausa()
         {
@@ -239,6 +266,31 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
+        public void MtdSeleccionarDistribuidor()
+        {
+            TipoDato _dato = new TipoDato();
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "MaquilaParametroDistribuidorBuscar_Select";
+                _conexion.EjecutarDataset();
+
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
 
         public void MtdProductoMaterial_Insert()
         {
@@ -279,7 +331,6 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "MaquilaParametroAPEAM_Insert";
-
                 _dato.Texto = c_codigo_pai;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_pai");
                 _dato.Texto = v_nombre_pai;
@@ -332,7 +383,35 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
+        public void MtdDistribuidorSinAPEAM_Insert()
+        {
+            TipoDato _dato = new TipoDato();
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "MaquilaParametroDistribuidorSinAPEAM_Insert";
+                _dato.Texto = c_codigo_dis;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_dis");
+                _dato.Texto = v_nombre_dis;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "v_nombre_dis");
+                _conexion.EjecutarDataset();
 
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
 
         public void MtdProductoMaterial_Delete()
         {
@@ -417,7 +496,33 @@ namespace CapaDeDatos
                 Exito = false;
             }
         }
+        public void MtdDistribuidorSinAPEAM_Delete()
+        {
+            TipoDato _dato = new TipoDato();
+            Exito = true;
+            try
+            {
+                _conexion.NombreProcedimiento = "MaquilaParametroDistribuidorSinAPEAM_Delete";
+                _dato.Texto = c_codigo_dis;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_dis");
+                _conexion.EjecutarDataset();
 
+                if (_conexion.Exito)
+                {
+                    Datos = _conexion.Datos;
+                }
+                else
+                {
+                    Mensaje = _conexion.Mensaje;
+                    Exito = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Mensaje = e.Message;
+                Exito = false;
+            }
+        }
 
         public void MtdPrecioTermo_Update()
         {
