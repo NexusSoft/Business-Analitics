@@ -7204,7 +7204,7 @@
             this.navigationPage6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("navigationPage6.ImageOptions.Image")));
             this.navigationPage6.Name = "navigationPage6";
             this.navigationPage6.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.navigationPage6.Size = new System.Drawing.Size(1208, 618);
+            this.navigationPage6.Size = new System.Drawing.Size(1224, 625);
             // 
             // panelControl18
             // 
@@ -7213,7 +7213,7 @@
             this.panelControl18.Location = new System.Drawing.Point(0, 0);
             this.panelControl18.Name = "panelControl18";
             this.panelControl18.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl18.Size = new System.Drawing.Size(1208, 618);
+            this.panelControl18.Size = new System.Drawing.Size(1224, 625);
             this.panelControl18.TabIndex = 41;
             // 
             // xtraTabControl2
@@ -7222,7 +7222,7 @@
             this.xtraTabControl2.Location = new System.Drawing.Point(7, 7);
             this.xtraTabControl2.Name = "xtraTabControl2";
             this.xtraTabControl2.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl2.Size = new System.Drawing.Size(1194, 604);
+            this.xtraTabControl2.Size = new System.Drawing.Size(1210, 611);
             this.xtraTabControl2.TabIndex = 40;
             this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3,
@@ -7235,7 +7235,7 @@
             this.xtraTabPage3.Controls.Add(this.groupControl11);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage3.Size = new System.Drawing.Size(1192, 579);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1208, 586);
             this.xtraTabPage3.Text = "Pago Productor";
             // 
             // groupControl11
@@ -7266,7 +7266,7 @@
             this.groupControl11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl11.Location = new System.Drawing.Point(5, 5);
             this.groupControl11.Name = "groupControl11";
-            this.groupControl11.Size = new System.Drawing.Size(1182, 569);
+            this.groupControl11.Size = new System.Drawing.Size(1198, 576);
             this.groupControl11.TabIndex = 38;
             // 
             // btn_AbrirProductor
@@ -7528,7 +7528,7 @@
             this.tp_FacturaProductor.Controls.Add(this.groupControl13);
             this.tp_FacturaProductor.Name = "tp_FacturaProductor";
             this.tp_FacturaProductor.Padding = new System.Windows.Forms.Padding(5);
-            this.tp_FacturaProductor.Size = new System.Drawing.Size(1192, 579);
+            this.tp_FacturaProductor.Size = new System.Drawing.Size(1208, 586);
             this.tp_FacturaProductor.Text = "Factura";
             // 
             // groupControl13
@@ -7585,12 +7585,12 @@
             this.groupControl13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl13.Location = new System.Drawing.Point(5, 5);
             this.groupControl13.Name = "groupControl13";
-            this.groupControl13.Size = new System.Drawing.Size(1182, 569);
+            this.groupControl13.Size = new System.Drawing.Size(1198, 576);
             this.groupControl13.TabIndex = 39;
             // 
             // labelControl208
             // 
-            this.labelControl208.Location = new System.Drawing.Point(728, 61);
+            this.labelControl208.Location = new System.Drawing.Point(728, 58);
             this.labelControl208.Name = "labelControl208";
             this.labelControl208.Size = new System.Drawing.Size(52, 13);
             this.labelControl208.TabIndex = 173;
@@ -7599,7 +7599,7 @@
             // txt_Salto_REP
             // 
             this.txt_Salto_REP.Enabled = false;
-            this.txt_Salto_REP.Location = new System.Drawing.Point(784, 57);
+            this.txt_Salto_REP.Location = new System.Drawing.Point(784, 54);
             this.txt_Salto_REP.MenuManager = this.barManager1;
             this.txt_Salto_REP.Name = "txt_Salto_REP";
             this.txt_Salto_REP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -7614,7 +7614,7 @@
             // 
             // labelControl207
             // 
-            this.labelControl207.Location = new System.Drawing.Point(728, 35);
+            this.labelControl207.Location = new System.Drawing.Point(728, 32);
             this.labelControl207.Name = "labelControl207";
             this.labelControl207.Size = new System.Drawing.Size(50, 13);
             this.labelControl207.TabIndex = 171;
@@ -7623,7 +7623,7 @@
             // txt_SumaTotal_REP
             // 
             this.txt_SumaTotal_REP.Enabled = false;
-            this.txt_SumaTotal_REP.Location = new System.Drawing.Point(784, 31);
+            this.txt_SumaTotal_REP.Location = new System.Drawing.Point(784, 28);
             this.txt_SumaTotal_REP.MenuManager = this.barManager1;
             this.txt_SumaTotal_REP.Name = "txt_SumaTotal_REP";
             this.txt_SumaTotal_REP.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -7658,7 +7658,7 @@
             // 
             // labelControl179
             // 
-            this.labelControl179.Location = new System.Drawing.Point(547, 87);
+            this.labelControl179.Location = new System.Drawing.Point(547, 84);
             this.labelControl179.Name = "labelControl179";
             this.labelControl179.Size = new System.Drawing.Size(28, 13);
             this.labelControl179.TabIndex = 167;
@@ -7667,7 +7667,7 @@
             // txt_Total
             // 
             this.txt_Total.Enabled = false;
-            this.txt_Total.Location = new System.Drawing.Point(620, 83);
+            this.txt_Total.Location = new System.Drawing.Point(620, 80);
             this.txt_Total.MenuManager = this.barManager1;
             this.txt_Total.Name = "txt_Total";
             this.txt_Total.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -7682,7 +7682,7 @@
             // 
             // labelControl178
             // 
-            this.labelControl178.Location = new System.Drawing.Point(547, 61);
+            this.labelControl178.Location = new System.Drawing.Point(547, 58);
             this.labelControl178.Name = "labelControl178";
             this.labelControl178.Size = new System.Drawing.Size(46, 13);
             this.labelControl178.TabIndex = 165;
@@ -7691,7 +7691,7 @@
             // txt_SubTotal
             // 
             this.txt_SubTotal.Enabled = false;
-            this.txt_SubTotal.Location = new System.Drawing.Point(620, 57);
+            this.txt_SubTotal.Location = new System.Drawing.Point(620, 54);
             this.txt_SubTotal.MenuManager = this.barManager1;
             this.txt_SubTotal.Name = "txt_SubTotal";
             this.txt_SubTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -7706,7 +7706,7 @@
             // 
             // labelControl177
             // 
-            this.labelControl177.Location = new System.Drawing.Point(547, 35);
+            this.labelControl177.Location = new System.Drawing.Point(547, 32);
             this.labelControl177.Name = "labelControl177";
             this.labelControl177.Size = new System.Drawing.Size(67, 13);
             this.labelControl177.TabIndex = 163;
@@ -7715,7 +7715,7 @@
             // txt_MetodoPago
             // 
             this.txt_MetodoPago.Enabled = false;
-            this.txt_MetodoPago.Location = new System.Drawing.Point(620, 31);
+            this.txt_MetodoPago.Location = new System.Drawing.Point(620, 28);
             this.txt_MetodoPago.MenuManager = this.barManager1;
             this.txt_MetodoPago.Name = "txt_MetodoPago";
             this.txt_MetodoPago.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
@@ -7980,7 +7980,7 @@
             // 
             // opt_TipoFacturaProductor
             // 
-            this.opt_TipoFacturaProductor.Location = new System.Drawing.Point(445, 54);
+            this.opt_TipoFacturaProductor.Location = new System.Drawing.Point(445, 53);
             this.opt_TipoFacturaProductor.MenuManager = this.barManager1;
             this.opt_TipoFacturaProductor.Name = "opt_TipoFacturaProductor";
             this.opt_TipoFacturaProductor.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -7990,7 +7990,7 @@
             this.opt_TipoFacturaProductor.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Diferido"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Total")});
-            this.opt_TipoFacturaProductor.Size = new System.Drawing.Size(100, 50);
+            this.opt_TipoFacturaProductor.Size = new System.Drawing.Size(100, 51);
             this.opt_TipoFacturaProductor.TabIndex = 121;
             // 
             // labelControl93
@@ -8162,7 +8162,7 @@
             this.xtraTabPage2.Controls.Add(this.btn_UpPDFTarjeta_APEAM);
             this.xtraTabPage2.Controls.Add(this.labelControl165);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1192, 579);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1208, 586);
             this.xtraTabPage2.Text = "Expedientes";
             // 
             // labelControl169
@@ -8537,7 +8537,7 @@
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.Padding = new System.Windows.Forms.Padding(5);
             this.xtraTabPage4.PageVisible = false;
-            this.xtraTabPage4.Size = new System.Drawing.Size(1192, 579);
+            this.xtraTabPage4.Size = new System.Drawing.Size(1208, 586);
             this.xtraTabPage4.Text = "PPD";
             // 
             // panelControl22
@@ -8547,7 +8547,7 @@
             this.panelControl22.Location = new System.Drawing.Point(5, 171);
             this.panelControl22.Name = "panelControl22";
             this.panelControl22.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl22.Size = new System.Drawing.Size(1182, 403);
+            this.panelControl22.Size = new System.Drawing.Size(1198, 410);
             this.panelControl22.TabIndex = 1;
             // 
             // dtgFacturasREP
@@ -8561,7 +8561,7 @@
             this.btn_PDFGrid,
             this.btn_XMLGrid,
             this.btn_EliminarREP});
-            this.dtgFacturasREP.Size = new System.Drawing.Size(1158, 379);
+            this.dtgFacturasREP.Size = new System.Drawing.Size(1174, 386);
             this.dtgFacturasREP.TabIndex = 0;
             this.dtgFacturasREP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValFacturasREP});
@@ -8660,7 +8660,7 @@
             this.panelControl21.Location = new System.Drawing.Point(5, 5);
             this.panelControl21.Name = "panelControl21";
             this.panelControl21.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl21.Size = new System.Drawing.Size(1182, 166);
+            this.panelControl21.Size = new System.Drawing.Size(1198, 166);
             this.panelControl21.TabIndex = 0;
             // 
             // groupControl19
@@ -8679,7 +8679,7 @@
             this.groupControl19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl19.Location = new System.Drawing.Point(12, 12);
             this.groupControl19.Name = "groupControl19";
-            this.groupControl19.Size = new System.Drawing.Size(1158, 142);
+            this.groupControl19.Size = new System.Drawing.Size(1174, 142);
             this.groupControl19.TabIndex = 0;
             this.groupControl19.Text = "Agregar REP";
             // 

@@ -7,7 +7,7 @@
             InitializeComponent();
         }
 
-        private void TopMargin_BeforePrint(object sender, System.ComponentModel.CancelEventArgs e)
+        private void TopMargin_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
 
         }
