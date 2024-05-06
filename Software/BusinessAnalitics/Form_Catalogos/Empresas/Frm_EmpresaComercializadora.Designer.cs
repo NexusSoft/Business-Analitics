@@ -72,6 +72,7 @@
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dtgDomicilio = new DevExpress.XtraGrid.GridControl();
             this.dtgValDomicilio = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -109,6 +110,7 @@
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.dtgContacto = new DevExpress.XtraGrid.GridControl();
             this.dtgValContacto = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -135,8 +137,6 @@
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.txtIdHuerta = new DevExpress.XtraEditors.TextEdit();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -394,6 +394,7 @@
             this.dtgValEmpComercializadora.GridControl = this.dtgEmpComercializadora;
             this.dtgValEmpComercializadora.Name = "dtgValEmpComercializadora";
             this.dtgValEmpComercializadora.OptionsBehavior.Editable = false;
+            this.dtgValEmpComercializadora.OptionsFind.AlwaysVisible = true;
             this.dtgValEmpComercializadora.OptionsView.ShowFooter = true;
             this.dtgValEmpComercializadora.OptionsView.ShowGroupPanel = false;
             // 
@@ -594,6 +595,15 @@
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
             this.xtraTabPage2.Size = new System.Drawing.Size(848, 462);
             this.xtraTabPage2.Text = "Domicilio";
+            // 
+            // labelControl21
+            // 
+            this.labelControl21.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl21.Appearance.Options.UseFont = true;
+            this.labelControl21.Location = new System.Drawing.Point(8, 10);
+            this.labelControl21.Name = "labelControl21";
+            this.labelControl21.Size = new System.Drawing.Size(0, 13);
+            this.labelControl21.TabIndex = 19;
             // 
             // panelControl2
             // 
@@ -935,6 +945,15 @@
             this.xtraTabPage3.Size = new System.Drawing.Size(848, 462);
             this.xtraTabPage3.Text = "Contacto de Pago";
             // 
+            // labelControl20
+            // 
+            this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl20.Appearance.Options.UseFont = true;
+            this.labelControl20.Location = new System.Drawing.Point(8, 10);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(0, 13);
+            this.labelControl20.TabIndex = 18;
+            // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.dtgContacto);
@@ -1172,24 +1191,6 @@
             this.labelControl24.Size = new System.Drawing.Size(53, 13);
             this.labelControl24.TabIndex = 0;
             this.labelControl24.Text = "Id Huerta: ";
-            // 
-            // labelControl20
-            // 
-            this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl20.Appearance.Options.UseFont = true;
-            this.labelControl20.Location = new System.Drawing.Point(8, 10);
-            this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(0, 13);
-            this.labelControl20.TabIndex = 18;
-            // 
-            // labelControl21
-            // 
-            this.labelControl21.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl21.Appearance.Options.UseFont = true;
-            this.labelControl21.Location = new System.Drawing.Point(8, 10);
-            this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(0, 13);
-            this.labelControl21.TabIndex = 19;
             // 
             // Frm_EmpresaComercializadora
             // 

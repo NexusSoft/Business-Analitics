@@ -60,6 +60,7 @@
     <Compile Include="Formularios\CLS_Cosecha.cs" />
     <Compile Include="Formularios\CLS_Cultivo.cs" />
     <Compile Include="Formularios\CLS_Domicilios.cs" />
+    <Compile Include="Formularios\CLS_AcarreroPrecios.cs" />
     <Compile Include="Formularios\CLS_EmpresasComercializadora_Contacto.cs" />
     <Compile Include="Formularios\CLS_EmpresasCorte.cs" />
     <Compile Include="Formularios\CLS_EmpresasAcarreo.cs" />

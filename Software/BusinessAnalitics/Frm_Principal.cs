@@ -1,4 +1,5 @@
 ﻿using BusinessAnalitics;
+using BusinessAnalitics.Form_Catalogos.Acarreo;
 using CapaDeDatos;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
@@ -445,6 +446,54 @@ namespace Business_Analitics
             else
             {
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [027]");
+            }
+        }
+
+        private void btn_Acarreo_Zona_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("028"))
+            {
+                Frm_Acarreo_Zona Ventana = new Frm_Acarreo_Zona();
+                Frm_Acarreo_Zona.DefInstance.MdiParent = this;
+                Frm_Acarreo_Zona.DefInstance.IdPerfil = IdPerfil;
+                Frm_Acarreo_Zona.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_Acarreo_Zona.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [028]");
+            }
+        }
+
+        private void btn_Acarreo_Precios_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("029"))
+            {
+                Frm_Acarreo_Precios Ventana = new Frm_Acarreo_Precios();
+                Frm_Acarreo_Precios.DefInstance.MdiParent = this;
+                Frm_Acarreo_Precios.DefInstance.IdPerfil = IdPerfil;
+                Frm_Acarreo_Precios.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_Acarreo_Precios.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [029]");
+            }
+        }
+
+        private void btn_PrecioFruta_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("030"))
+            {
+                Frm_Acopio_Precios Ventana = new Frm_Acopio_Precios();
+                Frm_Acopio_Precios.DefInstance.MdiParent = this;
+                Frm_Acopio_Precios.DefInstance.IdPerfil = IdPerfil;
+                Frm_Acopio_Precios.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_Acopio_Precios.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [030]");
             }
         }
     }

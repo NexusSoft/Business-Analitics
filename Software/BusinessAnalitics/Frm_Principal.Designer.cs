@@ -61,8 +61,12 @@
             this.btn_ReporteConta_Corte = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ReporteConta_Acarreo = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Acarreo_Zona = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_Acarreo_Precios = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -79,6 +83,8 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btn_PrecioFruta = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -91,7 +97,6 @@
             this.ribbon.ExpandCollapseItem.Id = 0;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
-            this.ribbon.SearchEditItem,
             this.btn_EmpCorte,
             this.btn_EmpAcarreo,
             this.btn_Cosecha,
@@ -120,9 +125,13 @@
             this.btn_ReporteConta_Fruta,
             this.btn_ReporteConta_Corte,
             this.btn_ReporteConta_Acarreo,
-            this.barButtonItem6});
+            this.barButtonItem6,
+            this.barButtonItem3,
+            this.btn_Acarreo_Zona,
+            this.btn_Acarreo_Precios,
+            this.btn_PrecioFruta});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 32;
+            this.ribbon.MaxItemId = 37;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -154,7 +163,7 @@
             // 
             // btn_EmpAcarreo
             // 
-            this.btn_EmpAcarreo.Caption = "Acarreo";
+            this.btn_EmpAcarreo.Caption = "Empresa Acarreo";
             this.btn_EmpAcarreo.Id = 2;
             this.btn_EmpAcarreo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EmpAcarreo.ImageOptions.LargeImage")));
             this.btn_EmpAcarreo.Name = "btn_EmpAcarreo";
@@ -174,6 +183,7 @@
             this.btn_Cargas.Id = 5;
             this.btn_Cargas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Cargas.ImageOptions.LargeImage")));
             this.btn_Cargas.Name = "btn_Cargas";
+            this.btn_Cargas.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btn_Cargas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Cargas_ItemClick);
             // 
             // btn_EmpBascula
@@ -260,6 +270,7 @@
             this.btn_Maquila.Id = 16;
             this.btn_Maquila.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Maquila.ImageOptions.LargeImage")));
             this.btn_Maquila.Name = "btn_Maquila";
+            this.btn_Maquila.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btn_Maquila.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Maquila_ItemClick);
             // 
             // btn_inventario_ventas
@@ -269,6 +280,7 @@
             this.btn_inventario_ventas.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_inventario_ventas.ImageOptions.Image")));
             this.btn_inventario_ventas.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_inventario_ventas.ImageOptions.LargeImage")));
             this.btn_inventario_ventas.Name = "btn_inventario_ventas";
+            this.btn_inventario_ventas.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btn_inventario_ventas.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_inventario_ventas_ItemClick);
             // 
             // btnReportInventario
@@ -288,9 +300,7 @@
             // 
             // btnPrecioSemana
             // 
-            this.btnPrecioSemana.Caption = "Precios x Semana";
-            this.btnPrecioSemana.Id = 20;
-            this.btnPrecioSemana.ImageOptions.LargeImage = global::BusinessAnalitics.Properties.Resources.cash;
+            this.btnPrecioSemana.Id = 35;
             this.btnPrecioSemana.Name = "btnPrecioSemana";
             // 
             // btn_TipoCorteTamaño
@@ -381,10 +391,36 @@
             this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
             this.barButtonItem6.Name = "barButtonItem6";
             // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "barButtonItem3";
+            this.barButtonItem3.Id = 32;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // btn_Acarreo_Zona
+            // 
+            this.btn_Acarreo_Zona.Caption = "Zonas";
+            this.btn_Acarreo_Zona.Id = 33;
+            this.btn_Acarreo_Zona.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Acarreo_Zona.ImageOptions.Image")));
+            this.btn_Acarreo_Zona.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Acarreo_Zona.ImageOptions.LargeImage")));
+            this.btn_Acarreo_Zona.Name = "btn_Acarreo_Zona";
+            this.btn_Acarreo_Zona.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Acarreo_Zona_ItemClick);
+            // 
+            // btn_Acarreo_Precios
+            // 
+            this.btn_Acarreo_Precios.Caption = "Precios";
+            this.btn_Acarreo_Precios.Id = 34;
+            this.btn_Acarreo_Precios.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Acarreo_Precios.ImageOptions.Image")));
+            this.btn_Acarreo_Precios.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Acarreo_Precios.ImageOptions.LargeImage")));
+            this.btn_Acarreo_Precios.Name = "btn_Acarreo_Precios";
+            this.btn_Acarreo_Precios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Acarreo_Precios_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup4,
+            this.ribbonPageGroup12,
+            this.ribbonPageGroup11,
             this.ribbonPageGroup1,
             this.ribbonPageGroup8});
             this.ribbonPage1.Name = "ribbonPage1";
@@ -401,11 +437,18 @@
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Domicilio";
             // 
+            // ribbonPageGroup11
+            // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.btn_EmpAcarreo);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btn_Acarreo_Zona);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btn_Acarreo_Precios);
+            this.ribbonPageGroup11.Name = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Text = "Acarreo";
+            // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
             this.ribbonPageGroup1.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonPageGroup1.ItemLinks.Add(this.btn_EmpAcarreo);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_EmpCorte);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_EmpBascula);
             this.ribbonPageGroup1.ItemLinks.Add(this.btn_EmpComercializadora);
@@ -527,6 +570,21 @@
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.ItemLinks.Add(this.btn_PrecioFruta);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Text = "Acopio";
+            // 
+            // btn_PrecioFruta
+            // 
+            this.btn_PrecioFruta.Caption = "Precios Fruta";
+            this.btn_PrecioFruta.Id = 36;
+            this.btn_PrecioFruta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_PrecioFruta.ImageOptions.Image")));
+            this.btn_PrecioFruta.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_PrecioFruta.ImageOptions.LargeImage")));
+            this.btn_PrecioFruta.Name = "btn_PrecioFruta";
+            this.btn_PrecioFruta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_PrecioFruta_ItemClick);
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,5 +661,11 @@
         private DevExpress.XtraBars.BarButtonItem btn_ReporteConta_Acarreo;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
+        private DevExpress.XtraBars.BarButtonItem btn_Acarreo_Zona;
+        private DevExpress.XtraBars.BarButtonItem btn_Acarreo_Precios;
+        private DevExpress.XtraBars.BarButtonItem btn_PrecioFruta;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
     }
 }

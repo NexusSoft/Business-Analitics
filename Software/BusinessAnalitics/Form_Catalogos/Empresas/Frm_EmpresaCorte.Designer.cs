@@ -144,6 +144,8 @@
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
             this.txtMenorakg = new DevExpress.XtraEditors.TextEdit();
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -202,6 +204,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioSalidaFalso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioDia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMenorakg.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -412,6 +415,7 @@
             this.dtgValEmpCorte.GridControl = this.dtgEmpCorte;
             this.dtgValEmpCorte.Name = "dtgValEmpCorte";
             this.dtgValEmpCorte.OptionsBehavior.Editable = false;
+            this.dtgValEmpCorte.OptionsFind.AlwaysVisible = true;
             this.dtgValEmpCorte.OptionsView.ShowFooter = true;
             this.dtgValEmpCorte.OptionsView.ShowGroupPanel = false;
             // 
@@ -498,7 +502,7 @@
             // 
             // txtRFC
             // 
-            this.txtRFC.Location = new System.Drawing.Point(86, 109);
+            this.txtRFC.Location = new System.Drawing.Point(76, 109);
             this.txtRFC.Name = "txtRFC";
             this.txtRFC.Size = new System.Drawing.Size(192, 20);
             this.txtRFC.TabIndex = 4;
@@ -520,7 +524,7 @@
             // 
             // textCorreo
             // 
-            this.textCorreo.Location = new System.Drawing.Point(86, 83);
+            this.textCorreo.Location = new System.Drawing.Point(76, 83);
             this.textCorreo.Name = "textCorreo";
             this.textCorreo.Size = new System.Drawing.Size(192, 20);
             this.textCorreo.TabIndex = 3;
@@ -573,7 +577,7 @@
             // 
             // textProveedor
             // 
-            this.textProveedor.Location = new System.Drawing.Point(86, 57);
+            this.textProveedor.Location = new System.Drawing.Point(76, 57);
             this.textProveedor.Name = "textProveedor";
             this.textProveedor.Size = new System.Drawing.Size(192, 20);
             this.textProveedor.TabIndex = 2;
@@ -589,7 +593,7 @@
             // textId
             // 
             this.textId.Enabled = false;
-            this.textId.Location = new System.Drawing.Point(86, 31);
+            this.textId.Location = new System.Drawing.Point(76, 31);
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 20);
             this.textId.TabIndex = 1;
@@ -972,6 +976,8 @@
             // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.textEdit1);
+            this.groupControl3.Controls.Add(this.labelControl31);
             this.groupControl3.Controls.Add(this.groupControl5);
             this.groupControl3.Controls.Add(this.groupControl4);
             this.groupControl3.Controls.Add(this.txtPrecioSalidaFalso);
@@ -1329,6 +1335,26 @@
             this.labelControl24.TabIndex = 0;
             this.labelControl24.Text = "Menor a kg: ";
             // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(509, 30);
+            this.textEdit1.MenuManager = this.barManager1;
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit1.Properties.MaskSettings.Set("mask", "n0");
+            this.textEdit1.Properties.NullText = "0";
+            this.textEdit1.Properties.NullValuePrompt = "0";
+            this.textEdit1.Size = new System.Drawing.Size(100, 20);
+            this.textEdit1.TabIndex = 37;
+            // 
+            // labelControl31
+            // 
+            this.labelControl31.Location = new System.Drawing.Point(446, 33);
+            this.labelControl31.Name = "labelControl31";
+            this.labelControl31.Size = new System.Drawing.Size(57, 13);
+            this.labelControl31.TabIndex = 36;
+            this.labelControl31.Text = "Margen %: ";
+            // 
             // Frm_EmpresaCorte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1410,6 +1436,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioSalidaFalso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioDia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMenorakg.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1531,5 +1558,7 @@
         private DevExpress.XtraEditors.SeparatorControl separatorControl2;
         private DevExpress.XtraEditors.LabelControl labelControl23;
         private DevExpress.XtraEditors.LabelControl labelControl30;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.LabelControl labelControl31;
     }
 }

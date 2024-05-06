@@ -1,6 +1,6 @@
-﻿namespace Business_Analitics
+﻿namespace BusinessAnalitics
 {
-    partial class Frm_Zona
+    partial class Frm_Acarreo_Zona
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Zona));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Acarreo_Zona));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bIconos = new DevExpress.XtraBars.Bar();
             this.btnLimpiar = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -44,29 +44,29 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.dtgZona = new DevExpress.XtraGrid.GridControl();
-            this.dtgValZona = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Id_Zona = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nombre_Zona = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.textNombre = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.dtgZonas = new DevExpress.XtraGrid.GridControl();
+            this.dtgValZonas = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgZona)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValZona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgZonas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValZonas)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -87,7 +87,7 @@
             this.btnSalir,
             this.btnSeleccionar});
             this.barManager1.MainMenu = this.bIconos;
-            this.barManager1.MaxItemId = 65;
+            this.barManager1.MaxItemId = 67;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.barManager1.StatusBar = this.bEstado;
@@ -156,11 +156,10 @@
             // btnSeleccionar
             // 
             this.btnSeleccionar.Caption = "Seleccionar";
-            this.btnSeleccionar.Id = 64;
+            this.btnSeleccionar.Id = 66;
             this.btnSeleccionar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.Image")));
             this.btnSeleccionar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSeleccionar.ImageOptions.LargeImage")));
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSeleccionar_ItemClick);
             // 
             // bEstado
             // 
@@ -178,7 +177,7 @@
             // 
             // lblProveedor
             // 
-            this.lblProveedor.Caption = "Zona:";
+            this.lblProveedor.Caption = "Proveedor:";
             this.lblProveedor.Id = 48;
             this.lblProveedor.Name = "lblProveedor";
             // 
@@ -188,15 +187,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(493, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(851, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 341);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 491);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(493, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(851, 24);
             // 
             // barDockControlLeft
             // 
@@ -204,72 +203,19 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(69, 341);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 491);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(493, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(851, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 341);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 491);
             // 
             // repositoryItemTextEdit1
             // 
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.dtgZona);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(69, 108);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(424, 233);
-            this.panelControl2.TabIndex = 7;
-            // 
-            // dtgZona
-            // 
-            this.dtgZona.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgZona.Location = new System.Drawing.Point(12, 12);
-            this.dtgZona.MainView = this.dtgValZona;
-            this.dtgZona.MenuManager = this.barManager1;
-            this.dtgZona.Name = "dtgZona";
-            this.dtgZona.Size = new System.Drawing.Size(400, 209);
-            this.dtgZona.TabIndex = 0;
-            this.dtgZona.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dtgValZona});
-            this.dtgZona.Click += new System.EventHandler(this.gridControl1_Click);
-            // 
-            // dtgValZona
-            // 
-            this.dtgValZona.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Id_Zona,
-            this.Nombre_Zona});
-            this.dtgValZona.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.dtgValZona.GridControl = this.dtgZona;
-            this.dtgValZona.Name = "dtgValZona";
-            this.dtgValZona.OptionsFind.AlwaysVisible = true;
-            this.dtgValZona.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.dtgValZona.OptionsView.ShowGroupPanel = false;
-            // 
-            // Id_Zona
-            // 
-            this.Id_Zona.Caption = "Id Zona";
-            this.Id_Zona.FieldName = "Id_zona";
-            this.Id_Zona.Name = "Id_Zona";
-            this.Id_Zona.OptionsColumn.AllowEdit = false;
-            this.Id_Zona.Visible = true;
-            this.Id_Zona.VisibleIndex = 0;
-            // 
-            // Nombre_Zona
-            // 
-            this.Nombre_Zona.Caption = "Zona";
-            this.Nombre_Zona.FieldName = "Nombre_zona";
-            this.Nombre_Zona.Name = "Nombre_Zona";
-            this.Nombre_Zona.OptionsColumn.AllowEdit = false;
-            this.Nombre_Zona.Visible = true;
-            this.Nombre_Zona.VisibleIndex = 1;
             // 
             // panelControl1
             // 
@@ -278,8 +224,8 @@
             this.panelControl1.Location = new System.Drawing.Point(69, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(424, 108);
-            this.panelControl1.TabIndex = 6;
+            this.panelControl1.Size = new System.Drawing.Size(782, 119);
+            this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
             // 
@@ -290,13 +236,13 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(400, 84);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Datos Zona";
+            this.groupControl1.Size = new System.Drawing.Size(758, 95);
+            this.groupControl1.TabIndex = 1;
+            this.groupControl1.Text = "Zona de Acarreo";
             // 
             // textNombre
             // 
-            this.textNombre.Location = new System.Drawing.Point(78, 54);
+            this.textNombre.Location = new System.Drawing.Point(100, 54);
             this.textNombre.MenuManager = this.barManager1;
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(231, 20);
@@ -304,16 +250,16 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 57);
+            this.labelControl2.Location = new System.Drawing.Point(19, 61);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(28, 13);
+            this.labelControl2.Size = new System.Drawing.Size(68, 13);
             this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Zona:";
+            this.labelControl2.Text = "Nombre Zona:";
             // 
             // textId
             // 
             this.textId.Enabled = false;
-            this.textId.Location = new System.Drawing.Point(78, 28);
+            this.textId.Location = new System.Drawing.Point(100, 28);
             this.textId.MenuManager = this.barManager1;
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(100, 20);
@@ -321,36 +267,79 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(19, 30);
+            this.labelControl1.Location = new System.Drawing.Point(19, 34);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(44, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Id Zona: ";
             // 
-            // Frm_Zona
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.dtgZonas);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(69, 119);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
+            this.panelControl2.Size = new System.Drawing.Size(782, 372);
+            this.panelControl2.TabIndex = 5;
+            // 
+            // dtgZonas
+            // 
+            this.dtgZonas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgZonas.Location = new System.Drawing.Point(12, 12);
+            this.dtgZonas.MainView = this.dtgValZonas;
+            this.dtgZonas.MenuManager = this.barManager1;
+            this.dtgZonas.Name = "dtgZonas";
+            this.dtgZonas.Size = new System.Drawing.Size(758, 348);
+            this.dtgZonas.TabIndex = 0;
+            this.dtgZonas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dtgValZonas});
+            this.dtgZonas.Click += new System.EventHandler(this.dtgZonas_Click);
+            // 
+            // dtgValZonas
+            // 
+            this.dtgValZonas.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2});
+            this.dtgValZonas.GridControl = this.dtgZonas;
+            this.dtgValZonas.Name = "dtgValZonas";
+            this.dtgValZonas.OptionsView.ShowFooter = true;
+            this.dtgValZonas.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Codigo";
+            this.gridColumn1.FieldName = "Id_EmpresaAcarreo_Zona";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Nombre";
+            this.gridColumn2.FieldName = "v_nombre_zona";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // Frm_Acarreo_Zona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 365);
+            this.ClientSize = new System.Drawing.Size(851, 515);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Frm_Zona";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Zonas";
-            this.Load += new System.EventHandler(this.Frm_Zona_Load);
+            this.Name = "Frm_Acarreo_Zona";
+            this.Text = "Zona Acarreo";
+            this.Load += new System.EventHandler(this.Frm_Acarreo_Zona_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgZona)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgValZona)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -358,6 +347,10 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textNombre.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textId.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgZonas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgValZonas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,6 +364,7 @@
         private DevExpress.XtraBars.BarLargeButtonItem btnGuardar;
         private DevExpress.XtraBars.BarLargeButtonItem btnEliminar;
         private DevExpress.XtraBars.BarLargeButtonItem btnSalir;
+        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
         private DevExpress.XtraBars.Bar bEstado;
         private DevExpress.XtraBars.BarStaticItem lblProveedor;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
@@ -379,16 +373,15 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraGrid.GridControl dtgZona;
-        private DevExpress.XtraGrid.Views.Grid.GridView dtgValZona;
-        private DevExpress.XtraGrid.Columns.GridColumn Id_Zona;
-        private DevExpress.XtraGrid.Columns.GridColumn Nombre_Zona;
+        private DevExpress.XtraGrid.GridControl dtgZonas;
+        private DevExpress.XtraGrid.Views.Grid.GridView dtgValZonas;
         private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.TextEdit textNombre;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit textId;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraBars.BarLargeButtonItem btnSeleccionar;
     }
 }

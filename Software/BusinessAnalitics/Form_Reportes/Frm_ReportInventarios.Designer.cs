@@ -200,10 +200,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbComparar.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFecha2.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtFecha1.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFecha2.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtFecha1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -535,9 +535,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 498);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 500);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1024, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1024, 22);
             // 
             // barDockControlLeft
             // 
@@ -545,7 +545,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(67, 498);
+            this.barDockControlLeft.Size = new System.Drawing.Size(69, 500);
             // 
             // barDockControlRight
             // 
@@ -553,7 +553,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1024, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 498);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 500);
             // 
             // btnComparar
             // 
@@ -590,10 +590,10 @@
             // 
             this.panelControl1.Controls.Add(this.groupControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(67, 0);
+            this.panelControl1.Location = new System.Drawing.Point(69, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl1.Size = new System.Drawing.Size(957, 112);
+            this.panelControl1.Size = new System.Drawing.Size(955, 112);
             this.panelControl1.TabIndex = 4;
             // 
             // groupControl1
@@ -610,7 +610,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(7, 7);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(943, 98);
+            this.groupControl1.Size = new System.Drawing.Size(941, 98);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Fechas a Comparar";
             // 
@@ -701,10 +701,10 @@
             // 
             this.panelControl2.Controls.Add(this.xtraTabControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(67, 112);
+            this.panelControl2.Location = new System.Drawing.Point(69, 112);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(957, 386);
+            this.panelControl2.Size = new System.Drawing.Size(955, 388);
             this.panelControl2.TabIndex = 5;
             // 
             // xtraTabControl1
@@ -713,7 +713,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(12, 12);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(933, 362);
+            this.xtraTabControl1.Size = new System.Drawing.Size(931, 364);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -726,7 +726,7 @@
             this.xtraTabPage1.Controls.Add(this.dtgReporteT);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage1.Size = new System.Drawing.Size(931, 337);
+            this.xtraTabPage1.Size = new System.Drawing.Size(929, 339);
             this.xtraTabPage1.Text = "Totales";
             // 
             // dtgReporteT
@@ -736,7 +736,7 @@
             this.dtgReporteT.MainView = this.dtgValReporteT;
             this.dtgReporteT.MenuManager = this.barManager1;
             this.dtgReporteT.Name = "dtgReporteT";
-            this.dtgReporteT.Size = new System.Drawing.Size(921, 327);
+            this.dtgReporteT.Size = new System.Drawing.Size(919, 329);
             this.dtgReporteT.TabIndex = 1;
             this.dtgReporteT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValReporteT,
@@ -1123,7 +1123,7 @@
             this.xtraTabPage2.Controls.Add(this.dtgReporte);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(929, 336);
+            this.xtraTabPage2.Size = new System.Drawing.Size(929, 339);
             this.xtraTabPage2.Text = "Resumen";
             // 
             // dtgReporte
@@ -1133,7 +1133,7 @@
             this.dtgReporte.MainView = this.dtgValReporte;
             this.dtgReporte.MenuManager = this.barManager1;
             this.dtgReporte.Name = "dtgReporte";
-            this.dtgReporte.Size = new System.Drawing.Size(919, 326);
+            this.dtgReporte.Size = new System.Drawing.Size(919, 329);
             this.dtgReporte.TabIndex = 0;
             this.dtgReporte.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValReporte,
@@ -1332,7 +1332,7 @@
             this.xtraTabPage3.Controls.Add(this.dtgReporteTSerie);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage3.Size = new System.Drawing.Size(929, 336);
+            this.xtraTabPage3.Size = new System.Drawing.Size(929, 339);
             this.xtraTabPage3.Text = "Totales (Series)";
             // 
             // dtgReporteTSerie
@@ -1342,7 +1342,7 @@
             this.dtgReporteTSerie.MainView = this.dtgValReporteTSerie;
             this.dtgReporteTSerie.MenuManager = this.barManager1;
             this.dtgReporteTSerie.Name = "dtgReporteTSerie";
-            this.dtgReporteTSerie.Size = new System.Drawing.Size(919, 326);
+            this.dtgReporteTSerie.Size = new System.Drawing.Size(919, 329);
             this.dtgReporteTSerie.TabIndex = 2;
             this.dtgReporteTSerie.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValReporteTSerie,
@@ -1592,7 +1592,7 @@
             this.xtraTabPage4.Controls.Add(this.dtgReporteSerie);
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.Padding = new System.Windows.Forms.Padding(5);
-            this.xtraTabPage4.Size = new System.Drawing.Size(929, 336);
+            this.xtraTabPage4.Size = new System.Drawing.Size(929, 339);
             this.xtraTabPage4.Text = "Resumen (Series)";
             // 
             // dtgReporteSerie
@@ -1602,7 +1602,7 @@
             this.dtgReporteSerie.MainView = this.dtgValReporteSerie;
             this.dtgReporteSerie.MenuManager = this.barManager1;
             this.dtgReporteSerie.Name = "dtgReporteSerie";
-            this.dtgReporteSerie.Size = new System.Drawing.Size(919, 326);
+            this.dtgReporteSerie.Size = new System.Drawing.Size(919, 329);
             this.dtgReporteSerie.TabIndex = 1;
             this.dtgReporteSerie.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValReporteSerie,

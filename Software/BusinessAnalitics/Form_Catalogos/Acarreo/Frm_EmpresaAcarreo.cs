@@ -300,13 +300,9 @@ namespace Business_Analitics
             txtRFC.Text = "";
             txtPrecioA.Text = "0";
             txtPrecioB.Text = "0";
-            txtPrecioServicio.Text = "0";
-            txtPrecioCaja.Text = "0";
-            txtPrecioSalidaForanea.Text = "0";
             labelControl23.Text = string.Empty;
             labelControl24.Text = string.Empty;
             labelControl26.Text = string.Empty;
-            labelControl27.Text = string.Empty;
         }
 
         private void LimpiarCamposDomicilio()
@@ -357,13 +353,10 @@ namespace Business_Analitics
                     labelControl23.Text = row["Nombre_EmpresaAcarreo"].ToString();
                     labelControl24.Text = row["Nombre_EmpresaAcarreo"].ToString();
                     labelControl26.Text = row["Nombre_EmpresaAcarreo"].ToString();
-                    labelControl27.Text = row["Nombre_EmpresaAcarreo"].ToString();
                     CargarDomicilio();
                     CargarCamiones();
                     CargarChoferes();
-                    CargarServicios();
                     CargarTipoCamionCamiones("0001");
-                    CargarTipoCamionServicios("0001");
                 }
             }
             catch (Exception ex)
@@ -386,44 +379,9 @@ namespace Business_Analitics
                 }
             }
         }
-        private void CargarTipoCamionServicios(string Valor)
-        {
-            CLS_Camiones obtener = new CLS_Camiones();
-            obtener.MtdSeleccionarTipoCamion();
-            if (obtener.Exito)
-            {
-                if (obtener.Datos.Rows.Count > 0)
-                {
-                    cmb_TipoCamionServicios.Properties.DisplayMember = "Nombre_TipoCamion";
-                    cmb_TipoCamionServicios.Properties.ValueMember = "Id_TipoCamion";
-                    cmb_TipoCamionServicios.EditValue = Valor;
-                    cmb_TipoCamionServicios.Properties.DataSource = obtener.Datos;
-                }
-            }
-        }
         private void CargarComboTemporada(DataTable Datos, string Valor)
         {
 
-        }
-        private void CargarServicios()
-        {
-            CLS_EmpresasAcarreo sel = new CLS_EmpresasAcarreo();
-            sel.Id_EmpresaAcarreo = textId.Text.Trim();
-            sel.MtdSeleccionarEmpresasServicios();
-            if (sel.Exito)
-            {
-                if (sel.Datos.Rows.Count > 0)
-                {
-                    //txtPrecioServicio.Text = sel.Datos.Rows[0]["Precio_Acarreo"].ToString();
-                    //txtPrecioCaja.Text = sel.Datos.Rows[0]["Precio_Caja"].ToString();
-                    //txtPrecioSalidaForanea.Text = sel.Datos.Rows[0]["Precio_SalidaForanea"].ToString();
-                    dtgServicios.DataSource = sel.Datos;
-                }
-            }
-            else
-            {
-                XtraMessageBox.Show(sel.Mensaje);
-            }
         }
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -479,38 +437,8 @@ namespace Business_Analitics
                     XtraMessageBox.Show("Es necesario agregar un nombre del chofer.");
                 }
             }
-            else
-            {
-                InsertarServicios();
-            }
         }
-        private void InsertarServicios()
-        {
-            CLS_EmpresasAcarreo ins = new CLS_EmpresasAcarreo();
-            ins.Id_EmpresaAcarreo = textId.Text.Trim();
-            decimal Precio_Acarreo = 0;
-            decimal.TryParse(txtPrecioServicio.Text, style, culture, out Precio_Acarreo);
-            ins.Precio_Acarreo = Precio_Acarreo;
-            decimal Precio_Caja = 0;
-            decimal.TryParse(txtPrecioCaja.Text, style, culture, out Precio_Caja);
-            ins.Precio_Caja = Precio_Caja;
-            decimal Precio_SalidaForanea = 0;
-            decimal.TryParse(txtPrecioSalidaForanea.Text, style, culture, out Precio_SalidaForanea);
-            ins.Precio_SalidaForanea = Precio_SalidaForanea;
-            ins.Id_TipoCamion = cmb_TipoCamionServicios.EditValue.ToString();
-            ins.Usuario = UsuariosLogin;
-            ins.MtdInsertarEmpresasServicios();
-            if (ins.Exito)
-            {
-                CargarServicios();
-                XtraMessageBox.Show("Se ha Insertado el registro con exito");
-            }
-            else
-            {
-                XtraMessageBox.Show(ins.Mensaje);
-            }
-
-        }
+        
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DialogResult = XtraMessageBox.Show("¿Desea eliminar el dato seleccionado?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
@@ -559,10 +487,6 @@ namespace Business_Analitics
                     {
                         XtraMessageBox.Show("Es necesario seleccionar un chofer.");
                     }
-                }
-                else if (xtraTabControl1.SelectedTabPage == xtraTabPage5)
-                {
-
                 }
             }
         }
@@ -668,7 +592,6 @@ namespace Business_Analitics
                 xtraTabPage2.PageEnabled = false;
                 xtraTabPage3.PageEnabled = false;
                 xtraTabPage4.PageEnabled = false;
-                xtraTabPage5.PageEnabled = false;
                 groupControl2.Text = "Domicilio";
                 groupControl3.Text = "Camion";
                 groupControl4.Text = "Chofeer";
@@ -678,7 +601,6 @@ namespace Business_Analitics
                 xtraTabPage2.PageEnabled = true;
                 xtraTabPage3.PageEnabled = true;
                 xtraTabPage4.PageEnabled = true;
-                xtraTabPage5.PageEnabled = true;
             }
         }
 
@@ -727,55 +649,7 @@ namespace Business_Analitics
 
         private void Frm_EmpresaAcarreo_Shown(object sender, EventArgs e)
         {
-            txtPrecioCaja.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtPrecioServicio.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtPrecioSalidaForanea.Properties.Mask.UseMaskAsDisplayFormat = true;
-            gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gridColumn2.DisplayFormat.FormatString = "c2";
-            gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gridColumn6.DisplayFormat.FormatString = "c2";
-            gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gridColumn7.DisplayFormat.FormatString = "c2";
-        }
-
-        private void cmb_TipoCamionServicios_EditValueChanged(object sender, EventArgs e)
-        {
-            CLS_EmpresasAcarreo sel = new CLS_EmpresasAcarreo();
-            sel.Id_EmpresaAcarreo = textId.Text.ToString();
-            sel.Id_TipoCamion = cmb_TipoCamionServicios.EditValue.ToString();
-            sel.MtdSeleccionarEmpresasCostoServicios();
-            if (sel.Exito)
-            {
-                if (sel.Datos.Rows.Count > 0)
-                {
-                    txtPrecioServicio.Text = sel.Datos.Rows[0]["Precio_Acarreo"].ToString();
-                    txtPrecioCaja.Text = sel.Datos.Rows[0]["Precio_Caja"].ToString();
-                    txtPrecioSalidaForanea.Text = sel.Datos.Rows[0]["Precio_SalidaForanea"].ToString();
-                }
-            }
-            else
-            {
-                XtraMessageBox.Show(sel.Mensaje);
-            }
-        }
-
-        private void dtgServicios_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                foreach (int i in this.dtgValServicios.GetSelectedRows())
-                {
-                    DataRow row = this.dtgValServicios.GetDataRow(i);
-                    txtPrecioServicio.Text = row["Precio_Acarreo"].ToString();
-                    txtPrecioSalidaForanea.Text = row["Precio_SalidaForanea"].ToString();
-                    txtPrecioCaja.Text = row["Precio_Caja"].ToString();
-                    CargarTipoCamionServicios(row["Id_TipoCamion"].ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message);
-            }
+            
         }
     }
 }

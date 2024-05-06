@@ -72,6 +72,7 @@
             this.textId = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.dtgDomicilio = new DevExpress.XtraGrid.GridControl();
             this.dtgValDomicilio = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -108,7 +109,6 @@
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.textIdDomicilio = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -352,6 +352,7 @@
             this.dtgValEmpBascula.GridControl = this.dtgEmpBascula;
             this.dtgValEmpBascula.Name = "dtgValEmpBascula";
             this.dtgValEmpBascula.OptionsBehavior.Editable = false;
+            this.dtgValEmpBascula.OptionsFind.AlwaysVisible = true;
             this.dtgValEmpBascula.OptionsView.ShowFooter = true;
             this.dtgValEmpBascula.OptionsView.ShowGroupPanel = false;
             // 
@@ -552,6 +553,15 @@
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
             this.xtraTabPage2.Size = new System.Drawing.Size(763, 381);
             this.xtraTabPage2.Text = "Domicilio";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(6, 10);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(0, 13);
+            this.labelControl8.TabIndex = 17;
             // 
             // panelControl2
             // 
@@ -882,15 +892,6 @@
             this.labelControl18.Size = new System.Drawing.Size(59, 13);
             this.labelControl18.TabIndex = 0;
             this.labelControl18.Text = "Id domicilio: ";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(6, 10);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(0, 13);
-            this.labelControl8.TabIndex = 17;
             // 
             // Frm_EmpresaBasculas
             // 

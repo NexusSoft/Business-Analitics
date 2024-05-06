@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 
+
 namespace Business_Analitics
 {
     public partial class Frm_Cosecha : DevExpress.XtraEditors.XtraForm
@@ -101,6 +102,8 @@ namespace Business_Analitics
         private void Frm_Cosecha_Shown(object sender, EventArgs e)
         {
             vCarga = 1;
+            chkPrecioCorte.Text = "Precio de Corte " + Environment.NewLine + "Incluido en Fruta";
+            chkPrecioAcarreo.Text = "Precio de Acarreo " + Environment.NewLine + "Incluido en Fruta";
             navigationPane1.SelectedPageIndex = 0;
             dtgValRecepcion.OptionsSelection.EnableAppearanceFocusedCell = false;
             dtgValRecepcion.OptionsSelection.EnableAppearanceHideSelection = false;
@@ -190,7 +193,7 @@ namespace Business_Analitics
             txt_PrecioKiloCorte.Properties.Mask.UseMaskAsDisplayFormat = true;
             txt_PrecioSalidaFCorte.Properties.Mask.UseMaskAsDisplayFormat = true;
             txt_PrecioTCorte.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txt_TotalaPagar.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txt_SubTotalaPagar.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtPrecioCajaMayorA.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtPrecioCajaMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
             txtPrecioCuadrillaA.Properties.Mask.UseMaskAsDisplayFormat = true;
@@ -293,6 +296,7 @@ namespace Business_Analitics
                     txt_SAGARPA.Text = sel.Datos.Rows[0]["v_registro_hue"].ToString();
                     txt_Estado_Huerta.Text = sel.Datos.Rows[0]["v_nombre_est"].ToString();
                     txt_Acopiador.Text = sel.Datos.Rows[0]["v_nombre_zon"].ToString();
+                    barComercializador.Caption = "Comercializador: " + sel.Datos.Rows[0]["v_nombre_zon"].ToString();
                     txt_Acopiador.Tag = sel.Datos.Rows[0]["c_codigo_zon"].ToString();
                     txt_Cajas_Programa.Text = sel.Datos.Rows[0]["n_cajas_pcd"].ToString();
                     txt_CajasProgramadasA.Text = sel.Datos.Rows[0]["n_cajas_pcd"].ToString();
@@ -302,6 +306,7 @@ namespace Business_Analitics
                     txt_Secuencia.Text = sel.Datos.Rows[0]["c_secuencia_ocd"].ToString();
                     txt_Temporada.Text = sel.Datos.Rows[0]["c_codigo_tem"].ToString();
                     txt_Productor.Text = sel.Datos.Rows[0]["v_nombre_dno"].ToString();
+                    txt_Comercializador.Text = sel.Datos.Rows[0]["v_nombre_zon"].ToString();
                     if (sel.Datos.Rows[0]["b_autorizausa_ase"].ToString() == "True")
                     {
                         chk_Autorizado_USA.Checked = true;
@@ -537,13 +542,13 @@ namespace Business_Analitics
                         if (txt_KilosCortados.Text != String.Empty && Decimal.Parse(txt_KilosCortados.Text, style, provider) > 0)
                         {
                             CorridaBanda();
-                            txt_KilosBasculaE.Enabled = true;
-                            chk_kgProductor.Enabled = true;
+                            //txt_KilosBasculaE.Enabled = true;
+                            //chk_kgProductor.Enabled = true;
                         }
                         else
                         {
-                            txt_KilosBasculaE.Enabled = false;
-                            chk_kgProductor.Enabled = false;
+                            //txt_KilosBasculaE.Enabled = false;
+                            //chk_kgProductor.Enabled = false;
                         }
                     }
                 }
@@ -551,13 +556,13 @@ namespace Business_Analitics
                 {
                     if (Decimal.Parse(txt_KilosCortados.Text, style, provider) > 0)
                     {
-                        txt_KilosBasculaE.Enabled = true;
-                        chk_kgProductor.Enabled = true;
+                        //txt_KilosBasculaE.Enabled = true;
+                        //chk_kgProductor.Enabled = true;
                     }
                     else
                     {
-                        txt_KilosBasculaE.Enabled = false;
-                        chk_kgProductor.Enabled = false;
+                        //txt_KilosBasculaE.Enabled = false;
+                        //chk_kgProductor.Enabled = false;
                     }
                 }
             }
@@ -684,72 +689,72 @@ namespace Business_Analitics
 
         private void CalcularTotalRecepcion()
         {
-            int KC = Convert.ToInt32(Decimal.Parse(txt_KilosCortados.Text, style, provider));
-            int KP = Convert.ToInt32(Decimal.Parse(txt_KilosBasculaE.Text, style, provider));
-            if (KC > 0 && KP > 0)
-            {
-                int Res = KC - KP;
+            //int KC = Convert.ToInt32(Decimal.Parse(txt_KilosCortados.Text, style, provider));
+            //int KP = Convert.ToInt32(Decimal.Parse(txt_KilosBasculaE.Text, style, provider));
+            //if (KC > 0 && KP > 0)
+            //{
+            //    int Res = KC - KP;
 
-                if (Math.Abs(Res) > 49 && Math.Abs(Res) < 100)
-                {
-                    int Div = Res / 2;
-                    txt_KilosDiferencia.Text = Res.ToString();
-                    txt_KilosAjuste.Text = Convert.ToString(Div);
-                    if (Res > 0)
-                    {
-                        txt_KilosProductor.Text = Convert.ToString(KP);
-                        txt_kilosST.Text = Convert.ToString(KC - Math.Abs(Div));
-                    }
-                    else
-                    {
-                        txt_KilosProductor.Text = Convert.ToString(KP);
-                        txt_kilosST.Text = Convert.ToString(KC + Math.Abs(Div));
-                    }
-                    txt_KilosAjustados.Text = txt_kilosST.Text;
+            //    if (Math.Abs(Res) > 49 && Math.Abs(Res) < 100)
+            //    {
+            //        int Div = Res / 2;
+            //        txt_KilosDiferencia.Text = Res.ToString();
+            //        txt_KilosAjuste.Text = Convert.ToString(Div);
+            //        if (Res > 0)
+            //        {
+            //            txt_KilosProductor.Text = Convert.ToString(KP);
+            //            txt_kilosST.Text = Convert.ToString(KC - Math.Abs(Div));
+            //        }
+            //        else
+            //        {
+            //            txt_KilosProductor.Text = Convert.ToString(KP);
+            //            txt_kilosST.Text = Convert.ToString(KC + Math.Abs(Div));
+            //        }
+            //        txt_KilosAjustados.Text = txt_kilosST.Text;
 
-                }
-                else if (Math.Abs(Res) >= 100)
-                {
-                    txt_KilosDiferencia.Text = Res.ToString();
-                    int ajuste = 0;
-                    if (Res > 0)
-                    {
-                        ajuste = Res - 49;
-                        txt_KilosAjuste.Text = Convert.ToString(ajuste);
-                        txt_KilosProductor.Text = Convert.ToString(KP);
-                        txt_kilosST.Text = Convert.ToString(KC - Math.Abs(ajuste)); ;
-                    }
-                    else
-                    {
-                        ajuste = Res + 49;
-                        txt_KilosAjuste.Text = Convert.ToString(ajuste);
-                        txt_KilosProductor.Text = Convert.ToString(KP);
-                        txt_kilosST.Text = Convert.ToString(KC + Math.Abs(ajuste));
-                    }
-                    txt_KilosAjustados.Text = txt_kilosST.Text;
-                }
-                else
-                {
-                    txt_KilosAjuste.Text = "0";
-                    txt_KilosDiferencia.Text = Res.ToString();
-                    txt_kilosST.Text = Convert.ToString(KC);
-                    txt_KilosProductor.Text = Convert.ToString(KP);
-                    txt_KilosAjustados.Text = txt_kilosST.Text;
-                }
-                if (chk_kgCorte.Checked == false)
-                {
-                    txt_kilosCortadosCorte.Text = Convert.ToString(KC);
-                }
-                else
-                {
-                    txt_kilosCortadosCorte.Text = txt_KilosBasculaE.Text;
-                }
-                txt_kilos_Totales.Text = Convert.ToString(Convert.ToInt32(Decimal.Parse(txt_KilosAjustados.Text, style, provider)) - Convert.ToInt32(Decimal.Parse(txt_KilosMuestra.Text, style, provider)));
-            }
-            else
-            {
-                XtraMessageBox.Show("No se han capturado kilos en recepcion o kilos en bascula productor");
-            }
+            //    }
+            //    else if (Math.Abs(Res) >= 100)
+            //    {
+            //        txt_KilosDiferencia.Text = Res.ToString();
+            //        int ajuste = 0;
+            //        if (Res > 0)
+            //        {
+            //            ajuste = Res - 49;
+            //            txt_KilosAjuste.Text = Convert.ToString(ajuste);
+            //            txt_KilosProductor.Text = Convert.ToString(KP);
+            //            txt_kilosST.Text = Convert.ToString(KC - Math.Abs(ajuste)); ;
+            //        }
+            //        else
+            //        {
+            //            ajuste = Res + 49;
+            //            txt_KilosAjuste.Text = Convert.ToString(ajuste);
+            //            txt_KilosProductor.Text = Convert.ToString(KP);
+            //            txt_kilosST.Text = Convert.ToString(KC + Math.Abs(ajuste));
+            //        }
+            //        txt_KilosAjustados.Text = txt_kilosST.Text;
+            //    }
+            //    else
+            //    {
+            //        txt_KilosAjuste.Text = "0";
+            //        txt_KilosDiferencia.Text = Res.ToString();
+            //        txt_kilosST.Text = Convert.ToString(KC);
+            //        txt_KilosProductor.Text = Convert.ToString(KP);
+            //        txt_KilosAjustados.Text = txt_kilosST.Text;
+            //    }
+            //    if (chk_kgCorte.Checked == false)
+            //    {
+            //        txt_kilosCortadosCorte.Text = Convert.ToString(KC);
+            //    }
+            //    else
+            //    {
+            //        txt_kilosCortadosCorte.Text = txt_KilosBasculaE.Text;
+            //    }
+            //    txt_kilos_Totales.Text = Convert.ToString(Convert.ToInt32(Decimal.Parse(txt_KilosAjustados.Text, style, provider)) - Convert.ToInt32(Decimal.Parse(txt_KilosMuestra.Text, style, provider)));
+            //}
+            //else
+            //{
+            //    XtraMessageBox.Show("No se han capturado kilos en recepcion o kilos en bascula productor");
+            //}
         }
 
         private void CargarServicios()
@@ -1004,15 +1009,27 @@ namespace Business_Analitics
 
         private void CalcularkilosTipoMercado()
         {
+            decimal KilosAjustados = 0;
+            decimal KilosMuestra = 0;
+            decimal KilosDevolucion = 0;
+            decimal KilosTotales = 0;
             if (chk_Mercado.Checked == true && txt_KilosAjustados.Text != string.Empty)
             {
                 txt_KilosMuestra.Text = "17";
-                txt_kilos_Totales.Text = Convert.ToString(Convert.ToInt32(Decimal.Parse(txt_KilosAjustados.Text, style, provider)) - Convert.ToInt32(Decimal.Parse(txt_KilosMuestra.Text, style, provider)));
+                KilosAjustados = Decimal.Parse(txt_KilosAjustados.Text, style, provider);
+                KilosMuestra = Decimal.Parse(txt_KilosMuestra.Text, style, provider);
+                KilosDevolucion = Decimal.Parse(txt_KilosDevolucion.Text, style, provider);
+                KilosTotales = KilosAjustados - KilosMuestra - KilosDevolucion;
+                txt_kilos_Totales.Text = Convert.ToString(KilosTotales);
             }
             else
             {
                 txt_KilosMuestra.Text = "0";
-                txt_kilos_Totales.Text = Convert.ToString(Convert.ToInt32(Decimal.Parse(txt_KilosAjustados.Text, style, provider)) - Convert.ToInt32(Decimal.Parse(txt_KilosMuestra.Text, style, provider)));
+                KilosAjustados = Decimal.Parse(txt_KilosAjustados.Text, style, provider);
+                KilosMuestra = Decimal.Parse(txt_KilosMuestra.Text, style, provider);
+                KilosDevolucion = Decimal.Parse(txt_KilosDevolucion.Text, style, provider);
+                KilosTotales = KilosAjustados - KilosMuestra - KilosDevolucion;
+                txt_kilos_Totales.Text = Convert.ToString(KilosTotales);
             }
             CalcularTotalaPagarProductor();
         }
@@ -1104,8 +1121,8 @@ namespace Business_Analitics
             decimal vKiloPrecio = 0;
             if (Decimal.TryParse(txt_KiloPrecio.EditValue.ToString(), out vKiloPrecio) && Decimal.Parse(txt_kilos_Totales.Text, style, provider) > 0)
             {
-                txt_TotalaPagar.EditValue = (Decimal.Parse(txt_KiloPrecio.Text, style, provider) * Decimal.Parse(txt_kilos_Totales.Text, style, provider)).ToString();
-                txt_ImporteFacturaProductor.EditValue = txt_TotalaPagar.EditValue;
+                txt_SubTotalaPagar.EditValue = (Decimal.Parse(txt_KiloPrecio.Text, style, provider) * Decimal.Parse(txt_kilos_Totales.Text, style, provider)).ToString();
+                txt_ImporteFacturaProductor.EditValue = txt_SubTotalaPagar.EditValue;
                 CalcularTotalFacturaProductor();
             }
         }
@@ -1255,33 +1272,33 @@ namespace Business_Analitics
             }
         }
 
-        private void chk_kgProductor_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chk_kgProductor.Checked == true)
-            {
-                txt_kilosST.Text = txt_KilosBasculaE.Text;
-                txt_KilosAjustados.Text = txt_kilosST.Text;
-                txt_kilos_Totales.Text = Convert.ToString(Convert.ToInt32(Decimal.Parse(txt_KilosAjustados.Text, style, provider)) - Convert.ToInt32(Decimal.Parse(txt_KilosMuestra.Text, style, provider)));
-            }
-            else
-            {
-                CalcularTotalRecepcion();
-            }
-            if (chk_kgCorte.Checked == true)
-            {
-                if (Convert.ToDecimal(txt_KilosBasculaE.Text) > 0)
-                {
-                    txt_kilosCortadosCorte.Text = txt_KilosBasculaE.Text;
-                }
-            }
-            else
-            {
-                txt_kilosCortadosCorte.Text = txt_KilosCortados.Text;
-            }
-            CalcularkilosTipoMercado();
-            CalcularCostosCorte();
+        //private void chk_kgProductor_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (chk_kgProductor.Checked == true)
+        //    {
+        //        txt_kilosST.Text = txt_KilosBasculaE.Text;
+        //        txt_KilosAjustados.Text = txt_kilosST.Text;
+        //        txt_kilos_Totales.Text = Convert.ToString(Convert.ToInt32(Decimal.Parse(txt_KilosAjustados.Text, style, provider)) - Convert.ToInt32(Decimal.Parse(txt_KilosMuestra.Text, style, provider)));
+        //    }
+        //    else
+        //    {
+        //        CalcularTotalRecepcion();
+        //    }
+        //    if (chk_kgCorte.Checked == true)
+        //    {
+        //        if (Convert.ToDecimal(txt_KilosBasculaE.Text) > 0)
+        //        {
+        //            txt_kilosCortadosCorte.Text = txt_KilosBasculaE.Text;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        txt_kilosCortadosCorte.Text = txt_KilosCortados.Text;
+        //    }
+        //    CalcularkilosTipoMercado();
+        //    CalcularCostosCorte();
 
-        }
+        //}
         void GuardarRuta(string fileName)
         {
             string ruta = string.Empty;
@@ -1485,7 +1502,7 @@ namespace Business_Analitics
         }
         void LimpiarRecepcion()
         {
-            chk_kgProductor.Checked = false;
+            //chk_kgProductor.Checked = false;
             txt_OrdenCorte.Text = string.Empty;
             txt_Secuencia.Text = string.Empty;
             txt_Recepcion.Text = string.Empty;
@@ -1498,11 +1515,11 @@ namespace Business_Analitics
             dt_FechaRecepcion.EditValue = DateTime.Now;
             txt_EmpresaBascula.Text = string.Empty;
             txt_EmpresaBascula.Tag = string.Empty;
-            txt_KilosBasculaE.EditValue = "0";
-            txt_KilosDiferencia.EditValue = "0";
-            txt_KilosAjuste.EditValue = "0";
-            txt_kilosST.EditValue = "0";
-            txt_KilosProductor.EditValue = "0";
+            //txt_KilosBasculaE.EditValue = "0";
+            //txt_KilosDiferencia.EditValue = "0";
+            //txt_KilosAjuste.EditValue = "0";
+            //txt_kilosST.EditValue = "0";
+            //txt_KilosProductor.EditValue = "0";
         }
         void LimpiarComercializadora()
         {
@@ -1514,13 +1531,14 @@ namespace Business_Analitics
         }
         void LimpiarProductor()
         {
+            txt_Comercializador.Text = string.Empty;
             txt_Productor.Text = string.Empty;
             txt_KilosAjustados.EditValue = "0";
             txt_KilosMuestra.EditValue = "0";
             txt_kilos_Totales.EditValue = "0";
             txt_KiloPrecio.EditValue = "0";
             txt_KiloPrecioInicial.EditValue = "0";
-            txt_TotalaPagar.EditValue = "0";
+            txt_SubTotalaPagar.EditValue = "0";
             txt_ObservacionesProductor.Text = string.Empty;
             chk_Mercado.Checked = false;
         }
@@ -3276,27 +3294,27 @@ namespace Business_Analitics
                 ins.Id_EmpresaBascula = String.Empty;
             }
             ins.Nombre_EmpresaBascula = txt_EmpresaBascula.Text;
-            ins.KilosBasculaExterna = Convert.ToDecimal(txt_KilosBasculaE.EditValue);
-            if (chk_kgProductor.Checked == true)
-            {
-                ins.TomarkgProductor = 1;
-            }
-            else
-            {
-                ins.TomarkgProductor = 0;
-            }
-            if (chk_kgCorte.Checked == true)
-            {
-                ins.TomarkgenCorte = 1;
-            }
-            else
-            {
-                ins.TomarkgenCorte = 0;
-            }
-            ins.KilosDiferencia = Convert.ToDecimal(txt_KilosDiferencia.EditValue);
-            ins.Ajuste = Convert.ToDecimal(txt_KilosAjuste.EditValue);
-            ins.KilosST = Convert.ToDecimal(txt_kilosST.EditValue);
-            ins.KilosProductor = Convert.ToDecimal(txt_KilosProductor.EditValue);
+            //ins.KilosBasculaExterna = Convert.ToDecimal(txt_KilosBasculaE.EditValue);
+            //if (chk_kgProductor.Checked == true)
+            //{
+            //    ins.TomarkgProductor = 1;
+            //}
+            //else
+            //{
+            //    ins.TomarkgProductor = 0;
+            //}
+            //if (chk_kgCorte.Checked == true)
+            //{
+            //    ins.TomarkgenCorte = 1;
+            //}
+            //else
+            //{
+            //    ins.TomarkgenCorte = 0;
+            //}
+            //ins.KilosDiferencia = Convert.ToDecimal(txt_KilosDiferencia.EditValue);
+            //ins.Ajuste = Convert.ToDecimal(txt_KilosAjuste.EditValue);
+            //ins.KilosST = Convert.ToDecimal(txt_kilosST.EditValue);
+            //ins.KilosProductor = Convert.ToDecimal(txt_KilosProductor.EditValue);
             ins.Usuario = UsuariosLogin;
             ins.MtdInsertarRecepcion();
             if (!ins.Exito)
@@ -3373,13 +3391,15 @@ namespace Business_Analitics
         {
             CLS_Cosecha_Datos ins = new CLS_Cosecha_Datos();
             ins.Id_Cosecha = txt_IdCosecha.Text;
+            ins.Comercializador = txt_Comercializador.Text;
             ins.Productor = txt_Productor.Text;
             ins.KilosAjustados = Convert.ToDecimal(txt_KilosAjustados.EditValue);
             ins.KilosMuestra = Convert.ToDecimal(txt_KilosMuestra.EditValue);
+            ins.KilosaDevolver = Convert.ToDecimal(txt_KilosDevolucion.EditValue);
             ins.KilosaPagar = Convert.ToDecimal(txt_kilos_Totales.EditValue);
             ins.PreciokgInicial = Decimal.Parse(txt_KiloPrecioInicial.Text, style, provider);
             ins.Preciokg = Decimal.Parse(txt_KiloPrecio.Text, style, provider);
-            ins.TotalaPagar = Decimal.Parse(txt_TotalaPagar.Text, style, provider);
+            ins.TotalaPagar = Decimal.Parse(txt_SubTotalaPagar.Text, style, provider);
             ins.Observaciones = txt_ObservacionesProductor.Text;
             ins.Usuario = UsuariosLogin;
             if (chk_Mercado.Checked == true)
@@ -4001,29 +4021,29 @@ namespace Business_Analitics
                     dt_FechaRecepcion.DateTime = Convert.ToDateTime(ins.Datos.Rows[0]["RecepcionFecha"].ToString());
                     txt_EmpresaBascula.Tag = ins.Datos.Rows[0]["Id_EmpresaBascula"].ToString();
                     txt_EmpresaBascula.Text = ins.Datos.Rows[0]["Nombre_EmpresaBascula"].ToString();
-                    txt_KilosBasculaE.EditValue = ins.Datos.Rows[0]["KilosBasculaExterna"].ToString();
-                    txt_KilosDiferencia.EditValue = ins.Datos.Rows[0]["KilosDiferencia"].ToString();
-                    txt_KilosAjuste.EditValue = ins.Datos.Rows[0]["Ajuste"].ToString();
-                    txt_kilosST.EditValue = ins.Datos.Rows[0]["KilosST"].ToString();
-                    txt_KilosProductor.EditValue = ins.Datos.Rows[0]["KilosProductor"].ToString();
-                    if (ins.Datos.Rows[0]["TomarkgProductor"].ToString() == "True")
-                    {
-                        chk_kgProductor.Checked = true;
+                    //txt_KilosBasculaE.EditValue = ins.Datos.Rows[0]["KilosBasculaExterna"].ToString();
+                    //txt_KilosDiferencia.EditValue = ins.Datos.Rows[0]["KilosDiferencia"].ToString();
+                    //txt_KilosAjuste.EditValue = ins.Datos.Rows[0]["Ajuste"].ToString();
+                    //txt_kilosST.EditValue = ins.Datos.Rows[0]["KilosST"].ToString();
+                    //txt_KilosProductor.EditValue = ins.Datos.Rows[0]["KilosProductor"].ToString();
+                    //if (ins.Datos.Rows[0]["TomarkgProductor"].ToString() == "True")
+                    //{
+                    //    chk_kgProductor.Checked = true;
 
-                    }
-                    else
-                    {
-                        chk_kgProductor.Checked = false;
-                    }
-                    if (ins.Datos.Rows[0]["TomarkgenCorte"].ToString() == "True")
-                    {
-                        chk_kgCorte.Checked = true;
+                    //}
+                    //else
+                    //{
+                    //    chk_kgProductor.Checked = false;
+                    //}
+                    //if (ins.Datos.Rows[0]["TomarkgenCorte"].ToString() == "True")
+                    //{
+                    //    chk_kgCorte.Checked = true;
 
-                    }
-                    else
-                    {
-                        chk_kgCorte.Checked = false;
-                    }
+                    //}
+                    //else
+                    //{
+                    //    chk_kgCorte.Checked = false;
+                    //}
                     Bloquear_Recepcion(!Convert.ToBoolean(ins.Datos.Rows[0]["Cerrado"]));
                 }
             }
@@ -4100,6 +4120,7 @@ namespace Business_Analitics
             {
                 if (ins.Datos.Rows.Count > 0)
                 {
+                    txt_Comercializador.Text = ins.Datos.Rows[0]["Comercializador"].ToString();
                     txt_Productor.Text = ins.Datos.Rows[0]["Productor"].ToString();
                     BarProductor.Caption = "Productor: " + ins.Datos.Rows[0]["Productor"].ToString();
                     txt_KilosAjustados.EditValue = ins.Datos.Rows[0]["KilosAjustados"].ToString();
@@ -4107,7 +4128,7 @@ namespace Business_Analitics
                     txt_kilos_Totales.EditValue = ins.Datos.Rows[0]["KilosaPagar"].ToString();
                     txt_KiloPrecioInicial.EditValue = ins.Datos.Rows[0]["PreciokgInicial"].ToString();
                     txt_KiloPrecio.EditValue = ins.Datos.Rows[0]["Preciokg"].ToString();
-                    txt_TotalaPagar.EditValue = ins.Datos.Rows[0]["TotalaPagar"].ToString();
+                    txt_SubTotalaPagar.EditValue = ins.Datos.Rows[0]["TotalaPagar"].ToString();
                     txt_ObservacionesProductor.Text = ins.Datos.Rows[0]["Observaciones"].ToString();
                     if (ins.Datos.Rows[0]["Exportacion"].ToString() == "True")
                     {
@@ -5388,7 +5409,7 @@ namespace Business_Analitics
 
         private void txt_TotalaPagar_EditValueChanged(object sender, EventArgs e)
         {
-            txt_ImporteFacturaProductor.EditValue = txt_TotalaPagar.EditValue;
+            txt_ImporteFacturaProductor.EditValue = txt_SubTotalaPagar.EditValue;
             CalcularTotalFacturaProductor();
         }
 
@@ -5766,20 +5787,20 @@ namespace Business_Analitics
 #pragma warning restore CS0252 // Posible comparación de referencias no intencionada; para obtener una comparación de valores, convierta el lado de la izquierda en el tipo 'string'
         }
 
-        private void chk_kgCorte_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chk_kgCorte.Checked == true)
-            {
-                if (Convert.ToDecimal(txt_KilosBasculaE.Text) > 0)
-                {
-                    txt_kilosCortadosCorte.Text = txt_KilosBasculaE.Text;
-                }
-            }
-            else
-            {
-                txt_kilosCortadosCorte.Text = txt_KilosCortados.Text;
-            }
-        }
+        //private void chk_kgCorte_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (chk_kgCorte.Checked == true)
+        //    {
+        //        if (Convert.ToDecimal(txt_KilosBasculaE.Text) > 0)
+        //        {
+        //            txt_kilosCortadosCorte.Text = txt_KilosBasculaE.Text;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        txt_kilosCortadosCorte.Text = txt_KilosCortados.Text;
+        //    }
+        //}
         private void EliminaFacturaXMLPDF(int Id_Factura)
         {
             DialogResult = XtraMessageBox.Show("¿Desea eliminar la factura?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
@@ -5868,9 +5889,9 @@ namespace Business_Analitics
         }
         private void Bloquear_Recepcion(Boolean valor)
         {
-            txt_KilosBasculaE.Enabled = valor;
-            chk_kgProductor.Enabled = valor;
-            chk_kgCorte.Enabled = valor;
+            //txt_KilosBasculaE.Enabled = valor;
+            //chk_kgProductor.Enabled = valor;
+            //chk_kgCorte.Enabled = valor;
             btn_EmpresaBascula.Enabled = valor;
         }
         private void Bloquear_Comercializacion(Boolean valor)
@@ -7046,6 +7067,36 @@ namespace Business_Analitics
         private void btn_RecargarTem_Click(object sender, EventArgs e)
         {
             CargarCosechas();
+        }
+                
+        private void txt_KilosDevolucion_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                decimal KilosAjustados = 0;
+                decimal KilosMuestra = 0;
+                decimal KilosDevolucion = 0;
+                decimal KilosTotales = 0;
+                if (chk_Mercado.Checked == true && txt_KilosAjustados.Text != string.Empty)
+                {
+                    txt_KilosMuestra.Text = "17";
+                    KilosAjustados = Decimal.Parse(txt_KilosAjustados.Text, style, provider);
+                    KilosMuestra = Decimal.Parse(txt_KilosMuestra.Text, style, provider);
+                    KilosDevolucion = Decimal.Parse(txt_KilosDevolucion.Text, style, provider);
+                    KilosTotales = KilosAjustados - KilosMuestra - KilosDevolucion;
+                    txt_kilos_Totales.Text = Convert.ToString(KilosTotales);
+                }
+                else
+                {
+                    txt_KilosMuestra.Text = "0";
+                    KilosAjustados = Decimal.Parse(txt_KilosAjustados.Text, style, provider);
+                    KilosMuestra = Decimal.Parse(txt_KilosMuestra.Text, style, provider);
+                    KilosDevolucion = Decimal.Parse(txt_KilosDevolucion.Text, style, provider);
+                    KilosTotales = KilosAjustados - KilosMuestra - KilosDevolucion;
+                    txt_kilos_Totales.Text = Convert.ToString(KilosTotales);
+                }
+                CalcularTotalaPagarProductor();
+            }
         }
     }
 }

@@ -267,7 +267,7 @@ namespace Business_Analitics
         {
             GridView view = sender as GridView;
             if (view == null) return;
-#pragma warning disable CS0168 // La variable 'ee' se ha declarado pero nunca se usa
+
             try
             {
                 if (e.Column.FieldName == "Concepto")
@@ -282,7 +282,7 @@ namespace Business_Analitics
             {
                 //...
             }
-#pragma warning restore CS0168 // La variable 'ee' se ha declarado pero nunca se usa
+
         }
         private void btnExportar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

@@ -43,10 +43,12 @@ namespace CapaDeDatos
         public byte[] Contrato { get; set; }
         public string d_Contrato { get; set; }
         //Productor
+        public string Comercializador { get; set; }
         public string Productor { get; set; }
         public decimal KilosAjustados { get; set; }
         public decimal KilosMuestra { get; set; }
         public int Exportacion { get; set; }
+        public decimal KilosaDevolver { get; set; }
         public decimal KilosaPagar { get; set; }
         public decimal Preciokg { get; set; }
         public decimal TotalaPagar { get; set; }
@@ -415,6 +417,8 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_Cosecha_Productor_Insert";
                 _dato.Texto = Id_Cosecha;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Cosecha");
+                _dato.Texto = Comercializador;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Comercializador");
                 _dato.Texto = Productor;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Productor");
                 _dato.Decimal = KilosAjustados;
@@ -423,6 +427,8 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "KilosMuestra");
                 _dato.Entero = Exportacion;
                 _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "Exportacion");
+                _dato.Decimal = KilosaDevolver;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "KilosaDevolver");
                 _dato.Decimal = KilosaPagar;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "KilosaPagar");
                 _dato.Decimal = PreciokgInicial;
@@ -690,7 +696,6 @@ namespace CapaDeDatos
             }
 
         }
-
         public void MtdSelecccionarGOrdencorte()
         {
             TipoDato _dato = new TipoDato();
