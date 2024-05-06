@@ -2463,7 +2463,7 @@
             // 
             this.labelControl48.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl48.Appearance.Options.UseFont = true;
-            this.labelControl48.Location = new System.Drawing.Point(-9, 33);
+            this.labelControl48.Location = new System.Drawing.Point(-11, 33);
             this.labelControl48.Name = "labelControl48";
             this.labelControl48.Size = new System.Drawing.Size(40, 13);
             this.labelControl48.TabIndex = 3;
@@ -2550,7 +2550,7 @@
             // 
             this.labelControl47.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl47.Appearance.Options.UseFont = true;
-            this.labelControl47.Location = new System.Drawing.Point(-9, 33);
+            this.labelControl47.Location = new System.Drawing.Point(-11, 33);
             this.labelControl47.Name = "labelControl47";
             this.labelControl47.Size = new System.Drawing.Size(47, 13);
             this.labelControl47.TabIndex = 3;
@@ -2663,7 +2663,7 @@
             // 
             this.labelControl46.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl46.Appearance.Options.UseFont = true;
-            this.labelControl46.Location = new System.Drawing.Point(-11, 33);
+            this.labelControl46.Location = new System.Drawing.Point(-13, 33);
             this.labelControl46.Name = "labelControl46";
             this.labelControl46.Size = new System.Drawing.Size(67, 13);
             this.labelControl46.TabIndex = 2;
@@ -2792,7 +2792,7 @@
             // 
             this.labelControl45.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.labelControl45.Appearance.Options.UseFont = true;
-            this.labelControl45.Location = new System.Drawing.Point(-11, 32);
+            this.labelControl45.Location = new System.Drawing.Point(-13, 32);
             this.labelControl45.Name = "labelControl45";
             this.labelControl45.Size = new System.Drawing.Size(58, 13);
             this.labelControl45.TabIndex = 1;
@@ -7681,7 +7681,7 @@
             this.tp_FacturaProductor.Controls.Add(this.groupControl13);
             this.tp_FacturaProductor.Name = "tp_FacturaProductor";
             this.tp_FacturaProductor.Padding = new System.Windows.Forms.Padding(5);
-            this.tp_FacturaProductor.Size = new System.Drawing.Size(1204, 563);
+            this.tp_FacturaProductor.Size = new System.Drawing.Size(1188, 556);
             this.tp_FacturaProductor.Text = "Factura";
             // 
             // groupControl13
@@ -7738,7 +7738,7 @@
             this.groupControl13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl13.Location = new System.Drawing.Point(5, 5);
             this.groupControl13.Name = "groupControl13";
-            this.groupControl13.Size = new System.Drawing.Size(1194, 553);
+            this.groupControl13.Size = new System.Drawing.Size(1178, 546);
             this.groupControl13.TabIndex = 39;
             // 
             // labelControl208
@@ -8315,7 +8315,7 @@
             this.xtraTabPage2.Controls.Add(this.btn_UpPDFTarjeta_APEAM);
             this.xtraTabPage2.Controls.Add(this.labelControl165);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1204, 563);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1188, 556);
             this.xtraTabPage2.Text = "Expedientes";
             // 
             // labelControl169
@@ -8690,7 +8690,7 @@
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.Padding = new System.Windows.Forms.Padding(5);
             this.xtraTabPage4.PageVisible = false;
-            this.xtraTabPage4.Size = new System.Drawing.Size(1204, 563);
+            this.xtraTabPage4.Size = new System.Drawing.Size(1188, 556);
             this.xtraTabPage4.Text = "PPD";
             // 
             // panelControl22
@@ -8700,7 +8700,7 @@
             this.panelControl22.Location = new System.Drawing.Point(5, 265);
             this.panelControl22.Name = "panelControl22";
             this.panelControl22.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl22.Size = new System.Drawing.Size(1194, 293);
+            this.panelControl22.Size = new System.Drawing.Size(1178, 286);
             this.panelControl22.TabIndex = 1;
             // 
             // dtgFacturasREP
@@ -8714,7 +8714,7 @@
             this.btn_PDFGrid,
             this.btn_XMLGrid,
             this.btn_EliminarREP});
-            this.dtgFacturasREP.Size = new System.Drawing.Size(1170, 269);
+            this.dtgFacturasREP.Size = new System.Drawing.Size(1154, 262);
             this.dtgFacturasREP.TabIndex = 0;
             this.dtgFacturasREP.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValFacturasREP});
@@ -8813,7 +8813,7 @@
             this.panelControl21.Location = new System.Drawing.Point(5, 5);
             this.panelControl21.Name = "panelControl21";
             this.panelControl21.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl21.Size = new System.Drawing.Size(1194, 260);
+            this.panelControl21.Size = new System.Drawing.Size(1178, 260);
             this.panelControl21.TabIndex = 0;
             // 
             // groupControl19
@@ -8832,7 +8832,7 @@
             this.groupControl19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl19.Location = new System.Drawing.Point(12, 12);
             this.groupControl19.Name = "groupControl19";
-            this.groupControl19.Size = new System.Drawing.Size(1170, 236);
+            this.groupControl19.Size = new System.Drawing.Size(1154, 236);
             this.groupControl19.TabIndex = 0;
             this.groupControl19.Text = "Agregar REP";
             // 
