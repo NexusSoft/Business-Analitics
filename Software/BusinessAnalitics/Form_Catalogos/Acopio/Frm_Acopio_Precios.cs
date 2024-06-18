@@ -360,7 +360,7 @@ namespace BusinessAnalitics
         }
         public void CargarTablaNal()
         {
-            for (int i = 0; i < 17; i++)
+            for (int i = 0; i < 18; i++)
             {
                 dtgValNacional.AddNewRow();
 
@@ -528,6 +528,16 @@ namespace BusinessAnalitics
                         }
                         break;
                     case 16:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat2");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "Canica");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "-");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], "0");
+                        }
+                        break;
+                    case 17:
                         if (dtgValNacional.IsNewItemRow(rowHandle))
                         {
                             dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
@@ -1324,6 +1334,16 @@ namespace BusinessAnalitics
                         }
                         break;
                     case 16:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat2");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "Canica");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "-");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 17:
                         if (dtgValNacional.IsNewItemRow(rowHandle))
                         {
                             dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
