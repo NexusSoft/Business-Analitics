@@ -654,7 +654,7 @@
             this.xtraTabPage2.Controls.Add(this.groupControl2);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.xtraTabPage2.Size = new System.Drawing.Size(1099, 484);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1097, 486);
             this.xtraTabPage2.Text = "Domicilio";
             // 
             // labelControl23
@@ -674,7 +674,7 @@
             this.panelControl2.Location = new System.Drawing.Point(5, 197);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl2.Size = new System.Drawing.Size(1089, 282);
+            this.panelControl2.Size = new System.Drawing.Size(1087, 284);
             this.panelControl2.TabIndex = 16;
             // 
             // dtgDomicilio
@@ -684,7 +684,7 @@
             this.dtgDomicilio.MainView = this.dtgValDomicilio;
             this.dtgDomicilio.MenuManager = this.barManager1;
             this.dtgDomicilio.Name = "dtgDomicilio";
-            this.dtgDomicilio.Size = new System.Drawing.Size(1075, 268);
+            this.dtgDomicilio.Size = new System.Drawing.Size(1073, 270);
             this.dtgDomicilio.TabIndex = 0;
             this.dtgDomicilio.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValDomicilio});
@@ -827,7 +827,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl2.Location = new System.Drawing.Point(5, 30);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1089, 167);
+            this.groupControl2.Size = new System.Drawing.Size(1087, 167);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Domicilio";
             // 
@@ -1004,7 +1004,8 @@
             this.xtraTabPage3.Controls.Add(this.groupControl3);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.xtraTabPage3.Size = new System.Drawing.Size(1099, 484);
+            this.xtraTabPage3.PageVisible = false;
+            this.xtraTabPage3.Size = new System.Drawing.Size(1097, 486);
             this.xtraTabPage3.Text = "Camiones";
             // 
             // labelControl24
@@ -1024,7 +1025,7 @@
             this.panelControl3.Location = new System.Drawing.Point(5, 174);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl3.Size = new System.Drawing.Size(1089, 305);
+            this.panelControl3.Size = new System.Drawing.Size(1087, 307);
             this.panelControl3.TabIndex = 3;
             // 
             // dtgCamiones
@@ -1033,7 +1034,7 @@
             this.dtgCamiones.Location = new System.Drawing.Point(7, 7);
             this.dtgCamiones.MainView = this.dtgValCamiones;
             this.dtgCamiones.Name = "dtgCamiones";
-            this.dtgCamiones.Size = new System.Drawing.Size(1075, 291);
+            this.dtgCamiones.Size = new System.Drawing.Size(1073, 293);
             this.dtgCamiones.TabIndex = 0;
             this.dtgCamiones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValCamiones});
@@ -1105,7 +1106,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl3.Location = new System.Drawing.Point(5, 30);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1089, 144);
+            this.groupControl3.Size = new System.Drawing.Size(1087, 144);
             this.groupControl3.TabIndex = 1;
             this.groupControl3.Text = "Camion";
             // 
@@ -1188,7 +1189,8 @@
             this.xtraTabPage4.Controls.Add(this.groupControl4);
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.Padding = new System.Windows.Forms.Padding(5, 30, 5, 5);
-            this.xtraTabPage4.Size = new System.Drawing.Size(1099, 484);
+            this.xtraTabPage4.PageVisible = false;
+            this.xtraTabPage4.Size = new System.Drawing.Size(1097, 486);
             this.xtraTabPage4.Text = "Choferes";
             // 
             // labelControl26
@@ -1208,7 +1210,7 @@
             this.panelControl4.Location = new System.Drawing.Point(5, 176);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Padding = new System.Windows.Forms.Padding(5);
-            this.panelControl4.Size = new System.Drawing.Size(1089, 303);
+            this.panelControl4.Size = new System.Drawing.Size(1087, 305);
             this.panelControl4.TabIndex = 5;
             // 
             // dtgChoferes
@@ -1217,7 +1219,7 @@
             this.dtgChoferes.Location = new System.Drawing.Point(7, 7);
             this.dtgChoferes.MainView = this.dtgValChoferes;
             this.dtgChoferes.Name = "dtgChoferes";
-            this.dtgChoferes.Size = new System.Drawing.Size(1075, 289);
+            this.dtgChoferes.Size = new System.Drawing.Size(1073, 291);
             this.dtgChoferes.TabIndex = 0;
             this.dtgChoferes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValChoferes});
@@ -1263,7 +1265,7 @@
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl4.Location = new System.Drawing.Point(5, 30);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(1089, 146);
+            this.groupControl4.Size = new System.Drawing.Size(1087, 146);
             this.groupControl4.TabIndex = 4;
             this.groupControl4.Text = "Chofer";
             // 

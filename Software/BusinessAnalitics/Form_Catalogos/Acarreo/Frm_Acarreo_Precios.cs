@@ -252,6 +252,7 @@ namespace BusinessAnalitics.Form_Catalogos.Acarreo
                     //textNombre.Text = row["v_nombre_ciu"].ToString();
                     txt_km.Text = row["Km"].ToString();
                     txt_Rabon.Text = row["Rabon"].ToString();
+
                     txt_Torton.Text = row["Torton"].ToString();
                     txt_Contenedor.Text = row["Contenedor"].ToString();
                 }

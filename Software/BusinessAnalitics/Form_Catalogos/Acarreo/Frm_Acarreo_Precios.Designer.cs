@@ -75,6 +75,13 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txt_kgContenedor = new DevExpress.XtraEditors.TextEdit();
+            this.txt_kgTorton = new DevExpress.XtraEditors.TextEdit();
+            this.txt_kgRabon = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -94,6 +101,9 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAcarreoPrecios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValAcarreoPrecios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_kgContenedor.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_kgTorton.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_kgRabon.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -219,9 +229,9 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 561);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 563);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(980, 24);
+            this.barDockControlBottom.Size = new System.Drawing.Size(980, 22);
             // 
             // barDockControlLeft
             // 
@@ -229,7 +239,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(69, 561);
+            this.barDockControlLeft.Size = new System.Drawing.Size(71, 563);
             // 
             // barDockControlRight
             // 
@@ -237,7 +247,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(980, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 561);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 563);
             // 
             // repositoryItemTextEdit1
             // 
@@ -245,6 +255,10 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl9);
+            this.panelControl1.Controls.Add(this.txt_kgContenedor);
+            this.panelControl1.Controls.Add(this.txt_kgTorton);
+            this.panelControl1.Controls.Add(this.txt_kgRabon);
             this.panelControl1.Controls.Add(this.txt_Contenedor);
             this.panelControl1.Controls.Add(this.labelControl8);
             this.panelControl1.Controls.Add(this.txt_Torton);
@@ -262,10 +276,10 @@
             this.panelControl1.Controls.Add(this.cmb_zona);
             this.panelControl1.Controls.Add(this.labelControl1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(69, 0);
+            this.panelControl1.Location = new System.Drawing.Point(71, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl1.Size = new System.Drawing.Size(911, 130);
+            this.panelControl1.Size = new System.Drawing.Size(909, 130);
             this.panelControl1.TabIndex = 4;
             // 
             // txt_Contenedor
@@ -468,10 +482,10 @@
             // 
             this.panelControl2.Controls.Add(this.dtgAcarreoPrecios);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(69, 130);
+            this.panelControl2.Location = new System.Drawing.Point(71, 130);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Padding = new System.Windows.Forms.Padding(10);
-            this.panelControl2.Size = new System.Drawing.Size(911, 431);
+            this.panelControl2.Size = new System.Drawing.Size(909, 433);
             this.panelControl2.TabIndex = 5;
             // 
             // dtgAcarreoPrecios
@@ -481,7 +495,7 @@
             this.dtgAcarreoPrecios.MainView = this.dtgValAcarreoPrecios;
             this.dtgAcarreoPrecios.MenuManager = this.barManager1;
             this.dtgAcarreoPrecios.Name = "dtgAcarreoPrecios";
-            this.dtgAcarreoPrecios.Size = new System.Drawing.Size(887, 407);
+            this.dtgAcarreoPrecios.Size = new System.Drawing.Size(885, 409);
             this.dtgAcarreoPrecios.TabIndex = 0;
             this.dtgAcarreoPrecios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dtgValAcarreoPrecios});
@@ -496,8 +510,11 @@
             this.gridColumn10,
             this.gridColumn11,
             this.gridColumn12,
+            this.gridColumn1,
             this.gridColumn13,
-            this.gridColumn14});
+            this.gridColumn2,
+            this.gridColumn14,
+            this.gridColumn3});
             this.dtgValAcarreoPrecios.GridControl = this.dtgAcarreoPrecios;
             this.dtgValAcarreoPrecios.Name = "dtgValAcarreoPrecios";
             this.dtgValAcarreoPrecios.OptionsView.ShowGroupPanel = false;
@@ -563,7 +580,7 @@
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 6;
+            this.gridColumn13.VisibleIndex = 7;
             // 
             // gridColumn14
             // 
@@ -572,7 +589,90 @@
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 7;
+            this.gridColumn14.VisibleIndex = 9;
+            // 
+            // txt_kgContenedor
+            // 
+            this.txt_kgContenedor.Location = new System.Drawing.Point(490, 95);
+            this.txt_kgContenedor.MenuManager = this.barManager1;
+            this.txt_kgContenedor.Name = "txt_kgContenedor";
+            this.txt_kgContenedor.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_kgContenedor.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txt_kgContenedor.Properties.MaskSettings.Set("mask", "n");
+            this.txt_kgContenedor.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_kgContenedor.Properties.MaskSettings.Set("valueAfterDelete", DevExpress.Data.Mask.NumericMaskManager.ValueAfterDelete.ZeroThenNull);
+            this.txt_kgContenedor.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_kgContenedor.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
+            this.txt_kgContenedor.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.txt_kgContenedor.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_kgContenedor.Size = new System.Drawing.Size(98, 20);
+            this.txt_kgContenedor.TabIndex = 21;
+            // 
+            // txt_kgTorton
+            // 
+            this.txt_kgTorton.Location = new System.Drawing.Point(490, 69);
+            this.txt_kgTorton.MenuManager = this.barManager1;
+            this.txt_kgTorton.Name = "txt_kgTorton";
+            this.txt_kgTorton.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_kgTorton.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txt_kgTorton.Properties.MaskSettings.Set("mask", "n");
+            this.txt_kgTorton.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_kgTorton.Properties.MaskSettings.Set("valueAfterDelete", DevExpress.Data.Mask.NumericMaskManager.ValueAfterDelete.ZeroThenNull);
+            this.txt_kgTorton.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_kgTorton.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
+            this.txt_kgTorton.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.txt_kgTorton.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_kgTorton.Size = new System.Drawing.Size(98, 20);
+            this.txt_kgTorton.TabIndex = 20;
+            // 
+            // txt_kgRabon
+            // 
+            this.txt_kgRabon.Location = new System.Drawing.Point(490, 43);
+            this.txt_kgRabon.MenuManager = this.barManager1;
+            this.txt_kgRabon.Name = "txt_kgRabon";
+            this.txt_kgRabon.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txt_kgRabon.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txt_kgRabon.Properties.MaskSettings.Set("mask", "n");
+            this.txt_kgRabon.Properties.MaskSettings.Set("culture", "es-MX");
+            this.txt_kgRabon.Properties.MaskSettings.Set("valueAfterDelete", DevExpress.Data.Mask.NumericMaskManager.ValueAfterDelete.ZeroThenNull);
+            this.txt_kgRabon.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.txt_kgRabon.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
+            this.txt_kgRabon.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.txt_kgRabon.Properties.UseMaskAsDisplayFormat = true;
+            this.txt_kgRabon.Size = new System.Drawing.Size(98, 20);
+            this.txt_kgRabon.TabIndex = 19;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(511, 20);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(56, 13);
+            this.labelControl9.TabIndex = 22;
+            this.labelControl9.Text = "Kg Minimos:";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "kg Rabon";
+            this.gridColumn1.FieldName = "kgRabon";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 6;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "kg Torton";
+            this.gridColumn2.FieldName = "kgTorton";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 8;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "kg Contenedor";
+            this.gridColumn3.FieldName = "kgContenedor";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 10;
             // 
             // Frm_Acarreo_Precios
             // 
@@ -608,6 +708,9 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgAcarreoPrecios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgValAcarreoPrecios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_kgContenedor.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_kgTorton.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_kgRabon.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,5 +763,12 @@
         private DevExpress.XtraEditors.GridLookUpEdit cmb_ciudad;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.TextEdit txt_kgContenedor;
+        private DevExpress.XtraEditors.TextEdit txt_kgTorton;
+        private DevExpress.XtraEditors.TextEdit txt_kgRabon;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

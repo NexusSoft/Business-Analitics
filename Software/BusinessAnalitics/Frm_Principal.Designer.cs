@@ -64,8 +64,11 @@
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Acarreo_Zona = new DevExpress.XtraBars.BarButtonItem();
             this.btn_Acarreo_Precios = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_PrecioFruta = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_EstibaPago = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -83,8 +86,6 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.SkinForm = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btn_PrecioFruta = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -129,9 +130,10 @@
             this.barButtonItem3,
             this.btn_Acarreo_Zona,
             this.btn_Acarreo_Precios,
-            this.btn_PrecioFruta});
+            this.btn_PrecioFruta,
+            this.btn_EstibaPago});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 37;
+            this.ribbon.MaxItemId = 38;
             this.ribbon.Name = "ribbon";
             this.ribbon.OptionsCustomizationForm.FormIcon = ((System.Drawing.Icon)(resources.GetObject("resource.FormIcon")));
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -415,6 +417,24 @@
             this.btn_Acarreo_Precios.Name = "btn_Acarreo_Precios";
             this.btn_Acarreo_Precios.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Acarreo_Precios_ItemClick);
             // 
+            // btn_PrecioFruta
+            // 
+            this.btn_PrecioFruta.Caption = "Precios Fruta";
+            this.btn_PrecioFruta.Id = 36;
+            this.btn_PrecioFruta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_PrecioFruta.ImageOptions.Image")));
+            this.btn_PrecioFruta.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_PrecioFruta.ImageOptions.LargeImage")));
+            this.btn_PrecioFruta.Name = "btn_PrecioFruta";
+            this.btn_PrecioFruta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_PrecioFruta_ItemClick);
+            // 
+            // btn_EstibaPago
+            // 
+            this.btn_EstibaPago.Caption = "Estiba - Pago";
+            this.btn_EstibaPago.Id = 37;
+            this.btn_EstibaPago.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_EstibaPago.ImageOptions.Image")));
+            this.btn_EstibaPago.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EstibaPago.ImageOptions.LargeImage")));
+            this.btn_EstibaPago.Name = "btn_EstibaPago";
+            this.btn_EstibaPago.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EstibaPago_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -436,6 +456,13 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.btn_TipoDomicilio);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Domicilio";
+            // 
+            // ribbonPageGroup12
+            // 
+            this.ribbonPageGroup12.ItemLinks.Add(this.btn_PrecioFruta);
+            this.ribbonPageGroup12.ItemLinks.Add(this.btn_EstibaPago);
+            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
+            this.ribbonPageGroup12.Text = "Acopio";
             // 
             // ribbonPageGroup11
             // 
@@ -570,21 +597,6 @@
             this.xtraTabbedMdiManager1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // ribbonPageGroup12
-            // 
-            this.ribbonPageGroup12.ItemLinks.Add(this.btn_PrecioFruta);
-            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
-            this.ribbonPageGroup12.Text = "Acopio";
-            // 
-            // btn_PrecioFruta
-            // 
-            this.btn_PrecioFruta.Caption = "Precios Fruta";
-            this.btn_PrecioFruta.Id = 36;
-            this.btn_PrecioFruta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_PrecioFruta.ImageOptions.Image")));
-            this.btn_PrecioFruta.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_PrecioFruta.ImageOptions.LargeImage")));
-            this.btn_PrecioFruta.Name = "btn_PrecioFruta";
-            this.btn_PrecioFruta.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_PrecioFruta_ItemClick);
-            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -667,5 +679,6 @@
         private DevExpress.XtraBars.BarButtonItem btn_Acarreo_Precios;
         private DevExpress.XtraBars.BarButtonItem btn_PrecioFruta;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
+        private DevExpress.XtraBars.BarButtonItem btn_EstibaPago;
     }
 }

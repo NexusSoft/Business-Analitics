@@ -64,7 +64,7 @@ namespace BusinessAnalitics
             table.Reset();
 
             // DataRow row;
-            
+
             column.DataType = typeof(string);
             column.ColumnName = "col_E_Categoria";
             column.AutoIncrement = false;
@@ -128,7 +128,7 @@ namespace BusinessAnalitics
                     case 0:
                         if (dtgValExportacion.IsNewItemRow(rowHandle))
                         {
-                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i+1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
                             dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat1");
                             dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "32s");
                             dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "330 grs");
@@ -298,6 +298,7 @@ namespace BusinessAnalitics
                 }
             }
         }
+
         private void MakeTablaNacional()
         {
             DataTable table = new DataTable("FirstTable");
@@ -305,7 +306,7 @@ namespace BusinessAnalitics
             table.Reset();
 
             // DataRow row;
-            
+
             column.DataType = typeof(decimal);
             column.ColumnName = "col_N_Orden";
             column.AutoIncrement = false;
@@ -541,10 +542,7 @@ namespace BusinessAnalitics
         }
         private void Frm_Precios_Load(object sender, EventArgs e)
         {
-            MakeTablaExportacion();
-            CargarTablaExp();
-            MakeTablaNacional();
-            CargarTablaNal();
+            LimpiarCampos();
             col_E_Precio.DisplayFormat.FormatType = FormatType.Numeric;
             col_E_Precio.DisplayFormat.FormatString = "c2";
             col_N_Precio.DisplayFormat.FormatType = FormatType.Numeric;
@@ -555,7 +553,7 @@ namespace BusinessAnalitics
             txt_estiba.Properties.DisplayFormat.FormatString = "{0:d10}";
         }
 
-        void EliminaPrecios()
+        private void EliminaPrecios()
         {
             CLS_AcarreroPrecios del = new CLS_AcarreroPrecios();
             del.FechaInicio = ParFechaInicio.ToString();
@@ -575,38 +573,132 @@ namespace BusinessAnalitics
                 XtraMessageBox.Show(del.Mensaje);
             }
         }
+        private void EliminaPreciosEditado()
+        {
+            CLS_AcarreroPrecios del = new CLS_AcarreroPrecios();
+            del.Id_AcopioPrecios = txt_Id.Text;
+            del.MtdEliminarAcopioPrecioEditado();
+            if (!del.Exito)
+            {
+                XtraMessageBox.Show(del.Mensaje);
+            }
+        }
         private void btnGuardar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             txt_estiba.Focus();
-            if (DateTime.Compare(Convert.ToDateTime(dt_FInicio.EditValue), Convert.ToDateTime(dt_FFin.EditValue)) <= 0)
+            DateTime FInicio = Convert.ToDateTime(dt_FInicio.EditValue.ToString());
+            DateTime FFin = Convert.ToDateTime(dt_FFin.EditValue.ToString());
+            if (txt_Id.Text == string.Empty)
             {
-                DateTime FInicio = Convert.ToDateTime(dt_FInicio.EditValue.ToString());
-                DateTime FFin = Convert.ToDateTime(dt_FFin.EditValue.ToString());
-                ParFechaInicio = FInicio.Year.ToString() + "-" + DosCeros(FInicio.Month.ToString()) + "-" + DosCeros(FInicio.Day.ToString()) + " 00:00:00";
-                ParFechaFin = FFin.Year.ToString() + "-" + DosCeros(FFin.Month.ToString()) + "-" + DosCeros(FFin.Day.ToString()) + " 23:59:59";
-                
-
-                if (!ExistenPreciosFechas())
+                if (DateTime.Compare(Convert.ToDateTime(dt_FInicio.EditValue), Convert.ToDateTime(dt_FFin.EditValue)) <= 0)
                 {
-                    GuardarPrecios(FInicio, FFin);
+                    ParFechaInicio = FInicio.Year.ToString() + "-" + DosCeros(FInicio.Month.ToString()) + "-" + DosCeros(FInicio.Day.ToString()) + " 00:00:00";
+                    ParFechaFin = FFin.Year.ToString() + "-" + DosCeros(FFin.Month.ToString()) + "-" + DosCeros(FFin.Day.ToString()) + " 23:59:59";
 
+                    if (!ExistenPreciosFechas())
+                    {
+                        GuardarPrecios(FInicio, FFin);
+                        LimpiarCampos();
+                        XtraMessageBox.Show("Los precios se han guardado con exito");
+                    }
+                    else
+                    {
+                        DialogResult = XtraMessageBox.Show("¿Existen precios en los dias seleccionados deseas sobre escribir estos precios?", "Actualizacion de datos", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                        if (DialogResult == DialogResult.Yes)
+                        {
+                            EliminaPrecios();
+                            GuardarPrecios(FInicio, FFin);
+                            LimpiarCampos();
+                            XtraMessageBox.Show("Los precios se han guardado con exito");
+                        }
+                    }
                 }
                 else
                 {
-                    DialogResult = XtraMessageBox.Show("¿Existen precios en los dias seleccionados deseas sobre escribir estos precios?", "Actualizacion de datos", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-                    if (DialogResult == DialogResult.Yes)
-                    {
-                        EliminaPrecios();
-                        GuardarPrecios(FInicio, FFin);
-                    }
+                    XtraMessageBox.Show("La Fecha de inicio es mayor a la fecha Fin");
                 }
+                
             }
             else
             {
-                XtraMessageBox.Show("La Fecha de inicio es mayor a la fecha Fin");
+                EliminaPreciosEditado();
+                GuardarPreciosEditar(FInicio, FFin);
+                LimpiarCampos();
+                XtraMessageBox.Show("Los cambios se han guardado con exito");
             }
         }
+        private void GuardarPreciosEditar(DateTime FInicio, DateTime FFin)
+        {
+            TimeSpan rango = FFin - FInicio;
+            int dias = rango.Days;
+            for (int i = 0; i <= dias; i++)
+            {
+                string Folio = txt_Id.Text;
+                for (int x = 0; x < dtgValExportacion.RowCount; x++)
+                {
+                    try
+                    {
+                        CLS_AcarreroPrecios insDE = new CLS_AcarreroPrecios();
+                        int xRow = dtgValExportacion.GetVisibleRowHandle(x + 1);
+                        string Orden = dtgValExportacion.GetRowCellValue(xRow, "col_E_Orden").ToString();
+                        string Mercado = "Exportacion";
+                        string Categoria = dtgValExportacion.GetRowCellValue(xRow, "col_E_Categoria").ToString();
+                        string Calibre = dtgValExportacion.GetRowCellValue(xRow, "col_E_Calibre").ToString();
+                        string Gramaje = dtgValExportacion.GetRowCellValue(xRow, "col_E_Gramaje").ToString();
+                        decimal Precio = Decimal.Parse(dtgValExportacion.GetRowCellValue(xRow, "col_E_Precio").ToString(), style, provider);
+                        insDE.Id_AcopioPrecios = Folio;
+                        insDE.Mercado = Mercado;
+                        insDE.Orden = Convert.ToInt32(Orden);
+                        insDE.Categoria = Categoria;
+                        insDE.Calibre = Calibre;
+                        insDE.Gramaje = Gramaje;
+                        insDE.Precio = Precio;
+                        insDE.Usuario = UsuariosLogin;
+                        insDE.MtdInsertarAcopioPrecio_Detalles();
+                        if (!insDE.Exito)
+                        {
+                            XtraMessageBox.Show(insDE.Mensaje);
+                        }
+                    }
+                    catch
+                    {
 
+                    }
+                }
+                for (int x = 0; x < dtgValNacional.RowCount; x++)
+                {
+                    try
+                    {
+                        CLS_AcarreroPrecios insDN = new CLS_AcarreroPrecios();
+                        int xRow = dtgValNacional.GetVisibleRowHandle(x + 1);
+                        string Orden = dtgValNacional.GetRowCellValue(xRow, "col_N_Orden").ToString();
+                        string Mercado = "Nacional";
+                        string Categoria = dtgValNacional.GetRowCellValue(xRow, "col_N_Categoria").ToString();
+                        string Calibre = dtgValNacional.GetRowCellValue(xRow, "col_N_Calibre").ToString();
+                        string Gramaje = dtgValNacional.GetRowCellValue(xRow, "col_N_Gramaje").ToString();
+                        decimal Precio = Decimal.Parse(dtgValNacional.GetRowCellValue(xRow, "col_N_Precio").ToString(), style, provider);
+                        insDN.Id_AcopioPrecios = Folio;
+                        insDN.Mercado = Mercado;
+                        insDN.Orden = Convert.ToInt32(Orden);
+                        insDN.Categoria = Categoria;
+                        insDN.Calibre = Calibre;
+                        insDN.Gramaje = Gramaje;
+                        insDN.Precio = Precio;
+                        insDN.Usuario = UsuariosLogin;
+                        insDN.MtdInsertarAcopioPrecio_Detalles();
+                        if (!insDN.Exito)
+                        {
+                            XtraMessageBox.Show(insDN.Mensaje);
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+                }
+                FInicio = FInicio.AddDays(1);
+            }
+        }
         private void GuardarPrecios(DateTime FInicio, DateTime FFin)
         {
             TimeSpan rango = FFin - FInicio;
@@ -706,19 +798,19 @@ namespace BusinessAnalitics
         {
             bool Existen = false;
             CLS_AcarreroPrecios sel = new CLS_AcarreroPrecios();
-            sel.FechaInicio=ParFechaInicio.ToString();
-            sel.FechaFin=ParFechaFin.ToString();
-            sel.Estiba=txt_estiba.Text.ToString();
-            if(chk_Todas.Checked == true)
+            sel.FechaInicio = ParFechaInicio.ToString();
+            sel.FechaFin = ParFechaFin.ToString();
+            sel.Estiba = txt_estiba.Text.ToString();
+            if (chk_Todas.Checked == true)
             {
                 sel.Todas = 1;
             }
             else
             {
-                sel.Todas=0;
+                sel.Todas = 0;
             }
             sel.MtdSeleccionarAcopioPrecios_Filtro();
-            if(sel.Datos.Rows.Count > 0 )
+            if (sel.Datos.Rows.Count > 0)
             {
                 Existen = true;
             }
@@ -727,10 +819,10 @@ namespace BusinessAnalitics
 
         private void chk_Todas_CheckedChanged(object sender, EventArgs e)
         {
-            if(chk_Todas.Checked==true) 
-            { 
-                txt_estiba.Text=string.Empty;
-                txt_estiba.Enabled=false;
+            if (chk_Todas.Checked == true)
+            {
+                txt_estiba.Text = string.Empty;
+                txt_estiba.Enabled = false;
             }
             else
             {
@@ -740,10 +832,10 @@ namespace BusinessAnalitics
 
         private void dtgValExportacion_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
         {
-           if(dtgValExportacion.FocusedColumn.FieldName=="col_E_Precio")
+            if (dtgValExportacion.FocusedColumn.FieldName == "col_E_Precio")
             {
-                double precio =0;
-                if(!Double.TryParse(e.Value as string, out precio))
+                double precio = 0;
+                if (!Double.TryParse(e.Value as string, out precio))
                 {
                     e.Valid = false;
                     e.ErrorText = "Solo se aceptan valores numericos";
@@ -758,7 +850,7 @@ namespace BusinessAnalitics
 
         private void dtgValExportacion_InvalidValueException(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
         {
-            XtraMessageBox.Show(this, e.ErrorText, "Valor invalido",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            XtraMessageBox.Show(this, e.ErrorText, "Valor invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
             e.ExceptionMode = ExceptionMode.NoAction;
         }
 
@@ -803,7 +895,7 @@ namespace BusinessAnalitics
                     else
                     {
                         XtraMessageBox.Show("Se ha Eliminado el registro con exito");
-
+                        LimpiarCampos();
                     }
                 }
             }
@@ -815,9 +907,26 @@ namespace BusinessAnalitics
 
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            InicializaValores();
+            LimpiarCampos();
+        }
+
+        private void LimpiarCampos()
+        {
             dt_FInicio.DateTime = DateTime.Now;
             dt_FFin.DateTime = DateTime.Now;
+            dtgNacional.DataSource = null;
+            dtgExportacion.DataSource = null;
+            MakeTablaExportacion();
+            CargarTablaExp();
+            MakeTablaNacional();
+            CargarTablaNal();
+            //InicializaValores();
+            dt_FInicio.Enabled = true;
+            dt_FFin.Enabled = true;
+            txt_Id.Text = string.Empty;
+            txt_estiba.Enabled = false;
+            chk_Todas.Enabled = true;
+            chk_Todas.Checked = true;
         }
 
         private void InicializaValores()
@@ -835,6 +944,440 @@ namespace BusinessAnalitics
 
                 int rowHandle = dtgValNacional.GetRowHandle(i);
                 dtgValNacional.SetRowCellValue(rowHandle, "col_N_Precio", 0);
+            }
+        }
+
+        void Cargar_Precios(string text)
+        {
+            CLS_AcarreroPrecios sel = new CLS_AcarreroPrecios();
+            sel.Id_AcopioPrecios = text;
+            sel.MtdSeleccionarAcopioPreciosEncabezado_Filtro();
+            if (sel.Exito)
+            {
+                if (sel.Datos.Rows.Count > 0)
+                {
+                    dt_FInicio.DateTime = Convert.ToDateTime(sel.Datos.Rows[0]["Fecha"].ToString());
+                    dt_FFin.DateTime = Convert.ToDateTime(sel.Datos.Rows[0]["Fecha"].ToString());
+                    txt_estiba.Text = sel.Datos.Rows[0]["Estiba"].ToString();
+                    if (sel.Datos.Rows[0]["Todas"].ToString() == "True")
+                    {
+                        chk_Todas.Checked = true;
+                    }
+                    else
+                    {
+                        chk_Todas.Checked = false;
+                    }
+                    Cargar_PreciosDetalle(text);
+                }
+            }
+        }
+
+        void CargarTablaExpMod(DataTable datos)
+        {
+            for (int i = 0;i< datos.Rows.Count ; i++)
+            {
+                dtgValExportacion.AddNewRow();
+
+                int rowHandle = dtgValExportacion.GetRowHandle(dtgValExportacion.DataRowCount);
+                switch (Convert.ToInt32(datos.Rows[i]["Orden"].ToString())-1)
+                {
+                    case 0:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat1");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "32s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "330 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 1:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat1");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "36s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "300-330 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 2:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat1");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "40s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "270-300 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 3:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat1");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "48s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "210-270 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 4:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat1");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "60s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "180-210 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 5:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat1");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "70s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "150-180 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 6:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat1");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "84s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "120-150 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 7:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat2");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "32s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "330 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 8:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat2");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "36s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "300-330 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 9:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat2");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "40s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "270-300 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 10:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat2");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "48s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "210-270 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 11:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat2");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "60s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "180-210 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 12:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat2");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "70s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "150-180 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 13:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat2");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "84s");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "120-150 grs");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 14:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat2");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "Proceso");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "-");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 15:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat2");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "Cuarta");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "-");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 16:
+                        if (dtgValExportacion.IsNewItemRow(rowHandle))
+                        {
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Orden"], i + 1);
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Categoria"], "Cat2");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Calibre"], "Desecho");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Gramaje"], "-");
+                            dtgValExportacion.SetRowCellValue(rowHandle, dtgValExportacion.Columns["col_E_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                }
+            }
+        }
+        void CargarTablaNalMod(DataTable datos)
+        {
+            for (int i = 0; i < datos.Rows.Count; i++)
+            {
+                dtgValNacional.AddNewRow();
+
+                int rowHandle = dtgValNacional.GetRowHandle(dtgValNacional.DataRowCount);
+                switch (Convert.ToInt32(datos.Rows[i]["Orden"].ToString()) - 1)
+                {
+                    case 0:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat1");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "32s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "330 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 1:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat1");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "36s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "300-330 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 2:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat1");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "40s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "270-300 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 3:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat1");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "48s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "210-270 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 4:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat1");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "60s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "180-210 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 5:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat1");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "70s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "150-180 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 6:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat1");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "84s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "120-150 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 7:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat2");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "32s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "330 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 8:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat2");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "36s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "300-330 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 9:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat2");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "40s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "270-300 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 10:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat2");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "48s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "210-270 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 11:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat2");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "60s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "180-210 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 12:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat2");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "70s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "150-180 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 13:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat2");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "84s");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "120-150 grs");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 14:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat2");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "Proceso");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "-");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 15:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat2");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "Cuarta");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "-");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                    case 16:
+                        if (dtgValNacional.IsNewItemRow(rowHandle))
+                        {
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Orden"], i + 1);
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Categoria"], "Cat2");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Calibre"], "Desecho");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Gramaje"], "-");
+                            dtgValNacional.SetRowCellValue(rowHandle, dtgValNacional.Columns["col_N_Precio"], datos.Rows[i]["Precio"].ToString());
+                        }
+                        break;
+                }
+            }
+        }
+        private void Cargar_PreciosDetalle(string text)
+        {
+            CLS_AcarreroPrecios sel1 = new CLS_AcarreroPrecios();
+            sel1.Id_AcopioPrecios = text;
+            sel1.MtdSeleccionarAcopioPreciosDetalle_Exportacion_Filtro();
+            if (sel1.Exito)
+            {
+                if (sel1.Datos.Rows.Count > 0)
+                {
+                    dtgExportacion.DataSource = null;
+                    MakeTablaExportacion();
+                    CargarTablaExpMod(sel1.Datos);
+                }
+            }
+
+            CLS_AcarreroPrecios sel2 = new CLS_AcarreroPrecios();
+            sel2.Id_AcopioPrecios = text;
+            sel2.MtdSeleccionarAcopioPreciosDetalle_Nacional_Filtro();
+            if (sel2.Exito)
+            {
+                if (sel2.Datos.Rows.Count > 0)
+                {
+                    dtgNacional.DataSource = null;
+                    MakeTablaNacional();
+                    CargarTablaNalMod(sel2.Datos);
+                }
+            }
+        }
+    
+
+        private void btn_BuscarPrecio_Click(object sender, EventArgs e)
+        {
+            Frm_ListaPrecios frm = new Frm_ListaPrecios();
+            frm.ShowDialog();
+            if (!string.IsNullOrEmpty(frm.Id_AcopioPrecios))
+            {
+                txt_Id.Text=frm.Id_AcopioPrecios;
+                Cargar_Precios(txt_Id.Text);
+                dt_FFin.Enabled = false;
+                dt_FInicio.Enabled = false;
+                chk_Todas.Enabled = false;
+                txt_estiba.Enabled = false;
             }
         }
     }

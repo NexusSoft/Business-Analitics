@@ -74,57 +74,28 @@ namespace Business_Analitics
             {
                 if (sel.Datos.Rows.Count > 0)
                 {
-                    txtMenorakg.Text = sel.Datos.Rows[0]["Menor_a_kg"].ToString();
-                    txtPreciokg.Text = sel.Datos.Rows[0]["Precio_kilo"].ToString();
-                    txtPrecioDia.Text = sel.Datos.Rows[0]["Precio_Dia"].ToString();
-                    txtPrecioCuadrillaA.Text = sel.Datos.Rows[0]["Precio_Cuadrilla_Apoyo"].ToString();
-                    if (sel.Datos.Rows[0]["EsRango"].ToString() == "True")
-                    {
-                        chk_Rango.Checked = true;
-                    }
-                    else
-                    {
-                        chk_Rango.Checked = false;
-                    }
-                    txtKilosMayorA.Text = sel.Datos.Rows[0]["Kilos_MayorA"].ToString();
-                    txtKilosMenorA.Text = sel.Datos.Rows[0]["Kilos_MenorA"].ToString();
-                    txtPrecioMayorA.Text = sel.Datos.Rows[0]["Precio_MayorA"].ToString();
-                    txtPrecioMenorA.Text = sel.Datos.Rows[0]["Precio_MenorA"].ToString();
+                    txtPreciokg_Local.Text = sel.Datos.Rows[0]["Precio_kilo_Local"].ToString();
+                    txtPorcentajeTolerancia.Text = sel.Datos.Rows[0]["PorcentajeTolerancia"].ToString();
+                    txtKilosMenorA_Local.Text = sel.Datos.Rows[0]["Kilos_MenorA_Local"].ToString();
+                    txtPrecioMenorA_Local.Text = sel.Datos.Rows[0]["Precio_MenorA_Local"].ToString();
+                    txtPrecioApoyo_Local.Text = sel.Datos.Rows[0]["Precio_Cuadrilla_Apoyo_Local"].ToString();
 
-                    if (sel.Datos.Rows[0]["EsRangoCaja"].ToString() == "True")
-                    {
-                        chk_RangoCajas.Checked = true;
-                    }
-                    else
-                    {
-                        chk_RangoCajas.Checked = false;
-                    }
-                    txtCajasMayorA.Text = sel.Datos.Rows[0]["Cajas_MayorA"].ToString();
-                    txtCajasMenorA.Text = sel.Datos.Rows[0]["Cajas_MenorA"].ToString();
-                    txtPrecioCajaMayorA.Text = sel.Datos.Rows[0]["PrecioCaja_MayorA"].ToString();
-                    txtPrecioCajaMenorA.Text = sel.Datos.Rows[0]["PrecioCaja_MenorA"].ToString();
-
-                    txtPrecioSalidaFalso.Text = sel.Datos.Rows[0]["Precio_Salida_Falso"].ToString();
+                    txtPreciokg_Foraneo.Text = sel.Datos.Rows[0]["Precio_kilo_Foraneo"].ToString();
+                    txtKilosMenorA_Foraneo.Text = sel.Datos.Rows[0]["Kilos_MenorA_Foraneo"].ToString();
+                    txtPrecioMenorA_Foraneo.Text = sel.Datos.Rows[0]["Precio_MenorA_Foraneo"].ToString();
+                    txtPrecioApoyo_Foraneo.Text = sel.Datos.Rows[0]["Precio_Cuadrilla_Apoyo_Foraneo"].ToString();
                 }
                 else
                 {
-                    txtMenorakg.Text = "0";
-                    txtPreciokg.Text = "0";
-                    txtPrecioDia.Text = "0";
-                    txtPrecioCuadrillaA.Text = "0";
+                    txtPreciokg_Local.Text = "0";
+                    txtKilosMenorA_Local.Text = "0";
+                    txtPrecioMenorA_Local.Text = "0";
+                        txtPrecioApoyo_Local.Text = "0";
 
-                    chk_RangoCajas.Checked = false;
-                    txtCajasMayorA.Text = "0";
-                    txtCajasMenorA.Text = "0";
-                    txtPrecioCajaMayorA.Text = "0";
-                    txtPrecioCajaMenorA.Text = "0";
-
-                    chk_Rango.Checked = false;
-                    txtKilosMayorA.Text = "0";
-                    txtKilosMenorA.Text = "0";
-                    txtPrecioMayorA.Text = "0";
-                    txtPrecioMenorA.Text = "0";
-                    txtPrecioSalidaFalso.Text = "0";
+                    txtPreciokg_Foraneo.Text = "0";
+                    txtKilosMenorA_Foraneo.Text = "0";
+                    txtPrecioMenorA_Foraneo.Text = "0";
+                    txtPrecioApoyo_Foraneo.Text = "0";
                 }
             }
         }
@@ -197,64 +168,44 @@ namespace Business_Analitics
         {
             CLS_EmpresasCorte ins = new CLS_EmpresasCorte();
             ins.Id_EmpresaCorte = textId.Text.Trim();
-            decimal Menor_a_kg = 0;
-            decimal.TryParse(txtMenorakg.Text, style, culture, out Menor_a_kg);
-            ins.Menor_a_kg = Menor_a_kg;
-            decimal Precio_kilo = 0;
-            decimal.TryParse(txtPreciokg.Text, style, culture, out Precio_kilo);
-            ins.Precio_kilo = Precio_kilo;
-            decimal Precio_Dia = 0;
-            decimal.TryParse(txtPrecioDia.Text, style, culture, out Precio_Dia);
-            ins.Precio_Dia = Precio_Dia;
-            decimal Precio_Cuadrilla_Apoyo = 0;
-            decimal.TryParse(txtPrecioCuadrillaA.Text, style, culture, out Precio_Cuadrilla_Apoyo);
-            ins.Precio_Cuadrilla_Apoyo = Precio_Cuadrilla_Apoyo;
 
-            if (chk_RangoCajas.Checked == true)
-            {
-                ins.EsRangoCaja = 1;
-            }
-            else
-            {
-                ins.EsRangoCaja = 0;
-            }
+            decimal Precio_kilo_Local = 0;
+            decimal.TryParse(txtPreciokg_Local.Text, style, culture, out Precio_kilo_Local);
+            ins.Precio_kilo_Local = Precio_kilo_Local;
 
-            decimal Cajas_MenorA = 0;
-            decimal.TryParse(txtCajasMenorA.Text, style, culture, out Cajas_MenorA);
-            ins.Cajas_MenorA = Cajas_MenorA;
+            decimal PorcentajeTolerancia = 0;
+            decimal.TryParse(txtPorcentajeTolerancia.Text, style, culture, out PorcentajeTolerancia);
+            ins.PorcentajeTolerancia = PorcentajeTolerancia;
 
-            decimal Cajas_MayorA = 0;
-            decimal.TryParse(txtCajasMayorA.Text, style, culture, out Cajas_MayorA);
-            ins.Cajas_MayorA = Cajas_MayorA;
+            decimal Kilos_MenorA_Local = 0;
+            decimal.TryParse(txtKilosMenorA_Local.Text, style, culture, out Kilos_MenorA_Local);
+            ins.Kilos_MenorA_Local = Kilos_MenorA_Local;
 
-            decimal PrecioCajas_MenorA = 0;
-            decimal.TryParse(txtPrecioCajaMenorA.Text, style, culture, out PrecioCajas_MenorA);
-            ins.PrecioCaja_MenorA = PrecioCajas_MenorA;
+            decimal Precio_MenorA_Local = 0;
+            decimal.TryParse(txtPrecioMenorA_Local.Text, style, culture, out Precio_MenorA_Local);
+            ins.Precio_MenorA_Local = Precio_MenorA_Local;
 
-            decimal PrecioCajas_MayorA = 0;
-            decimal.TryParse(txtPrecioCajaMayorA.Text, style, culture, out PrecioCajas_MayorA);
-            ins.PrecioCaja_MayorA = PrecioCajas_MayorA;
+            decimal Precio_Cuadrilla_Apoyo_Local = 0;
+            decimal.TryParse(txtPrecioApoyo_Local.Text, style, culture, out Precio_Cuadrilla_Apoyo_Local);
+            ins.Precio_Cuadrilla_Apoyo_Local = Precio_Cuadrilla_Apoyo_Local;
 
-            if (chk_Rango.Checked == true)
-            {
-                ins.EsRango = 1;
-            }
-            else
-            {
-                ins.EsRango = 0;
-            }
-            decimal.TryParse(txtKilosMenorA.Text, style, culture, out Cajas_MenorA);
-            ins.Kilos_MenorA = Cajas_MenorA;
-            decimal.TryParse(txtKilosMayorA.Text, style, culture, out Cajas_MayorA);
-            ins.Kilos_MayorA = Cajas_MayorA;
-            decimal.TryParse(txtPrecioMenorA.Text, style, culture, out PrecioCajas_MenorA);
-            ins.Precio_MenorA = PrecioCajas_MenorA;
-            decimal.TryParse(txtPrecioMayorA.Text, style, culture, out PrecioCajas_MayorA);
-            ins.Precio_MayorA = PrecioCajas_MayorA;
 
-            decimal Precio_Salida_Falso = 0;
-            decimal.TryParse(txtPrecioSalidaFalso.Text, style, culture, out Precio_Salida_Falso);
-            ins.Precio_Salida_Falso = Precio_Salida_Falso;
+            decimal Precio_kilo_Foraneo = 0;
+            decimal.TryParse(txtPreciokg_Foraneo.Text, style, culture, out Precio_kilo_Foraneo);
+            ins.Precio_kilo_Foraneo = Precio_kilo_Foraneo;
+
+            decimal Kilos_MenorA_Foraneo = 0;
+            decimal.TryParse(txtKilosMenorA_Foraneo.Text, style, culture, out Kilos_MenorA_Foraneo);
+            ins.Kilos_MenorA_Foraneo = Kilos_MenorA_Foraneo;
+
+            decimal Precio_MenorA_Foraneo = 0;
+            decimal.TryParse(txtPrecioMenorA_Foraneo.Text, style, culture, out Precio_MenorA_Foraneo);
+            ins.Precio_MenorA_Foraneo = Precio_MenorA_Foraneo;
+
+            decimal Precio_Cuadrilla_Apoyo_Foraneo = 0;
+            decimal.TryParse(txtPrecioApoyo_Foraneo.Text, style, culture, out Precio_Cuadrilla_Apoyo_Foraneo);
+            ins.Precio_Cuadrilla_Apoyo_Foraneo = Precio_Cuadrilla_Apoyo_Foraneo;
+            
             ins.Usuario = UsuariosLogin;
             ins.MtdInsertarEmpresasServicios();
             if (ins.Exito)
@@ -265,7 +216,6 @@ namespace Business_Analitics
             {
                 XtraMessageBox.Show(ins.Mensaje);
             }
-
         }
 
         private void EliminarEmpresas()
@@ -368,19 +318,15 @@ namespace Business_Analitics
         }
         private void LimpiarCamposServicios()
         {
-            txtMenorakg.Text = "0";
-            txtPreciokg.Text = "0";
-            txtPrecioDia.Text = "0";
-            txtCajasMenorA.Text = "0";
-            txtPrecioCajaMenorA.Text = "0";
-            txtCajasMayorA.Text = "0";
-            txtPrecioCajaMayorA.Text = "0";
-            txtPrecioCuadrillaA.Text = "0";
-            txtKilosMayorA.Text = "0";
-            txtKilosMenorA.Text = "0";
-            txtPrecioMayorA.Text = "0";
-            txtPrecioMenorA.Text = "0";
-            txtPrecioSalidaFalso.Tag = "0";
+            txtPreciokg_Local.Text = "0";
+            txtKilosMenorA_Local.Text = "0";
+            txtPrecioMenorA_Local.Text = "0";
+            txtPrecioApoyo_Local.Text = "0";
+
+            txtPreciokg_Foraneo.Text = "0";
+            txtKilosMenorA_Foraneo.Text = "0";
+            txtPrecioMenorA_Foraneo.Text = "0";
+            txtPrecioApoyo_Foraneo.Text = "0";
         }
         private void gridControl1_Click(object sender, EventArgs e)
         {
@@ -447,38 +393,43 @@ namespace Business_Analitics
         }
         private void btnEliminar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DialogResult = XtraMessageBox.Show("¿Desea eliminar el dato seleccionado?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-            if (DialogResult == DialogResult.Yes)
+            if (textId.Text != "00000000")
             {
-                if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
+                DialogResult = XtraMessageBox.Show("¿Desea eliminar el dato seleccionado?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                if (DialogResult == DialogResult.Yes)
                 {
-                    if (textId.Text.Trim().Length > 0)
+                    if (xtraTabControl1.SelectedTabPage == xtraTabPage1)
                     {
-
-                        EliminarEmpresas();
-
+                        if (textId.Text.Trim().Length > 0)
+                        {
+                            EliminarEmpresas();
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Es necesario seleccionar una Empresa.");
+                        }
+                    }
+                    else if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
+                    {
+                        if (textIdDomicilio.Text.Trim().Length > 0)
+                        {
+                            EliminarDomicilio();
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show("Es necesario seleccionar un Domicilio.");
+                        }
                     }
                     else
                     {
-                        XtraMessageBox.Show("Es necesario seleccionar una Empresa.");
+                        EliminarServicios();
+                        XtraMessageBox.Show("Se ha Eliminado el registro con exito");
                     }
                 }
-                else if (xtraTabControl1.SelectedTabPage == xtraTabPage2)
-                {
-                    if (textIdDomicilio.Text.Trim().Length > 0)
-                    {
-                        EliminarDomicilio();
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show("Es necesario seleccionar un Domicilio.");
-                    }
-                }
-                else
-                {
-                    EliminarServicios();
-                    XtraMessageBox.Show("Se ha Eliminado el registro con exito");
-                }
+            }
+            else
+            {
+                XtraMessageBox.Show("Esta empresa no puede ser eliminada");
             }
         }
         private void btnLimpiar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -595,105 +546,38 @@ namespace Business_Analitics
 
         private void Frm_EmpresaCorte_Shown(object sender, EventArgs e)
         {
-            txtMenorakg.Properties.Mask.MaskType = MaskType.Numeric;
-            txtMenorakg.Properties.Mask.EditMask = "n2";
-            txtMenorakg.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtPreciokg.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPreciokg.Properties.Mask.EditMask = "c4";
-            txtPreciokg.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtPrecioDia.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioDia.Properties.Mask.EditMask = "c4";
-            txtPrecioDia.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtPrecioCuadrillaA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioCuadrillaA.Properties.Mask.EditMask = "c4";
-            txtPrecioCuadrillaA.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtPrecioSalidaFalso.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioSalidaFalso.Properties.Mask.EditMask = "c4";
-            txtPrecioSalidaFalso.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtKilosMayorA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtKilosMayorA.Properties.Mask.EditMask = "n0";
-            txtKilosMayorA.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtKilosMenorA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtKilosMenorA.Properties.Mask.EditMask = "n0";
-            txtKilosMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtPrecioMayorA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioMayorA.Properties.Mask.EditMask = "c4";
-            txtPrecioMayorA.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtPrecioMenorA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioMenorA.Properties.Mask.EditMask = "c4";
-            txtPrecioMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
+            txtPreciokg_Local.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPreciokg_Local.Properties.Mask.EditMask = "c2";
+            txtPreciokg_Local.Properties.Mask.UseMaskAsDisplayFormat = true;
 
-            txtCajasMayorA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtCajasMayorA.Properties.Mask.EditMask = "n0";
-            txtCajasMayorA.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtCajasMenorA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtCajasMenorA.Properties.Mask.EditMask = "n0";
-            txtCajasMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtPrecioCajaMayorA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioCajaMayorA.Properties.Mask.EditMask = "c4";
-            txtPrecioCajaMayorA.Properties.Mask.UseMaskAsDisplayFormat = true;
-            txtPrecioCajaMenorA.Properties.Mask.MaskType = MaskType.Numeric;
-            txtPrecioCajaMenorA.Properties.Mask.EditMask = "c4";
-            txtPrecioCajaMenorA.Properties.Mask.UseMaskAsDisplayFormat = true;
-        }
+            txtKilosMenorA_Local.Properties.Mask.MaskType = MaskType.Numeric;
+            txtKilosMenorA_Local.Properties.Mask.EditMask = "n2";
+            txtKilosMenorA_Local.Properties.Mask.UseMaskAsDisplayFormat = true;
 
-        private void chk_Rango_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chk_Rango.Checked == false)
-            {
-                txtPrecioCuadrillaA.Enabled = true;
-                txtKilosMayorA.Enabled = false;
-                txtKilosMenorA.Enabled = false;
-                txtPrecioMayorA.Enabled = false;
-                txtPrecioMenorA.Enabled = false;
-            }
-            else
-            {
-                txtPrecioCuadrillaA.Enabled = false;
-                txtKilosMayorA.Enabled = true;
-                txtKilosMenorA.Enabled = true;
-                txtPrecioMayorA.Enabled = true;
-                txtPrecioMenorA.Enabled = true;
-            }
-            InicializaApoyo();
-        }
+            txtPrecioMenorA_Local.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPrecioMenorA_Local.Properties.Mask.EditMask = "c2";
+            txtPrecioMenorA_Local.Properties.Mask.UseMaskAsDisplayFormat = true;
 
-        private void InicializaApoyo()
-        {
-            txtPrecioCuadrillaA.Text = "0";
-            txtKilosMayorA.Text = "0";
-            txtKilosMenorA.Text = "0";
-            txtPrecioMayorA.Text = "0";
-            txtPrecioMenorA.Text = "0";
-        }
+            txtPrecioApoyo_Local.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPrecioApoyo_Local.Properties.Mask.EditMask = "c2";
+            txtPrecioApoyo_Local.Properties.Mask.UseMaskAsDisplayFormat = true;
 
-        private void chk_RangoCajas_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chk_RangoCajas.Checked == false)
-            {
-                txtPreciokg.Enabled = true;
-                txtCajasMayorA.Enabled = false;
-                txtCajasMenorA.Enabled = false;
-                txtPrecioCajaMayorA.Enabled = false;
-                txtPrecioCajaMenorA.Enabled = false;
-            }
-            else
-            {
-                txtPreciokg.Enabled = false;
-                txtCajasMayorA.Enabled = true;
-                txtPrecioCajaMayorA.Enabled = true;
-                txtCajasMenorA.Enabled = true;
-                txtPrecioCajaMenorA.Enabled = true;
-            }
-            InicializaCajas();
-        }
-        private void InicializaCajas()
-        {
-            txtPreciokg.Text = "0";
-            txtCajasMenorA.Text = "0";
-            txtPrecioCajaMenorA.Text = "0";
-            txtCajasMayorA.Text = "0";
-            txtPrecioCajaMayorA.Text = "0";
+            txtPreciokg_Foraneo.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPreciokg_Foraneo.Properties.Mask.EditMask = "c2";
+            txtPreciokg_Foraneo.Properties.Mask.UseMaskAsDisplayFormat = true;
+
+            txtKilosMenorA_Foraneo.Properties.Mask.MaskType = MaskType.Numeric;
+            txtKilosMenorA_Foraneo.Properties.Mask.EditMask = "n2";
+            txtKilosMenorA_Foraneo.Properties.Mask.UseMaskAsDisplayFormat = true;
+
+            txtPrecioMenorA_Foraneo.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPrecioMenorA_Foraneo.Properties.Mask.EditMask = "c2";
+            txtPrecioMenorA_Foraneo.Properties.Mask.UseMaskAsDisplayFormat = true;
+
+            txtPrecioApoyo_Foraneo.Properties.Mask.MaskType = MaskType.Numeric;
+            txtPrecioApoyo_Foraneo.Properties.Mask.EditMask = "c2";
+            txtPrecioApoyo_Foraneo.Properties.Mask.UseMaskAsDisplayFormat = true;
+
         }
     }
 }

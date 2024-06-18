@@ -74,6 +74,7 @@ namespace CapaDeDatos
         //Acarreo
         public string Id_EmpresaAcarreo { get; set; }
         public string Nombre_EmpresaAcarreo { get; set; }
+        public string TipoCamion { get; set; }
         public string Id_Camion { get; set; }
         public string Nombre_Camion { get; set; }
         public string Placas { get; set; }
@@ -82,6 +83,7 @@ namespace CapaDeDatos
         public decimal CajasProgramadas { get; set; }
         public decimal CajasCortadasA { get; set; }
         public decimal CostoServicio { get; set; }
+        public decimal TotalAjusteProductor { get; set; }
         public int CostoServicioB { get; set; }
         public decimal CajasExtras { get; set; }
         public decimal CostoCajasExtras { get; set; }
@@ -100,6 +102,7 @@ namespace CapaDeDatos
         public int Autorizado_USA { get; set; }
         public string Poliza_aseguradora { get; set; }
         public string Aseguradora { get; set; }
+        public int CostoIncluidoEnFruta { get; set; }
 
         public void MtdInsertarOrdencorte()
         {
@@ -609,30 +612,14 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaAcarreo");
                 _dato.Texto = Nombre_EmpresaAcarreo;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_EmpresaAcarreo");
-                _dato.Texto = Id_Camion;
-                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Camion");
-                _dato.Texto = Nombre_Camion;
-                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Camion");
-                _dato.Texto = Placas;
-                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Placas");
-                _dato.Texto = Id_TipoCamion;
-                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_TipoCamion");
-                _dato.Texto = Nombre_TipoCamion;
-                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_TipoCamion");
-                _dato.Texto = Id_Chofer;
-                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_Chofer");
-                _dato.Texto = Nombre_Chofer;
-                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Nombre_Chofer");
+                _dato.Texto = TipoCamion;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "TipoCamion");
                 _dato.Decimal = CajasProgramadas;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "CajasProgramadas");
                 _dato.Decimal = CajasCortadasA;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "CajasCortadas");
                 _dato.Decimal = CostoServicio;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "CostoServicio");
-                _dato.Entero = CostoServicioB;
-                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "CostoServicioB");
-                _dato.Decimal = CajasExtras;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "CajasExtras");
                 _dato.Decimal = CostoCajasExtras;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "CostoCajasExtras");
                 _dato.Decimal = CargosExtras;
@@ -641,8 +628,12 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Descuentos");
                 _dato.Decimal = TotalAcarreo;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "TotalAcarreo");
+                _dato.Decimal = TotalAjusteProductor;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "TotalAjusteProductor");
                 _dato.Texto = Observaciones;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Observaciones");
+                _dato.Entero = CostoIncluidoEnFruta;
+                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "CostoIncluidoEnFruta");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();

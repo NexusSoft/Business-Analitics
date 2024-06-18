@@ -14,21 +14,16 @@ namespace CapaDeDatos
         public string Usuario { get; set; }
 
         //Servicios
-        public decimal Menor_a_kg { get; set; }
-        public decimal Precio_kilo { get; set; }
-        public decimal Precio_Dia { get; set; }
-        public int EsRango { get; set; }
-        public decimal Precio_Cuadrilla_Apoyo { get; set; }
-        public decimal Precio_Salida_Falso { get; set; }
-        public decimal Kilos_MenorA { get; set; }
-        public decimal Kilos_MayorA { get; set; }
-        public decimal Precio_MenorA { get; set; }
-        public decimal Precio_MayorA { get; set; }
-        public int EsRangoCaja { get; set; }
-        public decimal Cajas_MenorA { get; set; }
-        public decimal Cajas_MayorA { get; set; }
-        public decimal PrecioCaja_MenorA { get; set; }
-        public decimal PrecioCaja_MayorA { get; set; }
+        public decimal Precio_kilo_Local { get; set; }
+        public decimal PorcentajeTolerancia { get; set; }
+        public decimal Kilos_MenorA_Local { get; set; }
+        public decimal Precio_MenorA_Local { get; set; }
+        public decimal Precio_Cuadrilla_Apoyo_Local { get; set; }
+        public decimal Precio_kilo_Foraneo { get; set; }
+        public decimal Kilos_MenorA_Foraneo { get; set; }
+        public decimal Precio_MenorA_Foraneo { get; set; }
+        public decimal Precio_Cuadrilla_Apoyo_Foraneo { get; set; }
+        
 
         public void MtdSeleccionarEmpresas()
         {
@@ -174,36 +169,24 @@ namespace CapaDeDatos
                 _conexion.NombreProcedimiento = "SP_Empresa_Corte_Servicios_Insert";
                 _dato.Texto = Id_EmpresaCorte;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaCorte");
-                _dato.Decimal = Menor_a_kg;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Menor_a_kg");
-                _dato.Decimal = Precio_Dia;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_Dia");
-                _dato.Entero = EsRango;
-                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "EsRango");
-                _dato.Decimal = Precio_Cuadrilla_Apoyo;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_Cuadrilla_Apoyo");
-                _dato.Decimal = Kilos_MenorA;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Kilos_MenorA");
-                _dato.Decimal = Kilos_MayorA;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Kilos_MayorA");
-                _dato.Decimal = Precio_MenorA;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_MenorA");
-                _dato.Decimal = Precio_MayorA;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_MayorA");
-                _dato.Entero = EsRangoCaja;
-                _conexion.agregarParametro(EnumTipoDato.Entero, _dato, "EsRangoCaja");
-                _dato.Decimal = Precio_kilo;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_kilo");
-                _dato.Decimal = Cajas_MenorA;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cajas_MenorA");
-                _dato.Decimal = Cajas_MayorA;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Cajas_MayorA");
-                _dato.Decimal = PrecioCaja_MenorA;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "PrecioCaja_MenorA");
-                _dato.Decimal = PrecioCaja_MayorA;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "PrecioCaja_MayorA");
-                _dato.Decimal = Precio_Salida_Falso;
-                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_Salida_Falso");
+                _dato.Decimal = Precio_kilo_Local;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_kilo_Local");
+                _dato.Decimal = PorcentajeTolerancia;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "PorcentajeTolerancia");
+                _dato.Decimal = Kilos_MenorA_Local;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Kilos_MenorA_Local");
+                _dato.Decimal = Precio_MenorA_Local;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_MenorA_Local");
+                _dato.Decimal = Precio_Cuadrilla_Apoyo_Local;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_Cuadrilla_Apoyo_Local");
+                _dato.Decimal = Precio_kilo_Foraneo;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_kilo_Foraneo");
+                _dato.Decimal = Kilos_MenorA_Foraneo;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Kilos_MenorA_Foraneo");
+                _dato.Decimal = Precio_MenorA_Foraneo;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_MenorA_Foraneo");
+                _dato.Decimal = Precio_Cuadrilla_Apoyo_Foraneo;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Precio_Cuadrilla_Apoyo_Foraneo");
                 _dato.Texto = Usuario;
                 _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Usuario");
                 _conexion.EjecutarDataset();

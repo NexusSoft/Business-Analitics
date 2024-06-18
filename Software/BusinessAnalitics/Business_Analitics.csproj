@@ -160,6 +160,18 @@
     <Compile Include="Form_Catalogos\Acarreo\Frm_Acarreo_Zona.Designer.cs">
       <DependentUpon>Frm_Acarreo_Zona.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Catalogos\Acopio\Frm_ListaPrecios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Acopio\Frm_ListaPrecios.Designer.cs">
+      <DependentUpon>Frm_ListaPrecios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Catalogos\Acopio\Frm_Precios_Estibas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Catalogos\Acopio\Frm_Precios_Estibas.Designer.cs">
+      <DependentUpon>Frm_Precios_Estibas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Catalogos\Empresas\Frm_EmpresaBasculas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,10 +190,10 @@
     <Compile Include="Form_Catalogos\Acarreo\Frm_EmpresaAcarreo.Designer.cs">
       <DependentUpon>Frm_EmpresaAcarreo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Catalogos\Empresas\Frm_EmpresaCorte.cs">
+    <Compile Include="Form_Catalogos\Corte\Frm_EmpresaCorte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Catalogos\Empresas\Frm_EmpresaCorte.Designer.cs">
+    <Compile Include="Form_Catalogos\Corte\Frm_EmpresaCorte.Designer.cs">
       <DependentUpon>Frm_EmpresaCorte.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Catalogos\Frm_BuscarHuerta.cs">
@@ -489,6 +501,12 @@
     <EmbeddedResource Include="Form_Catalogos\Acarreo\Frm_Acarreo_Zona.resx">
       <DependentUpon>Frm_Acarreo_Zona.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Acopio\Frm_ListaPrecios.resx">
+      <DependentUpon>Frm_ListaPrecios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Catalogos\Acopio\Frm_Precios_Estibas.resx">
+      <DependentUpon>Frm_Precios_Estibas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Catalogos\Empresas\Frm_EmpresaBasculas.resx">
       <DependentUpon>Frm_EmpresaBasculas.cs</DependentUpon>
     </EmbeddedResource>
@@ -498,7 +516,7 @@
     <EmbeddedResource Include="Form_Catalogos\Acarreo\Frm_EmpresaAcarreo.resx">
       <DependentUpon>Frm_EmpresaAcarreo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Catalogos\Empresas\Frm_EmpresaCorte.resx">
+    <EmbeddedResource Include="Form_Catalogos\Corte\Frm_EmpresaCorte.resx">
       <DependentUpon>Frm_EmpresaCorte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Catalogos\Frm_BuscarHuerta.resx">

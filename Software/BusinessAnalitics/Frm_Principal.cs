@@ -496,5 +496,21 @@ namespace Business_Analitics
                 XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [030]");
             }
         }
+
+        private void btn_EstibaPago_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (TieneAcceso("031"))
+            {
+                Frm_Precios_Estibas Ventana = new Frm_Precios_Estibas();
+                Frm_Precios_Estibas.DefInstance.MdiParent = this;
+                Frm_Precios_Estibas.DefInstance.IdPerfil = IdPerfil;
+                Frm_Precios_Estibas.DefInstance.UsuariosLogin = UsuariosLogin;
+                Frm_Precios_Estibas.DefInstance.Show();
+            }
+            else
+            {
+                XtraMessageBox.Show("No Cuentas con acceso a esta Opcion [030]");
+            }
+        }
     }
 }

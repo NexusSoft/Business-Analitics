@@ -181,8 +181,6 @@
             this.gridColumn4.FieldName = "c_secuencia_ocd";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
             // 
             // gridColumn5
             // 
@@ -191,7 +189,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.VisibleIndex = 4;
             // 
             // gridColumn6
             // 
@@ -200,7 +198,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 8;
+            this.gridColumn6.VisibleIndex = 7;
             // 
             // gridColumn7
             // 
@@ -209,7 +207,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 9;
+            this.gridColumn7.VisibleIndex = 8;
             // 
             // gridColumn8
             // 
@@ -218,7 +216,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 10;
+            this.gridColumn8.VisibleIndex = 9;
             // 
             // gridColumn9
             // 
@@ -227,7 +225,7 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.AllowEdit = false;
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 11;
+            this.gridColumn9.VisibleIndex = 10;
             // 
             // gridColumn10
             // 
@@ -235,7 +233,7 @@
             this.gridColumn10.FieldName = "c_codigo_rec";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 6;
+            this.gridColumn10.VisibleIndex = 5;
             // 
             // gridColumn11
             // 
@@ -251,7 +249,7 @@
             this.gridColumn12.FieldName = "n_kilos_red";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 7;
+            this.gridColumn12.VisibleIndex = 6;
             // 
             // Frm_BuscarProgramaCorte
             // 

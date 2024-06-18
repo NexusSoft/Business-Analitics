@@ -31,6 +31,10 @@ namespace CapaDeDatos
         public decimal Rabon { get; set; }
         public decimal Torton { get; set; }
         public decimal Contenedor { get; set; }
+        public decimal kgRabon { get; set; }
+        public decimal kgTorton { get; set; }
+        public decimal kgContenedor { get; set; }
+        public string c_codigo_hue { get; set; }
 
         public void MtdSeleccionarEmpresas()
         {
@@ -147,8 +151,8 @@ namespace CapaDeDatos
             try
             {
                 _conexion.NombreProcedimiento = "SP_Empresa_Acarreo_Servicios_Select";
-                _dato.Texto = Id_EmpresaAcarreo;
-                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "Id_EmpresaAcarreo");
+                _dato.Texto = c_codigo_hue;
+                _conexion.agregarParametro(EnumTipoDato.Texto, _dato, "c_codigo_hue");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
@@ -418,6 +422,12 @@ namespace CapaDeDatos
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Torton");
                 _dato.Decimal = Contenedor;
                 _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "Contenedor");
+                _dato.Decimal = kgRabon;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "kgRabon");
+                _dato.Decimal = kgTorton;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "kgTorton");
+                _dato.Decimal = kgContenedor;
+                _conexion.agregarParametro(EnumTipoDato.Decimal, _dato, "kgContenedor");
                 _conexion.EjecutarDataset();
 
                 if (_conexion.Exito)
