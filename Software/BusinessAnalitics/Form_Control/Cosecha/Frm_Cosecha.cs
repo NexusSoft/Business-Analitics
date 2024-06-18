@@ -1255,7 +1255,6 @@ namespace Business_Analitics
             txtTipoCorteEC.Text = string.Empty;
             txt_kilosCortadosCorte.EditValue = "0";
             txt_Margen.EditValue = "0";
-            txt_KilosAjustadosCorte.EditValue = "0";
             txt_CajasCortadasCorte.EditValue = "0";
             txt_PrecioKiloCorte.EditValue = "0";
             txt_PrecioTCorte.EditValue = "0";
@@ -1602,7 +1601,6 @@ namespace Business_Analitics
             ins.Nombre_EmpresaCorte = txt_NombreEmpresaCorte.Text;
             ins.TipodeCorte = txtTipoCorteEC.Text;
             ins.KilosCortadosC = Convert.ToDecimal(txt_kilosCortadosCorte.EditValue);
-            ins.KilosAjustadosC = Convert.ToDecimal(txt_KilosAjustadosCorte.EditValue);
             ins.PrecioporKilo = Decimal.Parse(txt_PrecioKiloCorte.Text, style, provider);
             //if (chk_PrecioPorkg.Checked == true)
             //{
@@ -1998,7 +1996,6 @@ namespace Business_Analitics
                     CargarServicios();
                     txtTipoCorteEC.Text = ins.Datos.Rows[0]["TipodeCorte"].ToString();
                     txt_kilosCortadosCorte.EditValue = ins.Datos.Rows[0]["KilosCortados"].ToString();
-                    txt_KilosAjustadosCorte.EditValue = ins.Datos.Rows[0]["KilosAjustados"].ToString();
                     txt_PrecioKiloCorte.EditValue = ins.Datos.Rows[0]["PrecioporKilo"].ToString();
                     //if (ins.Datos.Rows[0]["PrecioporKiloB"].ToString() == "True")
                     //{

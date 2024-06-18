@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem3 = new DevExpress.Utils.ToolTipSeparatorItem();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cosecha));
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem1 = new DevExpress.Utils.ToolTipSeparatorItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bEstado = new DevExpress.XtraBars.Bar();
             this.lblProveedor = new DevExpress.XtraBars.BarStaticItem();
@@ -245,11 +245,9 @@
             this.txt_Margen = new DevExpress.XtraEditors.TextEdit();
             this.labelControl37 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl40 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl44 = new DevExpress.XtraEditors.LabelControl();
             this.txt_PrecioDiaCorte = new DevExpress.XtraEditors.TextEdit();
             this.txt_kilosCortadosCorte = new DevExpress.XtraEditors.TextEdit();
             this.labelControl39 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_KilosAjustadosCorte = new DevExpress.XtraEditors.TextEdit();
             this.labelControl36 = new DevExpress.XtraEditors.LabelControl();
             this.txt_PrecioTCorte = new DevExpress.XtraEditors.TextEdit();
             this.txt_NombreEmpresaCorte = new DevExpress.XtraEditors.TextEdit();
@@ -362,6 +360,31 @@
             this.OpenDialog = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.xtraOpenFileDialog1 = new DevExpress.XtraEditors.XtraOpenFileDialog(this.components);
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl58 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl59 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl70 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl72 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl78 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl79 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit11 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl80 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit12 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl81 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit13 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl82 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit14 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl83 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl84 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit15 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl85 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit16 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
@@ -480,7 +503,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Margen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PrecioDiaCorte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_kilosCortadosCorte.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_KilosAjustadosCorte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PrecioTCorte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_NombreEmpresaCorte.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PagoTotalCorte.Properties)).BeginInit();
@@ -553,6 +575,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_KilosMuestra.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Productor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
+            this.groupControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit15.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit16.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -632,18 +668,18 @@
             this.btn_CerrarOrden.Id = 71;
             this.btn_CerrarOrden.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_CerrarOrden.ImageOptions.SvgImage")));
             this.btn_CerrarOrden.Name = "btn_CerrarOrden";
-            toolTipTitleItem5.Text = "Importar datos";
-            toolTipItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipItem3.LeftIndent = 6;
-            toolTipItem3.Text = "Si actualiza la informacion se sustituira por valores capturados en inventum";
-            toolTipTitleItem6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
-            toolTipTitleItem6.LeftIndent = 6;
-            toolTipTitleItem6.Text = "Business Analitics ";
-            superToolTip3.Items.Add(toolTipTitleItem5);
-            superToolTip3.Items.Add(toolTipItem3);
-            superToolTip3.Items.Add(toolTipSeparatorItem3);
-            superToolTip3.Items.Add(toolTipTitleItem6);
-            this.btn_CerrarOrden.SuperTip = superToolTip3;
+            toolTipTitleItem1.Text = "Importar datos";
+            toolTipItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Si actualiza la informacion se sustituira por valores capturados en inventum";
+            toolTipTitleItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            toolTipTitleItem2.LeftIndent = 6;
+            toolTipTitleItem2.Text = "Business Analitics ";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            superToolTip1.Items.Add(toolTipSeparatorItem1);
+            superToolTip1.Items.Add(toolTipTitleItem2);
+            this.btn_CerrarOrden.SuperTip = superToolTip1;
             // 
             // btn_AbrirOrden
             // 
@@ -2309,9 +2345,9 @@
             // 
             this.groupControl4.Controls.Add(this.xtraScrollableControl3);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl4.Location = new System.Drawing.Point(5, 334);
+            this.groupControl4.Location = new System.Drawing.Point(5, 406);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(692, 434);
+            this.groupControl4.Size = new System.Drawing.Size(692, 362);
             this.groupControl4.TabIndex = 61;
             this.groupControl4.Text = "Cobro por Servicios";
             // 
@@ -2322,7 +2358,7 @@
             this.xtraScrollableControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl3.Location = new System.Drawing.Point(2, 23);
             this.xtraScrollableControl3.Name = "xtraScrollableControl3";
-            this.xtraScrollableControl3.Size = new System.Drawing.Size(688, 409);
+            this.xtraScrollableControl3.Size = new System.Drawing.Size(688, 337);
             this.xtraScrollableControl3.TabIndex = 0;
             // 
             // groupControl1
@@ -2568,14 +2604,7 @@
             // 
             // groupControl6
             // 
-            this.groupControl6.Controls.Add(this.labelControl67);
-            this.groupControl6.Controls.Add(this.textEdit3);
-            this.groupControl6.Controls.Add(this.labelControl68);
-            this.groupControl6.Controls.Add(this.textEdit4);
-            this.groupControl6.Controls.Add(this.labelControl63);
-            this.groupControl6.Controls.Add(this.textEdit2);
-            this.groupControl6.Controls.Add(this.labelControl57);
-            this.groupControl6.Controls.Add(this.textEdit1);
+            this.groupControl6.Controls.Add(this.groupControl7);
             this.groupControl6.Controls.Add(this.chkCostoCorteFruta);
             this.groupControl6.Controls.Add(this.btn_RefrescarPeso);
             this.groupControl6.Controls.Add(this.labelControl150);
@@ -2585,16 +2614,11 @@
             this.groupControl6.Controls.Add(this.txt_CajasCortadasCorte);
             this.groupControl6.Controls.Add(this.txt_PrecioCuadrillaCorte);
             this.groupControl6.Controls.Add(this.chk_CuadrillaApoyo);
-            this.groupControl6.Controls.Add(this.btn_kilosND);
-            this.groupControl6.Controls.Add(this.labelMargen);
-            this.groupControl6.Controls.Add(this.txt_Margen);
             this.groupControl6.Controls.Add(this.labelControl37);
             this.groupControl6.Controls.Add(this.labelControl40);
-            this.groupControl6.Controls.Add(this.labelControl44);
             this.groupControl6.Controls.Add(this.txt_PrecioDiaCorte);
             this.groupControl6.Controls.Add(this.txt_kilosCortadosCorte);
             this.groupControl6.Controls.Add(this.labelControl39);
-            this.groupControl6.Controls.Add(this.txt_KilosAjustadosCorte);
             this.groupControl6.Controls.Add(this.labelControl36);
             this.groupControl6.Controls.Add(this.txt_PrecioTCorte);
             this.groupControl6.Controls.Add(this.txt_NombreEmpresaCorte);
@@ -2609,13 +2633,13 @@
             this.groupControl6.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl6.Location = new System.Drawing.Point(5, 5);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(692, 329);
+            this.groupControl6.Size = new System.Drawing.Size(692, 401);
             this.groupControl6.TabIndex = 57;
             this.groupControl6.Text = "Calculo de Corte";
             // 
             // labelControl67
             // 
-            this.labelControl67.Location = new System.Drawing.Point(436, 162);
+            this.labelControl67.Location = new System.Drawing.Point(312, 87);
             this.labelControl67.Name = "labelControl67";
             this.labelControl67.Size = new System.Drawing.Size(35, 13);
             this.labelControl67.TabIndex = 148;
@@ -2625,7 +2649,7 @@
             // 
             this.textEdit3.EditValue = "0";
             this.textEdit3.Enabled = false;
-            this.textEdit3.Location = new System.Drawing.Point(480, 158);
+            this.textEdit3.Location = new System.Drawing.Point(356, 83);
             this.textEdit3.MenuManager = this.barManager1;
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Properties.BeepOnError = true;
@@ -2635,12 +2659,12 @@
             this.textEdit3.Properties.MaskSettings.Set("valueType", typeof(decimal));
             this.textEdit3.Properties.NullText = "0";
             this.textEdit3.Properties.UseMaskAsDisplayFormat = true;
-            this.textEdit3.Size = new System.Drawing.Size(100, 20);
+            this.textEdit3.Size = new System.Drawing.Size(75, 20);
             this.textEdit3.TabIndex = 147;
             // 
             // labelControl68
             // 
-            this.labelControl68.Location = new System.Drawing.Point(436, 136);
+            this.labelControl68.Location = new System.Drawing.Point(312, 60);
             this.labelControl68.Name = "labelControl68";
             this.labelControl68.Size = new System.Drawing.Size(38, 13);
             this.labelControl68.TabIndex = 146;
@@ -2650,7 +2674,7 @@
             // 
             this.textEdit4.EditValue = "0";
             this.textEdit4.Enabled = false;
-            this.textEdit4.Location = new System.Drawing.Point(480, 132);
+            this.textEdit4.Location = new System.Drawing.Point(356, 56);
             this.textEdit4.MenuManager = this.barManager1;
             this.textEdit4.Name = "textEdit4";
             this.textEdit4.Properties.BeepOnError = true;
@@ -2660,12 +2684,12 @@
             this.textEdit4.Properties.MaskSettings.Set("valueType", typeof(decimal));
             this.textEdit4.Properties.NullText = "0";
             this.textEdit4.Properties.UseMaskAsDisplayFormat = true;
-            this.textEdit4.Size = new System.Drawing.Size(100, 20);
+            this.textEdit4.Size = new System.Drawing.Size(75, 20);
             this.textEdit4.TabIndex = 145;
             // 
             // labelControl63
             // 
-            this.labelControl63.Location = new System.Drawing.Point(228, 162);
+            this.labelControl63.Location = new System.Drawing.Point(16, 86);
             this.labelControl63.Name = "labelControl63";
             this.labelControl63.Size = new System.Drawing.Size(58, 13);
             this.labelControl63.TabIndex = 144;
@@ -2675,7 +2699,7 @@
             // 
             this.textEdit2.EditValue = "0";
             this.textEdit2.Enabled = false;
-            this.textEdit2.Location = new System.Drawing.Point(326, 158);
+            this.textEdit2.Location = new System.Drawing.Point(114, 82);
             this.textEdit2.MenuManager = this.barManager1;
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Properties.BeepOnError = true;
@@ -2685,12 +2709,12 @@
             this.textEdit2.Properties.MaskSettings.Set("valueType", typeof(decimal));
             this.textEdit2.Properties.NullText = "0";
             this.textEdit2.Properties.UseMaskAsDisplayFormat = true;
-            this.textEdit2.Size = new System.Drawing.Size(100, 20);
+            this.textEdit2.Size = new System.Drawing.Size(75, 20);
             this.textEdit2.TabIndex = 143;
             // 
             // labelControl57
             // 
-            this.labelControl57.Location = new System.Drawing.Point(228, 136);
+            this.labelControl57.Location = new System.Drawing.Point(16, 60);
             this.labelControl57.Name = "labelControl57";
             this.labelControl57.Size = new System.Drawing.Size(75, 13);
             this.labelControl57.TabIndex = 142;
@@ -2700,7 +2724,7 @@
             // 
             this.textEdit1.EditValue = "0";
             this.textEdit1.Enabled = false;
-            this.textEdit1.Location = new System.Drawing.Point(326, 132);
+            this.textEdit1.Location = new System.Drawing.Point(114, 56);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.BeepOnError = true;
@@ -2710,7 +2734,7 @@
             this.textEdit1.Properties.MaskSettings.Set("valueType", typeof(decimal));
             this.textEdit1.Properties.NullText = "0";
             this.textEdit1.Properties.UseMaskAsDisplayFormat = true;
-            this.textEdit1.Size = new System.Drawing.Size(100, 20);
+            this.textEdit1.Size = new System.Drawing.Size(75, 20);
             this.textEdit1.TabIndex = 141;
             // 
             // chkCostoCorteFruta
@@ -2736,7 +2760,7 @@
             // 
             // labelControl150
             // 
-            this.labelControl150.Location = new System.Drawing.Point(231, 266);
+            this.labelControl150.Location = new System.Drawing.Point(12, 264);
             this.labelControl150.Name = "labelControl150";
             this.labelControl150.Size = new System.Drawing.Size(77, 13);
             this.labelControl150.TabIndex = 66;
@@ -2745,7 +2769,7 @@
             // txt_ObservacionesCorte
             // 
             this.txt_ObservacionesCorte.AllowDrop = true;
-            this.txt_ObservacionesCorte.Location = new System.Drawing.Point(336, 202);
+            this.txt_ObservacionesCorte.Location = new System.Drawing.Point(11, 329);
             this.txt_ObservacionesCorte.MenuManager = this.barManager1;
             this.txt_ObservacionesCorte.Name = "txt_ObservacionesCorte";
             this.txt_ObservacionesCorte.Size = new System.Drawing.Size(345, 54);
@@ -2753,7 +2777,7 @@
             // 
             // labelControl147
             // 
-            this.labelControl147.Location = new System.Drawing.Point(336, 184);
+            this.labelControl147.Location = new System.Drawing.Point(12, 311);
             this.labelControl147.Name = "labelControl147";
             this.labelControl147.Size = new System.Drawing.Size(71, 13);
             this.labelControl147.TabIndex = 63;
@@ -2761,7 +2785,7 @@
             // 
             // labelControl64
             // 
-            this.labelControl64.Location = new System.Drawing.Point(10, 161);
+            this.labelControl64.Location = new System.Drawing.Point(12, 135);
             this.labelControl64.Name = "labelControl64";
             this.labelControl64.Size = new System.Drawing.Size(74, 13);
             this.labelControl64.TabIndex = 62;
@@ -2771,7 +2795,7 @@
             // 
             this.txt_CajasCortadasCorte.EditValue = "0";
             this.txt_CajasCortadasCorte.Enabled = false;
-            this.txt_CajasCortadasCorte.Location = new System.Drawing.Point(104, 158);
+            this.txt_CajasCortadasCorte.Location = new System.Drawing.Point(104, 132);
             this.txt_CajasCortadasCorte.MenuManager = this.barManager1;
             this.txt_CajasCortadasCorte.Name = "txt_CajasCortadasCorte";
             this.txt_CajasCortadasCorte.Properties.BeepOnError = true;
@@ -2784,7 +2808,7 @@
             // 
             this.txt_PrecioCuadrillaCorte.EditValue = "0";
             this.txt_PrecioCuadrillaCorte.Enabled = false;
-            this.txt_PrecioCuadrillaCorte.Location = new System.Drawing.Point(129, 262);
+            this.txt_PrecioCuadrillaCorte.Location = new System.Drawing.Point(129, 236);
             this.txt_PrecioCuadrillaCorte.MenuManager = this.barManager1;
             this.txt_PrecioCuadrillaCorte.Name = "txt_PrecioCuadrillaCorte";
             this.txt_PrecioCuadrillaCorte.Properties.BeepOnError = true;
@@ -2795,7 +2819,7 @@
             // 
             // chk_CuadrillaApoyo
             // 
-            this.chk_CuadrillaApoyo.Location = new System.Drawing.Point(9, 262);
+            this.chk_CuadrillaApoyo.Location = new System.Drawing.Point(12, 236);
             this.chk_CuadrillaApoyo.MenuManager = this.barManager1;
             this.chk_CuadrillaApoyo.Name = "chk_CuadrillaApoyo";
             this.chk_CuadrillaApoyo.Properties.Caption = "Cuadrilla Apoyo";
@@ -2807,7 +2831,7 @@
             // btn_kilosND
             // 
             this.btn_kilosND.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_kilosND.ImageOptions.Image")));
-            this.btn_kilosND.Location = new System.Drawing.Point(436, 105);
+            this.btn_kilosND.Location = new System.Drawing.Point(224, 29);
             this.btn_kilosND.Name = "btn_kilosND";
             this.btn_kilosND.Size = new System.Drawing.Size(24, 23);
             this.btn_kilosND.TabIndex = 58;
@@ -2815,7 +2839,7 @@
             // 
             // labelMargen
             // 
-            this.labelMargen.Location = new System.Drawing.Point(227, 110);
+            this.labelMargen.Location = new System.Drawing.Point(15, 34);
             this.labelMargen.Name = "labelMargen";
             this.labelMargen.Size = new System.Drawing.Size(62, 13);
             this.labelMargen.TabIndex = 53;
@@ -2825,7 +2849,7 @@
             // 
             this.txt_Margen.EditValue = "0";
             this.txt_Margen.Enabled = false;
-            this.txt_Margen.Location = new System.Drawing.Point(326, 106);
+            this.txt_Margen.Location = new System.Drawing.Point(114, 30);
             this.txt_Margen.MenuManager = this.barManager1;
             this.txt_Margen.Name = "txt_Margen";
             this.txt_Margen.Properties.BeepOnError = true;
@@ -2835,7 +2859,7 @@
             this.txt_Margen.Properties.MaskSettings.Set("valueType", typeof(decimal));
             this.txt_Margen.Properties.NullText = "0";
             this.txt_Margen.Properties.UseMaskAsDisplayFormat = true;
-            this.txt_Margen.Size = new System.Drawing.Size(100, 20);
+            this.txt_Margen.Size = new System.Drawing.Size(75, 20);
             this.txt_Margen.TabIndex = 52;
             // 
             // labelControl37
@@ -2848,25 +2872,17 @@
             // 
             // labelControl40
             // 
-            this.labelControl40.Location = new System.Drawing.Point(12, 240);
+            this.labelControl40.Location = new System.Drawing.Point(12, 214);
             this.labelControl40.Name = "labelControl40";
             this.labelControl40.Size = new System.Drawing.Size(65, 13);
             this.labelControl40.TabIndex = 41;
             this.labelControl40.Text = "Precio por dia";
             // 
-            // labelControl44
-            // 
-            this.labelControl44.Location = new System.Drawing.Point(12, 136);
-            this.labelControl44.Name = "labelControl44";
-            this.labelControl44.Size = new System.Drawing.Size(72, 13);
-            this.labelControl44.TabIndex = 51;
-            this.labelControl44.Text = "Kilos Ajustados";
-            // 
             // txt_PrecioDiaCorte
             // 
             this.txt_PrecioDiaCorte.EditValue = "0";
             this.txt_PrecioDiaCorte.Enabled = false;
-            this.txt_PrecioDiaCorte.Location = new System.Drawing.Point(104, 236);
+            this.txt_PrecioDiaCorte.Location = new System.Drawing.Point(104, 210);
             this.txt_PrecioDiaCorte.MenuManager = this.barManager1;
             this.txt_PrecioDiaCorte.Name = "txt_PrecioDiaCorte";
             this.txt_PrecioDiaCorte.Properties.BeepOnError = true;
@@ -2898,24 +2914,11 @@
             // 
             // labelControl39
             // 
-            this.labelControl39.Location = new System.Drawing.Point(12, 214);
+            this.labelControl39.Location = new System.Drawing.Point(12, 188);
             this.labelControl39.Name = "labelControl39";
             this.labelControl39.Size = new System.Drawing.Size(86, 13);
             this.labelControl39.TabIndex = 39;
             this.labelControl39.Text = "Precio de cosecha";
-            // 
-            // txt_KilosAjustadosCorte
-            // 
-            this.txt_KilosAjustadosCorte.EditValue = "0";
-            this.txt_KilosAjustadosCorte.Enabled = false;
-            this.txt_KilosAjustadosCorte.Location = new System.Drawing.Point(104, 132);
-            this.txt_KilosAjustadosCorte.MenuManager = this.barManager1;
-            this.txt_KilosAjustadosCorte.Name = "txt_KilosAjustadosCorte";
-            this.txt_KilosAjustadosCorte.Properties.BeepOnError = true;
-            this.txt_KilosAjustadosCorte.Properties.NullText = "0";
-            this.txt_KilosAjustadosCorte.Properties.UseMaskAsDisplayFormat = true;
-            this.txt_KilosAjustadosCorte.Size = new System.Drawing.Size(100, 20);
-            this.txt_KilosAjustadosCorte.TabIndex = 50;
             // 
             // labelControl36
             // 
@@ -2929,7 +2932,7 @@
             // 
             this.txt_PrecioTCorte.EditValue = "0";
             this.txt_PrecioTCorte.Enabled = false;
-            this.txt_PrecioTCorte.Location = new System.Drawing.Point(104, 210);
+            this.txt_PrecioTCorte.Location = new System.Drawing.Point(104, 184);
             this.txt_PrecioTCorte.MenuManager = this.barManager1;
             this.txt_PrecioTCorte.Name = "txt_PrecioTCorte";
             this.txt_PrecioTCorte.Properties.BeepOnError = true;
@@ -2972,7 +2975,7 @@
             // 
             // labelControl38
             // 
-            this.labelControl38.Location = new System.Drawing.Point(12, 188);
+            this.labelControl38.Location = new System.Drawing.Point(12, 162);
             this.labelControl38.Name = "labelControl38";
             this.labelControl38.Size = new System.Drawing.Size(66, 13);
             this.labelControl38.TabIndex = 37;
@@ -2989,7 +2992,7 @@
             // 
             // labelControl42
             // 
-            this.labelControl42.Location = new System.Drawing.Point(15, 292);
+            this.labelControl42.Location = new System.Drawing.Point(12, 292);
             this.labelControl42.Name = "labelControl42";
             this.labelControl42.Size = new System.Drawing.Size(64, 13);
             this.labelControl42.TabIndex = 46;
@@ -3008,7 +3011,7 @@
             // 
             this.txt_PrecioKiloCorte.EditValue = "0";
             this.txt_PrecioKiloCorte.Enabled = false;
-            this.txt_PrecioKiloCorte.Location = new System.Drawing.Point(104, 184);
+            this.txt_PrecioKiloCorte.Location = new System.Drawing.Point(104, 158);
             this.txt_PrecioKiloCorte.MenuManager = this.barManager1;
             this.txt_PrecioKiloCorte.Name = "txt_PrecioKiloCorte";
             this.txt_PrecioKiloCorte.Properties.BeepOnError = true;
@@ -3024,7 +3027,7 @@
             0,
             0,
             0});
-            this.txt_NoCuadrillas.Location = new System.Drawing.Point(314, 262);
+            this.txt_NoCuadrillas.Location = new System.Drawing.Point(105, 262);
             this.txt_NoCuadrillas.MenuManager = this.barManager1;
             this.txt_NoCuadrillas.Name = "txt_NoCuadrillas";
             this.txt_NoCuadrillas.Properties.BeepOnError = true;
@@ -4179,6 +4182,349 @@
             this.gridColumn38.Visible = true;
             this.gridColumn38.VisibleIndex = 11;
             // 
+            // labelControl58
+            // 
+            this.labelControl58.Location = new System.Drawing.Point(200, 86);
+            this.labelControl58.Name = "labelControl58";
+            this.labelControl58.Size = new System.Drawing.Size(18, 13);
+            this.labelControl58.TabIndex = 152;
+            this.labelControl58.Text = "% :";
+            // 
+            // textEdit5
+            // 
+            this.textEdit5.EditValue = "0";
+            this.textEdit5.Enabled = false;
+            this.textEdit5.Location = new System.Drawing.Point(224, 83);
+            this.textEdit5.MenuManager = this.barManager1;
+            this.textEdit5.Name = "textEdit5";
+            this.textEdit5.Properties.BeepOnError = true;
+            this.textEdit5.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit5.Properties.MaskSettings.Set("mask", "P");
+            this.textEdit5.Properties.MaskSettings.Set("culture", "es-MX");
+            this.textEdit5.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEdit5.Properties.NullText = "0";
+            this.textEdit5.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit5.Size = new System.Drawing.Size(75, 20);
+            this.textEdit5.TabIndex = 151;
+            // 
+            // labelControl59
+            // 
+            this.labelControl59.Location = new System.Drawing.Point(200, 60);
+            this.labelControl59.Name = "labelControl59";
+            this.labelControl59.Size = new System.Drawing.Size(18, 13);
+            this.labelControl59.TabIndex = 150;
+            this.labelControl59.Text = "% :";
+            // 
+            // textEdit6
+            // 
+            this.textEdit6.EditValue = "0";
+            this.textEdit6.Enabled = false;
+            this.textEdit6.Location = new System.Drawing.Point(224, 56);
+            this.textEdit6.MenuManager = this.barManager1;
+            this.textEdit6.Name = "textEdit6";
+            this.textEdit6.Properties.BeepOnError = true;
+            this.textEdit6.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit6.Properties.MaskSettings.Set("mask", "P");
+            this.textEdit6.Properties.MaskSettings.Set("culture", "es-MX");
+            this.textEdit6.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEdit6.Properties.NullText = "0";
+            this.textEdit6.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit6.Size = new System.Drawing.Size(75, 20);
+            this.textEdit6.TabIndex = 149;
+            // 
+            // groupControl7
+            // 
+            this.groupControl7.Controls.Add(this.labelControl85);
+            this.groupControl7.Controls.Add(this.textEdit16);
+            this.groupControl7.Controls.Add(this.labelControl84);
+            this.groupControl7.Controls.Add(this.textEdit15);
+            this.groupControl7.Controls.Add(this.textEdit14);
+            this.groupControl7.Controls.Add(this.labelControl83);
+            this.groupControl7.Controls.Add(this.textEdit13);
+            this.groupControl7.Controls.Add(this.labelControl82);
+            this.groupControl7.Controls.Add(this.textEdit12);
+            this.groupControl7.Controls.Add(this.labelControl81);
+            this.groupControl7.Controls.Add(this.textEdit11);
+            this.groupControl7.Controls.Add(this.labelControl80);
+            this.groupControl7.Controls.Add(this.textEdit10);
+            this.groupControl7.Controls.Add(this.labelControl79);
+            this.groupControl7.Controls.Add(this.textEdit9);
+            this.groupControl7.Controls.Add(this.labelControl78);
+            this.groupControl7.Controls.Add(this.textEdit8);
+            this.groupControl7.Controls.Add(this.labelControl72);
+            this.groupControl7.Controls.Add(this.textEdit7);
+            this.groupControl7.Controls.Add(this.labelControl70);
+            this.groupControl7.Controls.Add(this.labelMargen);
+            this.groupControl7.Controls.Add(this.labelControl58);
+            this.groupControl7.Controls.Add(this.txt_Margen);
+            this.groupControl7.Controls.Add(this.textEdit5);
+            this.groupControl7.Controls.Add(this.btn_kilosND);
+            this.groupControl7.Controls.Add(this.labelControl59);
+            this.groupControl7.Controls.Add(this.textEdit1);
+            this.groupControl7.Controls.Add(this.textEdit6);
+            this.groupControl7.Controls.Add(this.labelControl57);
+            this.groupControl7.Controls.Add(this.labelControl67);
+            this.groupControl7.Controls.Add(this.textEdit2);
+            this.groupControl7.Controls.Add(this.textEdit3);
+            this.groupControl7.Controls.Add(this.labelControl63);
+            this.groupControl7.Controls.Add(this.labelControl68);
+            this.groupControl7.Controls.Add(this.textEdit4);
+            this.groupControl7.Location = new System.Drawing.Point(231, 83);
+            this.groupControl7.Name = "groupControl7";
+            this.groupControl7.Size = new System.Drawing.Size(456, 240);
+            this.groupControl7.TabIndex = 153;
+            this.groupControl7.Text = "Ajustes";
+            // 
+            // labelControl70
+            // 
+            this.labelControl70.Location = new System.Drawing.Point(15, 126);
+            this.labelControl70.Name = "labelControl70";
+            this.labelControl70.Size = new System.Drawing.Size(59, 13);
+            this.labelControl70.TabIndex = 153;
+            this.labelControl70.Text = "Desecho kg:";
+            // 
+            // textEdit7
+            // 
+            this.textEdit7.EditValue = "0";
+            this.textEdit7.Enabled = false;
+            this.textEdit7.Location = new System.Drawing.Point(114, 122);
+            this.textEdit7.MenuManager = this.barManager1;
+            this.textEdit7.Name = "textEdit7";
+            this.textEdit7.Properties.BeepOnError = true;
+            this.textEdit7.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit7.Properties.MaskSettings.Set("mask", "n");
+            this.textEdit7.Properties.MaskSettings.Set("culture", "es-MX");
+            this.textEdit7.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEdit7.Properties.NullText = "0";
+            this.textEdit7.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit7.Size = new System.Drawing.Size(75, 20);
+            this.textEdit7.TabIndex = 154;
+            // 
+            // labelControl72
+            // 
+            this.labelControl72.Location = new System.Drawing.Point(200, 126);
+            this.labelControl72.Name = "labelControl72";
+            this.labelControl72.Size = new System.Drawing.Size(18, 13);
+            this.labelControl72.TabIndex = 155;
+            this.labelControl72.Text = "% :";
+            // 
+            // textEdit8
+            // 
+            this.textEdit8.EditValue = "0";
+            this.textEdit8.Enabled = false;
+            this.textEdit8.Location = new System.Drawing.Point(224, 122);
+            this.textEdit8.MenuManager = this.barManager1;
+            this.textEdit8.Name = "textEdit8";
+            this.textEdit8.Properties.BeepOnError = true;
+            this.textEdit8.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit8.Properties.MaskSettings.Set("mask", "P");
+            this.textEdit8.Properties.MaskSettings.Set("culture", "es-MX");
+            this.textEdit8.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEdit8.Properties.NullText = "0";
+            this.textEdit8.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit8.Size = new System.Drawing.Size(75, 20);
+            this.textEdit8.TabIndex = 156;
+            // 
+            // textEdit9
+            // 
+            this.textEdit9.EditValue = "0";
+            this.textEdit9.Enabled = false;
+            this.textEdit9.Location = new System.Drawing.Point(114, 148);
+            this.textEdit9.MenuManager = this.barManager1;
+            this.textEdit9.Name = "textEdit9";
+            this.textEdit9.Properties.BeepOnError = true;
+            this.textEdit9.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit9.Properties.MaskSettings.Set("mask", "n");
+            this.textEdit9.Properties.MaskSettings.Set("culture", "es-MX");
+            this.textEdit9.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEdit9.Properties.NullText = "0";
+            this.textEdit9.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit9.Size = new System.Drawing.Size(75, 20);
+            this.textEdit9.TabIndex = 158;
+            // 
+            // labelControl78
+            // 
+            this.labelControl78.Location = new System.Drawing.Point(15, 152);
+            this.labelControl78.Name = "labelControl78";
+            this.labelControl78.Size = new System.Drawing.Size(64, 13);
+            this.labelControl78.TabIndex = 157;
+            this.labelControl78.Text = "Fronterra kg:";
+            // 
+            // textEdit10
+            // 
+            this.textEdit10.EditValue = "0";
+            this.textEdit10.Enabled = false;
+            this.textEdit10.Location = new System.Drawing.Point(114, 174);
+            this.textEdit10.MenuManager = this.barManager1;
+            this.textEdit10.Name = "textEdit10";
+            this.textEdit10.Properties.BeepOnError = true;
+            this.textEdit10.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit10.Properties.MaskSettings.Set("mask", "n");
+            this.textEdit10.Properties.MaskSettings.Set("culture", "es-MX");
+            this.textEdit10.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEdit10.Properties.NullText = "0";
+            this.textEdit10.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit10.Size = new System.Drawing.Size(75, 20);
+            this.textEdit10.TabIndex = 160;
+            // 
+            // labelControl79
+            // 
+            this.labelControl79.Location = new System.Drawing.Point(15, 178);
+            this.labelControl79.Name = "labelControl79";
+            this.labelControl79.Size = new System.Drawing.Size(81, 13);
+            this.labelControl79.TabIndex = 159;
+            this.labelControl79.Text = "Cosechadora kg:";
+            // 
+            // textEdit11
+            // 
+            this.textEdit11.EditValue = "0";
+            this.textEdit11.Enabled = false;
+            this.textEdit11.Location = new System.Drawing.Point(114, 200);
+            this.textEdit11.MenuManager = this.barManager1;
+            this.textEdit11.Name = "textEdit11";
+            this.textEdit11.Properties.BeepOnError = true;
+            this.textEdit11.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit11.Properties.MaskSettings.Set("mask", "n");
+            this.textEdit11.Properties.MaskSettings.Set("culture", "es-MX");
+            this.textEdit11.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEdit11.Properties.NullText = "0";
+            this.textEdit11.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit11.Size = new System.Drawing.Size(75, 20);
+            this.textEdit11.TabIndex = 162;
+            // 
+            // labelControl80
+            // 
+            this.labelControl80.Location = new System.Drawing.Point(15, 204);
+            this.labelControl80.Name = "labelControl80";
+            this.labelControl80.Size = new System.Drawing.Size(65, 13);
+            this.labelControl80.TabIndex = 161;
+            this.labelControl80.Text = "Productor kg:";
+            // 
+            // textEdit12
+            // 
+            this.textEdit12.EditValue = "0";
+            this.textEdit12.Enabled = false;
+            this.textEdit12.Location = new System.Drawing.Point(224, 148);
+            this.textEdit12.MenuManager = this.barManager1;
+            this.textEdit12.Name = "textEdit12";
+            this.textEdit12.Properties.BeepOnError = true;
+            this.textEdit12.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit12.Properties.MaskSettings.Set("mask", "P");
+            this.textEdit12.Properties.MaskSettings.Set("culture", "es-MX");
+            this.textEdit12.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEdit12.Properties.NullText = "0";
+            this.textEdit12.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit12.Size = new System.Drawing.Size(75, 20);
+            this.textEdit12.TabIndex = 164;
+            // 
+            // labelControl81
+            // 
+            this.labelControl81.Location = new System.Drawing.Point(200, 152);
+            this.labelControl81.Name = "labelControl81";
+            this.labelControl81.Size = new System.Drawing.Size(18, 13);
+            this.labelControl81.TabIndex = 163;
+            this.labelControl81.Text = "% :";
+            // 
+            // textEdit13
+            // 
+            this.textEdit13.EditValue = "0";
+            this.textEdit13.Enabled = false;
+            this.textEdit13.Location = new System.Drawing.Point(224, 174);
+            this.textEdit13.MenuManager = this.barManager1;
+            this.textEdit13.Name = "textEdit13";
+            this.textEdit13.Properties.BeepOnError = true;
+            this.textEdit13.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit13.Properties.MaskSettings.Set("mask", "P");
+            this.textEdit13.Properties.MaskSettings.Set("culture", "es-MX");
+            this.textEdit13.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEdit13.Properties.NullText = "0";
+            this.textEdit13.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit13.Size = new System.Drawing.Size(75, 20);
+            this.textEdit13.TabIndex = 166;
+            // 
+            // labelControl82
+            // 
+            this.labelControl82.Location = new System.Drawing.Point(200, 178);
+            this.labelControl82.Name = "labelControl82";
+            this.labelControl82.Size = new System.Drawing.Size(18, 13);
+            this.labelControl82.TabIndex = 165;
+            this.labelControl82.Text = "% :";
+            // 
+            // textEdit14
+            // 
+            this.textEdit14.EditValue = "0";
+            this.textEdit14.Enabled = false;
+            this.textEdit14.Location = new System.Drawing.Point(224, 200);
+            this.textEdit14.MenuManager = this.barManager1;
+            this.textEdit14.Name = "textEdit14";
+            this.textEdit14.Properties.BeepOnError = true;
+            this.textEdit14.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit14.Properties.MaskSettings.Set("mask", "P");
+            this.textEdit14.Properties.MaskSettings.Set("culture", "es-MX");
+            this.textEdit14.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEdit14.Properties.NullText = "0";
+            this.textEdit14.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit14.Size = new System.Drawing.Size(75, 20);
+            this.textEdit14.TabIndex = 168;
+            // 
+            // labelControl83
+            // 
+            this.labelControl83.Location = new System.Drawing.Point(200, 204);
+            this.labelControl83.Name = "labelControl83";
+            this.labelControl83.Size = new System.Drawing.Size(18, 13);
+            this.labelControl83.TabIndex = 167;
+            this.labelControl83.Text = "% :";
+            // 
+            // labelControl84
+            // 
+            this.labelControl84.Location = new System.Drawing.Point(312, 178);
+            this.labelControl84.Name = "labelControl84";
+            this.labelControl84.Size = new System.Drawing.Size(35, 13);
+            this.labelControl84.TabIndex = 170;
+            this.labelControl84.Text = "Ajuste:";
+            // 
+            // textEdit15
+            // 
+            this.textEdit15.EditValue = "0";
+            this.textEdit15.Enabled = false;
+            this.textEdit15.Location = new System.Drawing.Point(356, 174);
+            this.textEdit15.MenuManager = this.barManager1;
+            this.textEdit15.Name = "textEdit15";
+            this.textEdit15.Properties.BeepOnError = true;
+            this.textEdit15.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit15.Properties.MaskSettings.Set("mask", "c");
+            this.textEdit15.Properties.MaskSettings.Set("culture", "es-MX");
+            this.textEdit15.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEdit15.Properties.NullText = "0";
+            this.textEdit15.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit15.Size = new System.Drawing.Size(75, 20);
+            this.textEdit15.TabIndex = 169;
+            // 
+            // labelControl85
+            // 
+            this.labelControl85.Location = new System.Drawing.Point(312, 204);
+            this.labelControl85.Name = "labelControl85";
+            this.labelControl85.Size = new System.Drawing.Size(35, 13);
+            this.labelControl85.TabIndex = 172;
+            this.labelControl85.Text = "Ajuste:";
+            // 
+            // textEdit16
+            // 
+            this.textEdit16.EditValue = "0";
+            this.textEdit16.Enabled = false;
+            this.textEdit16.Location = new System.Drawing.Point(356, 200);
+            this.textEdit16.MenuManager = this.barManager1;
+            this.textEdit16.Name = "textEdit16";
+            this.textEdit16.Properties.BeepOnError = true;
+            this.textEdit16.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEdit16.Properties.MaskSettings.Set("mask", "c");
+            this.textEdit16.Properties.MaskSettings.Set("culture", "es-MX");
+            this.textEdit16.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEdit16.Properties.NullText = "0";
+            this.textEdit16.Properties.UseMaskAsDisplayFormat = true;
+            this.textEdit16.Size = new System.Drawing.Size(75, 20);
+            this.textEdit16.TabIndex = 171;
+            // 
             // Frm_Cosecha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4325,7 +4671,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Margen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PrecioDiaCorte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_kilosCortadosCorte.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_KilosAjustadosCorte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PrecioTCorte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_NombreEmpresaCorte.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PagoTotalCorte.Properties)).EndInit();
@@ -4401,6 +4746,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_KilosMuestra.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Productor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
+            this.groupControl7.ResumeLayout(false);
+            this.groupControl7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit13.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit14.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit15.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit16.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4548,11 +4908,9 @@
         private DevExpress.XtraEditors.TextEdit txt_Margen;
         private DevExpress.XtraEditors.LabelControl labelControl37;
         private DevExpress.XtraEditors.LabelControl labelControl40;
-        private DevExpress.XtraEditors.LabelControl labelControl44;
         private DevExpress.XtraEditors.TextEdit txt_PrecioDiaCorte;
         private DevExpress.XtraEditors.TextEdit txt_kilosCortadosCorte;
         private DevExpress.XtraEditors.LabelControl labelControl39;
-        private DevExpress.XtraEditors.TextEdit txt_KilosAjustadosCorte;
         private DevExpress.XtraEditors.LabelControl labelControl36;
         private DevExpress.XtraEditors.TextEdit txt_PrecioTCorte;
         private DevExpress.XtraEditors.TextEdit txt_NombreEmpresaCorte;
@@ -4735,5 +5093,30 @@
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private DevExpress.XtraEditors.LabelControl labelControl68;
         private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.LabelControl labelControl58;
+        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.LabelControl labelControl59;
+        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.GroupControl groupControl7;
+        private DevExpress.XtraEditors.TextEdit textEdit11;
+        private DevExpress.XtraEditors.LabelControl labelControl80;
+        private DevExpress.XtraEditors.TextEdit textEdit10;
+        private DevExpress.XtraEditors.LabelControl labelControl79;
+        private DevExpress.XtraEditors.TextEdit textEdit9;
+        private DevExpress.XtraEditors.LabelControl labelControl78;
+        private DevExpress.XtraEditors.TextEdit textEdit8;
+        private DevExpress.XtraEditors.LabelControl labelControl72;
+        private DevExpress.XtraEditors.TextEdit textEdit7;
+        private DevExpress.XtraEditors.LabelControl labelControl70;
+        private DevExpress.XtraEditors.LabelControl labelControl85;
+        private DevExpress.XtraEditors.TextEdit textEdit16;
+        private DevExpress.XtraEditors.LabelControl labelControl84;
+        private DevExpress.XtraEditors.TextEdit textEdit15;
+        private DevExpress.XtraEditors.TextEdit textEdit14;
+        private DevExpress.XtraEditors.LabelControl labelControl83;
+        private DevExpress.XtraEditors.TextEdit textEdit13;
+        private DevExpress.XtraEditors.LabelControl labelControl82;
+        private DevExpress.XtraEditors.TextEdit textEdit12;
+        private DevExpress.XtraEditors.LabelControl labelControl81;
     }
 }
